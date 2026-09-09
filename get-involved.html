@@ -838,7 +838,8 @@
           <p data-i18n="form_desc">Please fill out the information below. Our secretariat will review your submission and connect with you within 3 business days.</p>
         </div>
 
-        <form id="ybsp-app-form" onsubmit="handleFormSubmit(event)">
+        <form id="ybsp-app-form" name="volunteer-application" method="POST" data-netlify="true" onsubmit="handleFormSubmit(event)">
+            <input type="hidden" name="form-name" value="volunteer-application">
           <div class="form-grid">
             <div class="form-group">
               <label class="form-label" for="full-name" data-i18n="f_name">Full Name *</label>
