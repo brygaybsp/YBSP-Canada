@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Involved & Membership Application | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
+  <meta name="description" content="Get involved with YBSP Canada: volunteer opportunities, voting membership under the NFP Act, community partnerships, and our interactive application form.">
+  <style>
+    :root {
+      --primary: #0d2b45;
+      --primary-dark: #071927;
+      --primary-light: #1d4b75;
+      --secondary: #10b981;
+      --secondary-dark: #059669;
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+      --text-light: #9ca3af;
+      --bg-white: #ffffff;
+      --bg-light: #f8fafc;
+      --bg-slate: #f1f5f9;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --transition: all 0.25s ease-in-out;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    ul { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+    /* TOP UTILITY BAR */
+    .top-bar {
+      background-color: var(--primary-dark);
+      color: #cbd5e1;
+      font-size: 0.85rem;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .top-bar-left, .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .top-bar-item { display: inline-flex; align-items: center; gap: 6px; }
+    .top-bar-item svg { width: 14px; height: 14px; fill: var(--accent); }
+    .badge-gov {
+      background: rgba(255,255,255,0.12);
+      color: #f8fafc;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 3px;
+      transition: var(--transition);
+    }
+    .lang-btn.active, .lang-btn:hover { background: var(--secondary); color: #ffffff; }
+
+    /* MAIN NAVIGATION */
+    .main-header {
+      background-color: #ffffff;
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 84px;
+    }
+    .brand-logo { display: flex; align-items: center; gap: 14px; }
+    .logo-symbol {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.3rem;
+      box-shadow: var(--shadow-md);
+    }
+    .logo-text h1 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .logo-text span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--secondary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: block;
+    }
+    .nav-menu { display: flex; align-items: center; gap: 4px; }
+    .nav-item { position: relative; }
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 10px 14px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+      border-radius: var(--radius-sm);
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--secondary-dark);
+      background-color: var(--bg-slate);
+    }
+    .nav-arrow { width: 10px; height: 10px; fill: currentColor; }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 240px;
+      background: #ffffff;
+      box-shadow: var(--shadow-lg);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      padding: 8px 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: var(--transition);
+      z-index: 100;
+    }
+    .nav-item:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .dropdown-link {
+      display: block;
+      padding: 9px 18px;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+    .dropdown-link:hover {
+      background-color: var(--bg-slate);
+      color: var(--secondary-dark);
+      padding-left: 22px;
+    }
+    .btn-donate-nav {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      padding: 10px 22px !important;
+      border-radius: 50px !important;
+      box-shadow: 0 4px 10px rgba(245, 158, 11, 0.35);
+      margin-left: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* PAGE HEADER HERO */
+    .page-hero {
+      background: linear-gradient(rgba(13, 43, 69, 0.92), rgba(7, 25, 39, 0.96)), url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: #ffffff;
+      padding: 70px 0 80px;
+      text-align: center;
+    }
+    .breadcrumbs {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .breadcrumbs a { color: var(--accent); }
+    .page-hero h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .page-hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    /* SUB-NAV */
+    .page-subnav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 84px;
+      z-index: 900;
+    }
+    .subnav-list {
+      display: flex;
+      gap: 30px;
+      overflow-x: auto;
+      padding: 14px 0;
+    }
+    .subnav-item a {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      white-space: nowrap;
+      padding-bottom: 8px;
+      border-bottom: 2px solid transparent;
+    }
+    .subnav-item a:hover, .subnav-item a.active {
+      color: var(--primary);
+      border-bottom-color: var(--secondary);
+    }
+
+    /* SECTION BASICS */
+    .content-section { padding: 80px 0; }
+    .content-section:nth-child(even) { background-color: var(--bg-light); }
+    .section-title-wrap { margin-bottom: 40px; text-align: center; }
+    .section-tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--secondary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+    .section-heading {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+    .section-subtext {
+      max-width: 720px;
+      margin: 12px auto 0;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+    }
+
+    /* 3 PATHWAYS CARDS */
+    .pathways-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .pathway-card {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+      border-top: 5px solid var(--secondary);
+      padding: 36px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+    .pathway-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    .pathway-card:nth-child(2) { border-top-color: var(--primary); }
+    .pathway-card:nth-child(3) { border-top-color: var(--accent); }
+
+    .pathway-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--bg-slate);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .pathway-card:hover .pathway-icon {
+      background: var(--secondary);
+      color: #ffffff;
+    }
+    .pathway-icon svg { width: 32px; height: 32px; fill: currentColor; }
+
+    .pathway-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .pathway-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .pathway-bullets {
+      margin-bottom: 24px;
+    }
+    .pathway-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+    .pathway-bullets span {
+      color: var(--secondary-dark);
+      font-weight: bold;
+    }
+    .btn-pathway {
+      display: inline-block;
+      text-align: center;
+      background: var(--bg-slate);
+      color: var(--primary);
+      font-weight: 700;
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      border: 1px solid var(--border-color);
+    }
+    .btn-pathway:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* APPLICATION FORM SECTION */
+    .form-section {
+      background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-slate) 100%);
+      padding: 90px 0;
+    }
+    .form-wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: 48px;
+      border: 1px solid var(--border-color);
+    }
+    .form-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .form-header h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .form-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+    .form-label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .form-control {
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--text-main);
+      background: #ffffff;
+      transition: var(--transition);
+      outline: none;
+    }
+    .form-control:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      background: var(--bg-light);
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+    .checkbox-item input {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--secondary);
+      cursor: pointer;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 800;
+      padding: 16px 28px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+      transition: var(--transition);
+      margin-top: 10px;
+    }
+    .btn-submit:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .form-alert {
+      display: none;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .form-alert.success {
+      display: block;
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #86efac;
+    }
+
+    /* COMMITTEE ROLES */
+    .committee-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 30px;
+    }
+    .committee-card {
+      background: #ffffff;
+      padding: 28px 22px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+    .committee-card h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .committee-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* FOOTER */
+    .main-footer {
+      background: #061320;
+      color: #94a3b8;
+      padding: 80px 0 30px;
+      font-size: 0.9rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 32px;
+      height: 2px;
+      background: var(--secondary);
+    }
+    .legal-pill {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      color: #cbd5e1;
+    }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a:hover { color: var(--secondary); }
+    .contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.82rem;
+    }
+    .footer-bottom-links { display: flex; gap: 20px; }
+
+    @media (max-width: 1024px) {
+      .pathways-grid, .committee-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .top-bar, .nav-menu, .page-subnav { display: none; }
+      .page-hero h2 { font-size: 2.1rem; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full-width { grid-column: span 1; }
+      .checkbox-grid { grid-template-columns: 1fr; }
+      .form-wrapper { padding: 28px 20px; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP UTILITY BAR -->
+  <aside class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <div class="top-bar-item">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <a href="mailto:info@ybspcanada.org">info@ybspcanada.org</a>
+        </div>
+        <div class="top-bar-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span>Ottawa, ON & Gatineau, QC | Canada</span>
+        </div>
+        <div class="top-bar-item">
+          <span class="badge-gov">Fed. Corp #1154010-6</span>
+          <span class="badge-gov">BN: 779321272RC0001</span>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <div class="lang-switcher">
+          <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+          <span style="color:#64748b;">|</span>
+          <button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')">FR</button>
+        </div>
+        <div class="top-bar-item">
+          <a href="https://facebook.com" style="color:#cbd5e1;">FB</a>
+          <a href="https://linkedin.com" style="color:#cbd5e1; margin-left: 10px;">IN</a>
+          <a href="https://instagram.com" style="color:#cbd5e1; margin-left: 10px;">IG</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="main-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-symbol">Y</div>
+        <div class="logo-text">
+          <h1>YBSP CANADA</h1>
+          <span data-i18n="tagline">Youth Building in Synergy to end Poverty</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <div class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></div>
+        <div class="nav-item">
+          <a href="about.html" class="nav-link">
+            <span data-i18n="nav_about">About Us</span>
+            <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="about.html#mission" class="dropdown-link" data-i18n="nav_mission">Mission & Vision</a>
+            <a href="about.html#governance" class="dropdown-link" data-i18n="nav_governance">Board & Governance</a>
+            <a href="about.html#corporate" class="dropdown-link" data-i18n="nav_corporate">Corporate Filings</a>
+            <a href="about.html#synergy" class="dropdown-link" data-i18n="nav_burundi">Synergy with YBSP Burundi</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="programs.html" class="nav-link">
+            <span data-i18n="nav_programs">Programs</span>
+            <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="programs.html#mentorship" class="dropdown-link" data-i18n="nav_mentorship">Youth Mentorship & Skills</a>
+            <a href="programs.html#entrepreneurship" class="dropdown-link" data-i18n="nav_entrepreneurship">Social Entrepreneurship</a>
+            <a href="programs.html#international" class="dropdown-link" data-i18n="nav_intl_projects">International Synergy</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="events.html" class="nav-link">
+            <span data-i18n="nav_community">Community & Events</span>
+            <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="events.html" class="dropdown-link" data-i18n="nav_calendar">Events Calendar</a>
+            <a href="events.html#past" class="dropdown-link" data-i18n="nav_past_events">Past Activities</a>
+            <a href="gallery.html" class="dropdown-link" data-i18n="nav_gallery">Photo Gallery</a>
+          </div>
+        </div>
+
+        <div class="nav-item"><a href="news.html" class="nav-link" data-i18n="nav_news">News & Impact</a></div>
+
+        <div class="nav-item">
+          <a href="get-involved.html" class="nav-link active">
+            <span data-i18n="nav_involved">Get Involved</span>
+            <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="get-involved.html#volunteer" class="dropdown-link" data-i18n="nav_volunteer">Volunteer</a>
+            <a href="get-involved.html#membership" class="dropdown-link" data-i18n="nav_membership">Become a Member</a>
+            <a href="get-involved.html#partner" class="dropdown-link" data-i18n="nav_partner">Partner With Us</a>
+          </div>
+        </div>
+
+        <a href="donate.html" class="btn-donate-nav" data-i18n="nav_donate">Donate Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> &nbsp;/&nbsp; <span data-i18n="crumb_involved">Get Involved</span>
+      </div>
+      <h2 data-i18n="hero_title">Join the Synergy. Drive the Change.</h2>
+      <p data-i18n="hero_desc">
+        Whether as a volunteer mentor, an active voting member under our federal charter, or an institutional partner, your involvement strengthens youth empowerment and poverty alleviation across Canada and Burundi.
+      </p>
+    </div>
+  </section>
+
+  <!-- SUB-NAV -->
+  <nav class="page-subnav">
+    <div class="container">
+      <ul class="subnav-list">
+        <li class="subnav-item"><a href="#pathways" class="active" data-i18n="sub_pathways">3 Ways to Join</a></li>
+        <li class="subnav-item"><a href="#application" data-i18n="sub_form">Application Form</a></li>
+        <li class="subnav-item"><a href="#committees" data-i18n="sub_committees">Working Committees</a></li>
+        <li class="subnav-item"><a href="#partnerships" data-i18n="sub_partners">Partnerships</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- SECTION 1: 3 PATHWAYS TO GET INVOLVED -->
+  <section class="content-section" id="pathways">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag" data-i18n="tag_opportunities">Engagement Pathways</span>
+        <h3 class="section-heading" data-i18n="heading_pathways">How You Can Make a Difference</h3>
+        <p class="section-subtext" data-i18n="subtext_pathways">
+          Choose the pathway that matches your skills, availability, and civic commitment.
+        </p>
+      </div>
+
+      <div class="pathways-grid">
+        <!-- CARD 1: VOLUNTEER -->
+        <div class="pathway-card" id="volunteer">
+          <div>
+            <div class="pathway-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+            <h4 class="pathway-title" data-i18n="card1_title">Volunteer</h4>
+            <p class="pathway-desc" data-i18n="card1_desc">
+              Lend your talents, time, and lived experience to guide the next generation of changemakers.
+            </p>
+            <ul class="pathway-bullets">
+              <li><span>✓</span> <span data-i18n="c1_b1">1-on-1 Youth Mentors & Career Coaches</span></li>
+              <li><span>✓</span> <span data-i18n="c1_b2">Community Event Coordinators & Hosts</span></li>
+              <li><span>✓</span> <span data-i18n="c1_b3">Bilingual Translators (EN/FR/Kirundi)</span></li>
+              <li><span>✓</span> <span data-i18n="c1_b4">Digital Skills & Workshop Facilitators</span></li>
+            </ul>
+          </div>
+          <a href="#application" class="btn-pathway" data-i18n="btn_volunteer">Apply as Volunteer ↓</a>
+        </div>
+
+        <!-- CARD 2: BECOME A MEMBER -->
+        <div class="pathway-card" id="membership">
+          <div>
+            <div class="pathway-icon">
+              <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            </div>
+            <h4 class="pathway-title" data-i18n="card2_title">Become a Registered Member</h4>
+            <p class="pathway-desc" data-i18n="card2_desc">
+              Join as a voting member under the Canada Not-for-profit Corporations Act and shape our organizational future.
+            </p>
+            <ul class="pathway-bullets">
+              <li><span>✓</span> <span data-i18n="c2_b1">Voting rights at Annual General Meetings (AGM)</span></li>
+              <li><span>✓</span> <span data-i18n="c2_b2">Eligibility for Board of Directors candidacy</span></li>
+              <li><span>✓</span> <span data-i18n="c2_b3">Participate in strategic planning sessions</span></li>
+              <li><span>✓</span> <span data-i18n="c2_b4">Direct oversight of financial transparency</span></li>
+            </ul>
+          </div>
+          <a href="#application" class="btn-pathway" data-i18n="btn_membership">Apply for Membership ↓</a>
+        </div>
+
+        <!-- CARD 3: INSTITUTIONAL & COMMUNITY PARTNER -->
+        <div class="pathway-card" id="partnerships">
+          <div>
+            <div class="pathway-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+            </div>
+            <h4 class="pathway-title" data-i18n="card3_title">Institutional Partner</h4>
+            <p class="pathway-desc" data-i18n="card3_desc">
+              Collaborate on grants, youth cohorts, educational infrastructure, and bilateral Canada-Burundi synergy.
+            </p>
+            <ul class="pathway-bullets">
+              <li><span>✓</span> <span data-i18n="c3_b1">Government & Municipal Youth Grant Alliances</span></li>
+              <li><span>✓</span> <span data-i18n="c3_b2">Corporate CSR & Social Impact Sponsorships</span></li>
+              <li><span>✓</span> <span data-i18n="c3_b3">Diaspora Cultural Associations & Synergies</span></li>
+              <li><span>✓</span> <span data-i18n="c3_b4">Academic & College Research Cooperatives</span></li>
+            </ul>
+          </div>
+          <a href="#application" class="btn-pathway" data-i18n="btn_partner">Partner With Us ↓</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: INTERACTIVE APPLICATION FORM -->
+  <section class="form-section" id="application">
+    <div class="container">
+      <div class="form-wrapper">
+        <div class="form-header">
+          <span class="section-tag" data-i18n="form_tag">Online Registration</span>
+          <h3 data-i18n="form_title">Membership & Volunteer Application</h3>
+          <p data-i18n="form_desc">Please fill out the information below. Our secretariat will review your submission and connect with you within 3 business days.</p>
+        </div>
+
+        <form id="ybsp-app-form" onsubmit="handleFormSubmit(event)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="full-name" data-i18n="f_name">Full Name *</label>
+              <input type="text" id="full-name" class="form-control" placeholder="e.g. Jean-Paul Ndikumasabo" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email" data-i18n="f_email">Email Address *</label>
+              <input type="email" id="email" class="form-control" placeholder="name@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="phone" data-i18n="f_phone">Phone Number *</label>
+              <input type="tel" id="phone" class="form-control" placeholder="(613) 000-0000" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="city" data-i18n="f_city">City & Province *</label>
+              <select id="city" class="form-control" required>
+                <option value="" disabled selected data-i18n="opt_select_city">Select your location</option>
+                <option value="Ottawa, ON">Ottawa, ON</option>
+                <option value="Gatineau, QC">Gatineau, QC</option>
+                <option value="Montreal, QC">Montréal, QC</option>
+                <option value="Toronto, ON">Toronto, ON</option>
+                <option value="Other Canada" data-i18n="opt_other_can">Other (Canada)</option>
+                <option value="International" data-i18n="opt_intl">International / Burundi</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label class="form-label" for="role-select" data-i18n="f_role">How would you like to participate? *</label>
+              <select id="role-select" class="form-control" required>
+                <option value="" disabled selected data-i18n="opt_select_role">Select your primary role</option>
+                <option value="Volunteer Mentor" data-i18n="role_mentor">Volunteer Mentor (Career & Leadership)</option>
+                <option value="General Member" data-i18n="role_member">Registered Voting Member (NFP Act)</option>
+                <option value="Event Volunteer" data-i18n="role_event">Community Events & Logistics Volunteer</option>
+                <option value="Youth Participant" data-i18n="role_participant">Youth Participant (Enrolling in Cohorts)</option>
+                <option value="Institutional Partner" data-i18n="role_partner_org">Institutional / Corporate Partner</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label class="form-label" data-i18n="f_skills">Skills, Languages & Areas of Interest (Select all that apply)</label>
+              <div class="checkbox-grid">
+                <label class="checkbox-item">
+                  <input type="checkbox" name="skills" value="Bilingual">
+                  <span data-i18n="sk_bilingual">Bilingual (English / French)</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="skills" value="Administration">
+                  <span data-i18n="sk_admin">Public Administration & Governance</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="skills" value="Mentorship">
+                  <span data-i18n="sk_mentorship">Youth Mentorship & Coaching</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="skills" value="Events">
+                  <span data-i18n="sk_events">Event Planning & Community Outreach</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="skills" value="Fundraising">
+                  <span data-i18n="sk_fundraising">Grant Writing & Fundraising</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="skills" value="Communications">
+                  <span data-i18n="sk_comms">Digital Media & Communications</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label class="form-label" for="message" data-i18n="f_statement">Statement of Motivation / Introduction</label>
+              <textarea id="message" class="form-control" rows="4" placeholder="Share why you wish to join YBSP Canada and how you envision contributing to our community mission..."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit" data-i18n="btn_submit">Submit Application</button>
+        </form>
+
+        <div id="form-feedback" class="form-alert"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: WORKING COMMITTEES -->
+  <section class="content-section" id="committees">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag" data-i18n="tag_committees">Member Working Groups</span>
+        <h3 class="section-heading" data-i18n="heading_committees">Join a Working Committee</h3>
+        <p class="section-subtext" data-i18n="subtext_committees">
+          Our registered members actively contribute to specialized working committees driving key facets of our strategic plan.
+        </p>
+      </div>
+
+      <div class="committee-grid">
+        <div class="committee-card">
+          <h4 data-i18n="com1_title">Youth Programs & Mentorship</h4>
+          <p data-i18n="com1_desc">Designs curriculum for 12-week leadership cohorts, arranges executive guest speakers, and monitors participant progress metrics.</p>
+        </div>
+
+        <div class="committee-card">
+          <h4 data-i18n="com2_title">Burundi Synergy & International Cooperation</h4>
+          <p data-i18n="com2_desc">Coordinates with YBSP Burundi project managers, assesses field needs, and monitors resource distribution for educational and vocational kits.</p>
+        </div>
+
+        <div class="committee-card">
+          <h4 data-i18n="com3_title">Governance & Financial Audit</h4>
+          <p data-i18n="com3_desc">Ensures statutory compliance with Corporations Canada, prepares annual filings, and assists the Board in reviewing budgetary transparency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>YBSP Canada</h4>
+          <p class="footer-desc" data-i18n="footer_about_desc">
+            Youth Building in Synergy to end Poverty is a registered Canadian non-profit corporation dedicated to fostering youth-driven leadership, economic equity, and international solidarity.
+          </p>
+          <div class="legal-pill">
+            <strong>Fed. Corp #:</strong> 1154010-6<br>
+            <strong>Business #:</strong> 779321272RC0001<br>
+            <strong>Governing Act:</strong> Canada Not-for-profit Corporations Act
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_quick_title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
+            <li><a href="programs.html" data-i18n="nav_programs">Our Programs</a></li>
+            <li><a href="events.html" data-i18n="nav_calendar">Events Calendar</a></li>
+            <li><a href="news.html" data-i18n="nav_news">News & Articles</a></li>
+            <li><a href="donate.html" data-i18n="nav_donate">Donate</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_involved_title">Get Involved</h4>
+          <ul class="footer-links">
+            <li><a href="get-involved.html#volunteer" data-i18n="nav_volunteer">Volunteer Opportunities</a></li>
+            <li><a href="get-involved.html#membership" data-i18n="nav_membership">Become a Member</a></li>
+            <li><a href="get-involved.html#partnerships" data-i18n="nav_partner">Institutional Partnerships</a></li>
+            <li><a href="about.html#synergy" data-i18n="nav_burundi">Burundi Project Synergy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_contact_title">Contact & Office</h4>
+          <div class="contact-item">
+            <span>📍</span>
+            <span>291 Glynn Avenue<br>Ottawa, ON K1K 1R9, Canada</span>
+          </div>
+          <div class="contact-item">
+            <span>✉️</span>
+            <a href="mailto:info@ybspcanada.org">info@ybspcanada.org</a>
+          </div>
+          <div class="contact-item">
+            <span>🌐</span>
+            <span>Serving Gatineau & Ottawa Region</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
+          <a href="terms.html" data-i18n="footer_terms">Terms of Use</a>
+          <a href="about.html#corporate" data-i18n="footer_transparency">Governance & Filings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FORM HANDLING & BILINGUAL JAVASCRIPT -->
+  <script>
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const feedback = document.getElementById('form-feedback');
+      const name = document.getElementById('full-name').value;
+      const currentLang = document.documentElement.lang || 'en';
+
+      feedback.className = 'form-alert success';
+      if (currentLang === 'fr') {
+        feedback.innerHTML = `Merci ${name} ! Votre demande a été reçue avec succès. L'équipe de YBSP Canada communiquera avec vous par courriel d'ici 3 jours ouvrables.`;
+      } else {
+        feedback.innerHTML = `Thank you, ${name}! Your application has been received successfully. The YBSP Canada team will reach out to you via email within 3 business days.`;
+      }
+
+      document.getElementById('ybsp-app-form').reset();
+      feedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const translations = {
+      en: {
+        tagline: "Youth Building in Synergy to end Poverty",
+        nav_home: "Home",
+        nav_about: "About Us",
+        nav_mission: "Mission & Vision",
+        nav_governance: "Board & Governance",
+        nav_corporate: "Corporate Filings",
+        nav_burundi: "Synergy with YBSP Burundi",
+        nav_programs: "Programs",
+        nav_mentorship: "Youth Mentorship & Skills",
+        nav_entrepreneurship: "Social Entrepreneurship",
+        nav_intl_projects: "International Synergy",
+        nav_community: "Community & Events",
+        nav_calendar: "Events Calendar",
+        nav_past_events: "Past Activities",
+        nav_gallery: "Photo Gallery",
+        nav_news: "News & Impact",
+        nav_involved: "Get Involved",
+        nav_volunteer: "Volunteer",
+        nav_membership: "Become a Member",
+        nav_partner: "Partner With Us",
+        nav_donate: "Donate Now",
+        crumb_involved: "Get Involved",
+        hero_title: "Join the Synergy. Drive the Change.",
+        hero_desc: "Whether as a volunteer mentor, an active voting member under our federal charter, or an institutional partner, your involvement strengthens youth empowerment and poverty alleviation across Canada and Burundi.",
+        sub_pathways: "3 Ways to Join",
+        sub_form: "Application Form",
+        sub_committees: "Working Committees",
+        sub_partners: "Partnerships",
+        tag_opportunities: "Engagement Pathways",
+        heading_pathways: "How You Can Make a Difference",
+        subtext_pathways: "Choose the pathway that matches your skills, availability, and civic commitment.",
+        card1_title: "Volunteer",
+        card1_desc: "Lend your talents, time, and lived experience to guide the next generation of changemakers.",
+        c1_b1: "1-on-1 Youth Mentors & Career Coaches",
+        c1_b2: "Community Event Coordinators & Hosts",
+        c1_b3: "Bilingual Translators (EN/FR/Kirundi)",
+        c1_b4: "Digital Skills & Workshop Facilitators",
+        btn_volunteer: "Apply as Volunteer ↓",
+        card2_title: "Become a Registered Member",
+        card2_desc: "Join as a voting member under the Canada Not-for-profit Corporations Act and shape our organizational future.",
+        c2_b1: "Voting rights at Annual General Meetings (AGM)",
+        c2_b2: "Eligibility for Board of Directors candidacy",
+        c2_b3: "Participate in strategic planning sessions",
+        c2_b4: "Direct oversight of financial transparency",
+        btn_membership: "Apply for Membership ↓",
+        card3_title: "Institutional Partner",
+        card3_desc: "Collaborate on grants, youth cohorts, educational infrastructure, and bilateral Canada-Burundi synergy.",
+        c3_b1: "Government & Municipal Youth Grant Alliances",
+        c3_b2: "Corporate CSR & Social Impact Sponsorships",
+        c3_b3: "Diaspora Cultural Associations & Synergies",
+        c3_b4: "Academic & College Research Cooperatives",
+        btn_partner: "Partner With Us ↓",
+        form_tag: "Online Registration",
+        form_title: "Membership & Volunteer Application",
+        form_desc: "Please fill out the information below. Our secretariat will review your submission and connect with you within 3 business days.",
+        f_name: "Full Name *",
+        f_email: "Email Address *",
+        f_phone: "Phone Number *",
+        f_city: "City & Province *",
+        opt_select_city: "Select your location",
+        opt_other_can: "Other (Canada)",
+        opt_intl: "International / Burundi",
+        f_role: "How would you like to participate? *",
+        opt_select_role: "Select your primary role",
+        role_mentor: "Volunteer Mentor (Career & Leadership)",
+        role_member: "Registered Voting Member (NFP Act)",
+        role_event: "Community Events & Logistics Volunteer",
+        role_participant: "Youth Participant (Enrolling in Cohorts)",
+        role_partner_org: "Institutional / Corporate Partner",
+        f_skills: "Skills, Languages & Areas of Interest (Select all that apply)",
+        sk_bilingual: "Bilingual (English / French)",
+        sk_admin: "Public Administration & Governance",
+        sk_mentorship: "Youth Mentorship & Coaching",
+        sk_events: "Event Planning & Community Outreach",
+        sk_fundraising: "Grant Writing & Fundraising",
+        sk_comms: "Digital Media & Communications",
+        f_statement: "Statement of Motivation / Introduction",
+        btn_submit: "Submit Application",
+        tag_committees: "Member Working Groups",
+        heading_committees: "Join a Working Committee",
+        subtext_committees: "Our registered members actively contribute to specialized working committees driving key facets of our strategic plan.",
+        com1_title: "Youth Programs & Mentorship",
+        com1_desc: "Designs curriculum for 12-week leadership cohorts, arranges executive guest speakers, and monitors participant progress metrics.",
+        com2_title: "Burundi Synergy & International Cooperation",
+        com2_desc: "Coordinates with YBSP Burundi project managers, assesses field needs, and monitors resource distribution for educational and vocational kits.",
+        com3_title: "Governance & Financial Audit",
+        com3_desc: "Ensures statutory compliance with Corporations Canada, prepares annual filings, and assists the Board in reviewing budgetary transparency.",
+        footer_about_desc: "Youth Building in Synergy to end Poverty is a registered Canadian non-profit corporation dedicated to fostering youth-driven leadership, economic equity, and international solidarity.",
+        footer_quick_title: "Quick Links",
+        footer_involved_title: "Get Involved",
+        footer_contact_title: "Contact & Office",
+        footer_privacy: "Privacy Policy",
+        footer_terms: "Terms of Use",
+        footer_transparency: "Governance & Filings"
+      },
+      fr: {
+        tagline: "Bâtir en synergie pour mettre fin à la pauvreté",
+        nav_home: "Accueil",
+        nav_about: "À propos",
+        nav_mission: "Mission & Vision",
+        nav_governance: "Conseil d'administration",
+        nav_corporate: "Dépôts corporatifs",
+        nav_burundi: "Synergie avec YBSP Burundi",
+        nav_programs: "Programmes",
+        nav_mentorship: "Mentorat & Compétences jeunesse",
+        nav_entrepreneurship: "Entrepreneuriat social",
+        nav_intl_projects: "Synergie internationale",
+        nav_community: "Communauté & Événements",
+        nav_calendar: "Calendrier des événements",
+        nav_past_events: "Activités passées",
+        nav_gallery: "Galerie photos",
+        nav_news: "Actualités & Impact",
+        nav_involved: "S'impliquer",
+        nav_volunteer: "Bénévolat",
+        nav_membership: "Devenir membre",
+        nav_partner: "Partenariats",
+        nav_donate: "Faire un don",
+        crumb_involved: "S'impliquer",
+        hero_title: "Rejoignez la synergie. Portez le changement.",
+        hero_desc: "Que ce soit à titre de mentor bénévole, de membre votant enregistré en vertu de notre charte fédérale ou de partenaire institutionnel, votre engagement renforce la jeunesse et combat la précarité au Canada et au Burundi.",
+        sub_pathways: "3 façons de participer",
+        sub_form: "Formulaire d'adhésion",
+        sub_committees: "Comités de travail",
+        sub_partners: "Partenariats",
+        tag_opportunities: "Parcours d'engagement",
+        heading_pathways: "Comment vous pouvez agir",
+        subtext_pathways: "Choisissez le volet correspondant à vos compétences, votre disponibilité et vos aspirations citoyennes.",
+        card1_title: "Bénévolat",
+        card1_desc: "Partagez votre expertise, votre temps et votre vécu pour guider les jeunes bâtisseurs de demain.",
+        c1_b1: "Mentors individuels & Coachs de carrière",
+        c1_b2: "Coordonnateurs d'événements communautaires",
+        c1_b3: "Traducteurs bilingues (FR/EN/Kirundi)",
+        c1_b4: "Animateurs d'ateliers & Compétences numériques",
+        btn_volunteer: "Devenir bénévole ↓",
+        card2_title: "Devenir membre officiel",
+        card2_desc: "Devenez membre avec droit de vote en vertu de la Loi canadienne sur les OBNL et participez aux orientations stratégiques.",
+        c2_b1: "Droit de vote lors des Assemblées générales annuelles (AGA)",
+        c2_b2: "Éligibilité aux postes du Conseil d'administration",
+        c2_b3: "Participation aux comités stratégiques",
+        c2_b4: "Surveillance directe de la transparence financière",
+        btn_membership: "Demander l'adhésion ↓",
+        card3_title: "Partenaire institutionnel",
+        card3_desc: "Collaborez sur des subventions, des cohortes jeunesse et la coopération bilatérale Canada-Burundi.",
+        c3_b1: "Alliances gouvernementales & municipales pour l'emploi jeunesse",
+        c3_b2: "Commandites RSE et partenariats corporatifs",
+        c3_b3: "Associations culturelles et synergies avec la diaspora",
+        c3_b4: "Coopération collégiale et universitaire en recherche-action",
+        btn_partner: "Devenir partenaire ↓",
+        form_tag: "Inscription en ligne",
+        form_title: "Formulaire d'adhésion & de bénévolat",
+        form_desc: "Veuillez remplir les champs ci-dessous. Notre secrétariat examinera votre demande et communiquera avec vous d'ici 3 jours ouvrables.",
+        f_name: "Nom complet *",
+        f_email: "Adresse courriel *",
+        f_phone: "Numéro de téléphone *",
+        f_city: "Ville & Province *",
+        opt_select_city: "Sélectionnez votre région",
+        opt_other_can: "Autre (Canada)",
+        opt_intl: "International / Burundi",
+        f_role: "Comment souhaitez-vous participer ? *",
+        opt_select_role: "Sélectionnez votre rôle principal",
+        role_mentor: "Mentor bénévole (Carrière & Leadership)",
+        role_member: "Membre officiel avec droit de vote (Loi BNL)",
+        role_event: "Bénévole événementiel & Logistique",
+        role_participant: "Jeune participant (Rejoindre une cohorte)",
+        role_partner_org: "Partenaire institutionnel / Entreprise",
+        f_skills: "Compétences, langues & champs d'intérêt (Cochez tout ce qui s'applique)",
+        sk_bilingual: "Bilingue (Français / Anglais)",
+        sk_admin: "Administration publique & Gouvernance",
+        sk_mentorship: "Mentorat jeunesse & Accompagnement",
+        sk_events: "Organisation d'événements & Rayonnement",
+        sk_fundraising: "Rédaction de demandes de subventions & Levée de fonds",
+        sk_comms: "Médias numériques & Communications",
+        f_statement: "Message de motivation / Présentation",
+        btn_submit: "Soumettre ma candidature",
+        tag_committees: "Groupes de travail des membres",
+        heading_committees: "Rejoindre un comité de travail",
+        subtext_committees: "Nos membres enregistrés participent activement aux comités spécialisés guidant les priorités stratégiques de YBSP.",
+        com1_title: "Programmes jeunesse & Mentorat",
+        com1_desc: "Conçoit les programmes pour les cohortes de 12 semaines, invite des conférenciers d'honneur et suit les indicateurs d'impact.",
+        com2_title: "Synergie Burundi & Coopération internationale",
+        com2_desc: "Coordonne avec les chargés de projets au Burundi, évalue les besoins sur le terrain et assure le suivi des kits scolaires et professionnels.",
+        com3_title: "Gouvernance & Vérification financière",
+        com3_desc: "Veille à la conformité statutaire avec Corporations Canada, prépare les dépôts annuels et appuie la vérification budgétaire.",
+        footer_about_desc: "Youth Building in Synergy to end Poverty est une organisation canadienne à but non lucratif enregistrée, dédiée au leadership des jeunes et à la solidarité internationale.",
+        footer_quick_title: "Liens rapides",
+        footer_involved_title: "S'impliquer",
+        footer_contact_title: "Contact & Bureau",
+        footer_privacy: "Politique de confidentialité",
+        footer_terms: "Conditions d'utilisation",
+        footer_transparency: "Gouvernance & Transparence"
+      }
+    };
+
+    function setLanguage(lang) {
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-lang-fr').classList.toggle('active', lang === 'fr');
+      document.documentElement.lang = lang;
+    }
+  </script>
+</body>
+</html>

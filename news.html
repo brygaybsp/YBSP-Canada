@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News & Stories of Change | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
+  <meta name="description" content="Stay updated with the latest news, impact stories, community initiatives, and press releases from Youth Building in Synergy to end Poverty (YBSP Canada).">
+  <style>
+    :root {
+      --primary: #0d2b45;
+      --primary-dark: #071927;
+      --primary-light: #1d4b75;
+      --secondary: #10b981;
+      --secondary-dark: #059669;
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+      --text-light: #9ca3af;
+      --bg-white: #ffffff;
+      --bg-light: #f8fafc;
+      --bg-slate: #f1f5f9;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --transition: all 0.25s ease-in-out;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    ul { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+    /* TOP UTILITY BAR */
+    .top-bar {
+      background-color: var(--primary-dark);
+      color: #cbd5e1;
+      font-size: 0.85rem;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .top-bar-left, .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .top-bar-item { display: inline-flex; align-items: center; gap: 6px; }
+    .top-bar-item svg { width: 14px; height: 14px; fill: var(--accent); }
+    .badge-gov {
+      background: rgba(255,255,255,0.12);
+      color: #f8fafc;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 3px;
+      transition: var(--transition);
+    }
+    .lang-btn.active, .lang-btn:hover { background: var(--secondary); color: #ffffff; }
+
+    /* MAIN NAVIGATION */
+    .main-header {
+      background-color: #ffffff;
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 84px;
+    }
+    .brand-logo { display: flex; align-items: center; gap: 14px; }
+    .logo-symbol {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.3rem;
+      box-shadow: var(--shadow-md);
+    }
+    .logo-text h1 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .logo-text span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--secondary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: block;
+    }
+    .nav-menu { display: flex; align-items: center; gap: 4px; }
+    .nav-item { position: relative; }
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 10px 14px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+      border-radius: var(--radius-sm);
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--secondary-dark);
+      background-color: var(--bg-slate);
+    }
+    .nav-arrow { width: 10px; height: 10px; fill: currentColor; }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 240px;
+      background: #ffffff;
+      box-shadow: var(--shadow-lg);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      padding: 8px 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: var(--transition);
+      z-index: 100;
+    }
+    .nav-item:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .dropdown-link {
+      display: block;
+      padding: 9px 18px;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+    .dropdown-link:hover {
+      background-color: var(--bg-slate);
+      color: var(--secondary-dark);
+      padding-left: 22px;
+    }
+    .btn-donate-nav {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      padding: 10px 22px !important;
+      border-radius: 50px !important;
+      box-shadow: 0 4px 10px rgba(245, 158, 11, 0.35);
+      margin-left: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* PAGE HERO */
+    .page-hero {
+      background: linear-gradient(rgba(13, 43, 69, 0.92), rgba(7, 25, 39, 0.96)), url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: #ffffff;
+      padding: 70px 0 80px;
+      text-align: center;
+    }
+    .breadcrumbs {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .breadcrumbs a { color: var(--accent); }
+    .page-hero h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .page-hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    /* FILTER TABS */
+    .filter-tabs-bar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 84px;
+      z-index: 900;
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      padding: 14px 0;
+    }
+    .filter-btn {
+      background: none;
+      border: none;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding-bottom: 8px;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--secondary);
+    }
+
+    /* FEATURED STORY BANNER */
+    .featured-section {
+      padding: 60px 0 40px;
+    }
+    .featured-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+    .featured-card:hover {
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+    }
+    .featured-content {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .badge-spotlight {
+      display: inline-block;
+      background: #fee2e2;
+      color: #b91c1c;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+      align-self: flex-start;
+    }
+    .featured-date {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .featured-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.25;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .featured-lead {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+    .featured-img-wrap {
+      position: relative;
+    }
+    .featured-img {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+    }
+    .btn-read-featured {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      align-self: flex-start;
+    }
+    .btn-read-featured:hover {
+      background: var(--secondary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ARTICLES GRID */
+    .articles-section {
+      padding: 50px 0 90px;
+      background-color: var(--bg-light);
+    }
+    .section-title-wrap {
+      margin-bottom: 40px;
+    }
+    .section-tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--secondary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+    .section-heading {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .article-card {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .article-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    .article-img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .article-body {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .article-tag {
+      color: var(--secondary-dark);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .article-title {
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+    .article-excerpt {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .article-link {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: auto;
+    }
+    .article-link:hover {
+      color: var(--secondary-dark);
+      padding-left: 4px;
+    }
+
+    /* PRESS RELEASES & MEDIA KIT */
+    .press-section {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+    .press-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .press-list {
+      margin-top: 24px;
+    }
+    .press-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+    }
+    .press-item:last-child {
+      border-bottom: none;
+    }
+    .press-date {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      font-weight: 600;
+      min-width: 90px;
+    }
+    .press-link {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      flex-grow: 1;
+    }
+    .press-link:hover {
+      color: var(--secondary-dark);
+    }
+    .press-tag {
+      font-size: 0.75rem;
+      background: var(--bg-slate);
+      color: var(--text-muted);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .media-kit-box {
+      background: linear-gradient(135deg, var(--bg-slate) 0%, #e2e8f0 100%);
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      border-left: 6px solid var(--accent);
+    }
+    .media-kit-box h4 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .media-kit-box p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .media-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .media-download-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      padding: 12px 18px;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+    .media-download-btn:hover {
+      transform: translateX(4px);
+      box-shadow: var(--shadow-md);
+      color: var(--secondary-dark);
+    }
+    .media-download-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--accent);
+    }
+
+    /* NEWSLETTER CTA */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #ffffff;
+      padding: 70px 0;
+      text-align: center;
+    }
+    .cta-banner h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 14px; }
+    .cta-banner p { font-size: 1.1rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 30px; }
+    .cta-form { display: flex; justify-content: center; gap: 12px; max-width: 520px; margin: 0 auto; flex-wrap: wrap; }
+    .cta-input { flex: 1; min-width: 280px; padding: 14px 20px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #ffffff; }
+    .btn-subscribe { background: var(--secondary); color: #ffffff; border: none; padding: 14px 28px; font-weight: 700; border-radius: 50px; cursor: pointer; transition: var(--transition); }
+    .btn-subscribe:hover { background: var(--secondary-dark); }
+
+    /* FOOTER */
+    .main-footer {
+      background: #061320;
+      color: #94a3b8;
+      padding: 80px 0 30px;
+      font-size: 0.9rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 32px;
+      height: 2px;
+      background: var(--secondary);
+    }
+    .legal-pill {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      color: #cbd5e1;
+    }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a:hover { color: var(--secondary); }
+    .contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.82rem;
+    }
+    .footer-bottom-links { display: flex; gap: 20px; }
+
+    @media (max-width: 1024px) {
+      .featured-card { grid-template-columns: 1fr; }
+      .news-grid { grid-template-columns: repeat(2, 1fr); }
+      .press-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .top-bar, .nav-menu, .filter-tabs-bar { display: none; }
+      .page-hero h2 { font-size: 2.1rem; }
+      .featured-content { padding: 30px 20px; }
+      .featured-title { font-size: 1.5rem; }
+      .news-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP UTILITY BAR -->
+  <aside class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <div class="top-bar-item">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <a href="mailto:info@ybspcanada.org">info@ybspcanada.org</a>
+        </div>
+        <div class="top-bar-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span>Ottawa, ON & Gatineau, QC | Canada</span>
+        </div>
+        <div class="top-bar-item">
+          <span class="badge-gov">Fed. Corp #1154010-6</span>
+          <span class="badge-gov">BN: 779321272RC0001</span>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <div class="lang-switcher">
+          <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+          <span style="color:#64748b;">|</span>
+          <button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')">FR</button>
+        </div>
+        <div class="top-bar-item">
+          <a href="https://facebook.com" style="color:#cbd5e1;">FB</a>
+          <a href="https://linkedin.com" style="color:#cbd5e1; margin-left: 10px;">IN</a>
+          <a href="https://instagram.com" style="color:#cbd5e1; margin-left: 10px;">IG</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="main-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-symbol">Y</div>
+        <div class="logo-text">
+          <h1>YBSP CANADA</h1>
+          <span data-i18n="tagline">Youth Building in Synergy to end Poverty</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <div class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></div>
+        <div class="nav-item">
+          <a href="about.html" class="nav-link">
+            <span data-i18n="nav_about">About Us</span>
+            <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="about.html#mission" class="dropdown-link" data-i18n="nav_mission">Mission & Vision</a>
+            <a href="about.html#governance" class="dropdown-link" data-i18n="nav_governance">Board & Governance</a>
+            <a href="about.html#corporate" class="dropdown-link" data-i18n="nav_corporate">Corporate Filings</a>
+            <a href="about.html#synergy" class="dropdown-link" data-i18n="nav_burundi">Synergy with YBSP Burundi</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="programs.html" class="nav-link">
+            <span data-i18n="nav_programs">Programs</span>
+            <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="programs.html#mentorship" class="dropdown-link" data-i18n="nav_mentorship">Youth Mentorship & Skills</a>
+            <a href="programs.html#entrepreneurship" class="dropdown-link" data-i18n="nav_entrepreneurship">Social Entrepreneurship</a>
+            <a href="programs.html#awareness" class="dropdown-link" data-i18n="nav_awareness">Community Health & Awareness</a>
+            <a href="programs.html#burundi-initiative" class="dropdown-link" data-i18n="nav_intl_projects">Burundi Synergy Initiative</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="events.html" class="nav-link">
+            <span data-i18n="nav_community">Community & Events</span>
+            <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="events.html" class="dropdown-link" data-i18n="nav_calendar">Events Calendar</a>
+            <a href="events.html#past" class="dropdown-link" data-i18n="nav_past_events">Past Activities</a>
+            <a href="gallery.html" class="dropdown-link" data-i18n="nav_gallery">Photo Gallery</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="news.html" class="nav-link active" data-i18n="nav_news">News & Impact</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="get-involved.html" class="nav-link">
+            <span data-i18n="nav_involved">Get Involved</span>
+            <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="get-involved.html#volunteer" class="dropdown-link" data-i18n="nav_volunteer">Volunteer</a>
+            <a href="get-involved.html#membership" class="dropdown-link" data-i18n="nav_membership">Become a Member</a>
+            <a href="get-involved.html#partner" class="dropdown-link" data-i18n="nav_partner">Partner With Us</a>
+          </div>
+        </div>
+
+        <a href="donate.html" class="btn-donate-nav" data-i18n="nav_donate">Donate Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> &nbsp;/&nbsp; <span data-i18n="crumb_news">News & Impact Stories</span>
+      </div>
+      <h2 data-i18n="hero_title">News & Stories of Change</h2>
+      <p data-i18n="hero_desc">
+        Explore recent milestones, program dispatches, community achievements, and stories of youth leadership from Canada to Burundi.
+      </p>
+    </div>
+  </section>
+
+  <!-- CATEGORY FILTER BAR -->
+  <div class="filter-tabs-bar">
+    <div class="container">
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-i18n="tab_all">All Dispatches</button>
+        <button class="filter-btn" data-i18n="tab_programs">Youth Programs</button>
+        <button class="filter-btn" data-i18n="tab_synergy">Burundi Synergy</button>
+        <button class="filter-btn" data-i18n="tab_governance">Governance & Transparency</button>
+        <button class="filter-btn" data-i18n="tab_community">Community Action</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURED STORY BANNER -->
+  <section class="featured-section">
+    <div class="container">
+      <div class="featured-card">
+        <div class="featured-content">
+          <span class="badge-spotlight" data-i18n="feat_badge">Spotlight Story</span>
+          <div class="featured-date">SEPTEMBER 2026 • 5 MIN READ</div>
+          <h3 class="featured-title" data-i18n="feat_title">Launching the 2026 Youth Mentorship & Career Readiness Cohort</h3>
+          <p class="featured-lead" data-i18n="feat_desc">
+            Empowering 150 newcomer, diaspora, and equity-deserving youth across the National Capital Region with 1-on-1 executive mentorship, digital business competencies, and career placement pathways.
+          </p>
+          <a href="#article-1" class="btn-read-featured" data-i18n="btn_read_story">Read Full Feature →</a>
+        </div>
+        <div class="featured-img-wrap">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80" alt="Mentorship Launch" class="featured-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS & ARTICLES GRID (5 DISTINCT ARTICLES) -->
+  <section class="articles-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag" data-i18n="tag_articles">Recent Publications</span>
+        <h3 class="section-heading" data-i18n="heading_articles">Latest Articles & Impact Reports</h3>
+      </div>
+
+      <div class="news-grid">
+        <!-- ARTICLE 1 -->
+        <article class="article-card" id="article-1">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=80" alt="Youth Cohort" class="article-img">
+          <div class="article-body">
+            <div class="article-meta">
+              <span class="article-tag" data-i18n="art1_tag">Program Expansion</span>
+              <span>•</span>
+              <span>AUG 28, 2026</span>
+            </div>
+            <h4 class="article-title" data-i18n="art1_title">Expanding the 2026 Youth Mentorship & Employment Cohort</h4>
+            <p class="article-excerpt" data-i18n="art1_desc">
+              How our structured pairing with public administration and IT specialists is unlocking concrete job opportunities and building self-confidence for immigrant youth in Ottawa and Gatineau.
+            </p>
+            <a href="news-single.html?id=1" class="article-link" data-i18n="link_read_more">Read Article →</a>
+          </div>
+        </article>
+
+        <!-- ARTICLE 2 -->
+        <article class="article-card" id="article-2">
+          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=600&q=80" alt="Burundi Synergy" class="article-img">
+          <div class="article-body">
+            <div class="article-meta">
+              <span class="article-tag" data-i18n="art2_tag">International Synergy</span>
+              <span>•</span>
+              <span>JUL 14, 2026</span>
+            </div>
+            <h4 class="article-title" data-i18n="art2_title">Spotlight on YBSP Burundi: Rural Youth Entrepreneurship Hub</h4>
+            <p class="article-excerpt" data-i18n="art2_desc">
+              A comprehensive dispatch examining how funds raised in Canada directly equipped rural Burundian youth with carpentry, tailoring, and agricultural toolkits to launch local micro-enterprises.
+            </p>
+            <a href="news-single.html?id=2" class="article-link" data-i18n="link_read_more">Read Article →</a>
+          </div>
+        </article>
+
+        <!-- ARTICLE 3 -->
+        <article class="article-card" id="article-3">
+          <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80" alt="Corporate Compliance" class="article-img">
+          <div class="article-body">
+            <div class="article-meta">
+              <span class="article-tag" data-i18n="art3_tag">Governance</span>
+              <span>•</span>
+              <span>JUN 19, 2026</span>
+            </div>
+            <h4 class="article-title" data-i18n="art3_title">YBSP Canada Files Annual Corporate Return with Corporations Canada</h4>
+            <p class="article-excerpt" data-i18n="art3_desc">
+              Affirming our unwavering dedication to federal statutory compliance, public disclosure, and fiduciary transparency under the Canada Not-for-profit Corporations Act (Corp # 1154010-6).
+            </p>
+            <a href="news-single.html?id=3" class="article-link" data-i18n="link_read_more">Read Article →</a>
+          </div>
+        </article>
+
+        <!-- ARTICLE 4 -->
+        <article class="article-card" id="article-4">
+          <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="Environmental Cleanup" class="article-img">
+          <div class="article-body">
+            <div class="article-meta">
+              <span class="article-tag" data-i18n="art4_tag">Community Ecology</span>
+              <span>•</span>
+              <span>MAY 22, 2026</span>
+            </div>
+            <h4 class="article-title" data-i18n="art4_title">Youth Climate & Shoreline Clean-Up Mobilization in Ottawa-Gatineau</h4>
+            <p class="article-excerpt" data-i18n="art4_desc">
+              Over 80 young volunteers gathered along the Ottawa River watershed to remove 450 kg of waste, combining practical ecological stewardship with peer conversations on youth wellness.
+            </p>
+            <a href="news-single.html?id=4" class="article-link" data-i18n="link_read_more">Read Article →</a>
+          </div>
+        </article>
+
+        <!-- ARTICLE 5 -->
+        <article class="article-card" id="article-5">
+          <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80" alt="Financial Transparency" class="article-img">
+          <div class="article-body">
+            <div class="article-meta">
+              <span class="article-tag" data-i18n="art5_tag">Donor Transparency</span>
+              <span>•</span>
+              <span>APR 10, 2026</span>
+            </div>
+            <h4 class="article-title" data-i18n="art5_title">Financial Transparency & Donor Impact: Funding Tangible Outcomes</h4>
+            <p class="article-excerpt" data-i18n="art5_desc">
+              A transparent breakdown demonstrating how modest community gifts directly translate into school tuition for children, workshop venues, and startup seed grants for youth ventures.
+            </p>
+            <a href="news-single.html?id=5" class="article-link" data-i18n="link_read_more">Read Article →</a>
+          </div>
+        </article>
+
+        <!-- ARTICLE 6 (BONUS DISPATCH) -->
+        <article class="article-card" id="article-6">
+          <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=600&q=80" alt="Mental Health Workshop" class="article-img">
+          <div class="article-body">
+            <div class="article-meta">
+              <span class="article-tag" data-i18n="art6_tag">Mental Health</span>
+              <span>•</span>
+              <span>MAR 15, 2026</span>
+            </div>
+            <h4 class="article-title" data-i18n="art6_title">Breaking Cultural Stigmas Around Youth Mental Health in the Diaspora</h4>
+            <p class="article-excerpt" data-i18n="art6_desc">
+              Highlights from our bilingual community roundtable exploring emotional resilience, intergenerational dialogue, and culturally safe wellness resources for immigrant families.
+            </p>
+            <a href="news-single.html?id=6" class="article-link" data-i18n="link_read_more">Read Article →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESS RELEASES & MEDIA KIT -->
+  <section class="press-section">
+    <div class="container">
+      <div class="press-grid">
+        <div>
+          <span class="section-tag" data-i18n="tag_media">Official Statements</span>
+          <h3 class="section-heading" data-i18n="heading_press">Press Releases & Notices</h3>
+          <p style="color:var(--text-muted); margin-top:8px;" data-i18n="desc_press">
+            Official communiqués and organizational updates issued by the Board of Directors of YBSP Canada.
+          </p>
+
+          <div class="press-list">
+            <div class="press-item">
+              <span class="press-date">AUG 2026</span>
+              <a href="#" class="press-link" data-i18n="pr1_title">YBSP Canada Announces Annual Solidarity Gala Date in Gatineau</a>
+              <span class="press-tag">PDF</span>
+            </div>
+            <div class="press-item">
+              <span class="press-date">JUL 2026</span>
+              <a href="#" class="press-link" data-i18n="pr2_title">Memorandum of Cooperation Renewed with YBSP Burundi</a>
+              <span class="press-tag">PDF</span>
+            </div>
+            <div class="press-item">
+              <span class="press-date">APR 2026</span>
+              <a href="#" class="press-link" data-i18n="pr3_title">Release of 2025 Annual Impact & Financial Transparency Statement</a>
+              <span class="press-tag">PDF</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="media-kit-box">
+            <h4 data-i18n="media_title">Media Kit & Brand Assets</h4>
+            <p data-i18n="media_desc">
+              Download official brand assets, executive bios, high-resolution logos, and our institutional fact sheet for press coverage and community partnerships.
+            </p>
+            <div class="media-links">
+              <a href="#" class="media-download-btn">
+                <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                <span data-i18n="media_file1">YBSP Canada Fact Sheet & Overview (PDF)</span>
+              </a>
+              <a href="#" class="media-download-btn">
+                <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                <span data-i18n="media_file2">Official Brand Guidelines & Logo Pack (.ZIP)</span>
+              </a>
+              <a href="#" class="media-download-btn">
+                <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                <span data-i18n="media_file3">Board Biographies & Governance Charter</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / NEWSLETTER BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2 data-i18n="cta_title">Never Miss a Milestone</h2>
+      <p data-i18n="cta_desc">Subscribe to our quarterly community bulletin for verified impact reports, upcoming youth cohorts, and bilateral project stories.</p>
+      <form class="cta-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to YBSP Canada updates!');">
+        <input type="email" class="cta-input" placeholder="Enter your email address" required aria-label="Email address">
+        <button type="submit" class="btn-subscribe" data-i18n="cta_btn">Subscribe to News</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>YBSP Canada</h4>
+          <p class="footer-desc" data-i18n="footer_about_desc">
+            Youth Building in Synergy to end Poverty is a registered Canadian non-profit corporation dedicated to fostering youth-driven leadership, economic equity, and international solidarity.
+          </p>
+          <div class="legal-pill">
+            <strong>Fed. Corp #:</strong> 1154010-6<br>
+            <strong>Business #:</strong> 779321272RC0001<br>
+            <strong>Governing Act:</strong> Canada Not-for-profit Corporations Act
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_quick_title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
+            <li><a href="programs.html" data-i18n="nav_programs">Our Programs</a></li>
+            <li><a href="events.html" data-i18n="nav_calendar">Events Calendar</a></li>
+            <li><a href="news.html" data-i18n="nav_news">News & Articles</a></li>
+            <li><a href="donate.html" data-i18n="nav_donate">Donate</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_involved_title">Get Involved</h4>
+          <ul class="footer-links">
+            <li><a href="get-involved.html#volunteer" data-i18n="nav_volunteer">Volunteer Opportunities</a></li>
+            <li><a href="get-involved.html#membership" data-i18n="nav_membership">Become a Member</a></li>
+            <li><a href="get-involved.html#partner" data-i18n="nav_partner">Institutional Partnerships</a></li>
+            <li><a href="about.html#synergy" data-i18n="nav_burundi">Burundi Project Synergy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_contact_title">Contact & Office</h4>
+          <div class="contact-item">
+            <span>📍</span>
+            <span>291 Glynn Avenue<br>Ottawa, ON K1K 1R9, Canada</span>
+          </div>
+          <div class="contact-item">
+            <span>✉️</span>
+            <a href="mailto:info@ybspcanada.org">info@ybspcanada.org</a>
+          </div>
+          <div class="contact-item">
+            <span>🌐</span>
+            <span>Serving Gatineau & Ottawa Region</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
+          <a href="terms.html" data-i18n="footer_terms">Terms of Use</a>
+          <a href="about.html#corporate" data-i18n="footer_transparency">Governance & Filings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BILINGUAL SCRIPT -->
+  <script>
+    const translations = {
+      en: {
+        tagline: "Youth Building in Synergy to end Poverty",
+        nav_home: "Home",
+        nav_about: "About Us",
+        nav_mission: "Mission & Vision",
+        nav_governance: "Board & Governance",
+        nav_corporate: "Corporate Filings",
+        nav_burundi: "Synergy with YBSP Burundi",
+        nav_programs: "Programs",
+        nav_mentorship: "Youth Mentorship & Skills",
+        nav_entrepreneurship: "Social Entrepreneurship",
+        nav_awareness: "Community Health & Awareness",
+        nav_intl_projects: "Burundi Synergy Initiative",
+        nav_community: "Community & Events",
+        nav_calendar: "Events Calendar",
+        nav_past_events: "Past Activities",
+        nav_gallery: "Photo Gallery",
+        nav_news: "News & Impact",
+        nav_involved: "Get Involved",
+        nav_volunteer: "Volunteer",
+        nav_membership: "Become a Member",
+        nav_partner: "Partner With Us",
+        nav_donate: "Donate Now",
+        crumb_news: "News & Impact Stories",
+        hero_title: "News & Stories of Change",
+        hero_desc: "Explore recent milestones, program dispatches, community achievements, and stories of youth leadership from Canada to Burundi.",
+        tab_all: "All Dispatches",
+        tab_programs: "Youth Programs",
+        tab_synergy: "Burundi Synergy",
+        tab_governance: "Governance & Transparency",
+        tab_community: "Community Action",
+        feat_badge: "Spotlight Story",
+        feat_title: "Launching the 2026 Youth Mentorship & Career Readiness Cohort",
+        feat_desc: "Empowering 150 newcomer, diaspora, and equity-deserving youth across the National Capital Region with 1-on-1 executive mentorship, digital business competencies, and career placement pathways.",
+        btn_read_story: "Read Full Feature →",
+        tag_articles: "Recent Publications",
+        heading_articles: "Latest Articles & Impact Reports",
+        art1_tag: "Program Expansion",
+        art1_title: "Expanding the 2026 Youth Mentorship & Employment Cohort",
+        art1_desc: "How our structured pairing with public administration and IT specialists is unlocking concrete job opportunities and building self-confidence for immigrant youth in Ottawa and Gatineau.",
+        art2_tag: "International Synergy",
+        art2_title: "Spotlight on YBSP Burundi: Rural Youth Entrepreneurship Hub",
+        art2_desc: "A comprehensive dispatch examining how funds raised in Canada directly equipped rural Burundian youth with carpentry, tailoring, and agricultural toolkits to launch local micro-enterprises.",
+        art3_tag: "Governance",
+        art3_title: "YBSP Canada Files Annual Corporate Return with Corporations Canada",
+        art3_desc: "Affirming our unwavering dedication to federal statutory compliance, public disclosure, and fiduciary transparency under the Canada Not-for-profit Corporations Act (Corp # 1154010-6).",
+        art4_tag: "Community Ecology",
+        art4_title: "Youth Climate & Shoreline Clean-Up Mobilization in Ottawa-Gatineau",
+        art4_desc: "Over 80 young volunteers gathered along the Ottawa River watershed to remove 450 kg of waste, combining practical ecological stewardship with peer conversations on youth wellness.",
+        art5_tag: "Donor Transparency",
+        art5_title: "Financial Transparency & Donor Impact: Funding Tangible Outcomes",
+        art5_desc: "A transparent breakdown demonstrating how modest community gifts directly translate into school tuition for children, workshop venues, and startup seed grants for youth ventures.",
+        art6_tag: "Mental Health",
+        art6_title: "Breaking Cultural Stigmas Around Youth Mental Health in the Diaspora",
+        art6_desc: "Highlights from our bilingual community roundtable exploring emotional resilience, intergenerational dialogue, and culturally safe wellness resources for immigrant families.",
+        link_read_more: "Read Article →",
+        tag_media: "Official Statements",
+        heading_press: "Press Releases & Notices",
+        desc_press: "Official communiqués and organizational updates issued by the Board of Directors of YBSP Canada.",
+        pr1_title: "YBSP Canada Announces Annual Solidarity Gala Date in Gatineau",
+        pr2_title: "Memorandum of Cooperation Renewed with YBSP Burundi",
+        pr3_title: "Release of 2025 Annual Impact & Financial Transparency Statement",
+        media_title: "Media Kit & Brand Assets",
+        media_desc: "Download official brand assets, executive bios, high-resolution logos, and our institutional fact sheet for press coverage and community partnerships.",
+        media_file1: "YBSP Canada Fact Sheet & Overview (PDF)",
+        media_file2: "Official Brand Guidelines & Logo Pack (.ZIP)",
+        media_file3: "Board Biographies & Governance Charter",
+        cta_title: "Never Miss a Milestone",
+        cta_desc: "Subscribe to our quarterly community bulletin for verified impact reports, upcoming youth cohorts, and bilateral project stories.",
+        cta_btn: "Subscribe to News",
+        footer_about_desc: "Youth Building in Synergy to end Poverty is a registered Canadian non-profit corporation dedicated to fostering youth-driven leadership, economic equity, and international solidarity.",
+        footer_quick_title: "Quick Links",
+        footer_involved_title: "Get Involved",
+        footer_contact_title: "Contact & Office",
+        footer_privacy: "Privacy Policy",
+        footer_terms: "Terms of Use",
+        footer_transparency: "Governance & Filings"
+      },
+      fr: {
+        tagline: "Bâtir en synergie pour mettre fin à la pauvreté",
+        nav_home: "Accueil",
+        nav_about: "À propos",
+        nav_mission: "Mission & Vision",
+        nav_governance: "Conseil d'administration",
+        nav_corporate: "Dépôts corporatifs",
+        nav_burundi: "Synergie avec YBSP Burundi",
+        nav_programs: "Programmes",
+        nav_mentorship: "Mentorat & Compétences jeunesse",
+        nav_entrepreneurship: "Entrepreneuriat social",
+        nav_awareness: "Sensibilisation & Santé communautaire",
+        nav_intl_projects: "Initiative Synergie Burundi",
+        nav_community: "Communauté & Événements",
+        nav_calendar: "Calendrier des événements",
+        nav_past_events: "Activités passées",
+        nav_gallery: "Galerie photos",
+        nav_news: "Actualités & Impact",
+        nav_involved: "S'impliquer",
+        nav_volunteer: "Bénévolat",
+        nav_membership: "Devenir membre",
+        nav_partner: "Partenariats",
+        nav_donate: "Faire un don",
+        crumb_news: "Actualités & Récits d'impact",
+        hero_title: "Actualités & Récits de transformation",
+        hero_desc: "Découvrez les étapes franchies, les dépêches de projets, les réussites communautaires et les témoignages de leadership jeunesse au Canada et au Burundi.",
+        tab_all: "Toutes les publications",
+        tab_programs: "Programmes jeunesse",
+        tab_synergy: "Synergie Burundi",
+        tab_governance: "Gouvernance & Transparence",
+        tab_community: "Action communautaire",
+        feat_badge: "À la une",
+        feat_title: "Lancement de la cohorte 2026 de mentorat et de préparation à l'emploi",
+        feat_desc: "Accompagnement de 150 jeunes de la diaspora, nouveaux arrivants et groupes méritant l'équité dans la RCN grâce au mentorat individuel et à la formation pratique.",
+        btn_read_story: "Lire l'article complet →",
+        tag_articles: "Publications récentes",
+        heading_articles: "Derniers articles & bilans d'impact",
+        art1_tag: "Expansion de programme",
+        art1_title: "Expansion de la cohorte 2026 de mentorat jeunesse et d'emploi",
+        art1_desc: "Comment nos jumelages avec des experts de la fonction publique et du secteur privé ouvrent des perspectives concrètes pour les jeunes à Ottawa et Gatineau.",
+        art2_tag: "Synergie internationale",
+        art2_title: "Coup de projecteur sur YBSP Burundi : Hub d'entrepreneuriat rural",
+        art2_desc: "Un bilan détaillé montrant comment les fonds canadiens ont permis d'équiper des jeunes burundais en kits de menuiserie, couture et agriculture durable.",
+        art3_tag: "Gouvernance",
+        art3_title: "YBSP Canada dépose son rapport annuel auprès de Corporations Canada",
+        art3_desc: "Réaffirmation de notre rigueur statutaire, de la conformité légale et de la transparence fiduciaire sous la Loi BNL (Organisation n° 1154010-6).",
+        art4_tag: "Écologie citoyenne",
+        art4_title: "Mobilisation climat et nettoyage citoyen des berges à Ottawa-Gatineau",
+        art4_desc: "Plus de 80 jeunes bénévoles mobilisés le long du bassin de la rivière des Outaouais pour retirer 450 kg de déchets tout en dialoguant sur le bien-être des jeunes.",
+        art5_tag: "Transparence donateurs",
+        art5_title: "Transparence financière & Impact des dons : Des résultats tangibles",
+        art5_desc: "Un bilan transparent démontrant comment chaque don citoyen finance directement la scolarisation d'enfants, des ateliers et des micro-bourses pour jeunes créateurs.",
+        art6_tag: "Santé mentale",
+        art6_title: "Déconstruire les tabous sur la santé mentale des jeunes dans la diaspora",
+        art6_desc: "Points marquants de notre table ronde bilingue sur la résilience émotionnelle, le dialogue intergénérationnel et l'accès à des ressources adaptées.",
+        link_read_more: "Lire l'article →",
+        tag_media: "Déclarations officielles",
+        heading_press: "Communiqués de presse & Avis",
+        desc_press: "Avis officiels et mises à jour organisationnelles publiés par le conseil d'administration de YBSP Canada.",
+        pr1_title: "YBSP Canada annonce la date de son Gala annuel de solidarité à Gatineau",
+        pr2_title: "Renouvellement du protocole de coopération avec YBSP Burundi",
+        pr3_title: "Publication du rapport d'impact et de transparence financière 2025",
+        media_title: "Trousse média & Identité visuelle",
+        media_desc: "Téléchargez nos éléments graphiques officiels, biographies des administrateurs et fiche institutionnelle pour vos besoins de presse et de partenariats.",
+        media_file1: "Fiche d'information institutionnelle YBSP Canada (PDF)",
+        media_file2: "Guide d'identité visuelle & Logos haute résolution (.ZIP)",
+        media_file3: "Biographies des administrateurs & Charte de gouvernance",
+        cta_title: "Ne manquez aucune étape",
+        cta_desc: "Abonnez-vous à notre bulletin trimestriel pour recevoir nos bilans d'impact vérifiés, les dates des cohortes et les actualités de nos projets bilatéraux.",
+        cta_btn: "S'abonner aux actualités",
+        footer_about_desc: "Youth Building in Synergy to end Poverty est une organisation canadienne à but non lucratif enregistrée, dédiée au leadership des jeunes et à la solidarité internationale.",
+        footer_quick_title: "Liens rapides",
+        footer_involved_title: "S'impliquer",
+        footer_contact_title: "Contact & Bureau",
+        footer_privacy: "Politique de confidentialité",
+        footer_terms: "Conditions d'utilisation",
+        footer_transparency: "Gouvernance & Transparence"
+      }
+    };
+
+    function setLanguage(lang) {
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-lang-fr').classList.toggle('active', lang === 'fr');
+      document.documentElement.lang = lang;
+    }
+  </script>
+</body>
+</html>
