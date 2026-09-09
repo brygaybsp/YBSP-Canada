@@ -31,6 +31,10 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       color: var(--text-main);
@@ -391,7 +395,11 @@
       width: 100%;
       object-fit: cover;
     }
-    .article-body {
+    .article-html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+    body {
       padding: 26px;
       display: flex;
       flex-direction: column;
@@ -738,18 +746,7 @@
     </div>
   </section>
 
-  <!-- CATEGORY FILTER BAR -->
-  <div class="filter-tabs-bar">
-    <div class="container">
-      <div class="filter-tabs">
-        <button class="filter-btn active" data-i18n="tab_all">All Dispatches</button>
-        <button class="filter-btn" data-i18n="tab_programs">Youth Programs</button>
-        <button class="filter-btn" data-i18n="tab_synergy">Burundi Synergy</button>
-        <button class="filter-btn" data-i18n="tab_governance">Governance & Transparency</button>
-        <button class="filter-btn" data-i18n="tab_community">Community Action</button>
-      </div>
-    </div>
-  </div>
+
 
   <!-- FEATURED STORY BANNER -->
   <section class="featured-section">
@@ -762,7 +759,7 @@
           <p class="featured-lead" data-i18n="feat_desc">
             Empowering 150 newcomer, diaspora, and equity-deserving youth across the National Capital Region with 1-on-1 executive mentorship, digital business competencies, and career placement pathways.
           </p>
-          <a href="#article-1" class="btn-read-featured" data-i18n="btn_read_story">Read Full Feature →</a>
+          <a href="news-single.html?id=1" class="btn-read-featured" data-i18n="btn_read_story">Read Full Feature →</a>
         </div>
         <div class="featured-img-wrap">
           <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80" alt="Mentorship Launch" class="featured-img">
