@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/ybsp_canada_emblem.png">
   <title>About Us & Governance | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
   <meta name="description" content="Learn about YBSP Canada's mission, governance, statutory purpose, Board of Directors, and grassroots synergy with YBSP Burundi.">
   <style>
@@ -558,6 +559,44 @@
       .board-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
     }
+  
+    .team-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 16px;
+      display: block;
+      box-shadow: var(--shadow-sm);
+      border: 3px solid #ffffff;
+      outline: 2px solid var(--secondary);
+    }
+    .placeholder-avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: var(--bg-slate);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 16px;
+      border: 2px dashed #cbd5e1;
+    }
+    .badge-status {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-bottom: 12px;
+    }
+    .badge-active { background: #dcfce7; color: #166534; }
+    .badge-recruiting { background: #fef3c7; color: #92400e; }
+
   </style>
 </head>
 <body>
@@ -598,7 +637,7 @@
   <header class="main-header">
     <div class="container nav-inner">
       <a href="index.html" class="brand-logo">
-        <div class="logo-symbol">Y</div>
+        <img src="images/ybsp_canada_emblem.png" alt="YBSP Canada Logo" class="brand-logo-img" style="width:46px; height:46px; object-fit:contain;">
         <div class="logo-text">
           <h1>YBSP CANADA</h1>
           <span data-i18n="tagline">Youth Building in Synergy to end Poverty</span>
@@ -793,48 +832,137 @@
     </div>
   </section>
 
-  <!-- SECTION 4: BOARD OF DIRECTORS -->
+  <!-- SECTION 4: ORGANIZATIONAL LEADERSHIP (DUAL-TIER STRUCTURE) -->
   <section class="content-section" id="governance">
     <div class="container">
+      
+      <!-- TIER 1: EXECUTIVE MANAGEMENT TEAM -->
       <div class="section-title-wrap" style="text-align:center;">
-        <span class="section-tag" data-i18n="tag_leadership">Governance & Oversight</span>
+        <span class="section-tag" data-i18n="tag_management">Operational Leadership</span>
+        <h3 class="section-heading" data-i18n="heading_management">Executive Management Team</h3>
+        <p style="max-width:720px; margin:10px auto 0; color:var(--text-muted);" data-i18n="desc_management">
+          Responsible for day-to-day organizational operations, cohort delivery, partnership development, and resource management across Canada.
+        </p>
+      </div>
+
+      <div class="board-grid" style="margin-bottom:70px;">
+        <!-- 1. CEO / PRESIDENT -->
+        <div class="board-card" style="border-top:4px solid var(--secondary);">
+          <img src="images/leis-bruel-haragirimana.jpg" alt="Leis Bruel Haragirimana" class="team-photo" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Leis+Haragirimana&background=0d2b45&color=fff&size=200';">
+          <span class="badge-status badge-active" data-i18n="badge_leadership">Executive Leadership</span>
+          <h4 class="board-name">Leis Bruel Haragirimana</h4>
+          <div class="board-role" data-i18n="role_ceo">President & Chief Executive Officer (CEO)</div>
+          <div class="board-location">📍 Canada</div>
+          <p class="board-bio" data-i18n="bio_ceo">
+            Guides overarching organizational vision, enterprise resource management systems, and bilateral cooperation with YBSP Burundi, driving measurable youth empowerment and institutional accountability.
+          </p>
+        </div>
+
+        <!-- 2. CFO / FINANCE & COMPLIANCE -->
+        <div class="board-card" style="border-top:4px solid var(--primary);">
+          <div class="placeholder-avatar">💼</div>
+          <span class="badge-status badge-recruiting" data-i18n="badge_recruiting">Recruitment in Progress</span>
+          <h4 class="board-name" data-i18n="role_cfo_name">Director of Finance & Administration</h4>
+          <div class="board-role" data-i18n="role_cfo">Chief Financial Officer (CFO)</div>
+          <div class="board-location">📍 Canada</div>
+          <p class="board-bio" data-i18n="bio_cfo">
+            Responsible for fiduciary stewardship, annual financial audits, grant budget reconciliation, and non-profit statutory accounting standards.
+          </p>
+        </div>
+
+        <!-- 3. DIRECTOR OF PROGRAMS & YOUTH MENTORSHIP -->
+        <div class="board-card" style="border-top:4px solid var(--secondary-dark);">
+          <div class="placeholder-avatar">🎓</div>
+          <span class="badge-status badge-recruiting" data-i18n="badge_recruiting">Recruitment in Progress</span>
+          <h4 class="board-name" data-i18n="role_prog_name">Director of Programs & Youth Mentorship</h4>
+          <div class="board-role" data-i18n="role_prog">Head of Program Delivery</div>
+          <div class="board-location">📍 Canada</div>
+          <p class="board-bio" data-i18n="bio_prog">
+            Oversees 12-week mentorship cohorts, curriculum development in digital and AI skills, participant intake, and pre/post employment outcome metrics.
+          </p>
+        </div>
+
+        <!-- 4. DIRECTOR OF PARTNERSHIPS & RESOURCE MOBILIZATION -->
+        <div class="board-card" style="border-top:4px solid var(--accent);">
+          <div class="placeholder-avatar">🤝</div>
+          <span class="badge-status badge-recruiting" data-i18n="badge_recruiting">Recruitment in Progress</span>
+          <h4 class="board-name" data-i18n="role_dev_name">Director of Partnerships & Resource Mobilization</h4>
+          <div class="board-role" data-i18n="role_dev">Head of Development & Giving</div>
+          <div class="board-location">📍 Canada</div>
+          <p class="board-bio" data-i18n="bio_dev">
+            Leads public grant submissions (federal, provincial), corporate sponsorship alliances with Canadian financial institutions, and donor stewardship.
+          </p>
+        </div>
+
+        <!-- 5. COMMUNICATIONS & DIGITAL MEDIA LEAD -->
+        <div class="board-card" style="border-top:4px solid #6366f1;">
+          <div class="placeholder-avatar">📱</div>
+          <span class="badge-status badge-recruiting" data-i18n="badge_recruiting">Recruitment in Progress</span>
+          <h4 class="board-name" data-i18n="role_comm_name">Communications & Digital Media Lead</h4>
+          <div class="board-role" data-i18n="role_comm">Communications & Public Relations</div>
+          <div class="board-location">📍 Canada</div>
+          <p class="board-bio" data-i18n="bio_comm">
+            Directs official bilingual communications, digital media storytelling, social media channels, press outreach, and quarterly community bulletins.
+          </p>
+        </div>
+
+        <!-- 6. BILATERAL COOPERATION & BURUNDI PROJECTS COORDINATOR -->
+        <div class="board-card" style="border-top:4px solid #f43f5e;">
+          <div class="placeholder-avatar">🌐</div>
+          <span class="badge-status badge-recruiting" data-i18n="badge_recruiting">Recruitment in Progress</span>
+          <h4 class="board-name" data-i18n="role_burundi_name">Bilateral Projects Coordinator</h4>
+          <div class="board-role" data-i18n="role_burundi_coord">Burundi Synergy Liaison</div>
+          <div class="board-location">📍 Canada & Burundi</div>
+          <p class="board-bio" data-i18n="bio_burundi_coord">
+            Coordinates day-to-day liaison with YBSP Burundi project leads, tracking verified delivery logs for vocational toolkits and student education sponsorships.
+          </p>
+        </div>
+      </div>
+
+      <!-- TIER 2: BOARD OF DIRECTORS (FIDUCIARY GOVERNANCE) -->
+      <div class="section-title-wrap" style="text-align:center; padding-top:20px; border-top:1px solid var(--border-color);">
+        <span class="section-tag" data-i18n="tag_governance">Fiduciary Governance</span>
         <h3 class="section-heading" data-i18n="heading_board">Board of Directors</h3>
-        <p style="max-width:700px; margin:12px auto 0; color:var(--text-muted);" data-i18n="desc_board">
-          In accordance with our Articles of Incorporation, YBSP Canada is governed by a voluntary, non-remunerated Board of Directors ensuring strict fiduciary oversight and mission alignment.
+        <p style="max-width:720px; margin:10px auto 0; color:var(--text-muted);" data-i18n="desc_board">
+          In strict accordance with Section 8 of our federal Articles of Incorporation, YBSP Canada is governed by a voluntary, non-remunerated Board of Directors providing strategic oversight, audit controls, and mission adherence under the NFP Act.
         </p>
       </div>
 
       <div class="board-grid">
+        <!-- DIRECTOR 1 -->
         <div class="board-card">
           <div class="board-avatar">LH</div>
           <h4 class="board-name">Leis Bruel Haragirimana</h4>
-          <div class="board-role" data-i18n="role_founder">Director & Co-Founder</div>
-          <div class="board-location">📍 Ottawa, Ontario</div>
-          <p class="board-bio" data-i18n="bio_leis">
-            Brings extensive expertise in public administration, enterprise resource management systems, and non-profit corporate governance, championing youth initiatives and institutional accountability.
+          <div class="board-role" data-i18n="role_board_chair">Director & Co-Founder</div>
+          <div class="board-location">📍 Canada</div>
+          <p class="board-bio" data-i18n="bio_board_leis">
+            Brings extensive experience in public sector business systems and non-profit administration, ensuring regulatory compliance and mission fidelity under federal law.
           </p>
         </div>
 
+        <!-- DIRECTOR 2 -->
         <div class="board-card">
           <div class="board-avatar">YD</div>
           <h4 class="board-name">Yves Dushimimana</h4>
-          <div class="board-role" data-i18n="role_director">Director</div>
-          <div class="board-location">📍 Gatineau, Québec</div>
-          <p class="board-bio" data-i18n="bio_yves">
-            Dedicated community organizer leading outreach strategies, regional youth integration, and grassroots engagement across the Outaouais and National Capital Region.
+          <div class="board-role" data-i18n="role_board_member">Director & Community Liaison</div>
+          <div class="board-location">📍 Canada</div>
+          <p class="board-bio" data-i18n="bio_board_yves">
+            Leads community outreach strategies, grassroots volunteer mobilization, and stakeholder engagement across Canadian youth communities.
           </p>
         </div>
 
+        <!-- DIRECTOR 3: TRÉSOR NISHIMWE -->
         <div class="board-card">
-          <div class="board-avatar">ND</div>
-          <h4 class="board-name">Nader Diab</h4>
-          <div class="board-role" data-i18n="role_director">Director</div>
-          <div class="board-location">📍 Montréal, Québec</div>
-          <p class="board-bio" data-i18n="bio_nader">
-            Focuses on operational logistics, strategic partnerships, and financial stewardship to ensure program resources directly benefit frontline youth communities.
+          <div class="board-avatar">TN</div>
+          <h4 class="board-name">Trésor Nishimwe</h4>
+          <div class="board-role" data-i18n="role_board_tresor">Director</div>
+          <div class="board-location">📍 Canada</div>
+          <p class="board-bio" data-i18n="bio_board_tresor">
+            Brings strategic expertise in youth development, community engagement, and non-profit administration, supporting governance, fiduciary oversight, and programmatic alignment across Canada.
           </p>
         </div>
       </div>
+
     </div>
   </section>
 
