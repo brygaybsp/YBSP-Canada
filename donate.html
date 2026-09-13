@@ -195,25 +195,7 @@
     .dropdown-link { display: block; padding: 9px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500; }
     .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 22px; }
 
-    .btn-donate-nav {
-      background: var(--accent);
-      color: #ffffff !important;
-      font-weight: 700 !important;
-      padding: 8px 18px !important;
-      border-radius: 50px !important;
-      margin-left: 6px;
-      white-space: nowrap !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      flex-shrink: 0 !important;
-      text-decoration: none !important;
-    }
-    .btn-donate-nav:hover {
-      background: var(--accent-hover) !important;
-      transform: translateY(-1px);
-    }
-    .btn-donate-nav:hover { background: var(--accent-hover) !important; transform: translateY(-1px); }
+    
 
     /* MOBILE NAV TOGGLE */
     .mobile-toggle {
@@ -574,7 +556,29 @@
       .donate-layout { grid-template-columns: 1fr; }
       .tier-cards-grid { grid-template-columns: 1fr; }
     }
-  </style>
+  
+    .btn-donate-nav {
+      background: var(--accent) !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      padding: 8px 18px !important;
+      border-radius: 50px !important;
+      font-size: 0.9rem !important;
+      margin-left: 8px !important;
+      white-space: nowrap !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+      min-width: max-content !important;
+      text-decoration: none !important;
+    }
+    .btn-donate-nav:hover {
+      background: var(--accent-hover) !important;
+      transform: translateY(-1px);
+    }
+
+</style>
 </head>
 <body>
 
@@ -795,12 +799,24 @@
             </p>
           </div>
 
-          <!-- THIRD PARTY PLATFORMS -->
-          <div style="margin-top:24px; padding-top:18px; border-top:1px solid var(--border-color);">
-            <strong style="display:block; font-size:0.86rem; color:var(--text-muted); margin-bottom:10px;" data-i18n="lbl_other_ways">Online Giving Platforms:</strong>
-            <div style="display:flex; gap:12px; flex-wrap:wrap;">
-              <a href="https://www.canadahelps.org" target="_blank" rel="noopener noreferrer" class="btn-outline" style="font-size:0.85rem;" data-i18n="btn_canadahelps">CanadaHelps Partner Portal ↗</a>
-              <a href="https://www.paypal.com" target="_blank" rel="noopener noreferrer" class="btn-outline" style="font-size:0.85rem;" data-i18n="btn_paypal">PayPal Giving Fund ↗</a>
+                    <!-- SECURE ONLINE GIVING PLATFORM (ZEFFY) -->
+          <div style="margin-top:28px; padding-top:22px; border-top:1px solid var(--border-color);">
+            <strong style="display:block; font-size:0.92rem; color:var(--primary); margin-bottom:12px;" data-i18n="lbl_other_ways">Online Giving Platform:</strong>
+            
+            <div style="display:flex; flex-direction:column; gap:14px;">
+              <!-- 1. ZEFFY (0% FEE CANADIAN GIVING PLATFORM) -->
+              <a href="https://www.zeffy.com/en-CA/donation-form/donate-to-change-lives-23667" id="link-zeffy" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:space-between; background:#ffffff; border:2px solid var(--secondary); border-radius:var(--radius-md); padding:16px 20px; text-decoration:none; transition:var(--transition); box-shadow:var(--shadow-sm);" onmouseover="this.style.background='var(--bg-slate)'" onmouseout="this.style.background='#ffffff'">
+                <div style="display:flex; align-items:center; gap:14px;">
+                  <span style="font-size:1.6rem;">💳</span>
+                  <div>
+                    <div style="font-weight:800; color:var(--primary); font-size:0.98rem;" data-i18n="title_zeffy">Donate Online via Zeffy (Credit Card / Apple Pay)</div>
+                    <div style="font-size:0.82rem; color:var(--secondary-dark); font-weight:600;" data-i18n="sub_zeffy">100% Free for Canadian Non-Profits &bull; 0% Transaction Deductions</div>
+                  </div>
+                </div>
+                <span style="background:var(--secondary); color:#ffffff; font-weight:700; font-size:0.84rem; padding:7px 16px; border-radius:50px;" data-i18n="btn_give_zeffy">Give Online ↗</span>
+              </a>
+
+              
             </div>
           </div>
         </div>
@@ -938,6 +954,10 @@
         nav_careers: "Careers",
         nav_contact: "Contact Us",
         nav_donate: "Donate",
+        lbl_other_ways: "Online Giving Platform:",
+        title_zeffy: "Donate Online via Zeffy (Credit Card / Apple Pay)",
+        sub_zeffy: "100% Free for Canadian Non-Profits • 0% Transaction Deductions",
+        btn_give_zeffy: "Give Online ↗",
         crumb_home: "Home",
         crumb_donate: "Support Our Mission",
         hero_donate_title: "Transparent Giving. Direct Impact.",
@@ -955,9 +975,7 @@
         heading_interac: "Interac e-Transfer (Direct Auto-Deposit)",
         desc_interac: "Send your contribution with zero processing deductions directly from your Canadian financial institution:",
         note_interac: "Auto-deposit is enabled. Please include your full name and email in the transfer notes for our financial audit logs.",
-        lbl_other_ways: "Online Giving Platforms:",
-        btn_canadahelps: "CanadaHelps Partner Portal ↗",
-        btn_paypal: "PayPal Giving Fund ↗",
+        lbl_other_ways: "Online Giving Platform:",
         tag_stewardship: "Fiduciary Accountability",
         heading_stewardship: "Our Stewardship Principles",
         desc_stewardship: "As a non-profit corporation governed by Section 8 of our Articles of Incorporation, our leadership and board serve without remuneration. Contributions are directed into verifiable youth empowerment and community development.",
@@ -996,7 +1014,7 @@
         nav_membership: "Devenir membre",
         nav_working_groups: "Comités de travail",
         nav_partnerships: "Partenariats institutionnels",
-        nav_events: "Communauté & Événements",
+        nav_events: "Événements",
         nav_calendar: "Calendrier des événements",
         nav_host: "Organiser ou proposer un événement",
         nav_gala: "Gala annuel de solidarité",
@@ -1004,8 +1022,12 @@
         nav_news: "Nouvelles",
         nav_careers: "Carrières",
         nav_careers: "Carrières",
-        nav_contact: "Nous joindre",
+        nav_contact: "Contact",
         nav_donate: "Faire un don",
+        lbl_other_ways: "Plateforme de don en ligne sécurisée :",
+        title_zeffy: "Don en ligne sécurisé via Zeffy (Carte de crédit / Apple Pay)",
+        sub_zeffy: "100% gratuit pour les OBNL canadiennes • 0% de frais de transaction",
+        btn_give_zeffy: "Donner en ligne ↗",
         crumb_home: "Accueil",
         crumb_donate: "Soutenir notre mission",
         hero_donate_title: "Dons transparents. Impact direct.",
@@ -1023,9 +1045,7 @@
         heading_interac: "Virement Interac (Dépôt automatique direct)",
         desc_interac: "Envoyez votre don directement sans aucun frais de transaction depuis votre institution financière canadienne :",
         note_interac: "Le dépôt automatique est activé. Veuillez indiquer votre nom et courriel dans les notes de virement pour notre suivi financier.",
-        lbl_other_ways: "Plateformes de dons en ligne :",
-        btn_canadahelps: "Portail CanaDon ↗",
-        btn_paypal: "Fonds de bienfaisance PayPal ↗",
+        lbl_other_ways: "Plateforme de don en ligne :",
         tag_stewardship: "Intégrité fiduciaire",
         heading_stewardship: "Nos principes d'intendance",
         desc_stewardship: "Conformément à l'article 8 de nos statuts, nos administrateurs et notre direction générale exercent à titre bénévole. L'intégralité des contributions est affectée aux programmes jeunesse vérifiables.",
@@ -1056,6 +1076,14 @@
       document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-lang-fr').classList.toggle('active', lang === 'fr');
       document.documentElement.lang = lang;
+
+      const zeffyLink = document.getElementById('link-zeffy');
+      if (zeffyLink) {
+        zeffyLink.href = lang === 'fr' 
+          ? 'https://www.zeffy.com/fr-CA/donation-form/donate-to-change-lives-23667'
+          : 'https://www.zeffy.com/en-CA/donation-form/donate-to-change-lives-23667';
+      }
+
     }
 
     function selectTier(card, amount) {
