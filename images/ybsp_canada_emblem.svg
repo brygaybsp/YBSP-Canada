@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <radialGradient id="starburstGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="20%" stop-color="#60a5fa" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.5"/>
+      <stop offset="80%" stop-color="#c084fc" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="monogramGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071927"/>
+      <stop offset="40%" stop-color="#0d2b45"/>
+      <stop offset="70%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#071927"/>
+    </linearGradient>
+    <linearGradient id="mapleRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" fill="#ffffff"/>
+
+  <!-- CENTRAL SYNERGY STARBURST -->
+  <circle cx="400" cy="400" r="280" fill="url(#starburstGlow)"/>
+
+  <!-- LIGHT RAYS -->
+  <g opacity="0.6" stroke="#93c5fd" stroke-width="3">
+    <line x1="150" y1="400" x2="650" y2="400" stroke-width="6"/>
+    <line x1="400" y1="150" x2="400" y2="650" stroke-width="6"/>
+    <line x1="220" y1="220" x2="580" y2="580" stroke-width="3" stroke="#c084fc"/>
+    <line x1="220" y1="580" x2="580" y2="220" stroke-width="3" stroke="#c084fc"/>
+  </g>
+
+  <!-- YBSP MONOGRAM -->
+  <g fill="none" stroke="url(#monogramGrad)" stroke-width="50" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Y -->
+    <path d="M 190 190 L 310 360 L 310 500"/>
+    <path d="M 370 270 L 310 360"/>
+    <!-- B -->
+    <path d="M 410 200 L 410 470"/>
+    <path d="M 410 215 C 560 200 580 330 435 345 C 590 355 570 480 410 470"/>
+    <!-- S -->
+    <path d="M 390 460 C 260 450 220 550 280 610 C 350 670 400 680 390 730 C 380 770 310 780 230 750"/>
+    <!-- P -->
+    <path d="M 475 465 L 475 730"/>
+    <path d="M 475 480 C 625 470 635 600 475 605"/>
+  </g>
+
+  <!-- CANADIAN MAPLE LEAF (Replacing dot of Y, symbolizing Canadian youth rising) -->
+  <g transform="translate(378, 185) scale(1.1)" filter="url(#softGlow)">
+    <path d="M 0,-34 C 1.5,-30 3.5,-22 5,-20 C 8,-23 12,-26 16,-27 C 15,-24 14,-19 13,-15 C 18,-15 23,-14 28,-13 C 26,-10 22,-7 18,-4 C 21,-2 27,0 31,3 C 27,6 20,7 15,7 C 17,10 20,15 22,20 C 17,17 12,13 7,9 C 7,14 6,20 5,27 L 2,27 L 2,39 L -2,39 L -2,27 L -5,27 C -6,20 -7,14 -7,9 C -12,13 -17,17 -22,20 C -20,15 -17,10 -15,7 C -20,7 -27,6 -31,3 C -27,0 -21,-2 -18,-4 C -22,-7 -26,-10 -28,-13 C -23,-14 -18,-15 -13,-15 C -14,-19 -15,-24 -16,-27 C -12,-26 -8,-23 -5,-20 C -3.5,-22 -1.5,-30 0,-34 Z" fill="url(#mapleRed)"/>
+  </g>
+
+  <!-- INTENSE CORE GLOW -->
+  <circle cx="400" cy="400" r="16" fill="#ffffff" filter="url(#softGlow)"/>
+
+  <!-- WORDMARK: CANADA -->
+  <text x="400" y="780" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="34" font-weight="900" letter-spacing="8" fill="#D8292F">CANADA</text>
+</svg>

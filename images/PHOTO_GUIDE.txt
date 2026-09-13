@@ -1,0 +1,30 @@
+========================================================================
+YBSP CANADA WEBSITE — PHOTO REPLACEMENT GUIDE
+========================================================================
+
+How to replace ANY photo on the website with your own real pictures:
+
+Every photo on the website is configured to look in this 'images/' folder
+first. When you drop a real photo here with the matching filename, it will
+automatically replace the placeholder across your live website!
+
+------------------------------------------------------------------------
+PHOTO FILE NAME              PAGE & SECTION WHERE IT APPEARS
+------------------------------------------------------------------------
+leis-bruel-haragirimana.jpg  About page & Home page (Founder & Executive Director portrait)
+burundi-sisterhood.jpg       About page (International Sisterhood with YBSP Burundi)
+why-ybsp-canada.jpg          Home page ("Why YBSP in Canada?" photo)
+mentorship.jpg               Programs page (Youth Career Mentorship section)
+entrepreneurship.jpg         Programs page (Social Entrepreneurship Lab section)
+health-ecology.jpg           Programs page (Health & Urban Ecology section)
+burundi-initiative.jpg       Programs page (Burundi Global Synergy section)
+gala.jpg                     Events page (Annual Solidarity Gala banner)
+
+ALBUM PHOTOS (in images/albums/):
+- images/albums/sunday-meal/          (Drop photos from weekly Sunday Meals here)
+- images/albums/sorora-ikaye/         (Drop photos from #SororaIkaye school drives here)
+- images/albums/murabire-kazoza/      (Drop photos of artisan toolkits here)
+- images/albums/canadian-mentorship/  (Drop photos of Canadian youth workshops here)
+- images/albums/solidarity-gala/      (Drop photos from annual gala gatherings here)
+
+========================================================================
