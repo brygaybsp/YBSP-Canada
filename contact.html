@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">YBSP Canada | Youth Building in Synergy to end Poverty</title>
-  <meta name="description" content="Youth Building in Synergy to end Poverty (YBSP Canada) empowers youth through skills, mentorship, and social entrepreneurship while cultivating authentic international solidarity with Burundi.">
+  <title id="page-title">Contact Us | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
+  <meta name="description" content="Contact the YBSP Canada Secretariat for general inquiries, youth programs, partnership opportunities, or media requests.">
   <link rel="icon" type="image/png" href="images/ybsp_canada_emblem.png">
   <style>
 
@@ -523,151 +523,38 @@
       .checkbox-group { grid-template-columns: 1fr; }
     }
 
-
-    /* HOMEPAGE SPECIFIC STYLES */
-    .hero-home {
-      background: linear-gradient(rgba(11, 28, 61, 0.90), rgba(6, 17, 36, 0.94)), url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-      color: #ffffff;
-      padding: 95px 0 105px;
-      text-align: center;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
-      color: #f1f5f9;
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 6px 16px;
-      border-radius: 50px;
-      margin-bottom: 20px;
-    }
-    .hero-home .page-title {
-      font-size: clamp(2.4rem, 4.5vw, 3.4rem);
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 18px;
-      letter-spacing: -0.02em;
-      max-width: 960px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .hero-home .page-title span { color: var(--accent); }
-    .hero-home p {
-      font-size: 1.18rem;
-      color: #e2e8f0;
-      margin-bottom: 34px;
-      line-height: 1.65;
-      max-width: 780px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .hero-cta-group { display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; }
-
-    /* BRIDGE 2-CARD SECTION */
-    .bridge-grid {
+    .contact-wrapper {
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 24px;
-      align-items: center;
-      margin-top: 36px;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      margin-top: 30px;
     }
-    .bridge-card {
-      background: #ffffff;
+    .contact-info-card {
+      background: var(--bg-slate);
       border-radius: var(--radius-lg);
       padding: 36px 30px;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border-color);
+      border-left: 5px solid var(--secondary);
     }
-    .bridge-flag { font-size: 2.2rem; margin-bottom: 12px; }
-    .bridge-card h3 { font-size: 1.35rem; color: var(--primary); margin-bottom: 10px; }
-    .bridge-card p { font-size: 0.94rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.6; }
-    .bridge-card ul li { display: flex; align-items: flex-start; gap: 8px; font-size: 0.88rem; margin-bottom: 8px; }
-    .bridge-card ul li span { color: var(--secondary-dark); font-weight: bold; }
-    .bridge-divider {
-      display: flex; flex-direction: column; align-items: center; gap: 6px;
-      color: var(--accent); font-weight: 800; font-size: 1.8rem;
+    .contact-item-box {
+      margin-bottom: 24px;
     }
-    .bridge-divider span { font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.08em; }
-
-    /* WHY CANADA SECTION */
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    /* ACTION CARDS */
-    .action-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
-      margin-top: 36px;
-    }
-    .action-box-card {
-      background: #ffffff;
-      border-radius: var(--radius-md);
-      padding: 32px 26px;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border-color);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border-top: 4px solid var(--secondary);
-    }
-    .action-box-card:nth-child(2) { border-top-color: var(--primary); }
-    .action-box-card:nth-child(3) { border-top-color: var(--accent); }
-
-    @media (max-width: 1024px) {
-      .bridge-grid { grid-template-columns: 1fr; }
-      .bridge-divider { flex-direction: row; justify-content: center; }
-      .why-grid { grid-template-columns: 1fr; }
-      .action-grid-3 { grid-template-columns: 1fr; }
-    }
-  
-    .country-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 30px;
-      border-radius: 6px;
-      font-weight: 800;
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
-      margin-bottom: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-    .country-pill.ca { background: #fee2e2; color: #b91c1c; border: 1.5px solid #f87171; }
-    .country-pill.bi { background: #dcfce7; color: #15803d; border: 1.5px solid #4ade80; }
-    .bridge-features {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin: 18px 0;
-      text-align: left;
-    }
-    .bridge-feature-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.92rem;
-      line-height: 1.55;
-    }
-    .bf-check {
+    .contact-item-box strong {
+      display: block;
+      font-size: 0.85rem;
       color: var(--secondary-dark);
-      font-weight: 800;
-      font-size: 0.95rem;
-      flex-shrink: 0;
-      margin-top: 1px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
     }
-    .bf-text { color: var(--text-main); }
-    .bf-text strong { color: var(--primary); font-weight: 700; }
-
-</style>
+    .contact-item-box p, .contact-item-box a {
+      font-size: 1.05rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    @media (max-width: 900px) {
+      .contact-wrapper { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -749,7 +636,7 @@
       </a>
 
             <nav class="nav-menu" aria-label="Primary Navigation">
-        <div class="nav-item"><a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a></div>
+        <div class="nav-item"><a href="index.html" class="nav-link " data-i18n="nav_home">Home</a></div>
         
         <div class="nav-item">
           <a href="about.html" class="nav-link ">
@@ -807,7 +694,7 @@
 
         <div class="nav-item"><a href="news.html" class="nav-link " data-i18n="nav_news">News</a></div>
         <div class="nav-item"><a href="careers.html" class="nav-link " data-i18n="nav_careers">Careers</a></div>
-        <div class="nav-item"><a href="contact.html" class="nav-link " data-i18n="nav_contact">Contact</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link active" data-i18n="nav_contact">Contact</a></div>
         <a href="donate.html" class="btn-donate-nav" data-i18n="nav_donate">Donate</a>
       </nav>
 
@@ -817,231 +704,106 @@
     </div>
   </header>
 
-  <!-- 1. HERO SECTION -->
-  <section class="hero-home">
+  <!-- PAGE HERO -->
+  <section class="page-hero">
     <div class="container">
-      <div class="hero-badge" data-i18n="hero_badge">
-        🇨🇦 Federally Incorporated Not-for-Profit Corporation
+      <div class="breadcrumbs">
+        <a href="index.html" data-i18n="crumb_home">Home</a> &nbsp;/&nbsp; <span data-i18n="crumb_contact">Contact Secretariat</span>
       </div>
-      <h2 class="page-title" data-i18n="hero_home_title">
-        Uniting Youth. Building Synergy. <span>Ending Poverty.</span>
-      </h2>
-      <p data-i18n="hero_home_desc">
-        We help young people build the skills, networks, and opportunities they need to create a better future for themselves and their communities, bridging local leadership in Canada with grassroots youth solidarity in Burundi.
+      <h2 class="page-title" data-i18n="hero_contact_title">Get in Touch with YBSP Canada</h2>
+      <p data-i18n="hero_contact_desc">
+        We welcome inquiries from youth, volunteers, community partners, donors, and media organizations across Canada and internationally.
       </p>
-      <div class="hero-cta-group">
-        <a href="programs.html" class="btn-primary" data-i18n="btn_explore_prog">Explore Focus Areas</a>
-        <a href="get-involved.html" class="btn-secondary" style="background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.4);" data-i18n="btn_join_ch">Join Canadian Chapter</a>
-      </div>
     </div>
   </section>
 
-  <!-- 2. WHO WE ARE (AUTHENTIC MISSION STATEMENT) -->
-  <section class="content-section" style="background:#ffffff; padding:65px 0;">
-    <div class="container">
-      <div style="max-width:820px; margin:0 auto; text-align:center;">
-        <span class="section-tag" data-i18n="tag_who">Our Mission</span>
-        <h3 style="font-size:2rem; margin:8px 0 16px;" data-i18n="who_title">Building the Canadian Chapter of YBSP</h3>
-        <p style="font-size:1.1rem; color:var(--text-muted); line-height:1.7;" data-i18n="who_desc">
-          Youth Building in Synergy to end Poverty (YBSP Canada) brings together youth, diaspora leaders, and community partners across Canada. We believe young people are the ultimate catalysts for economic self-sufficiency. Through practical career mentorship, applied AI literacy, social entrepreneurship training, and direct international solidarity, we work to break the cycle of poverty at home and abroad.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. CANADA 🇨🇦 ↔ BURUNDI 🇧🇮 VISUAL SYNERGY BRIDGE -->
-  <section class="content-section" style="background:var(--bg-slate);">
-    <div class="container">
-      <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_bridge">International Structure</span>
-        <h3 class="section-title" data-i18n="bridge_title">One Organization. Two Countries. One Shared Mission.</h3>
-        <p data-i18n="bridge_sub">
-          YBSP Canada and YBSP Burundi operate in close bilateral cooperation, linking Canadian youth leadership with verified grassroots initiatives in Burundi.
-        </p>
-      </div>
-
-      <div class="bridge-grid">
-        <!-- CANADA CARD -->
-        <div class="bridge-card" style="display:flex; flex-direction:column; justify-content:space-between; height:100%;">
-          <div>
-            <div class="bridge-flag"><span class="country-pill ca">CA</span></div>
-            <h3 data-i18n="b_ca_title">YBSP Canada</h3>
-            <p data-i18n="b_ca_desc">Independent, federally incorporated non-profit organization operating nationally across Canada.</p>
-            <div class="bridge-features">
-              <div class="bridge-feature-item">
-                <span class="bf-check">✓</span>
-                <div class="bf-text"><strong data-i18n="b_ca1_t">Youth Mentorship & AI Skills:</strong> <span data-i18n="b_ca1_d">Workforce readiness for diaspora and newcomer youth.</span></div>
-              </div>
-              <div class="bridge-feature-item">
-                <span class="bf-check">✓</span>
-                <div class="bf-text"><strong data-i18n="b_ca2_t">Social Entrepreneurship:</strong> <span data-i18n="b_ca2_d">Community commerce and micro-venture labs.</span></div>
-              </div>
-              <div class="bridge-feature-item">
-                <span class="bf-check">✓</span>
-                <div class="bf-text"><strong data-i18n="b_ca3_t">Solidarity Mobilization:</strong> <span data-i18n="b_ca3_d">Channeling Canadian resources and partnerships overseas.</span></div>
-              </div>
-            </div>
-          </div>
-          <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);">
-            <strong>Governance:</strong> Autonomous Federal Non-Profit Corporation (Canada NFP Act)
-          </div>
-        </div>
-
-        <div class="bridge-divider">
-          <span>⇄</span>
-          <span data-i18n="label_synergy">Active Synergy</span>
-        </div>
-
-        <!-- BURUNDI CARD -->
-        <div class="bridge-card" style="display:flex; flex-direction:column; justify-content:space-between; height:100%;">
-          <div>
-            <div class="bridge-flag"><span class="country-pill bi">BI</span></div>
-            <h3 data-i18n="b_bi_title">YBSP Burundi</h3>
-            <p data-i18n="b_bi_desc">Our founding sister organization established in 2011, leading grassroots community development.</p>
-            <div class="bridge-features">
-              <div class="bridge-feature-item">
-                <span class="bf-check">✓</span>
-                <div class="bf-text"><strong data-i18n="b_bi1_t">Vocational Starter Kits:</strong> <span data-i18n="b_bi1_d">Tailoring, carpentry, and agricultural equipment (#MurabireKazoza).</span></div>
-              </div>
-              <div class="bridge-feature-item">
-                <span class="bf-check">✓</span>
-                <div class="bf-text"><strong data-i18n="b_bi2_t">Education Access:</strong> <span data-i18n="b_bi2_d">School kit sponsorships for vulnerable children (#SororaIkaye).</span></div>
-              </div>
-              <div class="bridge-feature-item">
-                <span class="bf-check">✓</span>
-                <div class="bf-text"><strong data-i18n="b_bi3_t">Women's Cooperatives:</strong> <span data-i18n="b_bi3_d">Community savings circles for economic self-reliance.</span></div>
-              </div>
-            </div>
-          </div>
-          <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color);">
-            <a href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem; font-weight:700; color:var(--secondary-dark); display:inline-flex; align-items:center; gap:4px;">
-              Visit Official YBSP Burundi Website (ybspburundi.org) ↗
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. WHY YBSP CANADA? -->
+  <!-- MAIN CONTACT SECTION -->
   <section class="content-section" style="background:#ffffff;">
     <div class="container">
-      <div class="why-grid">
-        <div>
-          <span class="section-tag" data-i18n="tag_why">National Purpose</span>
-          <h3 style="font-size:2.1rem; margin:8px 0 16px;" data-i18n="why_title">Why YBSP in Canada?</h3>
-          <p style="font-size:1.02rem; color:var(--text-muted); line-height:1.65; margin-bottom:14px;" data-i18n="why_p1">
-            Canada is home to a growing generation of vibrant young people, newcomers, and members of the African diaspora. While Canada offers tremendous promise, many youth face systemic hurdles in accessing career networks, executive mentorship, and business startup capital.
+      <div class="contact-wrapper">
+        <!-- INFO CARD -->
+        <div class="contact-info-card">
+          <span class="section-tag" data-i18n="tag_reach_us">Direct Contact</span>
+          <h3 style="font-size:1.6rem; color:var(--primary); margin-bottom:14px;" data-i18n="head_inquiries">YBSP Canada Secretariat</h3>
+          <p style="font-size:0.95rem; color:var(--text-muted); line-height:1.65; margin-bottom:28px;" data-i18n="desc_reach_us">
+            Our team operates nationally across Canada. We review all communications and respond within 2 to 3 business days.
           </p>
-          <p style="font-size:1.02rem; color:var(--text-muted); line-height:1.65; margin-bottom:20px;" data-i18n="why_p2">
-            YBSP Canada creates structured spaces where youth gain 21st-century digital competencies, connect with professional mentors, and build local social ventures, while nurturing an authentic bridge of solidarity with youth in Burundi.
-          </p>
-          <div style="background:#f0fdf4; border-left:4px solid var(--secondary); padding:16px 20px; border-radius:var(--radius-sm);">
-            <p style="font-size:0.94rem; color:#166534; margin:0; font-weight:500;" data-i18n="why_quote">
-              "We connect local Canadian youth development with meaningful global impact, giving youth the agency to transform their local communities and support international peers."
+
+          <div class="contact-item-box">
+            <strong data-i18n="lbl_email">Email Inquiries</strong>
+            <p><a href="mailto:info@ybspcanada.org">info@ybspcanada.org</a></p>
+          </div>
+
+          <div class="contact-item-box">
+            <strong data-i18n="lbl_national_scope">Geographic Scope</strong>
+            <p data-i18n="desc_scope_card">Operating Nationally Across Canada<br><span style="font-size:0.88rem; font-weight:normal; color:var(--text-muted);">Serving youth communities in both official languages</span></p>
+          </div>
+
+          <div class="contact-item-box">
+            <strong data-i18n="lbl_corp_reg">Federal Registration</strong>
+            <p style="font-size:0.92rem; font-weight:600; color:var(--text-main);">
+              Corporation # 1154010-6<br>
+              BN: 779321272RC0001<br>
+              Canada Not-for-profit Corporations Act
             </p>
           </div>
-        </div>
 
-        <div>
-          <img src="images/why-ybsp-canada.jpg" onerror="this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=80'" alt="Why YBSP in Canada" style="border-radius:var(--radius-lg); box-shadow:var(--shadow-md); width:100%; height:380px; object-fit:cover;">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. WHAT WE DO (PROGRAM CARDS) -->
-  <section class="content-section" style="background:var(--bg-light); border-top:1px solid var(--border-color);">
-    <div class="container">
-      <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_focus">Our Focus</span>
-        <h3 class="section-title" data-i18n="head_focus">Actionable Community Programs</h3>
-        <p data-i18n="sub_focus">
-          Directly grounded in our federal charter, delivered in both official languages across Canada.
-        </p>
-      </div>
-
-      <div class="action-grid-3">
-        <div class="action-box-card">
-          <div>
-            <h4 style="font-size:1.25rem; margin-bottom:10px;" data-i18n="ac1_title">Career Mentorship & Applied AI</h4>
-            <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin-bottom:18px;" data-i18n="ac1_desc">
-              12-week cohorts pairing newcomer and diaspora youth 1-on-1 with Canadian professionals, covering resume tailoring, workplace culture, and modern AI productivity tools.
-            </p>
-          </div>
-          <a href="programs.html#mentorship" style="font-size:0.9rem; font-weight:700; color:var(--secondary-dark);" data-i18n="link_read">Learn more →</a>
-        </div>
-
-        <div class="action-box-card">
-          <div>
-            <h4 style="font-size:1.25rem; margin-bottom:10px;" data-i18n="ac2_title">Social Entrepreneurship Lab</h4>
-            <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin-bottom:18px;" data-i18n="ac2_desc">
-              Supporting youth to develop lean community commerce ventures, learn bookkeeping and CRA compliance, and validate business models without heavy debt.
-            </p>
-          </div>
-          <a href="programs.html#entrepreneurship" style="font-size:0.9rem; font-weight:700; color:var(--secondary-dark);" data-i18n="link_read">Learn more →</a>
-        </div>
-
-        <div class="action-box-card">
-          <div>
-            <h4 style="font-size:1.25rem; margin-bottom:10px;" data-i18n="ac3_title">International Synergy & Education</h4>
-            <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin-bottom:18px;" data-i18n="ac3_desc">
-              Mobilizing Canadian solidarity to fund #SororaIkaye school kits for vulnerable children and vocational starter toolkits for young artisans in Burundi.
-            </p>
-          </div>
-          <a href="programs.html#burundi-initiative" style="font-size:0.9rem; font-weight:700; color:var(--secondary-dark);" data-i18n="link_read">Learn more →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. GOVERNANCE & STATUTORY INTEGRITY -->
-  <section class="content-section" style="background:#ffffff; border-top:1px solid var(--border-color);">
-    <div class="container">
-      <div style="background:var(--bg-slate); border-radius:var(--radius-lg); padding:40px; border-left:5px solid var(--primary); display:grid; grid-template-columns:1.2fr 0.8fr; gap:36px; align-items:center;">
-        <div>
-          <span class="section-tag" data-i18n="tag_fiduciary_home">Accountability & Ethics</span>
-          <h3 style="font-size:1.6rem; color:var(--primary); margin:6px 0 12px;" data-i18n="head_gov_home">Transparent Federal Governance</h3>
-          <p style="font-size:0.95rem; color:var(--text-muted); line-height:1.65; margin-bottom:14px;" data-i18n="desc_gov_home">
-            Youth Building in Synergy to end Poverty is a <strong>federally incorporated not-for-profit corporation</strong> under the <em>Canada Not-for-profit Corporations Act</em> (NFP Act).
-          </p>
-          <p style="font-size:0.95rem; color:var(--text-muted); line-height:1.65; margin-bottom:16px;" data-i18n="desc_gov_home2">
-            In accordance with Section 8 of our Articles of Incorporation, our Board of Directors serves on a strictly voluntary, non-remunerated basis to safeguard public trust, mission adherence, and financial integrity.
-          </p>
-          <div style="background:#ffffff; border:1px solid var(--border-color); border-radius:var(--radius-sm); padding:12px 16px; font-size:0.84rem; color:#334155;" data-i18n="notice_tax">
-            <strong>Notice regarding tax receipts:</strong> YBSP Canada is incorporated as an NFP corporation under federal law. We are not yet registered as a charitable entity with the CRA; direct gifts do not generate tax deduction receipts unless facilitated through registered philanthropic partners.
+          <div class="contact-item-box" style="margin-bottom:0;">
+            <strong data-i18n="lbl_social">Connect on Social Media</strong>
+            <div style="display:flex; gap:16px; margin-top:8px;">
+              <a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="font-size:0.9rem; color:var(--secondary-dark);">Facebook ↗</a>
+              <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" style="font-size:0.9rem; color:var(--secondary-dark);">Instagram ↗</a>
+              <a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="font-size:0.9rem; color:var(--secondary-dark);">X (Twitter) ↗</a>
+            </div>
           </div>
         </div>
 
-        <div style="display:flex; flex-direction:column; gap:12px;">
-          <div style="background:#ffffff; padding:14px 18px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            <strong style="display:block; font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Federal Corporation #</strong>
-            <span style="font-size:1.1rem; font-weight:800; color:var(--primary);">1154010-6</span>
-          </div>
-          <div style="background:#ffffff; padding:14px 18px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            <strong style="display:block; font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Business Number (BN)</strong>
-            <span style="font-size:1.1rem; font-weight:800; color:var(--primary);">779321272RC0001</span>
-          </div>
-          <div style="background:#ffffff; padding:14px 18px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            <strong style="display:block; font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Governing Statute</strong>
-            <span style="font-size:0.98rem; font-weight:700; color:var(--primary);">Canada NFP Act • Active</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- FORM CARD -->
+        <div class="form-card" style="margin:0; max-width:none;">
+          <form id="generalContactForm" name="contact-general" method="POST" data-netlify="true" onsubmit="handleContactSubmit(event)">
+            <input type="hidden" name="form-name" value="contact-general">
+            
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="c-name" data-i18n="lbl_name">Your Name *</label>
+                <input type="text" id="c-name" name="name" class="form-input" required placeholder="e.g. Marc Dubois">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="c-email" data-i18n="lbl_email">Email Address *</label>
+                <input type="email" id="c-email" name="email" class="form-input" required placeholder="marc@example.ca">
+              </div>
+            </div>
 
-  <!-- 7. CALL TO ACTION STRIP -->
-  <section class="content-section" style="background:linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color:#ffffff; text-align:center; padding:65px 0;">
-    <div class="container">
-      <h3 style="font-size:2.2rem; font-weight:800; color:#ffffff; margin-bottom:12px;" data-i18n="head_cta">Get Involved with YBSP Canada</h3>
-      <p style="font-size:1.05rem; color:#cbd5e1; max-width:640px; margin:0 auto 28px;" data-i18n="sub_cta">
-        Whether you are a young person seeking career guidance, an experienced professional willing to mentor, or an institution seeking collaboration, your involvement strengthens our collective synergy.
-      </p>
-      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-        <a href="get-involved.html#volunteer" class="btn-primary" data-i18n="btn_vol">Volunteer With Us</a>
-        <a href="get-involved.html#membership" class="btn-secondary" style="background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.4);" data-i18n="btn_mbr">Become a Member</a>
-        <a href="get-involved.html#partnerships" class="btn-secondary" style="background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.4);" data-i18n="btn_part">Institutional Partners</a>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="c-phone" data-i18n="lbl_phone">Phone Number</label>
+                <input type="tel" id="c-phone" name="phone" class="form-input" placeholder="(613) 555-0188">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="c-subject" data-i18n="lbl_subject">Subject / Nature of Inquiry *</label>
+                <select id="c-subject" name="subject" class="form-select" required>
+                  <option value="general">General Inquiry</option>
+                  <option value="programs">Youth Mentorship & Cohort Information</option>
+                  <option value="burundi">Burundi Partnership & Field Synergy</option>
+                  <option value="governance">Corporate Governance & Compliance</option>
+                  <option value="media">Media & Press Interview Request</option>
+                  <option value="donation">Donation & Stewardship Inquiries</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="c-message" data-i18n="lbl_message">Your Message *</label>
+              <textarea id="c-message" name="message" class="form-textarea" rows="5" required placeholder="How can we help you or collaborate with your organization?"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width:100%; justify-content:center;" data-i18n="btn_send_msg">Send Message to Secretariat</button>
+
+            <div id="contactFeedback" class="form-feedback" data-i18n="contact_feedback">
+              ✓ Message Sent! Thank you for reaching out to YBSP Canada. Our team will review your message and respond within 2 to 3 business days.
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -1112,7 +874,7 @@
     </div>
   </footer>
 
-  <!-- BILINGUAL ENGINE SCRIPT -->
+  <!-- BILINGUAL SCRIPT -->
   <script>
     const translations = {
       en: {
@@ -1146,60 +908,24 @@
         nav_careers: "Careers",
         nav_contact: "Contact Us",
         nav_donate: "Donate",
-        top_location: "Operating Nationally Across Canada",
-        hero_badge: "🇨🇦 Federally Incorporated Not-for-Profit Corporation",
-        hero_home_title: "Uniting Youth. Building Synergy. <span>Ending Poverty.</span>",
-        hero_home_desc: "We help young people build the skills, networks, and opportunities they need to create a better future for themselves and their communities, bridging local leadership in Canada with grassroots youth solidarity in Burundi.",
-        btn_explore_prog: "Explore Focus Areas",
-        btn_join_ch: "Join Canadian Chapter",
-        tag_who: "Our Mission",
-        who_title: "Building the Canadian Chapter of YBSP",
-        who_desc: "Youth Building in Synergy to end Poverty (YBSP Canada) brings together youth, diaspora leaders, and community partners across Canada. We believe young people are the ultimate catalysts for economic self-sufficiency. Through practical career mentorship, applied AI literacy, social entrepreneurship training, and direct international solidarity, we work to break the cycle of poverty at home and abroad.",
-        tag_bridge: "International Structure",
-        bridge_title: "One Organization. Two Countries. One Shared Mission.",
-        bridge_sub: "YBSP Canada and YBSP Burundi operate in close bilateral cooperation, linking Canadian youth leadership with verified grassroots initiatives in Burundi.",
-        b_ca_title: "YBSP Canada",
-        b_ca_desc: "Independent, federally incorporated non-profit organization operating nationally across Canada.",
-        b_ca1_t: "Youth Mentorship & AI Skills:",
-        b_ca1_d: "Workforce readiness for diaspora and newcomer youth.",
-        b_ca2_t: "Social Entrepreneurship:",
-        b_ca2_d: "Community commerce and micro-venture labs.",
-        b_ca3_t: "Solidarity Mobilization:",
-        b_ca3_d: "Channeling Canadian resources and partnerships overseas.",
-        label_synergy: "Active Synergy",
-        b_bi_title: "YBSP Burundi",
-        b_bi_desc: "Our founding sister organization established in 2013, leading grassroots community development.",
-        b_bi1_t: "Vocational Starter Kits:",
-        b_bi1_d: "Tailoring, carpentry, and agricultural equipment (#MurabireKazoza).",
-        b_bi2_t: "Education Access:",
-        b_bi2_d: "School kit sponsorships for vulnerable children (#SororaIkaye).",
-        b_bi3_t: "Women's Cooperatives:",
-        b_bi3_d: "Community savings circles for economic self-reliance.",
-        tag_why: "National Purpose",
-        why_title: "Why YBSP in Canada?",
-        why_p1: "Canada is home to a growing generation of vibrant young people, newcomers, and members of the African diaspora. While Canada offers tremendous promise, many youth face systemic hurdles in accessing career networks, executive mentorship, and business startup capital.",
-        why_p2: "YBSP Canada creates structured spaces where youth gain 21st-century digital competencies, connect with professional mentors, and build local social ventures, while nurturing an authentic bridge of solidarity with youth in Burundi.",
-        why_quote: "\"We connect local Canadian youth development with meaningful global impact, giving youth the agency to transform their local communities and support international peers.\"",
-        tag_focus: "Our Focus",
-        head_focus: "Actionable Community Programs",
-        sub_focus: "Directly grounded in our federal charter, delivered in both official languages across Canada.",
-        ac1_title: "Career Mentorship & Applied AI",
-        ac1_desc: "12-week cohorts pairing newcomer and diaspora youth 1-on-1 with Canadian professionals, covering resume tailoring, workplace culture, and modern AI productivity tools.",
-        ac2_title: "Social Entrepreneurship Lab",
-        ac2_desc: "Supporting youth to develop lean community commerce ventures, learn bookkeeping and CRA compliance, and validate business models without heavy debt.",
-        ac3_title: "International Synergy & Education",
-        ac3_desc: "Mobilizing Canadian solidarity to fund #SororaIkaye school kits for vulnerable children and vocational starter toolkits for young artisans in Burundi.",
-        link_read: "Learn more →",
-        tag_fiduciary_home: "Accountability & Ethics",
-        head_gov_home: "Transparent Federal Governance",
-        desc_gov_home: "Youth Building in Synergy to end Poverty is a federally incorporated not-for-profit corporation under the Canada Not-for-profit Corporations Act (NFP Act).",
-        desc_gov_home2: "In accordance with Section 8 of our Articles of Incorporation, our Board of Directors serves on a strictly voluntary, non-remunerated basis to safeguard public trust, mission adherence, and financial integrity.",
-        notice_tax: "<strong>Notice regarding tax receipts:</strong> YBSP Canada is incorporated as an NFP corporation under federal law. We are not yet registered as a charitable entity with the CRA; direct gifts do not generate tax deduction receipts unless facilitated through registered philanthropic partners.",
-        head_cta: "Get Involved with YBSP Canada",
-        sub_cta: "Whether you are a young person seeking career guidance, an experienced professional willing to mentor, or an institution seeking collaboration, your involvement strengthens our collective synergy.",
-        btn_vol: "Volunteer With Us",
-        btn_mbr: "Become a Member",
-        btn_part: "Institutional Partners",
+        crumb_home: "Home",
+        crumb_contact: "Contact Secretariat",
+        hero_contact_title: "Get in Touch with YBSP Canada",
+        hero_contact_desc: "We welcome inquiries from youth, volunteers, community partners, donors, and media organizations across Canada and internationally.",
+        tag_reach_us: "Direct Contact",
+        head_inquiries: "YBSP Canada Secretariat",
+        desc_reach_us: "Our team operates nationally across Canada. We review all communications and respond within 2 to 3 business days.",
+        lbl_email: "Email Inquiries",
+        lbl_national_scope: "Geographic Scope",
+        desc_scope_card: "Operating Nationally Across Canada<br><span style='font-size:0.88rem; font-weight:normal; color:var(--text-muted);'>Serving youth communities in both official languages</span>",
+        lbl_corp_reg: "Federal Registration",
+        lbl_social: "Connect on Social Media",
+        lbl_name: "Your Name *",
+        lbl_phone: "Phone Number",
+        lbl_subject: "Subject / Nature of Inquiry *",
+        lbl_message: "Your Message *",
+        btn_send_msg: "Send Message to Secretariat",
+        contact_feedback: "✓ Message Sent! Thank you for reaching out to YBSP Canada. Our team will review your message and respond within 2 to 3 business days.",
         footer_about_desc: "Youth Building in Synergy to end Poverty is a federally incorporated Canadian not-for-profit corporation (Canada Not-for-profit Corporations Act) dedicated to fostering youth leadership, community synergy, and international solidarity.",
         footer_quick_links: "Quick Links",
         footer_involved: "Get Involved",
@@ -1239,60 +965,24 @@
         nav_careers: "Carrières",
         nav_contact: "Nous joindre",
         nav_donate: "Faire un don",
-        top_location: "Opérant à l'échelle nationale au Canada",
-        hero_badge: "🇨🇦 Organisation à but non lucratif constituée au fédéral",
-        hero_home_title: "Unir la jeunesse. Bâtir la synergie. <span>Vaincre la précarité.</span>",
-        hero_home_desc: "Nous aidons les jeunes à acquérir les compétences, les réseaux et les opportunités nécessaires pour se bâtir un avenir meilleur ,  reliant le leadership local au Canada à la solidarité jeunesse de terrain au Burundi.",
-        btn_explore_prog: "Découvrir nos champs d'action",
-        btn_join_ch: "Rejoindre l'antenne canadienne",
-        tag_who: "Notre mission",
-        who_title: "Bâtir l'antenne canadienne de YBSP",
-        who_desc: "Youth Building in Synergy to end Poverty (YBSP Canada) rassemble des jeunes, des leaders de la diaspora et des partenaires communautaires dans la région de la capitale nationale et à travers le Canada. Nous croyons que la jeunesse est le premier moteur d'autonomie économique. Grâce au mentorat pratique, à l'entrepreneuriat social et à la solidarité internationale, nous agissons pour briser la précarité ici et là-bas.",
-        tag_bridge: "Structure internationale",
-        bridge_title: "Une organisation. Deux pays. Une mission commune.",
-        bridge_sub: "YBSP Canada et YBSP Burundi coopèrent étroitement, reliant le leadership des jeunes au Canada aux initiatives de terrain au Burundi.",
-        b_ca_title: "YBSP Canada",
-        b_ca_desc: "Organisation à but non lucratif autonome constituée sous le régime fédéral canadien.",
-        b_ca1_t: "Mentorat & Compétences IA :",
-        b_ca1_d: "Préparation à l'emploi pour les jeunes de la diaspora et nouveaux arrivants.",
-        b_ca2_t: "Entrepreneuriat social :",
-        b_ca2_d: "Commerce communautaire et micro-entreprises.",
-        b_ca3_t: "Mobilisation solidaire :",
-        b_ca3_d: "Canalisation des ressources et partenariats vers les projets de terrain.",
-        label_synergy: "Synergie active",
-        b_bi_title: "YBSP Burundi",
-        b_bi_desc: "Organisation sœur fondatrice créée en 2013, menant des projets de proximité au Burundi.",
-        b_bi1_t: "Kits de démarrage :",
-        b_bi1_d: "Équipements de couture, menuiserie et agriculture (#MurabireKazoza).",
-        b_bi2_t: "Accès à l'éducation :",
-        b_bi2_d: "Bourses scolaires et fournitures pour enfants vulnérables (#SororaIkaye).",
-        b_bi3_t: "Coopératives de femmes :",
-        b_bi3_d: "Tontines d'épargne solidaire pour l'autonomie financière.",
-        tag_why: "Raison d'être",
-        why_title: "Pourquoi YBSP au Canada ?",
-        why_p1: "Le Canada accueille une jeunesse dynamique, diverse et ambitieuse. Cependant, de nombreux jeunes rencontrent des obstacles d'accès aux réseaux professionnels et aux capitaux d'amorçage.",
-        why_p2: "YBSP Canada crée des opportunités concrètes où les jeunes développent leurs compétences numériques et bâtissent des initiatives locales ,  tout en soutenant leurs pairs au Burundi.",
-        why_quote: "« Nous combinons l'épanouissement des jeunes au Canada avec un impact mondial concret ,  en donnant aux jeunes le pouvoir de transformer leur milieu et de soutenir leurs pairs à l'international. »",
-        tag_focus: "Champs d'action",
-        head_focus: "Des programmes communautaires concrets",
-        sub_focus: "Fondés sur notre charte fédérale, offerts dans les deux langues officielles au Canada.",
-        ac1_title: "Mentorat de carrière & IA appliquée",
-        ac1_desc: "Cohortes de 12 semaines jumelant les jeunes avec des professionnels canadiens pour l'insertion en emploi et la maîtrise des outils d'IA.",
-        ac2_title: "Laboratoire d'entrepreneuriat social",
-        ac2_desc: "Accompagnement de projets de commerce communautaire, littératie financière et respect de la conformité sans endettement.",
-        ac3_title: "Synergie internationale & Éducation",
-        ac3_desc: "Mobilisation de la solidarité canadienne pour les bourses #SororaIkaye et les kits professionnels au Burundi.",
-        link_read: "En savoir plus →",
-        tag_fiduciary_home: "Reddition de comptes",
-        head_gov_home: "Gouvernance fédérale transparente",
-        desc_gov_home: "Youth Building in Synergy to end Poverty est une organisation à but non lucratif constituée au fédéral en vertu de la Loi canadienne sur les organisations à but non lucratif (Loi BNL).",
-        desc_gov_home2: "Conformément à l'article 8 de nos statuts constitutifs, notre conseil d'administration est strictement bénévole et non rémunéré afin d'assurer l'intégrité financière et la conformité.",
-        notice_tax: "<strong>Avis concernant les reçus fiscaux :</strong> YBSP Canada est constituée comme OBNL fédérale. Nous ne sommes pas encore un organisme de bienfaisance enregistré auprès de l'ARC; les dons directs ne génèrent pas encore de reçus fiscaux déductibles d'impôt.",
-        head_cta: "Rejoignez la synergie YBSP Canada",
-        sub_cta: "Que vous cherchiez un mentorat, souhaitiez partager votre expérience professionnelle ou désiriez établir un partenariat, votre voix compte.",
-        btn_vol: "Devenir bénévole",
-        btn_mbr: "Devenir membre",
-        btn_part: "Partenariats institutionnels",
+        crumb_home: "Accueil",
+        crumb_contact: "Contacter le secrétariat",
+        hero_contact_title: "Prendre contact avec YBSP Canada",
+        hero_contact_desc: "Nous accueillons avec plaisir les messages des jeunes, bénévoles, partenaires institutionnels, donateurs et médias.",
+        tag_reach_us: "Contact direct",
+        head_inquiries: "Secrétariat de YBSP Canada",
+        desc_reach_us: "Notre équipe intervient à l'échelle nationale au Canada. Nous répondons à l'ensemble des demandes sous 2 à 3 jours ouvrables.",
+        lbl_email: "Courriel officiel",
+        lbl_national_scope: "Portée géographique",
+        desc_scope_card: "Opérant à l'échelle nationale au Canada<br><span style='font-size:0.88rem; font-weight:normal; color:var(--text-muted);'>Au service des jeunes dans les deux langues officielles</span>",
+        lbl_corp_reg: "Enregistrement fédéral",
+        lbl_social: "Réseaux sociaux",
+        lbl_name: "Votre nom *",
+        lbl_phone: "Numéro de téléphone",
+        lbl_subject: "Objet du message *",
+        lbl_message: "Votre message *",
+        btn_send_msg: "Envoyer le message au secrétariat",
+        contact_feedback: "✓ Message envoyé ! Merci de votre intérêt pour YBSP Canada. Notre secrétariat examinera votre demande et vous répondra sous 2 à 3 jours ouvrables.",
         footer_about_desc: "Youth Building in Synergy to end Poverty est une organisation à but non lucratif constituée au fédéral (Loi BNL), dédiée au leadership des jeunes et à la solidarité internationale.",
         footer_quick_links: "Liens rapides",
         footer_involved: "S'impliquer",
@@ -1314,6 +1004,12 @@
       document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-lang-fr').classList.toggle('active', lang === 'fr');
       document.documentElement.lang = lang;
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      document.getElementById('contactFeedback').style.display = 'block';
+      e.target.reset();
     }
 
     function toggleMobileNav() {

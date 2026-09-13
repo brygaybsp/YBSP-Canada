@@ -3,9 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Programs & Impact | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
-  <meta name="description" content="Explore YBSP Canada's youth programs: Career Mentorship & Applied AI, Social Entrepreneurship Lab, Community Health & Ecology, and Global Synergy with YBSP Burundi.">
+  <title id="page-title">Careers & Opportunities | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
+  <meta name="description" content="Explore career, internship, and volunteer leadership opportunities with YBSP Canada as our national youth organization expands.">
   <link rel="icon" type="image/png" href="images/ybsp_canada_emblem.png">
+  
+  <script>
+    // Ensure relative links work seamlessly whether hosted on Netlify (with pretty URLs) or viewed locally via file:///
+    if (window.location.protocol !== 'file:' && window.location.pathname.endsWith('/') && window.location.pathname.length > 1) {
+      document.write('<base href="' + window.location.origin + '/">');
+    }
+  </script>
+
   <style>
 
     :root {
@@ -23,19 +31,19 @@
       --bg-light: #f8fafc;
       --bg-slate: #f1f5f9;
       --border-color: #e2e8f0;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
       --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
       --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
       --radius-sm: 6px;
       --radius-md: 10px;
       --radius-lg: 16px;
-      --transition: all 0.25s ease-in-out;
+      --transition: all 0.22s ease-in-out;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+      scroll-padding-top: 85px;
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -47,10 +55,10 @@
     a { text-decoration: none; color: inherit; transition: var(--transition); }
     ul { list-style: none; }
     img { max-width: 100%; height: auto; display: block; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .container-narrow { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    .container-narrow { max-width: 880px; margin: 0 auto; padding: 0 24px; }
 
-    /* TYPOGRAPHY */
+    /* TYPOGRAPHY & SINGLE-LINE HEADINGS ON DESKTOP */
     h1, h2, h3, h4 {
       color: var(--primary);
       font-weight: 800;
@@ -58,14 +66,28 @@
       letter-spacing: -0.02em;
     }
     .page-title {
-      font-size: clamp(2rem, 3.8vw, 2.8rem);
-      white-space: normal;
-      margin-bottom: 14px;
+      font-size: clamp(2rem, 3.5vw, 2.85rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    @media (min-width: 768px) {
+      .page-title.single-line {
+        white-space: nowrap;
+      }
     }
     .section-title {
-      font-size: clamp(1.8rem, 3vw, 2.3rem);
+      font-size: clamp(1.75rem, 2.8vw, 2.3rem);
       margin-bottom: 12px;
-      white-space: normal;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    @media (min-width: 768px) {
+      .section-title.single-line {
+        white-space: nowrap;
+      }
     }
     .section-tag {
       font-size: 0.82rem;
@@ -82,7 +104,7 @@
       background-color: var(--primary-dark);
       color: #cbd5e1;
       font-size: 0.82rem;
-      padding: 7px 0;
+      padding: 6px 0;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     .top-bar-inner {
@@ -95,7 +117,7 @@
     .top-bar-left, .top-bar-right {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 16px;
       flex-wrap: wrap;
     }
     .top-bar-item { display: inline-flex; align-items: center; gap: 6px; }
@@ -110,7 +132,7 @@
     .lang-switcher {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 3px;
       background: rgba(255,255,255,0.12);
       border-radius: 4px;
       padding: 2px 6px;
@@ -122,12 +144,12 @@
       font-size: 0.75rem;
       font-weight: 700;
       cursor: pointer;
-      padding: 2px 6px;
+      padding: 2px 5px;
       border-radius: 3px;
     }
     .lang-btn.active, .lang-btn:hover { background: var(--secondary); color: #ffffff; }
 
-    /* MAIN NAVIGATION */
+    /* MAIN NAVIGATION (COMPACT & UNCLUTTERED LIKE MISSION INCLUSION & COMPASSION) */
     .main-header {
       background-color: #ffffff;
       box-shadow: var(--shadow-sm);
@@ -139,9 +161,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 78px;
+      height: 74px;
     }
-    .brand-logo { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { display: flex; align-items: center; gap: 11px; }
     .brand-logo-svg {
       width: 44px !important;
       height: 44px !important;
@@ -152,14 +174,14 @@
       flex-shrink: 0 !important;
     }
     .logo-text h1 {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 800;
       color: var(--primary);
       line-height: 1.1;
       letter-spacing: -0.01em;
     }
     .logo-text span {
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-weight: 600;
       color: var(--secondary-dark);
       text-transform: uppercase;
@@ -173,13 +195,13 @@
       color: var(--secondary-dark);
       background-color: var(--bg-slate);
     }
-    .nav-arrow { width: 10px; height: 10px; fill: currentColor; }
+    .nav-arrow { width: 9px; height: 9px; fill: currentColor; }
 
     .dropdown-menu {
       position: absolute;
       top: 100%;
       left: 0;
-      width: 250px;
+      width: 240px;
       background: #ffffff;
       box-shadow: var(--shadow-lg);
       border-radius: var(--radius-md);
@@ -192,8 +214,8 @@
       z-index: 100;
     }
     .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-    .dropdown-link { display: block; padding: 9px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500; }
-    .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 22px; }
+    .dropdown-link { display: block; padding: 8px 16px; font-size: 0.88rem; color: var(--text-main); font-weight: 500; }
+    .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 20px; }
 
     .btn-donate-nav {
       background: var(--accent);
@@ -215,7 +237,6 @@
     }
     .btn-donate-nav:hover { background: var(--accent-hover) !important; transform: translateY(-1px); }
 
-    /* MOBILE NAV TOGGLE */
     .mobile-toggle {
       display: none;
       background: none;
@@ -237,19 +258,19 @@
       background: #ffffff;
       border-bottom: 1px solid var(--border-color);
       position: sticky;
-      top: 78px;
+      top: 74px;
       z-index: 900;
     }
     .subnav-list {
       display: flex;
-      gap: 26px;
+      gap: 22px;
       overflow-x: auto;
-      padding: 12px 0;
+      padding: 10px 0;
       scrollbar-width: none;
     }
     .subnav-list::-webkit-scrollbar { display: none; }
     .subnav-item a {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 700;
       color: var(--text-muted);
       white-space: nowrap;
@@ -265,38 +286,37 @@
     .page-hero {
       background: linear-gradient(rgba(11, 28, 61, 0.92), rgba(6, 17, 36, 0.96)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
       color: #ffffff;
-      padding: 70px 0 75px;
+      padding: 65px 0 70px;
       text-align: center;
     }
     .breadcrumbs {
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: #94a3b8;
-      margin-bottom: 12px;
-      letter-spacing: 0.04em;
+      margin-bottom: 10px;
     }
     .breadcrumbs a { color: var(--accent); }
     .page-hero p {
       max-width: 760px;
       margin: 0 auto;
-      font-size: 1.12rem;
+      font-size: 1.1rem;
       color: #e2e8f0;
       line-height: 1.65;
     }
 
     /* SECTION BASICS */
-    .content-section { padding: 75px 0; }
+    .content-section { padding: 70px 0; }
     .content-section:nth-child(even) { background-color: var(--bg-light); }
-    .section-header-center { text-align: center; max-width: 760px; margin: 0 auto 45px; }
-    .section-header-center p { font-size: 1.05rem; color: var(--text-muted); }
+    .section-header-center { text-align: center; max-width: 780px; margin: 0 auto 40px; }
+    .section-header-center p { font-size: 1.02rem; color: var(--text-muted); }
 
     /* BUTTONS */
     .btn-primary {
       background: var(--accent);
       color: #ffffff;
       font-weight: 700;
-      padding: 12px 28px;
+      padding: 11px 26px;
       border-radius: 50px;
-      font-size: 0.96rem;
+      font-size: 0.95rem;
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -308,9 +328,9 @@
       background: var(--primary);
       color: #ffffff;
       font-weight: 700;
-      padding: 12px 28px;
+      padding: 11px 26px;
       border-radius: 50px;
-      font-size: 0.96rem;
+      font-size: 0.95rem;
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -323,9 +343,9 @@
       background: #ffffff;
       color: var(--primary);
       font-weight: 700;
-      padding: 10px 24px;
+      padding: 9px 22px;
       border-radius: 50px;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -363,10 +383,10 @@
     }
     .form-input, .form-select, .form-textarea {
       width: 100%;
-      padding: 12px 16px;
+      padding: 11px 15px;
       border: 1px solid var(--border-color);
       border-radius: var(--radius-sm);
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       color: var(--text-main);
       background: var(--bg-white);
       transition: var(--transition);
@@ -387,7 +407,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--text-main);
       cursor: pointer;
     }
@@ -412,16 +432,38 @@
       display: block;
     }
 
-    /* LEADERSHIP & BOARD CARDS */
-    .leadership-grid {
+    /* LEADERSHIP & TEAM CARDS (MISSION INCLUSION STYLE) */
+    .team-section-block {
+      margin-bottom: 50px;
+    }
+    .team-category-header {
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .team-category-header h4 {
+      font-size: 1.4rem;
+      color: var(--primary);
+    }
+    .team-category-header p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .team-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 26px;
     }
-    .leadership-card {
+    .team-member-card {
       background: #ffffff;
       border-radius: var(--radius-md);
-      padding: 32px 24px;
+      padding: 28px 22px;
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--border-color);
       text-align: center;
@@ -430,19 +472,19 @@
       justify-content: space-between;
       transition: var(--transition);
     }
-    .leadership-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-    .leadership-photo {
-      width: 120px;
-      height: 120px;
+    .team-member-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .founder-photo {
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
       object-fit: cover;
       margin: 0 auto 16px;
       display: block;
       border: 3px solid #ffffff;
       outline: 2px solid var(--secondary);
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-md);
     }
-    .leadership-avatar-placeholder {
+    .team-avatar-placeholder {
       width: 120px;
       height: 120px;
       border-radius: 50%;
@@ -452,10 +494,11 @@
       align-items: center;
       justify-content: center;
       font-size: 2rem;
+      font-weight: 800;
       margin: 0 auto 16px;
       border: 2px dashed #cbd5e1;
     }
-    .leadership-badge {
+    .team-badge {
       display: inline-block;
       font-size: 0.74rem;
       font-weight: 700;
@@ -466,32 +509,76 @@
       margin-bottom: 12px;
       align-self: center;
     }
-    .badge-exec { background: #dcfce7; color: #166534; }
-    .badge-recruiting { background: #fef3c7; color: #92400e; }
+    .badge-founder { background: #dbeafe; color: #1e40af; }
     .badge-board { background: #e0e7ff; color: #3730a3; }
-    .leadership-name { font-size: 1.25rem; font-weight: 800; color: var(--primary); margin-bottom: 4px; }
-    .leadership-title { font-size: 0.86rem; font-weight: 700; color: var(--secondary-dark); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 12px; }
-    .leadership-bio { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+    .badge-recruiting { background: #fef3c7; color: #92400e; }
+
+    .team-name { font-size: 1.22rem; font-weight: 800; color: var(--primary); margin-bottom: 4px; }
+    .team-role { font-size: 0.85rem; font-weight: 700; color: var(--secondary-dark); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 12px; }
+    .team-bio { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* TIMELINE STYLING FOR ACTUAL HISTORY */
+    .timeline-container {
+      position: relative;
+      max-width: 900px;
+      margin: 40px auto 0;
+      padding-left: 30px;
+      border-left: 4px solid var(--secondary);
+    }
+    .timeline-milestone {
+      position: relative;
+      margin-bottom: 36px;
+      padding-left: 20px;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -40px;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 4px solid var(--secondary);
+    }
+    .milestone-year {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--secondary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+    .milestone-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .milestone-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
 
     /* FOOTER */
     .main-footer {
       background: #061124;
       color: #94a3b8;
-      padding: 70px 0 30px;
+      padding: 65px 0 30px;
       font-size: 0.88rem;
     }
     .footer-grid {
       display: grid;
       grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
       gap: 36px;
-      margin-bottom: 50px;
+      margin-bottom: 45px;
     }
     .footer-col h4 {
-      color: #ffffff; font-size: 1rem; font-weight: 700; margin-bottom: 18px;
+      color: #ffffff; font-size: 1rem; font-weight: 700; margin-bottom: 16px;
       position: relative; padding-bottom: 8px;
     }
     .footer-col h4::after {
-      content: ''; position: absolute; bottom: 0; left: 0; width: 28px; height: 2px;
+      content: ''; position: absolute; bottom: 0; left: 0; width: 26px; height: 2px;
       background: var(--secondary);
     }
     .legal-notice-box {
@@ -499,73 +586,49 @@
       border-radius: 4px; padding: 10px 12px; font-size: 0.76rem; color: #cbd5e1;
       margin-top: 12px; line-height: 1.5;
     }
-    .footer-links li { margin-bottom: 10px; }
+    .footer-links li { margin-bottom: 9px; }
     .footer-links a:hover { color: var(--secondary); }
     .contact-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 12px; }
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.08); padding-top: 26px;
+      border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px;
       display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
       font-size: 0.8rem;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 1024px) {
-      .leadership-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: repeat(2, 1fr); }
       .form-grid-2 { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
       .top-bar, .nav-menu { display: flex; align-items: center; gap: 2px; flex-wrap: nowrap !important; }
       .mobile-toggle { display: block; }
-      .leadership-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
       .form-card { padding: 24px 18px; }
       .checkbox-group { grid-template-columns: 1fr; }
     }
 
-    .program-card-block {
-      background: #ffffff;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border-color);
+    .careers-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 36px;
-      align-items: center;
-      margin-bottom: 45px;
-      padding: 36px;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin: 30px 0;
     }
-    .program-card-block.reverse {
-      grid-template-columns: 0.9fr 1.1fr;
-    }
-    .program-card-block.reverse .prog-text { order: 2; }
-    .program-card-block.reverse .prog-img-box { order: 1; }
-    .prog-img {
-      width: 100%; height: 320px; object-fit: cover;
-      border-radius: var(--radius-md); box-shadow: var(--shadow-sm);
-    }
-    .sdg-card-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .sdg-badge-box {
+    .opp-card {
       background: #ffffff;
       border-radius: var(--radius-md);
-      padding: 24px 18px;
-      text-align: center;
-      box-shadow: var(--shadow-sm);
+      padding: 28px 24px;
       border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
+    .opp-card h4 { font-size: 1.25rem; margin-bottom: 8px; }
+    .opp-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
     @media (max-width: 900px) {
-      .program-card-block, .program-card-block.reverse { grid-template-columns: 1fr; }
-      .program-card-block.reverse .prog-img-box { order: 2; }
-      .sdg-card-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 600px) {
-      .sdg-card-grid { grid-template-columns: 1fr; }
+      .careers-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -666,7 +729,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="programs.html" class="nav-link active">
+          <a href="programs.html" class="nav-link ">
             <span data-i18n="nav_programs">Programs</span>
             <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
           </a>
@@ -706,7 +769,7 @@
         </div>
 
         <div class="nav-item"><a href="news.html" class="nav-link " data-i18n="nav_news">News</a></div>
-        <div class="nav-item"><a href="careers.html" class="nav-link " data-i18n="nav_careers">Careers</a></div>
+        <div class="nav-item"><a href="careers.html" class="nav-link active" data-i18n="nav_careers">Careers</a></div>
         <div class="nav-item"><a href="contact.html" class="nav-link " data-i18n="nav_contact">Contact</a></div>
         <a href="donate.html" class="btn-donate-nav" data-i18n="nav_donate">Donate</a>
       </nav>
@@ -721,190 +784,118 @@
   <section class="page-hero">
     <div class="container">
       <div class="breadcrumbs">
-        <a href="index.html" data-i18n="crumb_home">Home</a> &nbsp;/&nbsp; <span data-i18n="crumb_programs">Programs & Strategic Impact</span>
+        <a href="index.html" data-i18n="crumb_home">Home</a> &nbsp;/&nbsp; <span data-i18n="crumb_careers">Careers & Opportunities</span>
       </div>
-      <h2 class="page-title" data-i18n="hero_prog_title">Grounded Programs. Measurable Youth Impact.</h2>
-      <p data-i18n="hero_prog_desc">
-        Equipping newcomer and diaspora youth across Canada with modern digital competencies and entrepreneurship tools, while cultivating accountable international solidarity in Burundi.
+      <h2 class="page-title single-line" data-i18n="careers_hero_title">Careers & Opportunities</h2>
+      <p data-i18n="careers_hero_desc">
+        YBSP Canada is growing. As we expand our youth programs and Canadian operations, opportunities to join our team will be posted here.
       </p>
     </div>
   </section>
 
-  <!-- SUBNAV -->
-  <nav class="page-subnav">
+  <!-- MAIN CAREERS SECTION -->
+  <section class="content-section" style="background:#ffffff;">
     <div class="container">
-      <ul class="subnav-list">
-        <li class="subnav-item"><a href="#mentorship" class="active" data-i18n="sub_mentorship">Career Mentorship & AI</a></li>
-        <li class="subnav-item"><a href="#entrepreneurship" data-i18n="sub_entrepreneurship">Social Entrepreneurship Lab</a></li>
-        <li class="subnav-item"><a href="#awareness" data-i18n="sub_awareness">Health & Urban Ecology</a></li>
-        <li class="subnav-item"><a href="#burundi-initiative" data-i18n="sub_burundi">Burundi Synergy Initiative</a></li>
-        <li class="subnav-item"><a href="#sdgs" data-i18n="sub_sdgs">UN SDGs Alignment</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- PROGRAM 1: YOUTH MENTORSHIP & APPLIED AI -->
-  <section class="content-section" id="mentorship">
-    <div class="container">
-      <div class="program-card-block">
-        <div class="prog-text">
-          <span class="section-tag" data-i18n="tag_workforce">Career Readiness & Digital Equity</span>
-          <h3 style="font-size:1.85rem; color:var(--primary); margin:6px 0 14px;" data-i18n="p1_head">Youth Mentorship, Career Readiness & Applied AI</h3>
-          <p style="font-size:1.02rem; color:var(--text-main); font-weight:500; margin-bottom:14px; line-height:1.6;" data-i18n="p1_lead">
-            Bridging the gap between education and quality employment for newcomer, diaspora, and equity-deserving youth across Canada.
-          </p>
-          <p style="font-size:0.94rem; color:var(--text-muted); line-height:1.65; margin-bottom:18px;" data-i18n="p1_body">
-            Our structured 12-week mentorship cohort pairs participants with established Canadian public administration, technology, and business leaders. Participants gain practical skills in modern digital workflows, resume tailoring, mock technical interviews, and Canadian workplace culture.
-          </p>
-          <ul style="font-size:0.9rem; color:var(--text-main); margin-bottom:24px; line-height:1.75;">
-            <li>✓ <strong>1-on-1 Executive Mentorship:</strong> Weekly coaching with Canadian professionals.</li>
-            <li>✓ <strong>Applied AI Workplace Literacy:</strong> Practical generative AI tools, prompt engineering for research, workflow automation, and digital ethics.</li>
-            <li>✓ <strong>Career Navigation:</strong> Tailoring academic backgrounds for federal, provincial, and private hiring channels.</li>
-          </ul>
-          <a href="get-involved.html#volunteer" class="btn-primary" data-i18n="btn_mentor_apply">Become a Mentor or Volunteer →</a>
-        </div>
-        <div class="prog-img-box">
-          <img src="images/mentorship.jpg" onerror="this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=80'" alt="Youth Career Mentorship Session" class="prog-img">
-          <p style="font-size:0.8rem; color:var(--text-light); text-align:center; margin-top:8px;" data-i18n="cap_p1">
-            Empowering diaspora and newcomer youth with practical workplace competencies.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROGRAM 2: SOCIAL ENTREPRENEURSHIP & COMMUNITY COMMERCE -->
-  <section class="content-section" id="entrepreneurship" style="background:#ffffff; border-top:1px solid var(--border-color);">
-    <div class="container">
-      <div class="program-card-block reverse">
-        <div class="prog-text">
-          <span class="section-tag" data-i18n="tag_economic">Economic Self-Reliance</span>
-          <h3 style="font-size:1.85rem; color:var(--primary); margin:6px 0 14px;" data-i18n="p2_head">Social Entrepreneurship & Micro-Venture Lab</h3>
-          <p style="font-size:1.02rem; color:var(--text-main); font-weight:500; margin-bottom:14px; line-height:1.6;" data-i18n="p2_lead">
-            Fostering youth-led community commerce and small enterprise innovation in direct fulfillment of our federal charter.
-          </p>
-          <p style="font-size:0.94rem; color:var(--text-muted); line-height:1.65; margin-bottom:18px;" data-i18n="p2_body">
-            Our incubator guides youth from ideation to launching micro-ventures that solve community needs. We combine financial literacy, compliance basics, and lean startup tools to help young entrepreneurs build sustainable local enterprises without heavy startup debt.
-          </p>
-          <ul style="font-size:0.9rem; color:var(--text-main); margin-bottom:24px; line-height:1.75;">
-            <li>✓ <strong>AI for Lean Startups:</strong> Leveraging free AI tools for low-cost market testing, business planning, and brand design.</li>
-            <li>✓ <strong>Financial Literacy & CRA Compliance:</strong> Bookkeeping, sales tax fundamentals, and corporate structure basics.</li>
-            <li>✓ <strong>Seed Validation Support:</strong> Mentorship guidance to validate prototypes and connect with regional micro-grant programs.</li>
-          </ul>
-          <a href="get-involved.html#membership" class="btn-secondary" data-i18n="btn_join_lab">Join the Member Working Group →</a>
-        </div>
-        <div class="prog-img-box">
-          <img src="images/entrepreneurship.jpg" onerror="this.src='https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=700&q=80'" alt="Social Entrepreneurship Workshop" class="prog-img">
-          <p style="font-size:0.8rem; color:var(--text-light); text-align:center; margin-top:8px;" data-i18n="cap_p2">
-            Youth innovators learning business modeling and community enterprise design.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROGRAM 3: COMMUNITY HEALTH, MENTAL WELLNESS & ECOLOGY -->
-  <section class="content-section" id="awareness">
-    <div class="container">
-      <div class="program-card-block">
-        <div class="prog-text">
-          <span class="section-tag" data-i18n="tag_awareness">Charter Mandate</span>
-          <h3 style="font-size:1.85rem; color:var(--primary); margin:6px 0 14px;" data-i18n="p3_head">Community Health, Mental Wellness & Ecology</h3>
-          <p style="font-size:1.02rem; color:var(--text-main); font-weight:500; margin-bottom:14px; line-height:1.6;" data-i18n="p3_lead">
-            Direct implementation of our charter mandate to conduct educational campaigns addressing poverty, youth mental health, and environmental protection.
-          </p>
-          <p style="font-size:0.94rem; color:var(--text-muted); line-height:1.65; margin-bottom:18px;" data-i18n="p3_body">
-            Poverty and economic marginalization are closely intertwined with health and environmental vulnerabilities. Through bilingual community roundtables and youth-led initiatives, we foster holistic community well-being and civic responsibility.
-          </p>
-          <ul style="font-size:0.9rem; color:var(--text-main); margin-bottom:24px; line-height:1.75;">
-            <li>✓ <strong>Mental Health Destigmatization:</strong> Culturally safe bilingual workshops addressing youth anxiety, burnout, and intergenerational dialogue.</li>
-            <li>✓ <strong>Urban Environmental Action:</strong> Youth-led shoreline stewardship and watershed cleanups along Canadian waterways.</li>
-            <li>✓ <strong>Youth Policy Dialogues:</strong> Fostering civic participation to inform community social planning boards.</li>
-          </ul>
-          <a href="events.html#calendar" class="btn-outline" data-i18n="btn_attend_forums">Attend Upcoming Forums →</a>
-        </div>
-        <div class="prog-img-box">
-          <img src="images/health-ecology.jpg" onerror="this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80'" alt="Environmental and Community Action" class="prog-img">
-          <p style="font-size:0.8rem; color:var(--text-light); text-align:center; margin-top:8px;" data-i18n="cap_p3">
-            Youth mobilizing for watershed stewardship and community health dialogues.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROGRAM 4: GLOBAL SYNERGY INITIATIVE (BURUNDI) -->
-  <section class="content-section" id="burundi-initiative" style="background:#ffffff; border-top:1px solid var(--border-color);">
-    <div class="container">
-      <div class="program-card-block reverse">
-        <div class="prog-text">
-          <span class="section-tag" data-i18n="tag_global">International Solidarity</span>
-          <h3 style="font-size:1.85rem; color:var(--primary); margin:6px 0 14px;" data-i18n="p4_head">Global Synergy Initiative: Burundi Projects</h3>
-          <p style="font-size:1.02rem; color:var(--text-main); font-weight:500; margin-bottom:14px; line-height:1.6;" data-i18n="p4_lead">
-            Channeling Canadian solidarity and diaspora resources to fund verifiable grassroots youth projects in Burundi.
-          </p>
-          <p style="font-size:0.94rem; color:var(--text-muted); line-height:1.65; margin-bottom:18px;" data-i18n="p4_body">
-            In direct collaboration with <a href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" style="color:var(--secondary-dark); font-weight:700;">YBSP Burundi</a>, our international synergy pillar targets tangible self-reliance. We support school kit sponsorships for vulnerable children and supply vocational starter equipment to young graduates in rural communities.
-          </p>
-          <ul style="font-size:0.9rem; color:var(--text-main); margin-bottom:24px; line-height:1.75;">
-            <li>✓ <strong>#SororaIkaye Education Program:</strong> Providing school supplies, uniforms, and fee support for children and girls in rural Burundi.</li>
-            <li>✓ <strong>#MurabireKazoza Vocational Starter Kits:</strong> Outfitting young graduates with tailoring, carpentry, and agricultural toolkits.</li>
-            <li>✓ <strong>Women's Solidarity Cooperatives:</strong> Community savings circles (tontines) enabling women to establish micro-trades.</li>
-          </ul>
-          <a href="donate.html" class="btn-primary" data-i18n="btn_support_burundi">Support Burundi Initiatives →</a>
-        </div>
-        <div class="prog-img-box">
-          <img src="images/burundi-initiative.jpg" onerror="this.src='https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=700&q=80'" alt="YBSP Burundi Education Access" class="prog-img">
-          <p style="font-size:0.8rem; color:var(--text-light); text-align:center; margin-top:8px;" data-i18n="cap_p4">
-            Educational sponsorships and vocational toolkit distributions in Burundi.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 5: UN SDGS ALIGNMENT MATRIX -->
-  <section class="content-section" id="sdgs" style="background:var(--bg-slate); border-top:1px solid var(--border-color);">
-    <div class="container">
-      <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_sdgs">Strategic Policy Alignment</span>
-        <h3 class="section-title" data-i18n="heading_sdgs">Alignment with UN Sustainable Development Goals</h3>
-        <p data-i18n="desc_sdgs">
-          YBSP Canada intentionally maps its operational outcomes to Canada's 2030 Agenda and the United Nations Sustainable Development Goals (SDGs), ensuring grant readiness and international policy alignment.
+      <!-- CURRENT STATUS BANNER -->
+      <div style="background:var(--bg-slate); border-radius:var(--radius-lg); padding:36px; border-left:5px solid var(--secondary); max-width:860px; margin:0 auto 45px; text-align:center;">
+        <span class="section-tag" data-i18n="tag_hiring_status">Current Status</span>
+        <h3 style="font-size:1.6rem; color:var(--primary); margin:6px 0 12px;" data-i18n="status_heading">No Current Paid Openings</h3>
+        <p style="font-size:1rem; color:var(--text-muted); line-height:1.65; max-width:700px; margin:0 auto 20px;" data-i18n="status_desc">
+          We currently do not have any full-time or contract paid vacancies available. However, because our Canadian chapter is actively scaling, we encourage students, professionals, and community leaders to connect with our talent pool and volunteer leadership pathways.
         </p>
+        <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+          <a href="#talent-pool" class="btn-primary" data-i18n="btn_join_talent">Join General Talent Pool ↓</a>
+          <a href="get-involved.html#volunteer" class="btn-outline" data-i18n="btn_explore_vol">Volunteer Leadership Roles →</a>
+        </div>
       </div>
 
-      <div class="sdg-card-grid">
-        <div class="sdg-badge-box" style="border-top:4px solid #e11d48;">
-          <div style="font-size:1.8rem; font-weight:900; color:#e11d48; margin-bottom:6px;">SDG 1</div>
-          <h4 style="font-size:1.05rem; margin-bottom:8px;" data-i18n="sdg1_title">No Poverty</h4>
-          <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;" data-i18n="sdg1_desc">
-            Empowering youth with sustainable workforce skills and supporting grassroots micro-enterprise toolkits in Burundi.
+      <!-- ACTIVE OPPORTUNITY CHANNELS -->
+      <div class="section-header-center">
+        <span class="section-tag" data-i18n="tag_avenues">Get Involved Now</span>
+        <h3 class="section-title single-line" data-i18n="heading_avenues">How You Can Join Our Mission</h3>
+      </div>
+
+      <div class="careers-grid">
+        <div class="opp-card">
+          <div>
+            <h4 data-i18n="opp1_t">Student Placements & Academic Internships</h4>
+            <p data-i18n="opp1_d">
+              We welcome college and university students seeking accredited practicum experience in non-profit management, social media communications, career mentorship program design, and bilingual research.
+            </p>
+          </div>
+          <a href="#talent-pool" class="btn-secondary" style="align-self:flex-start; font-size:0.88rem;" data-i18n="btn_inquire_placement">Express Interest in Placement →</a>
+        </div>
+
+        <div class="opp-card">
+          <div>
+            <h4 data-i18n="opp2_t">Working Group & Committee Leadership</h4>
+            <p data-i18n="opp2_d">
+              Passionate community leaders and professionals can contribute directly to our active Member Working Groups: Youth Programs, Burundi Synergy, Governance & Audit, or Community Outreach.
+            </p>
+          </div>
+          <a href="get-involved.html#working-groups" class="btn-secondary" style="align-self:flex-start; font-size:0.88rem;" data-i18n="btn_explore_wg">Explore Working Groups →</a>
+        </div>
+      </div>
+
+      <!-- TALENT POOL FORM -->
+      <div id="talent-pool" style="margin-top:60px; padding-top:40px; border-top:1px solid var(--border-color);">
+        <div class="section-header-center">
+          <span class="section-tag" data-i18n="tag_talent">Future Openings</span>
+          <h3 class="section-title single-line" data-i18n="heading_talent">General Talent Pool Expression of Interest</h3>
+          <p data-i18n="sub_talent">
+            Submit your profile to be considered for future paid positions, project contracts, and student placements as grant funding expands.
           </p>
         </div>
 
-        <div class="sdg-badge-box" style="border-top:4px solid #c2410c;">
-          <div style="font-size:1.8rem; font-weight:900; color:#c2410c; margin-bottom:6px;">SDG 4</div>
-          <h4 style="font-size:1.05rem; margin-bottom:8px;" data-i18n="sdg4_title">Quality Education</h4>
-          <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;" data-i18n="sdg4_desc">
-            Applied AI literacy, digital competencies in Canada, and #SororaIkaye school sponsorships in Burundi.
-          </p>
-        </div>
+        <div class="form-card">
+          <form id="talentPoolForm" name="talent-pool-inquiry" method="POST" data-netlify="true" onsubmit="handleTalentSubmit(event)">
+            <input type="hidden" name="form-name" value="talent-pool-inquiry">
+            
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="tp-name" data-i18n="lbl_name">Full Name *</label>
+                <input type="text" id="tp-name" name="full_name" class="form-input" required placeholder="e.g. Eric Habimana">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="tp-email" data-i18n="lbl_email">Email Address *</label>
+                <input type="email" id="tp-email" name="email" class="form-input" required placeholder="eric@example.ca">
+              </div>
+            </div>
 
-        <div class="sdg-badge-box" style="border-top:4px solid #a16207;">
-          <div style="font-size:1.8rem; font-weight:900; color:#a16207; margin-bottom:6px;">SDG 8</div>
-          <h4 style="font-size:1.05rem; margin-bottom:8px;" data-i18n="sdg8_title">Decent Work & Growth</h4>
-          <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;" data-i18n="sdg8_desc">
-            Career mentorship cohorts, Canadian workplace readiness, and community enterprise incubation.
-          </p>
-        </div>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="tp-phone" data-i18n="lbl_phone">Phone Number</label>
+                <input type="tel" id="tp-phone" name="phone" class="form-input" placeholder="(613) 555-0133">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="tp-area" data-i18n="lbl_tp_area">Primary Area of Expertise *</label>
+                <select id="tp-area" name="area_of_interest" class="form-select" required>
+                  <option value="programs">Youth Mentorship & Program Coordination</option>
+                  <option value="digital-ai">Digital Technology & Applied AI Training</option>
+                  <option value="communications">Communications, Graphic Design & Social Media</option>
+                  <option value="fundraising">Grant Writing, Fundraising & Sponsorship</option>
+                  <option value="finance">Accounting, Bookkeeping & Administration</option>
+                  <option value="burundi-dev">International Development & Bilateral Projects</option>
+                </select>
+              </div>
+            </div>
 
-        <div class="sdg-badge-box" style="border-top:4px solid #1d4ed8;">
-          <div style="font-size:1.8rem; font-weight:900; color:#1d4ed8; margin-bottom:6px;">SDG 17</div>
-          <h4 style="font-size:1.05rem; margin-bottom:8px;" data-i18n="sdg17_title">Partnerships for Goals</h4>
-          <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;" data-i18n="sdg17_desc">
-            Direct bilateral solidarity with YBSP Burundi and multi-sector alliances with Canadian institutions.
-          </p>
+            <div class="form-group">
+              <label class="form-label" for="tp-linkedin" data-i18n="lbl_tp_linkedin">LinkedIn Profile or Portfolio URL</label>
+              <input type="url" id="tp-linkedin" name="linkedin_url" class="form-input" placeholder="https://linkedin.com/in/yourname">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="tp-bio" data-i18n="lbl_tp_bio">Brief Professional Summary & What You'd Like to Contribute *</label>
+              <textarea id="tp-bio" name="summary" class="form-textarea" rows="4" required placeholder="Tell us about your background, relevant qualifications, and what type of role interests you..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width:100%; justify-content:center;" data-i18n="btn_submit_talent">Submit Profile to Talent Pool</button>
+
+            <div id="talentFeedback" class="form-feedback" data-i18n="talent_feedback">
+              ✓ Profile Received! Thank you for your interest in joining YBSP Canada. Your information has been saved in our talent database, and we will contact you when relevant opportunities open.
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -934,6 +925,7 @@
             <li><a href="programs.html" data-i18n="nav_programs">Programs & AI Skills</a></li>
             <li><a href="events.html" data-i18n="nav_events">Events & Community</a></li>
             <li><a href="news.html" data-i18n="nav_news">News & Impact Stories</a></li>
+            <li><a href="careers.html" data-i18n="nav_careers">Careers & Opportunities</a></li>
             <li><a href="donate.html" data-i18n="nav_donate">Support Our Mission</a></li>
           </ul>
         </div>
@@ -983,77 +975,61 @@
         tagline: "Uniting youth. Building synergy. Ending poverty.",
         nav_home: "Home",
         nav_about: "About Us",
+        nav_story: "Our Story (2011–2026)",
         nav_mission: "Mission & Mandate",
-        nav_leadership: "Executive Leadership",
+        nav_team: "Our Leadership",
         nav_governance: "Board & Governance",
         nav_continuity: "Founder & Continuity",
         nav_corporate: "Corporate Filings",
         nav_burundi: "Burundi Sisterhood",
         nav_programs: "Programs",
-        nav_mentorship: "Youth Mentorship & AI",
+        nav_mentorship: "Career Mentorship & AI",
         nav_entrepreneurship: "Social Entrepreneurship",
-        nav_awareness: "Community Health & Ecology",
-        nav_burundi_prog: "Burundi Synergy Initiative",
+        nav_awareness: "Health & Urban Ecology",
+        nav_burundi_prog: "Burundi Projects",
         nav_sdgs: "UN SDGs Alignment",
         nav_involved: "Get Involved",
         nav_volunteer: "Volunteer Application",
         nav_membership: "Become a Member",
         nav_working_groups: "Member Working Groups",
         nav_partnerships: "Institutional Partners",
-        nav_events: "Community & Events",
+        nav_events: "Events",
         nav_calendar: "Events Calendar",
         nav_host: "Host or Propose an Event",
         nav_gala: "Annual Solidarity Gala",
         nav_gallery: "Authentic Photo Gallery",
         nav_news: "News",
         nav_careers: "Careers",
-        nav_careers: "Careers",
-        nav_contact: "Contact Us",
+        nav_contact: "Contact",
         nav_donate: "Donate",
         crumb_home: "Home",
-        crumb_programs: "Programs & Strategic Impact",
-        hero_prog_title: "Grounded Programs. Measurable Youth Impact.",
-        hero_prog_desc: "Equipping newcomer and diaspora youth across Canada with modern digital competencies and entrepreneurship tools, while cultivating accountable international solidarity in Burundi.",
-        sub_mentorship: "Career Mentorship & AI",
-        sub_entrepreneurship: "Social Entrepreneurship Lab",
-        sub_awareness: "Health & Urban Ecology",
-        sub_burundi: "Burundi Synergy Initiative",
-        sub_sdgs: "UN SDGs Alignment",
-        tag_workforce: "Career Readiness & Digital Equity",
-        p1_head: "Youth Mentorship, Career Readiness & Applied AI",
-        p1_lead: "Bridging the gap between education and quality employment for newcomer, diaspora, and equity-deserving youth across Canada.",
-        p1_body: "Our structured 12-week mentorship cohort pairs participants with established Canadian public administration, technology, and business leaders. Participants gain practical skills in modern digital workflows, resume tailoring, mock technical interviews, and Canadian workplace culture.",
-        btn_mentor_apply: "Become a Mentor or Volunteer →",
-        cap_p1: "Empowering diaspora and newcomer youth with practical workplace competencies.",
-        tag_economic: "Economic Self-Reliance",
-        p2_head: "Social Entrepreneurship & Micro-Venture Lab",
-        p2_lead: "Fostering youth-led community commerce and small enterprise innovation in direct fulfillment of our federal charter.",
-        p2_body: "Our incubator guides youth from ideation to launching micro-ventures that solve community needs. We combine financial literacy, compliance basics, and lean startup tools to help young entrepreneurs build sustainable local enterprises without heavy startup debt.",
-        btn_join_lab: "Join the Member Working Group →",
-        cap_p2: "Youth innovators learning business modeling and community enterprise design.",
-        tag_awareness: "Charter Mandate",
-        p3_head: "Community Health, Mental Wellness & Ecology",
-        p3_lead: "Direct implementation of our charter mandate to conduct educational campaigns addressing poverty, youth mental health, and environmental protection.",
-        p3_body: "Poverty and economic marginalization are closely intertwined with health and environmental vulnerabilities. Through bilingual community roundtables and youth-led initiatives, we foster holistic community well-being and civic responsibility.",
-        btn_attend_forums: "Attend Upcoming Forums →",
-        cap_p3: "Youth mobilizing for watershed stewardship and community health dialogues.",
-        tag_global: "International Solidarity",
-        p4_head: "Global Synergy Initiative: Burundi Projects",
-        p4_lead: "Channeling Canadian solidarity and diaspora resources to fund verifiable grassroots youth projects in Burundi.",
-        p4_body: "In direct collaboration with YBSP Burundi, our international synergy pillar targets tangible self-reliance. We support school kit sponsorships for vulnerable children and supply vocational starter equipment to young graduates in rural communities.",
-        btn_support_burundi: "Support Burundi Initiatives →",
-        cap_p4: "Educational sponsorships and vocational toolkit distributions in Burundi.",
-        tag_sdgs: "Strategic Policy Alignment",
-        heading_sdgs: "Alignment with UN Sustainable Development Goals",
-        desc_sdgs: "YBSP Canada intentionally maps its operational outcomes to Canada's 2030 Agenda and the United Nations Sustainable Development Goals (SDGs), ensuring grant readiness and international policy alignment.",
-        sdg1_title: "No Poverty",
-        sdg1_desc: "Empowering youth with sustainable workforce skills and supporting grassroots micro-enterprise toolkits in Burundi.",
-        sdg4_title: "Quality Education",
-        sdg4_desc: "Applied AI literacy, digital competencies in Canada, and #SororaIkaye school sponsorships in Burundi.",
-        sdg8_title: "Decent Work & Growth",
-        sdg8_desc: "Career mentorship cohorts, Canadian workplace readiness, and community enterprise incubation.",
-        sdg17_title: "Partnerships for Goals",
-        sdg17_desc: "Direct bilateral solidarity with YBSP Burundi and multi-sector alliances with Canadian institutions.",
+        crumb_careers: "Careers & Opportunities",
+        careers_hero_title: "Careers & Opportunities",
+        careers_hero_desc: "YBSP Canada is growing. As we expand our youth programs and Canadian operations, opportunities to join our team will be posted here.",
+        tag_hiring_status: "Current Status",
+        status_heading: "No Current Paid Openings",
+        status_desc: "We currently do not have any full-time or contract paid vacancies available. However, because our Canadian chapter is actively scaling, we encourage students, professionals, and community leaders to connect with our talent pool and volunteer leadership pathways.",
+        btn_join_talent: "Join General Talent Pool ↓",
+        btn_explore_vol: "Volunteer Leadership Roles →",
+        tag_avenues: "Get Involved Now",
+        heading_avenues: "How You Can Join Our Mission",
+        opp1_t: "Student Placements & Academic Internships",
+        opp1_d: "We welcome college and university students seeking accredited practicum experience in non-profit management, social media communications, career mentorship program design, and bilingual research.",
+        btn_inquire_placement: "Express Interest in Placement →",
+        opp2_t: "Working Group & Committee Leadership",
+        opp2_d: "Passionate community leaders and professionals can contribute directly to our active Member Working Groups: Youth Programs, Burundi Synergy, Governance & Audit, or Community Outreach.",
+        btn_explore_wg: "Explore Working Groups →",
+        tag_talent: "Future Openings",
+        heading_talent: "General Talent Pool Expression of Interest",
+        sub_talent: "Submit your profile to be considered for future paid positions, project contracts, and student placements as grant funding expands.",
+        lbl_name: "Full Name *",
+        lbl_email: "Email Address *",
+        lbl_phone: "Phone Number",
+        lbl_tp_area: "Primary Area of Expertise *",
+        lbl_tp_linkedin: "LinkedIn Profile or Portfolio URL",
+        lbl_tp_bio: "Brief Professional Summary & What You'd Like to Contribute *",
+        btn_submit_talent: "Submit Profile to Talent Pool",
+        talent_feedback: "✓ Profile Received! Thank you for your interest in joining YBSP Canada. Your information has been saved in our talent database, and we will contact you when relevant opportunities open.",
         footer_about_desc: "Youth Building in Synergy to end Poverty is a federally incorporated Canadian not-for-profit corporation (Canada Not-for-profit Corporations Act) dedicated to fostering youth leadership, community synergy, and international solidarity.",
         footer_quick_links: "Quick Links",
         footer_involved: "Get Involved",
@@ -1066,77 +1042,61 @@
         tagline: "Unir la jeunesse. Bâtir la synergie. Vaincre la précarité.",
         nav_home: "Accueil",
         nav_about: "À propos",
+        nav_story: "Notre histoire (2011–2026)",
         nav_mission: "Mission & Mandat",
-        nav_leadership: "Direction générale",
+        nav_team: "Notre équipe",
         nav_governance: "Conseil d'administration",
         nav_continuity: "Fondation & Continuité",
         nav_corporate: "Dépôts corporatifs",
         nav_burundi: "Alliance avec le Burundi",
         nav_programs: "Programmes",
-        nav_mentorship: "Mentorat jeunesse & IA",
+        nav_mentorship: "Mentorat de carrière & IA",
         nav_entrepreneurship: "Entrepreneuriat social",
-        nav_awareness: "Santé communautaire & Écologie",
-        nav_burundi_prog: "Projets Synergie Burundi",
+        nav_awareness: "Santé & Écologie urbaine",
+        nav_burundi_prog: "Projets Burundi",
         nav_sdgs: "Alignement ODD de l'ONU",
         nav_involved: "S'impliquer",
         nav_volunteer: "Formulaire de bénévolat",
         nav_membership: "Devenir membre",
         nav_working_groups: "Comités de travail",
         nav_partnerships: "Partenariats institutionnels",
-        nav_events: "Communauté & Événements",
+        nav_events: "Événements",
         nav_calendar: "Calendrier des événements",
         nav_host: "Organiser ou proposer un événement",
         nav_gala: "Gala annuel de solidarité",
         nav_gallery: "Galerie photos authentiques",
         nav_news: "Nouvelles",
         nav_careers: "Carrières",
-        nav_careers: "Carrières",
-        nav_contact: "Nous joindre",
+        nav_contact: "Contact",
         nav_donate: "Faire un don",
         crumb_home: "Accueil",
-        crumb_programs: "Programmes & Impact stratégique",
-        hero_prog_title: "Des programmes concrets. Un impact mesurable.",
-        hero_prog_desc: "Doter les jeunes issus de l'immigration et de la diaspora au Canada de compétences numériques modernes et d'outils entrepreneuriaux, tout en bâtissant une solidarité bilatérale avec le Burundi.",
-        sub_mentorship: "Mentorat & IA appliquée",
-        sub_entrepreneurship: "Laboratoire d'entrepreneuriat social",
-        sub_awareness: "Santé & Écologie urbaine",
-        sub_burundi: "Initiative Synergie Burundi",
-        sub_sdgs: "Alignement ODD de l'ONU",
-        tag_workforce: "Insertion professionnelle & Équité numérique",
-        p1_head: "Mentorat jeunesse, Insertion & IA appliquée",
-        p1_lead: "Faciliter la transition des études vers un emploi de qualité pour les jeunes issus de la diaspora et nouveaux arrivants au Canada.",
-        p1_body: "Notre cohorte de mentorat de 12 semaines jumelle les participants avec des leaders canadiens de la fonction publique, de la technologie et des affaires. Les jeunes maîtrisent les outils numériques d'affaires, l'optimisation de candidatures et les normes professionnelles locales.",
-        btn_mentor_apply: "Devenir mentor ou bénévole →",
-        cap_p1: "Développement des compétences professionnelles des jeunes de la diaspora.",
-        tag_economic: "Autonomie économique",
-        p2_head: "Laboratoire d'entrepreneuriat social & Micro-projets",
-        p2_lead: "Encourager le commerce communautaire et l'innovation d'entreprise en accord direct avec notre charte fédérale.",
-        p2_body: "Notre incubateur accompagne les jeunes de l'idée au lancement de micro-entreprises répondant aux besoins locaux. Nous combinons littératie financière, conformité de base et méthodologies agiles pour bâtir des projets viables.",
-        btn_join_lab: "Rejoindre le comité de travail →",
-        cap_p2: "Jeunes innovateurs concevant des modèles d'affaires à vocation sociale.",
-        tag_awareness: "Mandat statutaire",
-        p3_head: "Santé communautaire, Bien-être mental & Écologie",
-        p3_lead: "Mise en œuvre directe de notre charte : campagnes d'éducation sur la précarité, la santé mentale et la protection de l'environnement.",
-        p3_body: "L'exclusion économique est étroitement liée aux défis de santé et de dégradation environnementale. Par des dialogues sécurisants et des corvées écologiques, nous renforçons la résilience collective.",
-        btn_attend_forums: "Participer aux prochains forums →",
-        cap_p3: "Mobilisation citoyenne pour l'environnement et la santé des jeunes.",
-        tag_global: "Solidarité internationale",
-        p4_head: "Initiative Synergie Globale : Projets Burundi",
-        p4_lead: "Canaliser la solidarité canadienne pour financer des projets vérifiables d'autonomisation des jeunes au Burundi.",
-        p4_body: "En collaboration étroite avec YBSP Burundi, nous finançons des kits professionnels (#MurabireKazoza) et des bourses scolaires (#SororaIkaye) avec une reddition de comptes rigoureuse.",
-        btn_support_burundi: "Soutenir les projets au Burundi →",
-        cap_p4: "Bourses scolaires et dotation de kits d'outillage au Burundi.",
-        tag_sdgs: "Alignement stratégique",
-        heading_sdgs: "Alignement avec les Objectifs de développement durable de l'ONU",
-        desc_sdgs: "YBSP Canada aligne rigoureusement ses indicateurs de résultats sur l'Agenda 2030 du Canada et les ODD des Nations Unies.",
-        sdg1_title: "Pas de pauvreté",
-        sdg1_desc: "Doter les jeunes de compétences viables et financer des kits professionnels de démarrage au Burundi.",
-        sdg4_title: "Éducation de qualité",
-        sdg4_desc: "Maîtrise de l'IA appliquée et compétences numériques au Canada, parrainages scolaires #SororaIkaye au Burundi.",
-        sdg8_title: "Travail décent & Croissance",
-        sdg8_desc: "Cohortes de mentorat, préparation au marché de l'emploi canadien et incubation de micro-entreprises.",
-        sdg17_title: "Partenariats pour les objectifs",
-        sdg17_desc: "Solidarité bilatérale avec YBSP Burundi et partenariats multi-sectoriels avec les institutions canadiennes.",
+        crumb_careers: "Carrières & Opportunités",
+        careers_hero_title: "Carrières & Opportunités",
+        careers_hero_desc: "YBSP Canada grandit. À mesure que nous développons nos programmes jeunesse et nos opérations, les postes disponibles seront publiés ici.",
+        tag_hiring_status: "Statut actuel",
+        status_heading: "Aucun poste rémunéré pour le moment",
+        status_desc: "Nous n'avons actuellement aucun poste rémunéré ouvert. Toutefois, notre antenne canadienne étant en plein développement, nous invitons les étudiants et professionnels à intégrer notre bassin de talents.",
+        btn_join_talent: "Rejoindre le bassin de talents ↓",
+        btn_explore_vol: "Rôles de leadership bénévole →",
+        tag_avenues: "S'engager dès maintenant",
+        heading_avenues: "Comment participer à notre mission",
+        opp1_t: "Stages académiques et crédités",
+        opp1_d: "Nous accueillons les étudiants collégiaux et universitaires cherchant un stage pratique en gestion des OBNL, communications numériques ou mentorat de jeunesse.",
+        btn_inquire_placement: "Manifester mon intérêt pour un stage →",
+        opp2_t: "Leadership au sein des comités de travail",
+        opp2_d: "Les leaders communautaires peuvent contribuer directement à nos comités actifs : Programmes jeunesse, Synergie Burundi, Gouvernance ou Rayonnement citoyen.",
+        btn_explore_wg: "Découvrir les comités de travail →",
+        tag_talent: "Opportunités futures",
+        heading_talent: "Manifestation d'intérêt - Bassin de talents",
+        sub_talent: "Soumettez votre profil pour être contacté lors de l'ouverture de futurs postes contractuels ou de stages à mesure que nos subventions progressent.",
+        lbl_name: "Nom complet *",
+        lbl_email: "Adresse courriel *",
+        lbl_phone: "Numéro de téléphone",
+        lbl_tp_area: "Domaine d'expertise principal *",
+        lbl_tp_linkedin: "Profil LinkedIn ou portfolio",
+        lbl_tp_bio: "Résumé professionnel et contribution souhaitée *",
+        btn_submit_talent: "Soumettre mon profil au bassin",
+        talent_feedback: "✓ Profil reçu ! Merci pour votre intérêt pour YBSP Canada. Vos coordonnées ont été enregistrées et nous vous contacterons dès qu'une opportunité correspondra.",
         footer_about_desc: "Youth Building in Synergy to end Poverty est une organisation à but non lucratif constituée au fédéral (Loi BNL), dédiée au leadership des jeunes et à la solidarité internationale.",
         footer_quick_links: "Liens rapides",
         footer_involved: "S'impliquer",
@@ -1160,6 +1120,12 @@
       document.documentElement.lang = lang;
     }
 
+    function handleTalentSubmit(e) {
+      e.preventDefault();
+      document.getElementById('talentFeedback').style.display = 'block';
+      e.target.reset();
+    }
+
     function toggleMobileNav() {
       const navMenu = document.querySelector('.nav-menu');
       if (navMenu.style.display === 'flex') {
@@ -1168,7 +1134,7 @@
         navMenu.style.display = 'flex';
         navMenu.style.flexDirection = 'column';
         navMenu.style.position = 'absolute';
-        navMenu.style.top = '78px';
+        navMenu.style.top = '74px';
         navMenu.style.left = '0';
         navMenu.style.width = '100%';
         navMenu.style.background = '#ffffff';

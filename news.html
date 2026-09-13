@@ -143,18 +143,9 @@
       letter-spacing: 0.06em;
       display: block;
     }
-    .nav-menu { display: flex; align-items: center; gap: 4px; }
-    .nav-item { position: relative; }
-    .nav-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 10px 14px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--primary);
-      border-radius: var(--radius-sm);
-    }
+    .nav-menu { display: flex; align-items: center; gap: 2px; flex-wrap: nowrap !important; }
+    .nav-item { position: relative; white-space: nowrap; }
+    .nav-link { display: inline-flex; align-items: center; gap: 4px; padding: 7px 9px; font-size: 0.88rem; font-weight: 600; color: var(--primary); border-radius: var(--radius-sm); white-space: nowrap; }
     .nav-link:hover, .nav-link.active {
       color: var(--secondary-dark);
       background-color: var(--bg-slate);
@@ -195,16 +186,22 @@
       padding-left: 22px;
     }
     .btn-donate-nav {
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+      background: var(--accent);
       color: #ffffff !important;
       font-weight: 700 !important;
-      padding: 10px 22px !important;
+      padding: 8px 18px !important;
       border-radius: 50px !important;
-      box-shadow: 0 4px 10px rgba(245, 158, 11, 0.35);
-      margin-left: 10px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      margin-left: 6px;
+      white-space: nowrap !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+      text-decoration: none !important;
+    }
+    .btn-donate-nav:hover {
+      background: var(--accent-hover) !important;
+      transform: translateY(-1px);
     }
 
     /* PAGE HERO */
@@ -769,7 +766,18 @@
       .modal-article-img { height: 200px; }
     }
 
-  </style>
+  
+    .brand-logo-svg {
+      width: 44px !important;
+      height: 44px !important;
+      max-width: 44px !important;
+      max-height: 44px !important;
+      min-width: 44px !important;
+      min-height: 44px !important;
+      flex-shrink: 0 !important;
+    }
+
+</style>
 </head>
 <body>
 
@@ -798,8 +806,10 @@
         </div>
         <div class="top-bar-item">
           <a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1;" aria-label="Facebook">FB</a>
-          <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; margin-left: 10px;" aria-label="Instagram">IG</a>
-          <a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; margin-left: 10px;" aria-label="X">X</a>
+          <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; margin-left: 8px;" aria-label="Instagram">IG</a>
+          <a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; margin-left: 8px;" aria-label="X">X</a>
+          <a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; margin-left: 8px;" aria-label="TikTok">TT</a>
+          <a href="https://www.snapchat.com/add/ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; margin-left: 8px;" aria-label="Snapchat">SC</a>
         </div>
       </div>
     </div>
@@ -809,7 +819,7 @@
   <header class="main-header">
     <div class="container nav-inner">
       <a href="index.html" class="brand-logo">
-        <svg class="brand-logo-svg" viewBox="0 0 120 120" style="width:46px; height:46px; flex-shrink:0;" xmlns="http://www.w3.org/2000/svg">
+        <svg class="brand-logo-svg" width="44" height="44" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient id="logoBurst" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stop-color="#ffffff"/>
@@ -848,63 +858,67 @@
         </div>
       </a>
 
-      <nav class="nav-menu">
-        <div class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></div>
+            <nav class="nav-menu" aria-label="Primary Navigation">
+        <div class="nav-item"><a href="index.html" class="nav-link " data-i18n="nav_home">Home</a></div>
+        
         <div class="nav-item">
-          <a href="about.html" class="nav-link">
+          <a href="about.html" class="nav-link ">
             <span data-i18n="nav_about">About Us</span>
             <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
           </a>
           <div class="dropdown-menu">
-            <a href="about.html#mission" class="dropdown-link" data-i18n="nav_mission">Mission & Vision</a>
+            <a href="about.html#mission" class="dropdown-link" data-i18n="nav_mission">Mission & Mandate</a>
+            <a href="about.html#team" class="dropdown-link" data-i18n="nav_team">Executive Leadership</a>
             <a href="about.html#governance" class="dropdown-link" data-i18n="nav_governance">Board & Governance</a>
             <a href="about.html#corporate" class="dropdown-link" data-i18n="nav_corporate">Corporate Filings</a>
-            <a href="about.html#synergy" class="dropdown-link" data-i18n="nav_burundi">Synergy with YBSP Burundi</a>
+            <a href="about.html#synergy" class="dropdown-link" data-i18n="nav_burundi">Burundi Sisterhood</a>
           </div>
         </div>
 
         <div class="nav-item">
-          <a href="programs.html" class="nav-link">
+          <a href="programs.html" class="nav-link ">
             <span data-i18n="nav_programs">Programs</span>
             <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
           </a>
           <div class="dropdown-menu">
-            <a href="programs.html#mentorship" class="dropdown-link" data-i18n="nav_mentorship">Youth Mentorship & Skills</a>
+            <a href="programs.html#mentorship" class="dropdown-link" data-i18n="nav_mentorship">Career Mentorship & AI</a>
             <a href="programs.html#entrepreneurship" class="dropdown-link" data-i18n="nav_entrepreneurship">Social Entrepreneurship</a>
-            <a href="programs.html#awareness" class="dropdown-link" data-i18n="nav_awareness">Community Health & Awareness</a>
-            <a href="programs.html#burundi-initiative" class="dropdown-link" data-i18n="nav_intl_projects">Burundi Synergy Initiative</a>
+            <a href="programs.html#awareness" class="dropdown-link" data-i18n="nav_awareness">Health & Urban Ecology</a>
+            <a href="programs.html#burundi-initiative" class="dropdown-link" data-i18n="nav_burundi_prog">Burundi Projects</a>
+            <a href="programs.html#sdgs" class="dropdown-link" data-i18n="nav_sdgs">UN SDGs Alignment</a>
           </div>
         </div>
 
         <div class="nav-item">
-          <a href="events.html" class="nav-link">
-            <span data-i18n="nav_community">Community & Events</span>
-            <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-          </a>
-          <div class="dropdown-menu">
-            <a href="events.html" class="dropdown-link" data-i18n="nav_calendar">Events Calendar</a>
-            <a href="events.html#past" class="dropdown-link" data-i18n="nav_past_events">Past Activities</a>
-            <a href="gallery.html" class="dropdown-link" data-i18n="nav_gallery">Photo Gallery</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <a href="news.html" class="nav-link active" data-i18n="nav_news">News & Impact</a>
-        </div>
-
-        <div class="nav-item">
-          <a href="get-involved.html" class="nav-link">
+          <a href="get-involved.html" class="nav-link ">
             <span data-i18n="nav_involved">Get Involved</span>
             <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
           </a>
           <div class="dropdown-menu">
-            <a href="get-involved.html#volunteer" class="dropdown-link" data-i18n="nav_volunteer">Volunteer</a>
+            <a href="get-involved.html#volunteer" class="dropdown-link" data-i18n="nav_volunteer">Volunteer Application</a>
             <a href="get-involved.html#membership" class="dropdown-link" data-i18n="nav_membership">Become a Member</a>
-            <a href="get-involved.html#partner" class="dropdown-link" data-i18n="nav_partner">Partner With Us</a>
+            <a href="get-involved.html#working-groups" class="dropdown-link" data-i18n="nav_working_groups">Member Working Groups</a>
+            <a href="get-involved.html#partnerships" class="dropdown-link" data-i18n="nav_partnerships">Institutional Partners</a>
           </div>
         </div>
 
-        <a href="donate.html" class="btn-donate-nav" data-i18n="nav_donate">Donate Now</a>
+        <div class="nav-item">
+          <a href="events.html" class="nav-link ">
+            <span data-i18n="nav_events">Events</span>
+            <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="events.html#calendar" class="dropdown-link" data-i18n="nav_calendar">Events Calendar</a>
+            <a href="events.html#host" class="dropdown-link" data-i18n="nav_host">Host or Propose an Event</a>
+            <a href="events.html#gala" class="dropdown-link" data-i18n="nav_gala">Annual Solidarity Gala</a>
+            <a href="events.html#gallery" class="dropdown-link" data-i18n="nav_gallery">Authentic Photo Gallery</a>
+          </div>
+        </div>
+
+        <div class="nav-item"><a href="news.html" class="nav-link active" data-i18n="nav_news">News</a></div>
+        <div class="nav-item"><a href="careers.html" class="nav-link " data-i18n="nav_careers">Careers</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link " data-i18n="nav_contact">Contact</a></div>
+        <a href="donate.html" class="btn-donate-nav" data-i18n="nav_donate">Donate</a>
       </nav>
     </div>
   </header>
@@ -1072,18 +1086,18 @@
           <div class="press-list">
             <div class="press-item">
               <span class="press-date">AUG 2026</span>
-              <a href="#" class="press-link" data-i18n="pr1_title">YBSP Canada Announces Annual Solidarity Gala Date in Gatineau</a>
-              <span class="press-tag">PDF</span>
+              <a href="docs/YBSP_Canada_Press_Release_Gala_2026.pdf" target="_blank" class="press-link" data-i18n="pr1_title">YBSP Canada Announces Annual Solidarity Gala Date in Gatineau</a>
+              <a href="docs/YBSP_Canada_Press_Release_Gala_2026.pdf" target="_blank" download="YBSP_Canada_Press_Release_Gala_2026.pdf" class="press-tag" style="text-decoration:none; cursor:pointer;" title="Download PDF">PDF ↗</a>
             </div>
             <div class="press-item">
               <span class="press-date">JUL 2026</span>
-              <a href="#" class="press-link" data-i18n="pr2_title">Memorandum of Cooperation Renewed with YBSP Burundi</a>
-              <span class="press-tag">PDF</span>
+              <a href="docs/YBSP_Canada_Burundi_Cooperation_Statement.pdf" target="_blank" class="press-link" data-i18n="pr2_title">Memorandum of Cooperation Renewed with YBSP Burundi</a>
+              <a href="docs/YBSP_Canada_Burundi_Cooperation_Statement.pdf" target="_blank" download="YBSP_Canada_Burundi_Cooperation_Statement.pdf" class="press-tag" style="text-decoration:none; cursor:pointer;" title="Download PDF">PDF ↗</a>
             </div>
             <div class="press-item">
               <span class="press-date">APR 2026</span>
-              <a href="#" class="press-link" data-i18n="pr3_title">Release of 2025 Annual Impact & Financial Transparency Statement</a>
-              <span class="press-tag">PDF</span>
+              <a href="docs/YBSP_Canada_Financial_Transparency_Statement.pdf" target="_blank" class="press-link" data-i18n="pr3_title">Release of 2025 Annual Impact & Financial Transparency Statement</a>
+              <a href="docs/YBSP_Canada_Financial_Transparency_Statement.pdf" target="_blank" download="YBSP_Canada_Financial_Transparency_Statement.pdf" class="press-tag" style="text-decoration:none; cursor:pointer;" title="Download PDF">PDF ↗</a>
             </div>
           </div>
         </div>
@@ -1095,15 +1109,15 @@
               Download official brand assets, executive bios, high-resolution logos, and our institutional fact sheet for press coverage and community partnerships.
             </p>
             <div class="media-links">
-              <a href="#" class="media-download-btn">
+              <a href="docs/YBSP_Canada_Fact_Sheet.pdf" target="_blank" class="media-download-btn" download="YBSP_Canada_Fact_Sheet.pdf">
                 <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                 <span data-i18n="media_file1">YBSP Canada Fact Sheet & Overview (PDF)</span>
               </a>
-              <a href="#" class="media-download-btn">
+              <a href="docs/YBSP_Canada_Brand_Guidelines_and_Logo_Pack.zip" class="media-download-btn" download="YBSP_Canada_Brand_Guidelines_and_Logo_Pack.zip">
                 <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                 <span data-i18n="media_file2">Official Brand Guidelines & Logo Pack (.ZIP)</span>
               </a>
-              <a href="#" class="media-download-btn">
+              <a href="about.html#team" class="media-download-btn">
                 <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                 <span data-i18n="media_file3">Board Biographies & Governance Charter</span>
               </a>
@@ -1119,7 +1133,7 @@
     <div class="container">
       <h2 data-i18n="cta_title">Never Miss a Milestone</h2>
       <p data-i18n="cta_desc">Subscribe to our quarterly community bulletin for verified impact reports, upcoming youth cohorts, and bilateral project stories.</p>
-      <form class="cta-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to YBSP Canada updates!');">
+      <form class="cta-form" name="newsletter-subscribe" method="POST" data-netlify="true" onsubmit="event.preventDefault(); alert('Thank you for subscribing to YBSP Canada updates!');">
         <input type="email" class="cta-input" placeholder="Enter your email address" required aria-label="Email address">
         <button type="submit" class="btn-subscribe" data-i18n="cta_btn">Subscribe to News</button>
       </form>
@@ -1159,7 +1173,7 @@
           <ul class="footer-links">
             <li><a href="get-involved.html#volunteer" data-i18n="nav_volunteer">Volunteer Opportunities</a></li>
             <li><a href="get-involved.html#membership" data-i18n="nav_membership">Become a Member</a></li>
-            <li><a href="get-involved.html#partner" data-i18n="nav_partner">Institutional Partnerships</a></li>
+            <li><a href="get-involved.html#partnerships" data-i18n="nav_partner">Institutional Partnerships</a></li>
             <li><a href="about.html#synergy" data-i18n="nav_burundi">Burundi Project Synergy</a></li>
           </ul>
         </div>
@@ -1186,8 +1200,8 @@
           &copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
         </div>
         <div class="footer-bottom-links">
-          <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
-          <a href="terms.html" data-i18n="footer_terms">Terms of Use</a>
+          <a href="about.html#corporate" data-i18n="footer_privacy">Privacy Policy</a>
+          <a href="about.html#corporate" data-i18n="footer_terms">Terms of Use</a>
           <a href="about.html#corporate" data-i18n="footer_transparency">Governance & Filings</a>
         </div>
       </div>
@@ -1382,8 +1396,8 @@
             <h3>Bridging Education to Meaningful Careers</h3>
             <p>To address this gap, YBSP Canada's flagship 12-week Youth Mentorship Cohort pairs participants 1-on-1 with established public servants, corporate analysts, and social innovators. Over weekly sessions, mentors guide youth through customized resume tailoring, mock technical interviews, and professional networking strategies.</p>
             <div class="modal-article-quote">
-              "The guidance I received wasn't generic advice—my mentor helped me translate my foreign academic credentials into clear competencies that resonated with Canadian hiring managers."
-              <br><small><strong>— Marcelle N., 2025 Cohort Graduate, Ottawa</strong></small>
+              "The guidance I received wasn't generic advice, my mentor helped me translate my foreign academic credentials into clear competencies that resonated with Canadian hiring managers."
+              <br><small><strong>,  Marcelle N., 2025 Cohort Graduate, Ottawa</strong></small>
             </div>
             <h3>Practical Skills & Enterprise Workflows</h3>
             <p>In addition to mentorship pairings, participants complete intensive labs in business workflow automation, ERP fundamentals, and communication etiquette. With the support of regional volunteers, the upcoming fall cohort will welcome 30 additional participants across Ottawa and Gatineau.</p>
@@ -1403,7 +1417,7 @@
             <p>Le programme de mentorat de 12 semaines de YBSP Canada répond à ce défi en jumelant individuellement chaque participant avec un professionnel chevronné. Tout au long du parcours, les mentors offrent des conseils stratégiques sur l'optimisation des candidatures et la préparation aux entrevues.</p>
             <div class="modal-article-quote">
               « L'accompagnement personnalisé m'a permis de valoriser mes compétences avec assurance face aux employeurs de la région. »
-              <br><small><strong>— Marcelle N., diplômée de la cohorte, Ottawa</strong></small>
+              <br><small><strong>,  Marcelle N., diplômée de la cohorte, Ottawa</strong></small>
             </div>
             <h3>Compétences numériques et processus d'affaires</h3>
             <p>Les participants suivent également des ateliers pratiques sur les systèmes d'information, les outils de gestion et la communication d'entreprise.</p>
@@ -1424,7 +1438,7 @@
             <p>Through our bilateral partnership with YBSP Burundi, YBSP Canada channels donor funds and diaspora knowledge to fund essential vocational kits. Over the past six months, more than 45 young graduates in Bujumbura Rural and Gitega have received starter packages, including sewing machines, manual carpentry sets, and high-yield seed stocks.</p>
             <div class="modal-article-quote">
               "Providing tools rather than one-time food relief gives young people the lasting dignity of self-reliance. When youth earn an income, they invest in their siblings' schooling."
-              <br><small><strong>— Field Representative, YBSP Burundi</strong></small>
+              <br><small><strong>,  Field Representative, YBSP Burundi</strong></small>
             </div>
             <h3>Transparent Milestone-Based Transfers</h3>
             <p>Every dollar sent from Canada is governed by strict milestone agreements. Funds are released directly against supplier invoices and verified delivery logs, ensuring 100% accountability to Canadian supporters.</p>
@@ -1443,7 +1457,7 @@
             <p>Grâce à notre coopération bilatérale, YBSP Canada soutient l'acquisition de kits de démarrage en couture, menuiserie et agriculture pour plus de 45 jeunes diplômés à Bujumbura Rural et Gitega.</p>
             <div class="modal-article-quote">
               « Donner des outils durables permet aux jeunes de subvenir à leurs besoins avec dignité et de scolariser leurs enfants. »
-              <br><small><strong>— Représentant de terrain, YBSP Burundi</strong></small>
+              <br><small><strong>,  Représentant de terrain, YBSP Burundi</strong></small>
             </div>
           `
         }
@@ -1459,7 +1473,7 @@
           content: `
             <p>Youth Building in Synergy to end Poverty (YBSP Canada) has formally completed and filed its statutory Annual Corporate Return with Corporations Canada for the active reporting period under the <em>Canada Not-for-profit Corporations Act</em> (NFP Act).</p>
             <h3>Voluntary, Uncompensated Leadership</h3>
-            <p>As confirmed in our corporate filings, YBSP Canada operates with an active Board of Directors consisting of Leis Bruel Haragirimana, Yves Dushimimana, and Nader Diab. In accordance with Section 8 of our Articles of Incorporation, all directors serve strictly without remuneration, ensuring that all revenues and public support remain entirely focused on program delivery.</p>
+            <p>As confirmed in our corporate filings, YBSP Canada operates with an active Board of Directors consisting of Leis Bruel Haragirimana, Yves Dushimimana, and Trésor Nishimwe. In accordance with Section 8 of our Articles of Incorporation, all directors serve strictly without remuneration, ensuring that all revenues and public support remain entirely focused on program delivery.</p>
             <h3>Open Governance and Public Trust</h3>
             <p>Maintaining full compliance with federal regulators is a foundational priority. Our official filings verify our corporate standing, registered office address in Ottawa, ON, and business registration numbers (Corp # 1154010-6, BN: 779321272RC0001).</p>
           `
