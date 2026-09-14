@@ -189,7 +189,7 @@
     .dropdown-link { display: block; padding: 9px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500; }
     .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 22px; }
 
-    .btn-donate-nav { background: var(--accent); color: #ffffff !important; font-weight: 700; padding: 8px 18px; border-radius: 50px; text-decoration: none; transition: var(--transition); white-space: nowrap !important; flex-shrink: 0 !important; font-size: 0.88rem; display: inline-flex; align-items: center; justify-content: center; }
+    .btn-donate-nav { white-space: nowrap !important; min-width: max-content !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; background: var(--accent) !important; color: #ffffff !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 50px !important; margin-left: 8px !important; text-decoration: none !important; }
     .btn-donate-nav:hover { background: var(--accent-hover) !important; transform: translateY(-1px); }
 
     /* MOBILE NAV TOGGLE */
@@ -634,7 +634,7 @@
         font-size: 1rem;
         border-radius: 6px;
       }
-      .btn-donate-nav { background: var(--accent); color: #ffffff !important; font-weight: 700; padding: 8px 18px; border-radius: 50px; text-decoration: none; transition: var(--transition); white-space: nowrap !important; flex-shrink: 0 !important; font-size: 0.88rem; display: inline-flex; align-items: center; justify-content: center; }
+      .btn-donate-nav { white-space: nowrap !important; min-width: max-content !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; background: var(--accent) !important; color: #ffffff !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 50px !important; margin-left: 8px !important; text-decoration: none !important; }
       .dropdown-menu {
         position: static;
         box-shadow: none;
@@ -647,55 +647,155 @@
       }
     }
 
+
+    /* SLIM TOP UTILITY BAR (34px height) */
+    .top-bar {
+      background-color: var(--primary-dark);
+      color: #cbd5e1;
+      font-size: 0.82rem;
+      padding: 0;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .top-bar-socials a {
+      color: #cbd5e1;
+      transition: color 0.2s;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+    .top-bar-socials a:hover {
+      color: #ffffff;
+    }
+
+    /* DONATE BUTTON STRICT SINGLE LINE */
+    .btn-donate-nav { white-space: nowrap !important; min-width: max-content !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; background: var(--accent) !important; color: #ffffff !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 50px !important; margin-left: 8px !important; text-decoration: none !important; }
+
+    /* HAMBURGER TOGGLE BUTTON */
+    .nav-toggle-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 32px;
+      height: 26px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 100005 !important;
+    }
+    .nav-toggle-btn span {
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary);
+      border-radius: 2px;
+      transition: all 0.3s ease-in-out;
+    }
+    .nav-toggle-btn.is-active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .nav-toggle-btn.is-active span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle-btn.is-active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* MOBILE DRAWER NAVIGATION (MAX-WIDTH: 991px) */
+    @media (max-width: 991px) {
+      .nav-toggle-btn {
+        display: flex !important;
+        margin-left: auto;
+      }
+      .nav-menu {
+        display: none !important;
+        position: fixed !important;
+        top: 74px !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        height: calc(100vh - 74px) !important;
+        background: #ffffff !important;
+        flex-direction: column !important;
+        padding: 20px 24px 40px !important;
+        gap: 6px !important;
+        overflow-y: auto !important;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+        z-index: 99999 !important;
+        border-top: 1px solid var(--border-color) !important;
+      }
+      .nav-menu.is-open {
+        display: flex !important;
+      }
+      .nav-item {
+        width: 100% !important;
+        border-bottom: 1px solid var(--border-color) !important;
+        padding: 4px 0 !important;
+      }
+      .nav-link {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 12px 8px !important;
+        font-size: 1.05rem !important;
+        font-weight: 700 !important;
+        color: var(--primary) !important;
+        border-radius: 6px !important;
+      }
+      .dropdown-menu {
+        position: static !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: var(--bg-slate) !important;
+        border-radius: var(--radius-sm) !important;
+        padding: 8px 12px !important;
+        margin: 4px 0 8px !important;
+        display: none !important;
+      }
+      .dropdown-menu.is-visible {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .dropdown-link {
+        padding: 10px 12px !important;
+        font-size: 0.95rem !important;
+        font-weight: 600 !important;
+        border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+      }
+      .btn-donate-nav {
+        width: 100% !important;
+        text-align: center !important;
+        margin: 16px 0 0 0 !important;
+        padding: 14px 20px !important;
+        font-size: 1.05rem !important;
+        justify-content: center !important;
+      }
+    }
 </style>
 </head>
 <body>
 
-  <!-- TOP UTILITY BAR -->
-  <aside class="top-bar">
-    <div class="container top-bar-inner">
-      <div class="top-bar-left">
-        <div class="top-bar-item">
-          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          <a href="mailto:info@ybspcanada.org">info@ybspcanada.org</a>
-        </div>
-        <div class="top-bar-item">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span data-i18n="top_location">Operating Nationally Across Canada</span>
-        </div>
-        <div class="top-bar-item">
-          <span class="badge-gov">Fed. NFP Corp #1154010-6</span>
-          <span class="badge-gov">BN: 779321272RC0001</span>
-        </div>
-      </div>
-      <div class="top-bar-right">
-        <div class="lang-switcher">
-          <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
-          <span style="color:#64748b;">|</span>
-          <button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')">FR</button>
-        </div>
-        <div class="top-bar-socials" style="display:inline-flex; align-items:center; gap:10px;">
-          <a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; display:inline-flex; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#cbd5e1'" aria-label="Facebook">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; display:inline-flex; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#cbd5e1'" aria-label="Instagram">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-          <a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; display:inline-flex; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#cbd5e1'" aria-label="X">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; display:inline-flex; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#cbd5e1'" aria-label="TikTok">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.12 4.82 4.82 0 0 1-2.73-1.4 4.89 4.89 0 0 1-1.27-3z"/></svg>
-          </a>
-          <a href="https://www.snapchat.com/add/ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; display:inline-flex; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#cbd5e1'" aria-label="Snapchat">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.002 2c-3.528 0-6.002 2.68-6.002 5.86 0 1.23.414 2.45.694 3.09.112.25.04.53-.16.71-.35.31-.83.63-1.57.87-.5.16-.76.71-.58 1.21.13.37.49.62.89.62.33 0 .73-.1 1.22-.3.26-.11.56-.02.72.21.57.82 1.34 1.48 2.25 1.93.07.03.11.1.18-.08.43-.28 1.15-.99 1.43-.46.18-.87.48-.87.97 0 .58.54.94 1.26 1.05.81.12 1.78.07 2.76-.63.22-.16.51-.16.73 0 .98.7 1.95.75 2.76.63.72-.11 1.26-.47 1.26-1.05 0-.49-.41-.79-.87-.97-.71-.28-.91-1-.99-1.43-.01-.08.03-.15.1-.18.91-.45 1.68-1.11 2.25-1.93.16-.23.46-.32.72-.21.49.2.89.3 1.22.3.4 0 .76-.25.89-.62.18-.5-.08-1.05-.58-1.21-.74-.24-1.22-.56-1.57-.87-.2-.18-.27-.46-.16-.71.28-.64.694-1.86.694-3.09C18.004 4.68 15.53 2 12.002 2z"/></svg>
-          </a>
-        </div>
+    <!-- TOP UTILITY BAR -->
+  <!-- MAIN NAVIGATION -->
+    <!-- TOP RIGHT UTILITY BAR: LANGUAGE SWITCHER AT THE VERY TOP RIGHT, DIRECTLY ABOVE DONATE -->
+  <div class="top-utility-bar" style="background:#0b1c3d; border-bottom:1px solid rgba(255,255,255,0.08); padding:5px 0;">
+    <div class="container" style="display:flex; justify-content:flex-end; align-items:center;">
+      <div class="lang-switcher" style="display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.12); padding:2px 6px; border-radius:4px;">
+        <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" style="border:none; background:var(--secondary); color:#ffffff; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="English">EN</button>
+        <span style="color:#94a3b8; font-size:0.75rem; margin:0 2px;">|</span>
+        <button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')" style="border:none; background:transparent; color:#cbd5e1; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="Français">FR</button>
       </div>
     </div>
-  </aside>
-
-  <!-- MAIN NAVIGATION -->
+  </div>
   <header class="main-header">
     <div class="container nav-inner">
       <a href="index.html" class="brand-logo" aria-label="YBSP Canada Home">
@@ -738,7 +838,7 @@
         </div>
       </a>
 
-            <nav class="nav-menu" aria-label="Primary Navigation">
+                  <nav class="nav-menu" id="main-nav-menu" aria-label="Primary Navigation">
         <div class="nav-item"><a href="index.html" class="nav-link " data-i18n="nav_home">Home</a></div>
         
         <div class="nav-item">
@@ -798,11 +898,17 @@
         <div class="nav-item"><a href="news.html" class="nav-link " data-i18n="nav_news">News</a></div>
         <div class="nav-item"><a href="careers.html" class="nav-link " data-i18n="nav_careers">Careers</a></div>
         <div class="nav-item"><a href="contact.html" class="nav-link " data-i18n="nav_contact">Contact</a></div>
-        <a href="donate.html" class="btn-donate-nav" data-i18n="nav_donate">Donate</a>
+
+        
+
+        <!-- ONE-LINE DONATE BUTTON -->
+        <a href="donate.html" class="btn-donate-nav" data-i18n="nav_donate" style="white-space:nowrap !important; display:inline-flex !important; align-items:center !important; justify-content:center !important;">Donate</a>
       </nav>
 
-      <button class="mobile-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileNav()">
-        <span></span><span></span><span></span>
+                  <button class="nav-toggle-btn" id="mobileNavToggle" aria-label="Menu" aria-expanded="false" onclick="toggleMobileNav()">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </header>
@@ -1328,386 +1434,393 @@
     </div>
   </section>
 
-  <!-- UNIVERSAL FOOTER -->
-  <footer class="main-footer">
+    <!-- UNIVERSAL FOOTER (WFP STYLE WITH SOCIALS & DONATE) -->
+  <footer class="main-footer" style="background:#061124; color:#ffffff; padding:55px 0 25px; border-top:3px solid var(--secondary);">
     <div class="container">
-      <div class="footer-grid">
+      
+      <!-- TOP FOOTER: 3-COLUMN BALANCED NAVIGATION -->
+      <div class="footer-grid" style="display:grid; grid-template-columns:1fr 1fr 1.2fr; gap:40px; margin-bottom:40px;">
         <div class="footer-col">
-          <h4>YBSP Canada</h4>
-          <p data-i18n="footer_about_desc">
-            Youth Building in Synergy to end Poverty is a federally incorporated Canadian not-for-profit corporation (Canada Not-for-profit Corporations Act) dedicated to fostering youth leadership, community synergy, and international solidarity.
-          </p>
-          <div class="legal-notice-box">
-            <strong>Federal Corporation #:</strong> 1154010-6<br>
-            <strong>Business #:</strong> 779321272RC0001<br>
-            <strong>Governing Act:</strong> Canada Not-for-profit Corporations Act
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4 data-i18n="footer_quick_links">Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-            <li><a href="about.html" data-i18n="nav_about">About Us & Governance</a></li>
-            <li><a href="programs.html" data-i18n="nav_programs">Programs & AI Skills</a></li>
-            <li><a href="events.html" data-i18n="nav_events">Events & Community</a></li>
-            <li><a href="news.html" data-i18n="nav_news">News & Impact Stories</a></li>
-            <li><a href="donate.html" data-i18n="nav_donate">Support Our Mission</a></li>
+          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:14px; font-weight:800;" data-i18n="footer_quick_links">Quick Links</h4>
+          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2;">
+            <li><a href="index.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_home">Home</a></li>
+            <li><a href="about.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_about">About Us & Governance</a></li>
+            <li><a href="programs.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_programs">Programs & AI Skills</a></li>
+            <li><a href="events.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_events">Events & Community</a></li>
+            <li><a href="news.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_news">News & Media Library</a></li>
+            <li><a href="careers.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_careers">Careers & Opportunities</a></li>
+            <li><a href="donate.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_donate">Donate</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4 data-i18n="footer_involved">Get Involved</h4>
-          <ul class="footer-links">
-            <li><a href="get-involved.html#volunteer" data-i18n="nav_volunteer">Volunteer Application</a></li>
-            <li><a href="get-involved.html#membership" data-i18n="nav_membership">Become a Member</a></li>
-            <li><a href="get-involved.html#working-groups" data-i18n="nav_working_groups">Member Working Groups</a></li>
-            <li><a href="get-involved.html#partnerships" data-i18n="nav_partnerships">Institutional Partnerships</a></li>
-            <li><a href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">YBSP Burundi Website ↗</a></li>
+          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:14px; font-weight:800;" data-i18n="footer_involved">Get Involved</h4>
+          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2;">
+            <li><a href="get-involved.html#volunteer" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_volunteer">Volunteer Application</a></li>
+            <li><a href="get-involved.html#membership" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_membership">Become a Member</a></li>
+            <li><a href="get-involved.html#working-groups" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_working_groups">Member Working Groups</a></li>
+            <li><a href="get-involved.html#partnerships" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_partnerships">Institutional Partners</a></li>
+            <li><a href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none;">YBSP Burundi Website ↗</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4 data-i18n="footer_contact">Contact & Secretariat</h4>
-          <div class="contact-item">
-            <span>📍</span>
-            <span data-i18n="footer_addr">Operating Nationally Across Canada<br>Headquartered in Canada</span>
-          </div>
-          <div class="contact-item">
-            <span>✉️</span>
-            <a href="mailto:info@ybspcanada.org">info@ybspcanada.org</a>
-          </div>
-          <div class="contact-item">
-            <span>🌐</span>
-            <span data-i18n="footer_scope">Serving Youth Communities Across Canada</span>
+          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:14px; font-weight:800;" data-i18n="footer_contact">Contact & Secretariat</h4>
+          <div style="font-size:0.9rem; color:#cbd5e1; line-height:1.7;">
+            <p style="margin-bottom:10px;">📍 <strong data-i18n="footer_addr">Operating Nationally Across Canada<br>Headquartered in Canada</strong></p>
+            <p style="margin-bottom:10px;">✉️ <a href="mailto:info@ybspcanada.org" style="color:#60a5fa; text-decoration:none;">info@ybspcanada.org</a></p>
+            <p>🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
           </div>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <div>&copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.</div>
-        <div style="display:flex; gap:18px;">
-          <a href="about.html#corporate" data-i18n="footer_transparency">Corporate Transparency</a>
-          <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+      <!-- BOTTOM FOOTER: COPYRIGHT FAR LEFT, SOCIAL TILES FAR RIGHT -->
+      <div style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+        <div style="font-size:0.85rem; color:#94a3b8;">
+          &copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
+        </div>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:0.85rem; font-weight:700; color:#ffffff; text-transform:uppercase; letter-spacing:0.05em; margin-right:4px;" data-i18n="lbl_follow_us">Follow us</span>
+          <a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.95rem; transition:background 0.2s;" title="Follow YBSP Canada on X (Twitter)">𝕏</a>
+          <a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.95rem; transition:background 0.2s;" title="Follow YBSP Canada on Facebook">FB</a>
+          <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.95rem; transition:background 0.2s;" title="Follow YBSP Canada on Instagram">IG</a>
+          <a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.95rem; transition:background 0.2s;" title="Follow YBSP Canada on TikTok">TT</a>
+          <a href="https://www.snapchat.com/add/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.95rem; transition:background 0.2s;" title="Add YBSP Canada on Snapchat">SC</a>
         </div>
       </div>
+
     </div>
   </footer>
 
-  <!-- BILINGUAL SCRIPT & FORM HANDLERS -->
+
+  <!-- UNIVERSAL BILINGUAL SCRIPT -->
   <script>
     const translations = {
       en: {
-        tagline: "Uniting youth. Building synergy. Ending poverty.",
-        nav_home: "Home",
-        nav_about: "About Us",
-        nav_mission: "Mission & Mandate",
-        nav_leadership: "Executive Leadership",
-        nav_governance: "Board & Governance",
-        nav_continuity: "Founder & Continuity",
-        nav_corporate: "Corporate Filings",
-        nav_burundi: "Burundi Sisterhood",
-        nav_programs: "Programs",
-        nav_mentorship: "Youth Mentorship & AI",
-        nav_entrepreneurship: "Social Entrepreneurship",
-        nav_awareness: "Community Health & Ecology",
-        nav_burundi_prog: "Burundi Synergy Initiative",
-        nav_sdgs: "UN SDGs Alignment",
-        nav_involved: "Get Involved",
-        nav_volunteer: "Volunteer Application",
-        nav_membership: "Become a Member",
-        nav_working_groups: "Member Working Groups",
-        nav_partnerships: "Institutional Partners",
-        nav_events: "Community & Events",
-        nav_calendar: "Events Calendar",
-        nav_host: "Host or Propose an Event",
-        nav_gala: "Annual Solidarity Gala",
-        nav_gallery: "Authentic Photo Gallery",
-        nav_news: "News",
-        nav_careers: "Careers",
-        nav_careers: "Careers",
-        nav_contact: "Contact Us",
-        nav_donate: "Donate",
-        crumb_home: "Home",
-        crumb_involved: "Get Involved Pathways",
-        hero_involved_title: "Join the Synergy. Drive Meaningful Change.",
-        hero_involved_desc: "Explore distinct, purpose-built pathways to participate in our mission: offer your time as a volunteer mentor, join our democratic voting membership under our federal charter, collaborate in member working groups, or establish an institutional partnership.",
-        sub_overview: "Engagement Overview",
-        sub_volunteer: "Volunteer Pathway",
-        sub_membership: "Membership Pathway",
-        sub_groups: "Working Groups",
-        sub_partnerships: "Institutional Partners",
-        tag_pathways: "Clear Pathways",
-        heading_pathways: "Three Distinct Ways to Engage",
-        sub_pathways: "Each pathway serves a unique role in our organization. Choose the path that matches your personal commitment, governance interest, or institutional capacity.",
-        p1_title: "1. Volunteer With Us",
-        p1_desc: "Offer your skills, professional experience, and time. Ideal for mentors, workshop facilitators, bilingual translators, and event support volunteers.",
-        btn_apply_volunteer: "Go to Volunteer Application ↓",
-        p2_title: "2. Become a Member",
-        p2_desc: "Join the formal voting membership of our federal non-profit corporation under the Canada NFP Act. Shape organizational governance, attend the AGM, and vote on bylaws and directors.",
-        btn_apply_member: "Go to Membership Application ↓",
-        p3_title: "3. Institutional Partners",
-        p3_desc: "For corporations, financial institutions, universities, foundations, municipalities, and diaspora organizations seeking structured collaborative alliances.",
-        btn_apply_partner: "Go to Partnership Inquiry ↓",
-        tag_vol_app: "Volunteer Pathway",
-        heading_vol_app: "Volunteer Application",
-        desc_vol_app: "Please complete this form to join our volunteer roster. Our volunteer coordinator will review your application and contact you within 5 business days for an onboarding conversation.",
-        lbl_name: "Full Name *",
-        lbl_email: "Email Address *",
-        lbl_phone: "Phone Number",
-        lbl_city: "City & Province *",
-        lbl_vol_role: "Preferred Volunteer Roles (Select all that apply) *",
-        r_mentor: "1-on-1 Youth Career Mentor",
-        r_workshop: "Workshop Leader (Digital / AI / Skills)",
-        r_events: "Event & Gala Logistics Coordinator",
-        r_trans: "Bilingual Translator (EN / FR / Kirundi)",
-        r_comms: "Social Media & Communications",
-        r_gen: "General Community Support",
-        lbl_hours: "Availability (Estimated hours/month)",
-        lbl_lang: "Spoken Languages",
-        lbl_skills: "Background & Key Skills",
-        lbl_motivation: "Why would you like to volunteer with YBSP Canada? *",
-        vol_privacy_note: "🔒 YBSP Canada respects your privacy. Information submitted is used solely for volunteer coordination and is governed by our institutional privacy guidelines.",
-        btn_submit_vol: "Submit Volunteer Application",
-        vol_feedback: "✓ Thank you for volunteering! Your application has been submitted to the YBSP Canada Secretariat. We will contact you within 5 business days.",
-        tag_member_app: "Democratic Governance",
-        heading_member_app: "Voting Membership Application",
-        desc_member_app: "Under the Canada Not-for-profit Corporations Act, YBSP Canada is owned collectively by its registered members. Membership confers voting rights at Annual General Meetings, fiduciary oversight, and eligibility to serve on working committees and the Board of Directors.",
-        mbr_rules_title: "Membership Criteria & Governance Rights",
-        mbr_rules_desc: "Membership is open to individuals aged 18+ residing in Canada who endorse our charter mandate of youth empowerment and poverty alleviation.",
-        lbl_mbr_group: "Preferred Working Group Affiliation",
-        lbl_mbr_contrib: "How would you like to contribute as a voting member? *",
-        mbr_statutory_declaration: "I confirm that I am 18 years of age or older and reside in Canada. I hereby apply for voting membership in Youth Building in Synergy to end Poverty (YBSP Canada). I agree to uphold the objectives set out in the Articles of Incorporation and corporate by-laws, and understand that my application is subject to formal Board review.",
-        btn_submit_mbr: "Submit Formal Membership Application",
-        mbr_feedback: "✓ Membership Application Received! Your application has been logged for presentation to the Board of Directors at the next scheduled review. You will receive an official notification via email.",
-        tag_committees: "Committees & Action",
-        heading_committees: "Member Working Groups",
-        desc_committees: "Working groups allow active members to collaborate on targeted operational and governance initiatives. They bridge member expertise with organizational impact.",
-        st1: "Join YBSP",
-        st2: "Become a Member",
-        st3: "Select Working Group",
-        st4: "Board Confirmation",
-        st5: "Active Collaboration",
-        wg1_title: "Youth Programs & Mentorship Working Group",
-        wg1_desc: "Focuses on cohort curriculum, applied AI workshops, mentor pairing guidelines, and evaluation metrics for youth career readiness.",
-        wg2_title: "Burundi Synergy & International Cooperation",
-        wg2_desc: "Manages bilateral communication protocols with YBSP Burundi, tracking #SororaIkaye education sponsorships and vocational toolkit distributions.",
-        wg3_title: "Governance, Audit & Finance Working Group",
-        wg3_desc: "Advises on corporate by-law updates, statutory filings under the Canada NFP Act, internal accounting policies, and audit preparedness.",
-        wg4_title: "Community Outreach & Digital Media Working Group",
-        wg4_desc: "Coordinates social media channels, community newsletters, gala event promotion, and multilingual translation across Canada.",
-        btn_join_wg: "Apply to Join This Group →",
-        tag_partner_app: "Collaborative Alliances",
-        heading_partner_app: "Institutional & Corporate Partnerships",
-        desc_partner_app: "Designed for corporations, Canadian financial institutions, foundations, academic universities/colleges, municipal agencies, and diaspora organizations seeking to co-develop youth cohorts or support cross-border solidarity.",
-        lbl_org_name: "Organization / Institution Name *",
-        lbl_org_type: "Organization Type *",
-        lbl_org_web: "Website URL",
-        lbl_org_contact: "Contact Person & Title *",
-        lbl_collab_area: "Areas of Proposed Collaboration (Select all that apply) *",
-        c_cohort: "Program Cohort Sponsorship",
-        c_volunteer: "Employee Mentorship / Volunteering",
-        c_grant: "Joint Grant Co-Delivery (ESDC / Trillium)",
-        c_burundi: "Canada-Burundi Bilateral Projects",
-        c_research: "Research & Youth Outcome Evaluation",
-        c_gala: "Annual Solidarity Gala Event Sponsorship",
-        lbl_partnership_notes: "Overview of Proposed Partnership & Goals *",
-        btn_submit_partner: "Submit Institutional Partnership Inquiry",
-        partner_feedback: "✓ Inquiry Received! The YBSP Canada Executive Secretariat will review your institutional inquiry and follow up within 3 business days.",
-        footer_about_desc: "Youth Building in Synergy to end Poverty is a federally incorporated Canadian not-for-profit corporation (Canada Not-for-profit Corporations Act) dedicated to fostering youth leadership, community synergy, and international solidarity.",
-        footer_quick_links: "Quick Links",
-        footer_involved: "Get Involved",
-        footer_contact: "Contact & Secretariat",
-        footer_addr: "Operating Nationally Across Canada<br>Headquartered in Canada",
-        footer_scope: "Serving Youth Communities Across Canada",
-        footer_transparency: "Corporate Transparency"
+      "tagline": "Uniting youth. Building synergy. Ending poverty.",
+      "nav_home": "Home",
+      "nav_about": "About Us &amp; Governance",
+      "nav_mission": "Mission &amp; Mandate",
+      "nav_team": "Executive Leadership",
+      "nav_governance": "Board &amp; Governance",
+      "nav_corporate": "Corporate Filings",
+      "nav_burundi": "Burundi Sisterhood",
+      "nav_programs": "Programs &amp; AI Skills",
+      "nav_mentorship": "Career Mentorship &amp; AI",
+      "nav_entrepreneurship": "Social Entrepreneurship",
+      "nav_awareness": "Health &amp; Urban Ecology",
+      "nav_burundi_prog": "Burundi Projects",
+      "nav_sdgs": "UN SDGs Alignment",
+      "nav_involved": "Get Involved",
+      "nav_volunteer": "Volunteer Application",
+      "nav_membership": "Become a Member",
+      "nav_working_groups": "Member Working Groups",
+      "nav_partnerships": "Institutional Partners",
+      "nav_events": "Events &amp; Community",
+      "nav_calendar": "Events Calendar",
+      "nav_host": "Host or Propose an Event",
+      "nav_gala": "Annual Solidarity Gala",
+      "nav_gallery": "Authentic Photo Gallery",
+      "nav_news": "News &amp; Media Library",
+      "nav_careers": "Careers &amp; Opportunities",
+      "nav_contact": "Contact Us",
+      "nav_donate": "Donate",
+      "crumb_home": "Home",
+      "crumb_involved": "Get Involved Pathways",
+      "hero_involved_title": "Join the Synergy. Drive Meaningful Change.",
+      "hero_involved_desc": "Explore distinct, purpose-built pathways to participate in our mission: offer your time as a volunteer mentor, join our democratic voting membership under our federal charter, collaborate in member working groups, or establish an institutional partnership.",
+      "sub_overview": "Engagement Overview",
+      "sub_volunteer": "Volunteer Pathway",
+      "sub_membership": "Membership Pathway",
+      "sub_groups": "Working Groups",
+      "sub_partnerships": "Institutional Partners",
+      "tag_pathways": "Clear Pathways",
+      "heading_pathways": "Three Distinct Ways to Engage",
+      "sub_pathways": "Each pathway serves a unique role in our organization. Choose the path that matches your personal commitment, governance interest, or institutional capacity.",
+      "p1_title": "1. Volunteer With Us",
+      "p1_desc": "Offer your skills, professional experience, and time. Ideal for mentors, workshop facilitators, bilingual translators, and event support volunteers.",
+      "btn_apply_volunteer": "Go to Volunteer Application ↓",
+      "p2_title": "2. Become a Member",
+      "p2_desc": "Join the formal voting membership of our federal non-profit corporation under the Canada NFP Act. Shape organizational governance, attend the AGM, and vote on bylaws and directors.",
+      "btn_apply_member": "Go to Membership Application ↓",
+      "p3_title": "3. Institutional Partners",
+      "p3_desc": "For corporations, financial institutions, universities, foundations, municipalities, and diaspora organizations seeking structured collaborative alliances.",
+      "btn_apply_partner": "Go to Partnership Inquiry ↓",
+      "tag_vol_app": "Volunteer Pathway",
+      "heading_vol_app": "Volunteer Application",
+      "desc_vol_app": "Please complete this form to join our volunteer roster. Our volunteer coordinator will review your application and contact you within 5 business days for an onboarding conversation.",
+      "lbl_name": "Full Legal Name *",
+      "lbl_email": "Corporate / Institutional Email *",
+      "lbl_phone": "Contact Phone",
+      "lbl_city": "City, Province &amp; Postal Code *",
+      "lbl_vol_role": "Preferred Volunteer Roles (Select all that apply) *",
+      "r_mentor": "1-on-1 Youth Career Mentor",
+      "r_workshop": "Workshop Leader (Digital / AI / Skills)",
+      "r_events": "Event &amp; Gala Logistics Coordinator",
+      "r_trans": "Bilingual Translator (EN / FR / Kirundi)",
+      "r_comms": "Social Media &amp; Communications",
+      "r_gen": "General Community Support",
+      "lbl_hours": "Availability (Estimated hours/month)",
+      "lbl_lang": "Spoken Languages",
+      "lbl_skills": "Background &amp; Key Skills",
+      "lbl_motivation": "Why would you like to volunteer with YBSP Canada? *",
+      "vol_privacy_note": "🔒 YBSP Canada respects your privacy. Information submitted is used solely for volunteer coordination and is governed by our institutional privacy guidelines.",
+      "btn_submit_vol": "Submit Volunteer Application",
+      "vol_feedback": "✓ Thank you for volunteering! Your application has been submitted to the YBSP Canada Secretariat. We will contact you within 5 business days.",
+      "tag_member_app": "Democratic Governance",
+      "heading_member_app": "Voting Membership Application",
+      "desc_member_app": "Under the <em>Canada Not-for-profit Corporations Act</em>, YBSP Canada is owned collectively by its registered members. Membership confers voting rights at Annual General Meetings, fiduciary oversight, and eligibility to serve on working committees and the Board of Directors.",
+      "mbr_rules_title": "Membership Criteria &amp; Governance Rights",
+      "mbr_rules_desc": "Membership is open to individuals aged 18+ residing in Canada who endorse our charter mandate of youth empowerment and poverty alleviation.",
+      "lbl_mbr_group": "Preferred Working Group Affiliation",
+      "lbl_mbr_contrib": "How would you like to contribute as a voting member? *",
+      "mbr_statutory_declaration": "I confirm that I am 18 years of age or older and reside in Canada. I hereby apply for voting membership in Youth Building in Synergy to end Poverty (YBSP Canada). I agree to uphold the objectives set out in the Articles of Incorporation and corporate by-laws, and understand that my application is subject to formal Board review.",
+      "btn_submit_mbr": "Submit Formal Membership Application",
+      "mbr_feedback": "✓ Membership Application Received! Your application has been logged for presentation to the Board of Directors at the next scheduled review. You will receive an official notification via email.",
+      "tag_committees": "Committees &amp; Action",
+      "heading_committees": "Member Working Groups",
+      "desc_committees": "Working groups allow active members to collaborate on targeted operational and governance initiatives. They bridge member expertise with organizational impact.",
+      "st1": "Join YBSP",
+      "st2": "Become a Member",
+      "st3": "Select Working Group",
+      "st4": "Board Confirmation",
+      "st5": "Active Collaboration",
+      "wg1_title": "Youth Programs &amp; Mentorship Working Group",
+      "wg1_desc": "Focuses on cohort curriculum, applied AI workshops, mentor pairing guidelines, and evaluation metrics for youth career readiness.",
+      "btn_join_wg": "Apply to Join This Group →",
+      "wg2_title": "Burundi Synergy &amp; International Cooperation",
+      "wg2_desc": "Manages bilateral communication protocols with YBSP Burundi, tracking #SororaIkaye education sponsorships and vocational toolkit distributions.",
+      "wg3_title": "Governance, Audit &amp; Finance Working Group",
+      "wg3_desc": "Advises on corporate by-law updates, statutory filings under the Canada NFP Act, internal accounting policies, and audit preparedness.",
+      "wg4_title": "Community Outreach &amp; Digital Media Working Group",
+      "wg4_desc": "Coordinates social media channels, community newsletters, gala event promotion, and multilingual translation across Canada.",
+      "tag_corporate_partners": "Corporate &amp; Institutional Alliances",
+      "head_corporate_partners": "Our Strategic Partners &amp; Supporters",
+      "sub_corporate_partners": "Inspired by established Canadian and international partner models, we collaborate with financial institutions, public agencies, universities, and civil society to create sustainable youth opportunities.",
+      "tag_partner_app": "Collaborative Alliances",
+      "heading_partner_app": "Institutional &amp; Corporate Partnerships",
+      "desc_partner_app": "Designed for corporations, Canadian financial institutions, foundations, academic universities/colleges, municipal agencies, and diaspora organizations seeking to co-develop youth cohorts or support cross-border solidarity.",
+      "lbl_org_name": "Organization / Institution Name *",
+      "lbl_org_type": "Organization Type *",
+      "lbl_org_web": "Website URL",
+      "lbl_org_contact": "Contact Person &amp; Title *",
+      "lbl_collab_area": "Areas of Proposed Collaboration (Select all that apply) *",
+      "c_cohort": "Program Cohort Sponsorship",
+      "c_volunteer": "Employee Mentorship / Volunteering",
+      "c_grant": "Joint Grant Co-Delivery (ESDC / Trillium)",
+      "c_burundi": "Canada-Burundi Bilateral Projects",
+      "c_research": "Research &amp; Youth Outcome Evaluation",
+      "c_gala": "Annual Solidarity Gala Event Sponsorship",
+      "lbl_partnership_notes": "Overview of Proposed Partnership &amp; Goals *",
+      "btn_submit_partner": "Submit Institutional Partnership Inquiry",
+      "partner_feedback": "✓ Inquiry Received! The YBSP Canada Executive Secretariat will review your institutional inquiry and follow up within 3 business days.",
+      "footer_about_desc": "Youth Building in Synergy to end Poverty is a federally incorporated Canadian not-for-profit corporation dedicated to fostering youth leadership, career readiness, and international solidarity.",
+      "footer_quick_links": "Quick Links",
+      "footer_involved": "Get Involved",
+      "footer_contact": "Contact &amp; Secretariat",
+      "footer_addr": "Operating Nationally Across Canada<br/>Headquartered in Canada",
+      "footer_scope": "Serving Youth Communities in Both Official Languages",
+      "lbl_follow_us": "Follow us",
       },
       fr: {
-        tagline: "Unir la jeunesse. Bâtir la synergie.",
-        nav_home: "Accueil",
-        nav_about: "À propos",
-        nav_mission: "Mission & Mandat",
-        nav_leadership: "Direction générale",
-        nav_governance: "Conseil d'administration",
-        nav_continuity: "Fondation & Continuité",
-        nav_corporate: "Dépôts corporatifs",
-        nav_burundi: "Alliance avec le Burundi",
-        nav_programs: "Programmes",
-        nav_mentorship: "Mentorat jeunesse & IA",
-        nav_entrepreneurship: "Entrepreneuriat social",
-        nav_awareness: "Santé communautaire & Écologie",
-        nav_burundi_prog: "Projets Synergie Burundi",
-        nav_sdgs: "Alignement ODD de l'ONU",
-        nav_involved: "S'impliquer",
-        nav_volunteer: "Formulaire de bénévolat",
-        nav_membership: "Devenir membre",
-        nav_working_groups: "Comités de travail",
-        nav_partnerships: "Partenariats institutionnels",
-        nav_events: "Événements",
-        nav_calendar: "Calendrier des événements",
-        nav_host: "Organiser ou proposer un événement",
-        nav_gala: "Gala annuel de solidarité",
-        nav_gallery: "Galerie photos authentiques",
-        nav_news: "Nouvelles",
-        nav_careers: "Carrières",
-        nav_careers: "Carrières",
-        nav_contact: "Contact",
-        nav_donate: "Faire un don",
-        crumb_home: "Accueil",
-        crumb_involved: "Volets d'engagement",
-        hero_involved_title: "Rejoignez la synergie. Portez le changement.",
-        hero_involved_desc: "Explorez des volets distincts et adaptés pour participer à notre mission : devenez mentor bénévole, rejoignez notre corps de membres votants en vertu de la Loi BNL, participez aux comités de travail ou bâtissez un partenariat institutionnel.",
-        sub_overview: "Aperçu des volets",
-        sub_volunteer: "Volet bénévolat",
-        sub_membership: "Volet adhésion membre",
-        sub_groups: "Comités de travail",
-        sub_partnerships: "Partenaires institutionnels",
-        tag_pathways: "Volets distincts",
-        heading_pathways: "Trois manières distinctes de s'engager",
-        sub_pathways: "Chaque volet joue un rôle clé dans notre organisation. Choisissez la voie correspondant à vos compétences, votre intérêt de gouvernance ou votre mandat institutionnel.",
-        p1_title: "1. Bénévolat avec YBSP",
-        p1_desc: "Partagez vos compétences, votre temps et votre expérience professionnelle comme mentor, animateur d'ateliers ou coordonnateur d'événements.",
-        btn_apply_volunteer: "Accéder au formulaire de bénévolat ↓",
-        p2_title: "2. Devenir membre votant",
-        p2_desc: "Participez à la gouvernance démocratique de notre organisation sous la Loi BNL. Assistez à l'AGA, votez sur les règlements et les administrateurs.",
-        btn_apply_member: "Accéder à l'adhésion membre ↓",
-        p3_title: "3. Partenaires institutionnels",
-        p3_desc: "Pour les entreprises, banques, universités, fondations et municipalités souhaitant bâtir des alliances stratégiques et financer des cohortes jeunesse.",
-        btn_apply_partner: "Accéder aux partenariats ↓",
-        tag_vol_app: "Volet Bénévolat",
-        heading_vol_app: "Candidature bénévole",
-        desc_vol_app: "Remplissez ce formulaire pour rejoindre notre équipe bénévole. Notre responsable vous contactera dans les 5 jours ouvrables.",
-        lbl_name: "Nom complet *",
-        lbl_email: "Adresse courriel *",
-        lbl_phone: "Numéro de téléphone",
-        lbl_city: "Ville et province *",
-        lbl_vol_role: "Rôles bénévoles souhaités (Cochez tout ce qui s'applique) *",
-        r_mentor: "Mentor individuel pour les jeunes",
-        r_workshop: "Animateur d'atelier (IA / Numérique / Emploi)",
-        r_events: "Coordonnateur d'événements & Gala",
-        r_trans: "Traducteur bilingue (EN / FR / Kirundi)",
-        r_comms: "Communications & Réseaux sociaux",
-        r_gen: "Soutien communautaire général",
-        lbl_hours: "Disponibilité estimée (Heures/mois)",
-        lbl_lang: "Langues parlées",
-        lbl_skills: "Compétences et expérience clé",
-        lbl_motivation: "Pourquoi souhaitez-vous vous engager avec YBSP Canada ? *",
-        vol_privacy_note: "🔒 YBSP Canada respecte votre vie privée. Vos renseignements sont traités de façon confidentielle selon nos politiques institutionnelles.",
-        btn_submit_vol: "Soumettre ma candidature bénévole",
-        vol_feedback: "✓ Merci pour votre engagement ! Votre candidature a été transmise au secrétariat. Nous communiquerons avec vous dans les 5 jours ouvrables.",
-        tag_member_app: "Gouvernance démocratique",
-        heading_member_app: "Demande d'adhésion comme membre votant",
-        desc_member_app: "En vertu de la Loi canadienne sur les organisations à but non lucratif, YBSP Canada appartient collectivement à ses membres enregistrés. L'adhésion confère le droit de vote à l'assemblée générale annuelle (AGA).",
-        mbr_rules_title: "Critères d'adhésion et droits de gouvernance",
-        mbr_rules_desc: "L'adhésion est ouverte aux personnes de 18 ans et plus résidant au Canada qui souscrivent à la charte d'autonomisation des jeunes de YBSP.",
-        lbl_mbr_group: "Comité de travail souhaité",
-        lbl_mbr_contrib: "Comment souhaitez-vous contribuer comme membre votant ? *",
-        mbr_statutory_declaration: "Je confirme avoir 18 ans ou plus et résider au Canada. Je demande formellement mon adhésion comme membre votant de YBSP Canada. J'accepte de respecter les statuts constitutifs et règlements de l'organisation, et comprends que ma demande est soumise à l'approbation du conseil d'administration.",
-        btn_submit_mbr: "Soumettre ma demande d'adhésion officielle",
-        mbr_feedback: "✓ Demande d'adhésion reçue ! Votre dossier sera soumis au conseil d'administration lors de la prochaine session d'examen. Vous recevrez une confirmation officielle.",
-        tag_committees: "Comités & Action",
-        heading_committees: "Comités de travail des membres",
-        desc_committees: "Les comités permettent aux membres de collaborer activement à des initiatives concrètes reliant leur expertise aux besoins du terrain.",
-        st1: "Rejoindre YBSP",
-        st2: "Devenir membre",
-        st3: "Choisir un comité",
-        st4: "Confirmation CA",
-        st5: "Action concrète",
-        wg1_title: "Comité Programmes jeunesse & Mentorat",
-        wg1_desc: "Se concentre sur les cohortes jeunesse, les ateliers d'IA appliquée, le mentorat et l'évaluation des résultats professionnels.",
-        wg2_title: "Comité Synergie Burundi & Coopération internationale",
-        wg2_desc: "Gère la liaison bilatérale avec YBSP Burundi, le suivi des bourses scolaires #SororaIkaye et des kits professionnels.",
-        wg3_title: "Comité Gouvernance, Vérification & Finances",
-        wg3_desc: "Conseille sur les règlements généraux, les dépôts sous la Loi BNL, les contrôles comptables et la préparation des audits.",
-        wg4_title: "Comité Rayonnement communautaire & Médias numériques",
-        wg4_desc: "Anime les réseaux sociaux, les campagnes bilingues, la promotion du gala annuel et la mobilisation de la diaspora.",
-        btn_join_wg: "Postuler pour ce comité →",
-        tag_partner_app: "Alliances stratégiques",
-        heading_partner_app: "Partenariats institutionnels et corporatifs",
-        desc_partner_app: "Conçu pour les entreprises, fondations, universités, municipalités et organismes de la diaspora souhaitant co-développer des programmes jeunesse.",
-        lbl_org_name: "Nom de l'organisation ou institution *",
-        lbl_org_type: "Type d'organisation *",
-        lbl_org_web: "Site web officiel",
-        lbl_org_contact: "Personne contact & Titre *",
-        lbl_collab_area: "Domaines de collaboration proposés (Cochez tout ce qui s'applique) *",
-        c_cohort: "Commandite de cohorte jeunesse",
-        c_volunteer: "Bénévolat corporatif / Mentorat d'employés",
-        c_grant: "Co-dépôt de subventions publiques (EDSC / Trillium)",
-        c_burundi: "Projets bilatéraux Canada-Burundi",
-        c_research: "Recherche & Évaluation d'impact",
-        c_gala: "Commandite du Gala annuel de solidarité",
-        lbl_partnership_notes: "Aperçu du projet de partenariat et objectifs *",
-        btn_submit_partner: "Soumettre une demande de partenariat",
-        partner_feedback: "✓ Demande enregistrée ! La direction générale examinera votre proposition et communiquera avec votre institution sous 3 jours ouvrables.",
-        footer_about_desc: "Youth Building in Synergy to end Poverty est une organisation à but non lucratif constituée au fédéral (Loi BNL), dédiée au leadership des jeunes et à la solidarité internationale.",
-        footer_quick_links: "Liens rapides",
-        footer_involved: "S'impliquer",
-        footer_contact: "Contact & Bureau",
-        footer_addr: "Opérant à l'échelle nationale au Canada<br>Siège au Canada",
-        footer_scope: "Au service des communautés de jeunes partout au Canada",
-        footer_transparency: "Transparence corporative"
+      "tagline": "Unir la jeunesse. Bâtir la synergie. Vaincre la précarité.",
+      "nav_home": "Accueil",
+      "nav_about": "À propos",
+      "nav_mission": "Mission & Mandat",
+      "nav_team": "Direction exécutive",
+      "nav_governance": "Conseil d'administration",
+      "nav_corporate": "Dépôts corporatifs",
+      "nav_burundi": "Alliance avec le Burundi",
+      "nav_programs": "Programmes",
+      "nav_mentorship": "Mentorat de carrière & IA",
+      "nav_entrepreneurship": "Entrepreneuriat social",
+      "nav_awareness": "Santé & Écologie urbaine",
+      "nav_burundi_prog": "Projets Burundi",
+      "nav_sdgs": "Alignement ODD de l'ONU",
+      "nav_involved": "S'impliquer",
+      "nav_volunteer": "Formulaire de bénévolat",
+      "nav_membership": "Devenir membre",
+      "nav_working_groups": "Comités de travail",
+      "nav_partnerships": "Partenariats institutionnels",
+      "nav_events": "Événements",
+      "nav_calendar": "Calendrier des événements",
+      "nav_host": "Organiser ou proposer un événement",
+      "nav_gala": "Gala annuel de solidarité",
+      "nav_gallery": "Albums photos d'initiatives",
+      "nav_news": "Nouvelles",
+      "nav_careers": "Carrières",
+      "nav_contact": "Nous joindre",
+      "nav_donate": "Faire un don",
+      "crumb_home": "Accueil",
+      "crumb_involved": "Volets d'engagement",
+      "hero_involved_title": "Bâtir la synergie. Agir concrètement.",
+      "hero_involved_desc": "Explorez nos volets d'action distincts : offrez vos compétences comme bénévole, devenez membre votant sous la Loi BNL ou développez un partenariat institutionnel.",
+      "sub_overview": "Aperçu des volets",
+      "sub_volunteer": "Volet bénévolat",
+      "sub_membership": "Volet sociétariat",
+      "sub_groups": "Comités de travail",
+      "sub_partnerships": "Partenaires institutionnels",
+      "tag_pathways": "Engagement citoyen",
+      "heading_pathways": "Choisissez votre mode de participation",
+      "sub_pathways": "Chaque niveau d'engagement répond à des règles claires de gouvernance et de transparence sous le régime fédéral canadien.",
+      "p1_title": "Bénévolat & Mentorat",
+      "p1_desc": "Partagez votre temps ou votre expertise professionnelle pour accompagner des jeunes ou appuyer nos opérations.",
+      "btn_apply_volunteer": "Postuler comme bénévole ↓",
+      "p2_title": "Adhésion comme membre",
+      "p2_desc": "Rejoignez le corps démocratique des membres votants de YBSP Canada, participez aux assemblées générales et votez sur la gouvernance.",
+      "btn_apply_member": "Devenir membre votant ↓",
+      "p3_title": "Alliances institutionnelles",
+      "p3_desc": "Pour les universités, fondations et organisations souhaitant co-développer des cohortes ou financer des projets de solidarité.",
+      "btn_apply_partner": "Proposer un partenariat ↓",
+      "tag_vol_app": "Engagement bénévole",
+      "heading_vol_app": "Formulaire de candidature bénévole",
+      "desc_vol_app": "Rejoignez notre équipe dynamique pour appuyer le mentorat des jeunes, les communications bilingues, la comptabilité ou la logistique des événements.",
+      "lbl_name": "Nom complet *",
+      "lbl_email": "Adresse courriel *",
+      "lbl_phone": "Numéro de téléphone",
+      "lbl_city": "Ville et province de résidence au Canada *",
+      "lbl_vol_role": "Rôle bénévole souhaité *",
+      "r_mentor": "Mentor de carrière (Jumelage 1-on-1)",
+      "r_workshop": "Animation d'ateliers (IA, Commerce, CV)",
+      "r_events": "Coordination des événements & Gala",
+      "r_trans": "Traduction & Révision bilingue (français / anglais)",
+      "r_comms": "Communications, Réseaux sociaux & Traduction",
+      "r_gen": "Appui administratif général",
+      "lbl_hours": "Disponibilité estimée (heures par mois) *",
+      "lbl_lang": "Langues officielles parlées *",
+      "lbl_skills": "Compétences professionnelles clés *",
+      "lbl_motivation": "Pourquoi souhaitez-vous vous engager avec YBSP Canada ? *",
+      "vol_privacy_note": "Vos renseignements personnels sont protégés et utilisés uniquement pour la coordination interne des bénévoles de YBSP Canada.",
+      "btn_submit_vol": "Soumettre ma candidature bénévole",
+      "vol_feedback": "Merci pour votre candidature bénévole. Notre équipe de coordination vous contactera très rapidement.",
+      "tag_member_app": "Gouvernance démocratique",
+      "heading_member_app": "Demande d'adhésion comme membre votant",
+      "desc_member_app": "Conformément à nos statuts sous la Loi canadienne sur les organisations à but non lucratif, les membres votants participent aux assemblées générales, élisent le conseil d'administration et approuvent les orientations annuelles.",
+      "mbr_rules_title": "Conditions statutaires d'adhésion (Loi BNL) :",
+      "mbr_rules_desc": "Les membres votants exercent l'autorité démocratique suprême de l'organisation sous la Loi BNL.",
+      "lbl_mbr_group": "Comité de travail d'intérêt *",
+      "lbl_mbr_contrib": "Contribution envisagée au sein de la gouvernance *",
+      "mbr_statutory_declaration": "Je déclare appuyer les statuts constitutifs de YBSP Canada et demande mon admission comme membre votant.",
+      "btn_submit_mbr": "Soumettre ma demande d'adhésion",
+      "mbr_feedback": "Votre demande d'adhésion a été transmise au secrétariat du conseil d'administration pour examen statutaire.",
+      "tag_committees": "Comités d'action",
+      "heading_committees": "Comités de travail des membres",
+      "desc_committees": "Les membres votants et bénévoles expérimentés peuvent rejoindre nos comités spécialisés pour guider les opérations.",
+      "st1": "Adhésion formelle aux valeurs et objets constitutifs de YBSP Canada",
+      "st2": "Engagement à participer aux assemblées générales annuelles (présentiel ou virtuel)",
+      "st3": "Participation active aux activités statutaires ou comités de travail",
+      "st4": "Respect des règles de non-discrimination et d'intégrité de l'organisation",
+      "st5": "Engagement envers l'intégrité et la transparence de gestion",
+      "wg1_title": "Gouvernance & Conformité statutaire",
+      "wg1_desc": "Veille sur les règlements généraux, la préparation des rapports à Corporations Canada et les audits internes.",
+      "btn_join_wg": "Postuler à ce comité →",
+      "wg2_title": "Communications & Rayonnement bilingue",
+      "wg2_desc": "Gestion des réseaux sociaux, diffusion des nouvelles, relations publiques et traductions officielles.",
+      "wg3_title": "Programmes jeunesse & IA appliquée",
+      "wg3_desc": "Conception des cursus de mentorat, évaluation des résultats professionnels et intégration des outils numériques.",
+      "wg4_title": "Financement & Gala de solidarité",
+      "wg4_desc": "Organisation du gala annuel, suivi des donateurs et relations philanthropiques.",
+      "tag_corporate_partners": "Alliances institutionnelles",
+      "head_corporate_partners": "Partenaires stratégiques & Soutiens",
+      "sub_corporate_partners": "Nous collaborons avec les institutions d'enseignement, réseaux civiques et partenaires communautaires pour bâtir des passerelles pérennes pour les jeunes.",
+      "tag_partner_app": "Alliances collaboratives",
+      "heading_partner_app": "Partenariats institutionnels & Corporatifs",
+      "desc_partner_app": "Conçu pour les entreprises, fondations canadiennes, universités, collèges et organisations de la diaspora souhaitant co-développer des cohortes jeunesse ou appuyer la solidarité internationale.",
+      "lbl_org_name": "Nom de l'organisation / institution *",
+      "lbl_org_type": "Type d'organisation *",
+      "lbl_org_web": "Site Web de l'organisation",
+      "lbl_org_contact": "Personne-ressource & Fonction *",
+      "lbl_collab_area": "Volet de partenariat envisagé *",
+      "c_cohort": "Co-développement de cohortes de mentorat ou d'IA",
+      "c_volunteer": "Mentorat bénévole d'employés",
+      "c_grant": "Appui financier ou subvention conjointe",
+      "c_burundi": "Appui aux projets de solidarité au Burundi",
+      "c_research": "Stage étudiant accrédité ou recherche",
+      "c_gala": "Commandite du Gala annuel",
+      "lbl_partnership_notes": "Précisions sur votre projet de partenariat *",
+      "btn_submit_partner": "Transmettre la proposition de partenariat",
+      "partner_feedback": "Merci pour votre proposition institutionnelle. Le secrétariat de YBSP Canada communiquera avec vous sous 2 jours ouvrables.",
+      "footer_about_desc": "Youth Building in Synergy to end Poverty est une organisation à but non lucratif constituée au fédéral (Loi BNL), dédiée au leadership des jeunes, à la synergie collective et à la solidarité internationale.",
+      "footer_quick_links": "Liens rapides",
+      "footer_involved": "S'impliquer",
+      "footer_contact": "Contact & Secrétariat",
+      "footer_addr": "Opérant à l'échelle nationale au Canada<br>Siège social au Canada",
+      "footer_scope": "Au service des communautés de jeunes partout au Canada",
+      "lbl_follow_us": "Suivez YBSP sur les réseaux sociaux",
       }
     };
 
     function setLanguage(lang) {
+      try { localStorage.setItem('ybsp_lang', lang); } catch(e) {}
+      document.documentElement.lang = lang;
+
       const elements = document.querySelectorAll('[data-i18n]');
       elements.forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
+        if (translations && translations[lang] && translations[lang][key]) {
           el.innerHTML = translations[lang][key];
         }
       });
-      document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
-      document.getElementById('btn-lang-fr').classList.toggle('active', lang === 'fr');
-      document.documentElement.lang = lang;
-      try { localStorage.setItem('ybsp_lang', lang); } catch (e) {}
-    }
 
-    function handleVolunteerSubmit(e) {
-      e.preventDefault();
-      document.getElementById('volunteerFeedback').style.display = 'block';
-      e.target.reset();
-    }
+      const btnEn = document.getElementById('btn-lang-en');
+      const btnFr = document.getElementById('btn-lang-fr');
+      if (btnEn) {
+        btnEn.classList.toggle('active', lang === 'en');
+        btnEn.style.background = (lang === 'en') ? 'var(--secondary)' : 'transparent';
+        btnEn.style.color = (lang === 'en') ? '#ffffff' : '#cbd5e1';
+      }
+      if (btnFr) {
+        btnFr.classList.toggle('active', lang === 'fr');
+        btnFr.style.background = (lang === 'fr') ? 'var(--secondary)' : 'transparent';
+        btnFr.style.color = (lang === 'fr') ? '#ffffff' : '#cbd5e1';
+      }
 
-    function handleMemberSubmit(e) {
-      e.preventDefault();
-      document.getElementById('membershipFeedback').style.display = 'block';
-      e.target.reset();
-    }
-
-    function handlePartnerSubmit(e) {
-      e.preventDefault();
-      document.getElementById('partnerFeedback').style.display = 'block';
-      e.target.reset();
-    }
-
-            function toggleMobileNav() {
-      const navMenu = document.querySelector('.nav-menu');
-      if (!navMenu) return;
-      if (navMenu.style.display === 'flex') {
-        navMenu.style.display = 'none';
-      } 
-else {
-        navMenu.style.display = 'flex';
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.position = 'absolute';
-        navMenu.style.top = '78px';
-        navMenu.style.left = '0';
-        navMenu.style.width = '100%';
-        navMenu.style.background = '#ffffff';
-        navMenu.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-        navMenu.style.padding = '20px';
+      const zeffyLink = document.getElementById('zeffy-donate-link');
+      if (zeffyLink) {
+        zeffyLink.href = (lang === 'fr') 
+          ? 'https://www.zeffy.com/fr-CA/donation-form/donate-to-change-lives-23667' 
+          : 'https://www.zeffy.com/en-CA/donation-form/donate-to-change-lives-23667';
       }
     }
-  
-    // Language persistence across pages
-    try {
-      const savedLang = localStorage.getItem('ybsp_lang');
-      if (savedLang && savedLang === 'fr') {
+
+    document.addEventListener('DOMContentLoaded', () => {
+      let savedLang = 'en';
+      try { savedLang = localStorage.getItem('ybsp_lang') || 'en'; } catch(e) {}
+      if (savedLang === 'fr') {
         setLanguage('fr');
       }
-    } catch (e) {}
+
+      // Touch listener for mobile submenus
+      const navItems = document.querySelectorAll('.nav-item');
+      navItems.forEach(item => {
+        const arrow = item.querySelector('.nav-arrow');
+        const dropdown = item.querySelector('.dropdown-menu');
+        const link = item.querySelector('.nav-link');
+        if (arrow && dropdown && link) {
+          link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 991) {
+              e.preventDefault();
+              dropdown.classList.toggle('is-visible');
+              arrow.style.transform = dropdown.classList.contains('is-visible') ? 'rotate(180deg)' : 'rotate(0deg)';
+            }
+          });
+        }
+      });
+    });
+
+    function toggleMobileNav() {
+      const navMenu = document.getElementById('main-nav-menu');
+      const toggleBtn = document.getElementById('mobileNavToggle');
+      if (!navMenu) return;
+      const isOpen = navMenu.classList.toggle('is-open');
+      if (toggleBtn) {
+        toggleBtn.classList.toggle('is-active', isOpen);
+        toggleBtn.setAttribute('aria-expanded', isOpen);
+      }
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
 
   </script>
+
 </body>
 </html>

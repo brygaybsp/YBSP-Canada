@@ -189,7 +189,7 @@
     .dropdown-link { display: block; padding: 9px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500; }
     .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 22px; }
 
-    .btn-donate-nav { background: var(--accent); color: #ffffff !important; font-weight: 700; padding: 8px 18px; border-radius: 50px; text-decoration: none; transition: var(--transition); white-space: nowrap !important; flex-shrink: 0 !important; font-size: 0.88rem; display: inline-flex; align-items: center; justify-content: center; }
+    .btn-donate-nav { white-space: nowrap !important; min-width: max-content !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; background: var(--accent) !important; color: #ffffff !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 50px !important; margin-left: 8px !important; text-decoration: none !important; }
     .btn-donate-nav:hover { background: var(--accent-hover) !important; transform: translateY(-1px); }
 
     /* MOBILE NAV TOGGLE */
@@ -605,7 +605,7 @@
         font-size: 1rem;
         border-radius: 6px;
       }
-      .btn-donate-nav { background: var(--accent); color: #ffffff !important; font-weight: 700; padding: 8px 18px; border-radius: 50px; text-decoration: none; transition: var(--transition); white-space: nowrap !important; flex-shrink: 0 !important; font-size: 0.88rem; display: inline-flex; align-items: center; justify-content: center; }
+      .btn-donate-nav { white-space: nowrap !important; min-width: max-content !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; background: var(--accent) !important; color: #ffffff !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 50px !important; margin-left: 8px !important; text-decoration: none !important; }
       .dropdown-menu {
         position: static;
         box-shadow: none;
@@ -618,55 +618,155 @@
       }
     }
 
+
+    /* SLIM TOP UTILITY BAR (34px height) */
+    .top-bar {
+      background-color: var(--primary-dark);
+      color: #cbd5e1;
+      font-size: 0.82rem;
+      padding: 0;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .top-bar-socials a {
+      color: #cbd5e1;
+      transition: color 0.2s;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+    .top-bar-socials a:hover {
+      color: #ffffff;
+    }
+
+    /* DONATE BUTTON STRICT SINGLE LINE */
+    .btn-donate-nav { white-space: nowrap !important; min-width: max-content !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; background: var(--accent) !important; color: #ffffff !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 50px !important; margin-left: 8px !important; text-decoration: none !important; }
+
+    /* HAMBURGER TOGGLE BUTTON */
+    .nav-toggle-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 32px;
+      height: 26px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 100005 !important;
+    }
+    .nav-toggle-btn span {
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary);
+      border-radius: 2px;
+      transition: all 0.3s ease-in-out;
+    }
+    .nav-toggle-btn.is-active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .nav-toggle-btn.is-active span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle-btn.is-active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* MOBILE DRAWER NAVIGATION (MAX-WIDTH: 991px) */
+    @media (max-width: 991px) {
+      .nav-toggle-btn {
+        display: flex !important;
+        margin-left: auto;
+      }
+      .nav-menu {
+        display: none !important;
+        position: fixed !important;
+        top: 74px !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        height: calc(100vh - 74px) !important;
+        background: #ffffff !important;
+        flex-direction: column !important;
+        padding: 20px 24px 40px !important;
+        gap: 6px !important;
+        overflow-y: auto !important;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+        z-index: 99999 !important;
+        border-top: 1px solid var(--border-color) !important;
+      }
+      .nav-menu.is-open {
+        display: flex !important;
+      }
+      .nav-item {
+        width: 100% !important;
+        border-bottom: 1px solid var(--border-color) !important;
+        padding: 4px 0 !important;
+      }
+      .nav-link {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 12px 8px !important;
+        font-size: 1.05rem !important;
+        font-weight: 700 !important;
+        color: var(--primary) !important;
+        border-radius: 6px !important;
+      }
+      .dropdown-menu {
+        position: static !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: var(--bg-slate) !important;
+        border-radius: var(--radius-sm) !important;
+        padding: 8px 12px !important;
+        margin: 4px 0 8px !important;
+        display: none !important;
+      }
+      .dropdown-menu.is-visible {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .dropdown-link {
+        padding: 10px 12px !important;
+        font-size: 0.95rem !important;
+        font-weight: 600 !important;
+        border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+      }
+      .btn-donate-nav {
+        width: 100% !important;
+        text-align: center !important;
+        margin: 16px 0 0 0 !important;
+        padding: 14px 20px !important;
+        font-size: 1.05rem !important;
+        justify-content: center !important;
+      }
+    }
 </style>
 </head>
 <body>
 
-  <!-- TOP UTILITY BAR -->
-  <aside class="top-bar">
-    <div class="container top-bar-inner">
-      <div class="top-bar-left">
-        <div class="top-bar-item">
-          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          <a href="mailto:info@ybspcanada.org">info@ybspcanada.org</a>
-        </div>
-        <div class="top-bar-item">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span data-i18n="top_location">Operating Nationally Across Canada</span>
-        </div>
-        <div class="top-bar-item">
-          <span class="badge-gov">Fed. NFP Corp #1154010-6</span>
-          <span class="badge-gov">BN: 779321272RC0001</span>
-        </div>
-      </div>
-      <div class="top-bar-right">
-        <div class="lang-switcher">
-          <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
-          <span style="color:#64748b;">|</span>
-          <button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')">FR</button>
-        </div>
-        <div class="top-bar-socials" style="display:inline-flex; align-items:center; gap:10px;">
-          <a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; display:inline-flex; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#cbd5e1'" aria-label="Facebook">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; display:inline-flex; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#cbd5e1'" aria-label="Instagram">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-          <a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; display:inline-flex; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#cbd5e1'" aria-label="X">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; display:inline-flex; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#cbd5e1'" aria-label="TikTok">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.12 4.82 4.82 0 0 1-2.73-1.4 4.89 4.89 0 0 1-1.27-3z"/></svg>
-          </a>
-          <a href="https://www.snapchat.com/add/ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; display:inline-flex; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#cbd5e1'" aria-label="Snapchat">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.002 2c-3.528 0-6.002 2.68-6.002 5.86 0 1.23.414 2.45.694 3.09.112.25.04.53-.16.71-.35.31-.83.63-1.57.87-.5.16-.76.71-.58 1.21.13.37.49.62.89.62.33 0 .73-.1 1.22-.3.26-.11.56-.02.72.21.57.82 1.34 1.48 2.25 1.93.07.03.11.1.18-.08.43-.28 1.15-.99 1.43-.46.18-.87.48-.87.97 0 .58.54.94 1.26 1.05.81.12 1.78.07 2.76-.63.22-.16.51-.16.73 0 .98.7 1.95.75 2.76.63.72-.11 1.26-.47 1.26-1.05 0-.49-.41-.79-.87-.97-.71-.28-.91-1-.99-1.43-.01-.08.03-.15.1-.18.91-.45 1.68-1.11 2.25-1.93.16-.23.46-.32.72-.21.49.2.89.3 1.22.3.4 0 .76-.25.89-.62.18-.5-.08-1.05-.58-1.21-.74-.24-1.22-.56-1.57-.87-.2-.18-.27-.46-.16-.71.28-.64.694-1.86.694-3.09C18.004 4.68 15.53 2 12.002 2z"/></svg>
-          </a>
-        </div>
+    <!-- TOP UTILITY BAR -->
+  <!-- MAIN NAVIGATION -->
+    <!-- TOP RIGHT UTILITY BAR: LANGUAGE SWITCHER AT THE VERY TOP RIGHT, DIRECTLY ABOVE DONATE -->
+  <div class="top-utility-bar" style="background:#0b1c3d; border-bottom:1px solid rgba(255,255,255,0.08); padding:5px 0;">
+    <div class="container" style="display:flex; justify-content:flex-end; align-items:center;">
+      <div class="lang-switcher" style="display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.12); padding:2px 6px; border-radius:4px;">
+        <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" style="border:none; background:var(--secondary); color:#ffffff; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="English">EN</button>
+        <span style="color:#94a3b8; font-size:0.75rem; margin:0 2px;">|</span>
+        <button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')" style="border:none; background:transparent; color:#cbd5e1; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="Français">FR</button>
       </div>
     </div>
-  </aside>
-
-  <!-- MAIN NAVIGATION -->
+  </div>
   <header class="main-header">
     <div class="container nav-inner">
       <a href="index.html" class="brand-logo" aria-label="YBSP Canada Home">
@@ -709,7 +809,7 @@
         </div>
       </a>
 
-            <nav class="nav-menu" aria-label="Primary Navigation">
+                  <nav class="nav-menu" id="main-nav-menu" aria-label="Primary Navigation">
         <div class="nav-item"><a href="index.html" class="nav-link " data-i18n="nav_home">Home</a></div>
         
         <div class="nav-item">
@@ -769,11 +869,17 @@
         <div class="nav-item"><a href="news.html" class="nav-link " data-i18n="nav_news">News</a></div>
         <div class="nav-item"><a href="careers.html" class="nav-link " data-i18n="nav_careers">Careers</a></div>
         <div class="nav-item"><a href="contact.html" class="nav-link " data-i18n="nav_contact">Contact</a></div>
-        <a href="donate.html" class="btn-donate-nav" data-i18n="nav_donate">Donate</a>
+
+        
+
+        <!-- ONE-LINE DONATE BUTTON -->
+        <a href="donate.html" class="btn-donate-nav" data-i18n="nav_donate" style="white-space:nowrap !important; display:inline-flex !important; align-items:center !important; justify-content:center !important;">Donate</a>
       </nav>
 
-      <button class="mobile-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileNav()">
-        <span></span><span></span><span></span>
+                  <button class="nav-toggle-btn" id="mobileNavToggle" aria-label="Menu" aria-expanded="false" onclick="toggleMobileNav()">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </header>
@@ -803,348 +909,375 @@
         </p>
       </div>
 
-      <div class="donate-layout">
-        <!-- DONATION CARD -->
-        <div class="form-card" style="margin:0; max-width:none;">
+      <div class="donate-layout" style="display:grid; grid-template-columns:1.15fr 0.85fr; gap:36px; margin-top:30px; align-items:start;">
+        
+        <!-- LEFT COLUMN: GIVING TIERS & PAYMENT METHODS -->
+        <div class="form-card" style="margin:0; max-width:none; background:#ffffff; border-radius:var(--radius-lg); padding:36px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
           <span class="section-tag" data-i18n="tag_donation_amount">Select Support Level</span>
           <h3 style="font-size:1.6rem; color:var(--primary); margin:6px 0 16px;" data-i18n="heading_giving_tiers">Suggested Giving Tiers</h3>
-          <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6;" data-i18n="desc_giving_tiers">
+          <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin-bottom:20px;" data-i18n="desc_giving_tiers">
             Choose a contribution tier to support Canadian youth cohorts or international solidarity initiatives:
           </p>
 
-          <div class="tier-cards-grid">
-            <div class="tier-card selected" onclick="selectTier(this, 25)">
-              <div class="tier-amount">$25</div>
-              <div class="tier-desc" data-i18n="t25_desc">Provides workshop materials and transit subsidy for a youth mentee in Canada.</div>
-            </div>
+          <!-- CLICKABLE GIVING TIERS (DIRECT LINK TO ZEFFY DONATION FORM) -->
+          <div class="tier-cards-grid" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-bottom:28px;">
+            
+            <a href="https://www.zeffy.com/en-CA/donation-form/donate-to-change-lives-23667" target="_blank" rel="noopener noreferrer" class="tier-card" style="display:block; text-decoration:none; background:var(--bg-slate); border:2px solid var(--border-color); border-radius:var(--radius-md); padding:18px 16px; transition:all 0.2s; cursor:pointer;" onmouseover="this.style.borderColor='var(--secondary)'; this.style.background='#ffffff';" onmouseout="this.style.borderColor='var(--border-color)'; this.style.background='var(--bg-slate)';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span class="tier-amount" style="font-size:1.5rem; font-weight:900; color:var(--primary);">$25</span>
+                <span style="font-size:0.75rem; font-weight:700; color:var(--secondary-dark); background:#dcfce7; padding:2px 8px; border-radius:50px;">Give $25 ↗</span>
+              </div>
+              <div class="tier-desc" style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;" data-i18n="t25_desc">Provides workshop materials and transit subsidy for a youth mentee in Canada.</div>
+            </a>
 
-            <div class="tier-card" onclick="selectTier(this, 50)">
-              <div class="tier-amount">$50</div>
-              <div class="tier-desc" data-i18n="t50_desc">Sponsors #SororaIkaye school kits, books, and uniforms for a vulnerable child in Burundi.</div>
-            </div>
+            <a href="https://www.zeffy.com/en-CA/donation-form/donate-to-change-lives-23667" target="_blank" rel="noopener noreferrer" class="tier-card" style="display:block; text-decoration:none; background:var(--bg-slate); border:2px solid var(--border-color); border-radius:var(--radius-md); padding:18px 16px; transition:all 0.2s; cursor:pointer;" onmouseover="this.style.borderColor='var(--secondary)'; this.style.background='#ffffff';" onmouseout="this.style.borderColor='var(--border-color)'; this.style.background='var(--bg-slate)';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span class="tier-amount" style="font-size:1.5rem; font-weight:900; color:var(--primary);">$50</span>
+                <span style="font-size:0.75rem; font-weight:700; color:var(--secondary-dark); background:#dcfce7; padding:2px 8px; border-radius:50px;">Give $50 ↗</span>
+              </div>
+              <div class="tier-desc" style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;" data-i18n="t50_desc">Sponsors #SororaIkaye school kits, books, and uniforms for a vulnerable child in Burundi.</div>
+            </a>
 
-            <div class="tier-card" onclick="selectTier(this, 100)">
-              <div class="tier-amount">$100</div>
-              <div class="tier-desc" data-i18n="t100_desc">Funds #MurabireKazoza starter vocational equipment (tailoring or carpentry) for a young artisan.</div>
-            </div>
+            <a href="https://www.zeffy.com/en-CA/donation-form/donate-to-change-lives-23667" target="_blank" rel="noopener noreferrer" class="tier-card" style="display:block; text-decoration:none; background:var(--bg-slate); border:2px solid var(--border-color); border-radius:var(--radius-md); padding:18px 16px; transition:all 0.2s; cursor:pointer;" onmouseover="this.style.borderColor='var(--secondary)'; this.style.background='#ffffff';" onmouseout="this.style.borderColor='var(--border-color)'; this.style.background='var(--bg-slate)';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span class="tier-amount" style="font-size:1.5rem; font-weight:900; color:var(--primary);">$100</span>
+                <span style="font-size:0.75rem; font-weight:700; color:var(--secondary-dark); background:#dcfce7; padding:2px 8px; border-radius:50px;">Give $100 ↗</span>
+              </div>
+              <div class="tier-desc" style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;" data-i18n="t100_desc">Funds #MurabireKazoza starter vocational equipment (tailoring or carpentry) for a young artisan.</div>
+            </a>
 
-            <div class="tier-card" onclick="selectTier(this, 250)">
-              <div class="tier-amount">$250</div>
-              <div class="tier-desc" data-i18n="t250_desc">Sponsors full 12-week mentorship curriculum, digital AI training, and career pathing for a youth.</div>
-            </div>
+            <a href="https://www.zeffy.com/en-CA/donation-form/donate-to-change-lives-23667" target="_blank" rel="noopener noreferrer" class="tier-card" style="display:block; text-decoration:none; background:var(--bg-slate); border:2px solid var(--border-color); border-radius:var(--radius-md); padding:18px 16px; transition:all 0.2s; cursor:pointer;" onmouseover="this.style.borderColor='var(--secondary)'; this.style.background='#ffffff';" onmouseout="this.style.borderColor='var(--border-color)'; this.style.background='var(--bg-slate)';">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span class="tier-amount" style="font-size:1.5rem; font-weight:900; color:var(--primary);">$250</span>
+                <span style="font-size:0.75rem; font-weight:700; color:var(--secondary-dark); background:#dcfce7; padding:2px 8px; border-radius:50px;">Give $250 ↗</span>
+              </div>
+              <div class="tier-desc" style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;" data-i18n="t250_desc">Sponsors full 12-week mentorship curriculum, digital AI training, and career pathing for a youth.</div>
+            </a>
+
           </div>
 
           <!-- INTERAC E-TRANSFER BOX (PRIMARY CANADIAN GIVING) -->
-          <div class="interac-box">
-            <strong style="display:block; font-size:0.86rem; color:var(--accent-hover); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;" data-i18n="lbl_interac">Preferred Fee-Free Method in Canada</strong>
-            <h4 style="font-size:1.25rem; color:var(--primary); margin-bottom:8px;" data-i18n="heading_interac">Interac e-Transfer (Direct Auto-Deposit)</h4>
-            <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin-bottom:12px;" data-i18n="desc_interac">
+          <div class="interac-box" style="background:var(--bg-slate); border-left:4px solid var(--accent); border-radius:var(--radius-sm); padding:20px; margin-bottom:24px;">
+            <strong style="display:block; font-size:0.82rem; color:var(--accent-hover); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px;" data-i18n="lbl_interac">Preferred Fee-Free Method in Canada</strong>
+            <h4 style="font-size:1.2rem; color:var(--primary); margin-bottom:8px;" data-i18n="heading_interac">Interac e-Transfer (Direct Auto-Deposit)</h4>
+            <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; margin-bottom:10px;" data-i18n="desc_interac">
               Send your contribution with zero processing deductions directly from your Canadian financial institution:
             </p>
-            <div style="background:#ffffff; border:1px dashed var(--border-color); padding:12px 16px; border-radius:var(--radius-sm); font-family:monospace; font-size:1.05rem; font-weight:700; color:var(--primary);">
+            <div style="background:#ffffff; border:1px dashed var(--border-color); padding:10px 14px; border-radius:var(--radius-sm); font-family:monospace; font-size:1.05rem; font-weight:700; color:var(--primary); display:inline-block;">
               donate@ybspcanada.org
             </div>
-            <p style="font-size:0.8rem; color:var(--text-muted); margin-top:8px; line-height:1.5;" data-i18n="note_interac">
+            <p style="font-size:0.8rem; color:var(--text-muted); margin-top:8px; line-height:1.5; margin-bottom:0;" data-i18n="note_interac">
               Auto-deposit is enabled. Please include your full name and email in the transfer notes for our financial audit logs.
             </p>
           </div>
 
-          <!-- THIRD PARTY PLATFORMS -->
-          <div style="margin-top:24px; padding-top:18px; border-top:1px solid var(--border-color);">
-            <strong style="display:block; font-size:0.86rem; color:var(--text-muted); margin-bottom:10px;" data-i18n="lbl_other_ways">Online Giving Platforms:</strong>
-            <div style="display:flex; gap:12px; flex-wrap:wrap;">
-              <a href="https://www.canadahelps.org" target="_blank" rel="noopener noreferrer" class="btn-outline" style="font-size:0.85rem;" data-i18n="btn_canadahelps">CanadaHelps Partner Portal ↗</a>
-              <a href="https://www.paypal.com" target="_blank" rel="noopener noreferrer" class="btn-outline" style="font-size:0.85rem;" data-i18n="btn_paypal">PayPal Giving Fund ↗</a>
-            </div>
-          </div>
+          <!-- ONLINE CREDIT CARD / ZEFFY DONATION (CLEAN, PROFESSIONAL, NO HEART EMOJI) -->
+          
         </div>
 
-        <!-- FIDUCIARY TRANSPARENCY & FAQS -->
-        <div>
+        <!-- RIGHT COLUMN: FIDUCIARY TRANSPARENCY & FAQS (NOW PERFECTLY PLACED) -->
+        <div style="background:#ffffff; border-radius:var(--radius-lg); padding:36px 30px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
           <span class="section-tag" data-i18n="tag_stewardship">Fiduciary Accountability</span>
-          <h3 style="font-size:1.55rem; color:var(--primary); margin:6px 0 16px;" data-i18n="heading_stewardship">Our Stewardship Principles</h3>
-          <p style="font-size:0.94rem; color:var(--text-muted); line-height:1.65; margin-bottom:24px;" data-i18n="desc_stewardship">
+          <h3 style="font-size:1.5rem; color:var(--primary); margin:6px 0 14px;" data-i18n="heading_stewardship">Our Stewardship Principles</h3>
+          <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.65; margin-bottom:24px;" data-i18n="desc_stewardship">
             As a non-profit corporation governed by Section 8 of our Articles of Incorporation, our leadership and board serve without remuneration. Contributions are directed into verifiable youth empowerment and community development.
           </p>
 
-          <div class="faq-item">
-            <h4 class="faq-q" data-i18n="faq1_q">How are international funds to Burundi accounted for?</h4>
-            <p class="faq-a" data-i18n="faq1_a">
+          <div class="faq-item" style="margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid var(--border-color);">
+            <h4 class="faq-q" style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:6px;" data-i18n="faq1_q">How are international funds to Burundi accounted for?</h4>
+            <p class="faq-a" style="font-size:0.88rem; color:var(--text-muted); line-height:1.55; margin:0;" data-i18n="faq1_a">
               All international transfers to YBSP Burundi are governed by formal milestone agreements. Disbursements are released directly against vendor invoices and verified participant delivery logs, ensuring complete fiduciary auditability.
             </p>
           </div>
 
-          <div class="faq-item">
-            <h4 class="faq-q" data-i18n="faq2_q">Can businesses sponsor a program cohort?</h4>
-            <p class="faq-a" data-i18n="faq2_a">
+          <div class="faq-item" style="margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid var(--border-color);">
+            <h4 class="faq-q" style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:6px;" data-i18n="faq2_q">Can businesses sponsor a program cohort?</h4>
+            <p class="faq-a" style="font-size:0.88rem; color:var(--text-muted); line-height:1.55; margin:0;" data-i18n="faq2_a">
               Yes. Canadian corporations, financial institutions, and employers can sponsor specific 12-week youth cohorts or workshop modules. Please visit our <a href="get-involved.html#partnerships" style="color:var(--secondary-dark); font-weight:700;">Institutional Partnerships</a> section.
             </p>
           </div>
 
-          <div class="faq-item">
-            <h4 class="faq-q" data-i18n="faq3_q">Where can I inspect public corporate filings?</h4>
-            <p class="faq-a" data-i18n="faq3_a">
+          <div class="faq-item" style="margin-bottom:0;">
+            <h4 class="faq-q" style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:6px;" data-i18n="faq3_q">Where can I inspect public corporate filings?</h4>
+            <p class="faq-a" style="font-size:0.88rem; color:var(--text-muted); line-height:1.55; margin:0;" data-i18n="faq3_a">
               YBSP Canada's federal regulatory records, including our corporation number (1154010-6) and annual returns, can be reviewed on our <a href="about.html#corporate" style="color:var(--secondary-dark); font-weight:700;">Corporate Filings</a> page.
             </p>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- UNIVERSAL FOOTER -->
-  <footer class="main-footer">
+    <!-- UNIVERSAL FOOTER (WFP STYLE WITH SOCIALS & DONATE) -->
+  <footer class="main-footer" style="background:#061124; color:#ffffff; padding:55px 0 25px; border-top:3px solid var(--secondary);">
     <div class="container">
-      <div class="footer-grid">
+      
+      <!-- TOP FOOTER: 3-COLUMN BALANCED NAVIGATION -->
+      <div class="footer-grid" style="display:grid; grid-template-columns:1fr 1fr 1.2fr; gap:40px; margin-bottom:40px;">
         <div class="footer-col">
-          <h4>YBSP Canada</h4>
-          <p data-i18n="footer_about_desc">
-            Youth Building in Synergy to end Poverty is a federally incorporated Canadian not-for-profit corporation (Canada Not-for-profit Corporations Act) dedicated to fostering youth leadership, community synergy, and international solidarity.
-          </p>
-          <div class="legal-notice-box">
-            <strong>Federal Corporation #:</strong> 1154010-6<br>
-            <strong>Business #:</strong> 779321272RC0001<br>
-            <strong>Governing Act:</strong> Canada Not-for-profit Corporations Act
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4 data-i18n="footer_quick_links">Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-            <li><a href="about.html" data-i18n="nav_about">About Us & Governance</a></li>
-            <li><a href="programs.html" data-i18n="nav_programs">Programs & AI Skills</a></li>
-            <li><a href="events.html" data-i18n="nav_events">Events & Community</a></li>
-            <li><a href="news.html" data-i18n="nav_news">News & Impact Stories</a></li>
-            <li><a href="donate.html" data-i18n="nav_donate">Support Our Mission</a></li>
+          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:14px; font-weight:800;" data-i18n="footer_quick_links">Quick Links</h4>
+          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2;">
+            <li><a href="index.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_home">Home</a></li>
+            <li><a href="about.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_about">About Us & Governance</a></li>
+            <li><a href="programs.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_programs">Programs & AI Skills</a></li>
+            <li><a href="events.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_events">Events & Community</a></li>
+            <li><a href="news.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_news">News & Media Library</a></li>
+            <li><a href="careers.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_careers">Careers & Opportunities</a></li>
+            <li><a href="donate.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_donate">Donate</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4 data-i18n="footer_involved">Get Involved</h4>
-          <ul class="footer-links">
-            <li><a href="get-involved.html#volunteer" data-i18n="nav_volunteer">Volunteer Application</a></li>
-            <li><a href="get-involved.html#membership" data-i18n="nav_membership">Become a Member</a></li>
-            <li><a href="get-involved.html#working-groups" data-i18n="nav_working_groups">Member Working Groups</a></li>
-            <li><a href="get-involved.html#partnerships" data-i18n="nav_partnerships">Institutional Partnerships</a></li>
-            <li><a href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">YBSP Burundi Website ↗</a></li>
+          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:14px; font-weight:800;" data-i18n="footer_involved">Get Involved</h4>
+          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2;">
+            <li><a href="get-involved.html#volunteer" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_volunteer">Volunteer Application</a></li>
+            <li><a href="get-involved.html#membership" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_membership">Become a Member</a></li>
+            <li><a href="get-involved.html#working-groups" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_working_groups">Member Working Groups</a></li>
+            <li><a href="get-involved.html#partnerships" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_partnerships">Institutional Partners</a></li>
+            <li><a href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none;">YBSP Burundi Website ↗</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4 data-i18n="footer_contact">Contact & Secretariat</h4>
-          <div class="contact-item">
-            <span>📍</span>
-            <span data-i18n="footer_addr">Operating Nationally Across Canada<br>Headquartered in Canada</span>
-          </div>
-          <div class="contact-item">
-            <span>✉️</span>
-            <a href="mailto:info@ybspcanada.org">info@ybspcanada.org</a>
-          </div>
-          <div class="contact-item">
-            <span>🌐</span>
-            <span data-i18n="footer_scope">Serving Youth Communities Across Canada</span>
+          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:14px; font-weight:800;" data-i18n="footer_contact">Contact & Secretariat</h4>
+          <div style="font-size:0.9rem; color:#cbd5e1; line-height:1.7;">
+            <p style="margin-bottom:10px;">📍 <strong data-i18n="footer_addr">Operating Nationally Across Canada<br>Headquartered in Canada</strong></p>
+            <p style="margin-bottom:10px;">✉️ <a href="mailto:info@ybspcanada.org" style="color:#60a5fa; text-decoration:none;">info@ybspcanada.org</a></p>
+            <p>🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
           </div>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <div>&copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.</div>
-        <div style="display:flex; gap:18px;">
-          <a href="about.html#corporate" data-i18n="footer_transparency">Corporate Transparency</a>
-          <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+      <!-- BOTTOM FOOTER: COPYRIGHT FAR LEFT, SOCIAL TILES FAR RIGHT -->
+      <div style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+        <div style="font-size:0.85rem; color:#94a3b8;">
+          &copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
+        </div>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:0.85rem; font-weight:700; color:#ffffff; text-transform:uppercase; letter-spacing:0.05em; margin-right:4px;" data-i18n="lbl_follow_us">Follow us</span>
+          <a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.95rem; transition:background 0.2s;" title="Follow YBSP Canada on X (Twitter)">𝕏</a>
+          <a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.95rem; transition:background 0.2s;" title="Follow YBSP Canada on Facebook">FB</a>
+          <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.95rem; transition:background 0.2s;" title="Follow YBSP Canada on Instagram">IG</a>
+          <a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.95rem; transition:background 0.2s;" title="Follow YBSP Canada on TikTok">TT</a>
+          <a href="https://www.snapchat.com/add/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.95rem; transition:background 0.2s;" title="Add YBSP Canada on Snapchat">SC</a>
         </div>
       </div>
+
     </div>
   </footer>
 
-  <!-- BILINGUAL SCRIPT -->
+
+  <!-- UNIVERSAL BILINGUAL SCRIPT -->
   <script>
     const translations = {
       en: {
-        tagline: "Uniting youth. Building synergy. Ending poverty.",
-        nav_home: "Home",
-        nav_about: "About Us",
-        nav_mission: "Mission & Mandate",
-        nav_leadership: "Executive Leadership",
-        nav_governance: "Board & Governance",
-        nav_continuity: "Founder & Continuity",
-        nav_corporate: "Corporate Filings",
-        nav_burundi: "Burundi Sisterhood",
-        nav_programs: "Programs",
-        nav_mentorship: "Youth Mentorship & AI",
-        nav_entrepreneurship: "Social Entrepreneurship",
-        nav_awareness: "Community Health & Ecology",
-        nav_burundi_prog: "Burundi Synergy Initiative",
-        nav_sdgs: "UN SDGs Alignment",
-        nav_involved: "Get Involved",
-        nav_volunteer: "Volunteer Application",
-        nav_membership: "Become a Member",
-        nav_working_groups: "Member Working Groups",
-        nav_partnerships: "Institutional Partners",
-        nav_events: "Community & Events",
-        nav_calendar: "Events Calendar",
-        nav_host: "Host or Propose an Event",
-        nav_gala: "Annual Solidarity Gala",
-        nav_gallery: "Authentic Photo Gallery",
-        nav_news: "News",
-        nav_careers: "Careers",
-        nav_careers: "Careers",
-        nav_contact: "Contact Us",
-        nav_donate: "Donate",
-        crumb_home: "Home",
-        crumb_donate: "Support Our Mission",
-        hero_donate_title: "Transparent Giving. Direct Impact.",
-        hero_donate_desc: "Your contribution directly fuels practical career mentorship in Canada and verified educational and vocational starter toolkits in Burundi.",
-        tax_notice_title: "Notice Regarding Legal Non-Profit Status & Tax Receipts",
-        tax_notice_body: "Youth Building in Synergy to end Poverty (YBSP Canada) is a federally incorporated not-for-profit corporation under the Canada Not-for-profit Corporations Act (NFP Act). We are not yet a registered charity with the Canada Revenue Agency (CRA); direct contributions currently do not generate official tax deduction receipts unless facilitated through our registered charitable partner funds. We prioritize complete transparency with our donors.",
-        tag_donation_amount: "Select Support Level",
-        heading_giving_tiers: "Suggested Giving Tiers",
-        desc_giving_tiers: "Choose a contribution tier to support Canadian youth cohorts or international solidarity initiatives:",
-        t25_desc: "Provides workshop materials and transit subsidy for a youth mentee in Canada.",
-        t50_desc: "Sponsors #SororaIkaye school kits, books, and uniforms for a vulnerable child in Burundi.",
-        t100_desc: "Funds #MurabireKazoza starter vocational equipment (tailoring or carpentry) for a young artisan.",
-        t250_desc: "Sponsors full 12-week mentorship curriculum, digital AI training, and career pathing for a youth.",
-        lbl_interac: "Preferred Fee-Free Method in Canada",
-        heading_interac: "Interac e-Transfer (Direct Auto-Deposit)",
-        desc_interac: "Send your contribution with zero processing deductions directly from your Canadian financial institution:",
-        note_interac: "Auto-deposit is enabled. Please include your full name and email in the transfer notes for our financial audit logs.",
-        lbl_other_ways: "Online Giving Platforms:",
-        btn_canadahelps: "CanadaHelps Partner Portal ↗",
-        btn_paypal: "PayPal Giving Fund ↗",
-        tag_stewardship: "Fiduciary Accountability",
-        heading_stewardship: "Our Stewardship Principles",
-        desc_stewardship: "As a non-profit corporation governed by Section 8 of our Articles of Incorporation, our leadership and board serve without remuneration. Contributions are directed into verifiable youth empowerment and community development.",
-        faq1_q: "How are international funds to Burundi accounted for?",
-        faq1_a: "All international transfers to YBSP Burundi are governed by formal milestone agreements. Disbursements are released directly against vendor invoices and verified participant delivery logs, ensuring complete fiduciary auditability.",
-        faq2_q: "Can businesses sponsor a program cohort?",
-        faq2_a: "Yes. Canadian corporations, financial institutions, and employers can sponsor specific 12-week youth cohorts or workshop modules. Please visit our Institutional Partnerships section.",
-        faq3_q: "Where can I inspect public corporate filings?",
-        faq3_a: "YBSP Canada's federal regulatory records, including our corporation number (1154010-6) and annual returns, can be reviewed on our Corporate Filings page.",
-        footer_about_desc: "Youth Building in Synergy to end Poverty is a federally incorporated Canadian not-for-profit corporation (Canada Not-for-profit Corporations Act) dedicated to fostering youth leadership, community synergy, and international solidarity.",
-        footer_quick_links: "Quick Links",
-        footer_involved: "Get Involved",
-        footer_contact: "Contact & Secretariat",
-        footer_addr: "Operating Nationally Across Canada<br>Headquartered in Canada",
-        footer_scope: "Serving Youth Communities Across Canada",
-        footer_transparency: "Corporate Transparency"
+      "tagline": "Uniting youth. Building synergy. Ending poverty.",
+      "nav_home": "Home",
+      "nav_about": "About Us &amp; Governance",
+      "nav_mission": "Mission &amp; Mandate",
+      "nav_team": "Executive Leadership",
+      "nav_governance": "Board &amp; Governance",
+      "nav_corporate": "Corporate Filings",
+      "nav_burundi": "Burundi Sisterhood",
+      "nav_programs": "Programs &amp; AI Skills",
+      "nav_mentorship": "Career Mentorship &amp; AI",
+      "nav_entrepreneurship": "Social Entrepreneurship",
+      "nav_awareness": "Health &amp; Urban Ecology",
+      "nav_burundi_prog": "Burundi Projects",
+      "nav_sdgs": "UN SDGs Alignment",
+      "nav_involved": "Get Involved",
+      "nav_volunteer": "Volunteer Application",
+      "nav_membership": "Become a Member",
+      "nav_working_groups": "Member Working Groups",
+      "nav_partnerships": "Institutional Partners",
+      "nav_events": "Events &amp; Community",
+      "nav_calendar": "Events Calendar",
+      "nav_host": "Host or Propose an Event",
+      "nav_gala": "Annual Solidarity Gala",
+      "nav_gallery": "Authentic Photo Gallery",
+      "nav_news": "News &amp; Media Library",
+      "nav_careers": "Careers &amp; Opportunities",
+      "nav_contact": "Contact Us",
+      "nav_donate": "Donate",
+      "crumb_home": "Home",
+      "crumb_donate": "Support Our Mission",
+      "hero_donate_title": "Transparent Giving. Direct Impact.",
+      "hero_donate_desc": "Your contribution directly fuels practical career mentorship in Canada and verified educational and vocational starter toolkits in Burundi.",
+      "tax_notice_title": "Notice Regarding Legal Non-Profit Status &amp; Tax Receipts",
+      "tax_notice_body": "Youth Building in Synergy to end Poverty (YBSP Canada) is a federally incorporated not-for-profit corporation under the <em>Canada Not-for-profit Corporations Act</em> (NFP Act). We are not yet a registered charity with the Canada Revenue Agency (CRA); direct contributions currently do not generate official tax deduction receipts unless facilitated through our registered charitable partner funds. We prioritize complete transparency with our donors.",
+      "tag_donation_amount": "Select Support Level",
+      "heading_giving_tiers": "Suggested Giving Tiers",
+      "desc_giving_tiers": "Choose a contribution tier to support Canadian youth cohorts or international solidarity initiatives:",
+      "t25_desc": "Provides workshop materials and transit subsidy for a youth mentee in Canada.",
+      "t50_desc": "Sponsors #SororaIkaye school kits, books, and uniforms for a vulnerable child in Burundi.",
+      "t100_desc": "Funds #MurabireKazoza starter vocational equipment (tailoring or carpentry) for a young artisan.",
+      "t250_desc": "Sponsors full 12-week mentorship curriculum, digital AI training, and career pathing for a youth.",
+      "lbl_interac": "Preferred Fee-Free Method in Canada",
+      "heading_interac": "Interac e-Transfer (Direct Auto-Deposit)",
+      "desc_interac": "Send your contribution with zero processing deductions directly from your Canadian financial institution:",
+      "note_interac": "Auto-deposit is enabled. Please include your full name and email in the transfer notes for our financial audit logs.",
+      "lbl_other_ways": "Online Giving Platforms:",
+      "lbl_zeffy": "Donate Online by Credit Card (100% Free via Zeffy):",
+      "btn_zeffy": "Donate Online via Zeffy (Credit Card / Apple Pay) ↗",
+      "note_zeffy": "100% of your donation goes directly to YBSP Canada. Zeffy is Canada's only 100% free fundraising platform with 0% platform and processing fees for non-profits.",
+      
+      "tag_stewardship": "Fiduciary Accountability",
+      "heading_stewardship": "Our Stewardship Principles",
+      "desc_stewardship": "As a non-profit corporation governed by Section 8 of our Articles of Incorporation, our leadership and board serve without remuneration. Contributions are directed into verifiable youth empowerment and community development.",
+      "faq1_q": "How are international funds to Burundi accounted for?",
+      "faq1_a": "All international transfers to YBSP Burundi are governed by formal milestone agreements. Disbursements are released directly against vendor invoices and verified participant delivery logs, ensuring complete fiduciary auditability.",
+      "faq2_q": "Can businesses sponsor a program cohort?",
+      "faq2_a": "Yes. Canadian corporations, financial institutions, and employers can sponsor specific 12-week youth cohorts or workshop modules. Please visit our <a href=\"get-involved.html#partnerships\" style=\"color:var(--secondary-dark); font-weight:700;\">Institutional Partnerships</a> section.",
+      "faq3_q": "Where can I inspect public corporate filings?",
+      "faq3_a": "YBSP Canada's federal regulatory records, including our corporation number (1154010-6) and annual returns, can be reviewed on our <a href=\"about.html#corporate\" style=\"color:var(--secondary-dark); font-weight:700;\">Corporate Filings</a> page.",
+      "footer_about_desc": "Youth Building in Synergy to end Poverty is a federally incorporated Canadian not-for-profit corporation dedicated to fostering youth leadership, career readiness, and international solidarity.",
+      "footer_quick_links": "Quick Links",
+      "footer_involved": "Get Involved",
+      "footer_contact": "Contact &amp; Secretariat",
+      "footer_addr": "Operating Nationally Across Canada<br/>Headquartered in Canada",
+      "footer_scope": "Serving Youth Communities in Both Official Languages",
+      "lbl_follow_us": "Follow us",
       },
       fr: {
-        tagline: "Unir la jeunesse. Bâtir la synergie.",
-        nav_home: "Accueil",
-        nav_about: "À propos",
-        nav_mission: "Mission & Mandat",
-        nav_leadership: "Direction générale",
-        nav_governance: "Conseil d'administration",
-        nav_continuity: "Fondation & Continuité",
-        nav_corporate: "Dépôts corporatifs",
-        nav_burundi: "Alliance avec le Burundi",
-        nav_programs: "Programmes",
-        nav_mentorship: "Mentorat jeunesse & IA",
-        nav_entrepreneurship: "Entrepreneuriat social",
-        nav_awareness: "Santé communautaire & Écologie",
-        nav_burundi_prog: "Projets Synergie Burundi",
-        nav_sdgs: "Alignement ODD de l'ONU",
-        nav_involved: "S'impliquer",
-        nav_volunteer: "Formulaire de bénévolat",
-        nav_membership: "Devenir membre",
-        nav_working_groups: "Comités de travail",
-        nav_partnerships: "Partenariats institutionnels",
-        nav_events: "Événements",
-        nav_calendar: "Calendrier des événements",
-        nav_host: "Organiser ou proposer un événement",
-        nav_gala: "Gala annuel de solidarité",
-        nav_gallery: "Galerie photos authentiques",
-        nav_news: "Nouvelles",
-        nav_careers: "Carrières",
-        nav_careers: "Carrières",
-        nav_contact: "Contact",
-        nav_donate: "Faire un don",
-        crumb_home: "Accueil",
-        crumb_donate: "Soutenir notre mission",
-        hero_donate_title: "Dons transparents. Impact direct.",
-        hero_donate_desc: "Vos dons soutiennent directement le mentorat de carrière au Canada et les kits d'outillage professionnel et bourses scolaires au Burundi.",
-        tax_notice_title: "Avis légal concernant le statut d'OBNL et les reçus fiscaux",
-        tax_notice_body: "Youth Building in Synergy to end Poverty (YBSP Canada) est une organisation à but non lucratif constituée au fédéral (Loi BNL). Nous ne sommes pas encore un organisme de bienfaisance enregistré auprès de l'ARC; les dons directs ne génèrent pas encore de reçus fiscaux déductibles d'impôt, sauf lorsqu'ils transitent par nos partenaires de bienfaisance enregistrés. Nous appliquons une transparence totale avec nos donateurs.",
-        tag_donation_amount: "Niveau de soutien",
-        heading_giving_tiers: "Niveaux de contribution suggérés",
-        desc_giving_tiers: "Sélectionnez un palier pour soutenir les cohortes jeunesse au Canada ou les projets de solidarité :",
-        t25_desc: "Fournit du matériel d'atelier et un soutien de transport pour un jeune mentoré au Canada.",
-        t50_desc: "Finance un ensemble scolaire #SororaIkaye (cahiers, uniformes) pour un enfant vulnérable au Burundi.",
-        t100_desc: "Finance des kits d'outils de démarrage #MurabireKazoza (couture, menuiserie) pour un jeune artisan.",
-        t250_desc: "Prend en charge le cursus complet de mentorat de 12 semaines et de formation à l'IA pour un jeune.",
-        lbl_interac: "Méthode privilégiée et sans frais au Canada",
-        heading_interac: "Virement Interac (Dépôt automatique direct)",
-        desc_interac: "Envoyez votre don directement sans aucun frais de transaction depuis votre institution financière canadienne :",
-        note_interac: "Le dépôt automatique est activé. Veuillez indiquer votre nom et courriel dans les notes de virement pour notre suivi financier.",
-        lbl_other_ways: "Plateformes de dons en ligne :",
-        btn_canadahelps: "Portail CanaDon ↗",
-        btn_paypal: "Fonds de bienfaisance PayPal ↗",
-        tag_stewardship: "Intégrité fiduciaire",
-        heading_stewardship: "Nos principes d'intendance",
-        desc_stewardship: "Conformément à l'article 8 de nos statuts, nos administrateurs et notre direction générale exercent à titre bénévole. L'intégralité des contributions est affectée aux programmes jeunesse vérifiables.",
-        faq1_q: "Comment les fonds envoyés au Burundi sont-ils vérifiés ?",
-        faq1_a: "Chaque virement international vers YBSP Burundi est encadré par des ententes formelles et débloqué sur pièces justificatives et rapports de livraison vérifiés.",
-        faq2_q: "Les entreprises peuvent-elles commanditer une cohorte ?",
-        faq2_a: "Oui. Les entreprises et employeurs peuvent parrainer des cohortes de 12 semaines ou des ateliers. Consultez notre volet Partenariats institutionnels.",
-        faq3_q: "Où puis-je consulter les dossiers corporatifs publics ?",
-        faq3_a: "Les dossiers officiels de YBSP Canada, y compris le numéro fédéral (1154010-6) et les rapports annuels, sont accessibles sur notre page Dépôts corporatifs.",
-        footer_about_desc: "Youth Building in Synergy to end Poverty est une organisation à but non lucratif constituée au fédéral (Loi BNL), dédiée au leadership des jeunes et à la solidarité internationale.",
-        footer_quick_links: "Liens rapides",
-        footer_involved: "S'impliquer",
-        footer_contact: "Contact & Bureau",
-        footer_addr: "Opérant à l'échelle nationale au Canada<br>Siège au Canada",
-        footer_scope: "Au service des communautés de jeunes partout au Canada",
-        footer_transparency: "Transparence corporative"
+      "tagline": "Unir la jeunesse. Bâtir la synergie. Vaincre la précarité.",
+      "nav_home": "Accueil",
+      "nav_about": "À propos",
+      "nav_mission": "Mission & Mandat",
+      "nav_team": "Direction exécutive",
+      "nav_governance": "Conseil d'administration",
+      "nav_corporate": "Dépôts corporatifs",
+      "nav_burundi": "Alliance avec le Burundi",
+      "nav_programs": "Programmes",
+      "nav_mentorship": "Mentorat de carrière & IA",
+      "nav_entrepreneurship": "Entrepreneuriat social",
+      "nav_awareness": "Santé & Écologie urbaine",
+      "nav_burundi_prog": "Projets Burundi",
+      "nav_sdgs": "Alignement ODD de l'ONU",
+      "nav_involved": "S'impliquer",
+      "nav_volunteer": "Formulaire de bénévolat",
+      "nav_membership": "Devenir membre",
+      "nav_working_groups": "Comités de travail",
+      "nav_partnerships": "Partenariats institutionnels",
+      "nav_events": "Événements",
+      "nav_calendar": "Calendrier des événements",
+      "nav_host": "Organiser ou proposer un événement",
+      "nav_gala": "Gala annuel de solidarité",
+      "nav_gallery": "Albums photos d'initiatives",
+      "nav_news": "Nouvelles",
+      "nav_careers": "Carrières",
+      "nav_contact": "Nous joindre",
+      "nav_donate": "Faire un don",
+      "crumb_home": "Accueil",
+      "crumb_donate": "Soutenir notre mission",
+      "hero_donate_title": "Don transparent. Impact direct.",
+      "hero_donate_desc": "Votre contribution soutient directement le mentorat de carrière des jeunes au Canada et les kits d'apprentissage et de scolarisation au Burundi.",
+      "tax_notice_title": "Note relative au statut d'organisme à but non lucratif",
+      "tax_notice_body": "Youth Building in Synergy to end Poverty (YBSP Canada) est une organisation à but non lucratif constituée en vertu de la Loi canadienne sur les organisations à but non lucratif. Veuillez noter que YBSP Canada est actuellement un OBNL sans but lucratif et ne délivre pas de reçus fiscaux pour déduction d'impôt.",
+      "tag_donation_amount": "Niveaux de soutien suggérés",
+      "heading_giving_tiers": "Paliers de contribution solidaire",
+      "desc_giving_tiers": "Choisissez un palier de contribution pour soutenir nos cohortes jeunesse au Canada ou les projets de solidarité de terrain au Burundi.",
+      "t25_desc": "Finance le matériel d'atelier et les titres de transport pour un jeune mentoré au Canada.",
+      "t50_desc": "Fournit un kit scolaire complet #SororaIkaye (uniforme, cahiers, manuels) pour un enfant au Burundi.",
+      "t100_desc": "Finance une session intensive d'outillage en IA et compétences numériques pour des jeunes en recherche d'emploi.",
+      "t250_desc": "Finance un kit de démarrage professionnel #MurabireKazoza (couture, menuiserie) pour un jeune artisan diplômé.",
+      "lbl_interac": "Courriel officiel pour virement Interac",
+      "heading_interac": "Virement Interac direct (Sans frais de transaction)",
+      "desc_interac": "Pour les donateurs canadiens, le virement Interac est la méthode privilégiée car 100% de votre don est versé directement aux programmes jeunesse, sans déduction de frais de carte de crédit.",
+      "note_interac": "Dépôt direct configuré pour YBSP Canada. Aucune question de sécurité requise.",
+      "lbl_other_ways": "Autres modes de soutien",
+      
+      
+      "tag_stewardship": "Gestion rigoureuse",
+      "heading_stewardship": "Engagement de transparence financière",
+      "desc_stewardship": "Chaque dollar confié à YBSP Canada est administré avec une stricte probité. Nos administrateurs sont entièrement bénévoles et veillent à l'affectation directe des fonds.",
+      "faq1_q": "Mon don donne-t-il droit à un reçu fiscal ?",
+      "faq1_a": "YBSP Canada est constituée comme organisation à but non lucratif sous la Loi BNL. Nous fournissons des attestations officielles de contribution, mais nous ne délivrons pas de reçus fiscaux déductibles d'impôt pour le moment.",
+      "faq2_q": "Puis-je affecter mon don à un programme spécifique ?",
+      "faq2_a": "Oui. Vous pouvez indiquer en note de virement Interac ou de don en ligne le volet de votre choix (ex. Mentorat Canada, Repas du dimanche Burundi, Bourses #SororaIkaye).",
+      "faq3_q": "Comment puis-je vérifier la conformité corporative de YBSP Canada ?",
+      "faq3_a": "Nos dossiers publics auprès de Corporations Canada sont accessibles en toute transparence sous le numéro de corporation 1154010-6.",
+      "footer_about_desc": "Youth Building in Synergy to end Poverty est une organisation à but non lucratif constituée au fédéral (Loi BNL), dédiée au leadership des jeunes, à la synergie collective et à la solidarité internationale.",
+      "footer_quick_links": "Liens rapides",
+      "footer_involved": "S'impliquer",
+      "footer_contact": "Contact & Secrétariat",
+      "footer_addr": "Opérant à l'échelle nationale au Canada<br>Siège social au Canada",
+      "footer_scope": "Au service des communautés de jeunes partout au Canada",
+      "lbl_follow_us": "Suivez YBSP sur les réseaux sociaux",
       }
     };
 
     function setLanguage(lang) {
+      try { localStorage.setItem('ybsp_lang', lang); } catch(e) {}
+      document.documentElement.lang = lang;
+
       const elements = document.querySelectorAll('[data-i18n]');
       elements.forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
+        if (translations && translations[lang] && translations[lang][key]) {
           el.innerHTML = translations[lang][key];
         }
       });
-      document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
-      document.getElementById('btn-lang-fr').classList.toggle('active', lang === 'fr');
-      document.documentElement.lang = lang;
-      try { localStorage.setItem('ybsp_lang', lang); } catch (e) {}
-    }
 
-    function selectTier(card, amount) {
-      document.querySelectorAll('.tier-card').forEach(c => c.classList.remove('selected'));
-      card.classList.add('selected');
-    }
+      const btnEn = document.getElementById('btn-lang-en');
+      const btnFr = document.getElementById('btn-lang-fr');
+      if (btnEn) {
+        btnEn.classList.toggle('active', lang === 'en');
+        btnEn.style.background = (lang === 'en') ? 'var(--secondary)' : 'transparent';
+        btnEn.style.color = (lang === 'en') ? '#ffffff' : '#cbd5e1';
+      }
+      if (btnFr) {
+        btnFr.classList.toggle('active', lang === 'fr');
+        btnFr.style.background = (lang === 'fr') ? 'var(--secondary)' : 'transparent';
+        btnFr.style.color = (lang === 'fr') ? '#ffffff' : '#cbd5e1';
+      }
 
-            function toggleMobileNav() {
-      const navMenu = document.querySelector('.nav-menu');
-      if (!navMenu) return;
-      if (navMenu.style.display === 'flex') {
-        navMenu.style.display = 'none';
-      } 
-else {
-        navMenu.style.display = 'flex';
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.position = 'absolute';
-        navMenu.style.top = '78px';
-        navMenu.style.left = '0';
-        navMenu.style.width = '100%';
-        navMenu.style.background = '#ffffff';
-        navMenu.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-        navMenu.style.padding = '20px';
+      const zeffyLink = document.getElementById('zeffy-donate-link');
+      if (zeffyLink) {
+        zeffyLink.href = (lang === 'fr') 
+          ? 'https://www.zeffy.com/fr-CA/donation-form/donate-to-change-lives-23667' 
+          : 'https://www.zeffy.com/en-CA/donation-form/donate-to-change-lives-23667';
       }
     }
-  
-    // Language persistence across pages
-    try {
-      const savedLang = localStorage.getItem('ybsp_lang');
-      if (savedLang && savedLang === 'fr') {
+
+    document.addEventListener('DOMContentLoaded', () => {
+      let savedLang = 'en';
+      try { savedLang = localStorage.getItem('ybsp_lang') || 'en'; } catch(e) {}
+      if (savedLang === 'fr') {
         setLanguage('fr');
       }
-    } catch (e) {}
+
+      // Touch listener for mobile submenus
+      const navItems = document.querySelectorAll('.nav-item');
+      navItems.forEach(item => {
+        const arrow = item.querySelector('.nav-arrow');
+        const dropdown = item.querySelector('.dropdown-menu');
+        const link = item.querySelector('.nav-link');
+        if (arrow && dropdown && link) {
+          link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 991) {
+              e.preventDefault();
+              dropdown.classList.toggle('is-visible');
+              arrow.style.transform = dropdown.classList.contains('is-visible') ? 'rotate(180deg)' : 'rotate(0deg)';
+            }
+          });
+        }
+      });
+    });
+
+    function toggleMobileNav() {
+      const navMenu = document.getElementById('main-nav-menu');
+      const toggleBtn = document.getElementById('mobileNavToggle');
+      if (!navMenu) return;
+      const isOpen = navMenu.classList.toggle('is-open');
+      if (toggleBtn) {
+        toggleBtn.classList.toggle('is-active', isOpen);
+        toggleBtn.setAttribute('aria-expanded', isOpen);
+      }
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
 
   </script>
+
 </body>
 </html>
