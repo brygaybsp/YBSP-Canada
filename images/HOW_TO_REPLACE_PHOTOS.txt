@@ -1,0 +1,31 @@
+YBSP CANADA — WEBSITE IMAGE REPLACEMENT MAP
+
+Every photo across the website is designed to be easily replaced with your own real photographs.
+Simply place your image file into this images/ directory using the exact file name listed below.
+The website code will automatically display your real photo instead of the placeholder!
+
+1. EXECUTIVE DIRECTOR PORTRAIT:
+   - File: images/leis-bruel-haragirimana.jpg
+   - Used on: About Us page & Homepage (Leadership card)
+
+2. BURUNDI SISTERHOOD PHOTO:
+   - File: images/burundi-sisterhood.jpg
+   - Used on: About Us page (International Sisterhood with YBSP Burundi section)
+
+3. HOMEPAGE PHOTOS:
+   - File: images/why-ybsp-canada.jpg (Photo under "Why YBSP in Canada?" section)
+   - File: images/overview-youth.jpg (Photo under "About YBSP Canada" section)
+
+4. PROGRAMS PAGE PHOTOS:
+   - File: images/program-mentorship.jpg (Career Mentorship & Applied AI)
+   - File: images/program-entrepreneurship.jpg (Social Entrepreneurship Lab)
+   - File: images/program-awareness.jpg (Health & Urban Ecology)
+   - File: images/program-burundi.jpg (Burundi Global Synergy Initiative)
+
+5. EVENTS PAGE PHOTOS:
+   - File: images/gala-banner.jpg (Annual Solidarity Gala banner)
+   - Folder: images/albums/sunday-meal/ (Drop Sunday meal photos here)
+   - Folder: images/albums/sorora-ikaye/ (Drop school kit drive photos here)
+   - Folder: images/albums/murabire-kazoza/ (Drop vocational toolkit photos here)
+   - Folder: images/albums/canadian-mentorship/ (Drop Canadian mentorship photos here)
+   - Folder: images/albums/solidarity-gala/ (Drop gala archive photos here)

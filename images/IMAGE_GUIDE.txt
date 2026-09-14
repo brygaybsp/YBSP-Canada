@@ -1,0 +1,56 @@
+=============================================================================
+YBSP CANADA WEBSITE — MASTER IMAGE REPLACEMENT DIRECTORY
+=============================================================================
+
+HOW IMAGE REPLACEMENT WORKS:
+Every photo on the website is configured to look in this "images/" folder first.
+Whenever you want to replace any stock picture with your own real photograph:
+1. Save your real photo into this "images/" folder.
+2. Rename your photo file to match the EXACT filename listed in the table below.
+3. Commit the file to GitHub. Your real photo will automatically appear live!
+
+-----------------------------------------------------------------------------
+FILENAME                            PAGE LOCATION & SECTION
+-----------------------------------------------------------------------------
+leis-bruel-haragirimana.jpg         About Us (about.html) & Home (index.html)
+                                    -> Founder & Executive Director portrait
+
+burundi-sisterhood.jpg              About Us (about.html)
+                                    -> "International Sisterhood with YBSP Burundi"
+
+why-ybsp-canada.jpg                 Home (index.html)
+                                    -> "Why YBSP in Canada?" Section
+
+about-ybsp.jpg                      Home (index.html)
+                                    -> "About YBSP Canada" Overview Card
+
+mentorship.jpg                      Programs (programs.html)
+                                    -> "Youth Mentorship, Career Readiness & Applied AI"
+
+entrepreneurship.jpg                Programs (programs.html)
+                                    -> "Social Entrepreneurship & Micro-Venture Lab"
+
+ecology.jpg                         Programs (programs.html)
+                                    -> "Health, Mental Wellness & Urban Ecology"
+
+burundi-projects.jpg                Programs (programs.html)
+                                    -> "Global Synergy Initiative: Burundi Projects"
+
+gala.jpg                            Events (events.html)
+                                    -> "Annual Solidarity Gala Spotlight"
+
+-----------------------------------------------------------------------------
+ALBUMS FOLDER (events.html Photo Showcase):
+-----------------------------------------------------------------------------
+images/albums/sunday-meal/          -> Weekly Sunday Meal photos in Bujumbura
+images/albums/sorora-ikaye/         -> #SororaIkaye school kits & student uniforms
+images/albums/murabire-kazoza/      -> #MurabireKazoza vocational starter toolkits
+images/albums/canadian-mentorship/  -> Canadian mentorship & AI workshop photos
+images/albums/solidarity-gala/      -> Annual Gala photos & awards
+
+-----------------------------------------------------------------------------
+NOTE ON FORMATS & RESIZING:
+- Recommended formats: .jpg or .png
+- Recommended dimensions: 800x600 pixels or larger (the website styles them
+  automatically to fit with responsive corners and borders).
+=============================================================================
