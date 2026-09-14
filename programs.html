@@ -141,7 +141,7 @@
       align-items: center;
       height: 78px;
     }
-    .brand-logo { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0 !important; white-space: nowrap !important; }
     .brand-logo-svg {
       width: 44px !important;
       height: 44px !important;
@@ -151,6 +151,7 @@
       min-height: 44px !important;
       flex-shrink: 0 !important;
     }
+    .logo-text { flex-shrink: 0 !important; white-space: nowrap !important; }
     .logo-text h1 {
       font-size: 1.25rem;
       font-weight: 800;
@@ -158,15 +159,8 @@
       line-height: 1.1;
       letter-spacing: -0.01em;
     }
-    .logo-text span {
-      font-size: 0.74rem;
-      font-weight: 600;
-      color: var(--secondary-dark);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      display: block;
-    }
-    .nav-menu { display: flex; align-items: center; gap: 2px; flex-wrap: nowrap !important; }
+    .logo-text span { font-size: 0.70rem; font-weight: 600; color: var(--secondary-dark); text-transform: uppercase; letter-spacing: 0.04em; display: block; white-space: nowrap !important; }
+    .nav-menu { display: flex; align-items: center; gap: 2px; flex-wrap: nowrap; }
     .nav-item { position: relative; white-space: nowrap; }
     .nav-link { display: inline-flex; align-items: center; gap: 4px; padding: 7px 9px; font-size: 0.88rem; font-weight: 600; color: var(--primary); border-radius: var(--radius-sm); white-space: nowrap; }
     .nav-link:hover, .nav-link.active {
@@ -195,23 +189,41 @@
     .dropdown-link { display: block; padding: 9px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500; }
     .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 22px; }
 
-    
+    .btn-donate-nav { background: var(--accent); color: #ffffff !important; font-weight: 700; padding: 8px 18px; border-radius: 50px; text-decoration: none; transition: var(--transition); white-space: nowrap !important; flex-shrink: 0 !important; font-size: 0.88rem; display: inline-flex; align-items: center; justify-content: center; }
+    .btn-donate-nav:hover { background: var(--accent-hover) !important; transform: translateY(-1px); }
 
     /* MOBILE NAV TOGGLE */
     .mobile-toggle {
       display: none;
-      background: none;
-      border: none;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
       cursor: pointer;
       padding: 8px;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      z-index: 1200;
     }
     .mobile-toggle span {
       display: block;
-      width: 24px;
-      height: 3px;
+      width: 22px;
+      height: 2.5px;
       background: var(--primary);
-      margin: 5px 0;
+      margin: 4px auto;
       border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .mobile-toggle.is-active span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+    .mobile-toggle.is-active span:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-toggle.is-active span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
     }
 
     /* SUBNAV BAR */
@@ -464,7 +476,7 @@
     }
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
       gap: 36px;
       margin-bottom: 50px;
     }
@@ -493,12 +505,15 @@
     /* RESPONSIVE */
     @media (max-width: 1024px) {
       .leadership-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
       .form-grid-2 { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
+      .top-bar { display: flex; }
+      .nav-menu { display: none; }
+      .mobile-toggle { display: flex !important; flex-direction: column; justify-content: center; align-items: center; margin-left: auto; }
       .leadership-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr !important; }
+      .footer-grid { grid-template-columns: 1fr; }
       .form-card { padding: 24px 18px; }
       .checkbox-group { grid-template-columns: 1fr; }
     }
@@ -547,594 +562,53 @@
     @media (max-width: 600px) {
       .sdg-card-grid { grid-template-columns: 1fr; }
     }
-  
-    .btn-donate-nav {
-      background: var(--accent);
-      color: #ffffff !important;
-      font-weight: 700 !important;
-      padding: 8px 18px !important;
-      border-radius: 50px !important;
-      margin-left: 8px;
-      white-space: nowrap !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      text-decoration: none !important;
-      line-height: 1 !important;
-      flex-shrink: 0 !important;
-     white-space: nowrap !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; }
-    .btn-donate-nav:hover {
-      background: var(--accent-hover) !important;
-      transform: translateY(-1px);
-    }
-    .btn-donate-nav:hover {
-      background: var(--accent-hover) !important;
-      transform: translateY(-1px);
-    }
+  /* MOBILE DRAWER INJECTED */
 
-
-
-    /* ============================================================
-       RESPONSIVE & ACCESSIBLE MOBILE DESIGN SYSTEM
-       ============================================================ */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      width: 100%;
-      max-width: 100vw;
-      overflow-x: hidden;
-      margin: 0;
-      padding: 0;
-      -webkit-text-size-adjust: 100%;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-
-    .container-narrow {
-      width: 100%;
-      max-width: 820px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-
-    img, svg, video, iframe {
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* DESKTOP NAVIGATION (min-width: 993px) */
-    @media (min-width: 993px) {
-      .nav-menu {
-        display: flex !important;
-        align-items: center;
-        gap: 2px;
-        flex-wrap: nowrap !important;
-      }
-      .mobile-toggle {
-        display: none !important;
-      }
-      .dropdown-menu {
-        display: none;
-      }
-      .nav-item:hover .dropdown-menu {
-        display: block;
-      }
-    }
-
-    /* TABLET & MOBILE NAVIGATION (max-width: 992px) */
     @media (max-width: 992px) {
-      .nav-inner {
-        position: relative;
-        height: 70px;
-      }
-      .brand-logo {
-        max-width: calc(100% - 56px);
-      }
       .mobile-toggle {
         display: flex !important;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 44px;
-        height: 44px;
-        min-width: 44px;
-        min-height: 44px;
-        background: transparent;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        cursor: pointer;
-        padding: 0;
-        z-index: 1001;
-        transition: background-color 0.2s ease, border-color 0.2s ease;
+        margin-left: auto;
       }
-      .mobile-toggle:hover, .mobile-toggle:focus {
-        background: var(--bg-slate);
-        outline: none;
-      }
-      .mobile-toggle span {
-        display: block;
-        width: 22px;
-        height: 2px;
-        background: var(--primary);
-        border-radius: 2px;
-        margin: 2.5px 0;
-        transition: transform 0.25s ease, opacity 0.25s ease;
-      }
-      .mobile-toggle.is-active {
-        border-color: var(--secondary);
-        background: var(--bg-slate);
-      }
-      .mobile-toggle.is-active span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-      }
-      .mobile-toggle.is-active span:nth-child(2) {
-        opacity: 0;
-      }
-      .mobile-toggle.is-active span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-      }
-
-      /* MOBILE NAV DRAWER */
       .nav-menu {
-        display: none;
+        display: none !important;
         flex-direction: column;
-        align-items: stretch;
         position: absolute;
-        top: 100%;
+        top: 74px;
         left: 0;
-        right: 0;
         width: 100%;
         background: #ffffff;
-        box-shadow: 0 20px 30px rgba(11, 28, 61, 0.15);
-        border-top: 1px solid var(--border-color);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        padding: 20px 24px;
+        gap: 10px;
+        z-index: 1100;
         border-bottom: 3px solid var(--secondary);
-        padding: 14px 18px 24px;
-        max-height: calc(100vh - 70px);
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        z-index: 999;
       }
       .nav-menu.is-open {
         display: flex !important;
-        animation: navSlideDown 0.22s ease-out;
-      }
-      @keyframes navSlideDown {
-        from { opacity: 0; transform: translateY(-8px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-
-      .nav-item {
-        width: 100%;
-        position: relative;
-        white-space: normal;
-        border-bottom: 1px solid #f1f5f9;
-      }
-      .nav-item:last-of-type {
-        border-bottom: none;
-      }
-      .nav-link {
-        width: 100%;
-        min-height: 48px;
-        padding: 12px 14px;
-        font-size: 1rem;
-        font-weight: 600;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 6px;
-        color: var(--primary);
-        white-space: normal;
-      }
-      .nav-link:hover, .nav-link:focus, .nav-link.active {
-        color: var(--secondary-dark);
-        background: var(--bg-slate);
-      }
-      .nav-arrow {
-        width: 12px;
-        height: 12px;
-        transition: transform 0.25s ease;
-      }
-      .nav-item.dropdown-open .nav-arrow {
-        transform: rotate(180deg);
-      }
-
-      /* ACCORDION SUB-MENU */
-      .dropdown-menu {
-        position: static !important;
-        display: none !important;
-        box-shadow: none !important;
-        border: none !important;
-        background: var(--bg-slate) !important;
-        border-radius: 8px !important;
-        margin: 4px 0 10px !important;
-        padding: 6px 8px !important;
-        width: 100% !important;
-        transform: none !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-      }
-      .nav-item.dropdown-open .dropdown-menu {
-        display: block !important;
-      }
-      .dropdown-link {
-        padding: 10px 14px !important;
-        font-size: 0.9rem !important;
-        min-height: 44px !important;
-        display: flex !important;
-        align-items: center !important;
-        color: var(--text-main) !important;
-        border-radius: 4px !important;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.04) !important;
-        text-decoration: none !important;
-      }
-      .dropdown-link:last-child {
-        border-bottom: none !important;
-      }
-      .dropdown-link:hover, .dropdown-link:focus {
-        background: rgba(16, 185, 129, 0.12) !important;
-        color: var(--secondary-dark) !important;
-      }
-
-      .btn-donate-nav {
-        width: 100% !important;
-        margin: 16px 0 0 0 !important;
-        min-height: 48px !important;
-        font-size: 1rem !important;
-        justify-content: center !important;
-        display: flex !important;
-        border-radius: 8px !important;
-       white-space: nowrap !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; }
-    }
-
-    /* SMART TOP BAR COLLAPSE & MOBILE SECTIONS (max-width: 768px) */
-    @media (max-width: 768px) {
-      .top-bar {
-        padding: 6px 0;
-        font-size: 0.78rem;
-      }
-      .top-bar-inner {
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        align-items: center;
-        gap: 8px;
-        padding-left: 14px;
-        padding-right: 14px;
-      }
-      .top-bar-left {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        overflow: hidden;
-        white-space: nowrap;
-      }
-      .top-bar-left .top-bar-item:nth-child(2),
-      .top-bar-left .top-bar-item:nth-child(3),
-      .badge-gov {
-        display: none !important;
-      }
-      .top-bar-right {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        flex-shrink: 0;
-      }
-      .top-bar-right .top-bar-item a {
-        font-size: 0.76rem;
-      }
-
-      /* LOGO TAGLINE CLEANUP */
-      .logo-text span {
-        display: none !important;
-      }
-      .logo-text h1 {
-        font-size: 1.15rem;
-        line-height: 1;
-        margin: 0;
-      }
-
-      /* HERO SECTION RESPONSIVE POLISH */
-      .hero-home {
-        padding: 42px 0 52px;
-        min-height: auto;
-      }
-      .hero-badge {
-        font-size: 0.74rem;
-        padding: 5px 12px;
-        white-space: normal;
-        line-height: 1.35;
-        text-align: center;
-        max-width: 100%;
-        margin-bottom: 14px;
-      }
-      .hero-home .page-title {
-        font-size: clamp(1.7rem, 6.6vw, 2.25rem);
-        line-height: 1.2;
-        margin-bottom: 14px;
-        white-space: normal !important;
-      }
-      .hero-home p {
-        font-size: 0.94rem;
-        line-height: 1.55;
-        margin-bottom: 22px;
-        padding: 0 4px;
-      }
-      .hero-cta-group {
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
-      }
-      .hero-cta-group .btn-primary,
-      .hero-cta-group .btn-secondary {
-        width: 100%;
-        min-height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        font-size: 0.95rem;
-        padding: 12px 20px;
-      }
-
-      .page-hero {
-        padding: 34px 0 38px;
-        text-align: center;
-      }
-      .page-hero .page-title {
-        font-size: clamp(1.55rem, 5.5vw, 1.95rem);
-        line-height: 1.25;
-        margin-bottom: 8px;
-        white-space: normal !important;
-      }
-      .page-hero p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-      .breadcrumbs {
-        justify-content: center;
-        font-size: 0.76rem;
-        margin-bottom: 8px;
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      /* ENSURE NO HEADINGS OVERFLOW ON PHONES */
-      .single-line {
-        white-space: normal !important;
-      }
-
-      /* SUB-NAV HORIZONTAL PILL CAROUSEL */
-      .page-subnav {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        white-space: nowrap;
-        padding: 8px 0;
-        scrollbar-width: none;
-      }
-      .page-subnav::-webkit-scrollbar {
-        display: none;
-      }
-      .subnav-list {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 8px;
-        padding: 0 14px;
-      }
-      .subnav-item a {
-        white-space: nowrap;
-        padding: 7px 14px;
-        font-size: 0.84rem;
-        min-height: 38px;
-        display: inline-flex;
-        align-items: center;
-      }
-
-      /* GRIDS COLLAPSE CLEANLY ON MOBILE */
-      .bridge-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-      .bridge-section-box {
-        padding: 22px 14px;
-      }
-      .origin-story-card {
-        grid-template-columns: 1fr;
-        padding: 20px 14px;
-        gap: 18px;
-      }
-      .action-grid-3 {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-      .team-grid, .leadership-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      .albums-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      .corp-table-wrapper {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        width: 100%;
-      }
-      .corp-table th {
-        width: 45%;
-        padding: 10px 12px;
-        font-size: 0.82rem;
-      }
-      .corp-table td {
-        padding: 10px 12px;
-        font-size: 0.82rem;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        text-align: left;
-      }
-      .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-      }
-      .form-grid-2 {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-      .press-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      .content-section {
-        padding: 40px 0;
-      }
-      .section-header-center {
-        margin-bottom: 24px;
-      }
-      .section-title {
-        font-size: clamp(1.4rem, 5.2vw, 1.75rem);
-        line-height: 1.25;
-      }
-
-      /* BUTTON TOUCH TARGETS */
-      .btn-primary, .btn-secondary, .btn-outline {
-        min-height: 44px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-
-    /* SMALL PHONES (max-width: 480px, 430px, 414px, 390px, 375px, 320px) */
-    @media (max-width: 480px) {
-      .container, .container-narrow {
-        padding-left: 14px;
-        padding-right: 14px;
-      }
-      .hero-home .page-title {
-        font-size: 1.6rem;
-      }
-      .page-hero .page-title {
-        font-size: 1.45rem;
-      }
-      .brand-logo-svg {
-        width: 36px !important;
-        height: 36px !important;
-      }
-      .logo-text h1 {
-        font-size: 1.05rem;
-      }
-      .top-bar-item {
-        font-size: 0.72rem;
-      }
-      .top-bar-inner {
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-      .filter-btn {
-        padding: 6px 12px !important;
-        font-size: 0.8rem !important;
-      }
-      .bridge-card {
-        padding: 22px 14px !important;
-      }
-      .team-member-card {
-        padding: 24px 14px !important;
-      }
-    }
-
-
-    /* MOBILE NAV TOGGLE & RESPONSIVE MENU */
-    .mobile-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      z-index: 1001;
-    }
-    .mobile-toggle span {
-      display: block;
-      width: 24px;
-      height: 3px;
-      background: var(--primary);
-      margin: 5px 0;
-      border-radius: 2px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    .mobile-toggle.is-active span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-    .mobile-toggle.is-active span:nth-child(2) {
-      opacity: 0;
-    }
-    .mobile-toggle.is-active span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-
-    @media (max-width: 992px) {
-      .mobile-toggle {
-        display: block;
-      }
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #ffffff;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-        padding: 20px;
-        gap: 8px;
-        z-index: 1000;
-        max-height: calc(100vh - 78px);
-        overflow-y: auto;
-      }
-      .nav-menu.is-open {
-        display: flex;
       }
       .nav-item {
         width: 100%;
-        white-space: normal;
       }
       .nav-link {
         width: 100%;
         padding: 10px 14px;
         font-size: 1rem;
-        justify-content: space-between;
+        border-radius: 6px;
       }
+      .btn-donate-nav { background: var(--accent); color: #ffffff !important; font-weight: 700; padding: 8px 18px; border-radius: 50px; text-decoration: none; transition: var(--transition); white-space: nowrap !important; flex-shrink: 0 !important; font-size: 0.88rem; display: inline-flex; align-items: center; justify-content: center; }
       .dropdown-menu {
         position: static;
-        display: none;
         box-shadow: none;
-        padding: 8px 0 8px 16px;
+        border: none;
         background: var(--bg-slate);
-        border-radius: var(--radius-sm);
+        padding: 8px 14px;
         margin-top: 4px;
-        min-width: 100%;
+        border-radius: 6px;
+        display: block !important;
       }
-      .nav-item.dropdown-open .dropdown-menu {
-        display: block;
-      }
-      .btn-donate-nav {
-        margin: 12px 0 0 0 !important;
-        text-align: center;
-        justify-content: center;
-        width: 100%;
-        display: inline-flex !important;
-       white-space: nowrap !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; }
     }
 
 </style>
@@ -1164,19 +638,28 @@
           <span style="color:#64748b;">|</span>
           <button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')">FR</button>
         </div>
-        <div class="top-bar-item">
-          <a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1;" aria-label="Facebook">FB</a>
-          <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; margin-left: 8px;" aria-label="Instagram">IG</a>
-          <a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; margin-left: 8px;" aria-label="X">X</a>
-          <a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; margin-left: 8px;" aria-label="TikTok">TT</a>
-          <a href="https://www.snapchat.com/add/ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; margin-left: 8px;" aria-label="Snapchat">SC</a>
+        <div class="top-bar-socials" style="display:inline-flex; align-items:center; gap:10px;">
+          <a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; display:inline-flex; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#cbd5e1'" aria-label="Facebook">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; display:inline-flex; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#cbd5e1'" aria-label="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; display:inline-flex; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#cbd5e1'" aria-label="X">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; display:inline-flex; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#cbd5e1'" aria-label="TikTok">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.12 4.82 4.82 0 0 1-2.73-1.4 4.89 4.89 0 0 1-1.27-3z"/></svg>
+          </a>
+          <a href="https://www.snapchat.com/add/ybspcanada" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; display:inline-flex; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#cbd5e1'" aria-label="Snapchat">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.002 2c-3.528 0-6.002 2.68-6.002 5.86 0 1.23.414 2.45.694 3.09.112.25.04.53-.16.71-.35.31-.83.63-1.57.87-.5.16-.76.71-.58 1.21.13.37.49.62.89.62.33 0 .73-.1 1.22-.3.26-.11.56-.02.72.21.57.82 1.34 1.48 2.25 1.93.07.03.11.1.18-.08.43-.28 1.15-.99 1.43-.46.18-.87.48-.87.97 0 .58.54.94 1.26 1.05.81.12 1.78.07 2.76-.63.22-.16.51-.16.73 0 .98.7 1.95.75 2.76.63.72-.11 1.26-.47 1.26-1.05 0-.49-.41-.79-.87-.97-.71-.28-.91-1-.99-1.43-.01-.08.03-.15.1-.18.91-.45 1.68-1.11 2.25-1.93.16-.23.46-.32.72-.21.49.2.89.3 1.22.3.4 0 .76-.25.89-.62.18-.5-.08-1.05-.58-1.21-.74-.24-1.22-.56-1.57-.87-.2-.18-.27-.46-.16-.71.28-.64.694-1.86.694-3.09C18.004 4.68 15.53 2 12.002 2z"/></svg>
+          </a>
         </div>
       </div>
     </div>
   </aside>
 
-    <!-- MAIN NAVIGATION -->
-    <!-- MAIN NAVIGATION -->
+  <!-- MAIN NAVIGATION -->
   <header class="main-header">
     <div class="container nav-inner">
       <a href="index.html" class="brand-logo" aria-label="YBSP Canada Home">
@@ -1219,7 +702,7 @@
         </div>
       </a>
 
-      <nav id="main-nav-menu" class="nav-menu" aria-label="Primary Navigation">
+            <nav class="nav-menu" aria-label="Primary Navigation">
         <div class="nav-item"><a href="index.html" class="nav-link " data-i18n="nav_home">Home</a></div>
         
         <div class="nav-item">
@@ -1282,7 +765,7 @@
         <a href="donate.html" class="btn-donate-nav" data-i18n="nav_donate">Donate</a>
       </nav>
 
-      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav-menu" onclick="toggleMobileNav()">
+      <button class="mobile-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileNav()">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -1335,7 +818,7 @@
           <a href="get-involved.html#volunteer" class="btn-primary" data-i18n="btn_mentor_apply">Become a Mentor or Volunteer →</a>
         </div>
         <div class="prog-img-box">
-          <img src="images/mentorship.jpg" onerror="this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=80'" alt="Youth Career Mentorship Session" class="prog-img">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=80" alt="Youth Career Mentorship Session" class="prog-img">
           <p style="font-size:0.8rem; color:var(--text-light); text-align:center; margin-top:8px;" data-i18n="cap_p1">
             Empowering diaspora and newcomer youth with practical workplace competencies.
           </p>
@@ -1365,7 +848,7 @@
           <a href="get-involved.html#membership" class="btn-secondary" data-i18n="btn_join_lab">Join the Member Working Group →</a>
         </div>
         <div class="prog-img-box">
-          <img src="images/entrepreneurship.jpg" onerror="this.src='https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=700&q=80'" alt="Social Entrepreneurship Workshop" class="prog-img">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=700&q=80" alt="Social Entrepreneurship Workshop" class="prog-img">
           <p style="font-size:0.8rem; color:var(--text-light); text-align:center; margin-top:8px;" data-i18n="cap_p2">
             Youth innovators learning business modeling and community enterprise design.
           </p>
@@ -1395,7 +878,7 @@
           <a href="events.html#calendar" class="btn-outline" data-i18n="btn_attend_forums">Attend Upcoming Forums →</a>
         </div>
         <div class="prog-img-box">
-          <img src="images/health-ecology.jpg" onerror="this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80'" alt="Environmental and Community Action" class="prog-img">
+          <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80" alt="Environmental and Community Action" class="prog-img">
           <p style="font-size:0.8rem; color:var(--text-light); text-align:center; margin-top:8px;" data-i18n="cap_p3">
             Youth mobilizing for watershed stewardship and community health dialogues.
           </p>
@@ -1425,7 +908,7 @@
           <a href="donate.html" class="btn-primary" data-i18n="btn_support_burundi">Support Burundi Initiatives →</a>
         </div>
         <div class="prog-img-box">
-          <img src="images/burundi-initiative.jpg" onerror="this.src='https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=700&q=80'" alt="YBSP Burundi Education Access" class="prog-img">
+          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=700&q=80" alt="YBSP Burundi Education Access" class="prog-img">
           <p style="font-size:0.8rem; color:var(--text-light); text-align:center; margin-top:8px;" data-i18n="cap_p4">
             Educational sponsorships and vocational toolkit distributions in Burundi.
           </p>
@@ -1634,7 +1117,7 @@
         footer_transparency: "Corporate Transparency"
       },
       fr: {
-        tagline: "Unir la jeunesse. Bâtir la synergie. Vaincre la précarité.",
+        tagline: "Unir la jeunesse. Bâtir la synergie.",
         nav_home: "Accueil",
         nav_about: "À propos",
         nav_mission: "Mission & Mandat",
@@ -1729,95 +1212,35 @@
       document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-lang-fr').classList.toggle('active', lang === 'fr');
       document.documentElement.lang = lang;
+      try { localStorage.setItem('ybsp_lang', lang); } catch (e) {}
     }
 
-    
+            function toggleMobileNav() {
+      const navMenu = document.querySelector('.nav-menu');
+      if (!navMenu) return;
+      if (navMenu.style.display === 'flex') {
+        navMenu.style.display = 'none';
+      } 
+else {
+        navMenu.style.display = 'flex';
+        navMenu.style.flexDirection = 'column';
+        navMenu.style.position = 'absolute';
+        navMenu.style.top = '78px';
+        navMenu.style.left = '0';
+        navMenu.style.width = '100%';
+        navMenu.style.background = '#ffffff';
+        navMenu.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+        navMenu.style.padding = '20px';
+      }
+    }
   
-    
-
-  
-    function toggleMobileNav() {
-      const navMenu = document.getElementById('main-nav-menu');
-      const toggleBtn = document.querySelector('.mobile-toggle');
-      if (!navMenu || !toggleBtn) return;
-
-      const isOpen = navMenu.classList.toggle('is-open');
-      toggleBtn.classList.toggle('is-active', isOpen);
-      toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    }
-
-    function closeMobileNav() {
-      const navMenu = document.getElementById('main-nav-menu');
-      const toggleBtn = document.querySelector('.mobile-toggle');
-      if (!navMenu || !toggleBtn) return;
-
-      if (navMenu.classList.contains('is-open')) {
-        navMenu.classList.remove('is-open');
-        toggleBtn.classList.remove('is-active');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+    // Language persistence across pages
+    try {
+      const savedLang = localStorage.getItem('ybsp_lang');
+      if (savedLang && savedLang === 'fr') {
+        setLanguage('fr');
       }
-    }
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(e) {
-      const navMenu = document.getElementById('main-nav-menu');
-      const toggleBtn = document.querySelector('.mobile-toggle');
-      if (navMenu && navMenu.classList.contains('is-open')) {
-        if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
-          closeMobileNav();
-        }
-      }
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeMobileNav();
-      }
-    });
-
-    // Close when resizing to desktop (width > 992px)
-    window.addEventListener('resize', function() {
-      if (window.innerWidth > 992) {
-        closeMobileNav();
-      }
-    });
-
-    // Mobile dropdown toggle & link clicks
-    document.addEventListener('DOMContentLoaded', function() {
-      const navMenu = document.getElementById('main-nav-menu');
-      if (navMenu) {
-        // Close menu when clicking leaf links
-        navMenu.querySelectorAll('a').forEach(function(link) {
-          const parentItem = link.closest('.nav-item');
-          const hasDropdown = parentItem && parentItem.querySelector('.dropdown-menu');
-          if (!hasDropdown || link.classList.contains('dropdown-link') || link.classList.contains('btn-donate-nav')) {
-            link.addEventListener('click', function() {
-              if (window.innerWidth <= 992) {
-                closeMobileNav();
-              }
-            });
-          }
-        });
-
-        // Toggle dropdowns on tap on mobile
-        const parentItems = navMenu.querySelectorAll('.nav-item');
-        parentItems.forEach(function(item) {
-          const dropdown = item.querySelector('.dropdown-menu');
-          const parentLink = item.querySelector('.nav-link');
-          if (dropdown && parentLink) {
-            parentLink.addEventListener('click', function(e) {
-              if (window.innerWidth <= 992) {
-                e.preventDefault();
-                item.classList.toggle('dropdown-open');
-              }
-            });
-          }
-        });
-      }
-    });
+    } catch (e) {}
 
   </script>
 </body>
