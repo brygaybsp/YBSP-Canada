@@ -1,36 +1,57 @@
-=============================================================
-YBSP CANADA — HOW TO UPDATE ANY PHOTO ACROSS THE WEBSITE
-=============================================================
+================================================================================
+YBSP CANADA — COMPREHENSIVE IMAGE & PHOTO REPLACEMENT DIRECTORY
+================================================================================
 
-Every photo across the website looks inside this 'images/' folder first.
-To replace any photo with your own real picture, simply save your image
-file into this folder using the exact filename listed below.
+All images across the website are designed to look inside this "images/" folder
+first. Whenever you have a real photo from your events or archives, simply save it
+with the exact filename listed below and place it in this folder. When you commit
+to GitHub, your real picture will instantly replace the placeholder across the site!
 
-When you upload this folder to GitHub, your real photos will display
-instantly across the live site!
+--------------------------------------------------------------------------------
+1. LEADERSHIP & PORTRAITS
+--------------------------------------------------------------------------------
+• leis-bruel-haragirimana.jpg
+  - Executive Director profile photo on about.html and index.html.
 
-1. HOMEPAGE (index.html):
-   - images/why-ybsp-canada.jpg    -> Photo in the "Why YBSP in Canada?" section.
-   - images/hero-home.jpg          -> Background hero banner.
+--------------------------------------------------------------------------------
+2. HOMEPAGE (index.html)
+--------------------------------------------------------------------------------
+• why-ybsp-canada.jpg
+  - The photo in the "Why YBSP in Canada?" section.
+• hero-home.jpg
+  - Background image for the main homepage banner.
 
-2. ABOUT US PAGE (about.html):
-   - images/leis-bruel-haragirimana.jpg -> Executive Director official portrait.
-   - images/burundi-sisterhood.jpg     -> International Sisterhood with Burundi photo.
+--------------------------------------------------------------------------------
+3. ABOUT US & GOVERNANCE (about.html)
+--------------------------------------------------------------------------------
+• burundi-sisterhood.jpg
+  - The photo under "International Sisterhood with YBSP Burundi".
+  - (Pick any of your authentic photos from your Google Drive folder and save it here!)
 
-3. PROGRAMS PAGE (programs.html):
-   - images/mentorship.jpg        -> Youth Career Mentorship & AI Cohort photo.
-   - images/entrepreneurship.jpg  -> Social Entrepreneurship Lab photo.
+--------------------------------------------------------------------------------
+4. PROGRAMS (programs.html)
+--------------------------------------------------------------------------------
+• mentorship.jpg
+  - Youth Career Mentorship & Applied AI session photo.
+• entrepreneurship.jpg
+  - Social Entrepreneurship & Micro-Venture Lab photo.
+• burundi-programs.jpg
+  - Burundi projects photo (#SororaIkaye and #MurabireKazoza).
 
-4. EVENTS & GALA PAGE (events.html):
-   - images/gala.jpg              -> Annual Solidarity Gala hallmark banner.
+--------------------------------------------------------------------------------
+5. COMMUNITY & EVENTS (events.html)
+--------------------------------------------------------------------------------
+• gala.jpg
+  - Annual Solidarity Gala spotlight banner image.
+• images/albums/sunday-meal/
+  - Drop all your weekly Sunday Meal photos here (e.g. meal-1.jpg, meal-2.jpg)!
+• images/albums/sorora-ikaye/
+  - Drop all back-to-school kits and student photos here!
+• images/albums/murabire-kazoza/
+  - Drop tailoring, carpentry, and artisan tool distribution photos here!
+• images/albums/canadian-mentorship/
+  - Drop Canadian youth mentorship workshop photos here!
+• images/albums/solidarity-gala/
+  - Drop Gala dinner and award ceremony photos here!
 
-5. PHOTO ALBUMS (events.html Photo Showcase):
-   - images/albums/sunday-meal/        -> Drop photos of weekly Sunday meals here.
-   - images/albums/sorora-ikaye/       -> Drop photos of school kit distributions here.
-   - images/albums/murabire-kazoza/    -> Drop photos of artisan starter toolkits here.
-   - images/albums/canadian-mentorship/-> Drop photos of Canadian youth workshops here.
-   - images/albums/solidarity-gala/    -> Drop photos of the annual gala here.
-
-NOTE: If you do not have a photo yet for a section, the website will
-automatically fall back to a clean web placeholder, so nothing will ever
-break!
+================================================================================
