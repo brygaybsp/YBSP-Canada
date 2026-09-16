@@ -1,3 +1,22 @@
+Version 31
+Status: Completed / Master Production Release (Comprehensive Events Photo Album Lightbox & Category Filter Architecture Fix)
+
+Completed:
+- Events Page (events.html) Photo Albums Lightbox & Filtering Overhaul:
+  * Resolved Lightbox Modal trigger across all 6 album cards:
+    - Restored and verified the full albumData dictionary containing all 6 thematic albums ('sunday-meal', 'sorora', 'murabire', 'canada-cohort', 'community-labs', 'gala') with 4 curated high-resolution photos each and full bilingual English/French captions.
+    - Standardized all 6 album cards with clean, unescaped single quotes: onclick="openAlbumLightbox('...')" as well as direct programmatic event listeners initialized on DOMContentLoaded.
+    - Added click event bubbling protection on external links in card footers (event.stopPropagation()) so clicking external partner links opens them without triggering the modal.
+    - Bound all control functions (openAlbumLightbox, closeAlbumLightbox, filterAlbums, nextLightboxPhoto, prevLightboxPhoto) to the global window scope.
+  * Resolved Category Filter Tabs:
+    - Fixed CSS conflict where .album-card previously had display: flex !important.
+    - Added dedicated visibility class .album-card.is-hidden { display: none !important; } paired with programmatic setProperty('display', ...) toggling.
+    - Added data-category attributes across all filter tabs: All Albums ('all'), Sunday Meal & Feed A Child ('sunday-meal'), #SororaIkaye School Kits ('sorora'), #MurabireKazoza Toolkits ('murabire'), Canadian Mentorship ('canada-cohort'), and Solidarity Gala ('gala').
+    - Verified that selecting any category tab immediately isolates and displays matching cards while cleanly hiding non-matching cards, maintaining pristine vertical layout alignment without rightward link displacement.
+- Master Production Release v31:
+  * Complete synchronization of all 10 production HTML templates.
+  * 0 broken links, 0 console errors, 0 syntax errors.
+
 Version 30
 Status: Completed / Master Production Release (Complete French Localization of Event Cards, Gala Details & Form Controls, Mobile Stress-Tested)
 

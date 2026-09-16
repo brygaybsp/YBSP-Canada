@@ -758,22 +758,35 @@
         background: #f1f5f9 !important;
         color: var(--secondary) !important;
       }
-      .nav-menu .dropdown-menu,
+            .nav-menu .dropdown-menu,
       #main-nav-menu .dropdown-menu {
         position: static !important;
         box-shadow: none !important;
         border: none !important;
         background: #f8fafc !important;
-        padding: 6px 12px 8px 14px !important;
+        padding: 4px 12px 6px 14px !important;
         margin: 4px 0 8px 10px !important;
         border-radius: 6px !important;
         border-left: 3px solid var(--secondary) !important;
-        display: block !important;
-        opacity: 1 !important;
-        visibility: visible !important;
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
         transform: none !important;
         width: auto !important;
         box-sizing: border-box !important;
+        transition: all 0.25s ease-in-out !important;
+      }
+      .nav-item.has-dropdown.is-expanded > .dropdown-menu {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      .nav-item.has-dropdown .dropdown-icon {
+        transition: transform 0.25s ease-in-out !important;
+        display: inline-block !important;
+      }
+      .nav-item.has-dropdown.is-expanded > .nav-link .dropdown-icon {
+        transform: rotate(180deg) !important;
       }
       .nav-menu .dropdown-link,
       #main-nav-menu .dropdown-link {
@@ -1483,6 +1496,8 @@
       function toggleMenu(forceState) {
         const isOpen = (typeof forceState === 'boolean') ? forceState : !navMenu.classList.contains('is-open');
         if (isOpen) {
+          // Reset all dropdowns to collapsed state on open
+          navMenu.querySelectorAll('.nav-item.has-dropdown').forEach(function(item) { item.classList.remove('is-expanded'); });
           navMenu.classList.add('is-open');
           toggleBtn.classList.add('is-active');
           toggleBtn.setAttribute('aria-expanded', 'true');
@@ -1520,8 +1535,34 @@
         }
       });
 
-      // Close menu when clicking any nav link
+      // Accordion dropdown toggle on mobile (collapsed by default so Donate button is visible)
+      navMenu.querySelectorAll('.nav-item.has-dropdown > a').forEach(function(dropdownToggle) {
+        dropdownToggle.addEventListener('click', function(e) {
+          if (window.innerWidth <= 991) {
+            e.preventDefault();
+            e.stopPropagation();
+            const parentItem = dropdownToggle.closest('.nav-item.has-dropdown');
+            if (!parentItem) return;
+            const wasExpanded = parentItem.classList.contains('is-expanded');
+            
+            // Close all other dropdowns so only one section is open at a time
+            navMenu.querySelectorAll('.nav-item.has-dropdown.is-expanded').forEach(function(other) {
+              if (other !== parentItem) other.classList.remove('is-expanded');
+            });
+            
+            if (wasExpanded) {
+              parentItem.classList.remove('is-expanded');
+            } else {
+              parentItem.classList.add('is-expanded');
+            }
+          }
+        });
+      });
+
+      // Close menu when clicking regular links or submenu items
       navMenu.querySelectorAll('a').forEach(function(link) {
+        // Skip parent toggle links
+        if (link.matches('.nav-item.has-dropdown > a')) return;
         link.addEventListener('click', function() {
           toggleMenu(false);
         });
