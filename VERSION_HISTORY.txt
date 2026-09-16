@@ -1,3 +1,46 @@
+Version 33
+Status: Completed / Master Production Release (Seamless Lightbox Photo Loading & Dual Local/Online Fallback System)
+
+Completed:
+- Resolved Lightbox Gallery Image Rendering (events.html - Screenshot image_f23e2e.png):
+  * Root Cause: In Version 32, the album photo objects had localSrc and fallbackSrc properties, but updateLightboxContent() attempted to assign imgEl.src = photo.src (which was undefined), causing the browser to attempt loading a non-existent URL and displaying a broken image icon.
+  * Resolution:
+    - Restored the primary src property on all photo objects pointing to the high-resolution online placeholder so photo.src is always defined.
+    - Implemented a smooth preloader pattern in updateLightboxContent() using new Image(). It tests the local photo path (e.g. images/albums/sunday-meal/photo1.jpg) and if present, displays the local user photo. If the local photo is not yet added, it seamlessly falls back to the online placeholder without ever exposing a broken image icon to the user.
+    - Verified smooth photo cycling (next/previous) across all 6 albums.
+- Pre-structured Album Folders & User Guides:
+  * Complete folders with README.txt instructions inside images/albums/ for:
+    - sunday-meal/
+    - sorora-ikaye/
+    - murabire-kazoza/
+    - canadian-mentorship/
+    - solidarity-gala/
+    - community-labs/
+  * Standalone PHOTO_GUIDE.txt included in root and package.
+- Master Production Release v33:
+  * All 10 templates verified clean with 0 broken links and 0 JavaScript errors.
+
+Version 32
+Status: Completed / Master Production Release (Comprehensive Photo Architecture & Plug-and-Play Local Album Integration)
+
+Completed:
+- Plug-and-Play Local Photo Albums Integration (events.html):
+  * Pre-configured all 6 album cards to check local album cover photos (images/albums/[album]/cover.jpg) before falling back gracefully to online Unsplash placeholders if absent.
+  * Enhanced interactive Lightbox popup gallery to look for local photo assets (images/albums/[album]/photo1.jpg through photo4.jpg) with automatic fallback handlers (imgEl.onerror), preventing broken images while enabling instant local photo drops.
+  * Created pre-structured album folders inside images/albums/:
+    - images/albums/sunday-meal/ (Sunday Meal Program / Feed A Child in Bujumbura)
+    - images/albums/sorora-ikaye/ (#SororaIkaye Back-to-School campaign)
+    - images/albums/murabire-kazoza/ (#MurabireKazoza Vocational Artisan Toolkits)
+    - images/albums/canadian-mentorship/ (Canadian Youth Mentorship Cohorts)
+    - images/albums/solidarity-gala/ (Annual Solidarity Gala Archives)
+    - images/albums/community-labs/ (Community Labs & Social Enterprise)
+  * Included a dedicated README.txt guide in every album subfolder detailing naming conventions (cover.jpg, photo1.jpg, photo2.jpg, photo3.jpg, photo4.jpg).
+- Updated Master PHOTO_GUIDE.txt (v32):
+  * Comprehensive documentation covering both standalone website hero/team photos and all 6 thematic photo albums.
+- Master Production Release v32:
+  * Full synchronization across all 10 production HTML templates.
+  * 0 broken links, 0 console errors, 0 syntax errors.
+
 Version 31
 Status: Completed / Master Production Release (Comprehensive Events Photo Album Lightbox & Category Filter Architecture Fix)
 

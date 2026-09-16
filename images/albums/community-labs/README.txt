@@ -1,8 +1,8 @@
 ====================================================================
-YBSP CANADA PHOTO ALBUM: Sunday Meal Program in Bujumbura (Feed A Child)
+YBSP CANADA PHOTO ALBUM: Community Labs & Social Enterprise
 ====================================================================
 
-Drop photos of weekly Sunday meals, food distribution, and youth volunteers in Bujumbura.
+Drop photos of youth entrepreneurship labs, hackathons, and lean business sessions.
 
 To display your real photos in this album, simply drop your photos
 here using these exact filenames:

@@ -1,68 +1,88 @@
 ====================================================================
-YBSP CANADA — WEBSITE PHOTO REPLACEMENT GUIDE
+YBSP CANADA — COMPREHENSIVE WEBSITE PHOTO REPLACEMENT GUIDE (V32)
 ====================================================================
 
-Every photo on the website is configured to look inside this `images/`
-folder first. If you drop your real photo into this folder using the
-exact file name listed below, the website will AUTOMATICALLY display
+Every photo on the website is configured to look inside the `images/`
+folder first. If you drop your real photo into the folder using the
+exact file names listed below, the website will AUTOMATICALLY display
 your real photo instead of the placeholder!
 
+If any photo is not provided yet, the website automatically displays
+a high-resolution fallback placeholder — so the site never looks broken!
+
 --------------------------------------------------------------------
-1. KEY WEBSITE PHOTOS (Replace these anytime):
+1. KEY STANDALONE WEBSITE PHOTOS (Inside `images/`):
 --------------------------------------------------------------------
 
 1. Executive Director Portrait:
-   - File Name: leis-bruel-haragirimana.jpg
-   - Where it appears: about.html (Leadership) and index.html
-   - Recommended Size: Square (e.g. 500x500 px or 800x800 px)
+   - Path: images/leis-bruel-haragirimana.jpg
+   - Where it appears: about.html (Leadership team card)
+   - Recommended Size: Square (500x500 px or 800x800 px)
 
 2. "Why YBSP in Canada?" Photo:
-   - File Name: why-ybsp-canada.jpg
-   - Where it appears: index.html (Why YBSP in Canada section)
-   - Recommended Size: 800x600 px or landscape photo of youth gathering
+   - Path: images/why-ybsp-canada.jpg
+   - Where it appears: programs.html
+   - Recommended Size: 800x500 px (community / youth gathering)
 
-3. Burundi Sisterhood Photo:
-   - File Name: burundi-sisterhood.jpg
-   - Where it appears: about.html (International Sisterhood section)
-   - Recommended Size: 800x500 px (photo of Burundian youth / Sunday Meal)
-
-4. Canadian Mentorship Cohort:
-   - File Name: mentorship.jpg
+3. Canadian Mentorship Cohort:
+   - Path: images/mentorship.jpg
    - Where it appears: programs.html (Career Mentorship & AI)
    - Recommended Size: 800x500 px
 
-5. Social Entrepreneurship Lab:
-   - File Name: entrepreneurship.jpg
+4. Social Entrepreneurship Lab:
+   - Path: images/entrepreneurship.jpg
    - Where it appears: programs.html (Social Entrepreneurship Lab)
    - Recommended Size: 800x500 px
 
-6. Health & Urban Ecology:
-   - File Name: health-ecology.jpg
-   - Where it appears: programs.html (Health & Ecology)
-   - Recommended Size: 800x500 px
-
-7. Burundi Sister Projects:
-   - File Name: burundi-initiatives.jpg
-   - Where it appears: programs.html (Global Synergy section)
-   - Recommended Size: 800x500 px
-
-8. Annual Solidarity Gala:
-   - File Name: gala.jpg
-   - Where it appears: events.html (Annual Gala spotlight)
+5. Annual Solidarity Gala Spotlight:
+   - Path: images/gala.jpg
+   - Where it appears: events.html (Annual Solidarity Gala section)
    - Recommended Size: 800x500 px
 
 --------------------------------------------------------------------
-2. PHOTO ALBUMS (Inside `images/albums/` subfolders):
+2. PHOTO ALBUMS & LIGHTBOX POPUPS (Inside `images/albums/` subfolders):
 --------------------------------------------------------------------
-- images/albums/sunday-meal/       -> Drop photos of Sunday Meals in Burundi
-- images/albums/sorora-ikaye/      -> Drop photos of school kit distributions
-- images/albums/murabire-kazoza/   -> Drop photos of tailoring & carpentry tools
-- images/albums/canadian-mentorship/ -> Drop photos of mentorship workshops
-- images/albums/solidarity-gala/   -> Drop photos from the annual gala
+Each album folder supports up to 5 photos:
+- cover.jpg  -> The thumbnail photo displayed on the album card on events.html
+- photo1.jpg -> The 1st photo displayed in the interactive Lightbox modal
+- photo2.jpg -> The 2nd photo in the Lightbox
+- photo3.jpg -> The 3rd photo in the Lightbox
+- photo4.jpg -> The 4th photo in the Lightbox
+
+ALBUM FOLDERS:
+1. Sunday Meal & Feed A Child Program (Burundi):
+   Folder: images/albums/sunday-meal/
+   Files: cover.jpg, photo1.jpg, photo2.jpg, photo3.jpg, photo4.jpg
+   Content: Photos of weekly Sunday meals, youth volunteers, and food distributions in Bujumbura.
+
+2. #SororaIkaye Back-to-School Campaign (Burundi):
+   Folder: images/albums/sorora-ikaye/
+   Files: cover.jpg, photo1.jpg, photo2.jpg, photo3.jpg, photo4.jpg
+   Content: Photos of school kits, notebooks, backpacks, and classroom distributions.
+
+3. #MurabireKazoza Artisan Starter Toolkits (Burundi):
+   Folder: images/albums/murabire-kazoza/
+   Files: cover.jpg, photo1.jpg, photo2.jpg, photo3.jpg, photo4.jpg
+   Content: Photos of tailoring sewing machines, carpentry tools, metalwork kits, and apprentices.
+
+4. Canadian Youth Mentorship Cohorts (Ottawa-Gatineau):
+   Folder: images/albums/canadian-mentorship/
+   Files: cover.jpg, photo1.jpg, photo2.jpg, photo3.jpg, photo4.jpg
+   Content: Photos of 1-on-1 mentorship sessions, career acceleration workshops, and AI skill training.
+
+5. Annual Solidarity Gala Archives (Canada):
+   Folder: images/albums/solidarity-gala/
+   Files: cover.jpg, photo1.jpg, photo2.jpg, photo3.jpg, photo4.jpg
+   Content: Photos from the annual solidarity dinner, fellow awards, and community partners.
+
+6. Social Enterprise & Community Labs (Canada & Bilateral):
+   Folder: images/albums/community-labs/
+   Files: cover.jpg, photo1.jpg, photo2.jpg, photo3.jpg, photo4.jpg
+   Content: Photos of youth problem-solving labs, lean business pitch sessions, and peer synergy.
 
 ====================================================================
 HOW TO PUBLISH YOUR REAL PHOTOS:
-1. Copy your photos into `images/` with the exact names above.
-2. Double-click `index.html` or `about.html` on your computer to verify.
-3. Drag the `images/` folder to GitHub to deploy to Netlify!
+1. Copy your JPG photos into the respective folders matching the filenames above.
+2. Open `events.html` or `programs.html` in your browser to verify your photos appear.
+3. Commit and push the `images/` folder to GitHub to deploy to Netlify!
 ====================================================================
