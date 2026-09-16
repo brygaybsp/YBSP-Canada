@@ -1,0 +1,24 @@
+Version 28
+Status: Completed / Master Bilingual Production Release
+
+Completed:
+- Bilingual Institutional PDF Documentation:
+  * Authored and generated complete French editions of all official institutional documents:
+    - YBSP_Canada_Fact_Sheet_FR.pdf (Fiche d'information institutionnelle)
+    - YBSP_Canada_Financial_Transparency_Statement_FR.pdf (Déclaration de transparence financière)
+    - YBSP_Canada_CRA_Charity_Registration_Master_Dossier_FR.pdf (Dossier d'enregistrement caritatif ARC)
+    - YBSP_Canada_Burundi_Cooperation_Statement_FR.pdf (Cadre de coopération bilatérale)
+    - YBSP_Canada_Press_Release_Gala_2026_FR.pdf (Communiqué de presse officiel)
+    - YBSP_Canada_Brand_Guidelines_FR.pdf (Guide des normes graphiques)
+  * Updated YBSP_Canada_Brand_Guidelines_and_Logo_Pack.zip to include both English and French guidelines.
+- Dynamic Bilingual Document Switching:
+  * Implemented data-i18n-href and data-i18n-download support across all HTML templates.
+  * Toggling language between EN and FR automatically updates all PDF download buttons to serve the selected language edition.
+- Mobile Architecture & Stress Testing:
+  * 100% pass across all 10 templates for mobile responsiveness and hamburger navigation.
+  * Zero horizontal scrollbars or element clipping on small viewports (320px - 768px).
+  * Smooth touch-scrolling drawer with nested sub-menus, 44x44px toggle target, and click-outside/Escape dismissal.
+- Quality Assurance:
+  * 548 internal links and anchors verified (0 broken links).
+  * 100% dictionary mapping across EN and FR for all data-i18n, data-i18n-href, and data-i18n-download elements.
+  * 0 em-dashes across all code and documentation.

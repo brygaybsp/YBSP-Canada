@@ -107,9 +107,25 @@
       border-radius: 4px;
       font-size: 0.74rem;
     }
-    
-    
-    
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .lang-btn.active, .lang-btn:hover { background: var(--secondary); color: #ffffff; }
 
     /* MAIN NAVIGATION */
     .main-header {
@@ -582,57 +598,7 @@
       .committee-grid { grid-template-columns: 1fr; }
       .steps-row { grid-template-columns: repeat(2, 1fr); }
     }
-  
-
-    @media (max-width: 992px) {
-      .mobile-toggle {
-        display: flex !important;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-left: auto;
-      }
-      .nav-menu {
-        display: none !important;
-        flex-direction: column;
-        position: absolute;
-        top: 74px;
-        left: 0;
-        width: 100%;
-        background: #ffffff;
-        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-        padding: 20px 24px;
-        gap: 10px;
-        z-index: 1100;
-        border-bottom: 3px solid var(--secondary);
-      }
-      .nav-menu.is-open {
-        display: flex !important;
-      }
-      .nav-item {
-        width: 100%;
-      }
-      .nav-link {
-        width: 100%;
-        padding: 10px 14px;
-        font-size: 1rem;
-        border-radius: 6px;
-      }
-      .btn-donate-nav { white-space: nowrap !important; min-width: max-content !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; background: var(--accent) !important; color: #ffffff !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 50px !important; margin-left: 8px !important; text-decoration: none !important; }
-      .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        border: none;
-        background: var(--bg-slate);
-        padding: 8px 14px;
-        margin-top: 4px;
-        border-radius: 6px;
-        display: block !important;
-      }
-    }
-
-
-    /* SLIM TOP UTILITY BAR (34px height) */
+  /* SLIM TOP UTILITY BAR (34px height) */
     .top-bar {
       background-color: var(--primary-dark);
       color: #cbd5e1;
@@ -660,713 +626,235 @@
     }
 
     /* DONATE BUTTON STRICT SINGLE LINE */
-    .btn-donate-nav { white-space: nowrap !important; min-width: max-content !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; background: var(--accent) !important; color: #ffffff !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 50px !important; margin-left: 8px !important; text-decoration: none !important; }
+    .btn-donate-nav {
+      white-space: nowrap !important;
+      min-width: max-content !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+      background: var(--accent) !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      padding: 8px 18px !important;
+      border-radius: 50px !important;
+      margin-left: 8px !important;
+      text-decoration: none !important;
+    }
 
     /* HAMBURGER TOGGLE BUTTON */
     .nav-toggle-btn {
       display: none;
       flex-direction: column;
-      justify-content: space-around;
-      width: 32px;
-      height: 26px;
+      justify-content: space-between;
+      width: 44px;
+      height: 44px;
+      padding: 11px 6px;
       background: transparent;
       border: none;
       cursor: pointer;
-      padding: 0;
-      z-index: 100005 !important;
+      z-index: 100000 !important;
+      box-sizing: border-box;
+      margin-left: auto;
     }
     .nav-toggle-btn span {
+      display: block;
       width: 100%;
       height: 3px;
       background-color: var(--primary);
       border-radius: 2px;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .nav-toggle-btn.is-active span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
+      transform: translateY(9.5px) rotate(45deg);
+      background-color: var(--secondary);
     }
     .nav-toggle-btn.is-active span:nth-child(2) {
       opacity: 0;
+      transform: scaleX(0);
     }
     .nav-toggle-btn.is-active span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
+      transform: translateY(-9.5px) rotate(-45deg);
+      background-color: var(--secondary);
     }
 
-    /* MOBILE DRAWER NAVIGATION (MAX-WIDTH: 991px) */
+    /* UNIFIED MOBILE NAVIGATION DRAWER (MAX-WIDTH: 991px) */
     @media (max-width: 991px) {
+      .main-header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+      }
+      .nav-inner {
+        position: relative !important;
+      }
       .nav-toggle-btn {
         display: flex !important;
-        margin-left: auto;
       }
-      .nav-menu {
-        display: none !important;
-        position: fixed !important;
-        top: 74px !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        width: 100% !important;
-        height: calc(100vh - 74px) !important;
-        background: #ffffff !important;
-        flex-direction: column !important;
-        padding: 20px 24px 40px !important;
-        gap: 6px !important;
-        overflow-y: auto !important;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
-        z-index: 99999 !important;
-        border-top: 1px solid var(--border-color) !important;
-      }
-      .nav-menu.is-open {
-        display: flex !important;
-      }
-      .nav-item {
-        width: 100% !important;
-        border-bottom: 1px solid var(--border-color) !important;
-        padding: 4px 0 !important;
-      }
-      .nav-link {
-        width: 100% !important;
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 12px 8px !important;
-        font-size: 1.05rem !important;
-        font-weight: 700 !important;
-        color: var(--primary) !important;
-        border-radius: 6px !important;
-      }
-      .dropdown-menu {
-        position: static !important;
-        box-shadow: none !important;
-        border: none !important;
-        background: var(--bg-slate) !important;
-        border-radius: var(--radius-sm) !important;
-        padding: 8px 12px !important;
-        margin: 4px 0 8px !important;
-        display: none !important;
-      }
-      .dropdown-menu.is-visible {
-        display: flex !important;
-        flex-direction: column !important;
-      }
-      .dropdown-link {
-        padding: 10px 12px !important;
-        font-size: 0.95rem !important;
-        font-weight: 600 !important;
-        border-bottom: 1px solid rgba(0,0,0,0.05) !important;
-      }
-      .btn-donate-nav {
-        width: 100% !important;
-        text-align: center !important;
-        margin: 16px 0 0 0 !important;
-        padding: 14px 20px !important;
-        font-size: 1.05rem !important;
-        justify-content: center !important;
-      }
-    }
-
-    /* RESPONSIVE VIEWPORT & MOBILE TOGGLE SYSTEM */
-    html, body {
-      overflow-x: hidden !important;
-      max-width: 100vw !important;
-    }
-    .btn-donate-nav {
-      white-space: nowrap !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      min-width: max-content !important;
-      background: var(--accent) !important;
-      color: #ffffff !important;
-      font-weight: 700 !important;
-      padding: 8px 18px !important;
-      border-radius: 50px !important;
-      margin-left: 6px !important;
-      text-decoration: none !important;
-      flex-shrink: 0 !important;
-    }
-    .mobile-toggle {
-      display: none;
-      background: #ffffff;
-      border: 1.5px solid var(--border-color);
-      border-radius: 8px;
-      cursor: pointer;
-      padding: 8px;
-      width: 44px;
-      height: 44px;
-      min-width: 44px;
-      min-height: 44px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-      z-index: 1200;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-left: auto;
-      flex-shrink: 0;
-    }
-    .mobile-toggle span {
-      display: block;
-      width: 22px;
-      height: 2.5px;
-      background: var(--primary);
-      margin: 2.5px auto;
-      border-radius: 2px;
-      transition: all 0.25s ease;
-    }
-    .mobile-toggle.is-active span:nth-child(1) {
-      transform: translateY(7.5px) rotate(45deg);
-    }
-    .mobile-toggle.is-active span:nth-child(2) {
-      opacity: 0;
-    }
-    .mobile-toggle.is-active span:nth-child(3) {
-      transform: translateY(-7.5px) rotate(-45deg);
-    }
-
-    /* MOBILE BREAKPOINT AT <= 992px */
-    @media (max-width: 992px) {
-      .mobile-toggle {
-        display: flex !important;
-      }
-      .nav-menu {
+      .nav-menu,
+      #main-nav-menu {
         display: none !important;
         position: absolute !important;
-        top: 74px !important;
-        left: 0 !important;
-        width: 100% !important;
-        background: #ffffff !important;
-        box-shadow: 0 14px 28px rgba(0,0,0,0.15) !important;
-        padding: 20px 24px !important;
-        flex-direction: column !important;
-        gap: 10px !important;
-        z-index: 1100 !important;
-        border-bottom: 3px solid var(--secondary) !important;
-      }
-      .nav-menu.is-open {
-        display: flex !important;
-      }
-      .nav-item { width: 100% !important; }
-      .nav-link { width: 100% !important; padding: 10px 14px !important; font-size: 1rem !important; }
-      .dropdown-menu {
-        position: static !important;
-        box-shadow: none !important;
-        border: none !important;
-        background: var(--bg-slate) !important;
-        display: block !important;
-        padding: 8px 14px !important;
-      }
-      .logo-text span {
-        display: none !important; /* Hide long slogan on mobile so brand logo is compact and hamburger fits */
-      }
-      .logo-text h1 {
-        font-size: 1.15rem !important;
-      }
-      .brand-logo {
-        max-width: calc(100% - 60px) !important;
-      }
-    }
-
-
-    /* -------------------------------------------------------------
-       UNIVERSAL OVERFLOW & RESPONSIVE HEADER SYSTEM
-       ------------------------------------------------------------- */
-    html, body {
-      overflow-x: hidden !important;
-      width: 100% !important;
-      max-width: 100vw !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      box-sizing: border-box !important;
-    }
-    *, *::before, *::after {
-      box-sizing: border-box !important;
-    }
-
-    .main-header {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border-color);
-      position: sticky;
-      top: 0;
-      z-index: 10000;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      width: 100% !important;
-      max-width: 100vw !important;
-      overflow: visible !important;
-    }
-    .nav-inner {
-      display: flex !important;
-      justify-content: space-between !important;
-      align-items: center !important;
-      height: 72px !important;
-      max-width: 1280px !important;
-      margin: 0 auto !important;
-      padding: 0 20px !important;
-      position: relative !important;
-      width: 100% !important;
-    }
-    .brand-logo {
-      display: flex !important;
-      align-items: center !important;
-      gap: 10px !important;
-      text-decoration: none !important;
-      flex-shrink: 0 !important;
-      max-width: calc(100% - 60px) !important;
-    }
-    .brand-logo-svg {
-      width: 44px !important;
-      height: 44px !important;
-      min-width: 44px !important;
-      min-height: 44px !important;
-      max-width: 44px !important;
-      max-height: 44px !important;
-      flex-shrink: 0 !important;
-    }
-    .logo-text h1 {
-      font-size: 1.18rem !important;
-      font-weight: 800 !important;
-      color: var(--primary) !important;
-      line-height: 1.1 !important;
-      margin: 0 !important;
-      white-space: nowrap !important;
-    }
-    .logo-text span {
-      font-size: 0.68rem !important;
-      font-weight: 700 !important;
-      color: var(--secondary-dark) !important;
-      text-transform: uppercase !important;
-      letter-spacing: 0.04em !important;
-      display: block !important;
-      white-space: nowrap !important;
-    }
-
-    /* DESKTOP NAVIGATION (>= 1081px) */
-    .nav-menu {
-      display: flex !important;
-      align-items: center !important;
-      gap: 2px !important;
-      flex-wrap: nowrap !important;
-      list-style: none !important;
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-    .nav-item {
-      position: relative !important;
-      white-space: nowrap !important;
-    }
-    .nav-link {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 4px !important;
-      padding: 6px 8px !important;
-      font-size: 0.88rem !important;
-      font-weight: 600 !important;
-      color: var(--primary) !important;
-      border-radius: var(--radius-sm) !important;
-      white-space: nowrap !important;
-      text-decoration: none !important;
-      transition: all 0.2s ease !important;
-    }
-    .nav-link:hover, .nav-link.active {
-      color: var(--secondary-dark) !important;
-      background-color: var(--bg-slate) !important;
-    }
-    .nav-arrow {
-      width: 9px !important;
-      height: 9px !important;
-      fill: currentColor !important;
-    }
-    .btn-donate-nav {
-      white-space: nowrap !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      flex-shrink: 0 !important;
-      background: var(--accent) !important;
-      color: #ffffff !important;
-      font-weight: 700 !important;
-      padding: 7px 18px !important;
-      border-radius: 50px !important;
-      margin-left: 6px !important;
-      text-decoration: none !important;
-      font-size: 0.88rem !important;
-    }
-    .btn-donate-nav:hover {
-      background: var(--accent-hover) !important;
-      transform: translateY(-1px);
-    }
-
-    /* HAMBURGER TOGGLE BUTTON */
-    .mobile-toggle,
-    .nav-toggle-btn {
-      display: none !important;
-      background: #ffffff !important;
-      border: 1.5px solid var(--border-color) !important;
-      border-radius: 8px !important;
-      cursor: pointer !important;
-      padding: 8px !important;
-      width: 44px !important;
-      height: 44px !important;
-      min-width: 44px !important;
-      min-height: 44px !important;
-      justify-content: center !important;
-      align-items: center !important;
-      flex-direction: column !important;
-      gap: 4.5px !important;
-      margin-left: auto !important;
-      flex-shrink: 0 !important;
-      z-index: 100005 !important;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
-    }
-    .mobile-toggle span,
-    .nav-toggle-btn span {
-      display: block !important;
-      width: 22px !important;
-      height: 2.5px !important;
-      background-color: var(--primary) !important;
-      border-radius: 2px !important;
-      transition: all 0.25s ease-in-out !important;
-    }
-    .mobile-toggle.is-active span:nth-child(1),
-    .nav-toggle-btn.is-active span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg) !important;
-    }
-    .mobile-toggle.is-active span:nth-child(2),
-    .nav-toggle-btn.is-active span:nth-child(2) {
-      opacity: 0 !important;
-    }
-    .mobile-toggle.is-active span:nth-child(3),
-    .nav-toggle-btn.is-active span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg) !important;
-    }
-
-    /* RESPONSIVE BREAKPOINT AT <= 1080px */
-    @media (max-width: 1080px) {
-      .mobile-toggle,
-      .nav-toggle-btn {
-        display: flex !important;
-      }
-      .nav-menu {
-        display: none !important;
-        flex-direction: column !important;
-        position: fixed !important;
-        top: 72px !important;
+        top: 100% !important;
         left: 0 !important;
         right: 0 !important;
         width: 100% !important;
-        max-height: calc(100vh - 72px) !important;
-        overflow-y: auto !important;
+        max-height: calc(100vh - 78px) !important;
+        max-height: calc(100dvh - 78px) !important;
         background: #ffffff !important;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.18) !important;
+        flex-direction: column !important;
         padding: 20px 24px 36px !important;
-        border-bottom: 2px solid var(--border-color) !important;
+        gap: 6px !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
         z-index: 99999 !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25) !important;
+        border-bottom: 4px solid var(--secondary) !important;
+        box-sizing: border-box !important;
       }
-      .nav-menu.is-active,
-      .nav-menu.show {
+      .nav-menu.is-open,
+      #main-nav-menu.is-open {
         display: flex !important;
       }
-      .nav-menu .nav-item {
+      .nav-menu .nav-item,
+      #main-nav-menu .nav-item {
         width: 100% !important;
-        border-bottom: 1px solid var(--border-color) !important;
-        padding: 8px 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
       }
-      .nav-menu .nav-link {
+      .nav-menu .nav-link,
+      #main-nav-menu .nav-link {
         width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
         justify-content: space-between !important;
-        font-size: 1.05rem !important;
-        padding: 10px 0 !important;
+        padding: 10px 14px !important;
+        font-size: 1.02rem !important;
+        font-weight: 700 !important;
+        color: var(--text-main) !important;
+        border-radius: 6px !important;
+        box-sizing: border-box !important;
+        text-decoration: none !important;
+        transition: background 0.2s, color 0.2s !important;
       }
-      .nav-menu .dropdown-menu {
+      .nav-menu .nav-link:hover,
+      .nav-menu .nav-link:active,
+      .nav-menu .nav-link.active,
+      #main-nav-menu .nav-link:hover,
+      #main-nav-menu .nav-link:active,
+      #main-nav-menu .nav-link.active {
+        background: #f1f5f9 !important;
+        color: var(--secondary) !important;
+      }
+      .nav-menu .dropdown-menu,
+      #main-nav-menu .dropdown-menu {
         position: static !important;
         box-shadow: none !important;
         border: none !important;
-        padding: 6px 0 6px 14px !important;
-        background: var(--bg-slate) !important;
-        border-radius: var(--radius-sm) !important;
+        background: #f8fafc !important;
+        padding: 6px 12px 8px 14px !important;
+        margin: 4px 0 8px 10px !important;
+        border-radius: 6px !important;
+        border-left: 3px solid var(--secondary) !important;
         display: block !important;
-        visibility: visible !important;
         opacity: 1 !important;
+        visibility: visible !important;
         transform: none !important;
+        width: auto !important;
+        box-sizing: border-box !important;
       }
-      .nav-menu .dropdown-link {
-        padding: 8px 0 !important;
-        font-size: 0.92rem !important;
-        border-bottom: 1px solid rgba(0,0,0,0.04) !important;
+      .nav-menu .dropdown-link,
+      #main-nav-menu .dropdown-link {
+        display: block !important;
+        padding: 8px 10px !important;
+        color: #334155 !important;
+        font-size: 0.9rem !important;
+        font-weight: 500 !important;
+        text-decoration: none !important;
+        border-radius: 4px !important;
+        transition: background 0.15s, color 0.15s !important;
       }
-      .nav-menu .btn-donate-nav {
-        margin: 18px 0 0 0 !important;
-        width: 100% !important;
-        text-align: center !important;
+      .nav-menu .dropdown-link:hover,
+      .nav-menu .dropdown-link:active,
+      #main-nav-menu .dropdown-link:hover,
+      #main-nav-menu .dropdown-link:active {
+        background: #e2e8f0 !important;
+        color: var(--primary) !important;
+      }
+      .nav-menu .btn-donate-nav,
+      #main-nav-menu .btn-donate-nav {
+        display: flex !important;
+        align-items: center !important;
         justify-content: center !important;
-        padding: 14px !important;
+        width: 100% !important;
+        margin: 14px 0 0 0 !important;
+        padding: 13px 20px !important;
         font-size: 1.05rem !important;
+        font-weight: 800 !important;
+        text-align: center !important;
+        border-radius: 50px !important;
+        background: var(--accent) !important;
+        color: #ffffff !important;
+        box-sizing: border-box !important;
+        text-decoration: none !important;
+        box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3) !important;
+      }
+      .nav-menu .btn-donate-nav:hover,
+      .nav-menu .btn-donate-nav:active,
+      #main-nav-menu .btn-donate-nav:hover,
+      #main-nav-menu .btn-donate-nav:active {
+        background: #b91c1c !important;
       }
     }
 
-    /* PHONE SCREEN REFINEMENTS (<= 768px) */
-    @media (max-width: 768px) {
+    /* RESPONSIVE HEADER & FOOTER ON SMALL SCREENS */
+    @media (max-width: 640px) {
       .logo-text span {
-        display: none !important; /* Hide long tagline so brand and toggle button fit on one line */
+        display: none !important;
       }
       .logo-text h1 {
         font-size: 1.15rem !important;
       }
-      .top-bar-item:nth-child(2),
-      .top-bar-item:nth-child(3) {
-        display: none !important;
+    }
+    @media (max-width: 380px) {
+      .brand-logo-svg {
+        width: 38px !important;
+        height: 38px !important;
       }
-      .page-hero .page-title {
-        font-size: 1.85rem !important;
-        line-height: 1.25 !important;
-        white-space: normal !important; /* allow multi-line on phones */
-      }
-      .hero-home .page-title {
-        font-size: 1.9rem !important;
-        white-space: normal !important;
-      }
-      .bridge-grid {
-        grid-template-columns: 1fr !important;
-      }
-      .action-grid-3,
-      .team-grid,
-      .albums-container,
-      .donate-layout {
-        grid-template-columns: 1fr !important;
+      .logo-text h1 {
+        font-size: 1.05rem !important;
       }
     }
-
-
-    /* STRICT SINGLE-LINE NAVIGATION & DONATE BUTTON */
-    .main-header { position: sticky; top: 0; z-index: 1000; background: #ffffff; box-shadow: var(--shadow-sm); }
-    .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 74px; gap: 10px; }
-    .nav-menu { display: flex !important; align-items: center !important; gap: 3px !important; flex-wrap: nowrap !important; white-space: nowrap !important; }
-    .nav-item { position: relative !important; white-space: nowrap !important; flex-shrink: 0 !important; }
-    .nav-link {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 3px !important;
-      padding: 6px 8px !important;
-      font-size: 0.88rem !important;
-      font-weight: 600 !important;
-      color: var(--primary) !important;
-      border-radius: var(--radius-sm) !important;
-      white-space: nowrap !important;
-      text-decoration: none !important;
-    }
-    .nav-link:hover, .nav-link.active {
-      color: var(--secondary-dark) !important;
-      background-color: var(--bg-slate) !important;
-    }
-    .btn-donate-nav {
-      white-space: nowrap !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      flex-shrink: 0 !important;
-      min-width: max-content !important;
-      background: var(--accent) !important;
-      color: #ffffff !important;
-      font-weight: 700 !important;
-      padding: 8px 18px !important;
-      border-radius: 50px !important;
-      margin-left: 6px !important;
-      text-decoration: none !important;
-      font-size: 0.88rem !important;
-      line-height: 1.2 !important;
-    }
-    .btn-donate-nav:hover { background: var(--accent-hover) !important; transform: translateY(-1px); }
-
-
-    /* PREVENT ALL HORIZONTAL SCROLLING & OVERFLOWS */
-    html, body {
-      max-width: 100% !important;
-      overflow-x: hidden !important;
-      position: relative;
-    }
-    
-    .container, .container-narrow {
-      max-width: 1200px;
-      width: 100%;
-      box-sizing: border-box;
-      padding-left: 20px;
-      padding-right: 20px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* COMPACT DESKTOP NAVIGATION BAR */
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-      flex-wrap: nowrap;
-    }
-    .nav-item {
-      position: relative;
-      white-space: nowrap;
-    }
-    .nav-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 7px 9px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--primary);
-      border-radius: var(--radius-sm);
-      white-space: nowrap;
-    }
-
-    /* MOBILE HEADER & HAMBURGER VISIBILITY (<= 1080px) */
-    @media (max-width: 1080px) {
-      .nav-menu {
-        display: none !important;
-        position: fixed !important;
-        top: 74px !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: calc(100vh - 74px) !important;
-        background: #ffffff !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        padding: 24px 20px 40px !important;
-        overflow-y: auto !important;
-        box-shadow: 0 20px 30px rgba(0,0,0,0.15) !important;
-        z-index: 99999 !important;
-      }
-      .nav-menu.is-active,
-      .nav-menu.show {
-        display: flex !important;
-      }
-      .nav-item {
-        width: 100%;
-        border-bottom: 1px solid var(--border-color);
-        padding: 4px 0;
-      }
-      .nav-link {
-        width: 100%;
-        padding: 12px 10px;
-        font-size: 1.05rem;
-        font-weight: 700;
-      }
-      .dropdown-menu {
-        position: static !important;
-        box-shadow: none !important;
-        border: none !important;
-        padding-left: 14px !important;
-        display: block !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: none !important;
-      }
-      .btn-donate-nav {
-        margin: 18px 0 0 0 !important;
-        width: 100% !important;
-        text-align: center !important;
-        justify-content: center !important;
-        font-size: 1rem !important;
-        padding: 12px !important;
-      }
-      .mobile-toggle,
-      .nav-toggle-btn {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
-        width: 44px !important;
-        height: 44px !important;
-        min-width: 44px !important;
-        min-height: 44px !important;
-        background: #ffffff !important;
-        border: 1.5px solid var(--border-color) !important;
-        border-radius: 8px !important;
-        cursor: pointer !important;
-        margin-left: auto !important;
-        flex-shrink: 0 !important;
-        z-index: 100005 !important;
-      }
-      .mobile-toggle span,
-      .nav-toggle-btn span {
-        display: block !important;
-        width: 22px !important;
-        height: 2.5px !important;
-        background: var(--primary) !important;
-        margin: 2.5px auto !important;
-        border-radius: 2px !important;
-        transition: all 0.25s ease-in-out !important;
-      }
-      .mobile-toggle.is-active span:nth-child(1),
-      .nav-toggle-btn.is-active span:nth-child(1) {
-        transform: translateY(7.5px) rotate(45deg) !important;
-      }
-      .mobile-toggle.is-active span:nth-child(2),
-      .nav-toggle-btn.is-active span:nth-child(2) {
-        opacity: 0 !important;
-      }
-      .mobile-toggle.is-active span:nth-child(3),
-      .nav-toggle-btn.is-active span:nth-child(3) {
-        transform: translateY(-7.5px) rotate(-45deg) !important;
-      }
-    }
-
-    /* HIDE LONG LOGO SUBTITLE ON MOBILE TO PREVENT EXPANDING SCREEN WIDTH */
     @media (max-width: 768px) {
-      .logo-text span {
-        display: none !important;
+      .footer-bottom-bar {
+        flex-direction: column-reverse !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 16px !important;
       }
-      .brand-logo {
-        max-width: calc(100% - 55px) !important;
+      .footer-copyright {
+        text-align: center !important;
       }
-      .top-bar-inner {
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-      .bridge-grid {
-        grid-template-columns: 1fr !important;
-      }
-      .bridge-divider {
-        margin: 12px 0;
-      }
-      .team-grid {
-        grid-template-columns: 1fr !important;
-      }
-      .action-grid-3 {
-        grid-template-columns: 1fr !important;
+      .footer-social-wrap {
+        justify-content: center !important;
       }
     }
-
-
-    .lang-switcher {
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
-      background: rgba(255,255,255,0.14);
-      border-radius: 4px;
-      padding: 2px 4px;
-    }
-    .lang-btn {
-      background: transparent;
-      border: none;
-      color: #cbd5e1;
-      font-size: 0.75rem;
-      font-weight: 700;
-      cursor: pointer;
-      padding: 3px 8px;
-      border-radius: 3px;
-      transition: all 0.2s ease;
-    }
-    .lang-btn.active {
-      background: var(--secondary) !important;
-      color: #ffffff !important;
-    }
-    .lang-btn:hover:not(.active) {
-      color: #ffffff;
-      background: rgba(255,255,255,0.1);
-    }
-    .lang-sep {
-      color: #94a3b8;
-      font-size: 0.75rem;
-      margin: 0 1px;
+/* RESPONSIVE GOVERNANCE BADGES (MAX-WIDTH: 768px) */
+    @media (max-width: 768px) {
+      .governance-grid, 
+      .transparency-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 16px !important;
+        padding: 24px 18px !important;
+      }
+      .statutory-card,
+      .governance-badge-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+      }
     }
 
 </style>
@@ -1378,10 +866,10 @@
     <!-- TOP RIGHT UTILITY BAR: LANGUAGE SWITCHER AT THE VERY TOP RIGHT, DIRECTLY ABOVE DONATE -->
   <div class="top-utility-bar" style="background:#0b1c3d; border-bottom:1px solid rgba(255,255,255,0.08); padding:5px 0;">
     <div class="container" style="display:flex; justify-content:flex-end; align-items:center;">
-      <div class="lang-switcher">
-        <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" title="English">EN</button>
-        <span class="lang-sep">|</span>
-        <button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')" title="Français">FR</button>
+      <div class="lang-switcher" style="display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.12); padding:2px 6px; border-radius:4px;">
+        <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" style="border:none; background:var(--secondary); color:#ffffff; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="English">EN</button>
+        <span style="color:#94a3b8; font-size:0.75rem; margin:0 2px;">|</span>
+        <button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')" style="border:none; background:transparent; color:#cbd5e1; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="Français">FR</button>
       </div>
     </div>
   </div>
@@ -1427,11 +915,11 @@
         </div>
       </a>
 
-                        <nav class="nav-menu" aria-label="Primary Navigation">
-        <div class="nav-item"><a href="index.html" class="nav-link " data-i18n="nav_home">Home</a></div>
+                        <nav id="main-nav-menu" class="nav-menu" aria-label="Primary Navigation">
+        <div class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></div>
         
         <div class="nav-item">
-          <a href="about.html" class="nav-link ">
+          <a href="about.html" class="nav-link">
             <span data-i18n="nav_about">About Us</span>
             <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
           </a>
@@ -1440,21 +928,21 @@
             <a href="about.html#team" class="dropdown-link" data-i18n="nav_team">Executive Leadership</a>
             <a href="about.html#governance" class="dropdown-link" data-i18n="nav_governance">Board & Governance</a>
             <a href="about.html#corporate" class="dropdown-link" data-i18n="nav_corporate">Corporate Filings</a>
-            <a href="about.html#synergy" class="dropdown-link" data-i18n="nav_burundi">Burundi Sisterhood</a>
+            <a href="about.html#synergy" class="dropdown-link" data-i18n="nav_burundi">Canada & Burundi</a>
           </div>
         </div>
 
         <div class="nav-item">
-          <a href="programs.html" class="nav-link ">
+          <a href="programs.html" class="nav-link">
             <span data-i18n="nav_programs">Programs</span>
             <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
           </a>
           <div class="dropdown-menu">
-            <a href="programs.html#mentorship" class="dropdown-link" data-i18n="nav_mentorship">Career Mentorship & AI</a>
-            <a href="programs.html#entrepreneurship" class="dropdown-link" data-i18n="nav_entrepreneurship">Social Entrepreneurship</a>
-            <a href="programs.html#awareness" class="dropdown-link" data-i18n="nav_awareness">Health & Urban Ecology</a>
-            <a href="programs.html#burundi-initiative" class="dropdown-link" data-i18n="nav_burundi_prog">Burundi Projects</a>
-            <a href="programs.html#sdgs" class="dropdown-link" data-i18n="nav_sdgs">UN SDGs Alignment</a>
+            <a href="programs.html#community-support" class="dropdown-link" data-i18n="nav_community_support">Community Support & Poverty Relief</a>
+            <a href="programs.html#education-skills" class="dropdown-link" data-i18n="nav_education_skills">Education, Skills & Youth Opportunity</a>
+            <a href="programs.html#self-sufficiency" class="dropdown-link" data-i18n="nav_self_sufficiency">Pathways to Self-Sufficiency</a>
+            <a href="programs.html#burundi-initiative" class="dropdown-link" data-i18n="nav_burundi_prog">International / Burundi</a>
+            <a href="programs.html#sdgs" class="dropdown-link" data-i18n="nav_sdgs">UN SDGs Reference</a>
           </div>
         </div>
 
@@ -1472,7 +960,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="events.html" class="nav-link ">
+          <a href="events.html" class="nav-link">
             <span data-i18n="nav_events">Events</span>
             <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
           </a>
@@ -1484,403 +972,162 @@
           </div>
         </div>
 
-        <div class="nav-item"><a href="news.html" class="nav-link " data-i18n="nav_news">News</a></div>
-        <div class="nav-item"><a href="careers.html" class="nav-link " data-i18n="nav_careers">Careers</a></div>
-        <div class="nav-item"><a href="contact.html" class="nav-link " data-i18n="nav_contact">Contact</a></div>
-        <a href="donate.html" class="btn-donate-nav" data-i18n="nav_donate">Donate</a>
-      </nav>
-      <button class="mobile-toggle nav-toggle-btn" id="mobileNavToggle" aria-label="Menu" aria-expanded="false" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
-    </div>
-  </header>
+        <div class="nav-item"><a href="news.html" class="nav-link" data-i18n="nav_news">News</a></div>
+        <div class="nav-item"><a href="careers.html" class="nav-link" data-i18n="nav_careers">Careers</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></div>
 
-  <!-- PAGE HERO -->
+        <!-- ONE-LINE DONATE BUTTON -->
+        <a href="donate.html" class="btn-donate-nav" data-i18n="nav_donate" style="white-space:nowrap !important; display:inline-flex !important; align-items:center !important; justify-content:center !important;">Donate</a>
+      </nav>
+
+                  <button class="nav-toggle-btn" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav(event)">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header><!-- SUBNAV BAR -->
+  <div class="page-subnav">
+    <div class="container">
+      <ul class="subnav-list">
+        <li class="subnav-item"><a href="get-involved.html#volunteer" data-i18n="subnav_inv_vol">Volunteer</a></li>
+        <li class="subnav-item"><a href="get-involved.html#partnerships" data-i18n="subnav_inv_part">Partner With Us</a></li>
+        <li class="subnav-item"><a href="get-involved.html#join" data-i18n="subnav_inv_join">Join YBSP</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HERO BANNER -->
   <section class="page-hero">
     <div class="container">
-      <div class="breadcrumbs">
-        <a href="index.html" data-i18n="crumb_home">Home</a> &nbsp;/&nbsp; <span data-i18n="crumb_involved">Get Involved Pathways</span>
-      </div>
-      <h2 class="page-title" data-i18n="hero_involved_title">Join the Synergy. Drive Meaningful Change.</h2>
-      <p data-i18n="hero_involved_desc">
-        Explore distinct, purpose-built pathways to participate in our mission: offer your time as a volunteer mentor, join our democratic voting membership under our federal charter, collaborate in member working groups, or establish an institutional partnership.
+      <div class="breadcrumbs"><a href="index.html" data-i18n="nav_home">Home</a> / <span data-i18n="nav_involved">Get Involved</span></div>
+      <h1 class="page-title single-line" data-i18n="inv_hero_title">Get Involved with YBSP Canada</h1>
+      <p data-i18n="inv_hero_sub">
+        Join hands with us to create practical pathways to opportunity through volunteer mentorship, institutional partnerships, and community participation.
       </p>
     </div>
   </section>
 
-  <!-- STICKY SUBNAV -->
-  <nav class="page-subnav">
-    <div class="container">
-      <ul class="subnav-list">
-        <li class="subnav-item"><a href="#pathways" class="active" data-i18n="sub_overview">Engagement Overview</a></li>
-        <li class="subnav-item"><a href="#volunteer" data-i18n="sub_volunteer">Volunteer Pathway</a></li>
-        <li class="subnav-item"><a href="#membership" data-i18n="sub_membership">Membership Pathway</a></li>
-        <li class="subnav-item"><a href="#working-groups" data-i18n="sub_groups">Working Groups</a></li>
-        <li class="subnav-item"><a href="#partnerships" data-i18n="sub_partnerships">Institutional Partners</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- 3 DISTINCT PATHWAYS OVERVIEW -->
-  <section class="content-section" id="pathways">
+  <!-- 1. VOLUNTEER SECTION & APPLICATION FORM -->
+  <section class="content-section" id="volunteer" style="background:#ffffff; padding:75px 0;">
     <div class="container">
       <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_pathways">Clear Pathways</span>
-        <h3 class="section-title" data-i18n="heading_pathways">Three Distinct Ways to Engage</h3>
-        <p data-i18n="sub_pathways">
-          Each pathway serves a unique role in our organization. Choose the path that matches your personal commitment, governance interest, or institutional capacity.
+        <span class="section-tag" data-i18n="tag_vol_path">Community Service</span>
+        <h3 class="section-title" data-i18n="head_vol_path">Volunteer Opportunities</h3>
+        <p data-i18n="sub_vol_path">
+          Our volunteers are the heart of YBSP Canada. We welcome individuals who wish to share their skills, time, and lived experience to empower others.
         </p>
       </div>
 
-      <div class="pathway-cards-grid">
-        <!-- 1. VOLUNTEER -->
-        <div class="pathway-box">
-          <div>
-            <div class="pathway-icon">🤲</div>
-            <h3 data-i18n="p1_title">1. Volunteer With Us</h3>
-            <p data-i18n="p1_desc">
-              Offer your skills, professional experience, and time. Ideal for mentors, workshop facilitators, bilingual translators, and event support volunteers.
-            </p>
-            <ul style="font-size:0.88rem; color:var(--text-main); margin-bottom:20px; line-height:1.7;">
-              <li>• 1-on-1 Youth Mentors (1-2 hrs/week)</li>
-              <li>• Community Workshop Leaders</li>
-              <li>• Bilingual Content Translators (EN/FR)</li>
-              <li>• Event & Logistics Coordinators</li>
-            </ul>
-          </div>
-          <a href="#volunteer" class="btn-secondary" data-i18n="btn_apply_volunteer">Go to Volunteer Application ↓</a>
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; margin-bottom:45px;">
+        <div style="background:var(--bg-slate); border-radius:var(--radius-md); padding:24px 20px; border:1px solid var(--border-color); text-align:center;">
+          <div style="font-size:2rem; margin-bottom:10px;">🤝</div>
+          <h4 style="font-size:1.05rem; color:var(--primary); margin-bottom:6px;" data-i18n="vol_track1_t">Youth Mentorship</h4>
+          <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;" data-i18n="vol_track1_d">
+            Provide 1-on-1 guidance, professional networking, and resume support for youth and career seekers.
+          </p>
         </div>
 
-        <!-- 2. MEMBERSHIP -->
-        <div class="pathway-box">
-          <div>
-            <div class="pathway-icon">🗳️</div>
-            <h3 data-i18n="p2_title">2. Become a Member</h3>
-            <p data-i18n="p2_desc">
-              Join the formal voting membership of our federal non-profit corporation under the Canada NFP Act. Shape organizational governance, attend the AGM, and vote on bylaws and directors.
-            </p>
-            <ul style="font-size:0.88rem; color:var(--text-main); margin-bottom:20px; line-height:1.7;">
-              <li>• Official voting rights at the AGM</li>
-              <li>• Board of Directors nomination eligibility</li>
-              <li>• Fiduciary review of annual financial statements</li>
-              <li>• Subject to Board approval & charter adherence</li>
-            </ul>
-          </div>
-          <a href="#membership" class="btn-primary" data-i18n="btn_apply_member">Go to Membership Application ↓</a>
+        <div style="background:var(--bg-slate); border-radius:var(--radius-md); padding:24px 20px; border:1px solid var(--border-color); text-align:center;">
+          <div style="font-size:2rem; margin-bottom:10px;">🍲</div>
+          <h4 style="font-size:1.05rem; color:var(--primary); margin-bottom:6px;" data-i18n="vol_track2_t">Community Outreach</h4>
+          <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;" data-i18n="vol_track2_d">
+            Assist with community meal preparations, emergency food logistics, and support for isolated individuals.
+          </p>
         </div>
 
-        <!-- 3. INSTITUTIONAL PARTNERS -->
-        <div class="pathway-box">
-          <div>
-            <div class="pathway-icon">🏛️</div>
-            <h3 data-i18n="p3_title">3. Institutional Partners</h3>
-            <p data-i18n="p3_desc">
-              For corporations, financial institutions, universities, foundations, municipalities, and diaspora organizations seeking structured collaborative alliances.
-            </p>
-            <ul style="font-size:0.88rem; color:var(--text-main); margin-bottom:20px; line-height:1.7;">
-              <li>• Program cohort sponsorship (ESDC, CSR)</li>
-              <li>• Corporate employee mentorship volunteering</li>
-              <li>• Research & youth outcome evaluation</li>
-              <li>• Canada-Burundi international solidarity</li>
-            </ul>
-          </div>
-          <a href="#partnerships" class="btn-outline" data-i18n="btn_apply_partner">Go to Partnership Inquiry ↓</a>
+        <div style="background:var(--bg-slate); border-radius:var(--radius-md); padding:24px 20px; border:1px solid var(--border-color); text-align:center;">
+          <div style="font-size:2rem; margin-bottom:10px;">💻</div>
+          <h4 style="font-size:1.05rem; color:var(--primary); margin-bottom:6px;" data-i18n="vol_track3_t">Skills Workshops</h4>
+          <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;" data-i18n="vol_track3_d">
+            Facilitate practical digital tools, AI productivity concepts, or basic personal financial capability.
+          </p>
+        </div>
+
+        <div style="background:var(--bg-slate); border-radius:var(--radius-md); padding:24px 20px; border:1px solid var(--border-color); text-align:center;">
+          <div style="font-size:2rem; margin-bottom:10px;">📋</div>
+          <h4 style="font-size:1.05rem; color:var(--primary); margin-bottom:6px;" data-i18n="vol_track4_t">Events & Logistics</h4>
+          <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;" data-i18n="vol_track4_d">
+            Support community forums, the Annual Solidarity Gala, and operational outreach across Canada.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- PATHWAY 1: DEDICATED VOLUNTEER APPLICATION -->
-  <section class="content-section" id="volunteer" style="background:#ffffff; border-top:1px solid var(--border-color);">
-    <div class="container-narrow" id="partner-form-box">
-      <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_vol_app">Volunteer Pathway</span>
-        <h3 class="section-title" data-i18n="heading_vol_app">Volunteer Application</h3>
-        <p data-i18n="desc_vol_app">
-          Please complete this form to join our volunteer roster. Our volunteer coordinator will review your application and contact you within 5 business days for an onboarding conversation.
-        </p>
-      </div>
-
+      <!-- VOLUNTEER INTAKE FORM -->
       <div class="form-card">
-        <form id="volunteerForm" name="volunteer-application" method="POST" data-netlify="true" onsubmit="handleVolunteerSubmit(event)">
-          <input type="hidden" name="form-name" value="volunteer-application">
-          
+        <h4 style="font-size:1.25rem; color:var(--primary); margin-bottom:8px; text-align:center;" data-i18n="vol_form_title">Volunteer Application Form</h4>
+        <p style="font-size:0.9rem; color:var(--text-muted); text-align:center; margin-bottom:24px;" data-i18n="vol_form_sub">
+          Please fill out the form below and our team will connect with you regarding current volunteer placements.
+        </p>
+
+        <form id="volunteer-form" onsubmit="event.preventDefault(); document.getElementById('vol-success').style.display='block';">
           <div class="form-grid-2">
             <div class="form-group">
-              <label class="form-label" for="v-name" data-i18n="lbl_name">Full Name *</label>
-              <input type="text" id="v-name" name="full_name" class="form-input" required placeholder="e.g. Marie Tremblay">
+              <label class="form-label" for="v-name" data-i18n="f_label_name">Full Name *</label>
+              <input type="text" id="v-name" class="form-input" required placeholder="e.g. Marie Tremblay">
             </div>
             <div class="form-group">
-              <label class="form-label" for="v-email" data-i18n="lbl_email">Email Address *</label>
-              <input type="email" id="v-email" name="email" class="form-input" required placeholder="marie@example.ca">
+              <label class="form-label" for="v-email" data-i18n="f_label_email">Email Address *</label>
+              <input type="email" id="v-email" class="form-input" required placeholder="e.g. marie@example.ca">
             </div>
           </div>
 
           <div class="form-grid-2">
             <div class="form-group">
-              <label class="form-label" for="v-phone" data-i18n="lbl_phone">Phone Number</label>
-              <input type="tel" id="v-phone" name="phone" class="form-input" placeholder="(613) 555-0199">
+              <label class="form-label" for="v-city" data-i18n="f_label_city">City & Province *</label>
+              <input type="text" id="v-city" class="form-input" required placeholder="e.g. Gatineau, QC / Ottawa, ON">
             </div>
             <div class="form-group">
-              <label class="form-label" for="v-city" data-i18n="lbl_city">City & Province *</label>
-              <input type="text" id="v-city" name="location" class="form-input" required placeholder="e.g. Ottawa, ON or Gatineau, QC">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" data-i18n="lbl_vol_role">Preferred Volunteer Roles (Select all that apply) *</label>
-            <div class="checkbox-group">
-              <label class="checkbox-label"><input type="checkbox" name="role[]" value="mentor"> <span data-i18n="r_mentor">1-on-1 Youth Career Mentor</span></label>
-              <label class="checkbox-label"><input type="checkbox" name="role[]" value="workshop"> <span data-i18n="r_workshop">Workshop Leader (Digital / AI / Skills)</span></label>
-              <label class="checkbox-label"><input type="checkbox" name="role[]" value="events"> <span data-i18n="r_events">Event & Gala Logistics Coordinator</span></label>
-              <label class="checkbox-label"><input type="checkbox" name="role[]" value="translation"> <span data-i18n="r_trans">Bilingual Translator (EN / FR / Kirundi)</span></label>
-              <label class="checkbox-label"><input type="checkbox" name="role[]" value="comms"> <span data-i18n="r_comms">Social Media & Communications</span></label>
-              <label class="checkbox-label"><input type="checkbox" name="role[]" value="general"> <span data-i18n="r_gen">General Community Support</span></label>
-            </div>
-          </div>
-
-          <div class="form-grid-2">
-            <div class="form-group">
-              <label class="form-label" for="v-hours" data-i18n="lbl_hours">Availability (Estimated hours/month)</label>
-              <select id="v-hours" name="availability_hours" class="form-select">
-                <option value="2-4">2 – 4 hours / month</option>
-                <option value="5-10">5 – 10 hours / month</option>
-                <option value="10+">10+ hours / month</option>
-                <option value="event-only">Events & Special Initiatives Only</option>
+              <label class="form-label" for="v-role" data-i18n="f_label_role">Primary Area of Interest *</label>
+              <select id="v-role" class="form-select" required>
+                <option value="">Select an area...</option>
+                <option value="mentorship">Youth Career Mentorship</option>
+                <option value="community-support">Community Support & Food Relief</option>
+                <option value="skills-workshops">Skills & Digital Literacy Workshops</option>
+                <option value="events-admin">Events, Media & Administration</option>
               </select>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="v-languages" data-i18n="lbl_lang">Spoken Languages</label>
-              <input type="text" id="v-languages" name="languages" class="form-input" placeholder="e.g. English, French, Kirundi">
-            </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="v-skills" data-i18n="lbl_skills">Background & Key Skills</label>
-            <textarea id="v-skills" name="skills_background" class="form-textarea" rows="2" placeholder="Briefly describe your professional background, skills, or student experience..."></textarea>
+            <label class="form-label" for="v-msg" data-i18n="f_label_exp">Brief Background & Availability</label>
+            <textarea id="v-msg" class="form-textarea" rows="4" placeholder="Tell us about your background, professional experience, or why you want to support YBSP Canada..."></textarea>
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="v-motivation" data-i18n="lbl_motivation">Why would you like to volunteer with YBSP Canada? *</label>
-            <textarea id="v-motivation" name="motivation" class="form-textarea" rows="3" required placeholder="Tell us what motivates you to support our youth empowerment and solidarity mission..."></textarea>
-          </div>
-
-          <div class="form-note" data-i18n="vol_privacy_note">
-            🔒 YBSP Canada respects your privacy. Information submitted is used solely for volunteer coordination and is governed by our institutional privacy guidelines.
-          </div>
-
-          <button type="submit" class="btn-primary" style="margin-top:16px; width:100%; justify-content:center;" data-i18n="btn_submit_vol">Submit Volunteer Application</button>
+          <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:12px;" data-i18n="btn_submit_app">Submit Volunteer Application</button>
           
-          <div id="volunteerFeedback" class="form-feedback" data-i18n="vol_feedback">
-            ✓ Thank you for volunteering! Your application has been submitted to the YBSP Canada Secretariat. We will contact you within 5 business days.
+          <div id="vol-success" class="form-feedback success" style="display:none; margin-top:18px;">
+            Thank you for your application. Our secretariat team will review your submission and contact you within 2 to 3 business days.
           </div>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- PATHWAY 2: DEDICATED MEMBERSHIP APPLICATION (NFP ACT COMPLIANCE) -->
-  <section class="content-section" id="membership" style="background:var(--bg-light); border-top:1px solid var(--border-color);">
-    <div class="container-narrow">
-      <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_member_app">Democratic Governance</span>
-        <h3 class="section-title" data-i18n="heading_member_app">Voting Membership Application</h3>
-        <p data-i18n="desc_member_app">
-          Under the <em>Canada Not-for-profit Corporations Act</em>, YBSP Canada is owned collectively by its registered members. Membership confers voting rights at Annual General Meetings, fiduciary oversight, and eligibility to serve on working committees and the Board of Directors.
-        </p>
-      </div>
-
-      <!-- GOVERNANCE RIGHTS & CRITERIA CALLOUT -->
-      <div style="background:#ffffff; border-radius:var(--radius-md); padding:26px 30px; border-left:5px solid var(--primary); margin-bottom:30px; box-shadow:var(--shadow-sm);">
-        <h4 style="font-size:1.15rem; color:var(--primary); margin-bottom:10px;" data-i18n="mbr_rules_title">Membership Criteria & Governance Rights</h4>
-        <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin-bottom:12px;" data-i18n="mbr_rules_desc">
-          Membership is open to individuals aged 18+ residing in Canada who endorse our charter mandate of youth empowerment and poverty alleviation.
-        </p>
-        <ul style="font-size:0.88rem; color:var(--text-main); line-height:1.65;">
-          <li><strong>Voting Rights:</strong> One vote per registered member on corporate resolutions and director elections.</li>
-          <li><strong>AGM Participation:</strong> Access to annual audited financial reports and direct dialogue with the Board.</li>
-          <li><strong>Review Process:</strong> Submitting this application does not confer instantaneous membership. Pursuant to corporate by-laws, all applications are formally reviewed and approved by the Board of Directors.</li>
-        </ul>
-      </div>
-
-      <div class="form-card">
-        <form id="membershipForm" name="membership-application" method="POST" data-netlify="true" onsubmit="handleMemberSubmit(event)">
-          <input type="hidden" name="form-name" value="membership-application">
-          
-          <div class="form-grid-2">
-            <div class="form-group">
-              <label class="form-label" for="m-name" data-i18n="lbl_name">Full Legal Name *</label>
-              <input type="text" id="m-name" name="full_name" class="form-input" required placeholder="e.g. Jean-Paul Ndikuriyo">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="m-email" data-i18n="lbl_email">Email Address *</label>
-              <input type="email" id="m-email" name="email" class="form-input" required placeholder="jp@example.ca">
-            </div>
-          </div>
-
-          <div class="form-grid-2">
-            <div class="form-group">
-              <label class="form-label" for="m-phone" data-i18n="lbl_phone">Phone Number *</label>
-              <input type="tel" id="m-phone" name="phone" class="form-input" required placeholder="(819) 555-0144">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="m-city" data-i18n="lbl_city">City, Province & Postal Code *</label>
-              <input type="text" id="m-city" name="address_location" class="form-input" required placeholder="e.g. Gatineau, QC J8X 3X8">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="m-committee-pref" data-i18n="lbl_mbr_group">Preferred Working Group Affiliation</label>
-            <select id="m-committee-pref" name="preferred_working_group" class="form-select">
-              <option value="none">General Voting Member (AGM participation only)</option>
-              <option value="programs">Youth Programs & Mentorship Working Group</option>
-              <option value="burundi">Burundi Synergy & International Cooperation Working Group</option>
-              <option value="governance">Governance, Audit & Finance Working Group</option>
-              <option value="communications">Community Outreach & Communications Working Group</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="m-experience" data-i18n="lbl_mbr_contrib">How would you like to contribute as a voting member? *</label>
-            <textarea id="m-experience" name="member_contribution" class="form-textarea" rows="3" required placeholder="Describe your interest in non-profit governance, youth development, or community engagement..."></textarea>
-          </div>
-
-          <!-- STATUTORY DECLARATION CHECKBOX -->
-          <div style="background:var(--bg-slate); padding:16px 18px; border-radius:var(--radius-sm); margin:18px 0;">
-            <label class="checkbox-label" style="align-items:flex-start;">
-              <input type="checkbox" name="charter_agreement" required style="margin-top:4px;">
-              <span style="font-size:0.86rem; color:var(--text-main); line-height:1.5;" data-i18n="mbr_statutory_declaration">
-                I confirm that I am 18 years of age or older and reside in Canada. I hereby apply for voting membership in Youth Building in Synergy to end Poverty (YBSP Canada). I agree to uphold the objectives set out in the Articles of Incorporation and corporate by-laws, and understand that my application is subject to formal Board review.
-              </span>
-            </label>
-          </div>
-
-          <button type="submit" class="btn-primary" style="width:100%; justify-content:center;" data-i18n="btn_submit_mbr">Submit Formal Membership Application</button>
-          
-          <div id="membershipFeedback" class="form-feedback" data-i18n="mbr_feedback">
-            ✓ Membership Application Received! Your application has been logged for presentation to the Board of Directors at the next scheduled review. You will receive an official notification via email.
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- MEMBER WORKING GROUPS / COMMITTEES -->
-  <section class="content-section" id="working-groups" style="background:#ffffff; border-top:1px solid var(--border-color);">
+  <!-- 2. INSTITUTIONAL PARTNERSHIPS -->
+  <section class="content-section" id="partnerships" style="background:var(--bg-slate); border-top:1px solid var(--border-color); padding:75px 0;">
     <div class="container">
       <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_committees">Committees & Action</span>
-        <h3 class="section-title" data-i18n="heading_committees">Member Working Groups</h3>
-        <p data-i18n="desc_committees">
-          Working groups allow active members to collaborate on targeted operational and governance initiatives. They bridge member expertise with organizational impact.
+        <span class="section-tag" data-i18n="tag_partnerships">Collaborative Alliances</span>
+        <h3 class="section-title" data-i18n="head_partnerships">Partner With Us</h3>
+        <p data-i18n="sub_partnerships">
+          We welcome collaboration with community organizations, academic departments, foundations, and employers who share our dedication to poverty relief and expanding human potential.
         </p>
       </div>
 
-      <!-- 5-STEP JOURNEY -->
-      <div class="steps-row">
-        <div class="step-badge-card">
-          <div class="step-num">Step 1</div>
-          <div class="step-title" data-i18n="st1">Join YBSP</div>
-        </div>
-        <div class="step-badge-card">
-          <div class="step-num">Step 2</div>
-          <div class="step-title" data-i18n="st2">Become a Member</div>
-        </div>
-        <div class="step-badge-card">
-          <div class="step-num">Step 3</div>
-          <div class="step-title" data-i18n="st3">Select Working Group</div>
-        </div>
-        <div class="step-badge-card">
-          <div class="step-num">Step 4</div>
-          <div class="step-title" data-i18n="st4">Board Confirmation</div>
-        </div>
-        <div class="step-badge-card">
-          <div class="step-num">Step 5</div>
-          <div class="step-title" data-i18n="st5">Active Collaboration</div>
-        </div>
-      </div>
-
-      <!-- 4 WORKING GROUPS GRID -->
-      <div class="committee-grid">
-        <!-- 1. YOUTH PROGRAMS -->
-        <div class="committee-card">
-          <h4 data-i18n="wg1_title">Youth Programs & Mentorship Working Group</h4>
-          <p class="committee-meta" data-i18n="wg1_desc">
-            Focuses on cohort curriculum, applied AI workshops, mentor pairing guidelines, and evaluation metrics for youth career readiness.
-          </p>
-          <div style="font-size:0.84rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">
-            <strong>Expected Commitment:</strong> 2 – 4 hours/month<br>
-            <strong>Useful Skills:</strong> Education, career coaching, digital/AI tools, workshop delivery
-          </div>
-          <a href="#membership" class="btn-outline" style="font-size:0.85rem;" data-i18n="btn_join_wg">Apply to Join This Group →</a>
-        </div>
-
-        <!-- 2. BURUNDI SYNERGY -->
-        <div class="committee-card">
-          <h4 data-i18n="wg2_title">Burundi Synergy & International Cooperation</h4>
-          <p class="committee-meta" data-i18n="wg2_desc">
-            Manages bilateral communication protocols with YBSP Burundi, tracking #SororaIkaye education sponsorships and vocational toolkit distributions.
-          </p>
-          <div style="font-size:0.84rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">
-            <strong>Expected Commitment:</strong> 2 – 4 hours/month<br>
-            <strong>Useful Skills:</strong> International development, Kirundi/French fluency, project monitoring
-          </div>
-          <a href="#membership" class="btn-outline" style="font-size:0.85rem;" data-i18n="btn_join_wg">Apply to Join This Group →</a>
-        </div>
-
-        <!-- 3. GOVERNANCE & AUDIT -->
-        <div class="committee-card">
-          <h4 data-i18n="wg3_title">Governance, Audit & Finance Working Group</h4>
-          <p class="committee-meta" data-i18n="wg3_desc">
-            Advises on corporate by-law updates, statutory filings under the Canada NFP Act, internal accounting policies, and audit preparedness.
-          </p>
-          <div style="font-size:0.84rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">
-            <strong>Expected Commitment:</strong> 2 hours/month<br>
-            <strong>Useful Skills:</strong> Law, corporate governance, accounting (CPA), non-profit compliance
-          </div>
-          <a href="#membership" class="btn-outline" style="font-size:0.85rem;" data-i18n="btn_join_wg">Apply to Join This Group →</a>
-        </div>
-
-        <!-- 4. COMMUNICATIONS -->
-        <div class="committee-card">
-          <h4 data-i18n="wg4_title">Community Outreach & Digital Media Working Group</h4>
-          <p class="committee-meta" data-i18n="wg4_desc">
-            Coordinates social media channels, community newsletters, gala event promotion, and multilingual translation across Canada.
-          </p>
-          <div style="font-size:0.84rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">
-            <strong>Expected Commitment:</strong> 2 – 4 hours/month<br>
-            <strong>Useful Skills:</strong> Graphic design, social media marketing, bilingual copywriting, PR
-          </div>
-          <a href="#membership" class="btn-outline" style="font-size:0.85rem;" data-i18n="btn_join_wg">Apply to Join This Group →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PATHWAY 3: DEDICATED INSTITUTIONAL PARTNERSHIP INQUIRY -->
-    <!-- CORPORATE & INSTITUTIONAL PARTNERS SHOWCASE (FEED THE CHILDREN STYLE) -->
-  <section class="content-section" id="partnerships" style="background:var(--bg-light); border-top:1px solid var(--border-color);"><span id="partner"></span>
-    <div class="container">
-      <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_corporate_partners">Corporate & Institutional Alliances</span>
-        <h3 class="section-title single-line" data-i18n="head_corporate_partners">Our Strategic Partners & Supporters</h3>
-        <p data-i18n="sub_corporate_partners">
-          Inspired by established Canadian and international partner models, we collaborate with financial institutions, public agencies, universities, and civil society to create sustainable youth opportunities.
-        </p>
-      </div>
-
-      <!-- LOGO SHOWCASE GRID (READY-MADE SLOTS FOR DESJARDINS, GOV OF CANADA, UNIVERSITIES, YBSP BURUNDI) -->
-            <!-- VERIFIED PARTNERS & ALLIANCES -->
-      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; margin-top:36px; margin-bottom:45px;">
+      <!-- HONEST ALLIANCES GRID -->
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; margin-bottom:45px;">
         
-        <!-- CARD 1: YBSP BURUNDI (ACTIVE SISTERHOOD) -->
+        <!-- CARD 1: YBSP BURUNDI -->
         <div style="background:#ffffff; border-radius:var(--radius-md); padding:30px 24px; text-align:center; border:1px solid var(--border-color); box-shadow:var(--shadow-sm); display:flex; flex-direction:column; justify-content:space-between; border-top:4px solid var(--secondary);">
           <div>
-            <div style="height:70px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:var(--bg-slate); border-radius:var(--radius-sm); border:1px solid #a7f3d0;">
-              <span style="font-weight:900; font-size:1.2rem; color:var(--primary); letter-spacing:-0.02em;">YBSP Burundi 🇧🇮</span>
+            <div style="height:65px; display:flex; align-items:center; justify-content:center; margin-bottom:12px; background:var(--bg-slate); border-radius:var(--radius-sm); border:1px solid #a7f3d0;">
+              <span style="font-weight:900; font-size:1.15rem; color:var(--primary);">YBSP Burundi 🇧🇮</span>
             </div>
             <h4 style="font-size:1.1rem; color:var(--primary); margin-bottom:6px;">YBSP Burundi</h4>
             <span style="display:inline-block; font-size:0.75rem; font-weight:700; color:#059669; background:#dcfce7; padding:3px 10px; border-radius:50px; margin-bottom:12px;">Founding Sister Organization</span>
             <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;">
-              Grassroots on-the-ground execution of Sunday Meal feeding, #SororaIkaye education sponsorships, and #MurabireKazoza artisan toolkits.
+              Grassroots field execution in Burundi: #SororaIkaye education support, artisan toolkits, and vulnerable youth feeding.
             </p>
           </div>
           <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color);">
@@ -1888,141 +1135,118 @@
           </div>
         </div>
 
-        <!-- CARD 2: ACADEMIC & STUDENT NETWORKS -->
+        <!-- CARD 2: ACADEMIC NETWORKS -->
         <div style="background:#ffffff; border-radius:var(--radius-md); padding:30px 24px; text-align:center; border:1px solid var(--border-color); box-shadow:var(--shadow-sm); display:flex; flex-direction:column; justify-content:space-between; border-top:4px solid var(--primary);">
           <div>
-            <div style="height:70px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:var(--bg-slate); border-radius:var(--radius-sm); border:1px dashed #cbd5e1;">
-              <span style="font-weight:800; font-size:1.05rem; color:var(--primary);">Academic & Student Coalitions</span>
+            <div style="height:65px; display:flex; align-items:center; justify-content:center; margin-bottom:12px; background:var(--bg-slate); border-radius:var(--radius-sm); border:1px dashed #cbd5e1;">
+              <span style="font-weight:800; font-size:1rem; color:var(--primary);">Academic & Student Coalitions</span>
             </div>
             <h4 style="font-size:1.1rem; color:var(--primary); margin-bottom:6px;">Post-Secondary Alliances</h4>
             <span style="display:inline-block; font-size:0.75rem; font-weight:700; color:#4338ca; background:#e0e7ff; padding:3px 10px; border-radius:50px; margin-bottom:12px;">Academic Network</span>
             <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;">
-              Connecting with Canadian universities, colleges, and student associations for accredited practicums, research projects, and student volunteer mobilization.
+              Connecting with Canadian post-secondary institutions and student associations for practicum or volunteer experience, subject to institutional approval.
             </p>
           </div>
           <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.8rem; font-weight:700; color:var(--text-light); text-transform:uppercase;">
-            Student Placements
+            Student Practicums
           </div>
         </div>
 
-        <!-- CARD 3: FUTURE INSTITUTIONAL PARTNERS CALLOUT -->
+        <!-- CARD 3: FUTURE PARTNERS CALLOUT -->
         <div style="background:#ffffff; border-radius:var(--radius-md); padding:30px 24px; text-align:center; border:2px dashed #cbd5e1; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; justify-content:space-between; background:var(--bg-slate);">
           <div>
-            <div style="height:70px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:#ffffff; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
+            <div style="height:65px; display:flex; align-items:center; justify-content:center; margin-bottom:12px; background:#ffffff; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
               <span style="font-weight:800; font-size:1.05rem; color:var(--secondary-dark);">+ Your Organization</span>
             </div>
-            <h4 style="font-size:1.1rem; color:var(--primary); margin-bottom:6px;">Become an Institutional Partner</h4>
+            <h4 style="font-size:1.1rem; color:var(--primary); margin-bottom:6px;">Institutional Partners</h4>
             <span style="display:inline-block; font-size:0.75rem; font-weight:700; color:#b45309; background:#fef3c7; padding:3px 10px; border-radius:50px; margin-bottom:12px;">Open for Collaboration</span>
             <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;">
-              We welcome Canadian corporations, foundations, and public bodies seeking to support newcomer career readiness, workplace AI skills, or community micro-grants.
+              We welcome Canadian corporate, foundation, and civic partners to co-create youth mentorship cohorts, community meals, and skills initiatives.
             </p>
           </div>
           <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color);">
-            <a href="#partner-form-box" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark);">Submit Partnership Proposal ↓</a>
+            <a href="#partner-form" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark);">Submit Partnership Proposal ↓</a>
           </div>
         </div>
 
       </div>
 
-      <!-- PARTNERSHIP INQUIRY FORM CALLOUT -->
-      <div class="container-narrow">
-        <div style="background:#ffffff; border-radius:var(--radius-md); padding:36px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
-          <div class="section-header-center" style="margin-bottom:24px;">
-            <h4 style="font-size:1.3rem; color:var(--primary); margin-bottom:6px;">Explore an Institutional Partnership with YBSP Canada</h4>
-            <p style="font-size:0.9rem; color:var(--text-muted);">
-              Whether your organization is interested in corporate grant co-design, employee volunteer mentorship, or sponsoring community toolkits, please connect with our leadership below.
-            </p>
-          </div>
-
-      <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_partner_app">Collaborative Alliances</span>
-        <h3 class="section-title" data-i18n="heading_partner_app">Institutional & Corporate Partnerships</h3>
-        <p data-i18n="desc_partner_app">
-          Designed for corporations, Canadian financial institutions, foundations, academic universities/colleges, municipal agencies, and diaspora organizations seeking to co-develop youth cohorts or support cross-border solidarity.
+      <!-- PARTNERSHIP INQUIRY FORM -->
+      <div class="form-card" id="partner-form">
+        <h4 style="font-size:1.25rem; color:var(--primary); margin-bottom:8px; text-align:center;" data-i18n="part_form_title">Institutional Partnership Inquiry</h4>
+        <p style="font-size:0.9rem; color:var(--text-muted); text-align:center; margin-bottom:24px;" data-i18n="part_form_sub">
+          Explore co-designing community support programs, employee mentorship engagement, or grant initiatives with YBSP Canada.
         </p>
-      </div>
 
-      <div class="form-card">
-        <form id="partnerForm" name="institutional-partnership" method="POST" data-netlify="true" onsubmit="handlePartnerSubmit(event)">
-          <input type="hidden" name="form-name" value="institutional-partnership">
-          
+        <form id="partner-inquiry-form" onsubmit="event.preventDefault(); document.getElementById('part-success').style.display='block';">
           <div class="form-grid-2">
             <div class="form-group">
-              <label class="form-label" for="p-org" data-i18n="lbl_org_name">Organization / Institution Name *</label>
-              <input type="text" id="p-org" name="organization_name" class="form-input" required placeholder="e.g. Canadian Community Foundation / University Association">
+              <label class="form-label" for="p-org" data-i18n="f_label_org">Organization / Institution Name *</label>
+              <input type="text" id="p-org" class="form-input" required placeholder="e.g. Canadian Community Foundation / University Association">
             </div>
             <div class="form-group">
-              <label class="form-label" for="p-type" data-i18n="lbl_org_type">Organization Type *</label>
-              <select id="p-type" name="organization_type" class="form-select" required>
-                <option value="corporation">Corporation / Financial Institution</option>
-                <option value="foundation">Philanthropic Foundation</option>
-                <option value="academic">University / College / School Board</option>
-                <option value="government">Federal / Provincial / Municipal Government</option>
-                <option value="nonprofit">Non-Profit / NGO / Community Coalition</option>
-                <option value="diaspora">Diaspora Organization / Cultural Association</option>
-                <option value="other">Other Entity</option>
+              <label class="form-label" for="p-contact" data-i18n="f_label_contact">Contact Person & Title *</label>
+              <input type="text" id="p-contact" class="form-input" required placeholder="e.g. David Wilson, Director of Partnerships">
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="p-email" data-i18n="f_label_email">Official Email *</label>
+              <input type="email" id="p-email" class="form-input" required placeholder="e.g. partnerships@organization.ca">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="p-type" data-i18n="f_label_part_type">Partnership Track *</label>
+              <select id="p-type" class="form-select" required>
+                <option value="">Select track...</option>
+                <option value="meals">Community Support & Food Security Collaboration</option>
+                <option value="mentorship">Youth Career Mentorship & Workplace Readiness</option>
+                <option value="practicum">Academic Student Practicum & Internships</option>
+                <option value="grants">Community Grants & Social Innovation</option>
               </select>
             </div>
           </div>
 
-          <div class="form-grid-2">
-            <div class="form-group">
-              <label class="form-label" for="p-web" data-i18n="lbl_org_web">Website URL</label>
-              <input type="url" id="p-web" name="website" class="form-input" placeholder="https://example.org">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="p-contact" data-i18n="lbl_org_contact">Contact Person & Title *</label>
-              <input type="text" id="p-contact" name="contact_person" class="form-input" required placeholder="e.g. Sarah Tremblay, Director of CSR">
-            </div>
-          </div>
-
-          <div class="form-grid-2">
-            <div class="form-group">
-              <label class="form-label" for="p-email" data-i18n="lbl_email">Corporate / Institutional Email *</label>
-              <input type="email" id="p-email" name="email" class="form-input" required placeholder="sarah.tremblay@example.com">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="p-phone" data-i18n="lbl_phone">Contact Phone</label>
-              <input type="tel" id="p-phone" name="phone" class="form-input" placeholder="(613) 555-0177">
-            </div>
-          </div>
-
           <div class="form-group">
-            <label class="form-label" data-i18n="lbl_collab_area">Areas of Proposed Collaboration (Select all that apply) *</label>
-            <div class="checkbox-group">
-              <label class="checkbox-label"><input type="checkbox" name="collab[]" value="cohort-sponsor"> <span data-i18n="c_cohort">Program Cohort Sponsorship</span></label>
-              <label class="checkbox-label"><input type="checkbox" name="collab[]" value="employee-volunteer"> <span data-i18n="c_volunteer">Employee Mentorship / Volunteering</span></label>
-              <label class="checkbox-label"><input type="checkbox" name="collab[]" value="joint-grant"> <span data-i18n="c_grant">Joint Grant Co-Delivery (ESDC / Trillium)</span></label>
-              <label class="checkbox-label"><input type="checkbox" name="collab[]" value="burundi-synergy"> <span data-i18n="c_burundi">Canada-Burundi Bilateral Projects</span></label>
-              <label class="checkbox-label"><input type="checkbox" name="collab[]" value="research"> <span data-i18n="c_research">Research & Youth Outcome Evaluation</span></label>
-              <label class="checkbox-label"><input type="checkbox" name="collab[]" value="gala-sponsor"> <span data-i18n="c_gala">Annual Solidarity Gala Event Sponsorship</span></label>
-            </div>
+            <label class="form-label" for="p-msg" data-i18n="f_label_prop">Proposed Areas of Collaboration</label>
+            <textarea id="p-msg" class="form-textarea" rows="4" placeholder="Briefly describe your proposed partnership idea or how our organizations can collaborate..."></textarea>
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="p-details" data-i18n="lbl_partnership_notes">Overview of Proposed Partnership & Goals *</label>
-            <textarea id="p-details" name="partnership_details" class="form-textarea" rows="4" required placeholder="Outline your institution's partnership objectives, proposed timeline, or funding framework..."></textarea>
-          </div>
-
-          <button type="submit" class="btn-primary" style="width:100%; justify-content:center;" data-i18n="btn_submit_partner">Submit Institutional Partnership Inquiry</button>
+          <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:12px;" data-i18n="btn_submit_part">Submit Partnership Inquiry</button>
           
-          <div id="partnerFeedback" class="form-feedback" data-i18n="partner_feedback">
-            ✓ Inquiry Received! The YBSP Canada Executive Secretariat will review your institutional inquiry and follow up within 3 business days.
+          <div id="part-success" class="form-feedback success" style="display:none; margin-top:18px;">
+            Thank you for reaching out. Our partnerships leadership team will review your inquiry and follow up within 2 business days.
           </div>
         </form>
       </div>
     </div>
   </section>
 
-    <!-- UNIVERSAL FOOTER (WFP STYLE WITH SOCIALS & DONATE) -->
-  <footer class="main-footer" style="background:#061124; color:#ffffff; padding:55px 0 25px; border-top:3px solid var(--secondary);">
+  <!-- 3. JOIN YBSP MEMBERSHIP -->
+  <section class="content-section" id="join" style="background:#ffffff; padding:75px 0;"><span id="working-groups"></span><span id="membership"></span>
+    <div class="container">
+      <div class="container-narrow" style="text-align:center;">
+        <span class="section-tag" data-i18n="tag_membership">Community Network</span>
+        <h3 class="section-title" data-i18n="head_membership">Join YBSP Canada</h3>
+        <p style="font-size:1.02rem; color:var(--text-muted); line-height:1.7; margin-bottom:28px;" data-i18n="sub_membership">
+          As a registered federal not-for-profit corporation, YBSP Canada invites passionate community members, youth, and civic leaders to formally join our network. Members contribute ideas, support community initiatives, and participate in our organizational journey.
+        </p>
+        <a href="contact.html" class="btn-secondary" data-i18n="btn_contact_membership">Inquire About Membership</a>
+      </div>
+    </div>
+  </section>
+    <!-- UNIVERSAL FOOTER -->
+    <!-- UNIVERSAL LIVE FOOTER (EXACT LIVE SITE LAYOUT & LABELS) -->
+  <footer class="main-footer" style="background:#061124; color:#ffffff; padding:65px 0 30px; border-top:3px solid var(--secondary);">
     <div class="container">
       
-      <!-- TOP FOOTER: 3-COLUMN BALANCED NAVIGATION -->
-      <div class="footer-grid" style="display:grid; grid-template-columns:1fr 1fr 1.2fr; gap:40px; margin-bottom:40px;">
+      <!-- 3 COLUMNS: QUICK LINKS, GET INVOLVED, CONTACT & SECRETARIAT -->
+      <div class="footer-grid" style="display:grid; grid-template-columns:1fr 1fr 1.2fr; gap:40px; margin-bottom:50px;">
+        
+        <!-- COL 1: QUICK LINKS -->
         <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:14px; font-weight:800;" data-i18n="footer_quick_links">Quick Links</h4>
-          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2;">
+          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_quick_links">Quick Links</h4>
+          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
             <li><a href="index.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_home">Home</a></li>
             <li><a href="about.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_about">About Us & Governance</a></li>
             <li><a href="programs.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_programs">Programs & AI Skills</a></li>
@@ -2033,300 +1257,343 @@
           </ul>
         </div>
 
+        <!-- COL 2: GET INVOLVED -->
         <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:14px; font-weight:800;" data-i18n="footer_involved">Get Involved</h4>
-          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2;">
+          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_involved">Get Involved</h4>
+          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
             <li><a href="get-involved.html#volunteer" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_volunteer">Volunteer Application</a></li>
             <li><a href="get-involved.html#membership" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_membership">Become a Member</a></li>
             <li><a href="get-involved.html#working-groups" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_working_groups">Member Working Groups</a></li>
             <li><a href="get-involved.html#partnerships" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_partnerships">Institutional Partners</a></li>
-            <li><a href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none;">YBSP Burundi Website ↗</a></li>
+            <li><a href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none;" data-i18n="footer_burundi_site">YBSP Burundi Website ↗</a></li>
           </ul>
         </div>
 
+        <!-- COL 3: CONTACT & SECRETARIAT -->
         <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:14px; font-weight:800;" data-i18n="footer_contact">Contact & Secretariat</h4>
-          <div style="font-size:0.9rem; color:#cbd5e1; line-height:1.7;">
-            <p style="margin-bottom:10px;">📍 <strong data-i18n="footer_addr">Operating Nationally Across Canada<br>Headquartered in Canada</strong></p>
-            <p style="margin-bottom:10px;">✉️ <a href="mailto:info@ybspcanada.org" style="color:#60a5fa; text-decoration:none;">info@ybspcanada.org</a></p>
-            <p>🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
+          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_contact">Contact & Secretariat</h4>
+          <div style="font-size:0.9rem; color:#cbd5e1; line-height:1.8;">
+            <p style="margin-bottom:12px;">📍 <strong data-i18n="footer_addr">Based in the Ottawa - Gatineau Region<br>(Developing Partnerships Across Canada)</strong></p>
+            <p style="margin-bottom:12px;">✉️ <a href="mailto:info@ybspcanada.org" style="color:#60a5fa; text-decoration:none;">info@ybspcanada.org</a></p>
+            <p style="margin:0;">🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
           </div>
         </div>
+
       </div>
 
-      <!-- BOTTOM FOOTER: COPYRIGHT FAR LEFT, SOCIAL TILES FAR RIGHT -->
-      <div style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
-        <div style="font-size:0.85rem; color:#94a3b8;">
+      <!-- BOTTOM SECTION: COPYRIGHT (LEFT) & FOLLOW US (RIGHT) -->
+      <div class="footer-bottom-bar" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
+        
+        <!-- BOTTOM LEFT: COPYRIGHT -->
+        <div class="footer-copyright" style="font-size:0.86rem; color:#94a3b8; text-align:left;">
           &copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
         </div>
-        <div style="display:flex; align-items:center; gap:10px;">
-          <span style="font-size:0.85rem; font-weight:700; color:#ffffff; text-transform:uppercase; letter-spacing:0.05em; margin-right:4px;" data-i18n="lbl_follow_us">Follow us</span>
-          <a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.95rem; transition:background 0.2s;" title="Follow YBSP Canada on X (Twitter)">𝕏</a>
-          <a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.95rem; transition:background 0.2s;" title="Follow YBSP Canada on Facebook">FB</a>
-          <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.95rem; transition:background 0.2s;" title="Follow YBSP Canada on Instagram">IG</a>
-          <a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.95rem; transition:background 0.2s;" title="Follow YBSP Canada on TikTok">TT</a>
-          <a href="https://www.snapchat.com/add/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.95rem; transition:background 0.2s;" title="Add YBSP Canada on Snapchat">SC</a>
-        </div>
-      </div>
 
+        <!-- BOTTOM RIGHT: FOLLOW US -->
+        <div class="footer-social-wrap" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+          <span style="font-size:0.85rem; font-weight:800; color:#ffffff; text-transform:uppercase; letter-spacing:0.08em;" data-i18n="lbl_follow_us">Follow us</span>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on X (Twitter)">𝕏</a>
+            <a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on Facebook">FB</a>
+            <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on Instagram">IG</a>
+            <a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on TikTok">TT</a>
+            <a href="https://www.snapchat.com/add/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Add YBSP Canada on Snapchat">SC</a>
+          </div>
+        </div>
+
+      </div>
     </div>
   </footer>
 
-
-  <!-- UNIVERSAL BILINGUAL SCRIPT -->
   <script>
+    
+
+      // Universal Mobile Navigation Handler
+  (function() {
+    function initMobileNav() {
+      const toggleBtn = document.getElementById('mobileNavToggle');
+      const navMenu = document.querySelector('.nav-menu') || document.getElementById('main-nav-menu');
+      if (!toggleBtn || !navMenu) return;
+
+      function toggleMenu(forceState) {
+        const isOpen = (typeof forceState === 'boolean') ? forceState : !navMenu.classList.contains('is-open');
+        if (isOpen) {
+          navMenu.classList.add('is-open');
+          toggleBtn.classList.add('is-active');
+          toggleBtn.setAttribute('aria-expanded', 'true');
+          document.body.classList.add('menu-open');
+        } else {
+          navMenu.classList.remove('is-open');
+          toggleBtn.classList.remove('is-active');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('menu-open');
+        }
+      }
+
+      window.toggleMobileNav = function(e) {
+        if (e) {
+          if (e.preventDefault) e.preventDefault();
+          if (e.stopPropagation) e.stopPropagation();
+        }
+        toggleMenu();
+      };
+
+      toggleBtn.onclick = function(e) {
+        if (e) {
+          if (e.preventDefault) e.preventDefault();
+          if (e.stopPropagation) e.stopPropagation();
+        }
+        toggleMenu();
+      };
+
+      // Close when clicking outside the menu
+      document.addEventListener('click', function(e) {
+        if (navMenu.classList.contains('is-open')) {
+          if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+            toggleMenu(false);
+          }
+        }
+      });
+
+      // Close menu when clicking any nav link
+      navMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          toggleMenu(false);
+        });
+      });
+
+      // Close menu on Escape key press
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('is-open')) {
+          toggleMenu(false);
+        }
+      });
+
+      // Reset if viewport resized to desktop width
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 991 && navMenu.classList.contains('is-open')) {
+          toggleMenu(false);
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMobileNav);
+    } else {
+      initMobileNav();
+    }
+  })();
+
     const translations = {
       en: {
-      "tagline": "Uniting youth. Building synergy. Ending poverty.",
-      "nav_home": "Home",
-      "nav_about": "About Us &amp; Governance",
-      "nav_mission": "Mission &amp; Mandate",
-      "nav_team": "Executive Leadership",
-      "nav_governance": "Board &amp; Governance",
-      "nav_corporate": "Corporate Filings",
-      "nav_burundi": "Burundi Sisterhood",
-      "nav_programs": "Programs &amp; AI Skills",
-      "nav_mentorship": "Career Mentorship &amp; AI",
-      "nav_entrepreneurship": "Social Entrepreneurship",
-      "nav_awareness": "Health &amp; Urban Ecology",
-      "nav_burundi_prog": "Burundi Projects",
-      "nav_sdgs": "UN SDGs Alignment",
-      "nav_involved": "Get Involved",
-      "nav_volunteer": "Volunteer Application",
-      "nav_membership": "Become a Member",
-      "nav_working_groups": "Member Working Groups",
-      "nav_partnerships": "Institutional Partners",
-      "nav_events": "Events &amp; Community",
-      "nav_calendar": "Events Calendar",
-      "nav_host": "Host or Propose an Event",
-      "nav_gala": "Annual Solidarity Gala",
-      "nav_gallery": "Authentic Photo Gallery",
-      "nav_news": "News &amp; Media Library",
-      "nav_careers": "Careers &amp; Opportunities",
-      "nav_contact": "Contact Us",
-      "nav_donate": "Donate",
-      "crumb_home": "Home",
-      "crumb_involved": "Get Involved Pathways",
-      "hero_involved_title": "Join the Synergy. Drive Meaningful Change.",
-      "hero_involved_desc": "Explore distinct, purpose-built pathways to participate in our mission: offer your time as a volunteer mentor, join our democratic voting membership under our federal charter, collaborate in member working groups, or establish an institutional partnership.",
-      "sub_overview": "Engagement Overview",
-      "sub_volunteer": "Volunteer Pathway",
-      "sub_membership": "Membership Pathway",
-      "sub_groups": "Working Groups",
-      "sub_partnerships": "Institutional Partners",
-      "tag_pathways": "Clear Pathways",
-      "heading_pathways": "Three Distinct Ways to Engage",
-      "sub_pathways": "Each pathway serves a unique role in our organization. Choose the path that matches your personal commitment, governance interest, or institutional capacity.",
-      "p1_title": "1. Volunteer With Us",
-      "p1_desc": "Offer your skills, professional experience, and time. Ideal for mentors, workshop facilitators, bilingual translators, and event support volunteers.",
-      "btn_apply_volunteer": "Go to Volunteer Application ↓",
-      "p2_title": "2. Become a Member",
-      "p2_desc": "Join the formal voting membership of our federal non-profit corporation under the Canada NFP Act. Shape organizational governance, attend the AGM, and vote on bylaws and directors.",
-      "btn_apply_member": "Go to Membership Application ↓",
-      "p3_title": "3. Institutional Partners",
-      "p3_desc": "For corporations, financial institutions, universities, foundations, municipalities, and diaspora organizations seeking structured collaborative alliances.",
-      "btn_apply_partner": "Go to Partnership Inquiry ↓",
-      "tag_vol_app": "Volunteer Pathway",
-      "heading_vol_app": "Volunteer Application",
-      "desc_vol_app": "Please complete this form to join our volunteer roster. Our volunteer coordinator will review your application and contact you within 5 business days for an onboarding conversation.",
-      "lbl_name": "Full Legal Name *",
-      "lbl_email": "Corporate / Institutional Email *",
-      "lbl_phone": "Contact Phone",
-      "lbl_city": "City, Province &amp; Postal Code *",
-      "lbl_vol_role": "Preferred Volunteer Roles (Select all that apply) *",
-      "r_mentor": "1-on-1 Youth Career Mentor",
-      "r_workshop": "Workshop Leader (Digital / AI / Skills)",
-      "r_events": "Event &amp; Gala Logistics Coordinator",
-      "r_trans": "Bilingual Translator (EN / FR / Kirundi)",
-      "r_comms": "Social Media &amp; Communications",
-      "r_gen": "General Community Support",
-      "lbl_hours": "Availability (Estimated hours/month)",
-      "lbl_lang": "Spoken Languages",
-      "lbl_skills": "Background &amp; Key Skills",
-      "lbl_motivation": "Why would you like to volunteer with YBSP Canada? *",
-      "vol_privacy_note": "🔒 YBSP Canada respects your privacy. Information submitted is used solely for volunteer coordination and is governed by our institutional privacy guidelines.",
-      "btn_submit_vol": "Submit Volunteer Application",
-      "vol_feedback": "✓ Thank you for volunteering! Your application has been submitted to the YBSP Canada Secretariat. We will contact you within 5 business days.",
-      "tag_member_app": "Democratic Governance",
-      "heading_member_app": "Voting Membership Application",
-      "desc_member_app": "Under the <em>Canada Not-for-profit Corporations Act</em>, YBSP Canada is owned collectively by its registered members. Membership confers voting rights at Annual General Meetings, fiduciary oversight, and eligibility to serve on working committees and the Board of Directors.",
-      "mbr_rules_title": "Membership Criteria &amp; Governance Rights",
-      "mbr_rules_desc": "Membership is open to individuals aged 18+ residing in Canada who endorse our charter mandate of youth empowerment and poverty alleviation.",
-      "lbl_mbr_group": "Preferred Working Group Affiliation",
-      "lbl_mbr_contrib": "How would you like to contribute as a voting member? *",
-      "mbr_statutory_declaration": "I confirm that I am 18 years of age or older and reside in Canada. I hereby apply for voting membership in Youth Building in Synergy to end Poverty (YBSP Canada). I agree to uphold the objectives set out in the Articles of Incorporation and corporate by-laws, and understand that my application is subject to formal Board review.",
-      "btn_submit_mbr": "Submit Formal Membership Application",
-      "mbr_feedback": "✓ Membership Application Received! Your application has been logged for presentation to the Board of Directors at the next scheduled review. You will receive an official notification via email.",
-      "tag_committees": "Committees &amp; Action",
-      "heading_committees": "Member Working Groups",
-      "desc_committees": "Working groups allow active members to collaborate on targeted operational and governance initiatives. They bridge member expertise with organizational impact.",
-      "st1": "Join YBSP",
-      "st2": "Become a Member",
-      "st3": "Select Working Group",
-      "st4": "Board Confirmation",
-      "st5": "Active Collaboration",
-      "wg1_title": "Youth Programs &amp; Mentorship Working Group",
-      "wg1_desc": "Focuses on cohort curriculum, applied AI workshops, mentor pairing guidelines, and evaluation metrics for youth career readiness.",
-      "btn_join_wg": "Apply to Join This Group →",
-      "wg2_title": "Burundi Synergy &amp; International Cooperation",
-      "wg2_desc": "Manages bilateral communication protocols with YBSP Burundi, tracking #SororaIkaye education sponsorships and vocational toolkit distributions.",
-      "wg3_title": "Governance, Audit &amp; Finance Working Group",
-      "wg3_desc": "Advises on corporate by-law updates, statutory filings under the Canada NFP Act, internal accounting policies, and audit preparedness.",
-      "wg4_title": "Community Outreach &amp; Digital Media Working Group",
-      "wg4_desc": "Coordinates social media channels, community newsletters, gala event promotion, and multilingual translation across Canada.",
-      "tag_corporate_partners": "Corporate &amp; Institutional Alliances",
-      "head_corporate_partners": "Our Strategic Partners &amp; Supporters",
-      "sub_corporate_partners": "Inspired by established Canadian and international partner models, we collaborate with financial institutions, public agencies, universities, and civil society to create sustainable youth opportunities.",
-      "tag_partner_app": "Collaborative Alliances",
-      "heading_partner_app": "Institutional &amp; Corporate Partnerships",
-      "desc_partner_app": "Designed for corporations, Canadian financial institutions, foundations, academic universities/colleges, municipal agencies, and diaspora organizations seeking to co-develop youth cohorts or support cross-border solidarity.",
-      "lbl_org_name": "Organization / Institution Name *",
-      "lbl_org_type": "Organization Type *",
-      "lbl_org_web": "Website URL",
-      "lbl_org_contact": "Contact Person &amp; Title *",
-      "lbl_collab_area": "Areas of Proposed Collaboration (Select all that apply) *",
-      "c_cohort": "Program Cohort Sponsorship",
-      "c_volunteer": "Employee Mentorship / Volunteering",
-      "c_grant": "Joint Grant Co-Delivery (ESDC / Trillium)",
-      "c_burundi": "Canada-Burundi Bilateral Projects",
-      "c_research": "Research &amp; Youth Outcome Evaluation",
-      "c_gala": "Annual Solidarity Gala Event Sponsorship",
-      "lbl_partnership_notes": "Overview of Proposed Partnership &amp; Goals *",
-      "btn_submit_partner": "Submit Institutional Partnership Inquiry",
-      "partner_feedback": "✓ Inquiry Received! The YBSP Canada Executive Secretariat will review your institutional inquiry and follow up within 3 business days.",
-      "footer_about_desc": "Youth Building in Synergy to end Poverty is a federally incorporated Canadian not-for-profit corporation dedicated to fostering youth leadership, career readiness, and international solidarity.",
-      "footer_quick_links": "Quick Links",
-      "footer_involved": "Get Involved",
-      "footer_contact": "Contact &amp; Secretariat",
-      "footer_addr": "Operating Nationally Across Canada<br/>Headquartered in Canada",
-      "footer_scope": "Serving Youth Communities in Both Official Languages",
-      "lbl_follow_us": "Follow us",
+        footer_quick_links: "Quick Links",
+        footer_involved: "Get Involved",
+        footer_burundi_site: "YBSP Burundi Website ↗",
+        footer_contact: "Contact & Secretariat",
+        footer_addr: "Based in the Ottawa - Gatineau Region<br>(Developing Partnerships Across Canada)",
+        footer_scope: "Serving Youth Communities in Both Official Languages",
+        lbl_follow_us: "Follow us",
+        footer_transparency: "Corporate Transparency",
+        nav_programs: "Programs",
+        nav_burundi_prog: "International / Burundi",
+        nav_sdgs: "UN SDGs Reference",
+        nav_membership: "Become a Member",
+        nav_working_groups: "Member Working Groups",
+        nav_partnerships: "Institutional Partners",
+        nav_calendar: "Events Calendar",
+        nav_host: "Host or Propose an Event",
+        nav_gala: "Annual Solidarity Gala",
+        nav_gallery: "Authentic Photo Gallery",
+        tagline: "Uniting youth. Building synergy. Ending poverty.",
+        nav_home: "Home",
+        nav_about: "About",
+        nav_story: "Our Story",
+        nav_mission: "Mission & Mandate",
+        nav_team: "Leadership",
+        nav_governance: "Board & Governance",
+        nav_corporate: "Corporate Information",
+        nav_burundi: "Canada & Burundi",
+        nav_our_work: "Our Work",
+        nav_community_support: "Community Support & Poverty Relief",
+        nav_education_skills: "Education, Skills & Youth Opportunity",
+        nav_self_sufficiency: "Pathways to Self-Sufficiency",
+        nav_burundi_work: "International / Burundi",
+        nav_sdgs_ref: "UN SDGs Reference",
+        nav_involved: "Get Involved",
+        nav_volunteer: "Volunteer",
+        nav_partners: "Partner With Us",
+        nav_join: "Join YBSP",
+        nav_events: "Events",
+        nav_impact: "Impact",
+        nav_our_impact: "Our Impact",
+        nav_stories: "Stories",
+        nav_news: "News",
+        nav_all_news: "All News",
+        nav_reports: "Reports",
+        nav_careers: "Careers",
+        nav_contact: "Contact",
+        nav_donate: "Donate",
+
+        subnav_inv_vol: "Volunteer",
+        subnav_inv_part: "Partner With Us",
+        subnav_inv_join: "Join YBSP",
+
+        inv_hero_title: "Get Involved with YBSP Canada",
+        inv_hero_sub: "Join hands with us to create practical pathways to opportunity through volunteer mentorship, institutional partnerships, and community participation.",
+
+        tag_vol_path: "Community Service",
+        head_vol_path: "Volunteer Opportunities",
+        sub_vol_path: "Our volunteers are the heart of YBSP Canada. We welcome individuals who wish to share their skills, time, and lived experience to empower others.",
+        vol_track1_t: "Youth Mentorship",
+        vol_track1_d: "Provide 1-on-1 guidance, professional networking, and resume support for youth and career seekers.",
+        vol_track2_t: "Community Outreach",
+        vol_track2_d: "Assist with community meal preparations, emergency food logistics, and support for isolated individuals.",
+        vol_track3_t: "Skills Workshops",
+        vol_track3_d: "Facilitate practical digital tools, AI productivity concepts, or basic personal financial capability.",
+        vol_track4_t: "Events & Logistics",
+        vol_track4_d: "Support community forums, the Annual Solidarity Gala, and operational outreach across Canada.",
+
+        vol_form_title: "Volunteer Application Form",
+        vol_form_sub: "Please fill out the form below and our team will connect with you regarding current volunteer placements.",
+        f_label_name: "Full Name *",
+        f_label_email: "Email Address *",
+        f_label_city: "City & Province *",
+        f_label_role: "Primary Area of Interest *",
+        f_label_exp: "Brief Background & Availability",
+        btn_submit_app: "Submit Volunteer Application",
+
+        tag_partnerships: "Collaborative Alliances",
+        head_partnerships: "Partner With Us",
+        sub_partnerships: "We welcome collaboration with community organizations, academic departments, foundations, and employers who share our dedication to poverty relief and expanding human potential.",
+        part_form_title: "Institutional Partnership Inquiry",
+        part_form_sub: "Explore co-designing community support programs, employee mentorship engagement, or grant initiatives with YBSP Canada.",
+        f_label_org: "Organization / Institution Name *",
+        f_label_contact: "Contact Person & Title *",
+        f_label_part_type: "Partnership Track *",
+        f_label_prop: "Proposed Areas of Collaboration",
+        btn_submit_part: "Submit Partnership Inquiry",
+
+        tag_membership: "Community Network",
+        head_membership: "Join YBSP Canada",
+        sub_membership: "As a registered federal not-for-profit corporation, YBSP Canada invites passionate community members, youth, and civic leaders to formally join our network. Members contribute ideas, support community initiatives, and participate in our organizational journey.",
+        btn_contact_membership: "Inquire About Membership",
+
+        foot_about_title: "YBSP Canada",
+        foot_about_desc: "Youth Building in Synergy to end Poverty is an independent Canadian federally incorporated not-for-profit corporation dedicated to relieving poverty and reducing barriers to opportunity across Canada.",
+        foot_legal_notice: "Federal Not-for-Profit Corporation (Canada Not-for-profit Corporations Act) | Corporation # 1154010-6 | Business Number: 779321272RC0001",
+        foot_quick_title: "Navigation",
+        foot_work_title: "Our Work",
+        foot_contact_title: "Contact & Secretariat",
+        foot_loc: "Based in the Ottawa - Gatineau Region (Developing Partnerships Across Canada)",
+        foot_copy: "&copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All rights reserved.",
+        foot_corp_info: "Corporate Filings",
+        foot_privacy: "Privacy Policy",
+        foot_contact: "Contact Secretariat"
       },
       fr: {
-      "tagline": "Unir la jeunesse. Bâtir la synergie. Vaincre la précarité.",
-      "nav_home": "Accueil",
-      "nav_about": "À propos",
-      "nav_mission": "Mission & Mandat",
-      "nav_team": "Direction exécutive",
-      "nav_governance": "Conseil d'administration",
-      "nav_corporate": "Dépôts corporatifs",
-      "nav_burundi": "Alliance avec le Burundi",
-      "nav_programs": "Programmes",
-      "nav_mentorship": "Mentorat de carrière & IA",
-      "nav_entrepreneurship": "Entrepreneuriat social",
-      "nav_awareness": "Santé & Écologie urbaine",
-      "nav_burundi_prog": "Projets Burundi",
-      "nav_sdgs": "Alignement ODD de l'ONU",
-      "nav_involved": "S'impliquer",
-      "nav_volunteer": "Formulaire de bénévolat",
-      "nav_membership": "Devenir membre",
-      "nav_working_groups": "Comités de travail",
-      "nav_partnerships": "Partenariats institutionnels",
-      "nav_events": "Événements",
-      "nav_calendar": "Calendrier des événements",
-      "nav_host": "Organiser ou proposer un événement",
-      "nav_gala": "Gala annuel de solidarité",
-      "nav_gallery": "Albums photos d'initiatives",
-      "nav_news": "Nouvelles",
-      "nav_careers": "Carrières",
-      "nav_contact": "Nous joindre",
-      "nav_donate": "Faire un don",
-      "crumb_home": "Accueil",
-      "crumb_involved": "Volets d'engagement",
-      "hero_involved_title": "Bâtir la synergie. Agir concrètement.",
-      "hero_involved_desc": "Explorez nos volets d'action distincts : offrez vos compétences comme bénévole, devenez membre votant sous la Loi BNL ou développez un partenariat institutionnel.",
-      "sub_overview": "Aperçu des volets",
-      "sub_volunteer": "Volet bénévolat",
-      "sub_membership": "Volet sociétariat",
-      "sub_groups": "Comités de travail",
-      "sub_partnerships": "Partenaires institutionnels",
-      "tag_pathways": "Engagement citoyen",
-      "heading_pathways": "Choisissez votre mode de participation",
-      "sub_pathways": "Chaque niveau d'engagement répond à des règles claires de gouvernance et de transparence sous le régime fédéral canadien.",
-      "p1_title": "Bénévolat & Mentorat",
-      "p1_desc": "Partagez votre temps ou votre expertise professionnelle pour accompagner des jeunes ou appuyer nos opérations.",
-      "btn_apply_volunteer": "Postuler comme bénévole ↓",
-      "p2_title": "Adhésion comme membre",
-      "p2_desc": "Rejoignez le corps démocratique des membres votants de YBSP Canada, participez aux assemblées générales et votez sur la gouvernance.",
-      "btn_apply_member": "Devenir membre votant ↓",
-      "p3_title": "Alliances institutionnelles",
-      "p3_desc": "Pour les universités, fondations et organisations souhaitant co-développer des cohortes ou financer des projets de solidarité.",
-      "btn_apply_partner": "Proposer un partenariat ↓",
-      "tag_vol_app": "Engagement bénévole",
-      "heading_vol_app": "Formulaire de candidature bénévole",
-      "desc_vol_app": "Rejoignez notre équipe dynamique pour appuyer le mentorat des jeunes, les communications bilingues, la comptabilité ou la logistique des événements.",
-      "lbl_name": "Nom complet *",
-      "lbl_email": "Adresse courriel *",
-      "lbl_phone": "Numéro de téléphone",
-      "lbl_city": "Ville et province de résidence au Canada *",
-      "lbl_vol_role": "Rôle bénévole souhaité *",
-      "r_mentor": "Mentor de carrière (Jumelage 1-on-1)",
-      "r_workshop": "Animation d'ateliers (IA, Commerce, CV)",
-      "r_events": "Coordination des événements & Gala",
-      "r_trans": "Traduction & Révision bilingue (français / anglais)",
-      "r_comms": "Communications, Réseaux sociaux & Traduction",
-      "r_gen": "Appui administratif général",
-      "lbl_hours": "Disponibilité estimée (heures par mois) *",
-      "lbl_lang": "Langues officielles parlées *",
-      "lbl_skills": "Compétences professionnelles clés *",
-      "lbl_motivation": "Pourquoi souhaitez-vous vous engager avec YBSP Canada ? *",
-      "vol_privacy_note": "Vos renseignements personnels sont protégés et utilisés uniquement pour la coordination interne des bénévoles de YBSP Canada.",
-      "btn_submit_vol": "Soumettre ma candidature bénévole",
-      "vol_feedback": "Merci pour votre candidature bénévole. Notre équipe de coordination vous contactera très rapidement.",
-      "tag_member_app": "Gouvernance démocratique",
-      "heading_member_app": "Demande d'adhésion comme membre votant",
-      "desc_member_app": "Conformément à nos statuts sous la Loi canadienne sur les organisations à but non lucratif, les membres votants participent aux assemblées générales, élisent le conseil d'administration et approuvent les orientations annuelles.",
-      "mbr_rules_title": "Conditions statutaires d'adhésion (Loi BNL) :",
-      "mbr_rules_desc": "Les membres votants exercent l'autorité démocratique suprême de l'organisation sous la Loi BNL.",
-      "lbl_mbr_group": "Comité de travail d'intérêt *",
-      "lbl_mbr_contrib": "Contribution envisagée au sein de la gouvernance *",
-      "mbr_statutory_declaration": "Je déclare appuyer les statuts constitutifs de YBSP Canada et demande mon admission comme membre votant.",
-      "btn_submit_mbr": "Soumettre ma demande d'adhésion",
-      "mbr_feedback": "Votre demande d'adhésion a été transmise au secrétariat du conseil d'administration pour examen statutaire.",
-      "tag_committees": "Comités d'action",
-      "heading_committees": "Comités de travail des membres",
-      "desc_committees": "Les membres votants et bénévoles expérimentés peuvent rejoindre nos comités spécialisés pour guider les opérations.",
-      "st1": "Adhésion formelle aux valeurs et objets constitutifs de YBSP Canada",
-      "st2": "Engagement à participer aux assemblées générales annuelles (présentiel ou virtuel)",
-      "st3": "Participation active aux activités statutaires ou comités de travail",
-      "st4": "Respect des règles de non-discrimination et d'intégrité de l'organisation",
-      "st5": "Engagement envers l'intégrité et la transparence de gestion",
-      "wg1_title": "Gouvernance & Conformité statutaire",
-      "wg1_desc": "Veille sur les règlements généraux, la préparation des rapports à Corporations Canada et les audits internes.",
-      "btn_join_wg": "Postuler à ce comité →",
-      "wg2_title": "Communications & Rayonnement bilingue",
-      "wg2_desc": "Gestion des réseaux sociaux, diffusion des nouvelles, relations publiques et traductions officielles.",
-      "wg3_title": "Programmes jeunesse & IA appliquée",
-      "wg3_desc": "Conception des cursus de mentorat, évaluation des résultats professionnels et intégration des outils numériques.",
-      "wg4_title": "Financement & Gala de solidarité",
-      "wg4_desc": "Organisation du gala annuel, suivi des donateurs et relations philanthropiques.",
-      "tag_corporate_partners": "Alliances institutionnelles",
-      "head_corporate_partners": "Partenaires stratégiques & Soutiens",
-      "sub_corporate_partners": "Nous collaborons avec les institutions d'enseignement, réseaux civiques et partenaires communautaires pour bâtir des passerelles pérennes pour les jeunes.",
-      "tag_partner_app": "Alliances collaboratives",
-      "heading_partner_app": "Partenariats institutionnels & Corporatifs",
-      "desc_partner_app": "Conçu pour les entreprises, fondations canadiennes, universités, collèges et organisations de la diaspora souhaitant co-développer des cohortes jeunesse ou appuyer la solidarité internationale.",
-      "lbl_org_name": "Nom de l'organisation / institution *",
-      "lbl_org_type": "Type d'organisation *",
-      "lbl_org_web": "Site Web de l'organisation",
-      "lbl_org_contact": "Personne-ressource & Fonction *",
-      "lbl_collab_area": "Volet de partenariat envisagé *",
-      "c_cohort": "Co-développement de cohortes de mentorat ou d'IA",
-      "c_volunteer": "Mentorat bénévole d'employés",
-      "c_grant": "Appui financier ou subvention conjointe",
-      "c_burundi": "Appui aux projets de solidarité au Burundi",
-      "c_research": "Stage étudiant accrédité ou recherche",
-      "c_gala": "Commandite du Gala annuel",
-      "lbl_partnership_notes": "Précisions sur votre projet de partenariat *",
-      "btn_submit_partner": "Transmettre la proposition de partenariat",
-      "partner_feedback": "Merci pour votre proposition institutionnelle. Le secrétariat de YBSP Canada communiquera avec vous sous 2 jours ouvrables.",
-      "footer_about_desc": "Youth Building in Synergy to end Poverty est une organisation à but non lucratif constituée au fédéral (Loi BNL), dédiée au leadership des jeunes, à la synergie collective et à la solidarité internationale.",
-      "footer_quick_links": "Liens rapides",
-      "footer_involved": "S'impliquer",
-      "footer_contact": "Contact & Secrétariat",
-      "footer_addr": "Opérant à l'échelle nationale au Canada<br>Siège social au Canada",
-      "footer_scope": "Au service des communautés de jeunes partout au Canada",
-      "lbl_follow_us": "Suivez YBSP sur les réseaux sociaux",
+        footer_quick_links: "Liens rapides",
+        footer_involved: "S'impliquer",
+        footer_burundi_site: "Site web YBSP Burundi ↗",
+        footer_contact: "Contact & Secrétariat",
+        footer_addr: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
+        footer_scope: "Au service des communautés jeunesse dans les deux langues officielles",
+        lbl_follow_us: "Suivez-nous",
+        footer_transparency: "Transparence corporative",
+        nav_programs: "Programmes",
+        nav_burundi_prog: "International / Burundi",
+        nav_sdgs: "Référence ODD de l'ONU",
+        nav_membership: "Devenir membre",
+        nav_working_groups: "Groupes de travail des membres",
+        nav_partnerships: "Partenaires institutionnels",
+        nav_calendar: "Calendrier des événements",
+        nav_host: "Organiser ou proposer une activité",
+        nav_gala: "Gala annuel de solidarité",
+        nav_gallery: "Galerie photo authentique",
+        tagline: "Unir la jeunesse. Bâtir la synergie. Vaincre la précarité.",
+        nav_home: "Accueil",
+        nav_about: "À propos",
+        nav_story: "Notre histoire",
+        nav_mission: "Mission & Mandat",
+        nav_team: "Direction",
+        nav_governance: "Conseil & Gouvernance",
+        nav_corporate: "Renseignements corporatifs",
+        nav_burundi: "Canada & Burundi",
+        nav_our_work: "Nos actions",
+        nav_community_support: "Soutien communautaire & Lutte contre la pauvreté",
+        nav_education_skills: "Éducation, Compétences & Opportunités jeunesse",
+        nav_self_sufficiency: "Cheminements vers l'autonomie",
+        nav_burundi_work: "International / Burundi",
+        nav_sdgs_ref: "UN SDGs Reference",
+        nav_involved: "S'impliquer",
+        nav_volunteer: "Bénévolat",
+        nav_partners: "Devenir partenaire",
+        nav_join: "Rejoindre YBSP",
+        nav_events: "Événements",
+        nav_impact: "Impact",
+        nav_our_impact: "Notre impact",
+        nav_stories: "Témoignages & Récits",
+        nav_news: "Nouvelles",
+        nav_all_news: "Toutes les nouvelles",
+        nav_reports: "Rapports & Publications",
+        nav_careers: "Carrières",
+        nav_contact: "Nous joindre",
+        nav_donate: "Faire un don",
+
+        subnav_inv_vol: "Bénévolat",
+        subnav_inv_part: "Devenir partenaire",
+        subnav_inv_join: "Rejoindre YBSP",
+
+        inv_hero_title: "S'impliquer auprès de YBSP Canada",
+        inv_hero_sub: "Unissez vos forces aux nôtres pour ouvrir des perspectives d'avenir concrètes par le mentorat bénévole, les partenariats d'impact et la participation citoyenne.",
+
+        tag_vol_path: "Engagement citoyen",
+        head_vol_path: "Opportunités de bénévolat",
+        sub_vol_path: "Nos bénévoles incarnent l'énergie de YBSP Canada. Nous accueillons toutes les personnes désireuses de partager leurs compétences et leur bienveillance.",
+        vol_track1_t: "Mentorat pour la jeunesse",
+        vol_track1_d: "Offrez un accompagnement individuel, des conseils de carrière et un soutien aux jeunes.",
+        vol_track2_t: "Action de terrain",
+        vol_track2_d: "Participez à la logistique des repas solidaires et au soutien aux personnes en situation de précarité.",
+        vol_track3_t: "Ateliers de compétences",
+        vol_track3_d: "Animez des sessions pratiques sur les outils numériques, la productivité et la gestion financière.",
+        vol_track4_t: "Événements & Logistique",
+        vol_track4_d: "Contribuez aux rassemblements communautaires, au Gala annuel et aux activités de sensibilisation.",
+
+        vol_form_title: "Formulaire d'engagement bénévole",
+        vol_form_sub: "Remplissez ce formulaire et notre équipe prendra contact avec vous rapidement pour discuter des besoins en cours.",
+        f_label_name: "Nom complet *",
+        f_label_email: "Courriel *",
+        f_label_city: "Ville & Province *",
+        f_label_role: "Domaine d'intérêt principal *",
+        f_label_exp: "Expérience & Disponibilités",
+        btn_submit_app: "Envoyer ma candidature bénévole",
+
+        tag_partnerships: "Alliances stratégiques",
+        head_partnerships: "Devenir partenaire",
+        sub_partnerships: "Nous collaborons avec des organismes communautaires, des institutions d'enseignement, des fondations et des employeurs engagés dans la réduction des inégalités.",
+        part_form_title: "Demande de partenariat institutionnel",
+        part_form_sub: "Explorez des initiatives concertées de soutien communautaire, de mentorat d'employés ou de projets solidaires avec YBSP Canada.",
+        f_label_org: "Organisation / Institution *",
+        f_label_contact: "Personne contact & Titre *",
+        f_label_part_type: "Volet de partenariat *",
+        f_label_prop: "Axes de collaboration envisagés",
+        btn_submit_part: "Transmettre la demande de partenariat",
+
+        tag_membership: "Réseau associatif",
+        head_membership: "Rejoindre YBSP Canada",
+        sub_membership: "En tant qu'organisation à but non lucratif fédérale, YBSP Canada invite les citoyens engagés à devenir membres pour contribuer activement à nos réflexions et projets.",
+        btn_contact_membership: "S'informer sur l'adhésion",
+
+        foot_about_title: "YBSP Canada",
+        foot_about_desc: "Youth Building in Synergy to end Poverty est une organisation à but non lucratif canadienne autonome constituée au fédéral, dédiée au soulagement de la pauvreté et à la réduction des obstacles aux opportunités.",
+        foot_legal_notice: "Organisation à but non lucratif constituée au fédéral (Loi canadienne sur les organisations à but non lucratif) | Nº d'organisation : 1154010-6 | Nº d'entreprise : 779321272RC0001",
+        foot_quick_title: "Navigation",
+        foot_work_title: "Nos actions",
+        foot_contact_title: "Contact & Secrétariat",
+        foot_loc: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)",
+        foot_copy: "&copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). Tous droits réservés.",
+        foot_corp_info: "Renseignements corporatifs",
+        foot_privacy: "Politique de confidentialité",
+        foot_contact: "Contacter le secrétariat"
       }
     };
 
@@ -2337,72 +1604,47 @@
       const elements = document.querySelectorAll('[data-i18n]');
       elements.forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translations && translations[lang] && translations[lang][key] !== undefined) {
+        if (translations[lang] && translations[lang][key]) {
           el.innerHTML = translations[lang][key];
         }
       });
 
-      const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
-      placeholders.forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (translations && translations[lang] && translations[lang][key] !== undefined) {
-          el.placeholder = translations[lang][key];
+      // Update bilingual document links and downloads
+      document.querySelectorAll('[data-i18n-href]').forEach(el => {
+        const key = el.getAttribute('data-i18n-href');
+        if (translations[lang] && translations[lang][key]) {
+          el.setAttribute('href', translations[lang][key]);
+        }
+      });
+      document.querySelectorAll('[data-i18n-download]').forEach(el => {
+        const key = el.getAttribute('data-i18n-download');
+        if (translations[lang] && translations[lang][key]) {
+          el.setAttribute('download', translations[lang][key]);
         }
       });
 
-            const btnEn = document.getElementById('btn-lang-en');
+      const btnEn = document.getElementById('btn-lang-en');
       const btnFr = document.getElementById('btn-lang-fr');
-      if (btnEn && btnFr) {
-        if (lang === 'en') {
-          btnEn.classList.add('active');
-          btnEn.style.setProperty('background', 'var(--secondary)', 'important');
-          btnEn.style.setProperty('color', '#ffffff', 'important');
-          btnFr.classList.remove('active');
-          btnFr.style.setProperty('background', 'transparent', 'important');
-          btnFr.style.setProperty('color', '#cbd5e1', 'important');
-        } else {
-          btnFr.classList.add('active');
-          btnFr.style.setProperty('background', 'var(--secondary)', 'important');
-          btnFr.style.setProperty('color', '#ffffff', 'important');
-          btnEn.classList.remove('active');
-          btnEn.style.setProperty('background', 'transparent', 'important');
-          btnEn.style.setProperty('color', '#cbd5e1', 'important');
-        }
+      if (btnEn) {
+        btnEn.classList.toggle('active', lang === 'en');
+        btnEn.style.background = (lang === 'en') ? 'var(--secondary)' : 'transparent';
+        btnEn.style.color = (lang === 'en') ? '#ffffff' : '#cbd5e1';
+      }
+      if (btnFr) {
+        btnFr.classList.toggle('active', lang === 'fr');
+        btnFr.style.background = (lang === 'fr') ? 'var(--secondary)' : 'transparent';
+        btnFr.style.color = (lang === 'fr') ? '#ffffff' : '#cbd5e1';
       }
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      let savedLang = 'en';
-      try { savedLang = localStorage.getItem('ybsp_lang') || 'en'; } catch(e) {}
-      if (savedLang === 'fr') setLanguage('fr');
+    document.addEventListener('DOMContentLoaded', function() {
+      let currentLang = 'en';
+      try {
+        const saved = localStorage.getItem('ybsp_lang');
+        if (saved === 'fr' || saved === 'en') currentLang = saved;
+      } catch(e) {}
+      setLanguage(currentLang);
     });
-
-        function toggleMobileNav() {
-      const navMenu = document.querySelector('.nav-menu');
-      const btn = document.getElementById('mobileNavToggle') || document.querySelector('.mobile-toggle') || document.querySelector('.nav-toggle-btn');
-      if (!navMenu) return;
-
-      const isOpen = navMenu.classList.contains('is-active') || navMenu.classList.contains('show');
-      if (isOpen) {
-        navMenu.classList.remove('is-active');
-        navMenu.classList.remove('show');
-        if (btn) {
-          btn.classList.remove('is-active');
-          btn.setAttribute('aria-expanded', 'false');
-        }
-        document.body.style.overflow = '';
-      } else {
-        navMenu.classList.add('is-active');
-        navMenu.classList.add('show');
-        if (btn) {
-          btn.classList.add('is-active');
-          btn.setAttribute('aria-expanded', 'true');
-        }
-        document.body.style.overflow = 'hidden';
-      }
-    }
-
   </script>
-
 </body>
 </html>
