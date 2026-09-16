@@ -475,12 +475,7 @@
       padding: 70px 0 30px;
       font-size: 0.88rem;
     }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-      gap: 36px;
-      margin-bottom: 50px;
-    }
+    .footer-grid { display: grid !important; grid-template-columns: 1fr 1fr 1.2fr !important; gap: 40px !important; margin-bottom: 50px !important; width: 100% !important; }
     .footer-col h4 {
       color: #ffffff; font-size: 1rem; font-weight: 700; margin-bottom: 18px;
       position: relative; padding-bottom: 8px;
@@ -745,6 +740,23 @@
 
     /* UNIFIED MOBILE NAVIGATION DRAWER (MAX-WIDTH: 991px) */
     @media (max-width: 991px) {
+      /* Subnav Tablet & Mobile Scroll */
+      .page-subnav {
+        position: static !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        width: 100% !important;
+      }
+      .subnav-list {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 16px !important;
+        padding: 10px 16px !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+      }
+
       .main-header {
         position: sticky !important;
         top: 0 !important;
@@ -922,7 +934,167 @@
       }
     }
 
-</style>
+
+    /* ==========================================================================
+       GLOBAL RESPONSIVE ARCHITECTURE & GRID SYSTEM (v29 Mobile Fix)
+       ========================================================================== */
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100vw !important;
+      width: 100% !important;
+      margin: 0;
+      padding: 0;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    img, svg, video {
+      max-width: 100%;
+      height: auto;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 24px;
+      padding-right: 24px;
+      box-sizing: border-box;
+    }
+    @media (max-width: 640px) {
+      .container {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+
+    /* Standard Responsive Grids */
+    .responsive-grid-4 {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 24px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .responsive-grid-3 {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 24px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .responsive-grid-2 {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 28px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .responsive-grid-5 {
+      display: grid !important;
+      grid-template-columns: repeat(5, 1fr) !important;
+      gap: 16px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .responsive-grid-split {
+      display: grid !important;
+      grid-template-columns: 1.2fr 0.8fr !important;
+      gap: 36px !important;
+      align-items: center !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .responsive-grid-split-rev {
+      display: grid !important;
+      grid-template-columns: 0.8fr 1.2fr !important;
+      gap: 36px !important;
+      align-items: center !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Tablet Media Query (max-width: 991px) */
+    @media (max-width: 991px) {
+      .responsive-grid-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+      }
+      .responsive-grid-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+      }
+      .responsive-grid-5 {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 14px !important;
+      }
+      .responsive-grid-split, .responsive-grid-split-rev {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+      }
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 32px !important;
+      }
+    }
+
+    /* Mobile Media Query (max-width: 767px) */
+    @media (max-width: 767px) {
+      .responsive-grid-4,
+      .responsive-grid-3,
+      .responsive-grid-2,
+      .responsive-grid-split,
+      .responsive-grid-split-rev,
+      .team-grid,
+      .albums-container,
+      .donate-layout,
+      .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+      .responsive-grid-5 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+      }
+      .section-title {
+        font-size: 1.55rem !important;
+        line-height: 1.25 !important;
+      }
+      .page-hero h1, .hero-content h1 {
+        font-size: 1.75rem !important;
+        line-height: 1.25 !important;
+      }
+      /* Subnav Touch Horizontal Scroll */
+      .page-subnav {
+        position: static !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        width: 100% !important;
+        background: #ffffff !important;
+        border-bottom: 1px solid var(--border-color) !important;
+      }
+      .subnav-list {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 16px !important;
+        padding: 10px 16px !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        margin: 0 !important;
+      }
+      .subnav-list::-webkit-scrollbar { display: none !important; }
+      .subnav-item a {
+        font-size: 0.84rem !important;
+        white-space: nowrap !important;
+        padding-bottom: 4px !important;
+      }
+    }
+
+  </style>
 </head>
 <body>
 <!-- TOP UTILITY BAR -->
@@ -1106,7 +1278,7 @@
           Practical initiatives designed to address immediate hardships while opening sustainable pathways to long-term opportunity.
         </p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px;">
+<div class="responsive-grid-3" style="margin-top: 40px;">
 <!-- PILLAR 1 -->
 <div style="background: #ffffff; border-radius: var(--radius-md); padding: 36px 28px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; border-top: 5px solid var(--secondary);">
 <div>
@@ -1156,7 +1328,7 @@
           YBSP Canada creates practical pathways for people facing systemic social and economic obstacles to participation and advancement.
         </p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 36px;">
+<div class="responsive-grid-3" style="margin-top: 36px;">
 <div style="background:#ffffff; border-radius:var(--radius-md); padding:26px 22px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
 <div style="width:46px; height:46px; border-radius:12px; background:rgba(14, 165, 233, 0.1); color:var(--secondary); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
@@ -1228,7 +1400,7 @@
     <div class="container">
       
       <!-- 3 COLUMNS: QUICK LINKS, GET INVOLVED, CONTACT & SECRETARIAT -->
-      <div class="footer-grid" style="display:grid; grid-template-columns:1fr 1fr 1.2fr; gap:40px; margin-bottom:50px;">
+      <div class="footer-grid" style="margin-bottom:50px;">
         
         <!-- COL 1: QUICK LINKS -->
         <div class="footer-col">
@@ -1677,6 +1849,12 @@
         const key = el.getAttribute('data-i18n-download');
         if (translations[lang] && translations[lang][key]) {
           el.setAttribute('download', translations[lang][key]);
+        }
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+          el.setAttribute('placeholder', translations[lang][key]);
         }
       });
 

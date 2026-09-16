@@ -540,12 +540,7 @@
       padding: 80px 0 30px;
       font-size: 0.9rem;
     }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-      gap: 40px;
-      margin-bottom: 60px;
-    }
+    .footer-grid { display: grid !important; grid-template-columns: 1fr 1fr 1.2fr !important; gap: 40px !important; margin-bottom: 50px !important; width: 100% !important; }
     .footer-col h4 {
       color: #ffffff;
       font-size: 1.05rem;
@@ -836,6 +831,23 @@
 
     /* UNIFIED MOBILE NAVIGATION DRAWER (MAX-WIDTH: 991px) */
     @media (max-width: 991px) {
+      /* Subnav Tablet & Mobile Scroll */
+      .page-subnav {
+        position: static !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        width: 100% !important;
+      }
+      .subnav-list {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 16px !important;
+        padding: 10px 16px !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+      }
+
       .main-header {
         position: sticky !important;
         top: 0 !important;
@@ -1013,7 +1025,167 @@
       }
     }
 
-</style>
+
+    /* ==========================================================================
+       GLOBAL RESPONSIVE ARCHITECTURE & GRID SYSTEM (v29 Mobile Fix)
+       ========================================================================== */
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100vw !important;
+      width: 100% !important;
+      margin: 0;
+      padding: 0;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    img, svg, video {
+      max-width: 100%;
+      height: auto;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 24px;
+      padding-right: 24px;
+      box-sizing: border-box;
+    }
+    @media (max-width: 640px) {
+      .container {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+
+    /* Standard Responsive Grids */
+    .responsive-grid-4 {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 24px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .responsive-grid-3 {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 24px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .responsive-grid-2 {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 28px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .responsive-grid-5 {
+      display: grid !important;
+      grid-template-columns: repeat(5, 1fr) !important;
+      gap: 16px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .responsive-grid-split {
+      display: grid !important;
+      grid-template-columns: 1.2fr 0.8fr !important;
+      gap: 36px !important;
+      align-items: center !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .responsive-grid-split-rev {
+      display: grid !important;
+      grid-template-columns: 0.8fr 1.2fr !important;
+      gap: 36px !important;
+      align-items: center !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Tablet Media Query (max-width: 991px) */
+    @media (max-width: 991px) {
+      .responsive-grid-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+      }
+      .responsive-grid-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+      }
+      .responsive-grid-5 {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 14px !important;
+      }
+      .responsive-grid-split, .responsive-grid-split-rev {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+      }
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 32px !important;
+      }
+    }
+
+    /* Mobile Media Query (max-width: 767px) */
+    @media (max-width: 767px) {
+      .responsive-grid-4,
+      .responsive-grid-3,
+      .responsive-grid-2,
+      .responsive-grid-split,
+      .responsive-grid-split-rev,
+      .team-grid,
+      .albums-container,
+      .donate-layout,
+      .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+      .responsive-grid-5 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+      }
+      .section-title {
+        font-size: 1.55rem !important;
+        line-height: 1.25 !important;
+      }
+      .page-hero h1, .hero-content h1 {
+        font-size: 1.75rem !important;
+        line-height: 1.25 !important;
+      }
+      /* Subnav Touch Horizontal Scroll */
+      .page-subnav {
+        position: static !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        width: 100% !important;
+        background: #ffffff !important;
+        border-bottom: 1px solid var(--border-color) !important;
+      }
+      .subnav-list {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 16px !important;
+        padding: 10px 16px !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        margin: 0 !important;
+      }
+      .subnav-list::-webkit-scrollbar { display: none !important; }
+      .subnav-item a {
+        font-size: 0.84rem !important;
+        white-space: nowrap !important;
+        padding-bottom: 4px !important;
+      }
+    }
+
+  </style>
 </head>
 <body>
 
@@ -1164,7 +1336,7 @@
       <div class="featured-card">
         <div class="featured-content">
           <span class="badge-spotlight" data-i18n="feat_badge">Spotlight Story</span>
-          <div class="featured-date">SEPTEMBER 2026 • 5 MIN READ</div>
+          <div class="featured-date" data-i18n="feat_meta">SEPTEMBER 2026 • 5 MIN READ</div>
           <h3 class="featured-title" data-i18n="feat_title">Launching the 2026 Youth Mentorship & Career Readiness Cohort</h3>
           <p class="featured-lead" data-i18n="feat_desc">
             Empowering 150 newcomer, diaspora, and equity-deserving youth across Canada with 1-on-1 executive mentorship, digital business competencies, and career placement pathways.
@@ -1194,7 +1366,7 @@
             <div class="article-meta">
               <span class="article-tag" data-i18n="art1_tag">Program Expansion</span>
               <span>•</span>
-              <span>AUG 28, 2026</span>
+              <span data-i18n="art1_date">AUG 28, 2026</span>
             </div>
             <h4 class="article-title" data-i18n="art1_title">Expanding the 2026 Youth Mentorship & Employment Cohort</h4>
             <p class="article-excerpt" data-i18n="art1_desc">
@@ -1211,7 +1383,7 @@
             <div class="article-meta">
               <span class="article-tag" data-i18n="art2_tag">International Synergy</span>
               <span>•</span>
-              <span>JUL 14, 2026</span>
+              <span data-i18n="art2_date">JUL 14, 2026</span>
             </div>
             <h4 class="article-title" data-i18n="art2_title">Spotlight on YBSP Burundi: Rural Youth Entrepreneurship Hub</h4>
             <p class="article-excerpt" data-i18n="art2_desc">
@@ -1228,7 +1400,7 @@
             <div class="article-meta">
               <span class="article-tag" data-i18n="art3_tag">Governance</span>
               <span>•</span>
-              <span>JUN 19, 2026</span>
+              <span data-i18n="art3_date">JUN 19, 2026</span>
             </div>
             <h4 class="article-title" data-i18n="art3_title">YBSP Canada Files Annual Corporate Return with Corporations Canada</h4>
             <p class="article-excerpt" data-i18n="art3_desc">
@@ -1245,7 +1417,7 @@
             <div class="article-meta">
               <span class="article-tag" data-i18n="art4_tag">Community Ecology</span>
               <span>•</span>
-              <span>MAY 22, 2026</span>
+              <span data-i18n="art4_date">MAY 22, 2026</span>
             </div>
             <h4 class="article-title" data-i18n="art4_title">Youth Climate & Shoreline Clean-Up Mobilization in Ottawa-Gatineau</h4>
             <p class="article-excerpt" data-i18n="art4_desc">
@@ -1262,7 +1434,7 @@
             <div class="article-meta">
               <span class="article-tag" data-i18n="art5_tag">Donor Transparency</span>
               <span>•</span>
-              <span>APR 10, 2026</span>
+              <span data-i18n="art5_date">APR 10, 2026</span>
             </div>
             <h4 class="article-title" data-i18n="art5_title">Financial Transparency & Donor Impact: Funding Tangible Outcomes</h4>
             <p class="article-excerpt" data-i18n="art5_desc">
@@ -1279,7 +1451,7 @@
             <div class="article-meta">
               <span class="article-tag" data-i18n="art6_tag">Mental Health</span>
               <span>•</span>
-              <span>MAR 15, 2026</span>
+              <span data-i18n="art6_date">MAR 15, 2026</span>
             </div>
             <h4 class="article-title" data-i18n="art6_title">Breaking Cultural Stigmas Around Youth Mental Health in the Diaspora</h4>
             <p class="article-excerpt" data-i18n="art6_desc">
@@ -1305,17 +1477,17 @@
 
           <div class="press-list">
             <div class="press-item">
-              <span class="press-date">AUG 2026</span>
+              <span class="press-date" data-i18n="pr_date_1">AUG 2026</span>
               <a href="docs/YBSP_Canada_Press_Release_Gala_2026.pdf" data-i18n-href="pdf_pr_gala" data-i18n-download="pdf_pr_gala_fn" target="_blank" class="press-link" data-i18n="pr1_title">YBSP Canada Announces Annual Solidarity Gala Date in Gatineau</a>
               <a href="docs/YBSP_Canada_Press_Release_Gala_2026.pdf" target="_blank" download="YBSP_Canada_Press_Release_Gala_2026.pdf" class="press-tag" style="text-decoration:none; cursor:pointer;" title="Download PDF">PDF ↗</a>
             </div>
             <div class="press-item">
-              <span class="press-date">JUL 2026</span>
+              <span class="press-date" data-i18n="pr_date_2">JUL 2026</span>
               <a href="docs/YBSP_Canada_Burundi_Cooperation_Statement.pdf" data-i18n-href="pdf_burundi" data-i18n-download="pdf_burundi_fn" target="_blank" class="press-link" data-i18n="pr2_title">Memorandum of Cooperation Renewed with YBSP Burundi</a>
               <a href="docs/YBSP_Canada_Burundi_Cooperation_Statement.pdf" target="_blank" download="YBSP_Canada_Burundi_Cooperation_Statement.pdf" class="press-tag" style="text-decoration:none; cursor:pointer;" title="Download PDF">PDF ↗</a>
             </div>
             <div class="press-item">
-              <span class="press-date">APR 2026</span>
+              <span class="press-date" data-i18n="pr_date_3">APR 2026</span>
               <a href="docs/YBSP_Canada_Financial_Transparency_Statement.pdf" data-i18n-href="pdf_transparency" data-i18n-download="pdf_transparency_fn" target="_blank" class="press-link" data-i18n="pr3_title">Release of 2025 Annual Impact & Financial Transparency Statement</a>
               <a href="docs/YBSP_Canada_Financial_Transparency_Statement.pdf" target="_blank" download="YBSP_Canada_Financial_Transparency_Statement.pdf" class="press-tag" style="text-decoration:none; cursor:pointer;" title="Download PDF">PDF ↗</a>
             </div>
@@ -1354,7 +1526,7 @@
       <h2 data-i18n="cta_title">Never Miss a Milestone</h2>
       <p data-i18n="cta_desc">Subscribe to our quarterly community bulletin for verified impact reports, upcoming youth cohorts, and bilateral project stories.</p>
       <form class="cta-form" name="newsletter-subscribe" method="POST" data-netlify="true" onsubmit="event.preventDefault(); alert('Thank you for subscribing to YBSP Canada updates!');">
-        <input type="email" class="cta-input" placeholder="Enter your email address" required aria-label="Email address">
+        <input type="email" class="cta-input" placeholder="Enter your email address" data-i18n-placeholder="ph_newsletter" required aria-label="Email address">
         <button type="submit" class="btn-subscribe" data-i18n="cta_btn">Subscribe to News</button>
       </form>
     </div>
@@ -1366,7 +1538,7 @@
     <div class="container">
       
       <!-- 3 COLUMNS: QUICK LINKS, GET INVOLVED, CONTACT & SECRETARIAT -->
-      <div class="footer-grid" style="display:grid; grid-template-columns:1fr 1fr 1.2fr; gap:40px; margin-bottom:50px;">
+      <div class="footer-grid" style="margin-bottom:50px;">
         
         <!-- COL 1: QUICK LINKS -->
         <div class="footer-col">
@@ -1539,6 +1711,24 @@
 
     const translations = {
       en: {
+        badge_pdf: "PDF",
+        media_file1: "YBSP Canada Fact Sheet & Overview (PDF)",
+        media_file2: "Official Brand Guidelines & Logo Pack (.ZIP)",
+        media_file3: "Board Biographies & Governance Charter",
+
+        feat_meta: "SEPTEMBER 2026 • 5 MIN READ",
+        pr_date_1: "AUG 2026",
+        pr_date_2: "JUL 2026",
+        pr_date_3: "APR 2026",
+        art1_date: "AUG 28, 2026",
+        art2_date: "JUL 14, 2026",
+        art3_date: "JUN 19, 2026",
+        art4_date: "MAY 22, 2026",
+        art5_date: "APR 10, 2026",
+        art6_date: "MAR 15, 2026",
+
+        ph_newsletter: "Enter your email address",
+
         pdf_pr_gala: "docs/YBSP_Canada_Press_Release_Gala_2026.pdf",
         pdf_pr_gala_fn: "YBSP_Canada_Press_Release_Gala_2026.pdf",
         pdf_burundi: "docs/YBSP_Canada_Burundi_Cooperation_Statement.pdf",
@@ -1688,6 +1878,24 @@
       "footer_transparency": "Governance &amp; Filings"
 },
       fr: {
+        badge_pdf: "PDF",
+        media_file1: "Fiche d'information institutionnelle et vue d'ensemble (PDF)",
+        media_file2: "Guide officiel des normes graphiques & Pack logos (.ZIP)",
+        media_file3: "Biographies des administrateurs & Charte de gouvernance",
+
+        feat_meta: "SEPTEMBRE 2026 • 5 MIN DE LECTURE",
+        pr_date_1: "AOÛT 2026",
+        pr_date_2: "JUIL 2026",
+        pr_date_3: "AVR 2026",
+        art1_date: "28 AOÛT 2026",
+        art2_date: "14 JUILLET 2026",
+        art3_date: "19 JUIN 2026",
+        art4_date: "22 MAI 2026",
+        art5_date: "10 AVRIL 2026",
+        art6_date: "15 MARS 2026",
+
+        ph_newsletter: "Entrez votre adresse courriel",
+
         pdf_pr_gala: "docs/YBSP_Canada_Press_Release_Gala_2026_FR.pdf",
         pdf_pr_gala_fn: "YBSP_Canada_Communique_Presse_Gala_2026.pdf",
         pdf_burundi: "docs/YBSP_Canada_Burundi_Cooperation_Statement_FR.pdf",
@@ -1851,6 +2059,12 @@
         const key = el.getAttribute('data-i18n-download');
         if (translations[lang] && translations[lang][key]) {
           el.setAttribute('download', translations[lang][key]);
+        }
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+          el.setAttribute('placeholder', translations[lang][key]);
         }
       });
 

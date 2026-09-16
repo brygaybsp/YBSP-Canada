@@ -474,12 +474,7 @@
       padding: 70px 0 30px;
       font-size: 0.88rem;
     }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-      gap: 36px;
-      margin-bottom: 50px;
-    }
+    .footer-grid { display: grid !important; grid-template-columns: 1fr 1fr 1.2fr !important; gap: 40px !important; margin-bottom: 50px !important; width: 100% !important; }
     .footer-col h4 {
       color: #ffffff; font-size: 1rem; font-weight: 700; margin-bottom: 18px;
       position: relative; padding-bottom: 8px;
@@ -680,6 +675,23 @@
 
     /* UNIFIED MOBILE NAVIGATION DRAWER (MAX-WIDTH: 991px) */
     @media (max-width: 991px) {
+      /* Subnav Tablet & Mobile Scroll */
+      .page-subnav {
+        position: static !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        width: 100% !important;
+      }
+      .subnav-list {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 16px !important;
+        padding: 10px 16px !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+      }
+
       .main-header {
         position: sticky !important;
         top: 0 !important;
@@ -857,7 +869,167 @@
       }
     }
 
-</style>
+
+    /* ==========================================================================
+       GLOBAL RESPONSIVE ARCHITECTURE & GRID SYSTEM (v29 Mobile Fix)
+       ========================================================================== */
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100vw !important;
+      width: 100% !important;
+      margin: 0;
+      padding: 0;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    img, svg, video {
+      max-width: 100%;
+      height: auto;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 24px;
+      padding-right: 24px;
+      box-sizing: border-box;
+    }
+    @media (max-width: 640px) {
+      .container {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+
+    /* Standard Responsive Grids */
+    .responsive-grid-4 {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 24px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .responsive-grid-3 {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 24px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .responsive-grid-2 {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 28px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .responsive-grid-5 {
+      display: grid !important;
+      grid-template-columns: repeat(5, 1fr) !important;
+      gap: 16px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .responsive-grid-split {
+      display: grid !important;
+      grid-template-columns: 1.2fr 0.8fr !important;
+      gap: 36px !important;
+      align-items: center !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .responsive-grid-split-rev {
+      display: grid !important;
+      grid-template-columns: 0.8fr 1.2fr !important;
+      gap: 36px !important;
+      align-items: center !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Tablet Media Query (max-width: 991px) */
+    @media (max-width: 991px) {
+      .responsive-grid-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+      }
+      .responsive-grid-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+      }
+      .responsive-grid-5 {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 14px !important;
+      }
+      .responsive-grid-split, .responsive-grid-split-rev {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+      }
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 32px !important;
+      }
+    }
+
+    /* Mobile Media Query (max-width: 767px) */
+    @media (max-width: 767px) {
+      .responsive-grid-4,
+      .responsive-grid-3,
+      .responsive-grid-2,
+      .responsive-grid-split,
+      .responsive-grid-split-rev,
+      .team-grid,
+      .albums-container,
+      .donate-layout,
+      .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+      .responsive-grid-5 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+      }
+      .section-title {
+        font-size: 1.55rem !important;
+        line-height: 1.25 !important;
+      }
+      .page-hero h1, .hero-content h1 {
+        font-size: 1.75rem !important;
+        line-height: 1.25 !important;
+      }
+      /* Subnav Touch Horizontal Scroll */
+      .page-subnav {
+        position: static !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        width: 100% !important;
+        background: #ffffff !important;
+        border-bottom: 1px solid var(--border-color) !important;
+      }
+      .subnav-list {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 16px !important;
+        padding: 10px 16px !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        margin: 0 !important;
+      }
+      .subnav-list::-webkit-scrollbar { display: none !important; }
+      .subnav-item a {
+        font-size: 0.84rem !important;
+        white-space: nowrap !important;
+        padding-bottom: 4px !important;
+      }
+    }
+
+  </style>
 </head>
 <body>
 
@@ -1019,7 +1191,7 @@
         </p>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; margin-bottom:45px;">
+      <div class="responsive-grid-4" style="margin-bottom:45px;">
         <div style="background:var(--bg-slate); border-radius:var(--radius-md); padding:24px 20px; border:1px solid var(--border-color); text-align:center;">
           <div style="font-size:2rem; margin-bottom:10px;">🤝</div>
           <h4 style="font-size:1.05rem; color:var(--primary); margin-bottom:6px;" data-i18n="vol_track1_t">Youth Mentorship</h4>
@@ -1064,34 +1236,34 @@
           <div class="form-grid-2">
             <div class="form-group">
               <label class="form-label" for="v-name" data-i18n="f_label_name">Full Name *</label>
-              <input type="text" id="v-name" class="form-input" required placeholder="e.g. Marie Tremblay">
+              <input type="text" id="v-name" class="form-input" required placeholder="e.g. Marie Tremblay" data-i18n-placeholder="ph_v_name">
             </div>
             <div class="form-group">
               <label class="form-label" for="v-email" data-i18n="f_label_email">Email Address *</label>
-              <input type="email" id="v-email" class="form-input" required placeholder="e.g. marie@example.ca">
+              <input type="email" id="v-email" class="form-input" required placeholder="e.g. marie@example.ca" data-i18n-placeholder="ph_v_email">
             </div>
           </div>
 
           <div class="form-grid-2">
             <div class="form-group">
               <label class="form-label" for="v-city" data-i18n="f_label_city">City & Province *</label>
-              <input type="text" id="v-city" class="form-input" required placeholder="e.g. Gatineau, QC / Ottawa, ON">
+              <input type="text" id="v-city" class="form-input" required placeholder="e.g. Gatineau, QC / Ottawa, ON" data-i18n-placeholder="ph_v_city">
             </div>
             <div class="form-group">
               <label class="form-label" for="v-role" data-i18n="f_label_role">Primary Area of Interest *</label>
               <select id="v-role" class="form-select" required>
-                <option value="">Select an area...</option>
-                <option value="mentorship">Youth Career Mentorship</option>
-                <option value="community-support">Community Support & Food Relief</option>
-                <option value="skills-workshops">Skills & Digital Literacy Workshops</option>
-                <option value="events-admin">Events, Media & Administration</option>
+                <option value="" data-i18n="opt_inv_1">Select an area...</option>
+                <option value="mentorship" data-i18n="opt_inv_2">Youth Career Mentorship</option>
+                <option value="community-support" data-i18n="opt_inv_3">Community Support & Food Relief</option>
+                <option value="skills-workshops" data-i18n="opt_inv_4">Skills & Digital Literacy Workshops</option>
+                <option value="events-admin" data-i18n="opt_inv_5">Events, Media & Administration</option>
               </select>
             </div>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="v-msg" data-i18n="f_label_exp">Brief Background & Availability</label>
-            <textarea id="v-msg" class="form-textarea" rows="4" placeholder="Tell us about your background, professional experience, or why you want to support YBSP Canada..."></textarea>
+            <textarea id="v-msg" class="form-textarea" rows="4" placeholder="Tell us about your background, professional experience, or why you want to support YBSP Canada..." data-i18n-placeholder="ph_inv_msg"></textarea>
           </div>
 
           <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:12px;" data-i18n="btn_submit_app">Submit Volunteer Application</button>
@@ -1116,7 +1288,7 @@
       </div>
 
       <!-- HONEST ALLIANCES GRID -->
-      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; margin-bottom:45px;">
+      <div class="responsive-grid-3" style="margin-bottom:45px;">
         
         <!-- CARD 1: YBSP BURUNDI -->
         <div style="background:#ffffff; border-radius:var(--radius-md); padding:30px 24px; text-align:center; border:1px solid var(--border-color); box-shadow:var(--shadow-sm); display:flex; flex-direction:column; justify-content:space-between; border-top:4px solid var(--secondary);">
@@ -1125,13 +1297,11 @@
               <span style="font-weight:900; font-size:1.15rem; color:var(--primary);">YBSP Burundi 🇧🇮</span>
             </div>
             <h4 style="font-size:1.1rem; color:var(--primary); margin-bottom:6px;">YBSP Burundi</h4>
-            <span style="display:inline-block; font-size:0.75rem; font-weight:700; color:#059669; background:#dcfce7; padding:3px 10px; border-radius:50px; margin-bottom:12px;">Founding Sister Organization</span>
-            <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;">
-              Grassroots field execution in Burundi: #SororaIkaye education support, artisan toolkits, and vulnerable youth feeding.
-            </p>
+            <span data-i18n="part_sister_tag" style="display:inline-block; font-size:0.75rem; font-weight:700; color:#059669; background:#dcfce7; padding:3px 10px; border-radius:50px; margin-bottom:12px;">Founding Sister Organization</span>
+            <p data-i18n="part_burundi_desc" style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;">Grassroots field execution in Burundi: #SororaIkaye education support, artisan toolkits, and vulnerable youth feeding.</p>
           </div>
           <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color);">
-            <a href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark);">Visit ybspburundi.org ↗</a>
+            <a href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" data-i18n="part_burundi_link" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark);">Visit ybspburundi.org ↗</a>
           </div>
         </div>
 
@@ -1139,17 +1309,14 @@
         <div style="background:#ffffff; border-radius:var(--radius-md); padding:30px 24px; text-align:center; border:1px solid var(--border-color); box-shadow:var(--shadow-sm); display:flex; flex-direction:column; justify-content:space-between; border-top:4px solid var(--primary);">
           <div>
             <div style="height:65px; display:flex; align-items:center; justify-content:center; margin-bottom:12px; background:var(--bg-slate); border-radius:var(--radius-sm); border:1px dashed #cbd5e1;">
-              <span style="font-weight:800; font-size:1rem; color:var(--primary);">Academic & Student Coalitions</span>
+              <span data-i18n="part_acad_badge" style="font-weight:800; font-size:1rem; color:var(--primary);">Academic & Student Coalitions</span>
             </div>
-            <h4 style="font-size:1.1rem; color:var(--primary); margin-bottom:6px;">Post-Secondary Alliances</h4>
-            <span style="display:inline-block; font-size:0.75rem; font-weight:700; color:#4338ca; background:#e0e7ff; padding:3px 10px; border-radius:50px; margin-bottom:12px;">Academic Network</span>
-            <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;">
-              Connecting with Canadian post-secondary institutions and student associations for practicum or volunteer experience, subject to institutional approval.
-            </p>
+            <h4 data-i18n="part_acad_title" style="font-size:1.1rem; color:var(--primary); margin-bottom:6px;">Post-Secondary Alliances</h4>
+            <span data-i18n="part_acad_tag" style="display:inline-block; font-size:0.75rem; font-weight:700; color:#4338ca; background:#e0e7ff; padding:3px 10px; border-radius:50px; margin-bottom:12px;">Academic Network</span>
+            <p data-i18n="part_acad_desc" style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;">Connecting with Canadian post-secondary institutions and student associations for practicum or volunteer experience, subject to institutional approval.</p>
           </div>
           <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.8rem; font-weight:700; color:var(--text-light); text-transform:uppercase;">
-            Student Practicums
-          </div>
+            <span data-i18n="part_acad_sub">Student Practicums</span></div>
         </div>
 
         <!-- CARD 3: FUTURE PARTNERS CALLOUT -->
@@ -1158,14 +1325,12 @@
             <div style="height:65px; display:flex; align-items:center; justify-content:center; margin-bottom:12px; background:#ffffff; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
               <span style="font-weight:800; font-size:1.05rem; color:var(--secondary-dark);">+ Your Organization</span>
             </div>
-            <h4 style="font-size:1.1rem; color:var(--primary); margin-bottom:6px;">Institutional Partners</h4>
-            <span style="display:inline-block; font-size:0.75rem; font-weight:700; color:#b45309; background:#fef3c7; padding:3px 10px; border-radius:50px; margin-bottom:12px;">Open for Collaboration</span>
-            <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;">
-              We welcome Canadian corporate, foundation, and civic partners to co-create youth mentorship cohorts, community meals, and skills initiatives.
-            </p>
+            <h4 data-i18n="part_inst_title" style="font-size:1.1rem; color:var(--primary); margin-bottom:6px;">Institutional Partners</h4>
+            <span data-i18n="part_inst_tag" style="display:inline-block; font-size:0.75rem; font-weight:700; color:#b45309; background:#fef3c7; padding:3px 10px; border-radius:50px; margin-bottom:12px;">Open for Collaboration</span>
+            <p data-i18n="part_inst_desc" style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;">We welcome Canadian corporate, foundation, and civic partners to co-create youth mentorship cohorts, community meals, and skills initiatives.</p>
           </div>
           <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color);">
-            <a href="#partner-form" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark);">Submit Partnership Proposal ↓</a>
+            <a href="get-involved.html#partnerships" data-i18n="part_inst_btn" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark);">Submit Partnership Proposal ↓</a>
           </div>
         </div>
 
@@ -1193,23 +1358,23 @@
           <div class="form-grid-2">
             <div class="form-group">
               <label class="form-label" for="p-email" data-i18n="f_label_email">Official Email *</label>
-              <input type="email" id="p-email" class="form-input" required placeholder="e.g. partnerships@organization.ca">
+              <input type="email" id="p-email" class="form-input" required placeholder="e.g. partnerships@organization.ca" data-i18n-placeholder="ph_part_email">
             </div>
             <div class="form-group">
               <label class="form-label" for="p-type" data-i18n="f_label_part_type">Partnership Track *</label>
               <select id="p-type" class="form-select" required>
-                <option value="">Select track...</option>
-                <option value="meals">Community Support & Food Security Collaboration</option>
-                <option value="mentorship">Youth Career Mentorship & Workplace Readiness</option>
-                <option value="practicum">Academic Student Practicum & Internships</option>
-                <option value="grants">Community Grants & Social Innovation</option>
+                <option value="" data-i18n="opt_part_0">Select track...</option>
+                <option value="meals" data-i18n="opt_part_1">Community Support & Food Security Collaboration</option>
+                <option value="mentorship" data-i18n="opt_part_2">Youth Career Mentorship & Workplace Readiness</option>
+                <option value="practicum" data-i18n="opt_part_3">Academic Student Practicum & Internships</option>
+                <option value="grants" data-i18n="opt_part_4">Community Grants & Social Innovation</option>
               </select>
             </div>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="p-msg" data-i18n="f_label_prop">Proposed Areas of Collaboration</label>
-            <textarea id="p-msg" class="form-textarea" rows="4" placeholder="Briefly describe your proposed partnership idea or how our organizations can collaborate..."></textarea>
+            <textarea id="p-msg" class="form-textarea" rows="4" placeholder="Briefly describe your proposed partnership idea or how our organizations can collaborate..." data-i18n-placeholder="ph_part_msg"></textarea>
           </div>
 
           <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:12px;" data-i18n="btn_submit_part">Submit Partnership Inquiry</button>
@@ -1241,7 +1406,7 @@
     <div class="container">
       
       <!-- 3 COLUMNS: QUICK LINKS, GET INVOLVED, CONTACT & SECRETARIAT -->
-      <div class="footer-grid" style="display:grid; grid-template-columns:1fr 1fr 1.2fr; gap:40px; margin-bottom:50px;">
+      <div class="footer-grid" style="margin-bottom:50px;">
         
         <!-- COL 1: QUICK LINKS -->
         <div class="footer-col">
@@ -1386,6 +1551,42 @@
 
     const translations = {
       en: {
+        ph_v_name: "e.g. Marie Tremblay",
+        ph_v_email: "e.g. marie@example.ca",
+        ph_v_city: "e.g. Gatineau, QC / Ottawa, ON",
+
+        opt_part_0: "Select track...",
+        opt_part_1: "Community Support & Food Security Collaboration",
+        opt_part_2: "Youth Career Mentorship & Workplace Readiness",
+        opt_part_3: "Academic Student Practicum & Internships",
+        opt_part_4: "Community Grants & Social Innovation",
+        ph_part_org: "e.g. Canadian Community Foundation / University",
+        ph_part_name: "e.g. David Wilson, Director of Partnerships",
+        ph_part_email: "e.g. partnerships@organization.ca",
+        ph_part_msg: "Briefly describe your proposed partnership idea or how our organizations can collaborate...",
+
+        ph_inv_msg: "Tell us about your background, professional experience, or why you want to support YBSP Canada...",
+
+        opt_inv_1: "Select an area...",
+        opt_inv_2: "Youth Career Mentorship",
+        opt_inv_3: "Community Support & Food Relief",
+        opt_inv_4: "Skills & Digital Literacy Workshops",
+        opt_inv_5: "Events, Media & Administration",
+
+        part_sister_tag: "Founding Sister Organization",
+        part_burundi_desc: "Grassroots field execution in Burundi: #SororaIkaye education support, artisan toolkits, and vulnerable youth feeding.",
+        part_burundi_link: "Visit ybspburundi.org ↗",
+        part_acad_badge: "Academic & Student Coalitions",
+        part_acad_title: "Post-Secondary Alliances",
+        part_acad_tag: "Academic Network",
+        part_acad_desc: "Connecting with Canadian post-secondary institutions and student associations for practicum or volunteer experience, subject to institutional approval.",
+        part_acad_sub: "Student Practicums",
+        part_inst_badge: "+ Your Organization",
+        part_inst_title: "Institutional Partners",
+        part_inst_tag: "Open for Collaboration",
+        part_inst_desc: "We welcome Canadian corporate, foundation, and civic partners to co-create youth mentorship cohorts, community meals, and skills initiatives.",
+        part_inst_btn: "Submit Partnership Proposal ↓",
+
         footer_quick_links: "Quick Links",
         footer_involved: "Get Involved",
         footer_burundi_site: "YBSP Burundi Website ↗",
@@ -1491,6 +1692,42 @@
         foot_contact: "Contact Secretariat"
       },
       fr: {
+        ph_v_name: "ex. Marie Tremblay",
+        ph_v_email: "ex. marie@example.ca",
+        ph_v_city: "ex. Gatineau (QC) / Ottawa (ON)",
+
+        opt_part_0: "Sélectionnez un volet...",
+        opt_part_1: "Soutien communautaire & sécurité alimentaire",
+        opt_part_2: "Mentorat de carrière & préparation à l'emploi pour les jeunes",
+        opt_part_3: "Stages étudiants & partenariats académiques",
+        opt_part_4: "Subventions communautaires & innovation sociale",
+        ph_part_org: "ex. Fondation communautaire canadienne / Université",
+        ph_part_name: "ex. David Wilson, Directeur des partenariats",
+        ph_part_email: "ex. partenariats@organisation.ca",
+        ph_part_msg: "Décrivez brièvement votre proposition de partenariat ou la manière dont nos organisations peuvent collaborer...",
+
+        ph_inv_msg: "Parlez-nous de votre parcours, de votre expérience ou de vos motivations pour soutenir YBSP Canada...",
+
+        opt_inv_1: "Sélectionnez un domaine...",
+        opt_inv_2: "Mentorat de carrière pour les jeunes",
+        opt_inv_3: "Soutien communautaire & Secours alimentaire",
+        opt_inv_4: "Ateliers de compétences & Littératie numérique",
+        opt_inv_5: "Événements, médias & Administration",
+
+        part_sister_tag: "Organisation sœur fondatrice",
+        part_burundi_desc: "Actions directes sur le terrain au Burundi : soutien scolaire #SororaIkaye, trousses d'artisanat et secours alimentaire pour jeunes vulnérables.",
+        part_burundi_link: "Visiter ybspburundi.org ↗",
+        part_acad_badge: "Coalitions étudiantes & universitaires",
+        part_acad_title: "Alliances postsecondaires",
+        part_acad_tag: "Réseau académique",
+        part_acad_desc: "Collaborations avec les établissements postsecondaires canadiens et associations étudiantes pour des stages pratiques ou du bénévolat crédité (sous réserve d'approbation institutionnelle).",
+        part_acad_sub: "Stages étudiants",
+        part_inst_badge: "+ Votre organisation",
+        part_inst_title: "Partenaires institutionnels",
+        part_inst_tag: "Ouvert aux partenariats",
+        part_inst_desc: "Nous invitons les entreprises canadiennes, fondations et partenaires civiques à co-développer des cohortes de mentorat jeunesse, des repas communautaires et des formations.",
+        part_inst_btn: "Proposer un partenariat ↓",
+
         footer_quick_links: "Liens rapides",
         footer_involved: "S'impliquer",
         footer_burundi_site: "Site web YBSP Burundi ↗",
@@ -1620,6 +1857,12 @@
         const key = el.getAttribute('data-i18n-download');
         if (translations[lang] && translations[lang][key]) {
           el.setAttribute('download', translations[lang][key]);
+        }
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+          el.setAttribute('placeholder', translations[lang][key]);
         }
       });
 
