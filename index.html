@@ -170,20 +170,6 @@
     }
     .nav-arrow { width: 10px; height: 10px; fill: currentColor; }
 
-    /* Accessible dropdown toggle control */
-    .dropdown-toggle-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      border: none;
-      padding: 0;
-      margin: 0;
-      color: inherit;
-      cursor: pointer;
-    }
-
-
     .dropdown-menu {
       position: absolute;
       top: 100%;
@@ -754,6 +740,68 @@
 
     /* UNIFIED MOBILE NAVIGATION DRAWER (MAX-WIDTH: 991px) */
     @media (max-width: 991px) {
+
+      /* --- MOBILE ACCORDION NAVIGATION & SUBMENU STYLES --- */
+      .nav-item.has-dropdown {
+        width: 100% !important;
+      }
+      .nav-item-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        border-radius: 6px !important;
+        transition: background 0.2s !important;
+      }
+      .nav-item-header:hover,
+      .nav-item-header:focus-within {
+        background: #f1f5f9 !important;
+      }
+      .nav-menu .nav-item-header .nav-link,
+      #main-nav-menu .nav-item-header .nav-link {
+        flex: 1 !important;
+        padding: 10px 14px !important;
+        font-size: 1.02rem !important;
+        font-weight: 700 !important;
+        color: var(--text-main) !important;
+        text-decoration: none !important;
+        background: transparent !important;
+      }
+      .dropdown-toggle-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 48px !important;
+        height: 44px !important;
+        flex-shrink: 0 !important;
+        border: none !important;
+        background: transparent !important;
+        color: var(--primary) !important;
+        cursor: pointer !important;
+        touch-action: manipulation !important;
+        -webkit-tap-highlight-color: transparent !important;
+        transition: transform 0.25s ease-in-out !important;
+        transform: rotate(0deg) !important;
+      }
+      .dropdown-toggle-btn:focus-visible {
+        outline: 2px solid var(--secondary) !important;
+        outline-offset: -2px !important;
+        border-radius: 4px !important;
+      }
+      /* Rotates from pointing right › (0deg) to pointing down ˅ (90deg) */
+      .nav-item.has-dropdown.is-expanded .dropdown-toggle-btn {
+        transform: rotate(90deg) !important;
+      }
+
+      /* Specificity-proof dropdown visibility */
+      #main-nav-menu .nav-item.has-dropdown.is-expanded > .dropdown-menu,
+      .nav-menu .nav-item.has-dropdown.is-expanded > .dropdown-menu {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+
+
       /* Subnav Tablet & Mobile Scroll */
       .page-subnav {
         position: static !important;
@@ -855,42 +903,6 @@
         box-sizing: border-box !important;
         transition: all 0.25s ease-in-out !important;
       }
-      
-      /* Mobile Submenu Toggle Button & Indicator */
-      .dropdown-toggle-btn {
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        min-width: 44px !important;
-        min-height: 44px !important;
-        margin: -10px -14px -10px 0 !important;
-        padding: 0 14px !important;
-        cursor: pointer !important;
-        touch-action: manipulation !important;
-        -webkit-tap-highlight-color: transparent !important;
-        border: none !important;
-        background: transparent !important;
-        color: inherit !important;
-      }
-      .dropdown-toggle-btn:focus-visible {
-        outline: 2px solid var(--secondary) !important;
-        outline-offset: -2px !important;
-        border-radius: 4px !important;
-      }
-      .nav-item.has-dropdown .nav-arrow {
-        transform: rotate(-90deg) !important;
-        transition: transform 0.25s ease-in-out !important;
-        display: inline-block !important;
-      }
-      .nav-item.has-dropdown.is-expanded .nav-arrow {
-        transform: rotate(0deg) !important;
-      }
-      .nav-item.has-dropdown.is-expanded > .dropdown-menu {
-        display: block !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-      }
-
       .nav-item.has-dropdown.is-expanded > .dropdown-menu {
         display: block !important;
         opacity: 1 !important;
@@ -1157,6 +1169,30 @@
       }
     }
 
+  
+    /* --- DESKTOP SUBMENU TOGGLE ALIGNMENT --- */
+    .nav-item-header {
+      display: inline-flex;
+      align-items: center;
+    }
+    .dropdown-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      color: inherit;
+      cursor: pointer;
+      line-height: 1;
+    }
+    @media (min-width: 992px) {
+      .dropdown-toggle-btn {
+        transform: rotate(90deg) !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1216,10 +1252,10 @@
 <nav aria-label="Primary Navigation" class="nav-menu" id="main-nav-menu">
 <div class="nav-item"><a class="nav-link active" data-i18n="nav_home" href="index.html">Home</a></div>
 <div class="nav-item has-dropdown">
-<a class="nav-link" href="about.html">
+<div class="nav-item-header"><a class="nav-link" href="about.html">
 <span data-i18n="nav_about">About Us</span>
-<span aria-expanded="false" aria-label="Toggle About Us submenu" class="dropdown-toggle-btn" role="button" tabindex="0"><svg class="nav-arrow" viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
-</a>
+
+</a><button aria-expanded="false" aria-label="Toggle About Us submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_mission" href="about.html#mission">Mission &amp; Mandate</a>
 <a class="dropdown-link" data-i18n="nav_team" href="about.html#team">Executive Leadership</a>
@@ -1229,10 +1265,10 @@
 </div>
 </div>
 <div class="nav-item has-dropdown">
-<a class="nav-link" href="programs.html">
+<div class="nav-item-header"><a class="nav-link" href="programs.html">
 <span data-i18n="nav_programs">Programs</span>
-<span aria-expanded="false" aria-label="Toggle Programs submenu" class="dropdown-toggle-btn" role="button" tabindex="0"><svg class="nav-arrow" viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
-</a>
+
+</a><button aria-expanded="false" aria-label="Toggle Programs submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_community_support" href="programs.html#community-support">Community Support &amp; Poverty Relief</a>
 <a class="dropdown-link" data-i18n="nav_education_skills" href="programs.html#education-skills">Education, Skills &amp; Youth Opportunity</a>
@@ -1242,10 +1278,10 @@
 </div>
 </div>
 <div class="nav-item has-dropdown">
-<a class="nav-link" href="get-involved.html">
+<div class="nav-item-header"><a class="nav-link" href="get-involved.html">
 <span data-i18n="nav_involved">Get Involved</span>
-<span aria-expanded="false" aria-label="Toggle Get Involved submenu" class="dropdown-toggle-btn" role="button" tabindex="0"><svg class="nav-arrow" viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
-</a>
+
+</a><button aria-expanded="false" aria-label="Toggle Get Involved submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_volunteer" href="get-involved.html#volunteer">Volunteer Application</a>
 <a class="dropdown-link" data-i18n="nav_membership" href="get-involved.html#membership">Become a Member</a>
@@ -1254,10 +1290,10 @@
 </div>
 </div>
 <div class="nav-item has-dropdown">
-<a class="nav-link" href="events.html">
+<div class="nav-item-header"><a class="nav-link" href="events.html">
 <span data-i18n="nav_events">Events</span>
-<span aria-expanded="false" aria-label="Toggle Events submenu" class="dropdown-toggle-btn" role="button" tabindex="0"><svg class="nav-arrow" viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
-</a>
+
+</a><button aria-expanded="false" aria-label="Toggle Events submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_calendar" href="events.html#calendar">Events Calendar</a>
 <a class="dropdown-link" data-i18n="nav_host" href="events.html#host">Host or Propose an Event</a>
@@ -1579,20 +1615,40 @@
         }
       });
 
-      // Accordion dropdown toggle on mobile (tap arrow to expand/collapse submenu)
+      // Accordion dropdown toggle on mobile (independent submenus)
       navMenu.querySelectorAll('.nav-item.has-dropdown .dropdown-toggle-btn').forEach(function(arrowBtn) {
         function toggleSubmenu(e) {
           if (window.innerWidth <= 991) {
-            e.preventDefault();
-            e.stopPropagation();
+            if (e) {
+              if (e.preventDefault) e.preventDefault();
+              if (e.stopPropagation) e.stopPropagation();
+            }
             const parentItem = arrowBtn.closest('.nav-item.has-dropdown');
             if (!parentItem) return;
+            const dropMenu = parentItem.querySelector('.dropdown-menu');
             const isExpanded = parentItem.classList.toggle('is-expanded');
             arrowBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+            
+            // Explicit inline style override as absolute safeguard against CSS specificity conflicts
+            if (dropMenu) {
+              if (isExpanded) {
+                dropMenu.style.setProperty('display', 'block', 'important');
+                dropMenu.style.setProperty('opacity', '1', 'important');
+                dropMenu.style.setProperty('visibility', 'visible', 'important');
+              } else {
+                dropMenu.style.removeProperty('display');
+                dropMenu.style.removeProperty('opacity');
+                dropMenu.style.removeProperty('visibility');
+              }
+            }
           }
         }
 
         arrowBtn.addEventListener('click', toggleSubmenu);
+        arrowBtn.addEventListener('touchstart', function(e) {
+          // Instant touch reaction on iOS / Android touch screens
+          toggleSubmenu(e);
+        }, { passive: false });
         arrowBtn.addEventListener('keydown', function(e) {
           if (e.key === 'Enter' || e.key === ' ') {
             toggleSubmenu(e);
@@ -1600,13 +1656,9 @@
         });
       });
 
-      // Close menu when clicking navigation links or submenu items
+      // Close menu when clicking regular navigation links or submenu items
       navMenu.querySelectorAll('a').forEach(function(link) {
         link.addEventListener('click', function(e) {
-          // If the click originated on the dropdown toggle button, do not navigate or close
-          if (e.target.closest('.dropdown-toggle-btn')) {
-            return;
-          }
           toggleMenu(false);
         });
       });
