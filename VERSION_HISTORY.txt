@@ -1,3 +1,32 @@
+Version 33.1
+Status: Completed / Targeted Maintenance Release (Mobile Hamburger Submenu Arrow Interaction & Navigation Fix)
+Baseline: Version 33 (100% Preserved)
+
+Completed:
+- Resolved Mobile Hamburger Submenu Arrow Interaction Bug (TASK 1):
+  * Root Cause Analysis:
+    1. In Version 33 HTML markup, nav items with dropdowns lacked the class 'has-dropdown' (only had 'nav-item'), preventing CSS accordion rules and JS querySelectors from matching.
+    2. The arrow SVG icon was an unisolated child of the parent <a> link tag without a dedicated control boundary. Any tap on the arrow triggered standard link navigation to the parent page instead of expanding the submenu.
+    3. The mobile JS toggle listener previously targeted the entire <a> tag, meaning even if bound, tapping parent link text would have prevented page navigation.
+  * Technical Fix:
+    1. Added 'has-dropdown' class to all 4 parent menu items containing submenus (About Us, Programs, Get Involved, Events) across all 10 templates.
+    2. Wrapped the arrow SVG in a dedicated, accessible toggle control (<span class="dropdown-toggle-btn" role="button" aria-label="Toggle submenu" aria-expanded="false" tabindex="0">).
+    3. Configured mobile CSS (max-width: 991px):
+       - .dropdown-toggle-btn given a 44x44px touch target on the right edge of the nav row.
+       - Arrow rotates -90deg (pointing right ›) when collapsed.
+       - Arrow transitions smoothly to 0deg (pointing down ˅) when expanded (.is-expanded).
+       - .dropdown-menu displays smoothly with display: block, opacity: 1, visibility: visible when .is-expanded.
+    4. Updated initMobileNav() JavaScript:
+       - Attached dedicated click and keydown (Enter/Space) handlers to .dropdown-toggle-btn.
+       - In mobile view (<= 991px), calling e.preventDefault() and e.stopPropagation() prevents the parent link from navigating away, keeping the user inside the mobile drawer while toggling .is-expanded.
+       - Tapping the parent link text itself (e.g. 'About Us') bypasses the arrow handler, executes normal page navigation, and closes the mobile drawer.
+       - Each submenu toggles independently without closing or breaking others.
+       - Tapping any submenu link (e.g. 'Mission & Mandate') navigates normally and closes the drawer.
+       - Desktop view (> 991px) remains 100% unaffected.
+- Verification:
+  * Tested across all 10 templates ('about.html', 'careers.html', 'contact.html', 'donate.html', 'events.html', 'get-involved.html', 'index.html', 'news-single.html', 'news.html', 'programs.html').
+  * Zero JavaScript errors, zero layout shifts, zero breaking changes.
+
 Version 33
 Status: Completed / Master Production Release (Seamless Lightbox Photo Loading & Dual Local/Online Fallback System)
 

@@ -146,6 +146,20 @@
     }
     .nav-arrow { width: 10px; height: 10px; fill: currentColor; }
 
+    /* Accessible dropdown toggle control */
+    .dropdown-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+      color: inherit;
+      cursor: pointer;
+    }
+
+
     .dropdown-menu {
       position: absolute;
       top: 100%;
@@ -932,6 +946,42 @@
         box-sizing: border-box !important;
         transition: all 0.25s ease-in-out !important;
       }
+      
+      /* Mobile Submenu Toggle Button & Indicator */
+      .dropdown-toggle-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-width: 44px !important;
+        min-height: 44px !important;
+        margin: -10px -14px -10px 0 !important;
+        padding: 0 14px !important;
+        cursor: pointer !important;
+        touch-action: manipulation !important;
+        -webkit-tap-highlight-color: transparent !important;
+        border: none !important;
+        background: transparent !important;
+        color: inherit !important;
+      }
+      .dropdown-toggle-btn:focus-visible {
+        outline: 2px solid var(--secondary) !important;
+        outline-offset: -2px !important;
+        border-radius: 4px !important;
+      }
+      .nav-item.has-dropdown .nav-arrow {
+        transform: rotate(-90deg) !important;
+        transition: transform 0.25s ease-in-out !important;
+        display: inline-block !important;
+      }
+      .nav-item.has-dropdown.is-expanded .nav-arrow {
+        transform: rotate(0deg) !important;
+      }
+      .nav-item.has-dropdown.is-expanded > .dropdown-menu {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+
       .nav-item.has-dropdown.is-expanded > .dropdown-menu {
         display: block !important;
         opacity: 1 !important;
@@ -1256,70 +1306,64 @@
         </div>
       </a>
 
-                        <nav id="main-nav-menu" class="nav-menu" aria-label="Primary Navigation">
-        <div class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></div>
-        
-        <div class="nav-item">
-          <a href="about.html" class="nav-link">
-            <span data-i18n="nav_about">About Us</span>
-            <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-          </a>
-          <div class="dropdown-menu">
-            <a href="about.html#mission" class="dropdown-link" data-i18n="nav_mission">Mission & Mandate</a>
-            <a href="about.html#team" class="dropdown-link" data-i18n="nav_team">Executive Leadership</a>
-            <a href="about.html#governance" class="dropdown-link" data-i18n="nav_governance">Board & Governance</a>
-            <a href="about.html#corporate" class="dropdown-link" data-i18n="nav_corporate">Corporate Filings</a>
-            <a href="about.html#synergy" class="dropdown-link" data-i18n="nav_burundi">Canada & Burundi</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <a href="programs.html" class="nav-link">
-            <span data-i18n="nav_programs">Programs</span>
-            <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-          </a>
-          <div class="dropdown-menu">
-            <a href="programs.html#community-support" class="dropdown-link" data-i18n="nav_community_support">Community Support & Poverty Relief</a>
-            <a href="programs.html#education-skills" class="dropdown-link" data-i18n="nav_education_skills">Education, Skills & Youth Opportunity</a>
-            <a href="programs.html#self-sufficiency" class="dropdown-link" data-i18n="nav_self_sufficiency">Pathways to Self-Sufficiency</a>
-            <a href="programs.html#burundi-initiative" class="dropdown-link" data-i18n="nav_burundi_prog">International / Burundi</a>
-            <a href="programs.html#sdgs" class="dropdown-link" data-i18n="nav_sdgs">UN SDGs Reference</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <a href="get-involved.html" class="nav-link">
-            <span data-i18n="nav_involved">Get Involved</span>
-            <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-          </a>
-          <div class="dropdown-menu">
-            <a href="get-involved.html#volunteer" class="dropdown-link" data-i18n="nav_volunteer">Volunteer Application</a>
-            <a href="get-involved.html#membership" class="dropdown-link" data-i18n="nav_membership">Become a Member</a>
-            <a href="get-involved.html#working-groups" class="dropdown-link" data-i18n="nav_working_groups">Member Working Groups</a>
-            <a href="get-involved.html#partnerships" class="dropdown-link" data-i18n="nav_partnerships">Institutional Partners</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <a href="events.html" class="nav-link">
-            <span data-i18n="nav_events">Events</span>
-            <svg class="nav-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-          </a>
-          <div class="dropdown-menu">
-            <a href="events.html#calendar" class="dropdown-link" data-i18n="nav_calendar">Events Calendar</a>
-            <a href="events.html#host" class="dropdown-link" data-i18n="nav_host">Host or Propose an Event</a>
-            <a href="events.html#gala" class="dropdown-link" data-i18n="nav_gala">Annual Solidarity Gala</a>
-            <a href="events.html#gallery" class="dropdown-link" data-i18n="nav_gallery">Authentic Photo Gallery</a>
-          </div>
-        </div>
-
-        <div class="nav-item"><a href="news.html" class="nav-link active" data-i18n="nav_news">News</a></div>
-        <div class="nav-item"><a href="careers.html" class="nav-link" data-i18n="nav_careers">Careers</a></div>
-        <div class="nav-item"><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></div>
-
-        <!-- ONE-LINE DONATE BUTTON -->
-        <a href="donate.html" class="btn-donate-nav" data-i18n="nav_donate" style="white-space:nowrap !important; display:inline-flex !important; align-items:center !important; justify-content:center !important;">Donate</a>
-      </nav>
+                        <nav aria-label="Primary Navigation" class="nav-menu" id="main-nav-menu">
+<div class="nav-item"><a class="nav-link" data-i18n="nav_home" href="index.html">Home</a></div>
+<div class="nav-item has-dropdown">
+<a class="nav-link" href="about.html">
+<span data-i18n="nav_about">About Us</span>
+<span aria-expanded="false" aria-label="Toggle About Us submenu" class="dropdown-toggle-btn" role="button" tabindex="0"><svg class="nav-arrow" viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+</a>
+<div class="dropdown-menu">
+<a class="dropdown-link" data-i18n="nav_mission" href="about.html#mission">Mission &amp; Mandate</a>
+<a class="dropdown-link" data-i18n="nav_team" href="about.html#team">Executive Leadership</a>
+<a class="dropdown-link" data-i18n="nav_governance" href="about.html#governance">Board &amp; Governance</a>
+<a class="dropdown-link" data-i18n="nav_corporate" href="about.html#corporate">Corporate Filings</a>
+<a class="dropdown-link" data-i18n="nav_burundi" href="about.html#synergy">Canada &amp; Burundi</a>
+</div>
+</div>
+<div class="nav-item has-dropdown">
+<a class="nav-link" href="programs.html">
+<span data-i18n="nav_programs">Programs</span>
+<span aria-expanded="false" aria-label="Toggle Programs submenu" class="dropdown-toggle-btn" role="button" tabindex="0"><svg class="nav-arrow" viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+</a>
+<div class="dropdown-menu">
+<a class="dropdown-link" data-i18n="nav_community_support" href="programs.html#community-support">Community Support &amp; Poverty Relief</a>
+<a class="dropdown-link" data-i18n="nav_education_skills" href="programs.html#education-skills">Education, Skills &amp; Youth Opportunity</a>
+<a class="dropdown-link" data-i18n="nav_self_sufficiency" href="programs.html#self-sufficiency">Pathways to Self-Sufficiency</a>
+<a class="dropdown-link" data-i18n="nav_burundi_prog" href="programs.html#burundi-initiative">International / Burundi</a>
+<a class="dropdown-link" data-i18n="nav_sdgs" href="programs.html#sdgs">UN SDGs Reference</a>
+</div>
+</div>
+<div class="nav-item has-dropdown">
+<a class="nav-link" href="get-involved.html">
+<span data-i18n="nav_involved">Get Involved</span>
+<span aria-expanded="false" aria-label="Toggle Get Involved submenu" class="dropdown-toggle-btn" role="button" tabindex="0"><svg class="nav-arrow" viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+</a>
+<div class="dropdown-menu">
+<a class="dropdown-link" data-i18n="nav_volunteer" href="get-involved.html#volunteer">Volunteer Application</a>
+<a class="dropdown-link" data-i18n="nav_membership" href="get-involved.html#membership">Become a Member</a>
+<a class="dropdown-link" data-i18n="nav_working_groups" href="get-involved.html#working-groups">Member Working Groups</a>
+<a class="dropdown-link" data-i18n="nav_partnerships" href="get-involved.html#partnerships">Institutional Partners</a>
+</div>
+</div>
+<div class="nav-item has-dropdown">
+<a class="nav-link" href="events.html">
+<span data-i18n="nav_events">Events</span>
+<span aria-expanded="false" aria-label="Toggle Events submenu" class="dropdown-toggle-btn" role="button" tabindex="0"><svg class="nav-arrow" viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+</a>
+<div class="dropdown-menu">
+<a class="dropdown-link" data-i18n="nav_calendar" href="events.html#calendar">Events Calendar</a>
+<a class="dropdown-link" data-i18n="nav_host" href="events.html#host">Host or Propose an Event</a>
+<a class="dropdown-link" data-i18n="nav_gala" href="events.html#gala">Annual Solidarity Gala</a>
+<a class="dropdown-link" data-i18n="nav_gallery" href="events.html#gallery">Authentic Photo Gallery</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link active" data-i18n="nav_news" href="news.html">News</a></div>
+<div class="nav-item"><a class="nav-link" data-i18n="nav_careers" href="careers.html">Careers</a></div>
+<div class="nav-item"><a class="nav-link" data-i18n="nav_contact" href="contact.html">Contact</a></div>
+<!-- ONE-LINE DONATE BUTTON -->
+<a class="btn-donate-nav" data-i18n="nav_donate" href="donate.html" style="white-space:nowrap !important; display:inline-flex !important; align-items:center !important; justify-content:center !important;">Donate</a>
+</nav>
                   <button class="nav-toggle-btn" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav(event)">
         <span></span>
         <span></span>
@@ -1695,35 +1739,34 @@
         }
       });
 
-      // Accordion dropdown toggle on mobile (collapsed by default so Donate button is visible)
-      navMenu.querySelectorAll('.nav-item.has-dropdown > a').forEach(function(dropdownToggle) {
-        dropdownToggle.addEventListener('click', function(e) {
+      // Accordion dropdown toggle on mobile (tap arrow to expand/collapse submenu)
+      navMenu.querySelectorAll('.nav-item.has-dropdown .dropdown-toggle-btn').forEach(function(arrowBtn) {
+        function toggleSubmenu(e) {
           if (window.innerWidth <= 991) {
             e.preventDefault();
             e.stopPropagation();
-            const parentItem = dropdownToggle.closest('.nav-item.has-dropdown');
+            const parentItem = arrowBtn.closest('.nav-item.has-dropdown');
             if (!parentItem) return;
-            const wasExpanded = parentItem.classList.contains('is-expanded');
-            
-            // Close all other dropdowns so only one section is open at a time
-            navMenu.querySelectorAll('.nav-item.has-dropdown.is-expanded').forEach(function(other) {
-              if (other !== parentItem) other.classList.remove('is-expanded');
-            });
-            
-            if (wasExpanded) {
-              parentItem.classList.remove('is-expanded');
-            } else {
-              parentItem.classList.add('is-expanded');
-            }
+            const isExpanded = parentItem.classList.toggle('is-expanded');
+            arrowBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+          }
+        }
+
+        arrowBtn.addEventListener('click', toggleSubmenu);
+        arrowBtn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            toggleSubmenu(e);
           }
         });
       });
 
-      // Close menu when clicking regular links or submenu items
+      // Close menu when clicking navigation links or submenu items
       navMenu.querySelectorAll('a').forEach(function(link) {
-        // Skip parent toggle links
-        if (link.matches('.nav-item.has-dropdown > a')) return;
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function(e) {
+          // If the click originated on the dropdown toggle button, do not navigate or close
+          if (e.target.closest('.dropdown-toggle-btn')) {
+            return;
+          }
           toggleMenu(false);
         });
       });
