@@ -32,24 +32,27 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       color: var(--text-main);
       background-color: var(--bg-white);
-      line-height: 1.7;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
     a { text-decoration: none; color: inherit; transition: var(--transition); }
     ul { list-style: none; }
     img { max-width: 100%; height: auto; display: block; }
-    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
-    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
 
     /* TOP UTILITY BAR */
     .top-bar {
       background-color: var(--primary-dark);
       color: #cbd5e1;
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       padding: 8px 0;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
@@ -60,15 +63,44 @@
       flex-wrap: wrap;
       gap: 12px;
     }
-    .top-bar-left, .top-bar-right { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .top-bar-left, .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
     .top-bar-item { display: inline-flex; align-items: center; gap: 6px; }
     .top-bar-item svg { width: 14px; height: 14px; fill: var(--accent); }
-    .badge-gov { background: rgba(255,255,255,0.1); color: #f1f5f9; padding: 2px 8px; border-radius: 4px; font-size: 0.74rem; }
-    .lang-switcher { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.12); border-radius: 4px; padding: 2px 6px; }
-    .lang-btn { background: transparent; border: none; color: #94a3b8; font-size: 0.75rem; font-weight: 600; cursor: pointer; padding: 2px 6px; border-radius: 3px; }
+    .badge-gov {
+      background: rgba(255,255,255,0.12);
+      color: #f8fafc;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 3px;
+      transition: var(--transition);
+    }
     .lang-btn.active, .lang-btn:hover { background: var(--secondary); color: #ffffff; }
 
-    /* MAIN HEADER */
+    /* MAIN NAVIGATION */
     .main-header {
       background-color: #ffffff;
       box-shadow: var(--shadow-sm);
@@ -76,24 +108,147 @@
       top: 0;
       z-index: 1000;
     }
-    .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 84px;
+    }
     .brand-logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0 !important; white-space: nowrap !important; }
     .logo-symbol {
-      width: 44px; height: 44px;
+      width: 48px;
+      height: 48px;
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      border-radius: 10px; display: flex; align-items: center; justify-content: center;
-      color: #fff; font-weight: 800; font-size: 1.2rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.3rem;
+      box-shadow: var(--shadow-md);
     }
     .logo-text { flex-shrink: 0 !important; white-space: nowrap !important; }
-    .logo-text h1 { font-size: 1.25rem; font-weight: 800; color: var(--primary); line-height: 1.1; }
+    .logo-text h1 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
     .logo-text span { font-size: 0.70rem; font-weight: 600; color: var(--secondary-dark); text-transform: uppercase; letter-spacing: 0.04em; display: block; white-space: nowrap !important; }
     .nav-menu { display: flex; align-items: center; gap: 2px; flex-wrap: nowrap; }
     .nav-item { position: relative; white-space: nowrap; }
     .nav-link { display: inline-flex; align-items: center; gap: 4px; padding: 7px 9px; font-size: 0.88rem; font-weight: 600; color: var(--primary); border-radius: var(--radius-sm); white-space: nowrap; }
-    .nav-link:hover, .nav-link.active { color: var(--secondary-dark); background-color: var(--bg-slate); }
+    .nav-link:hover, .nav-link.active {
+      color: var(--secondary-dark);
+      background-color: var(--bg-slate);
+    }
+    .nav-arrow { width: 10px; height: 10px; fill: currentColor; }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 320px;
+      width: max-content;
+      max-width: 390px;
+      background: #ffffff;
+      box-shadow: var(--shadow-lg);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      padding: 8px 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: var(--transition);
+      z-index: 100;
+    }
+    .nav-item:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .dropdown-link {
+      display: block;
+      padding: 9px 18px;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      font-weight: 500;
+     white-space: normal; line-height: 1.35; }
+    .dropdown-link:hover {
+      background-color: var(--bg-slate);
+      color: var(--secondary-dark);
+      padding-left: 22px;
+    }
     .btn-donate-nav { white-space: nowrap !important; min-width: max-content !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; background: var(--accent) !important; color: #ffffff !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 50px !important; margin-left: 8px !important; text-decoration: none !important; }
 
-    /* ARTICLE HEADER */
+    /* PAGE HERO */
+    .page-hero {
+      background: linear-gradient(rgba(13, 43, 69, 0.92), rgba(7, 25, 39, 0.96)), url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: #ffffff;
+      padding: 70px 0 80px;
+      text-align: center;
+    }
+    .breadcrumbs {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .breadcrumbs a { color: var(--accent); }
+    .page-hero h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .page-hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    /* FILTER TABS */
+    .filter-tabs-bar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 84px;
+      z-index: 900;
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      padding: 14px 0;
+    }
+    .filter-btn {
+      background: none;
+      border: none;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding-bottom: 8px;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--secondary);
+    }
+
+    /* FEATURED STORY BANNER */
+    .featured-section {
+      padding: 60px 0 40px;
+    }
+    
+    /* ARTICLE CONTENT STYLES */
     .article-header {
       padding: 50px 0 30px;
       border-bottom: 1px solid var(--border-color);
@@ -823,9 +978,41 @@
 </div>
 </div>
 <header class="main-header">
-<div class="nav-container nav-inner">
+<div class="container nav-inner">
 <a class="brand-logo" href="index.html">
-<div class="logo-symbol">Y</div>
+<svg class="brand-logo-svg" height="44" viewbox="0 0 120 120" width="44" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="50%" cy="50%" id="logoBurst" r="50%">
+<stop offset="0%" stop-color="#ffffff"></stop>
+<stop offset="25%" stop-color="#60a5fa" stop-opacity="0.85"></stop>
+<stop offset="60%" stop-color="#818cf8" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#0b1c3d" stop-opacity="0"></stop>
+</radialgradient>
+<lineargradient id="leafGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ef4444"></stop>
+<stop offset="100%" stop-color="#b91c1c"></stop>
+</lineargradient>
+</defs>
+<rect fill="#0b1c3d" height="120" rx="26" width="120"></rect>
+<circle cx="60" cy="60" fill="url(#logoBurst)" r="42"></circle>
+<line opacity="0.8" stroke="#93c5fd" stroke-width="2" x1="20" x2="100" y1="60" y2="60"></line>
+<line opacity="0.8" stroke="#93c5fd" stroke-width="2" x1="60" x2="60" y1="20" y2="100"></line>
+<line opacity="0.6" stroke="#c084fc" stroke-width="1.5" x1="32" x2="88" y1="32" y2="88"></line>
+<line opacity="0.6" stroke="#c084fc" stroke-width="1.5" x1="32" x2="88" y1="88" y2="32"></line>
+<g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8.5">
+<path d="M 28 26 L 46 50 L 46 68"></path>
+<path d="M 54 38 L 46 50"></path>
+<path d="M 62 28 L 62 66"></path>
+<path d="M 62 30 C 82 28 85 45 66 47 C 86 49 84 66 62 65"></path>
+<path d="M 58 64 C 40 63 35 76 44 83 C 53 91 60 92 58 98 C 56 103 47 104 36 100"></path>
+<path d="M 72 65 L 72 100"></path>
+<path d="M 72 67 C 91 66 93 83 72 84"></path>
+</g>
+<g transform="translate(56, 25) scale(0.38)">
+<path d="M 0,-34 C 1.5,-30 3.5,-22 5,-20 C 8,-23 12,-26 16,-27 C 15,-24 14,-19 13,-15 C 18,-15 23,-14 28,-13 C 26,-10 22,-7 18,-4 C 21,-2 27,0 31,3 C 27,6 20,7 15,7 C 17,10 20,15 22,20 C 17,17 12,13 7,9 C 7,14 6,20 5,27 L 2,27 L 2,39 L -2,39 L -2,27 L -5,27 C -6,20 -7,14 -7,9 C -12,13 -17,17 -22,20 C -20,15 -17,10 -15,7 C -20,7 -27,6 -31,3 C -27,0 -21,-2 -18,-4 C -22,-7 -26,-10 -28,-13 C -23,-14 -18,-15 -13,-15 C -14,-19 -15,-24 -16,-27 C -12,-26 -8,-23 -5,-20 C -3.5,-22 -1.5,-30 0,-34 Z" fill="url(#leafGrad)"></path>
+</g>
+<circle cx="60" cy="60" fill="#ffffff" r="3.5"></circle>
+</svg>
 <div class="logo-text">
 <h1>YBSP CANADA</h1>
 
@@ -992,88 +1179,6 @@
     const articlesData = {
       1: {
         en: {
-        footer_quick_links: "Quick Links",
-        footer_involved: "Get Involved",
-        footer_burundi_site: "YBSP Burundi Website ↗",
-        footer_contact: "Contact & Secretariat",
-        footer_addr: "Based in the Ottawa - Gatineau Region<br>(Developing Partnerships Across Canada)",
-        footer_scope: "Serving Youth Communities in Both Official Languages",
-        lbl_follow_us: "Follow us",
-        footer_transparency: "Corporate Transparency",
-        nav_programs: "Programs",
-        nav_burundi_prog: "International / Burundi",
-        nav_sdgs: "UN SDGs Reference",
-        nav_membership: "Become a Member",
-        nav_working_groups: "Member Working Groups",
-        nav_partnerships: "Institutional Partners",
-        nav_calendar: "Events Calendar",
-        nav_host: "Host or Propose an Event",
-        nav_gala: "Annual Solidarity Gala",
-        nav_gallery: "Authentic Photo Gallery",
-        crumb_home: "Home",
-        nav_community_support: "Community Support & Poverty Relief",
-        nav_education_skills: "Education, Skills & Youth Opportunity",
-        nav_self_sufficiency: "Pathways to Self-Sufficiency",
-        footer_quick_links: "Quick Links",
-        footer_involved: "Get Involved",
-        footer_addr: "Based in the Ottawa - Gatineau Region<br>(Developing Partnerships Across Canada)",
-        footer_burundi_site: "YBSP Burundi Website ↗",
-        footer_scope: "Serving Youth Communities in Both Official Languages",
-        lbl_follow_us: "Follow us",
-        crumb_news: "News",
-        btn_back_all: "← Back to all news",
-        link_support_story: "Support community opportunity →",
-        tagline: "Building practical opportunity where barriers are highest.",
-                nav_community_support: "Community Support & Poverty Relief",
-        nav_education_skills: "Education, Skills & Youth Opportunity",
-        nav_self_sufficiency: "Pathways to Self-Sufficiency",
-        footer_quick_links: "Quick Links",
-        footer_involved: "Get Involved",
-        footer_addr: "Based in the Ottawa - Gatineau Region<br>(Developing Partnerships Across Canada)",
-        footer_burundi_site: "YBSP Burundi Website ↗",
-        footer_scope: "Serving Youth Communities in Both Official Languages",
-        lbl_follow_us: "Follow us",
-        nav_home: "Home",
-        nav_about: "About",
-        nav_story: "Our Story",
-        nav_mission: "Mission & Mandate",
-        nav_team: "Leadership",
-        nav_governance: "Board & Governance",
-        nav_corporate: "Corporate Information",
-        nav_burundi: "Canada & Burundi",
-        nav_our_work: "Our Work",
-        nav_community_support: "Community Support & Poverty Relief",
-        nav_education_skills: "Education, Skills & Youth Opportunity",
-        nav_self_sufficiency: "Pathways to Self-Sufficiency",
-        nav_burundi_work: "International / Burundi",
-        nav_sdgs_ref: "UN SDGs Reference",
-        nav_involved: "Get Involved",
-        nav_volunteer: "Volunteer",
-        nav_partners: "Partner With Us",
-        nav_join: "Join YBSP",
-        nav_events: "Events",
-        nav_impact: "Impact",
-        nav_our_impact: "Our Impact",
-        nav_stories: "Stories",
-        nav_news: "News",
-        nav_all_news: "All News",
-        nav_reports: "Reports",
-        nav_careers: "Careers",
-        nav_contact: "Contact",
-        nav_donate: "Donate",
-
-        foot_about_title: "YBSP Canada",
-        foot_about_desc: "Youth Building in Synergy to end Poverty is an independent Canadian federally incorporated not-for-profit corporation dedicated to relieving poverty and reducing barriers to opportunity across Canada.",
-        foot_legal_notice: "Federal Not-for-Profit Corporation (Canada Not-for-profit Corporations Act) | Corporation # 1154010-6 | Business Number: 779321272RC0001",
-        foot_quick_title: "Navigation",
-        foot_work_title: "Our Work",
-        foot_contact_title: "Contact & Secretariat",
-        foot_loc: "Based in the Ottawa - Gatineau Region (Developing Partnerships Across Canada)",
-        foot_copy: "&copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All rights reserved.",
-        foot_corp_info: "Corporate Filings",
-        foot_privacy: "Privacy Policy",
-        foot_contact: "Contact Secretariat",
-
           tag: "Program Expansion",
           title: "Expanding the 2026 Youth Mentorship & Employment Cohort",
           date: "August 28, 2026",
@@ -1097,109 +1202,6 @@
           ctaBtn: "Apply for Mentorship →"
         },
         fr: {
-        nav_community_support: "Soutien communautaire & Secours alimentaire",
-        nav_education_skills: "Éducation, compétences & Possibilités jeunesse",
-        nav_self_sufficiency: "Chemins vers l'autonomie",
-        footer_quick_links: "Liens rapides",
-        footer_involved: "S'impliquer",
-        footer_addr: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
-        footer_burundi_site: "Site web YBSP Burundi ↗",
-        footer_scope: "Au service des communautés jeunesse dans les deux langues officielles",
-        lbl_follow_us: "Suivez-nous",
-
-      nav_community_support: "Soutien communautaire & Secours alimentaire",
-      nav_education_skills: "Éducation, compétences & Possibilités jeunesse",
-      nav_self_sufficiency: "Chemins vers l'autonomie",
-      footer_quick_links: "Liens rapides",
-      footer_involved: "S'impliquer",
-      footer_addr: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
-      footer_burundi_site: "Site web YBSP Burundi ↗",
-      footer_scope: "Au service des communautés jeunesse dans les deux langues officielles",
-      lbl_follow_us: "Suivez-nous",
-
-        nav_programs: "Programmes",
-        nav_burundi_prog: "International / Burundi",
-        nav_sdgs: "Référence ODD de l'ONU",
-        nav_membership: "Devenir membre",
-        nav_working_groups: "Groupes de travail des membres",
-        nav_partnerships: "Partenaires institutionnels",
-        nav_calendar: "Calendrier des événements",
-        nav_host: "Organiser ou proposer une activité",
-        nav_gala: "Gala annuel de solidarité",
-        nav_gallery: "Galerie photo authentique",
-
-        footer_quick_links: "Liens rapides",
-        footer_involved: "S'impliquer",
-        footer_burundi_site: "Site web YBSP Burundi ↗",
-        footer_contact: "Contact & Secrétariat",
-        footer_addr: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
-        footer_scope: "Au service des communautés jeunesse dans les deux langues officielles",
-        lbl_follow_us: "Suivez-nous",
-        footer_transparency: "Transparence corporative",
-        crumb_home: "Accueil",
-        nav_community_support: "Soutien communautaire & Secours alimentaire",
-        nav_education_skills: "Éducation, compétences & Possibilités jeunesse",
-        nav_self_sufficiency: "Chemins vers l'autonomie",
-        footer_quick_links: "Liens rapides",
-        footer_involved: "S'impliquer",
-        footer_addr: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
-        footer_burundi_site: "Site web YBSP Burundi ↗",
-        footer_scope: "Au service des communautés jeunesse dans les deux langues officielles",
-        lbl_follow_us: "Suivez-nous",
-        crumb_news: "Nouvelles",
-        btn_back_all: "← Retour aux actualités",
-        link_support_story: "Soutenir nos initiatives →",
-        tagline: "Unir la jeunesse. Bâtir la synergie. Vaincre la précarité.",
-                nav_community_support: "Soutien communautaire & Secours alimentaire",
-        nav_education_skills: "Éducation, compétences & Possibilités jeunesse",
-        nav_self_sufficiency: "Chemins vers l'autonomie",
-        footer_quick_links: "Liens rapides",
-        footer_involved: "S'impliquer",
-        footer_addr: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
-        footer_burundi_site: "Site web YBSP Burundi ↗",
-        footer_scope: "Au service des communautés jeunesse dans les deux langues officielles",
-        lbl_follow_us: "Suivez-nous",
-        nav_home: "Accueil",
-        nav_about: "À propos",
-        nav_story: "Notre histoire",
-        nav_mission: "Mission & Mandat",
-        nav_team: "Direction",
-        nav_governance: "Conseil & Gouvernance",
-        nav_corporate: "Renseignements corporatifs",
-        nav_burundi: "Canada & Burundi",
-        nav_our_work: "Nos actions",
-        nav_community_support: "Soutien communautaire & Lutte contre la pauvreté",
-        nav_education_skills: "Éducation, Compétences & Opportunités jeunesse",
-        nav_self_sufficiency: "Cheminements vers l'autonomie",
-        nav_burundi_work: "International / Burundi",
-        nav_sdgs_ref: "UN SDGs Reference",
-        nav_involved: "S'impliquer",
-        nav_volunteer: "Bénévolat",
-        nav_partners: "Devenir partenaire",
-        nav_join: "Rejoindre YBSP",
-        nav_events: "Événements",
-        nav_impact: "Impact",
-        nav_our_impact: "Notre impact",
-        nav_stories: "Témoignages & Récits",
-        nav_news: "Nouvelles",
-        nav_all_news: "Toutes les nouvelles",
-        nav_reports: "Rapports & Publications",
-        nav_careers: "Carrières",
-        nav_contact: "Nous joindre",
-        nav_donate: "Faire un don",
-
-        foot_about_title: "YBSP Canada",
-        foot_about_desc: "Youth Building in Synergy to end Poverty est une organisation à but non lucratif canadienne autonome constituée au fédéral, dédiée au soulagement de la pauvreté et à la réduction des obstacles aux opportunités.",
-        foot_legal_notice: "Organisation à but non lucratif constituée au fédéral (Loi canadienne sur les organisations à but non lucratif) | Nº d'organisation : 1154010-6 | Nº d'entreprise : 779321272RC0001",
-        foot_quick_title: "Navigation",
-        foot_work_title: "Nos actions",
-        foot_contact_title: "Contact & Secrétariat",
-        foot_loc: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)",
-        foot_copy: "&copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). Tous droits réservés.",
-        foot_corp_info: "Renseignements corporatifs",
-        foot_privacy: "Politique de confidentialité",
-        foot_contact: "Contacter le secrétariat",
-
           tag: "Expansion de programme",
           title: "Expansion de la cohorte 2026 de mentorat et d'emploi jeunesse",
           date: "28 août 2026",
@@ -1808,9 +1810,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       let savedLang = 'en';
       try { savedLang = localStorage.getItem('ybsp_lang') || 'en'; } catch(e) {}
-      if (savedLang === 'fr') {
-        setLanguage('fr');
-      }
+      setLanguage(savedLang);
     });
 
     
