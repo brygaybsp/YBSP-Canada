@@ -1,13 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Careers & Opportunities | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
-  <meta name="description" content="Explore career, internship, and volunteer leadership opportunities with YBSP Canada as our national youth organization expands.">
-  <link rel="icon" type="image/png" href="images/ybsp_canada_emblem.png">
-  
-  <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title id="page-title">Careers &amp; Opportunities | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
+<meta content="Explore career, internship, and volunteer leadership opportunities with YBSP Canada as our national youth organization expands." name="description"/>
+<link href="images/ybsp_canada_emblem.png" rel="icon" type="image/png"/>
+<script>
     // Ensure relative links work seamlessly whether hosted on Netlify (with pretty URLs) or viewed locally via file:///
     if (window.location.protocol !== 'file:' && window.location.pathname.endsWith('/') && window.location.pathname.length > 1) {
       document.write('<base href="' + window.location.origin + '/">');
@@ -22,8 +22,7 @@
     } catch (e) {}
 
   </script>
-
-  <style>
+<style>
 
     :root {
       --primary: #0b1c3d;
@@ -204,7 +203,9 @@
       position: absolute;
       top: 100%;
       left: 0;
-      width: 240px;
+      min-width: 320px;
+      width: max-content;
+      max-width: 390px;
       background: #ffffff;
       box-shadow: var(--shadow-lg);
       border-radius: var(--radius-md);
@@ -217,7 +218,7 @@
       z-index: 100;
     }
     .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-    .dropdown-link { display: block; padding: 8px 16px; font-size: 0.88rem; color: var(--text-main); font-weight: 500; }
+    .dropdown-link { display: block; padding: 8px 16px; font-size: 0.88rem; color: var(--text-main); font-weight: 500;  white-space: normal; line-height: 1.35; }
     .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 20px; }
 
     .btn-donate-nav { white-space: nowrap !important; min-width: max-content !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; background: var(--accent) !important; color: #ffffff !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 50px !important; margin-left: 8px !important; text-decoration: none !important; }
@@ -1167,68 +1168,65 @@
   </style>
 </head>
 <body>
+<!-- TOP UTILITY BAR -->
+<!-- MAIN NAVIGATION -->
+<!-- TOP RIGHT UTILITY BAR: LANGUAGE SWITCHER AT THE VERY TOP RIGHT, DIRECTLY ABOVE DONATE -->
+<div class="top-utility-bar" style="background:#0b1c3d; border-bottom:1px solid rgba(255,255,255,0.08); padding:5px 0;">
+<div class="container" style="display:flex; justify-content:flex-end; align-items:center;">
+<div class="lang-switcher" style="display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.12); padding:2px 6px; border-radius:4px;">
+<button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" style="border:none; background:var(--secondary); color:#ffffff; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="English">EN</button>
+<span style="color:#94a3b8; font-size:0.75rem; margin:0 2px;">|</span>
+<button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')" style="border:none; background:transparent; color:#cbd5e1; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="Français">FR</button>
+</div>
+</div>
+</div>
+<header class="main-header">
+<div class="container nav-inner">
+<a aria-label="YBSP Canada Home" class="brand-logo" href="index.html">
+<svg class="brand-logo-svg" height="44" viewbox="0 0 120 120" width="44" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="50%" cy="50%" id="logoBurst" r="50%">
+<stop offset="0%" stop-color="#ffffff"></stop>
+<stop offset="25%" stop-color="#60a5fa" stop-opacity="0.85"></stop>
+<stop offset="60%" stop-color="#818cf8" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#0b1c3d" stop-opacity="0"></stop>
+</radialgradient>
+<lineargradient id="leafGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ef4444"></stop>
+<stop offset="100%" stop-color="#b91c1c"></stop>
+</lineargradient>
+</defs>
+<rect fill="#0b1c3d" height="120" rx="26" width="120"></rect>
+<circle cx="60" cy="60" fill="url(#logoBurst)" r="42"></circle>
+<line opacity="0.8" stroke="#93c5fd" stroke-width="2" x1="20" x2="100" y1="60" y2="60"></line>
+<line opacity="0.8" stroke="#93c5fd" stroke-width="2" x1="60" x2="60" y1="20" y2="100"></line>
+<line opacity="0.6" stroke="#c084fc" stroke-width="1.5" x1="32" x2="88" y1="32" y2="88"></line>
+<line opacity="0.6" stroke="#c084fc" stroke-width="1.5" x1="32" x2="88" y1="88" y2="32"></line>
+<g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8.5">
+<path d="M 28 26 L 46 50 L 46 68"></path>
+<path d="M 54 38 L 46 50"></path>
+<path d="M 62 28 L 62 66"></path>
+<path d="M 62 30 C 82 28 85 45 66 47 C 86 49 84 66 62 65"></path>
+<path d="M 58 64 C 40 63 35 76 44 83 C 53 91 60 92 58 98 C 56 103 47 104 36 100"></path>
+<path d="M 72 65 L 72 100"></path>
+<path d="M 72 67 C 91 66 93 83 72 84"></path>
+</g>
+<g transform="translate(56, 25) scale(0.38)">
+<path d="M 0,-34 C 1.5,-30 3.5,-22 5,-20 C 8,-23 12,-26 16,-27 C 15,-24 14,-19 13,-15 C 18,-15 23,-14 28,-13 C 26,-10 22,-7 18,-4 C 21,-2 27,0 31,3 C 27,6 20,7 15,7 C 17,10 20,15 22,20 C 17,17 12,13 7,9 C 7,14 6,20 5,27 L 2,27 L 2,39 L -2,39 L -2,27 L -5,27 C -6,20 -7,14 -7,9 C -12,13 -17,17 -22,20 C -20,15 -17,10 -15,7 C -20,7 -27,6 -31,3 C -27,0 -21,-2 -18,-4 C -22,-7 -26,-10 -28,-13 C -23,-14 -18,-15 -13,-15 C -14,-19 -15,-24 -16,-27 C -12,-26 -8,-23 -5,-20 C -3.5,-22 -1.5,-30 0,-34 Z" fill="url(#leafGrad)"></path>
+</g>
+<circle cx="60" cy="60" fill="#ffffff" r="3.5"></circle>
+</svg>
+<div class="logo-text">
+<h1>YBSP CANADA</h1>
 
-    <!-- TOP UTILITY BAR -->
-  <!-- MAIN NAVIGATION -->
-    <!-- TOP RIGHT UTILITY BAR: LANGUAGE SWITCHER AT THE VERY TOP RIGHT, DIRECTLY ABOVE DONATE -->
-  <div class="top-utility-bar" style="background:#0b1c3d; border-bottom:1px solid rgba(255,255,255,0.08); padding:5px 0;">
-    <div class="container" style="display:flex; justify-content:flex-end; align-items:center;">
-      <div class="lang-switcher" style="display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.12); padding:2px 6px; border-radius:4px;">
-        <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" style="border:none; background:var(--secondary); color:#ffffff; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="English">EN</button>
-        <span style="color:#94a3b8; font-size:0.75rem; margin:0 2px;">|</span>
-        <button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')" style="border:none; background:transparent; color:#cbd5e1; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="Français">FR</button>
-      </div>
-    </div>
-  </div>
-  <header class="main-header">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="YBSP Canada Home">
-        <svg class="brand-logo-svg" width="44" height="44" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="logoBurst" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#ffffff"/>
-              <stop offset="25%" stop-color="#60a5fa" stop-opacity="0.85"/>
-              <stop offset="60%" stop-color="#818cf8" stop-opacity="0.4"/>
-              <stop offset="100%" stop-color="#0b1c3d" stop-opacity="0"/>
-            </radialGradient>
-            <linearGradient id="leafGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#ef4444"/>
-              <stop offset="100%" stop-color="#b91c1c"/>
-            </linearGradient>
-          </defs>
-          <rect width="120" height="120" rx="26" fill="#0b1c3d"/>
-          <circle cx="60" cy="60" r="42" fill="url(#logoBurst)"/>
-          <line x1="20" y1="60" x2="100" y2="60" stroke="#93c5fd" stroke-width="2" opacity="0.8"/>
-          <line x1="60" y1="20" x2="60" y2="100" stroke="#93c5fd" stroke-width="2" opacity="0.8"/>
-          <line x1="32" y1="32" x2="88" y2="88" stroke="#c084fc" stroke-width="1.5" opacity="0.6"/>
-          <line x1="32" y1="88" x2="88" y2="32" stroke="#c084fc" stroke-width="1.5" opacity="0.6"/>
-          <g fill="none" stroke="#ffffff" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M 28 26 L 46 50 L 46 68"/>
-            <path d="M 54 38 L 46 50"/>
-            <path d="M 62 28 L 62 66"/>
-            <path d="M 62 30 C 82 28 85 45 66 47 C 86 49 84 66 62 65"/>
-            <path d="M 58 64 C 40 63 35 76 44 83 C 53 91 60 92 58 98 C 56 103 47 104 36 100"/>
-            <path d="M 72 65 L 72 100"/>
-            <path d="M 72 67 C 91 66 93 83 72 84"/>
-          </g>
-          <g transform="translate(56, 25) scale(0.38)">
-            <path d="M 0,-34 C 1.5,-30 3.5,-22 5,-20 C 8,-23 12,-26 16,-27 C 15,-24 14,-19 13,-15 C 18,-15 23,-14 28,-13 C 26,-10 22,-7 18,-4 C 21,-2 27,0 31,3 C 27,6 20,7 15,7 C 17,10 20,15 22,20 C 17,17 12,13 7,9 C 7,14 6,20 5,27 L 2,27 L 2,39 L -2,39 L -2,27 L -5,27 C -6,20 -7,14 -7,9 C -12,13 -17,17 -22,20 C -20,15 -17,10 -15,7 C -20,7 -27,6 -31,3 C -27,0 -21,-2 -18,-4 C -22,-7 -26,-10 -28,-13 C -23,-14 -18,-15 -13,-15 C -14,-19 -15,-24 -16,-27 C -12,-26 -8,-23 -5,-20 C -3.5,-22 -1.5,-30 0,-34 Z" fill="url(#leafGrad)"/>
-          </g>
-          <circle cx="60" cy="60" r="3.5" fill="#ffffff"/>
-        </svg>
-        <div class="logo-text">
-          <h1>YBSP CANADA</h1>
-          <span data-i18n="tagline">Uniting youth. Building synergy. Ending poverty.</span>
-        </div>
-      </a>
-
-                        <nav aria-label="Primary Navigation" class="nav-menu" id="main-nav-menu">
+</div>
+</a>
+<nav aria-label="Primary Navigation" class="nav-menu" id="main-nav-menu">
 <div class="nav-item"><a class="nav-link" data-i18n="nav_home" href="index.html">Home</a></div>
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="about.html">
 <span data-i18n="nav_about">About Us</span>
-
-</a><button aria-expanded="false" aria-label="Toggle About Us submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle About Us submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_mission" href="about.html#mission">Mission &amp; Mandate</a>
 <a class="dropdown-link" data-i18n="nav_team" href="about.html#team">Executive Leadership</a>
@@ -1240,8 +1238,7 @@
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="programs.html">
 <span data-i18n="nav_programs">Programs</span>
-
-</a><button aria-expanded="false" aria-label="Toggle Programs submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle Programs submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_community_support" href="programs.html#community-support">Community Support &amp; Poverty Relief</a>
 <a class="dropdown-link" data-i18n="nav_education_skills" href="programs.html#education-skills">Education, Skills &amp; Youth Opportunity</a>
@@ -1253,8 +1250,7 @@
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="get-involved.html">
 <span data-i18n="nav_involved">Get Involved</span>
-
-</a><button aria-expanded="false" aria-label="Toggle Get Involved submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle Get Involved submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_volunteer" href="get-involved.html#volunteer">Volunteer Application</a>
 <a class="dropdown-link" data-i18n="nav_membership" href="get-involved.html#membership">Become a Member</a>
@@ -1265,8 +1261,7 @@
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="events.html">
 <span data-i18n="nav_events">Events</span>
-
-</a><button aria-expanded="false" aria-label="Toggle Events submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle Events submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_calendar" href="events.html#calendar">Events Calendar</a>
 <a class="dropdown-link" data-i18n="nav_host" href="events.html#host">Host or Propose an Event</a>
@@ -1280,210 +1275,184 @@
 <!-- ONE-LINE DONATE BUTTON -->
 <a class="btn-donate-nav" data-i18n="nav_donate" href="donate.html" style="white-space:nowrap !important; display:inline-flex !important; align-items:center !important; justify-content:center !important;">Donate</a>
 </nav>
-
-                  <button class="nav-toggle-btn" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav(event)">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="container">
-      <div class="breadcrumbs">
-        <a href="index.html" data-i18n="crumb_home">Home</a> &nbsp;/&nbsp; <span data-i18n="crumb_careers">Careers & Opportunities</span>
-      </div>
-      <h2 class="page-title single-line" data-i18n="careers_hero_title">Careers & Opportunities</h2>
-      <p data-i18n="careers_hero_desc">
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="nav-toggle-btn" id="mobileNavToggle" onclick="toggleMobileNav(event)">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</header>
+<!-- PAGE HERO -->
+<section class="page-hero">
+<div class="container">
+<div class="breadcrumbs">
+<a data-i18n="crumb_home" href="index.html">Home</a>  /  <span data-i18n="crumb_careers">Careers &amp; Opportunities</span>
+</div>
+<h2 class="page-title single-line" data-i18n="careers_hero_title">Careers &amp; Opportunities</h2>
+<p data-i18n="careers_hero_desc">
         YBSP Canada is currently volunteer-led and developing its first funded Canadian program positions. Opportunities to join our team will be posted here as funding is secured.
       </p>
-    </div>
-  </section>
-
-  <!-- MAIN CAREERS SECTION -->
-  <section class="content-section" style="background:#ffffff;">
-    <div class="container">
-      <!-- CURRENT STATUS BANNER -->
-      <div style="background:var(--bg-slate); border-radius:var(--radius-lg); padding:36px; border-left:5px solid var(--secondary); max-width:860px; margin:0 auto 45px; text-align:center;">
-        <span class="section-tag" data-i18n="tag_hiring_status">Current Status</span>
-        <h3 style="font-size:1.6rem; color:var(--primary); margin:6px 0 12px;" data-i18n="status_heading">No Current Paid Openings</h3>
-        <p style="font-size:1rem; color:var(--text-muted); line-height:1.65; max-width:700px; margin:0 auto 20px;" data-i18n="status_desc">
+</div>
+</section>
+<!-- MAIN CAREERS SECTION -->
+<section class="content-section" style="background:#ffffff;">
+<div class="container">
+<!-- CURRENT STATUS BANNER -->
+<div style="background:var(--bg-slate); border-radius:var(--radius-lg); padding:36px; border-left:5px solid var(--secondary); max-width:860px; margin:0 auto 45px; text-align:center;">
+<span class="section-tag" data-i18n="tag_hiring_status">Current Status</span>
+<h3 data-i18n="status_heading" style="font-size:1.6rem; color:var(--primary); margin:6px 0 12px;">No Current Paid Openings</h3>
+<p data-i18n="status_desc" style="font-size:1rem; color:var(--text-muted); line-height:1.65; max-width:700px; margin:0 auto 20px;">
           We currently do not have any full-time or contract paid vacancies available. However, as our volunteer-led Canadian chapter develops its foundational programs, we encourage students, professionals, and community leaders to connect with our volunteer leadership pathways.
         </p>
-        <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
-          <a href="#talent-pool" class="btn-primary" data-i18n="btn_join_talent">Join General Talent Pool ↓</a>
-          <a href="get-involved.html#volunteer" class="btn-outline" data-i18n="btn_explore_vol">Volunteer Leadership Roles →</a>
-        </div>
-      </div>
-
-      <!-- ACTIVE OPPORTUNITY CHANNELS -->
-      <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_avenues">Get Involved Now</span>
-        <h3 class="section-title single-line" data-i18n="heading_avenues">How You Can Join Our Mission</h3>
-      </div>
-
-      <div class="careers-grid">
-        <div class="opp-card">
-          <div>
-            <h4 data-i18n="opp1_t">Student Placements & Academic Internships</h4>
-            <p data-i18n="opp1_d">
+<div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+<a class="btn-primary" data-i18n="btn_join_talent" href="#talent-pool">Join General Talent Pool ↓</a>
+<a class="btn-outline" data-i18n="btn_explore_vol" href="get-involved.html#volunteer">Volunteer Leadership Roles →</a>
+</div>
+</div>
+<!-- ACTIVE OPPORTUNITY CHANNELS -->
+<div class="section-header-center">
+<span class="section-tag" data-i18n="tag_avenues">Get Involved Now</span>
+<h3 class="section-title single-line" data-i18n="heading_avenues">How You Can Join Our Mission</h3>
+</div>
+<div class="careers-grid">
+<div class="opp-card">
+<div>
+<h4 data-i18n="opp1_t">Student Placements &amp; Academic Internships</h4>
+<p data-i18n="opp1_d">
               We welcome college and university students seeking practicum or volunteer experience, subject to approval by their institution, in non-profit management, community program design, digital communications, and bilingual research.
             </p>
-          </div>
-          <a href="#talent-pool" class="btn-secondary" style="align-self:flex-start; font-size:0.88rem;" data-i18n="btn_inquire_placement">Express Interest in Placement →</a>
-        </div>
-
-        <div class="opp-card">
-          <div>
-            <h4 data-i18n="opp2_t">Working Group & Committee Leadership</h4>
-            <p data-i18n="opp2_d">
-              Passionate community leaders and professionals can contribute directly to our active Member Working Groups: Youth Programs, Burundi Synergy, Governance & Audit, or Community Outreach.
+</div>
+<a class="btn-secondary" data-i18n="btn_inquire_placement" href="#talent-pool" style="align-self:flex-start; font-size:0.88rem;">Express Interest in Placement →</a>
+</div>
+<div class="opp-card">
+<div>
+<h4 data-i18n="opp2_t">Working Group &amp; Committee Leadership</h4>
+<p data-i18n="opp2_d">
+              Passionate community leaders and professionals can contribute directly to our active Member Working Groups: Youth Programs, Burundi Synergy, Governance &amp; Audit, or Community Outreach.
             </p>
-          </div>
-          <a href="get-involved.html#working-groups" class="btn-secondary" style="align-self:flex-start; font-size:0.88rem;" data-i18n="btn_explore_wg">Explore Working Groups →</a>
-        </div>
-      </div>
-
-      <!-- TALENT POOL FORM -->
-      <div id="talent-pool" style="margin-top:60px; padding-top:40px; border-top:1px solid var(--border-color);">
-        <div class="section-header-center">
-          <span class="section-tag" data-i18n="tag_talent">Future Openings</span>
-          <h3 class="section-title single-line" data-i18n="heading_talent">General Talent Pool Expression of Interest</h3>
-          <p data-i18n="sub_talent">
+</div>
+<a class="btn-secondary" data-i18n="btn_explore_wg" href="get-involved.html#working-groups" style="align-self:flex-start; font-size:0.88rem;">Explore Working Groups →</a>
+</div>
+</div>
+<!-- TALENT POOL FORM -->
+<div id="talent-pool" style="margin-top:60px; padding-top:40px; border-top:1px solid var(--border-color);">
+<div class="section-header-center">
+<span class="section-tag" data-i18n="tag_talent">Future Openings</span>
+<h3 class="section-title single-line" data-i18n="heading_talent">General Talent Pool Expression of Interest</h3>
+<p data-i18n="sub_talent">
             Submit your profile to be considered for future paid positions, project contracts, and student placements as grant funding expands.
           </p>
-        </div>
-
-        <div class="form-card">
-          <form id="talentPoolForm" name="talent-pool-inquiry" method="POST" data-netlify="true" onsubmit="handleTalentSubmit(event)">
-            <input type="hidden" name="form-name" value="talent-pool-inquiry">
-            
-            <div class="form-grid-2">
-              <div class="form-group">
-                <label class="form-label" for="tp-name" data-i18n="lbl_name">Full Name *</label>
-                <input type="text" id="tp-name" name="full_name" class="form-input" required placeholder="e.g. Eric Habimana">
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="tp-email" data-i18n="lbl_email">Email Address *</label>
-                <input type="email" id="tp-email" name="email" class="form-input" required placeholder="eric@example.ca">
-              </div>
-            </div>
-
-            <div class="form-grid-2">
-              <div class="form-group">
-                <label class="form-label" for="tp-phone" data-i18n="lbl_phone">Phone Number</label>
-                <input type="tel" id="tp-phone" name="phone" class="form-input" placeholder="(613) 555-0133">
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="tp-area" data-i18n="lbl_tp_area">Primary Area of Expertise *</label>
-                <select id="tp-area" name="area_of_interest" class="form-select" required>
-                  <option value="programs" data-i18n="opt_tp_1">Youth Mentorship & Program Coordination</option>
-                  <option value="digital-ai" data-i18n="opt_tp_2">Digital Technology & Applied AI Training</option>
-                  <option value="communications" data-i18n="opt_tp_3">Communications, Graphic Design & Social Media</option>
-                  <option value="fundraising" data-i18n="opt_tp_4">Grant Writing, Fundraising & Sponsorship</option>
-                  <option value="finance" data-i18n="opt_tp_5">Accounting, Bookkeeping & Administration</option>
-                  <option value="burundi-dev" data-i18n="opt_tp_6">International Development & Bilateral Projects</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="tp-linkedin" data-i18n="lbl_tp_linkedin">LinkedIn Profile or Portfolio URL</label>
-              <input type="url" id="tp-linkedin" name="linkedin_url" class="form-input" placeholder="https://linkedin.com/in/yourname">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="tp-bio" data-i18n="lbl_tp_bio">Brief Professional Summary & What You'd Like to Contribute *</label>
-              <textarea id="tp-bio" name="summary" class="form-textarea" rows="4" required placeholder="Tell us about your background, relevant qualifications, and what type of role interests you..." data-i18n-placeholder="ph_tp_notes"></textarea>
-            </div>
-
-            <button type="submit" class="btn-primary" style="width:100%; justify-content:center;" data-i18n="btn_submit_talent">Submit Profile to Talent Pool</button>
-
-            <div id="talentFeedback" class="form-feedback" data-i18n="talent_feedback">
+</div>
+<div class="form-card">
+<form data-netlify="true" id="talentPoolForm" method="POST" name="talent-pool-inquiry" onsubmit="handleTalentSubmit(event)">
+<input name="form-name" type="hidden" value="talent-pool-inquiry"/>
+<div class="form-grid-2">
+<div class="form-group">
+<label class="form-label" data-i18n="lbl_name" for="tp-name">Full Name *</label>
+<input class="form-input" id="tp-name" name="full_name" placeholder="e.g. Eric Habimana" required="" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label" data-i18n="lbl_email" for="tp-email">Email Address *</label>
+<input class="form-input" id="tp-email" name="email" placeholder="eric@example.ca" required="" type="email"/>
+</div>
+</div>
+<div class="form-grid-2">
+<div class="form-group">
+<label class="form-label" data-i18n="lbl_phone" for="tp-phone">Phone Number</label>
+<input class="form-input" id="tp-phone" name="phone" placeholder="(613) 555-0133" type="tel"/>
+</div>
+<div class="form-group">
+<label class="form-label" data-i18n="lbl_tp_area" for="tp-area">Primary Area of Expertise *</label>
+<select class="form-select" id="tp-area" name="area_of_interest" required="">
+<option data-i18n="opt_tp_1" value="programs">Youth Mentorship &amp; Program Coordination</option>
+<option data-i18n="opt_tp_2" value="digital-ai">Digital Technology &amp; Applied AI Training</option>
+<option data-i18n="opt_tp_3" value="communications">Communications, Graphic Design &amp; Social Media</option>
+<option data-i18n="opt_tp_4" value="fundraising">Grant Writing, Fundraising &amp; Sponsorship</option>
+<option data-i18n="opt_tp_5" value="finance">Accounting, Bookkeeping &amp; Administration</option>
+<option data-i18n="opt_tp_6" value="burundi-dev">International Development &amp; Bilateral Projects</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label class="form-label" data-i18n="lbl_tp_linkedin" for="tp-linkedin">LinkedIn Profile or Portfolio URL</label>
+<input class="form-input" id="tp-linkedin" name="linkedin_url" placeholder="https://linkedin.com/in/yourname" type="url"/>
+</div>
+<div class="form-group">
+<label class="form-label" data-i18n="lbl_tp_bio" for="tp-bio">Brief Professional Summary &amp; What You'd Like to Contribute *</label>
+<textarea class="form-textarea" data-i18n-placeholder="ph_tp_notes" id="tp-bio" name="summary" placeholder="Tell us about your background, relevant qualifications, and what type of role interests you..." required="" rows="4"></textarea>
+</div>
+<button class="btn-primary" data-i18n="btn_submit_talent" style="width:100%; justify-content:center;" type="submit">Submit Profile to Talent Pool</button>
+<div class="form-feedback" data-i18n="talent_feedback" id="talentFeedback">
               ✓ Profile Received! Thank you for your interest in joining YBSP Canada. Your information has been saved in our talent database, and we will contact you when relevant opportunities open.
             </div>
-          </form>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- UNIVERSAL FOOTER (WFP STYLE WITH SOCIALS & DONATE) -->
+<!-- UNIVERSAL FOOTER -->
+<!-- UNIVERSAL LIVE FOOTER (EXACT LIVE SITE LAYOUT & LABELS) -->
+<footer class="main-footer" style="background:#061124; color:#ffffff; padding:65px 0 30px; border-top:3px solid var(--secondary);">
+<div class="container">
+<!-- 3 COLUMNS: QUICK LINKS, GET INVOLVED, CONTACT & SECRETARIAT -->
+<div class="footer-grid" style="margin-bottom:50px;">
+<!-- COL 1: QUICK LINKS -->
+<div class="footer-col">
+<h4 data-i18n="footer_quick_links" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Quick Links</h4>
+<ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
+<li><a data-i18n="nav_home" href="index.html" style="color:#cbd5e1; text-decoration:none;">Home</a></li>
+<li><a data-i18n="nav_about" href="about.html" style="color:#cbd5e1; text-decoration:none;">About Us &amp; Governance</a></li>
+<li><a data-i18n="nav_programs" href="programs.html" style="color:#cbd5e1; text-decoration:none;">Programs &amp; AI Skills</a></li>
+<li><a data-i18n="nav_events" href="events.html" style="color:#cbd5e1; text-decoration:none;">Events &amp; Community</a></li>
+<li><a data-i18n="nav_news" href="news.html" style="color:#cbd5e1; text-decoration:none;">News &amp; Media Library</a></li>
+<li><a data-i18n="nav_careers" href="careers.html" style="color:#cbd5e1; text-decoration:none;">Careers &amp; Opportunities</a></li>
+<li><a data-i18n="nav_donate" href="donate.html" style="color:#cbd5e1; text-decoration:none;">Donate</a></li>
+</ul>
+</div>
+<!-- COL 2: GET INVOLVED -->
+<div class="footer-col">
+<h4 data-i18n="footer_involved" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Get Involved</h4>
+<ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
+<li><a data-i18n="nav_volunteer" href="get-involved.html#volunteer" style="color:#cbd5e1; text-decoration:none;">Volunteer Application</a></li>
+<li><a data-i18n="nav_membership" href="get-involved.html#membership" style="color:#cbd5e1; text-decoration:none;">Become a Member</a></li>
+<li><a data-i18n="nav_working_groups" href="get-involved.html#working-groups" style="color:#cbd5e1; text-decoration:none;">Member Working Groups</a></li>
+<li><a data-i18n="nav_partnerships" href="get-involved.html#partnerships" style="color:#cbd5e1; text-decoration:none;">Institutional Partners</a></li>
+<li><a data-i18n="footer_burundi_site" href="https://ybspburundi.org/" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none;" target="_blank">YBSP Burundi Website ↗</a></li>
+</ul>
+</div>
+<!-- COL 3: CONTACT & SECRETARIAT -->
+<div class="footer-col">
+<h4 data-i18n="footer_contact" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Contact &amp; Secretariat</h4>
+<div style="font-size:0.9rem; color:#cbd5e1; line-height:1.8;">
+<p style="margin-bottom:12px;">📍 <strong data-i18n="footer_addr">Based in the Ottawa - Gatineau Region<br/>(Developing Partnerships Across Canada)</strong></p>
+<p style="margin-bottom:12px;">✉️ <a href="mailto:info@ybspcanada.org" style="color:#60a5fa; text-decoration:none;">info@ybspcanada.org</a></p>
+<p style="margin:0;">🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
+</div>
+</div>
+</div>
+<!-- BOTTOM SECTION: COPYRIGHT (LEFT) & FOLLOW US (RIGHT) -->
+<div class="footer-bottom-bar" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
+<!-- BOTTOM LEFT: COPYRIGHT -->
+<div class="footer-copyright" style="font-size:0.86rem; color:#94a3b8; text-align:left;">
+          © 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
         </div>
-      </div>
-    </div>
-  </section>
-
-    <!-- UNIVERSAL FOOTER (WFP STYLE WITH SOCIALS & DONATE) -->
-      <!-- UNIVERSAL FOOTER -->
-    <!-- UNIVERSAL LIVE FOOTER (EXACT LIVE SITE LAYOUT & LABELS) -->
-  <footer class="main-footer" style="background:#061124; color:#ffffff; padding:65px 0 30px; border-top:3px solid var(--secondary);">
-    <div class="container">
-      
-      <!-- 3 COLUMNS: QUICK LINKS, GET INVOLVED, CONTACT & SECRETARIAT -->
-      <div class="footer-grid" style="margin-bottom:50px;">
-        
-        <!-- COL 1: QUICK LINKS -->
-        <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_quick_links">Quick Links</h4>
-          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
-            <li><a href="index.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_home">Home</a></li>
-            <li><a href="about.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_about">About Us & Governance</a></li>
-            <li><a href="programs.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_programs">Programs & AI Skills</a></li>
-            <li><a href="events.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_events">Events & Community</a></li>
-            <li><a href="news.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_news">News & Media Library</a></li>
-            <li><a href="careers.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_careers">Careers & Opportunities</a></li>
-            <li><a href="donate.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_donate">Donate</a></li>
-          </ul>
-        </div>
-
-        <!-- COL 2: GET INVOLVED -->
-        <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_involved">Get Involved</h4>
-          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
-            <li><a href="get-involved.html#volunteer" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_volunteer">Volunteer Application</a></li>
-            <li><a href="get-involved.html#membership" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_membership">Become a Member</a></li>
-            <li><a href="get-involved.html#working-groups" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_working_groups">Member Working Groups</a></li>
-            <li><a href="get-involved.html#partnerships" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_partnerships">Institutional Partners</a></li>
-            <li><a href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none;" data-i18n="footer_burundi_site">YBSP Burundi Website ↗</a></li>
-          </ul>
-        </div>
-
-        <!-- COL 3: CONTACT & SECRETARIAT -->
-        <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_contact">Contact & Secretariat</h4>
-          <div style="font-size:0.9rem; color:#cbd5e1; line-height:1.8;">
-            <p style="margin-bottom:12px;">📍 <strong data-i18n="footer_addr">Based in the Ottawa - Gatineau Region<br>(Developing Partnerships Across Canada)</strong></p>
-            <p style="margin-bottom:12px;">✉️ <a href="mailto:info@ybspcanada.org" style="color:#60a5fa; text-decoration:none;">info@ybspcanada.org</a></p>
-            <p style="margin:0;">🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- BOTTOM SECTION: COPYRIGHT (LEFT) & FOLLOW US (RIGHT) -->
-      <div class="footer-bottom-bar" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
-        
-        <!-- BOTTOM LEFT: COPYRIGHT -->
-        <div class="footer-copyright" style="font-size:0.86rem; color:#94a3b8; text-align:left;">
-          &copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
-        </div>
-
-        <!-- BOTTOM RIGHT: FOLLOW US -->
-        <div class="footer-social-wrap" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
-          <span style="font-size:0.85rem; font-weight:800; color:#ffffff; text-transform:uppercase; letter-spacing:0.08em;" data-i18n="lbl_follow_us">Follow us</span>
-          <div style="display:flex; align-items:center; gap:10px;">
-            <a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on X (Twitter)">𝕏</a>
-            <a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on Facebook">FB</a>
-            <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on Instagram">IG</a>
-            <a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on TikTok">TT</a>
-            <a href="https://www.snapchat.com/add/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Add YBSP Canada on Snapchat">SC</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- UNIVERSAL BILINGUAL SCRIPT -->
-  <script>
+<!-- BOTTOM RIGHT: FOLLOW US -->
+<div class="footer-social-wrap" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+<span data-i18n="lbl_follow_us" style="font-size:0.85rem; font-weight:800; color:#ffffff; text-transform:uppercase; letter-spacing:0.08em;">Follow us</span>
+<div style="display:flex; align-items:center; gap:10px;">
+<a href="https://x.com/ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on X (Twitter)">𝕏</a>
+<a href="https://www.facebook.com/ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on Facebook">FB</a>
+<a href="https://www.instagram.com/ybspcanada/" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on Instagram">IG</a>
+<a href="https://www.tiktok.com/@ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on TikTok">TT</a>
+<a href="https://www.snapchat.com/add/ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Add YBSP Canada on Snapchat">SC</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- UNIVERSAL BILINGUAL SCRIPT -->
+<script>
       // Universal Mobile Navigation Handler
   (function() {
     function initMobileNav() {
@@ -1632,7 +1601,7 @@
         nav_host: "Host or Propose an Event",
         nav_gala: "Annual Solidarity Gala",
         nav_gallery: "Authentic Photo Gallery",
-        tagline: "Uniting youth. Building synergy. Ending poverty.",
+        tagline: "Building practical opportunity where barriers are highest.",
         nav_home: "Home",
         nav_about: "About",
         nav_story: "Our Story",
@@ -1674,7 +1643,7 @@
         foot_privacy: "Privacy Policy",
         foot_contact: "Contact Secretariat",
 
-      "tagline": "Uniting youth. Building synergy. Ending poverty.",
+      "tagline": "Building practical opportunity where barriers are highest.",
       "nav_home": "Home",
       "nav_about": "About Us &amp; Governance",
       "nav_mission": "Mission &amp; Mandate",
@@ -1930,6 +1899,5 @@
 
     
   </script>
-
 </body>
 </html>

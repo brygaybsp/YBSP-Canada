@@ -174,7 +174,9 @@
       position: absolute;
       top: 100%;
       left: 0;
-      width: 250px;
+      min-width: 320px;
+      width: max-content;
+      max-width: 390px;
       background: #ffffff;
       box-shadow: var(--shadow-lg);
       border-radius: var(--radius-md);
@@ -187,7 +189,7 @@
       z-index: 100;
     }
     .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-    .dropdown-link { display: block; padding: 9px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500; }
+    .dropdown-link { display: block; padding: 9px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500;  white-space: normal; line-height: 1.35; }
     .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 22px; }
 
     .btn-donate-nav { white-space: nowrap !important; min-width: max-content !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; background: var(--accent) !important; color: #ffffff !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 50px !important; margin-left: 8px !important; text-decoration: none !important; }
@@ -1196,7 +1198,7 @@
   
 
     /* ==========================================================================
-       VERSION 34: EDITORIAL NONPROFIT VISUAL DESIGN SYSTEM
+       VERSION 34.1: REFINED EDITORIAL NONPROFIT VISUAL DESIGN SYSTEM
        ========================================================================== */
     :root {
       --v34-navy: #0b1c3d;
@@ -1214,8 +1216,8 @@
     /* Animation Utilities */
     .v34-reveal {
       opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(20px);
+      transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: opacity, transform;
     }
     .v34-reveal.is-revealed {
@@ -1276,7 +1278,7 @@
       transform: translateY(-2px);
     }
 
-    /* Badges & Tags */
+    /* Badges & Section Headings */
     .v34-eyebrow {
       display: inline-flex;
       align-items: center;
@@ -1446,9 +1448,34 @@
       justify-content: space-between;
     }
 
-    /* CHAPTER 03: PATHWAYS OF ACTION */
-    .v34-pathways-section {
+    /* CHAPTER 03: WHO WE ARE (HUMANIZED) */
+    .v34-who-section {
       background: #ffffff;
+      padding: 85px 0;
+      border-bottom: 1px solid var(--v34-slate-border);
+    }
+    .v34-who-grid {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+    .v34-who-col-img {
+      flex: 1 1 420px;
+    }
+    .v34-who-col-text {
+      flex: 1 1 500px;
+    }
+    .v34-who-img-frame {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(11, 28, 61, 0.12);
+      border: 1px solid var(--v34-slate-border);
+    }
+
+    /* CHAPTER 04: PATHWAYS OF ACTION */
+    .v34-pathways-section {
+      background: var(--v34-slate);
       padding: 90px 0;
       border-bottom: 1px solid var(--v34-slate-border);
     }
@@ -1487,6 +1514,19 @@
     .v34-pathway-card:hover .v34-pathway-img {
       transform: scale(1.04);
     }
+    .v34-pathway-num {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(11, 28, 61, 0.85);
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      backdrop-filter: blur(6px);
+      z-index: 2;
+    }
     .v34-pathway-body {
       padding: 28px 24px;
       flex: 1;
@@ -1495,7 +1535,7 @@
       justify-content: space-between;
     }
 
-    /* CHAPTER 04: VOICES OF CHANGE */
+    /* CHAPTER 05: REAL PEOPLE / REAL WORK (DOMINANT VISUAL MOMENT) */
     .v34-voices-section {
       background: var(--v34-navy-dark);
       color: #ffffff;
@@ -1510,10 +1550,10 @@
       flex-wrap: wrap;
     }
     .v34-voices-col-img {
-      flex: 1 1 380px;
+      flex: 1 1 420px;
     }
     .v34-voices-col-quote {
-      flex: 1 1 520px;
+      flex: 1 1 500px;
     }
     .v34-quote-box {
       background: rgba(255, 255, 255, 0.04);
@@ -1531,41 +1571,7 @@
       font-style: italic;
     }
 
-    /* CHAPTER 05: INITIATIVES SHOWCASE */
-    .v34-initiatives-section {
-      background: var(--v34-slate);
-      padding: 90px 0;
-      border-bottom: 1px solid var(--v34-slate-border);
-    }
-    .v34-initiatives-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .v34-init-card {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 30px 26px;
-      border: 1px solid var(--v34-slate-border);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .v34-init-step {
-      margin-bottom: 16px;
-    }
-    .v34-init-step strong {
-      display: block;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--v34-blue-hover);
-      margin-bottom: 4px;
-    }
-
-    /* CHAPTER 06: JOURNEY & CREDIBILITY */
+    /* CHAPTER 06: JOURNEY TIMELINE & IMPACT REFRAME */
     .v34-journey-section {
       background: #ffffff;
       padding: 90px 0;
@@ -1625,38 +1631,25 @@
       color: #ffffff;
       padding: 95px 0;
     }
-    .v34-support-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1.5px solid rgba(255, 255, 255, 0.15);
-      border-radius: 20px;
-      padding: 45px 36px;
-      max-width: 920px;
-      margin: 0 auto 65px;
-      text-align: center;
-    }
-    .v34-amount-pills {
+    .v34-support-split {
       display: flex;
-      justify-content: center;
-      gap: 12px;
+      align-items: center;
+      gap: 50px;
       flex-wrap: wrap;
-      margin: 24px 0 28px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1.5px solid rgba(255, 255, 255, 0.14);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 65px;
     }
-    .v34-amount-pill {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1.5px solid rgba(255, 255, 255, 0.25);
-      color: #ffffff;
-      padding: 10px 22px;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 1.05rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
+    .v34-support-col-img {
+      flex: 1 1 380px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     }
-    .v34-amount-pill:hover,
-    .v34-amount-pill.active {
-      background: var(--v34-blue);
-      border-color: var(--v34-blue);
-      transform: translateY(-2px);
+    .v34-support-col-text {
+      flex: 1 1 440px;
     }
     .v34-involvement-grid {
       display: grid;
@@ -1749,8 +1742,8 @@
       .v34-quote-box {
         padding: 26px 20px;
       }
-      .v34-support-card {
-        padding: 32px 20px;
+      .v34-support-split {
+        padding: 28px 20px;
       }
       .v34-catalyst-banner {
         padding: 45px 20px;
@@ -1810,7 +1803,6 @@
 </svg>
 <div class="logo-text">
 <h1>YBSP CANADA</h1>
-<span data-i18n="tagline">Uniting youth. Building synergy. Ending poverty.</span>
 </div>
 </a>
 <nav aria-label="Primary Navigation" class="nav-menu" id="main-nav-menu">
@@ -1818,8 +1810,7 @@
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="about.html">
 <span data-i18n="nav_about">About Us</span>
-
-</a><button aria-expanded="false" aria-label="Toggle About Us submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle About Us submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_mission" href="about.html#mission">Mission &amp; Mandate</a>
 <a class="dropdown-link" data-i18n="nav_team" href="about.html#team">Executive Leadership</a>
@@ -1831,8 +1822,7 @@
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="programs.html">
 <span data-i18n="nav_programs">Programs</span>
-
-</a><button aria-expanded="false" aria-label="Toggle Programs submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle Programs submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_community_support" href="programs.html#community-support">Community Support &amp; Poverty Relief</a>
 <a class="dropdown-link" data-i18n="nav_education_skills" href="programs.html#education-skills">Education, Skills &amp; Youth Opportunity</a>
@@ -1844,8 +1834,7 @@
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="get-involved.html">
 <span data-i18n="nav_involved">Get Involved</span>
-
-</a><button aria-expanded="false" aria-label="Toggle Get Involved submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle Get Involved submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_volunteer" href="get-involved.html#volunteer">Volunteer Application</a>
 <a class="dropdown-link" data-i18n="nav_membership" href="get-involved.html#membership">Become a Member</a>
@@ -1856,8 +1845,7 @@
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="events.html">
 <span data-i18n="nav_events">Events</span>
-
-</a><button aria-expanded="false" aria-label="Toggle Events submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle Events submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_calendar" href="events.html#calendar">Events Calendar</a>
 <a class="dropdown-link" data-i18n="nav_host" href="events.html#host">Host or Propose an Event</a>
@@ -1871,703 +1859,346 @@
 <!-- ONE-LINE DONATE BUTTON -->
 <a class="btn-donate-nav" data-i18n="nav_donate" href="donate.html" style="white-space:nowrap !important; display:inline-flex !important; align-items:center !important; justify-content:center !important;">Donate</a>
 </nav>
-<button class="nav-toggle-btn" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav(event)">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="nav-toggle-btn" id="mobileNavToggle" onclick="toggleMobileNav(event)">
+<span></span>
+<span></span>
+<span></span>
+</button>
 </div>
 </header>
-
-  <!-- =========================================================================
+<!-- =========================================================================
        CHAPTER 01: HERO — THE OPENING MOMENT (Candid Community Split)
        ========================================================================= -->
-  <section class="v34-hero-section" id="hero">
-    <div class="container">
-      <div class="v34-hero-grid">
-        
-        <!-- Left: Purpose & Action -->
-        <div class="v34-hero-col-text v34-reveal">
-          <div class="v34-eyebrow">
-            <span>🇨🇦</span> <span data-i18n="hero_eyebrow">YBSP Canada • Federal Non-Profit (Corp # 1154010-6)</span>
-          </div>
-          <h1 class="v34-hero-title" data-i18n="v34_hero_h1">
-            Building practical opportunity where barriers are highest.
-          </h1>
-          <p class="v34-hero-lead" data-i18n="v34_hero_lead">
-            From community support in Ottawa-Gatineau to youth education and skills development, YBSP equips people facing disadvantage with practical tools to build more secure futures.
+<section class="v34-hero-section" id="hero">
+<div class="container">
+<div class="v34-hero-grid">
+<!-- Left: Purpose & Action -->
+<div class="v34-hero-col-text v34-reveal">
+<h1 class="v34-hero-title" data-i18n="v34_hero_h1">Building practical opportunity where barriers are highest.</h1>
+<p class="v34-hero-lead" data-i18n="v34_hero_lead">
+            Helping people overcome barriers, build opportunity and create more secure futures. YBSP Canada works with youth, individuals and communities facing disadvantage by creating practical pathways to education, skills, employment, entrepreneurship, community support and greater self-sufficiency.
           </p>
-          <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:28px;">
-            <a href="#pathways" class="v34-btn-primary" data-i18n="v34_btn_explore">
+<div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:28px;">
+<a class="v34-btn-primary" data-i18n="v34_btn_support" href="donate.html">
+              Support YBSP →
+            </a>
+<a class="v34-btn-outline" data-i18n="v34_btn_explore" href="#bilateral-bridge">
               Explore Our Work ↓
             </a>
-            <a href="donate.html" class="v34-btn-outline" data-i18n="v34_btn_support">
-              Support the Mission →
-            </a>
-          </div>
-          <div style="font-size:0.86rem; color:#94a3b8; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-            <span style="color:#38bdf8;">✓</span> <span data-i18n="hero_micro_trust">100% Volunteer-Led Team • Active Federal Non-Profit • Ottawa-Gatineau Region</span>
-          </div>
-        </div>
-
-        <!-- Right: Human Visual Anchor -->
-        <div class="v34-hero-col-image v34-reveal">
-          <div class="v34-hero-media-wrapper">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" 
-                 alt="Young people engaged in collaborative learning and community skills workshop" 
-                 class="v34-hero-img" 
-                 loading="eager" 
-                 fetchpriority="high"
-                 onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/albums/canadian-mentorship/cover.jpg';}">
-            
-            <div class="v34-floating-badge v34-badge-top">
-              <strong style="display:block; font-size:1.1rem; color:#38bdf8;" data-i18n="badge_15_yrs">15 Years of Action</strong>
-              <span style="font-size:0.78rem; color:#cbd5e1;" data-i18n="badge_est_2011">Grassroots roots since 2011</span>
-            </div>
-
-            <div class="v34-floating-badge v34-badge-bottom">
-              <strong style="display:block; font-size:0.95rem; color:#ffffff;" data-i18n="badge_bilateral">Canada 🇨🇦 ↔ 🇧🇮 Burundi</strong>
-              <span style="font-size:0.76rem; color:#94a3b8;" data-i18n="badge_bilateral_sub">One shared mission</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       CHAPTER 02: THE BILATERAL BRIDGE — WHO WE ARE
+</div>
+<div style="font-size:0.86rem; color:#94a3b8; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+<span style="color:#38bdf8;">✓</span> <span data-i18n="hero_micro_trust">100% Volunteer-Led Team • Active Federal Non-Profit • Ottawa-Gatineau Region</span>
+</div>
+</div>
+<!-- Right: Human Visual Anchor -->
+<div class="v34-hero-col-image v34-reveal">
+<div class="v34-hero-media-wrapper">
+<img alt="Young people engaged in collaborative learning and community skills workshop" class="v34-hero-img" fetchpriority="high" loading="eager" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80';" src="images/hero/hero-community.jpg"/>
+<div class="v34-floating-badge v34-badge-top">
+<strong data-i18n="badge_15_yrs" style="display:block; font-size:1.1rem; color:#38bdf8;">15 Years of Action</strong>
+<span data-i18n="badge_est_2011" style="font-size:0.78rem; color:#cbd5e1;">Grassroots roots since 2011</span>
+</div>
+<div class="v34-floating-badge v34-badge-bottom">
+<strong data-i18n="badge_bilateral" style="display:block; font-size:0.95rem; color:#ffffff;">Canada 🇨🇦 ↔ 🇧🇮 Burundi</strong>
+<span data-i18n="badge_bilateral_sub" style="font-size:0.76rem; color:#94a3b8;">Two countries. One shared mission.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       CHAPTER 02: THE BILATERAL BRIDGE — CANADA ↔ BURUNDI
        ========================================================================= -->
-  <section class="v34-bridge-section" id="bilateral-bridge">
-    <div class="container">
-      <div style="text-align:center; max-width:820px; margin:0 auto;" class="v34-reveal">
-        <span class="v34-section-tag" data-i18n="bridge_tag">Our Roots &amp; Identity</span>
-        <h2 class="v34-section-title" data-i18n="bridge_title">One Movement. Two Continents. Shared Determination.</h2>
-        <p class="v34-section-deck" style="margin:0 auto;" data-i18n="bridge_desc">
+<section class="v34-bridge-section" id="bilateral-bridge">
+<div class="container">
+<div class="v34-reveal" style="text-align:center; max-width:820px; margin:0 auto;">
+<span class="v34-section-tag" data-i18n="bridge_tag">Our Cross-Border Connection</span>
+<h2 class="v34-section-title" data-i18n="bridge_title">Two Countries. One Shared Mission.</h2>
+<p class="v34-section-deck" data-i18n="bridge_desc" style="margin:0 auto;">
           Founded in Burundi in 2011 as a youth-led humanitarian initiative and federally incorporated in Canada in 2019, YBSP bridges grassroots East African solidarity with practical community opportunity in Canada.
         </p>
-      </div>
-
-      <div class="v34-bridge-grid">
-        <!-- Canada Card -->
-        <div class="v34-bridge-card v34-reveal">
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=700&q=80" 
-               alt="Canadian community youth collaborating in a skills workshop" 
-               class="v34-bridge-card-img" 
-               loading="lazy"
-               onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/albums/canadian-mentorship/cover.jpg';}">
-          <div class="v34-bridge-card-body">
-            <div>
-              <span style="font-size:0.78rem; font-weight:800; color:var(--v34-blue-hover); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px;" data-i18n="card_can_badge">Canada • Ottawa-Gatineau</span>
-              <h3 style="font-size:1.35rem; color:var(--v34-navy); margin-bottom:12px;" data-i18n="card_can_title">Community Support &amp; Youth Opportunity</h3>
-              <p style="font-size:0.95rem; color:var(--v34-text-muted); line-height:1.65; margin-bottom:18px;" data-i18n="card_can_desc">
+</div>
+<div class="v34-bridge-grid">
+<!-- Canada Card -->
+<div class="v34-bridge-card v34-reveal">
+<img alt="Canadian community youth collaborating in a skills workshop" class="v34-bridge-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/bridge/bridge-canada.jpg"/>
+<div class="v34-bridge-card-body">
+<div>
+<span data-i18n="card_can_badge" style="font-size:0.78rem; font-weight:800; color:var(--v34-blue-hover); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px;">Canada • Ottawa-Gatineau</span>
+<h3 data-i18n="card_can_title" style="font-size:1.35rem; color:var(--v34-navy); margin-bottom:12px;">Community Support &amp; Youth Opportunity</h3>
+<p data-i18n="card_can_desc" style="font-size:0.95rem; color:var(--v34-text-muted); line-height:1.65; margin-bottom:18px;">
                 Building practical pilot programs in the Ottawa-Gatineau region focused on youth mentorship, digital skills, food relief, and pathways toward greater self-sufficiency.
               </p>
-            </div>
-            <a href="about.html#story" style="font-size:0.9rem; font-weight:700; color:var(--v34-blue-hover); text-decoration:none; display:inline-flex; align-items:center; gap:6px;" data-i18n="btn_learn_can_story">
+</div>
+<a data-i18n="btn_learn_can_story" href="about.html#story" style="font-size:0.9rem; font-weight:700; color:var(--v34-blue-hover); text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
               Our Canadian Story &amp; Incorporation →
             </a>
-          </div>
-        </div>
-
-        <!-- Burundi Card -->
-        <div class="v34-bridge-card v34-reveal">
-          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=700&q=80" 
-               alt="Grassroots youth and community support in East Africa" 
-               class="v34-bridge-card-img" 
-               loading="lazy"
-               onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/albums/sorora-ikaye/cover.jpg';}">
-          <div class="v34-bridge-card-body">
-            <div>
-              <span style="font-size:0.78rem; font-weight:800; color:var(--v34-amber-dark); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px;" data-i18n="card_bdi_badge">Burundi • Bujumbura</span>
-              <h3 style="font-size:1.35rem; color:var(--v34-navy); margin-bottom:12px;" data-i18n="card_bdi_title">Over a Decade of Grassroots Solidarity</h3>
-              <p style="font-size:0.95rem; color:var(--v34-text-muted); line-height:1.65; margin-bottom:18px;" data-i18n="card_bdi_desc">
+</div>
+</div>
+<!-- Burundi Card -->
+<div class="v34-bridge-card v34-reveal">
+<img alt="Grassroots youth and community support in East Africa" class="v34-bridge-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/bridge/bridge-burundi.jpg"/>
+<div class="v34-bridge-card-body">
+<div>
+<span data-i18n="card_bdi_badge" style="font-size:0.78rem; font-weight:800; color:var(--v34-amber-dark); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px;">Burundi • Bujumbura</span>
+<h3 data-i18n="card_bdi_title" style="font-size:1.35rem; color:var(--v34-navy); margin-bottom:12px;">Over a Decade of Grassroots Solidarity</h3>
+<p data-i18n="card_bdi_desc" style="font-size:0.95rem; color:var(--v34-text-muted); line-height:1.65; margin-bottom:18px;">
                 Originating with youth volunteerism in Bujumbura, providing Sunday meals for vulnerable youth, school supply drives (#SororaIkaye), and artisan starter toolkits (#MurabireKazoza).
               </p>
-            </div>
-            <a href="about.html#synergy" style="font-size:0.9rem; font-weight:700; color:var(--v34-amber-dark); text-decoration:none; display:inline-flex; align-items:center; gap:6px;" data-i18n="btn_learn_bdi_story">
+</div>
+<a data-i18n="btn_learn_bdi_story" href="about.html#synergy" style="font-size:0.9rem; font-weight:700; color:var(--v34-amber-dark); text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
               Burundi Roots &amp; Bilateral Synergy →
             </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       CHAPTER 03: WHAT WE WORK ON — THREE PATHWAYS OF ACTION
-       ========================================================================= -->
-  <section class="v34-pathways-section" id="pathways">
-    <div class="container">
-      <div style="text-align:center; max-width:820px; margin:0 auto;" class="v34-reveal">
-        <span class="v34-section-tag" data-i18n="path_tag">Where We Act</span>
-        <h2 class="v34-section-title" data-i18n="path_title">Three Practical Pathways to Opportunity</h2>
-        <p class="v34-section-deck" style="margin:0 auto;" data-i18n="path_desc">
-          We combine immediate hardship relief with long-term skill building, opening sustainable doors toward economic self-sufficiency.
-        </p>
-      </div>
-
-      <div class="v34-pathways-grid">
-        
-        <!-- Pathway 1 -->
-        <div class="v34-pathway-card v34-reveal">
-          <div class="v34-pathway-img-wrap">
-            <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=700&q=80" 
-                 alt="Community food preparation and direct relief" 
-                 class="v34-pathway-img" 
-                 loading="lazy"
-                 onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/albums/sunday-meal/cover.jpg';}">
-          </div>
-          <div class="v34-pathway-body">
-            <div>
-              <span style="font-size:0.76rem; font-weight:800; color:var(--v34-blue-hover); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:8px;" data-i18n="p1_badge">Immediate Dignity &amp; Essentials</span>
-              <h3 style="font-size:1.3rem; color:var(--v34-navy); margin-bottom:12px;" data-i18n="p1_title">Community Support &amp; Poverty Relief</h3>
-              <p style="font-size:0.92rem; color:var(--v34-text-muted); line-height:1.65; margin-bottom:20px;" data-i18n="p1_desc">
-                Practical initiatives that help address food insecurity, emergency hardship, and barriers to participation in community life.
-              </p>
-            </div>
-            <a href="programs.html#community-support" style="font-size:0.9rem; font-weight:700; color:var(--v34-blue-hover); text-decoration:none; display:inline-flex; align-items:center; gap:6px;" data-i18n="btn_learn_p1">
-              Explore Community Support →
-            </a>
-          </div>
-        </div>
-
-        <!-- Pathway 2 -->
-        <div class="v34-pathway-card v34-reveal">
-          <div class="v34-pathway-img-wrap">
-            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=700&q=80" 
-                 alt="Youth learning practical digital and workplace skills" 
-                 class="v34-pathway-img" 
-                 loading="lazy"
-                 onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/albums/community-labs/cover.jpg';}">
-          </div>
-          <div class="v34-pathway-body">
-            <div>
-              <span style="font-size:0.76rem; font-weight:800; color:var(--v34-navy); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:8px;" data-i18n="p2_badge">Learning &amp; Mentorship</span>
-              <h3 style="font-size:1.3rem; color:var(--v34-navy); margin-bottom:12px;" data-i18n="p2_title">Education, Skills &amp; Youth Opportunity</h3>
-              <p style="font-size:0.92rem; color:var(--v34-text-muted); line-height:1.65; margin-bottom:20px;" data-i18n="p2_desc">
-                Equipping youth and emerging workers with digital literacy, practical workplace tools, mentorship, and networks needed to thrive.
-              </p>
-            </div>
-            <a href="programs.html#education-skills" style="font-size:0.9rem; font-weight:700; color:var(--v34-navy); text-decoration:none; display:inline-flex; align-items:center; gap:6px;" data-i18n="btn_learn_p2">
-              Explore Education &amp; Skills →
-            </a>
-          </div>
-        </div>
-
-        <!-- Pathway 3 -->
-        <div class="v34-pathway-card v34-reveal">
-          <div class="v34-pathway-img-wrap">
-            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80" 
-                 alt="Cultivating sustainable economic self-sufficiency" 
-                 class="v34-pathway-img" 
-                 loading="lazy"
-                 onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='images/albums/murabire-kazoza/cover.jpg';}">
-          </div>
-          <div class="v34-pathway-body">
-            <div>
-              <span style="font-size:0.76rem; font-weight:800; color:var(--v34-amber-dark); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:8px;" data-i18n="p3_badge">Economic Independence</span>
-              <h3 style="font-size:1.3rem; color:var(--v34-navy); margin-bottom:12px;" data-i18n="p3_title">Pathways to Self-Sufficiency</h3>
-              <p style="font-size:0.92rem; color:var(--v34-text-muted); line-height:1.65; margin-bottom:20px;" data-i18n="p3_desc">
-                Employment readiness, micro-entrepreneurship preparation, financial capability, and vocational pathways toward lasting independence.
-              </p>
-            </div>
-            <a href="programs.html#self-sufficiency" style="font-size:0.9rem; font-weight:700; color:var(--v34-amber-dark); text-decoration:none; display:inline-flex; align-items:center; gap:6px;" data-i18n="btn_learn_p3">
-              Explore Self-Sufficiency →
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       CHAPTER 04: REAL PEOPLE / REAL FOCUS — VOICES OF CHANGE
-       ========================================================================= -->
-  <section class="v34-voices-section" id="voices">
-    <div class="container">
-      <div class="v34-voices-grid">
-        
-        <!-- Portrait Column -->
-        <div class="v34-voices-col-img v34-reveal">
-          <div style="border-radius:20px; overflow:hidden; border:2px solid rgba(255,255,255,0.2); box-shadow:0 20px 40px rgba(0,0,0,0.4);">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
-                 alt="Community member and youth participant reflecting on opportunity" 
-                 style="width:100%; height:450px; object-fit:cover; display:block;"
-                 loading="lazy">
-          </div>
-        </div>
-
-        <!-- Quote & Context Column -->
-        <div class="v34-voices-col-quote v34-reveal">
-          <span class="v34-section-tag" style="color:#38bdf8;" data-i18n="voice_tag">The Human Heart of Our Mission</span>
-          <div class="v34-quote-box">
-            <blockquote class="v34-quote-text" data-i18n="voice_quote">
-              “Behind every initiative is a person working toward a more secure future. When we eliminate barriers to education, meals, and practical skills, human potential turns into lasting opportunity.”
-            </blockquote>
-            <p style="font-size:1.02rem; color:#cbd5e1; line-height:1.7; margin-bottom:20px;" data-i18n="voice_desc">
-              Whether connecting youth in Gatineau with career mentors or distributing vocational toolkits to young artisans in Bujumbura, YBSP believes in the agency, dignity, and leadership of the people we walk alongside.
-            </p>
-            <div style="display:flex; align-items:center; gap:14px;">
-              <div style="width:42px; height:42px; border-radius:50%; background:var(--v34-blue); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.1rem; color:#fff;">
-                Y
-              </div>
-              <div>
-                <strong style="display:block; color:#fff; font-size:0.95rem;" data-i18n="voice_author">Youth Building in Synergy to end Poverty</strong>
-                <span style="font-size:0.82rem; color:#94a3b8;" data-i18n="voice_role">Community-Led Action • Canada &amp; Burundi</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       CHAPTER 05: THE WORK IN ACTION — INITIATIVES SHOWCASE
-       ========================================================================= -->
-  <section class="v34-initiatives-section" id="initiatives">
-    <div class="container">
-      <div style="text-align:center; max-width:820px; margin:0 auto;" class="v34-reveal">
-        <span class="v34-section-tag" data-i18n="init_tag">Documented Field Initiatives</span>
-        <h2 class="v34-section-title" data-i18n="init_title">Action Rooted in Tangible Community Needs</h2>
-        <p class="v34-section-deck" style="margin:0 auto;" data-i18n="init_desc">
-          YBSP mobilizes community volunteers and pooled solidarity to deliver practical, verifiable solutions on the ground.
-        </p>
-      </div>
-
-      <div class="v34-initiatives-grid">
-        
-        <!-- Initiative 1 -->
-        <div class="v34-init-card v34-reveal">
-          <div>
-            <span style="font-size:0.76rem; font-weight:800; color:var(--v34-blue-hover); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px;" data-i18n="init1_loc">Bujumbura • Humanitarian Action</span>
-            <h3 style="font-size:1.25rem; color:var(--v34-navy); margin-bottom:16px;" data-i18n="init1_title">Sunday Meal Program</h3>
-            
-            <div class="v34-init-step">
-              <strong data-i18n="init_need_lbl">The Need:</strong>
-              <p style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;" data-i18n="init1_need">
-                Vulnerable youth and street children facing acute weekend food insecurity and isolation.
-              </p>
-            </div>
-            <div class="v34-init-step">
-              <strong data-i18n="init_act_lbl">What YBSP Did:</strong>
-              <p style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;" data-i18n="init1_action">
-                Mobilized volunteer youth teams to pool resources, prepare nutritious meals, and provide dignified fellowship.
-              </p>
-            </div>
-            <div class="v34-init-step">
-              <strong data-i18n="init_diff_lbl">The Impact:</strong>
-              <p style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;" data-i18n="init1_diff">
-                Over a decade of consistent community meals, fostering belonging and immediate nutrition.
-              </p>
-            </div>
-          </div>
-          <a href="about.html#synergy" style="font-size:0.88rem; font-weight:700; color:var(--v34-blue-hover); text-decoration:none; display:inline-flex; align-items:center; gap:4px; margin-top:14px;" data-i18n="btn_view_field_hist">
-            Field History &amp; Archives →
-          </a>
-        </div>
-
-        <!-- Initiative 2 -->
-        <div class="v34-init-card v34-reveal">
-          <div>
-            <span style="font-size:0.76rem; font-weight:800; color:var(--v34-navy); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px;" data-i18n="init2_loc">Education Access • Burundi</span>
-            <h3 style="font-size:1.25rem; color:var(--v34-navy); margin-bottom:16px;" data-i18n="init2_title">#SororaIkaye School Supply Drive</h3>
-            
-            <div class="v34-init-step">
-              <strong data-i18n="init_need_lbl">The Need:</strong>
-              <p style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;" data-i18n="init2_need">
-                Children from economically disadvantaged households prevented from schooling by notebook and supply shortages.
-              </p>
-            </div>
-            <div class="v34-init-step">
-              <strong data-i18n="init_act_lbl">What YBSP Did:</strong>
-              <p style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;" data-i18n="init2_action">
-                Organized public solidarity campaigns to collect, assemble, and distribute complete school kits directly to students.
-              </p>
-            </div>
-            <div class="v34-init-step">
-              <strong data-i18n="init_diff_lbl">The Impact:</strong>
-              <p style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;" data-i18n="init2_diff">
-                Enabled hundreds of young learners to enter classrooms equipped with pride and learning materials.
-              </p>
-            </div>
-          </div>
-          <a href="programs.html#education-skills" style="font-size:0.88rem; font-weight:700; color:var(--v34-navy); text-decoration:none; display:inline-flex; align-items:center; gap:4px; margin-top:14px;" data-i18n="btn_view_edu_init">
-            Education Initiatives →
-          </a>
-        </div>
-
-        <!-- Initiative 3 -->
-        <div class="v34-init-card v34-reveal">
-          <div>
-            <span style="font-size:0.76rem; font-weight:800; color:var(--v34-amber-dark); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px;" data-i18n="init3_loc">Vocational Independence • East Africa</span>
-            <h3 style="font-size:1.25rem; color:var(--v34-navy); margin-bottom:16px;" data-i18n="init3_title">#MurabireKazoza Artisan Toolkits</h3>
-            
-            <div class="v34-init-step">
-              <strong data-i18n="init_need_lbl">The Need:</strong>
-              <p style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;" data-i18n="init3_need">
-                Young vocational graduates in carpentry, tailoring, and metalwork unable to start work due to prohibitive equipment costs.
-              </p>
-            </div>
-            <div class="v34-init-step">
-              <strong data-i18n="init_act_lbl">What YBSP Did:</strong>
-              <p style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;" data-i18n="init3_action">
-                Equipped graduates with essential starter toolkits, sewing machines, and carpentry tools upon completion of trade training.
-              </p>
-            </div>
-            <div class="v34-init-step">
-              <strong data-i18n="init_diff_lbl">The Impact:</strong>
-              <p style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;" data-i18n="init3_diff">
-                Transitioned young artisans from unemployment into self-sufficient, productive tradespeople.
-              </p>
-            </div>
-          </div>
-          <a href="programs.html#self-sufficiency" style="font-size:0.88rem; font-weight:700; color:var(--v34-amber-dark); text-decoration:none; display:inline-flex; align-items:center; gap:4px; margin-top:14px;" data-i18n="btn_view_voc_init">
-            Vocational &amp; Enterprise Pathways →
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       CHAPTER 06: THE YBSP JOURNEY & VERIFIED CREDIBILITY
-       ========================================================================= -->
-  <section class="v34-journey-section" id="journey">
-    <div class="container">
-      
-      <!-- Verified Stat Strip -->
-      <div class="v34-stats-strip v34-reveal">
-        <div class="v34-stat-item">
-          <div class="v34-stat-number" data-target="15">15+</div>
-          <div class="v34-stat-label" data-i18n="stat_years">Years of Grassroots Action<br>(Since 2011)</div>
-        </div>
-        <div class="v34-stat-item">
-          <div class="v34-stat-number" data-target="2">2</div>
-          <div class="v34-stat-label" data-i18n="stat_countries">Countries Connected<br>(Canada &amp; Burundi)</div>
-        </div>
-        <div class="v34-stat-item">
-          <div class="v34-stat-number" data-target="100">100%</div>
-          <div class="v34-stat-label" data-i18n="stat_volunteer">Volunteer-Led Team<br>&amp; Governance</div>
-        </div>
-        <div class="v34-stat-item">
-          <div class="v34-stat-number" data-target="2019">2019</div>
-          <div class="v34-stat-label" data-i18n="stat_incorp">Federal Incorporation<br>(NFP Act # 1154010-6)</div>
-        </div>
-      </div>
-
-      <!-- Chronological Journey Timeline -->
-      <div style="text-align:center; max-width:820px; margin:0 auto 40px;" class="v34-reveal">
-        <span class="v34-section-tag" data-i18n="journey_tag">Our Evolution</span>
-        <h2 class="v34-section-title" data-i18n="journey_title">15 Years of Grassroots Persistence</h2>
-        <p class="v34-section-deck" style="margin:0 auto;" data-i18n="journey_desc">
+</div>
+</div>
+</div>
+</div>
+</section><section class="v34-journey-section" id="journey">
+<div class="container">
+<!-- Verified Stat Strip -->
+<div class="v34-stats-strip v34-reveal">
+<div class="v34-stat-item">
+<div class="v34-stat-number" data-target="15">15+</div>
+<div class="v34-stat-label" data-i18n="stat_years">Years of Grassroots Action<br/>(Since 2011)</div>
+</div>
+<div class="v34-stat-item">
+<div class="v34-stat-number" data-target="2">2</div>
+<div class="v34-stat-label" data-i18n="stat_countries">Countries Connected<br/>(Canada &amp; Burundi)</div>
+</div>
+<div class="v34-stat-item">
+<div class="v34-stat-number" data-target="100">100%</div>
+<div class="v34-stat-label" data-i18n="stat_volunteer">Volunteer-Led Team<br/>&amp; Governance</div>
+</div>
+<div class="v34-stat-item">
+<div class="v34-stat-number" data-target="2019">2019</div>
+<div class="v34-stat-label" data-i18n="stat_incorp">Federal Incorporation<br/>(NFP Act # 1154010-6)</div>
+</div>
+</div>
+<!-- Chronological Journey Timeline -->
+<div class="v34-reveal" style="text-align:center; max-width:820px; margin:0 auto 40px;">
+<span class="v34-section-tag" data-i18n="journey_tag">Our Evolution</span>
+<h2 class="v34-section-title" data-i18n="journey_title">A Journey of Purpose and Persistence</h2>
+<p class="v34-section-deck" data-i18n="journey_desc" style="margin:0 auto;">
           How a youth-led community initiative in East Africa evolved into an active, federally incorporated Canadian non-profit.
         </p>
-      </div>
-
-      <div class="v34-timeline-grid v34-reveal">
-        <div class="v34-timeline-item">
-          <div class="v34-timeline-year">2011</div>
-          <strong style="color:var(--v34-navy); display:block; margin-bottom:6px;" data-i18n="time1_title">Founded in Burundi</strong>
-          <p style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;" data-i18n="time1_desc">
+</div>
+<div class="v34-timeline-grid v34-reveal">
+<div class="v34-timeline-item">
+<div class="v34-timeline-year">2011</div>
+<strong data-i18n="time1_title" style="color:var(--v34-navy); display:block; margin-bottom:6px;">Founded in Burundi</strong>
+<p data-i18n="time1_desc" style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;">
             Youth in Bujumbura unite voluntarily to respond to extreme poverty, street homelessness, and school dropouts.
           </p>
-        </div>
-
-        <div class="v34-timeline-item">
-          <div class="v34-timeline-year">2017</div>
-          <strong style="color:var(--v34-navy); display:block; margin-bottom:6px;" data-i18n="time2_title">Diaspora Bridge Formed</strong>
-          <p style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;" data-i18n="time2_desc">
+</div>
+<div class="v34-timeline-item">
+<div class="v34-timeline-year">2017</div>
+<strong data-i18n="time2_title" style="color:var(--v34-navy); display:block; margin-bottom:6px;">Diaspora Bridge Formed</strong>
+<p data-i18n="time2_desc" style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;">
             Founder relocates to Canada, establishing personal and community networks while YBSP Burundi continues local action.
           </p>
-        </div>
-
-        <div class="v34-timeline-item">
-          <div class="v34-timeline-year">2019</div>
-          <strong style="color:var(--v34-navy); display:block; margin-bottom:6px;" data-i18n="time3_title">Federal Incorporation</strong>
-          <p style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;" data-i18n="time3_desc">
+</div>
+<div class="v34-timeline-item">
+<div class="v34-timeline-year">2019</div>
+<strong data-i18n="time3_title" style="color:var(--v34-navy); display:block; margin-bottom:6px;">Federal Incorporation</strong>
+<p data-i18n="time3_desc" style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;">
             YBSP Canada officially incorporated under the Canada Not-for-profit Corporations Act (Corporation # 1154010-6).
           </p>
-        </div>
-
-        <div class="v34-timeline-item">
-          <div class="v34-timeline-year" style="color:var(--v34-blue-hover);">Today</div>
-          <strong style="color:var(--v34-navy); display:block; margin-bottom:6px;" data-i18n="time4_title">Canadian Program Pilots</strong>
-          <p style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;" data-i18n="time4_desc">
+</div>
+<div class="v34-timeline-item">
+<div class="v34-timeline-year" style="color:var(--v34-blue-hover);">Today</div>
+<strong data-i18n="time4_title" style="color:var(--v34-navy); display:block; margin-bottom:6px;">Building in Canada</strong>
+<p data-i18n="time4_desc" style="font-size:0.88rem; color:var(--v34-text-muted); line-height:1.55; margin:0;">
             Building volunteer-led community initiatives and partnerships in Ottawa-Gatineau while sustaining bilateral solidarity.
           </p>
-        </div>
-      </div>
-
-      <!-- Stage Transparency Card -->
-      <div style="margin-top:40px; background:rgba(14, 165, 233, 0.08); border:1px solid rgba(14, 165, 233, 0.25); border-left:4px solid var(--v34-blue); border-radius:12px; padding:20px 24px;" class="v34-reveal">
-        <strong style="display:block; font-size:0.92rem; color:var(--v34-navy); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.04em;" data-i18n="stage_title">Organizational Stage &amp; Transparency:</strong>
-        <p style="font-size:0.94rem; color:var(--v34-text-muted); line-height:1.65; margin:0;" data-i18n="stage_desc">
+</div>
+</div>
+<!-- Stage Transparency Card -->
+<div class="v34-reveal" style="margin-top:40px; background:rgba(14, 165, 233, 0.08); border:1px solid rgba(14, 165, 233, 0.25); border-left:4px solid var(--v34-blue); border-radius:12px; padding:20px 24px;">
+<strong data-i18n="stage_title" style="display:block; font-size:0.92rem; color:var(--v34-navy); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.04em;">Organizational Stage &amp; Transparency:</strong>
+<p data-i18n="stage_desc" style="font-size:0.94rem; color:var(--v34-text-muted); line-height:1.65; margin:0;">
           YBSP Canada is an autonomous, volunteer-led federal non-profit organization building its first Canadian program pilots, community partnerships, and foundation for future charitable registration. Some initiatives described are active pilots, while others are in planning or dependent on future community funding.
         </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       CHAPTER 03: WHO WE ARE (HUMANIZED)
+       ========================================================================= -->
+<!-- =========================================================================
+       CHAPTER 04: WHAT WE WORK ON — THREE PATHWAYS OF ACTION (01, 02, 03)
+       ========================================================================= -->
+<section class="v34-pathways-section" id="pathways">
+<div class="container">
+<div class="v34-reveal" style="text-align:center; max-width:820px; margin:0 auto;">
+<span class="v34-section-tag" data-i18n="path_tag">Where We Act</span>
+<h2 class="v34-section-title" data-i18n="path_title">Three Practical Pathways to Opportunity</h2>
+<p class="v34-section-deck" data-i18n="path_desc" style="margin:0 auto;">
+          We combine immediate hardship relief with long-term skill building, opening sustainable doors toward economic self-sufficiency.
+        </p>
+</div>
+<div class="v34-pathways-grid">
+<!-- Pathway 01 -->
+<div class="v34-pathway-card v34-reveal">
+<div class="v34-pathway-img-wrap">
+<span class="v34-pathway-num">01</span>
+<img alt="Community food preparation and direct relief" class="v34-pathway-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-relief.jpg"/>
+</div>
+<div class="v34-pathway-body">
+<div>
+<span data-i18n="p1_badge" style="font-size:0.76rem; font-weight:800; color:var(--v34-blue-hover); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:8px;">Immediate Dignity &amp; Essentials</span>
+<h3 data-i18n="p1_title" style="font-size:1.3rem; color:var(--v34-navy); margin-bottom:12px;">Community Support &amp; Poverty Relief</h3>
+<p data-i18n="p1_desc" style="font-size:0.92rem; color:var(--v34-text-muted); line-height:1.65; margin-bottom:20px;">
+                Practical initiatives that help address food insecurity, emergency hardship, and barriers to participation in community life.
+              </p>
+</div>
+<a data-i18n="btn_learn_p1" href="programs.html#community-support" style="font-size:0.9rem; font-weight:700; color:var(--v34-blue-hover); text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+              Explore Community Support →
+            </a>
+</div>
+</div>
+<!-- Pathway 02 -->
+<div class="v34-pathway-card v34-reveal">
+<div class="v34-pathway-img-wrap">
+<span class="v34-pathway-num">02</span>
+<img alt="Youth learning practical digital and workplace skills" class="v34-pathway-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-education.jpg"/>
+</div>
+<div class="v34-pathway-body">
+<div>
+<span data-i18n="p2_badge" style="font-size:0.76rem; font-weight:800; color:var(--v34-navy); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:8px;">Learning &amp; Mentorship</span>
+<h3 data-i18n="p2_title" style="font-size:1.3rem; color:var(--v34-navy); margin-bottom:12px;">Education, Skills &amp; Youth Opportunity</h3>
+<p data-i18n="p2_desc" style="font-size:0.92rem; color:var(--v34-text-muted); line-height:1.65; margin-bottom:20px;">
+                Equipping youth and emerging workers with digital literacy, practical workplace tools, mentorship, and networks needed to thrive.
+              </p>
+</div>
+<a data-i18n="btn_learn_p2" href="programs.html#education-skills" style="font-size:0.9rem; font-weight:700; color:var(--v34-navy); text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+              Explore Education &amp; Skills →
+            </a>
+</div>
+</div>
+<!-- Pathway 03 -->
+<div class="v34-pathway-card v34-reveal">
+<div class="v34-pathway-img-wrap">
+<span class="v34-pathway-num">03</span>
+<img alt="Cultivating sustainable economic self-sufficiency" class="v34-pathway-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-self-sufficiency.jpg"/>
+</div>
+<div class="v34-pathway-body">
+<div>
+<span data-i18n="p3_badge" style="font-size:0.76rem; font-weight:800; color:var(--v34-amber-dark); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:8px;">Economic Independence</span>
+<h3 data-i18n="p3_title" style="font-size:1.3rem; color:var(--v34-navy); margin-bottom:12px;">Pathways to Self-Sufficiency</h3>
+<p data-i18n="p3_desc" style="font-size:0.92rem; color:var(--v34-text-muted); line-height:1.65; margin-bottom:20px;">
+                Employment readiness, micro-entrepreneurship preparation, financial capability, and vocational pathways toward lasting independence.
+              </p>
+</div>
+<a data-i18n="btn_learn_p3" href="programs.html#self-sufficiency" style="font-size:0.9rem; font-weight:700; color:var(--v34-amber-dark); text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+              Explore Self-Sufficiency →
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       CHAPTER 05: REAL PEOPLE / REAL WORK (DOMINANT VISUAL MOMENT)
+       ========================================================================= -->
+<!-- =========================================================================
+       CHAPTER 06: THE YBSP JOURNEY & VERIFIED CREDIBILITY
+       ========================================================================= -->
+<!-- =========================================================================
        CHAPTER 07: SUPPORT THE MISSION & WAYS TO GET INVOLVED
        ========================================================================= -->
-  <section class="v34-support-section" id="support-mission">
-    <div class="container">
-      
-      <!-- Support / Donation Card -->
-      <div class="v34-support-card v34-reveal">
-        <span class="v34-eyebrow" style="background:rgba(255,255,255,0.12); color:#ffffff; border-color:rgba(255,255,255,0.3);" data-i18n="sup_tag">Community Solidarity</span>
-        <h2 style="font-size:clamp(1.9rem, 3.5vw, 2.6rem); font-weight:800; color:#ffffff; margin-bottom:14px; line-height:1.2;" data-i18n="sup_title">
-          Your Solidarity Builds What Comes Next
-        </h2>
-        <p style="font-size:1.1rem; color:#cbd5e1; max-width:700px; margin:0 auto 24px; line-height:1.65;" data-i18n="sup_desc">
-          Support YBSP Canada’s community pilots, youth workshops, and operational foundation. Every dollar directly funds practical grassroots action.
-        </p>
-
-        <!-- Amount Selection Pills (Visual Interactivity) -->
-        <div class="v34-amount-pills" id="donationPills">
-          <button type="button" class="v34-amount-pill" onclick="selectDonationAmount(25, this)">$25</button>
-          <button type="button" class="v34-amount-pill active" onclick="selectDonationAmount(50, this)">$50</button>
-          <button type="button" class="v34-amount-pill" onclick="selectDonationAmount(100, this)">$100</button>
-          <button type="button" class="v34-amount-pill" onclick="selectDonationAmount(250, this)">$250</button>
-          <button type="button" class="v34-amount-pill" onclick="selectDonationAmount(0, this)" data-i18n="pill_custom">Custom</button>
-        </div>
-
-        <div style="margin-bottom:28px;">
-          <a href="donate.html" id="btnDynamicDonate" class="v34-btn-primary" style="padding:15px 36px; font-size:1.1rem;" data-i18n="btn_donate_zeffy">
-            Support YBSP Canada via Zeffy →
-          </a>
-        </div>
-
-        <div style="font-size:0.86rem; color:#94a3b8; max-width:620px; margin:0 auto; line-height:1.55;">
-          <span style="color:#38bdf8;">✓</span> <span data-i18n="zeffy_note">100% Fee-Free Zeffy Integration: 100% of your gift reaches YBSP Canada with zero platform transaction deductions.</span>
-        </div>
-      </div>
-
-      <!-- Beyond Giving: 4 Involvement Tracks -->
-      <div style="text-align:center; max-width:800px; margin:0 auto 36px;" class="v34-reveal">
-        <h3 style="font-size:1.65rem; font-weight:800; color:#ffffff; margin-bottom:10px;" data-i18n="involve_head">There Is More Than One Way to Build Synergy</h3>
-        <p style="font-size:1rem; color:#cbd5e1; margin:0;" data-i18n="involve_sub">Explore how you can contribute your time, voice, or expertise to our community.</p>
-      </div>
-
-      <div class="v34-involvement-grid v34-reveal">
-        <div class="v34-involve-card">
-          <div>
-            <div style="font-size:2rem; margin-bottom:12px;">🤝</div>
-            <h4 style="font-size:1.15rem; color:#ffffff; margin-bottom:8px;" data-i18n="inv1_title">Volunteer With Us</h4>
-            <p style="font-size:0.88rem; color:#cbd5e1; line-height:1.6; margin-bottom:16px;" data-i18n="inv1_desc">
-              Support community workshops, event logistics, and youth mentorship activities in Ottawa-Gatineau.
-            </p>
-          </div>
-          <a href="get-involved.html#volunteer" style="color:var(--v34-blue); font-size:0.88rem; font-weight:700; text-decoration:none;" data-i18n="inv1_btn">Volunteer Form →</a>
-        </div>
-
-        <div class="v34-involve-card">
-          <div>
-            <div style="font-size:2rem; margin-bottom:12px;">📋</div>
-            <h4 style="font-size:1.15rem; color:#ffffff; margin-bottom:8px;" data-i18n="inv2_title">Become a Member</h4>
-            <p style="font-size:0.88rem; color:#cbd5e1; line-height:1.6; margin-bottom:16px;" data-i18n="inv2_desc">
-              Join our democratic non-profit membership to participate in governance, annual meetings, and strategic direction.
-            </p>
-          </div>
-          <a href="get-involved.html#membership" style="color:var(--v34-blue); font-size:0.88rem; font-weight:700; text-decoration:none;" data-i18n="inv2_btn">Member Application →</a>
-        </div>
-
-        <div class="v34-involve-card">
-          <div>
-            <div style="font-size:2rem; margin-bottom:12px;">💡</div>
-            <h4 style="font-size:1.15rem; color:#ffffff; margin-bottom:8px;" data-i18n="inv3_title">Member Working Groups</h4>
-            <p style="font-size:0.88rem; color:#cbd5e1; line-height:1.6; margin-bottom:16px;" data-i18n="inv3_desc">
-              Contribute specialized skills in education, technology/AI, policy, fundraising, and communications.
-            </p>
-          </div>
-          <a href="get-involved.html#working-groups" style="color:var(--v34-blue); font-size:0.88rem; font-weight:700; text-decoration:none;" data-i18n="inv3_btn">Join a Working Group →</a>
-        </div>
-
-        <div class="v34-involve-card">
-          <div>
-            <div style="font-size:2rem; margin-bottom:12px;">🏢</div>
-            <h4 style="font-size:1.15rem; color:#ffffff; margin-bottom:8px;" data-i18n="inv4_title">Institutional Partners</h4>
-            <p style="font-size:0.88rem; color:#cbd5e1; line-height:1.6; margin-bottom:16px;" data-i18n="inv4_desc">
-              Collaborate with civic organizations, academic institutions, and corporate allies on co-designed youth initiatives.
-            </p>
-          </div>
-          <a href="get-involved.html#partnerships" style="color:var(--v34-blue); font-size:0.88rem; font-weight:700; text-decoration:none;" data-i18n="inv4_btn">Partner Inquiry →</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       CHAPTER 08: LATEST DISPATCHES & CLOSING CATALYST
+<section class="v34-support-section" id="support-mission">
+<div class="container">
+<!-- Support / Donation Split -->
+<div class="v34-support-split v34-reveal">
+<div class="v34-support-col-img">
+<img alt="Community members united in solidarity and collaboration" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/support/support-community.jpg" style="width:100%; height:340px; object-fit:cover; display:block;"/>
+</div>
+<div class="v34-support-col-text">
+<span class="v34-eyebrow" data-i18n="sup_tag" style="background:rgba(255,255,255,0.12); color:#ffffff; border-color:rgba(255,255,255,0.3);">Community Solidarity</span>
+<h2 data-i18n="sup_title" style="font-size:clamp(1.8rem, 3.2vw, 2.4rem); font-weight:800; color:#ffffff; margin-bottom:14px; line-height:1.2;">
+            Help Build the Next Chapter
+          </h2>
+<p data-i18n="sup_desc" style="font-size:1.05rem; color:#cbd5e1; line-height:1.65; margin-bottom:24px;">
+            Your solidarity supports YBSP Canada’s community program pilots, youth workshops, and operational development in Ottawa-Gatineau. We also work closely with YBSP Burundi on bilateral educational and community programs. 100% fee-free processing via Zeffy ensures your gift directly powers our mission.
+          </p>
+<div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px;">
+<a class="v34-btn-primary" data-i18n="btn_support_yasp" href="donate.html">
+              Support YBSP →
+            </a>
+<a class="v34-btn-outline" data-i18n="btn_get_involved_cta" href="get-involved.html">
+              Get Involved
+            </a>
+</div>
+<div style="font-size:0.84rem; color:#94a3b8; line-height:1.5;">
+<span style="color:#38bdf8;">✓</span> <span data-i18n="zeffy_note">100% Fee-Free Zeffy Integration: 100% of your gift reaches YBSP Canada with zero platform transaction deductions.</span>
+</div>
+</div>
+</div>
+<!-- Beyond Giving: 4 Involvement Tracks -->
+</div>
+</section>
+<!-- =========================================================================
+       CHAPTER 08: LATEST DISPATCHES & CLOSING INVITATION
        ========================================================================= -->
-  <section class="v34-dispatches-section" id="dispatches">
-    <div class="container">
-      
-      <!-- Dispatches Header -->
-      <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom:32px;" class="v34-reveal">
-        <div>
-          <span class="v34-section-tag" data-i18n="news_tag">Field Dispatches</span>
-          <h2 class="v34-section-title" style="margin:0;" data-i18n="news_title">Latest Updates &amp; Community Milestones</h2>
-        </div>
-        <a href="news.html" style="font-size:0.95rem; font-weight:700; color:var(--v34-blue-hover); text-decoration:none;" data-i18n="btn_view_all_news">
-          View All News &amp; Announcements →
-        </a>
-      </div>
-
-      <!-- 3 Editorial News Cards -->
-      <div class="v34-news-grid">
-        
-        <div class="v34-news-card v34-reveal">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" 
-               alt="Youth mentorship and digital skills pilot" 
-               class="v34-news-img" 
-               loading="lazy">
-          <div class="v34-news-body">
-            <div>
-              <span style="font-size:0.75rem; font-weight:800; color:var(--v34-blue-hover); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px;" data-i18n="news1_cat">Programs &amp; Pilots</span>
-              <h3 style="font-size:1.15rem; color:var(--v34-navy); margin-bottom:8px; line-height:1.35;" data-i18n="news1_title">Developing Canadian Youth Skills &amp; AI Literacy Initiatives</h3>
-              <p style="font-size:0.86rem; color:var(--v34-text-muted); line-height:1.55; margin-bottom:16px;" data-i18n="news1_desc">
-                YBSP Canada is structuring its first pilot cohorts to equip youth facing employment barriers with practical digital tools.
-              </p>
-            </div>
-            <a href="news.html" style="font-size:0.86rem; font-weight:700; color:var(--v34-navy); text-decoration:none;" data-i18n="btn_read_more">Read update →</a>
-          </div>
-        </div>
-
-        <div class="v34-news-card v34-reveal">
-          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=80" 
-               alt="Community collaboration and partnership roundtable" 
-               class="v34-news-img" 
-               loading="lazy">
-          <div class="v34-news-body">
-            <div>
-              <span style="font-size:0.75rem; font-weight:800; color:var(--v34-navy); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px;" data-i18n="news2_cat">Community Engagement</span>
-              <h3 style="font-size:1.15rem; color:var(--v34-navy); margin-bottom:8px; line-height:1.35;" data-i18n="news2_title">Building Grassroots Partnerships Across Ottawa-Gatineau</h3>
-              <p style="font-size:0.86rem; color:var(--v34-text-muted); line-height:1.55; margin-bottom:16px;" data-i18n="news2_desc">
-                Engaging local community organizations and volunteers to expand practical poverty-relief and youth empowerment pathways.
-              </p>
-            </div>
-            <a href="news.html" style="font-size:0.86rem; font-weight:700; color:var(--v34-navy); text-decoration:none;" data-i18n="btn_read_more">Read update →</a>
-          </div>
-        </div>
-
-        <div class="v34-news-card v34-reveal">
-          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=600&q=80" 
-               alt="Bilateral solidarity and humanitarian legacy" 
-               class="v34-news-img" 
-               loading="lazy">
-          <div class="v34-news-body">
-            <div>
-              <span style="font-size:0.75rem; font-weight:800; color:var(--v34-amber-dark); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px;" data-i18n="news3_cat">Bilateral Solidarity</span>
-              <h3 style="font-size:1.15rem; color:var(--v34-navy); margin-bottom:8px; line-height:1.35;" data-i18n="news3_title">Honoring 15 Years of Community Action in Burundi</h3>
-              <p style="font-size:0.86rem; color:var(--v34-text-muted); line-height:1.55; margin-bottom:16px;" data-i18n="news3_desc">
-                Reflecting on the humanitarian roots of YBSP since 2011, from Sunday meals to school kits and artisan toolkits.
-              </p>
-            </div>
-            <a href="news.html" style="font-size:0.86rem; font-weight:700; color:var(--v34-navy); text-decoration:none;" data-i18n="btn_read_more">Read update →</a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Closing Catalyst Banner -->
-      <div class="v34-catalyst-banner v34-reveal">
-        <h2 style="font-size:clamp(1.9rem, 3.6vw, 2.7rem); font-weight:800; color:#ffffff; margin-bottom:16px; line-height:1.2;" data-i18n="cat_title">
-          Change begins when people choose to act together.
-        </h2>
-        <p style="font-size:1.15rem; color:#cbd5e1; max-width:720px; margin:0 auto 32px; line-height:1.7;" data-i18n="cat_desc">
-          Whether you choose to volunteer your time, become a voting non-profit member, collaborate institutionally, or support our community programs financially, there is a meaningful place for you in the YBSP Canada movement.
-        </p>
-        <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-          <a href="get-involved.html" class="v34-btn-primary" style="padding:14px 34px; font-size:1.05rem;" data-i18n="btn_cat_join">
-            Join the Movement →
-          </a>
-          <a href="donate.html" class="v34-btn-outline" style="padding:14px 32px; font-size:1.05rem;" data-i18n="btn_cat_support">
-            Support Our Work
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
 <footer class="main-footer" style="background:#061124; color:#ffffff; padding:65px 0 30px; border-top:3px solid var(--secondary);">
-    <div class="container">
-      
-      <!-- 3 COLUMNS: QUICK LINKS, GET INVOLVED, CONTACT & SECRETARIAT -->
-      <div class="footer-grid" style="margin-bottom:50px;">
-        
-        <!-- COL 1: QUICK LINKS -->
-        <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_quick_links">Quick Links</h4>
-          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
-            <li><a href="index.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_home">Home</a></li>
-            <li><a href="about.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_about">About Us & Governance</a></li>
-            <li><a href="programs.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_programs">Programs & AI Skills</a></li>
-            <li><a href="events.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_events">Events & Community</a></li>
-            <li><a href="news.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_news">News & Media Library</a></li>
-            <li><a href="careers.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_careers">Careers & Opportunities</a></li>
-            <li><a href="donate.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_donate">Donate</a></li>
-          </ul>
+<div class="container">
+<!-- 3 COLUMNS: QUICK LINKS, GET INVOLVED, CONTACT & SECRETARIAT -->
+<div class="footer-grid" style="margin-bottom:50px;">
+<!-- COL 1: QUICK LINKS -->
+<div class="footer-col">
+<h4 data-i18n="footer_quick_links" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Quick Links</h4>
+<ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
+<li><a data-i18n="nav_home" href="index.html" style="color:#cbd5e1; text-decoration:none;">Home</a></li>
+<li><a data-i18n="nav_about" href="about.html" style="color:#cbd5e1; text-decoration:none;">About Us &amp; Governance</a></li>
+<li><a data-i18n="nav_programs" href="programs.html" style="color:#cbd5e1; text-decoration:none;">Programs &amp; AI Skills</a></li>
+<li><a data-i18n="nav_events" href="events.html" style="color:#cbd5e1; text-decoration:none;">Events &amp; Community</a></li>
+<li><a data-i18n="nav_news" href="news.html" style="color:#cbd5e1; text-decoration:none;">News &amp; Media Library</a></li>
+<li><a data-i18n="nav_careers" href="careers.html" style="color:#cbd5e1; text-decoration:none;">Careers &amp; Opportunities</a></li>
+<li><a data-i18n="nav_donate" href="donate.html" style="color:#cbd5e1; text-decoration:none;">Donate</a></li>
+</ul>
+</div>
+<!-- COL 2: GET INVOLVED -->
+<div class="footer-col">
+<h4 data-i18n="footer_involved" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Get Involved</h4>
+<ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
+<li><a data-i18n="nav_volunteer" href="get-involved.html#volunteer" style="color:#cbd5e1; text-decoration:none;">Volunteer Application</a></li>
+<li><a data-i18n="nav_membership" href="get-involved.html#membership" style="color:#cbd5e1; text-decoration:none;">Become a Member</a></li>
+<li><a data-i18n="nav_working_groups" href="get-involved.html#working-groups" style="color:#cbd5e1; text-decoration:none;">Member Working Groups</a></li>
+<li><a data-i18n="nav_partnerships" href="get-involved.html#partnerships" style="color:#cbd5e1; text-decoration:none;">Institutional Partners</a></li>
+<li><a data-i18n="footer_burundi_site" href="https://ybspburundi.org/" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none;" target="_blank">YBSP Burundi Website ↗</a></li>
+</ul>
+</div>
+<!-- COL 3: CONTACT & SECRETARIAT -->
+<div class="footer-col">
+<h4 data-i18n="footer_contact" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Contact &amp; Secretariat</h4>
+<div style="font-size:0.9rem; color:#cbd5e1; line-height:1.8;">
+<p style="margin-bottom:12px;">📍 <strong data-i18n="footer_addr">Based in the Ottawa - Gatineau Region<br/>(Developing Partnerships Across Canada)</strong></p>
+<p style="margin-bottom:12px;">✉️ <a href="mailto:info@ybspcanada.org" style="color:#60a5fa; text-decoration:none;">info@ybspcanada.org</a></p>
+<p style="margin:0;">🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
+</div>
+</div>
+</div>
+<!-- BOTTOM SECTION: COPYRIGHT (LEFT) & FOLLOW US (RIGHT) -->
+<div class="footer-bottom-bar" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
+<!-- BOTTOM LEFT: COPYRIGHT -->
+<div class="footer-copyright" style="font-size:0.86rem; color:#94a3b8; text-align:left;">
+          © 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
         </div>
-
-        <!-- COL 2: GET INVOLVED -->
-        <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_involved">Get Involved</h4>
-          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
-            <li><a href="get-involved.html#volunteer" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_volunteer">Volunteer Application</a></li>
-            <li><a href="get-involved.html#membership" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_membership">Become a Member</a></li>
-            <li><a href="get-involved.html#working-groups" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_working_groups">Member Working Groups</a></li>
-            <li><a href="get-involved.html#partnerships" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_partnerships">Institutional Partners</a></li>
-            <li><a href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none;" data-i18n="footer_burundi_site">YBSP Burundi Website ↗</a></li>
-          </ul>
-        </div>
-
-        <!-- COL 3: CONTACT & SECRETARIAT -->
-        <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_contact">Contact & Secretariat</h4>
-          <div style="font-size:0.9rem; color:#cbd5e1; line-height:1.8;">
-            <p style="margin-bottom:12px;">📍 <strong data-i18n="footer_addr">Based in the Ottawa - Gatineau Region<br>(Developing Partnerships Across Canada)</strong></p>
-            <p style="margin-bottom:12px;">✉️ <a href="mailto:info@ybspcanada.org" style="color:#60a5fa; text-decoration:none;">info@ybspcanada.org</a></p>
-            <p style="margin:0;">🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- BOTTOM SECTION: COPYRIGHT (LEFT) & FOLLOW US (RIGHT) -->
-      <div class="footer-bottom-bar" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
-        
-        <!-- BOTTOM LEFT: COPYRIGHT -->
-        <div class="footer-copyright" style="font-size:0.86rem; color:#94a3b8; text-align:left;">
-          &copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
-        </div>
-
-        <!-- BOTTOM RIGHT: FOLLOW US -->
-        <div class="footer-social-wrap" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
-          <span style="font-size:0.85rem; font-weight:800; color:#ffffff; text-transform:uppercase; letter-spacing:0.08em;" data-i18n="lbl_follow_us">Follow us</span>
-          <div style="display:flex; align-items:center; gap:10px;">
-            <a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on X (Twitter)">𝕏</a>
-            <a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on Facebook">FB</a>
-            <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on Instagram">IG</a>
-            <a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on TikTok">TT</a>
-            <a href="https://www.snapchat.com/add/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Add YBSP Canada on Snapchat">SC</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </footer>
+<!-- BOTTOM RIGHT: FOLLOW US -->
+<div class="footer-social-wrap" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+<span data-i18n="lbl_follow_us" style="font-size:0.85rem; font-weight:800; color:#ffffff; text-transform:uppercase; letter-spacing:0.08em;">Follow us</span>
+<div style="display:flex; align-items:center; gap:10px;">
+<a href="https://x.com/ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on X (Twitter)">𝕏</a>
+<a href="https://www.facebook.com/ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on Facebook">FB</a>
+<a href="https://www.instagram.com/ybspcanada/" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on Instagram">IG</a>
+<a href="https://www.tiktok.com/@ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on TikTok">TT</a>
+<a href="https://www.snapchat.com/add/ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Add YBSP Canada on Snapchat">SC</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
 <script>
 // Universal Mobile Navigation Handler
   (function() {
@@ -2690,7 +2321,7 @@
 
 
     // =========================================================================
-    // VERSION 34: INTERACTIVE FEATURES & ANIMATION ENGINE
+    // VERSION 34.1: INTERACTIVE FEATURES & ANIMATION ENGINE
     // =========================================================================
     document.addEventListener('DOMContentLoaded', function() {
       // 1. Intersection Observer for Scroll Reveals
@@ -2739,28 +2370,11 @@
           counterObserver.observe(el);
         });
       } else {
-        // Fallback for older browsers
         document.querySelectorAll('.v34-reveal').forEach(function(el) {
           el.classList.add('is-revealed');
         });
       }
     });
-
-    // Interactive Donation Amount Selection
-    function selectDonationAmount(amount, btn) {
-      const pills = document.querySelectorAll('#donationPills .v34-amount-pill');
-      pills.forEach(p => p.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-
-      const donateLink = document.getElementById('btnDynamicDonate');
-      if (donateLink) {
-        if (amount > 0) {
-          donateLink.href = 'donate.html?amount=' + amount;
-        } else {
-          donateLink.href = 'donate.html';
-        }
-      }
-    }
 
 
 const translations = {
@@ -2785,7 +2399,7 @@ const translations = {
     "nav_host": "Host or Propose an Event",
     "nav_gala": "Annual Solidarity Gala",
     "nav_gallery": "Authentic Photo Gallery",
-    "tagline": "Uniting youth. Building synergy. Ending poverty.",
+    "tagline": "Building practical opportunity where barriers are highest.",
     "nav_home": "Home",
     "nav_about": "About",
     "nav_story": "Our Story",
@@ -2814,7 +2428,7 @@ const translations = {
     "nav_careers": "Careers",
     "nav_contact": "Contact",
     "nav_donate": "Donate",
-    "hero_tagline": "Uniting Youth. Building Synergy. Ending Poverty.",
+    "hero_tagline": "Building practical opportunity where barriers are highest.",
     "hero_headline": "Helping people overcome barriers, build opportunity and create more secure futures.",
     "hero_desc": "YBSP Canada works with youth, individuals and communities facing disadvantage by creating practical pathways to education, skills, employment, entrepreneurship, community support and greater self-sufficiency.",
     "btn_explore_work": "Explore Our Work",
@@ -2891,16 +2505,16 @@ const translations = {
     "foot_contact": "Contact Secretariat",
     "hero_eyebrow": "YBSP Canada • Federal Non-Profit (Corp # 1154010-6)",
     "v34_hero_h1": "Building practical opportunity where barriers are highest.",
-    "v34_hero_lead": "From community support in Ottawa-Gatineau to youth education and skills development, YBSP equips people facing disadvantage with practical tools to build more secure futures.",
+    "v34_hero_lead": "Helping people overcome barriers, build opportunity and create more secure futures. YBSP Canada works with youth, individuals and communities facing disadvantage by creating practical pathways to education, skills, employment, entrepreneurship, community support and greater self-sufficiency.",
+    "v34_btn_support": "Support YBSP →",
     "v34_btn_explore": "Explore Our Work ↓",
-    "v34_btn_support": "Support the Mission →",
     "hero_micro_trust": "100% Volunteer-Led Team • Active Federal Non-Profit • Ottawa-Gatineau Region",
     "badge_15_yrs": "15 Years of Action",
     "badge_est_2011": "Grassroots roots since 2011",
     "badge_bilateral": "Canada 🇨🇦 ↔ 🇧🇮 Burundi",
-    "badge_bilateral_sub": "One shared mission",
-    "bridge_tag": "Our Roots & Identity",
-    "bridge_title": "One Movement. Two Continents. Shared Determination.",
+    "badge_bilateral_sub": "Two countries. One shared mission.",
+    "bridge_tag": "Our Cross-Border Connection",
+    "bridge_title": "Two Countries. One Shared Mission.",
     "bridge_desc": "Founded in Burundi in 2011 as a youth-led humanitarian initiative and federally incorporated in Canada in 2019, YBSP bridges grassroots East African solidarity with practical community opportunity in Canada.",
     "card_can_badge": "Canada • Ottawa-Gatineau",
     "card_can_title": "Community Support & Youth Opportunity",
@@ -2910,47 +2524,27 @@ const translations = {
     "card_bdi_title": "Over a Decade of Grassroots Solidarity",
     "card_bdi_desc": "Originating with youth volunteerism in Bujumbura, providing Sunday meals for vulnerable youth, school supply drives (#SororaIkaye), and artisan starter toolkits (#MurabireKazoza).",
     "btn_learn_bdi_story": "Burundi Roots & Bilateral Synergy →",
+    "who_tag": "Who We Are",
+    "who_title": "Rooted in Community, Focused on Practical Opportunity",
+    "who_desc": "Founded in Burundi in 2011, YBSP was created to help address poverty and disadvantage. Today, YBSP Canada is building a Canadian non-profit focused on practical community support, education, and pathways to opportunity, while maintaining a meaningful connection to YBSP's history and international work.",
+    "btn_learn_more_about": "Our Story & Leadership →",
     "path_tag": "Where We Act",
     "path_title": "Three Practical Pathways to Opportunity",
     "path_desc": "We combine immediate hardship relief with long-term skill building, opening sustainable doors toward economic self-sufficiency.",
     "btn_learn_p1": "Explore Community Support →",
     "btn_learn_p2": "Explore Education & Skills →",
     "btn_learn_p3": "Explore Self-Sufficiency →",
-    "voice_tag": "The Human Heart of Our Mission",
-    "voice_quote": "“Behind every initiative is a person working toward a more secure future. When we eliminate barriers to education, meals, and practical skills, human potential turns into lasting opportunity.”",
-    "voice_desc": "Whether connecting youth in Gatineau with career mentors or distributing vocational toolkits to young artisans in Bujumbura, YBSP believes in the agency, dignity, and leadership of the people we walk alongside.",
+    "voice_tag": "Real People. Real Work.",
+    "voice_title": "From community ideas to collective action.",
+    "voice_desc": "Behind every initiative is a person working toward a more secure future. Whether connecting youth in Gatineau and Ottawa with career mentorship or supporting grassroots vocational training in Bujumbura, YBSP believes in the agency, dignity, and potential of the communities we walk alongside.",
     "voice_author": "Youth Building in Synergy to end Poverty",
     "voice_role": "Community-Led Action • Canada & Burundi",
-    "init_tag": "Documented Field Initiatives",
-    "init_title": "Action Rooted in Tangible Community Needs",
-    "init_desc": "YBSP mobilizes community volunteers and pooled solidarity to deliver practical, verifiable solutions on the ground.",
-    "init1_loc": "Bujumbura • Humanitarian Action",
-    "init1_title": "Sunday Meal Program",
-    "init_need_lbl": "The Need:",
-    "init1_need": "Vulnerable youth and street children facing acute weekend food insecurity and isolation.",
-    "init_act_lbl": "What YBSP Did:",
-    "init1_action": "Mobilized volunteer youth teams to pool resources, prepare nutritious meals, and provide dignified fellowship.",
-    "init_diff_lbl": "The Impact:",
-    "init1_diff": "Over a decade of consistent community meals, fostering belonging and immediate nutrition.",
-    "btn_view_field_hist": "Field History & Archives →",
-    "init2_loc": "Education Access • Burundi",
-    "init2_title": "#SororaIkaye School Supply Drive",
-    "init2_need": "Children from economically disadvantaged households prevented from schooling by notebook and supply shortages.",
-    "init2_action": "Organized public solidarity campaigns to collect, assemble, and distribute complete school kits directly to students.",
-    "init2_diff": "Enabled hundreds of young learners to enter classrooms equipped with pride and learning materials.",
-    "btn_view_edu_init": "Education Initiatives →",
-    "init3_loc": "Vocational Independence • East Africa",
-    "init3_title": "#MurabireKazoza Artisan Toolkits",
-    "init3_need": "Young vocational graduates in carpentry, tailoring, and metalwork unable to start work due to prohibitive equipment costs.",
-    "init3_action": "Equipped graduates with essential starter toolkits, sewing machines, and carpentry tools upon completion of trade training.",
-    "init3_diff": "Transitioned young artisans from unemployment into self-sufficient, productive tradespeople.",
-    "btn_view_voc_init": "Vocational & Enterprise Pathways →",
     "stat_years": "Years of Grassroots Action<br>(Since 2011)",
     "stat_countries": "Countries Connected<br>(Canada & Burundi)",
     "stat_volunteer": "Volunteer-Led Team<br>& Governance",
     "stat_incorp": "Federal Incorporation<br>(NFP Act # 1154010-6)",
     "journey_tag": "Our Evolution",
-    "journey_title": "15 Years of Grassroots Persistence",
+    "journey_title": "A Journey of Purpose and Persistence",
     "journey_desc": "How a youth-led community initiative in East Africa evolved into an active, federally incorporated Canadian non-profit.",
     "time1_title": "Founded in Burundi",
     "time1_desc": "Youth in Bujumbura unite voluntarily to respond to extreme poverty, street homelessness, and school dropouts.",
@@ -2958,27 +2552,27 @@ const translations = {
     "time2_desc": "Founder relocates to Canada, establishing personal and community networks while YBSP Burundi continues local action.",
     "time3_title": "Federal Incorporation",
     "time3_desc": "YBSP Canada officially incorporated under the Canada Not-for-profit Corporations Act (Corporation # 1154010-6).",
-    "time4_title": "Canadian Program Pilots",
+    "time4_title": "Building in Canada",
     "time4_desc": "Building volunteer-led community initiatives and partnerships in Ottawa-Gatineau while sustaining bilateral solidarity.",
     "sup_tag": "Community Solidarity",
-    "sup_title": "Your Solidarity Builds What Comes Next",
-    "sup_desc": "Support YBSP Canada’s community pilots, youth workshops, and operational foundation. Every dollar directly funds practical grassroots action.",
-    "pill_custom": "Custom",
-    "btn_donate_zeffy": "Support YBSP Canada via Zeffy →",
+    "sup_title": "Help Build the Next Chapter",
+    "sup_desc": "Your solidarity supports YBSP Canada’s community program pilots, youth workshops, and operational development in Ottawa-Gatineau. We also work closely with YBSP Burundi on bilateral educational and community programs. 100% fee-free processing via Zeffy ensures your gift directly powers our mission.",
+    "btn_support_yasp": "Support YBSP →",
+    "btn_get_involved_cta": "Get Involved",
     "zeffy_note": "100% Fee-Free Zeffy Integration: 100% of your gift reaches YBSP Canada with zero platform transaction deductions.",
     "involve_head": "There Is More Than One Way to Build Synergy",
     "involve_sub": "Explore how you can contribute your time, voice, or expertise to our community.",
-    "inv1_title": "Volunteer With Us",
-    "inv1_desc": "Support community workshops, event logistics, and youth mentorship activities in Ottawa-Gatineau.",
+    "inv1_title": "Volunteer",
+    "inv1_desc": "Contribute your time and skills to community workshops, logistics, and youth mentorship activities.",
     "inv1_btn": "Volunteer Form →",
-    "inv2_title": "Become a Member",
-    "inv2_desc": "Join our democratic non-profit membership to participate in governance, annual meetings, and strategic direction.",
+    "inv2_title": "Member",
+    "inv2_desc": "Join the YBSP non-profit community to participate in democratic governance and annual meetings.",
     "inv2_btn": "Member Application →",
-    "inv3_title": "Member Working Groups",
-    "inv3_desc": "Contribute specialized skills in education, technology/AI, policy, fundraising, and communications.",
+    "inv3_title": "Working Groups",
+    "inv3_desc": "Contribute specialized expertise in education, applied AI/tech, policy, fundraising, and communications.",
     "inv3_btn": "Join a Working Group →",
-    "inv4_title": "Institutional Partners",
-    "inv4_desc": "Collaborate with civic organizations, academic institutions, and corporate allies on co-designed youth initiatives.",
+    "inv4_title": "Partner",
+    "inv4_desc": "Build something together: collaborate on co-designed community pilots and institutional initiatives.",
     "inv4_btn": "Partner Inquiry →",
     "news_tag": "Field Dispatches",
     "news_title": "Latest Updates & Community Milestones",
@@ -2992,10 +2586,10 @@ const translations = {
     "news3_cat": "Bilateral Solidarity",
     "news3_title": "Honoring 15 Years of Community Action in Burundi",
     "news3_desc": "Reflecting on the humanitarian roots of YBSP since 2011, from Sunday meals to school kits and artisan toolkits.",
-    "cat_title": "Change begins when people choose to act together.",
-    "cat_desc": "Whether you choose to volunteer your time, become a voting non-profit member, collaborate institutionally, or support our community programs financially, there is a meaningful place for you in the YBSP Canada movement.",
-    "btn_cat_join": "Join the Movement →",
-    "btn_cat_support": "Support Our Work"
+    "cat_title": "The next chapter is being built together.",
+    "cat_desc": "Whether you choose to volunteer your time, become a voting non-profit member, collaborate as an institutional partner, or support our community programs financially, there is a meaningful place for you in the YBSP Canada movement.",
+    "btn_cat_join": "Get Involved",
+    "btn_cat_support": "Support YBSP →"
   },
   "fr": {
     "stage_title": "Stade de l'Organisation et Transparence :",
@@ -3123,17 +2717,17 @@ const translations = {
     "foot_privacy": "Politique de confidentialité",
     "foot_contact": "Contacter le secrétariat",
     "hero_eyebrow": "YBSP Canada • OBNL Fédéral (Société n° 1154010-6)",
-    "v34_hero_h1": "Bâtir des possibilités concrètes là où les obstacles sont les plus grands.",
-    "v34_hero_lead": "Du soutien communautaire à Ottawa-Gatineau à l’éducation et au développement des compétences des jeunes, YBSP offre aux personnes défavorisées des outils concrets pour bâtir un avenir plus sûr.",
+    "v34_hero_h1": "Bâtir des opportunités concrètes là où les obstacles sont les plus grands.",
+    "v34_hero_lead": "Aider les personnes à surmonter les obstacles, créer des opportunités et bâtir un avenir plus sûr. YBSP Canada œuvre auprès des jeunes, des individus et des communautés confrontés à des difficultés en créant des passerelles concrètes vers l'éducation, les compétences, l'emploi, l'entrepreneuriat, le soutien communautaire et une plus grande autonomie.",
+    "v34_btn_support": "Soutenir YBSP →",
     "v34_btn_explore": "Découvrir notre travail ↓",
-    "v34_btn_support": "Soutenir la mission →",
     "hero_micro_trust": "Équipe 100 % bénévole • OBNL fédéral actif • Région d’Ottawa-Gatineau",
     "badge_15_yrs": "15 ans d'action",
     "badge_est_2011": "Racines sur le terrain depuis 2011",
     "badge_bilateral": "Canada 🇨🇦 ↔ 🇧🇮 Burundi",
-    "badge_bilateral_sub": "Une seule mission partagée",
-    "bridge_tag": "Nos Racines et Identité",
-    "bridge_title": "Un Mouvement. Deux Continents. Une Détermination Partagée.",
+    "badge_bilateral_sub": "Deux pays. Une seule mission partagée.",
+    "bridge_tag": "Notre Lien Transfrontalier",
+    "bridge_title": "Deux Pays. Une Seule Mission Partagée.",
     "bridge_desc": "Fondée au Burundi en 2011 comme initiative humanitaire menée par des jeunes et constituée au fédéral au Canada en 2019, YBSP relie la solidarité est-africaine aux opportunités communautaires au Canada.",
     "card_can_badge": "Canada • Ottawa-Gatineau",
     "card_can_title": "Soutien communautaire et opportunités pour les jeunes",
@@ -3143,47 +2737,27 @@ const translations = {
     "card_bdi_title": "Plus d'une décennie de solidarité de terrain",
     "card_bdi_desc": "Née du bénévolat des jeunes à Bujumbura, offrant les repas du dimanche aux jeunes vulnérables, la distribution de fournitures scolaires (#SororaIkaye) et des trousses pour artisans (#MurabireKazoza).",
     "btn_learn_bdi_story": "Racines au Burundi et synergie bilatérale →",
+    "who_tag": "Qui nous sommes",
+    "who_title": "Ancrés dans la communauté, axés sur les opportunités concrètes",
+    "who_desc": "Fondée au Burundi en 2011, YBSP a été créée pour répondre à la pauvreté et aux difficultés. Aujourd'hui, YBSP Canada bâtit une organisation à but non lucratif canadienne axée sur le soutien communautaire pratique, l'éducation et les passerelles vers l'autonomie, tout en maintenant un lien significatif avec l'histoire et l'action internationale de YBSP.",
+    "btn_learn_more_about": "Notre histoire et leadership →",
     "path_tag": "Où nous agissons",
     "path_title": "Trois Parcours Concrets vers les Possibilités",
     "path_desc": "Nous combinons le soulagement immédiat des difficultés avec le renforcement des compétences à long terme, ouvrant la voie vers l'autonomie économique.",
     "btn_learn_p1": "Découvrir le Soutien Communautaire →",
     "btn_learn_p2": "Découvrir Éducation et Compétences →",
     "btn_learn_p3": "Découvrir l'Autonomie →",
-    "voice_tag": "Le Cœur Humain de Notre Mission",
-    "voice_quote": "« Derrière chaque initiative se trouve une personne qui œuvre pour un avenir plus sûr. En éliminant les obstacles à l’éducation, aux repas et aux compétences pratiques, le potentiel se transforme en possibilités réelles. »",
-    "voice_desc": "Qu'il s'agisse de relier des jeunes de Gatineau à des mentors ou de distribuer des trousses d'outils à de jeunes artisans à Bujumbura, YBSP croit en la dignité et au leadership des personnes que nous accompagnons.",
+    "voice_tag": "De Vraies Personnes. De Vraies Actions.",
+    "voice_title": "Des idées communautaires à l'action collective.",
+    "voice_desc": "Derrière chaque initiative se trouve une personne qui œuvre pour un avenir plus sûr. Qu'il s'agisse de relier des jeunes de Gatineau et d'Ottawa à des mentors ou de soutenir la formation artisanale à Bujumbura, YBSP croit en la dignité, au potentiel et au leadership des communautés que nous accompagnons.",
     "voice_author": "Youth Building in Synergy to end Poverty",
     "voice_role": "Action Menée par la Communauté • Canada et Burundi",
-    "init_tag": "Initiatives de Terrain Documentées",
-    "init_title": "Des Actions Ancrées dans les Besoins Réels",
-    "init_desc": "YBSP mobilise les bénévoles de la communauté et la solidarité collective pour apporter des solutions vérifiables sur le terrain.",
-    "init1_loc": "Bujumbura • Action Humanitaire",
-    "init1_title": "Programme des Repas du Dimanche",
-    "init_need_lbl": "Le Besoin :",
-    "init1_need": "Des jeunes vulnérables et des enfants en situation de rue confrontés à l'insécurité alimentaire et à l'isolement le week-end.",
-    "init_act_lbl": "Ce que YBSP a fait :",
-    "init1_action": "Mobilisation d'équipes de jeunes bénévoles pour mutualiser les ressources, préparer des repas nutritifs et partager un moment digne.",
-    "init_diff_lbl": "L'Impact :",
-    "init1_diff": "Plus d'une décennie de repas communautaires réguliers, offrant réconfort et nutrition essentielle.",
-    "btn_view_field_hist": "Histoire de terrain et archives →",
-    "init2_loc": "Accès à l'Éducation • Burundi",
-    "init2_title": "Campagne de Fournitures Scolaires #SororaIkaye",
-    "init2_need": "Des enfants de familles défavorisées empêchés d'aller à l'école faute de cahiers et de fournitures de base.",
-    "init2_action": "Organisation de campagnes de solidarité citoyenne pour collecter, préparer et distribuer des trousses scolaires complètes.",
-    "init2_diff": "Permettre à des centaines de jeunes écoliers d'entrer en classe équipés avec fierté et dignité.",
-    "btn_view_edu_init": "Initiatives Éducatives →",
-    "init3_loc": "Autonomie Professionnelle • Afrique de l'Est",
-    "init3_title": "Trousses de Métiers #MurabireKazoza",
-    "init3_need": "De jeunes diplômés des filières menuiserie, couture et soudure incapables de travailler en raison du coût élevé de l'équipement.",
-    "init3_action": "Attribution de trousses d'outils complètes, de machines à coudre et d'équipements de menuiserie à la fin de leur formation.",
-    "init3_diff": "Passage direct du chômage à une activité autonome et rémunératrice pour soutenir leurs familles.",
-    "btn_view_voc_init": "Parcours d'Entrepreneuriat et de Métiers →",
     "stat_years": "Années d'Action de Terrain<br>(Depuis 2011)",
     "stat_countries": "Pays Reliés<br>(Canada et Burundi)",
     "stat_volunteer": "Équipe et Conseil<br>100 % Bénévoles",
     "stat_incorp": "Constitution Fédérale<br>(Loi BNL n° 1154010-6)",
     "journey_tag": "Notre Évolution",
-    "journey_title": "15 Ans de Persévérance Communautaire",
+    "journey_title": "Un Parcours d'Engagement et de Persévérance",
     "journey_desc": "Comment une initiative de jeunes en Afrique de l'Est s'est transformée en un organisme sans but lucratif canadien enregistré.",
     "time1_title": "Fondation au Burundi",
     "time1_desc": "Des jeunes de Bujumbura s'unissent bénévolement pour répondre à l'extrême pauvreté et au décrochage scolaire.",
@@ -3191,27 +2765,27 @@ const translations = {
     "time2_desc": "Le fondateur s'installe au Canada, tissant des liens communautaires pendant que YBSP Burundi poursuit son action.",
     "time3_title": "Constitution Fédérale",
     "time3_desc": "YBSP Canada est officiellement constituée en vertu de la Loi canadienne sur les organisations à but non lucratif (n° 1154010-6).",
-    "time4_title": "Projets Pilotes Canadiens",
+    "time4_title": "Bâtir au Canada",
     "time4_desc": "Développement de projets communautaires et de partenariats à Ottawa-Gatineau tout en maintenant la solidarité bilatérale.",
     "sup_tag": "Solidarité Communautaire",
-    "sup_title": "Votre Solidarité Bâtit Ce Qui Vient",
-    "sup_desc": "Soutenez les projets pilotes, les ateliers pour les jeunes et la fondation opérationnelle de YBSP Canada. Chaque don finance directement des actions de terrain.",
-    "pill_custom": "Autre montant",
-    "btn_donate_zeffy": "Soutenir YBSP Canada via Zeffy →",
+    "sup_title": "Contribuez à Bâtir le Prochain Chapitre",
+    "sup_desc": "Votre solidarité soutient les projets pilotes, les ateliers pour les jeunes et la fondation opérationnelle de YBSP Canada dans la région d'Ottawa-Gatineau. L'intégration 100 % sans frais via Zeffy garantit que votre don finance directement nos actions.",
+    "btn_support_yasp": "Soutenir YBSP →",
+    "btn_get_involved_cta": "S'impliquer",
     "zeffy_note": "Intégration Zeffy 100 % sans frais : 100 % de votre don parvient à YBSP Canada sans aucune déduction de frais de transaction.",
     "involve_head": "Il Existe Plusieurs Façons de Créer une Synergie",
     "involve_sub": "Découvrez comment contribuer avec votre temps, votre voix ou vos compétences.",
-    "inv1_title": "Devenir Bénévole",
-    "inv1_desc": "Apportez votre aide lors d'ateliers, de la logistique d'événements et des activités de mentorat à Ottawa-Gatineau.",
+    "inv1_title": "Bénévolat",
+    "inv1_desc": "Partagez votre temps et vos compétences lors d'ateliers, de la logistique d'événements et des activités de mentorat.",
     "inv1_btn": "Formulaire Bénévole →",
-    "inv2_title": "Devenir Membre",
-    "inv2_desc": "Rejoignez notre membership démocratique pour participer à la gouvernance, aux assemblées annuelles et aux orientations.",
+    "inv2_title": "Membre",
+    "inv2_desc": "Rejoignez la communauté YBSP pour participer à la gouvernance démocratique et aux assemblées annuelles.",
     "inv2_btn": "Demande de Membership →",
     "inv3_title": "Groupes de Travail",
-    "inv3_desc": "Mettez vos compétences professionnelles au service de l'éducation, des technologies/IA, des politiques et du financement.",
+    "inv3_desc": "Partagez votre expertise en éducation, technologies/IA, politiques, financement et communications.",
     "inv3_btn": "Rejoindre un Groupe →",
-    "inv4_title": "Partenaires Institutionnels",
-    "inv4_desc": "Collaborez avec des organisations citoyennes, des institutions académiques et des partenaires sur des projets communs.",
+    "inv4_title": "Partenariat",
+    "inv4_desc": "Bâtissons ensemble : collaborez sur des projets communautaires conjoints et des initiatives institutionnelles.",
     "inv4_btn": "Demande de Partenariat →",
     "news_tag": "Nouvelles du Terrain",
     "news_title": "Dernières Nouvelles et Jalons Communautaires",
@@ -3225,10 +2799,10 @@ const translations = {
     "news3_cat": "Solidarité Bilatérale",
     "news3_title": "Célébration de 15 Ans d'Action Communautaire au Burundi",
     "news3_desc": "Retour sur les racines humanitaires de YBSP depuis 2011, des repas du dimanche aux trousses scolaires et d'artisans.",
-    "cat_title": "Le changement commence lorsque les gens choisissent d’agir ensemble.",
-    "cat_desc": "Que vous choisissiez de faire du bénévolat, de devenir membre votant, de collaborer en partenariat ou d'apporter un soutien financier, vous avez votre place au sein du mouvement YBSP Canada.",
-    "btn_cat_join": "Rejoindre le Mouvement →",
-    "btn_cat_support": "Soutenir Notre Travail"
+    "cat_title": "Le prochain chapitre se construit ensemble.",
+    "cat_desc": "Que vous choisissiez de faire du bénévolat, de devenir membre votant, de collaborer comme partenaire ou d'apporter un soutien financier, vous avez une place précieuse au sein du mouvement YBSP Canada.",
+    "btn_cat_join": "S'impliquer",
+    "btn_cat_support": "Soutenir YBSP →"
   }
 };
 

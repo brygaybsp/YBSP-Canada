@@ -1,68 +1,89 @@
-====================================================================
-YBSP CANADA — WEBSITE PHOTO REPLACEMENT GUIDE
-====================================================================
+================================================================================
+                    YBSP CANADA — COMPREHENSIVE PHOTO & IMAGE GUIDE
+================================================================================
 
-Every photo on the website is configured to look inside this `images/`
-folder first. If you drop your real photo into this folder using the
-exact file name listed below, the website will AUTOMATICALLY display
-your real photo instead of the placeholder!
+Welcome! This folder contains pre-structured directories and starter images for the
+entire YBSP Canada website. You can replace any starter image by simply dropping your
+real photograph into the appropriate folder with the exact filename indicated below.
 
---------------------------------------------------------------------
-1. KEY WEBSITE PHOTOS (Replace these anytime):
---------------------------------------------------------------------
+--------------------------------------------------------------------------------
+1. LEADERSHIP & TEAM PORTRAITS (images/ or images/team/)
+--------------------------------------------------------------------------------
+Recommended format: Square portrait (e.g., 600x600 px or 800x800 px), JPG.
 
-1. Executive Director Portrait:
-   - File Name: leis-bruel-haragirimana.jpg
-   - Where it appears: about.html (Leadership) and index.html
-   - Recommended Size: Square (e.g. 500x500 px or 800x800 px)
+- images/leis-bruel-haragirimana.jpg   -> Founder & Executive Director
+- images/faustin-nimbona.jpg          -> Co-founder & Programs Director
+- images/benit-nikuza.jpg             -> Treasurer & Operations Director
+- images/yves-dushimimana.jpg         -> Board Director (Corporate Governance)
+- images/nader-diab.jpg               -> Board Director (Strategy & Partnerships)
 
-2. "Why YBSP in Canada?" Photo:
-   - File Name: why-ybsp-canada.jpg
-   - Where it appears: index.html (Why YBSP in Canada section)
-   - Recommended Size: 800x600 px or landscape photo of youth gathering
+*Note: You can also keep copies in `images/team/` for organized archiving.
 
-3. Burundi Sisterhood Photo:
-   - File Name: burundi-sisterhood.jpg
-   - Where it appears: about.html (International Sisterhood section)
-   - Recommended Size: 800x500 px (photo of Burundian youth / Sunday Meal)
+--------------------------------------------------------------------------------
+2. THREE PRACTICAL PATHWAYS (images/pathways/)
+--------------------------------------------------------------------------------
+Recommended format: Landscape (e.g., 800x500 px or 1200x750 px), JPG.
 
-4. Canadian Mentorship Cohort:
-   - File Name: mentorship.jpg
-   - Where it appears: programs.html (Career Mentorship & AI)
-   - Recommended Size: 800x500 px
+- images/pathways/pathway-relief.jpg           -> Pathway 01: Community Support & Poverty Relief
+- images/pathways/pathway-education.jpg        -> Pathway 02: Education, Applied AI & Youth Opportunity
+- images/pathways/pathway-self-sufficiency.jpg  -> Pathway 03: Sustainable Self-Sufficiency & Toolkits
 
-5. Social Entrepreneurship Lab:
-   - File Name: entrepreneurship.jpg
-   - Where it appears: programs.html (Social Entrepreneurship Lab)
-   - Recommended Size: 800x500 px
+--------------------------------------------------------------------------------
+3. HOMEPAGE & BILATERAL BRIDGE HERO SECTIONS
+--------------------------------------------------------------------------------
+Recommended format: High-resolution landscape (e.g., 1200x700 px or 1920x1080 px).
 
-6. Health & Urban Ecology:
-   - File Name: health-ecology.jpg
-   - Where it appears: programs.html (Health & Ecology)
-   - Recommended Size: 800x500 px
+- images/hero/hero-community.jpg       -> Main Homepage Hero Banner
+- images/why-ybsp-canada.jpg           -> "Why YBSP in Canada?" Section
+- images/bridge/bridge-canada.jpg      -> Bilateral Bridge: Ottawa-Gatineau Hub
+- images/bridge/bridge-burundi.jpg     -> Bilateral Bridge: Bujumbura Grassroots Hub
+- images/support/support-community.jpg -> "Support Community Solidarity" Banner
 
-7. Burundi Sister Projects:
-   - File Name: burundi-initiatives.jpg
-   - Where it appears: programs.html (Global Synergy section)
-   - Recommended Size: 800x500 px
+--------------------------------------------------------------------------------
+4. PROGRAM BLOCKS (images/)
+--------------------------------------------------------------------------------
+Recommended format: High-resolution landscape (e.g., 1000x650 px).
 
-8. Annual Solidarity Gala:
-   - File Name: gala.jpg
-   - Where it appears: events.html (Annual Gala spotlight)
-   - Recommended Size: 800x500 px
+- images/mentorship.jpg         -> Youth Career Mentorship & Applied AI program block
+- images/entrepreneurship.jpg   -> Social Enterprise & Micro-Venture Lab block
+- images/health-ecology.jpg     -> Community Health & Urban Ecology block
+- images/burundi-initiative.jpg -> Global Synergy Initiative (#SororaIkaye & #MurabireKazoza)
 
---------------------------------------------------------------------
-2. PHOTO ALBUMS (Inside `images/albums/` subfolders):
---------------------------------------------------------------------
-- images/albums/sunday-meal/       -> Drop photos of Sunday Meals in Burundi
-- images/albums/sorora-ikaye/      -> Drop photos of school kit distributions
-- images/albums/murabire-kazoza/   -> Drop photos of tailoring & carpentry tools
-- images/albums/canadian-mentorship/ -> Drop photos of mentorship workshops
-- images/albums/solidarity-gala/   -> Drop photos from the annual gala
+--------------------------------------------------------------------------------
+5. INITIATIVE PHOTO ALBUMS (images/albums/)
+--------------------------------------------------------------------------------
+Recommended format: High-resolution landscape (e.g., 1000x650 px).
+Each album contains a `cover.jpg` (displayed on the card) and 4 lightbox photos
+(`photo1.jpg`, `photo2.jpg`, `photo3.jpg`, `photo4.jpg`) shown in the interactive modal:
 
-====================================================================
-HOW TO PUBLISH YOUR REAL PHOTOS:
-1. Copy your photos into `images/` with the exact names above.
-2. Double-click `index.html` or `about.html` on your computer to verify.
-3. Drag the `images/` folder to GitHub to deploy to Netlify!
-====================================================================
+- images/albums/sunday-meal/
+    * cover.jpg, photo1.jpg, photo2.jpg, photo3.jpg, photo4.jpg
+    -> Feed A Child & Sunday Community Meal in Bujumbura
+
+- images/albums/sorora/
+    * cover.jpg, photo1.jpg, photo2.jpg, photo3.jpg, photo4.jpg
+    -> #SororaIkaye Back-to-School Distribution Drive
+
+- images/albums/murabire/
+    * cover.jpg, photo1.jpg, photo2.jpg, photo3.jpg, photo4.jpg
+    -> #MurabireKazoza Artisan Starter Toolkits (Carpentry, Tailoring, Metalwork)
+
+- images/albums/canada-cohort/
+    * cover.jpg, photo1.jpg, photo2.jpg, photo3.jpg, photo4.jpg
+    -> Canadian Youth Mentorship & Applied AI Cohorts (Ottawa-Gatineau)
+
+- images/albums/gala/
+    * cover.jpg, photo1.jpg, photo2.jpg, photo3.jpg, photo4.jpg
+    -> Annual Community Solidarity Gathering (National Capital Region)
+
+- images/albums/community-action/
+    * cover.jpg, photo1.jpg, photo2.jpg, photo3.jpg, photo4.jpg
+    -> Social Enterprise, Food Hampers & Community Mutual Aid
+
+--------------------------------------------------------------------------------
+6. NEWS & EVENTS FEATURES (images/)
+--------------------------------------------------------------------------------
+- images/gala.jpg            -> Annual Solidarity Gathering Feature Banner
+- images/news-spotlight.jpg  -> Featured Dispatch Cover in News & Media Library
+
+================================================================================

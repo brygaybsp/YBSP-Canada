@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Community & Events | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
-  <meta name="description" content="Attend upcoming YBSP Canada events, host or partner on a community workshop, explore our Annual Solidarity Gala (Concept in Development), and view authentic community photos from Canada and Burundi.">
-  <link rel="icon" type="image/png" href="images/ybsp_canada_emblem.png">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title id="page-title">Community &amp; Events | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
+<meta content="Attend upcoming YBSP Canada events, host or partner on a community workshop, explore our Annual Solidarity Gala (Concept in Development), and view authentic community photos from Canada and Burundi." name="description"/>
+<link href="images/ybsp_canada_emblem.png" rel="icon" type="image/png"/>
+<style>
 
     :root {
       --primary: #0b1c3d;
@@ -173,7 +174,9 @@
       position: absolute;
       top: 100%;
       left: 0;
-      width: 250px;
+      min-width: 320px;
+      width: max-content;
+      max-width: 390px;
       background: #ffffff;
       box-shadow: var(--shadow-lg);
       border-radius: var(--radius-md);
@@ -186,7 +189,7 @@
       z-index: 100;
     }
     .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-    .dropdown-link { display: block; padding: 9px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500; }
+    .dropdown-link { display: block; padding: 9px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500;  white-space: normal; line-height: 1.35; }
     .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 22px; }
 
     .btn-donate-nav { white-space: nowrap !important; min-width: max-content !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; background: var(--accent) !important; color: #ffffff !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 50px !important; margin-left: 8px !important; text-decoration: none !important; }
@@ -1095,10 +1098,7 @@
     
 
   
-    
-
-  
-    /* PHOTO ALBUMS & LIGHTBOX ARCHITECTURE (V31) */
+    /* ALBUMS & LIGHTBOX ARCHITECTURE */
     .album-card {
       background: #ffffff !important;
       border-radius: var(--radius-md) !important;
@@ -1156,68 +1156,65 @@
   </style>
 </head>
 <body>
+<!-- TOP UTILITY BAR -->
+<!-- MAIN NAVIGATION -->
+<!-- TOP RIGHT UTILITY BAR: LANGUAGE SWITCHER AT THE VERY TOP RIGHT, DIRECTLY ABOVE DONATE -->
+<div class="top-utility-bar" style="background:#0b1c3d; border-bottom:1px solid rgba(255,255,255,0.08); padding:5px 0;">
+<div class="container" style="display:flex; justify-content:flex-end; align-items:center;">
+<div class="lang-switcher" style="display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.12); padding:2px 6px; border-radius:4px;">
+<button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" style="border:none; background:var(--secondary); color:#ffffff; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="English">EN</button>
+<span style="color:#94a3b8; font-size:0.75rem; margin:0 2px;">|</span>
+<button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')" style="border:none; background:transparent; color:#cbd5e1; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="Français">FR</button>
+</div>
+</div>
+</div>
+<header class="main-header">
+<div class="container nav-inner">
+<a aria-label="YBSP Canada Home" class="brand-logo" href="index.html">
+<svg class="brand-logo-svg" height="44" viewbox="0 0 120 120" width="44" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="50%" cy="50%" id="logoBurst" r="50%">
+<stop offset="0%" stop-color="#ffffff"></stop>
+<stop offset="25%" stop-color="#60a5fa" stop-opacity="0.85"></stop>
+<stop offset="60%" stop-color="#818cf8" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#0b1c3d" stop-opacity="0"></stop>
+</radialgradient>
+<lineargradient id="leafGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ef4444"></stop>
+<stop offset="100%" stop-color="#b91c1c"></stop>
+</lineargradient>
+</defs>
+<rect fill="#0b1c3d" height="120" rx="26" width="120"></rect>
+<circle cx="60" cy="60" fill="url(#logoBurst)" r="42"></circle>
+<line opacity="0.8" stroke="#93c5fd" stroke-width="2" x1="20" x2="100" y1="60" y2="60"></line>
+<line opacity="0.8" stroke="#93c5fd" stroke-width="2" x1="60" x2="60" y1="20" y2="100"></line>
+<line opacity="0.6" stroke="#c084fc" stroke-width="1.5" x1="32" x2="88" y1="32" y2="88"></line>
+<line opacity="0.6" stroke="#c084fc" stroke-width="1.5" x1="32" x2="88" y1="88" y2="32"></line>
+<g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8.5">
+<path d="M 28 26 L 46 50 L 46 68"></path>
+<path d="M 54 38 L 46 50"></path>
+<path d="M 62 28 L 62 66"></path>
+<path d="M 62 30 C 82 28 85 45 66 47 C 86 49 84 66 62 65"></path>
+<path d="M 58 64 C 40 63 35 76 44 83 C 53 91 60 92 58 98 C 56 103 47 104 36 100"></path>
+<path d="M 72 65 L 72 100"></path>
+<path d="M 72 67 C 91 66 93 83 72 84"></path>
+</g>
+<g transform="translate(56, 25) scale(0.38)">
+<path d="M 0,-34 C 1.5,-30 3.5,-22 5,-20 C 8,-23 12,-26 16,-27 C 15,-24 14,-19 13,-15 C 18,-15 23,-14 28,-13 C 26,-10 22,-7 18,-4 C 21,-2 27,0 31,3 C 27,6 20,7 15,7 C 17,10 20,15 22,20 C 17,17 12,13 7,9 C 7,14 6,20 5,27 L 2,27 L 2,39 L -2,39 L -2,27 L -5,27 C -6,20 -7,14 -7,9 C -12,13 -17,17 -22,20 C -20,15 -17,10 -15,7 C -20,7 -27,6 -31,3 C -27,0 -21,-2 -18,-4 C -22,-7 -26,-10 -28,-13 C -23,-14 -18,-15 -13,-15 C -14,-19 -15,-24 -16,-27 C -12,-26 -8,-23 -5,-20 C -3.5,-22 -1.5,-30 0,-34 Z" fill="url(#leafGrad)"></path>
+</g>
+<circle cx="60" cy="60" fill="#ffffff" r="3.5"></circle>
+</svg>
+<div class="logo-text">
+<h1>YBSP CANADA</h1>
 
-    <!-- TOP UTILITY BAR -->
-  <!-- MAIN NAVIGATION -->
-    <!-- TOP RIGHT UTILITY BAR: LANGUAGE SWITCHER AT THE VERY TOP RIGHT, DIRECTLY ABOVE DONATE -->
-  <div class="top-utility-bar" style="background:#0b1c3d; border-bottom:1px solid rgba(255,255,255,0.08); padding:5px 0;">
-    <div class="container" style="display:flex; justify-content:flex-end; align-items:center;">
-      <div class="lang-switcher" style="display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.12); padding:2px 6px; border-radius:4px;">
-        <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" style="border:none; background:var(--secondary); color:#ffffff; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="English">EN</button>
-        <span style="color:#94a3b8; font-size:0.75rem; margin:0 2px;">|</span>
-        <button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')" style="border:none; background:transparent; color:#cbd5e1; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="Français">FR</button>
-      </div>
-    </div>
-  </div>
-  <header class="main-header">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="YBSP Canada Home">
-        <svg class="brand-logo-svg" width="44" height="44" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="logoBurst" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#ffffff"/>
-              <stop offset="25%" stop-color="#60a5fa" stop-opacity="0.85"/>
-              <stop offset="60%" stop-color="#818cf8" stop-opacity="0.4"/>
-              <stop offset="100%" stop-color="#0b1c3d" stop-opacity="0"/>
-            </radialGradient>
-            <linearGradient id="leafGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#ef4444"/>
-              <stop offset="100%" stop-color="#b91c1c"/>
-            </linearGradient>
-          </defs>
-          <rect width="120" height="120" rx="26" fill="#0b1c3d"/>
-          <circle cx="60" cy="60" r="42" fill="url(#logoBurst)"/>
-          <line x1="20" y1="60" x2="100" y2="60" stroke="#93c5fd" stroke-width="2" opacity="0.8"/>
-          <line x1="60" y1="20" x2="60" y2="100" stroke="#93c5fd" stroke-width="2" opacity="0.8"/>
-          <line x1="32" y1="32" x2="88" y2="88" stroke="#c084fc" stroke-width="1.5" opacity="0.6"/>
-          <line x1="32" y1="88" x2="88" y2="32" stroke="#c084fc" stroke-width="1.5" opacity="0.6"/>
-          <g fill="none" stroke="#ffffff" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M 28 26 L 46 50 L 46 68"/>
-            <path d="M 54 38 L 46 50"/>
-            <path d="M 62 28 L 62 66"/>
-            <path d="M 62 30 C 82 28 85 45 66 47 C 86 49 84 66 62 65"/>
-            <path d="M 58 64 C 40 63 35 76 44 83 C 53 91 60 92 58 98 C 56 103 47 104 36 100"/>
-            <path d="M 72 65 L 72 100"/>
-            <path d="M 72 67 C 91 66 93 83 72 84"/>
-          </g>
-          <g transform="translate(56, 25) scale(0.38)">
-            <path d="M 0,-34 C 1.5,-30 3.5,-22 5,-20 C 8,-23 12,-26 16,-27 C 15,-24 14,-19 13,-15 C 18,-15 23,-14 28,-13 C 26,-10 22,-7 18,-4 C 21,-2 27,0 31,3 C 27,6 20,7 15,7 C 17,10 20,15 22,20 C 17,17 12,13 7,9 C 7,14 6,20 5,27 L 2,27 L 2,39 L -2,39 L -2,27 L -5,27 C -6,20 -7,14 -7,9 C -12,13 -17,17 -22,20 C -20,15 -17,10 -15,7 C -20,7 -27,6 -31,3 C -27,0 -21,-2 -18,-4 C -22,-7 -26,-10 -28,-13 C -23,-14 -18,-15 -13,-15 C -14,-19 -15,-24 -16,-27 C -12,-26 -8,-23 -5,-20 C -3.5,-22 -1.5,-30 0,-34 Z" fill="url(#leafGrad)"/>
-          </g>
-          <circle cx="60" cy="60" r="3.5" fill="#ffffff"/>
-        </svg>
-        <div class="logo-text">
-          <h1>YBSP CANADA</h1>
-          <span data-i18n="tagline">Uniting youth. Building synergy. Ending poverty.</span>
-        </div>
-      </a>
-
-                        <nav aria-label="Primary Navigation" class="nav-menu" id="main-nav-menu">
+</div>
+</a>
+<nav aria-label="Primary Navigation" class="nav-menu" id="main-nav-menu">
 <div class="nav-item"><a class="nav-link" data-i18n="nav_home" href="index.html">Home</a></div>
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="about.html">
 <span data-i18n="nav_about">About Us</span>
-
-</a><button aria-expanded="false" aria-label="Toggle About Us submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle About Us submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_mission" href="about.html#mission">Mission &amp; Mandate</a>
 <a class="dropdown-link" data-i18n="nav_team" href="about.html#team">Executive Leadership</a>
@@ -1229,8 +1226,7 @@
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="programs.html">
 <span data-i18n="nav_programs">Programs</span>
-
-</a><button aria-expanded="false" aria-label="Toggle Programs submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle Programs submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_community_support" href="programs.html#community-support">Community Support &amp; Poverty Relief</a>
 <a class="dropdown-link" data-i18n="nav_education_skills" href="programs.html#education-skills">Education, Skills &amp; Youth Opportunity</a>
@@ -1242,8 +1238,7 @@
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="get-involved.html">
 <span data-i18n="nav_involved">Get Involved</span>
-
-</a><button aria-expanded="false" aria-label="Toggle Get Involved submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle Get Involved submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_volunteer" href="get-involved.html#volunteer">Volunteer Application</a>
 <a class="dropdown-link" data-i18n="nav_membership" href="get-involved.html#membership">Become a Member</a>
@@ -1254,8 +1249,7 @@
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link active" href="events.html">
 <span data-i18n="nav_events">Events</span>
-
-</a><button aria-expanded="false" aria-label="Toggle Events submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle Events submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_calendar" href="events.html#calendar">Events Calendar</a>
 <a class="dropdown-link" data-i18n="nav_host" href="events.html#host">Host or Propose an Event</a>
@@ -1269,468 +1263,427 @@
 <!-- ONE-LINE DONATE BUTTON -->
 <a class="btn-donate-nav" data-i18n="nav_donate" href="donate.html" style="white-space:nowrap !important; display:inline-flex !important; align-items:center !important; justify-content:center !important;">Donate</a>
 </nav>
-
-                  <button class="nav-toggle-btn" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav(event)">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="container">
-      <div class="breadcrumbs">
-        <a href="index.html" data-i18n="crumb_home">Home</a> &nbsp;/&nbsp; <span data-i18n="crumb_events">Community Events & Engagement</span>
-      </div>
-      <h2 class="page-title" data-i18n="hero_events_title">Community Gatherings, Dialogues & Impact</h2>
-      <p data-i18n="hero_events_desc">
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="nav-toggle-btn" id="mobileNavToggle" onclick="toggleMobileNav(event)">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</header>
+<!-- PAGE HERO -->
+<section class="page-hero">
+<div class="container">
+<div class="breadcrumbs">
+<a data-i18n="crumb_home" href="index.html">Home</a>  /  <span data-i18n="crumb_events">Community Events &amp; Engagement</span>
+</div>
+<h2 class="page-title" data-i18n="hero_events_title">Community Gatherings, Dialogues &amp; Impact</h2>
+<p data-i18n="hero_events_desc">
         Connect, learn, and collaborate through our community workshops, youth entrepreneurship forums, bilateral solidarity dialogues, and a proposed Annual Solidarity Gala (Concept in Development) (concept in development).
       </p>
-    </div>
-  </section>
-
-  <!-- STICKY SUBNAV -->
-  <nav class="page-subnav">
-    <div class="container">
-      <ul class="subnav-list">
-        <li class="subnav-item"><a href="#calendar" class="active" data-i18n="sub_calendar">Upcoming Events</a></li>
-        <li class="subnav-item"><a href="#host" data-i18n="sub_host">Host or Partner on an Event</a></li>
-        <li class="subnav-item"><a href="#gala" data-i18n="sub_gala">Annual Solidarity Gala (Concept in Development)</a></li>
-        <li class="subnav-item"><a href="#gallery" data-i18n="sub_gallery">Authentic Photo Gallery</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- SECTION 1: UPCOMING EVENTS CALENDAR -->
-  <section class="content-section" id="calendar">
-    <div class="container">
-      <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_calendar">Calendar of Activities</span>
-        <h3 class="section-title" data-i18n="heading_calendar">Upcoming Gatherings & Workshops</h3>
-        <p data-i18n="desc_calendar">
+</div>
+</section>
+<!-- STICKY SUBNAV -->
+<nav class="page-subnav">
+<div class="container">
+<ul class="subnav-list">
+<li class="subnav-item"><a class="active" data-i18n="sub_calendar" href="#calendar">Upcoming Events</a></li>
+<li class="subnav-item"><a data-i18n="sub_host" href="#host">Host or Partner on an Event</a></li>
+<li class="subnav-item"><a data-i18n="sub_gala" href="#gala">Annual Solidarity Gala (Concept in Development)</a></li>
+<li class="subnav-item"><a data-i18n="sub_gallery" href="#gallery">Authentic Photo Gallery</a></li>
+</ul>
+</div>
+</nav>
+<!-- SECTION 1: UPCOMING EVENTS CALENDAR -->
+<section class="content-section" id="calendar">
+<div class="container">
+<div class="section-header-center">
+<span class="section-tag" data-i18n="tag_calendar">Calendar of Activities</span>
+<h3 class="section-title" data-i18n="heading_calendar">Upcoming Gatherings &amp; Workshops</h3>
+<p data-i18n="desc_calendar">
           Participate in interactive youth sessions held in person and online across Canada.
         </p>
-      </div>
-
-      <div class="events-grid">
-        <!-- EVENT 1 -->
-        <div class="event-item-card">
-          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=700&q=80" alt="Youth Skills & Entrepreneurship Workshop" class="event-banner-img">
-          <div class="event-card-body">
-            <div>
-              <div class="event-date-tag">📅 <span data-i18n="ev1_date">OCT 18, 2026</span> • <span data-i18n="ev1_badge">WORKSHOP LAB</span></div>
-              <h4 class="event-title" data-i18n="ev1_title">Youth Social Entrepreneurship & Micro-Venture Lab</h4>
-              <p class="event-desc" data-i18n="ev1_desc">
+</div>
+<div class="events-grid">
+<!-- EVENT 1 -->
+<div class="event-item-card">
+<img alt="Youth Skills &amp; Entrepreneurship Workshop" class="event-banner-img" src="images/albums/canada-cohort/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&amp;fit=crop&amp;w=700&amp;q=80'"/>
+<div class="event-card-body">
+<div>
+<div class="event-date-tag">📅 <span data-i18n="ev1_date">OCT 18, 2026</span> • <span data-i18n="ev1_badge">WORKSHOP LAB</span></div>
+<h4 class="event-title" data-i18n="ev1_title">Youth Social Entrepreneurship &amp; Micro-Venture Lab</h4>
+<p class="event-desc" data-i18n="ev1_desc">
                 An intensive hands-on lab exploring community commerce, lean startup AI tools for market testing, financial budgeting, and micro-grant validation for emerging young innovators.
               </p>
-            </div>
-            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:14px;">
-              <span style="font-size:0.85rem; color:var(--text-muted);" data-i18n="ev1_loc">📍 Ottawa, ON & Virtual</span>
-              <a href="#registerModal" onclick="openEventRegister('Youth Skills & Entrepreneurship Workshop')" class="btn-primary" style="font-size:0.86rem; padding:8px 18px;" data-i18n="btn_rsvp">Register Free →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- EVENT 2 -->
-        <div class="event-item-card">
-          <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=700&q=80" alt="Canada-Burundi Synergy Dialogue" class="event-banner-img">
-          <div class="event-card-body">
-            <div>
-              <div class="event-date-tag">📅 <span data-i18n="ev2_date">NOV 05, 2026</span> • <span data-i18n="ev2_badge">GLOBAL DIALOGUE</span></div>
-              <h4 class="event-title" data-i18n="ev2_title">Canada-Burundi Youth Synergy Roundtable</h4>
-              <p class="event-desc" data-i18n="ev2_desc">
+</div>
+<div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:14px;">
+<span data-i18n="ev1_loc" style="font-size:0.85rem; color:var(--text-muted);">📍 Ottawa, ON &amp; Virtual</span>
+<a class="btn-primary" data-i18n="btn_rsvp" href="#registerModal" onclick="openEventRegister('Youth Skills &amp; Entrepreneurship Workshop')" style="font-size:0.86rem; padding:8px 18px;">Register Free →</a>
+</div>
+</div>
+</div>
+<!-- EVENT 2 -->
+<div class="event-item-card">
+<img alt="Canada-Burundi Synergy Dialogue" class="event-banner-img" src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<div class="event-card-body">
+<div>
+<div class="event-date-tag">📅 <span data-i18n="ev2_date">NOV 05, 2026</span> • <span data-i18n="ev2_badge">GLOBAL DIALOGUE</span></div>
+<h4 class="event-title" data-i18n="ev2_title">Canada-Burundi Youth Synergy Roundtable</h4>
+<p class="event-desc" data-i18n="ev2_desc">
                 Bilateral dialogue connecting Canadian diaspora youth and leaders with YBSP Burundi project coordinators. Features firsthand dispatches on #SororaIkaye education sponsorships and grassroots vocational tools.
               </p>
-            </div>
-            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:14px;">
-              <span style="font-size:0.85rem; color:var(--text-muted);" data-i18n="ev2_loc">📍 Zoom Webinar</span>
-              <a href="#registerModal" onclick="openEventRegister('Canada-Burundi Synergy Dialogue')" class="btn-primary" style="font-size:0.86rem; padding:8px 18px;" data-i18n="btn_rsvp">Register Free →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- EVENT 3 -->
-        <div class="event-item-card">
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=700&q=80" alt="Youth Mental Health Forum" class="event-banner-img">
-          <div class="event-card-body">
-            <div>
-              <div class="event-date-tag">📅 <span data-i18n="ev3_date">NOV 21, 2026</span> • <span data-i18n="tag_comm_health">COMMUNITY HEALTH</span></div>
-              <h4 class="event-title" data-i18n="ev3_title">Destigmatizing Youth Mental Health Forum</h4>
-              <p class="event-desc" data-i18n="ev3_desc">
+</div>
+<div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:14px;">
+<span data-i18n="ev2_loc" style="font-size:0.85rem; color:var(--text-muted);">📍 Zoom Webinar</span>
+<a class="btn-primary" data-i18n="btn_rsvp" href="#registerModal" onclick="openEventRegister('Canada-Burundi Synergy Dialogue')" style="font-size:0.86rem; padding:8px 18px;">Register Free →</a>
+</div>
+</div>
+</div>
+<!-- EVENT 3 -->
+<div class="event-item-card">
+<img alt="Youth Mental Health Forum" class="event-banner-img" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<div class="event-card-body">
+<div>
+<div class="event-date-tag">📅 <span data-i18n="ev3_date">NOV 21, 2026</span> • <span data-i18n="tag_comm_health">COMMUNITY HEALTH</span></div>
+<h4 class="event-title" data-i18n="ev3_title">Destigmatizing Youth Mental Health Forum</h4>
+<p class="event-desc" data-i18n="ev3_desc">
                 An open, culturally safe bilingual conversation on emotional resilience and navigating systemic barriers, facilitated by qualified professionals and community leaders.
               </p>
-            </div>
-            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:14px;">
-              <span style="font-size:0.85rem; color:var(--text-muted);" data-i18n="ev3_loc">📍 Gatineau, QC & Online</span>
-              <a href="#registerModal" onclick="openEventRegister('Youth Mental Health Forum')" class="btn-primary" style="font-size:0.86rem; padding:8px 18px;" data-i18n="btn_rsvp">Register Free →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- EVENT 4 -->
-        <div class="event-item-card">
-          <img src="images/gala.jpg" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=700&q=80'" alt="YBSP Annual Solidarity Gala (Concept in Development) Gathering" style="border-radius:var(--radius-md); box-shadow:var(--shadow-lg); width:100%; height:320px; object-fit:cover;">
-          <div class="event-card-body">
-            <div>
-              <div class="event-date-tag">📅 <span data-i18n="ev4_date">DEC 12, 2026</span> • <span data-i18n="ev4_badge">SIGNATURE GALA</span></div>
-              <h4 class="event-title" data-i18n="ev4_title">YBSP Canada Annual Solidarity Gala (Concept in Development)</h4>
-              <p class="event-desc" data-i18n="ev4_desc">
+</div>
+<div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:14px;">
+<span data-i18n="ev3_loc" style="font-size:0.85rem; color:var(--text-muted);">📍 Gatineau, QC &amp; Online</span>
+<a class="btn-primary" data-i18n="btn_rsvp" href="#registerModal" onclick="openEventRegister('Youth Mental Health Forum')" style="font-size:0.86rem; padding:8px 18px;">Register Free →</a>
+</div>
+</div>
+</div>
+<!-- EVENT 4 -->
+<div class="event-item-card">
+<img alt="YBSP Annual Solidarity Gala (Concept in Development) Gathering" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" src="images/gala.jpg" style="border-radius:var(--radius-md); box-shadow:var(--shadow-lg); width:100%; height:320px; object-fit:cover;"/>
+<div class="event-card-body">
+<div>
+<div class="event-date-tag">📅 <span data-i18n="ev4_date">DEC 12, 2026</span> • <span data-i18n="ev4_badge">SIGNATURE GALA</span></div>
+<h4 class="event-title" data-i18n="ev4_title">YBSP Canada Annual Solidarity Gala (Concept in Development)</h4>
+<p class="event-desc" data-i18n="ev4_desc">
                 Our annual hallmark celebration honoring youth cohort graduates, sharing program updates and annual results, and fundraising for upcoming 2027 Canadian mentorship and Burundi education programs.
               </p>
-            </div>
-            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:14px;">
-              <span style="font-size:0.85rem; color:var(--text-muted);" data-i18n="ev4_loc">📍 National Capital Region</span>
-              <a href="#registerModal" onclick="openEventRegister('Annual Solidarity Gala (Concept in Development)')" class="btn-primary" style="font-size:0.86rem; padding:8px 18px;" data-i18n="btn_rsvp_gala">Reserve Seat →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 2: HOST OR PARTNER ON AN EVENT (DEDICATED PATHWAY) -->
-  <section class="content-section" id="host" style="background:#ffffff; border-top:1px solid var(--border-color);">
-    <div class="container-narrow">
-      <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_host_event">Collaborative Events</span>
-        <h3 class="section-title" data-i18n="heading_host_event">Host or Partner on an Event</h3>
-        <p data-i18n="desc_host_event">
+</div>
+<div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:14px;">
+<span data-i18n="ev4_loc" style="font-size:0.85rem; color:var(--text-muted);">📍 National Capital Region</span>
+<a class="btn-primary" data-i18n="btn_rsvp_gala" href="#registerModal" onclick="openEventRegister('Annual Solidarity Gala (Concept in Development)')" style="font-size:0.86rem; padding:8px 18px;">Reserve Seat →</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: HOST OR PARTNER ON AN EVENT (DEDICATED PATHWAY) -->
+<section class="content-section" id="host" style="background:#ffffff; border-top:1px solid var(--border-color);">
+<div class="container-narrow">
+<div class="section-header-center">
+<span class="section-tag" data-i18n="tag_host_event">Collaborative Events</span>
+<h3 class="section-title" data-i18n="heading_host_event">Host or Partner on an Event</h3>
+<p data-i18n="desc_host_event">
           Are you a university student union, diaspora coalition, community center, or employer seeking to co-host an event or invite YBSP speakers? Complete this proposal and our event committee will follow up.
         </p>
-      </div>
-
-      <div class="form-card">
-        <form id="eventProposalForm" name="event-proposal" method="POST" data-netlify="true" onsubmit="handleEventSubmit(event)">
-          <input type="hidden" name="form-name" value="event-proposal">
-          
-          <div class="form-grid-2">
-            <div class="form-group">
-              <label class="form-label" for="ep-title" data-i18n="lbl_ep_title">Proposed Event Name / Theme *</label>
-              <input type="text" id="ep-title" name="event_title" class="form-input" required placeholder="e.g. Youth Tech Readiness Summit 2027" data-i18n-placeholder="ph_ev_theme">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="ep-type" data-i18n="lbl_ep_type">Type of Collaboration *</label>
-              <select id="ep-type" name="collaboration_type" class="form-select" required>
-                <option value="co-host" data-i18n="opt_collab_1">Co-Host a Community Workshop</option>
-                <option value="speaker" data-i18n="opt_collab_2">Request YBSP Speaker / Panelist</option>
-                <option value="student-union" data-i18n="opt_collab_3">University / College Campus Event</option>
-                <option value="corporate-session" data-i18n="opt_collab_4">Corporate Employee Lunch & Learn</option>
-                <option value="diaspora-forum" data-i18n="opt_collab_5">Diaspora Roundtable</option>
-                <option value="other" data-i18n="opt_collab_6">Other Proposal</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-grid-2">
-            <div class="form-group">
-              <label class="form-label" for="ep-org" data-i18n="lbl_ep_org">Host Organization / Group *</label>
-              <input type="text" id="ep-org" name="host_organization" class="form-input" required placeholder="e.g. Carleton University Black Student Association" data-i18n-placeholder="ph_ev_org">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="ep-contact" data-i18n="lbl_name">Contact Person *</label>
-              <input type="text" id="ep-contact" name="contact_name" class="form-input" required placeholder="e.g. Alain Mugisha">
-            </div>
-          </div>
-
-          <div class="form-grid-2">
-            <div class="form-group">
-              <label class="form-label" for="ep-email" data-i18n="lbl_email">Email Address *</label>
-              <input type="email" id="ep-email" name="email" class="form-input" required placeholder="alain@example.ca">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="ep-date" data-i18n="lbl_ep_date">Proposed Date & Location</label>
-              <input type="text" id="ep-date" name="target_date_location" class="form-input" placeholder="e.g. Spring 2027, In-person Ottawa or Virtual" data-i18n-placeholder="ph_ev_date">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="ep-desc" data-i18n="lbl_ep_desc">Event Objectives & Requested YBSP Contribution *</label>
-            <textarea id="ep-desc" name="event_objectives" class="form-textarea" rows="4" required placeholder="Describe the expected audience size, key topics, and how YBSP Canada can participate..." data-i18n-placeholder="ph_ev_desc"></textarea>
-          </div>
-
-          <button type="submit" class="btn-primary" style="width:100%; justify-content:center;" data-i18n="btn_submit_event_prop">Submit Event Proposal</button>
-
-          <div id="eventFeedback" class="form-feedback" data-i18n="event_feedback">
+</div>
+<div class="form-card">
+<form data-netlify="true" id="eventProposalForm" method="POST" name="event-proposal" onsubmit="handleEventSubmit(event)">
+<input name="form-name" type="hidden" value="event-proposal"/>
+<div class="form-grid-2">
+<div class="form-group">
+<label class="form-label" data-i18n="lbl_ep_title" for="ep-title">Proposed Event Name / Theme *</label>
+<input class="form-input" data-i18n-placeholder="ph_ev_theme" id="ep-title" name="event_title" placeholder="e.g. Youth Tech Readiness Summit 2027" required="" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label" data-i18n="lbl_ep_type" for="ep-type">Type of Collaboration *</label>
+<select class="form-select" id="ep-type" name="collaboration_type" required="">
+<option data-i18n="opt_collab_1" value="co-host">Co-Host a Community Workshop</option>
+<option data-i18n="opt_collab_2" value="speaker">Request YBSP Speaker / Panelist</option>
+<option data-i18n="opt_collab_3" value="student-union">University / College Campus Event</option>
+<option data-i18n="opt_collab_4" value="corporate-session">Corporate Employee Lunch &amp; Learn</option>
+<option data-i18n="opt_collab_5" value="diaspora-forum">Diaspora Roundtable</option>
+<option data-i18n="opt_collab_6" value="other">Other Proposal</option>
+</select>
+</div>
+</div>
+<div class="form-grid-2">
+<div class="form-group">
+<label class="form-label" data-i18n="lbl_ep_org" for="ep-org">Host Organization / Group *</label>
+<input class="form-input" data-i18n-placeholder="ph_ev_org" id="ep-org" name="host_organization" placeholder="e.g. Carleton University Black Student Association" required="" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label" data-i18n="lbl_name" for="ep-contact">Contact Person *</label>
+<input class="form-input" id="ep-contact" name="contact_name" placeholder="e.g. Alain Mugisha" required="" type="text"/>
+</div>
+</div>
+<div class="form-grid-2">
+<div class="form-group">
+<label class="form-label" data-i18n="lbl_email" for="ep-email">Email Address *</label>
+<input class="form-input" id="ep-email" name="email" placeholder="alain@example.ca" required="" type="email"/>
+</div>
+<div class="form-group">
+<label class="form-label" data-i18n="lbl_ep_date" for="ep-date">Proposed Date &amp; Location</label>
+<input class="form-input" data-i18n-placeholder="ph_ev_date" id="ep-date" name="target_date_location" placeholder="e.g. Spring 2027, In-person Ottawa or Virtual" type="text"/>
+</div>
+</div>
+<div class="form-group">
+<label class="form-label" data-i18n="lbl_ep_desc" for="ep-desc">Event Objectives &amp; Requested YBSP Contribution *</label>
+<textarea class="form-textarea" data-i18n-placeholder="ph_ev_desc" id="ep-desc" name="event_objectives" placeholder="Describe the expected audience size, key topics, and how YBSP Canada can participate..." required="" rows="4"></textarea>
+</div>
+<button class="btn-primary" data-i18n="btn_submit_event_prop" style="width:100%; justify-content:center;" type="submit">Submit Event Proposal</button>
+<div class="form-feedback" data-i18n="event_feedback" id="eventFeedback">
             ✓ Proposal Received! Our community events committee will review your proposal and respond within 4 business days.
           </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 3: ANNUAL GALA SPOTLIGHT -->
-  <section class="content-section" id="gala" style="background:var(--bg-light); border-top:1px solid var(--border-color);">
-    <div class="container">
-      <div class="gala-feature-banner">
-        <div>
-          <span style="font-size:0.8rem; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:var(--accent);" data-i18n="tag_gala_spot">Signature Annual Event</span>
-          <h3 style="font-size:2rem; font-weight:800; margin:8px 0 14px; color:#ffffff;" data-i18n="heading_gala_spot">YBSP Canada Annual Solidarity Gala (Concept in Development)</h3>
-          <p style="color:#cbd5e1; font-size:1.02rem; line-height:1.65; margin-bottom:16px;" data-i18n="desc_gala_spot">
+</form>
+</div>
+</div>
+</section>
+<!-- SECTION 3: ANNUAL GALA SPOTLIGHT -->
+<section class="content-section" id="gala" style="background:var(--bg-light); border-top:1px solid var(--border-color);">
+<div class="container">
+<div class="gala-feature-banner">
+<div>
+<span data-i18n="tag_gala_spot" style="font-size:0.8rem; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:var(--accent);">Signature Annual Event</span>
+<h3 data-i18n="heading_gala_spot" style="font-size:2rem; font-weight:800; margin:8px 0 14px; color:#ffffff;">YBSP Canada Annual Solidarity Gala (Concept in Development)</h3>
+<p data-i18n="desc_gala_spot" style="color:#cbd5e1; font-size:1.02rem; line-height:1.65; margin-bottom:16px;">
             Each December, YBSP Canada gathers youth fellows, community partners, diaspora leaders, and civic allies for an evening dedicated to celebrating youth achievements and raising essential program funding.
           </p>
-          <ul style="color:#f1f5f9; font-size:0.9rem; margin-bottom:24px; line-height:1.8;">
-            <li data-i18n="gala_item_1">🏆 <strong>Youth Fellow Awards:</strong> Honoring exceptional graduates from our career readiness cohorts.</li>
-            <li data-i18n="gala_item_2">📊 <strong>Annual Accountability Report:</strong> Direct public reporting on fund distribution and outcomes.</li>
-            <li data-i18n="gala_item_3">🤝 <strong>Philanthropic Synergy:</strong> Raising critical matching funds for Canadian cohorts and Burundi toolkits.</li>
-          </ul>
-          <a href="#host" class="btn-primary" style="background:var(--accent);" data-i18n="btn_sponsor_gala">Inquire About Gala Sponsorship →</a>
-        </div>
-        <div>
-          <img src="images/gala.jpg" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=700&q=80'" alt="YBSP Annual Solidarity Gala (Concept in Development) Gathering" style="border-radius:var(--radius-md); box-shadow:var(--shadow-lg); width:100%; height:320px; object-fit:cover;">
-          <p style="font-size:0.8rem; color:#cbd5e1; text-align:center; margin-top:10px;" data-i18n="caption_gala">
+<ul style="color:#f1f5f9; font-size:0.9rem; margin-bottom:24px; line-height:1.8;">
+<li data-i18n="gala_item_1">🏆 <strong>Youth Fellow Awards:</strong> Honoring exceptional graduates from our career readiness cohorts.</li>
+<li data-i18n="gala_item_2">📊 <strong>Annual Accountability Report:</strong> Direct public reporting on fund distribution and outcomes.</li>
+<li data-i18n="gala_item_3">🤝 <strong>Philanthropic Synergy:</strong> Raising critical matching funds for Canadian cohorts and Burundi toolkits.</li>
+</ul>
+<a class="btn-primary" data-i18n="btn_sponsor_gala" href="#host" style="background:var(--accent);">Inquire About Gala Sponsorship →</a>
+</div>
+<div>
+<img alt="YBSP Annual Solidarity Gala (Concept in Development) Gathering" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" src="images/gala.jpg" style="border-radius:var(--radius-md); box-shadow:var(--shadow-lg); width:100%; height:320px; object-fit:cover;"/>
+<p data-i18n="caption_gala" style="font-size:0.8rem; color:#cbd5e1; text-align:center; margin-top:10px;">
             Celebrating youth leadership and community solidarity across Canada.
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <!-- SECTION 4: INITIATIVE ALBUMS & AUTHENTIC FIELD DISPATCHES -->
-  <section class="content-section" id="gallery" style="background:#ffffff; border-top:1px solid var(--border-color);"><span id="past"></span>
-    <div class="container">
-      <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_gallery">Visual Archives & Field Dispatches</span>
-        <h3 class="section-title" data-i18n="heading_gallery">Initiative Photo Albums</h3>
-        <p data-i18n="desc_gallery">
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: INITIATIVE ALBUMS & AUTHENTIC FIELD DISPATCHES -->
+<section class="content-section" id="gallery" style="background:#ffffff; border-top:1px solid var(--border-color);"><span id="past"></span>
+<div class="container">
+<div class="section-header-center">
+<span class="section-tag" data-i18n="tag_gallery">Visual Archives &amp; Field Dispatches</span>
+<h3 class="section-title" data-i18n="heading_gallery">Initiative Photo Albums</h3>
+<p data-i18n="desc_gallery">
           Explore documented moments of community solidarity in Burundi, youth career workshops in Canada, and our bilateral programs.
         </p>
-      </div>
-
-            <!-- ALBUM FILTER TABS -->
-      <div style="display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:32px;">
-        <button class="filter-btn active" data-category="all" onclick="filterAlbums('all', this)" style="padding:8px 16px; border-radius:50px; border:1px solid var(--border-color); background:var(--primary); color:#ffffff; font-weight:700; font-size:0.86rem; cursor:pointer;" data-i18n="flt_all">All Albums</button>
-        <button class="filter-btn" data-category="sunday-meal" onclick="filterAlbums('sunday-meal', this)" style="padding:8px 16px; border-radius:50px; border:1px solid var(--border-color); background:#ffffff; color:var(--text-main); font-weight:600; font-size:0.86rem; cursor:pointer;" data-i18n="flt_meal">Sunday Meal & Feed A Child</button>
-        <button class="filter-btn" data-category="sorora" onclick="filterAlbums('sorora', this)" style="padding:8px 16px; border-radius:50px; border:1px solid var(--border-color); background:#ffffff; color:var(--text-main); font-weight:600; font-size:0.86rem; cursor:pointer;" data-i18n="flt_sorora">#SororaIkaye School Kits</button>
-        <button class="filter-btn" data-category="murabire" onclick="filterAlbums('murabire', this)" style="padding:8px 16px; border-radius:50px; border:1px solid var(--border-color); background:#ffffff; color:var(--text-main); font-weight:600; font-size:0.86rem; cursor:pointer;" data-i18n="flt_murabire">#MurabireKazoza Toolkits</button>
-        <button class="filter-btn" data-category="canada-cohort" onclick="filterAlbums('canada-cohort', this)" style="padding:8px 16px; border-radius:50px; border:1px solid var(--border-color); background:#ffffff; color:var(--text-main); font-weight:600; font-size:0.86rem; cursor:pointer;" data-i18n="flt_canada">Canadian Mentorship</button>
-        <button class="filter-btn" data-category="gala" onclick="filterAlbums('gala', this)" style="padding:8px 16px; border-radius:50px; border:1px solid var(--border-color); background:#ffffff; color:var(--text-main); font-weight:600; font-size:0.86rem; cursor:pointer;" data-i18n="flt_gala">Solidarity Gala</button>
-      </div>
-
-      <!-- ALBUMS GRID (6 DISTINCT THEMATIC ALBUMS GROUNDED IN REAL ARCHIVES) -->
-      <div class="albums-container responsive-grid-3">
-        
-        <!-- ALBUM 1: SUNDAY MEAL & FEED A CHILD (BURUNDI) -->
-        <div class="album-card" data-category="sunday-meal" data-album-key="sunday-meal" onclick="openAlbumLightbox('sunday-meal')">
-          <div>
-            <div style="position:relative;">
-              <div style="position:absolute; inset:0; background:rgba(11,28,61,0.25); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0"><span style="background:rgba(255,255,255,0.95); color:var(--primary); font-weight:800; font-size:0.85rem; padding:8px 16px; border-radius:50px; box-shadow:0 4px 10px rgba(0,0,0,0.15);"><span data-i18n="alb_click_open">📷 Click to Open Album (4 Photos)</span></span></div>
-              <img src="images/albums/sunday-meal/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=700&q=80';" alt="Sunday Meal Program in Bujumbura" style="width:100%; height:220px; object-fit:cover;">
-              <span style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;" data-i18n="alb1_loc">Bujumbura, Burundi</span>
-              <span style="position:absolute; bottom:12px; right:12px; background:rgba(16,185,129,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;" data-i18n="alb1_badge_time">Weekly Sundays</span>
-            </div>
-            <div style="padding:22px 20px;">
-              <span style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--secondary-dark); letter-spacing:0.05em;" data-i18n="alb1_tag">Feed A Child Initiative</span>
-              <h4 style="font-size:1.2rem; color:var(--primary); margin:6px 0 10px;" data-i18n="alb1_title">Sunday Meal Program</h4>
-              <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;" data-i18n="alb1_desc">
+</div>
+<!-- ALBUM FILTER TABS -->
+<div style="display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:32px;">
+<button class="filter-btn active" data-i18n="flt_all" onclick="filterAlbums('all', this)" style="padding:8px 16px; border-radius:50px; border:1px solid var(--border-color); background:var(--primary); color:#ffffff; font-weight:700; font-size:0.86rem; cursor:pointer;">All Albums</button>
+<button class="filter-btn" data-i18n="flt_meal" onclick="filterAlbums('sunday-meal', this)" style="padding:8px 16px; border-radius:50px; border:1px solid var(--border-color); background:#ffffff; color:var(--text-main); font-weight:600; font-size:0.86rem; cursor:pointer;">Sunday Meal &amp; Feed A Child</button>
+<button class="filter-btn" data-i18n="flt_sorora" onclick="filterAlbums('sorora', this)" style="padding:8px 16px; border-radius:50px; border:1px solid var(--border-color); background:#ffffff; color:var(--text-main); font-weight:600; font-size:0.86rem; cursor:pointer;">#SororaIkaye School Kits</button>
+<button class="filter-btn" data-i18n="flt_murabire" onclick="filterAlbums('murabire', this)" style="padding:8px 16px; border-radius:50px; border:1px solid var(--border-color); background:#ffffff; color:var(--text-main); font-weight:600; font-size:0.86rem; cursor:pointer;">#MurabireKazoza Toolkits</button>
+<button class="filter-btn" data-i18n="flt_canada" onclick="filterAlbums('canada-cohort', this)" style="padding:8px 16px; border-radius:50px; border:1px solid var(--border-color); background:#ffffff; color:var(--text-main); font-weight:600; font-size:0.86rem; cursor:pointer;">Canadian Mentorship</button>
+<button class="filter-btn" data-i18n="flt_gala" onclick="filterAlbums('gala', this)" style="padding:8px 16px; border-radius:50px; border:1px solid var(--border-color); background:#ffffff; color:var(--text-main); font-weight:600; font-size:0.86rem; cursor:pointer;">Solidarity Gala</button>
+</div>
+<!-- ALBUMS GRID (6 DISTINCT THEMATIC ALBUMS GROUNDED IN REAL ARCHIVES) -->
+<div class="albums-container responsive-grid-3">
+<!-- ALBUM 1: SUNDAY MEAL & FEED A CHILD (BURUNDI) -->
+<div class="album-card" data-category="sunday-meal" onclick="openAlbumLightbox('sunday-meal')">
+<div>
+<div style="position:relative;">
+<div onmouseout="this.style.opacity=0" onmouseover="this.style.opacity=1" style="position:absolute; inset:0; background:rgba(11,28,61,0.25); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.2s;"><span style="background:rgba(255,255,255,0.95); color:var(--primary); font-weight:800; font-size:0.85rem; padding:8px 16px; border-radius:50px; box-shadow:0 4px 10px rgba(0,0,0,0.15);"><span data-i18n="alb_click_open">📷 Click to Open Album (4 Photos)</span></span></div>
+<img alt="Sunday Meal Program in Bujumbura" src="images/albums/sunday-meal/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" style="width:100%; height:220px; object-fit:cover;"/>
+<span data-i18n="alb1_loc" style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;">Bujumbura, Burundi</span>
+<span data-i18n="alb1_badge_time" style="position:absolute; bottom:12px; right:12px; background:rgba(16,185,129,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;">Weekly Sundays</span>
+</div>
+<div style="padding:22px 20px;">
+<span data-i18n="alb1_tag" style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--secondary-dark); letter-spacing:0.05em;">Feed A Child Initiative</span>
+<h4 data-i18n="alb1_title" style="font-size:1.2rem; color:var(--primary); margin:6px 0 10px;">Sunday Meal Program</h4>
+<p data-i18n="alb1_desc" style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;">
                 Documented in YBSP archives since 2013: weekly community meals organized every Sunday to provide warm nutrition, clothing, and psychosocial reintegration to children living on the streets in Bujumbura. Over 60 Sunday meals organized reaching more than 1,000 children.
               </p>
-            </div>
-          </div>
-          <div class="album-card-footer">
-            <a onclick="event.stopPropagation()" href="https://www.facebook.com/ybspburundi" target="_blank" rel="noopener noreferrer" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark); display:inline-flex; align-items:center; gap:4px;" data-i18n="link_view_dispatches">View Weekly Sunday Dispatches on Facebook ↗</a>
-          </div>
-        </div>
-
-        <!-- ALBUM 2: SORORA IKAYE SCHOOL SUPPLIES (BURUNDI) -->
-        <div class="album-card" data-category="sorora" data-album-key="sorora" onclick="openAlbumLightbox('sorora')">
-          <div>
-            <div style="position:relative;">
-              <img src="images/albums/sorora-ikaye/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=700&q=80';" alt="Sorora Ikaye School Supply Drive" style="width:100%; height:220px; object-fit:cover;">
-              <span style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;" data-i18n="alb2_loc">Bujumbura Rural & Kabezi</span>
-              <span style="position:absolute; bottom:12px; right:12px; background:rgba(245,158,11,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;" data-i18n="alb_tag_campaign">Annual Campaign</span>
-            </div>
-            <div style="padding:22px 20px;">
-              <span style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--accent-hover); letter-spacing:0.05em;" data-i18n="alb2_tag">Education Access</span>
-              <h4 style="font-size:1.2rem; color:var(--primary); margin:6px 0 10px;" data-i18n="alb2_title">#SororaIkaye Back-to-School Drive</h4>
-              <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;" data-i18n="alb2_desc">
+</div>
+</div>
+<div class="album-card-footer">
+<a data-i18n="link_view_dispatches" href="https://www.facebook.com/ybspburundi" rel="noopener noreferrer" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark); display:inline-flex; align-items:center; gap:4px;" target="_blank">View Weekly Sunday Dispatches on Facebook ↗</a>
+</div>
+</div>
+<!-- ALBUM 2: SORORA IKAYE SCHOOL SUPPLIES (BURUNDI) -->
+<div class="album-card" data-category="sorora" onclick="openAlbumLightbox('sorora')">
+<div>
+<div style="position:relative;">
+<img alt="Sorora Ikaye School Supply Drive" src="images/albums/sorora/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" style="width:100%; height:220px; object-fit:cover;"/>
+<span data-i18n="alb2_loc" style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;">Bujumbura Rural &amp; Kabezi</span>
+<span data-i18n="alb_tag_campaign" style="position:absolute; bottom:12px; right:12px; background:rgba(245,158,11,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;">Annual Campaign</span>
+</div>
+<div style="padding:22px 20px;">
+<span data-i18n="alb2_tag" style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--accent-hover); letter-spacing:0.05em;">Education Access</span>
+<h4 data-i18n="alb2_title" style="font-size:1.2rem; color:var(--primary); margin:6px 0 10px;">#SororaIkaye Back-to-School Drive</h4>
+<p data-i18n="alb2_desc" style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;">
                 From the Kirundi phrase "Gusorora ikaye" (sharing a notebook instead of a drink): mobilizing citizen solidarity to equip vulnerable children with notebooks, uniforms, school bags, and minerval tuition assistance to return to school.
               </p>
-            </div>
-          </div>
-          <div class="album-card-footer">
-            <a onclick="event.stopPropagation()" href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark); display:inline-flex; align-items:center; gap:4px;" data-i18n="link_view_sorora">Explore #SororaIkaye Partner Reports ↗</a>
-          </div>
-        </div>
-
-        <!-- ALBUM 3: MURABIRE KAZOZA VOCATIONAL TOOLKITS (BURUNDI) -->
-        <div class="album-card" data-category="murabire" data-album-key="murabire" onclick="openAlbumLightbox('murabire')">
-          <div>
-            <div style="position:relative;">
-              <img src="images/albums/murabire-kazoza/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=700&q=80';" alt="Vocational Training and Starter Kits" style="width:100%; height:220px; object-fit:cover;">
-              <span style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;" data-i18n="alb3_loc">Gitega & Provinces</span>
-              <span style="position:absolute; bottom:12px; right:12px; background:rgba(99,102,241,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;" data-i18n="alb3_badge_time">Artisan Kits</span>
-            </div>
-            <div style="padding:22px 20px;">
-              <span style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:#6366f1; letter-spacing:0.05em;" data-i18n="alb3_tag">Livelihoods & Trades</span>
-              <h4 style="font-size:1.2rem; color:var(--primary); margin:6px 0 10px;" data-i18n="alb3_title">#MurabireKazoza Artisan Toolkits</h4>
-              <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;" data-i18n="alb3_desc">
+</div>
+</div>
+<div class="album-card-footer">
+<a data-i18n="link_view_sorora" href="https://ybspburundi.org/" rel="noopener noreferrer" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark); display:inline-flex; align-items:center; gap:4px;" target="_blank">Explore #SororaIkaye Partner Reports ↗</a>
+</div>
+</div>
+<!-- ALBUM 3: MURABIRE KAZOZA VOCATIONAL TOOLKITS (BURUNDI) -->
+<div class="album-card" data-category="murabire" onclick="openAlbumLightbox('murabire')">
+<div>
+<div style="position:relative;">
+<img alt="Vocational Training and Starter Kits" src="images/albums/murabire/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" style="width:100%; height:220px; object-fit:cover;"/>
+<span data-i18n="alb3_loc" style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;">Gitega &amp; Provinces</span>
+<span data-i18n="alb3_badge_time" style="position:absolute; bottom:12px; right:12px; background:rgba(99,102,241,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;">Artisan Kits</span>
+</div>
+<div style="padding:22px 20px;">
+<span data-i18n="alb3_tag" style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:#6366f1; letter-spacing:0.05em;">Livelihoods &amp; Trades</span>
+<h4 data-i18n="alb3_title" style="font-size:1.2rem; color:var(--primary); margin:6px 0 10px;">#MurabireKazoza Artisan Toolkits</h4>
+<p data-i18n="alb3_desc" style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;">
                 Providing youth who graduate from vocational apprenticeships with starter equipment: professional sewing machines, carpentry kits, and agricultural implements to establish independent community enterprises.
               </p>
-            </div>
-          </div>
-          <div class="album-card-footer">
-            <a onclick="event.stopPropagation()" href="programs.html#burundi-initiative" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark); display:inline-flex; align-items:center; gap:4px;" data-i18n="link_view_prog_burundi">View Vocational Program Details →</a>
-          </div>
-        </div>
-
-        <!-- ALBUM 4: CANADIAN YOUTH MENTORSHIP COHORTS (CANADA) -->
-        <div class="album-card" data-category="canada-cohort" data-album-key="canada-cohort" onclick="openAlbumLightbox('canada-cohort')">
-          <div>
-            <div style="position:relative;">
-              <img src="images/albums/canadian-mentorship/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=700&q=80';" alt="Canadian Career Mentorship Session" style="width:100%; height:220px; object-fit:cover;">
-              <span style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;" data-i18n="alb4_loc">Ottawa-Gatineau & Online</span>
-              <span style="position:absolute; bottom:12px; right:12px; background:rgba(16,185,129,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;" data-i18n="alb4_badge_time">12-Week Cohorts</span>
-            </div>
-            <div style="padding:22px 20px;">
-              <span style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--secondary-dark); letter-spacing:0.05em;" data-i18n="alb4_tag">Workforce Readiness</span>
-              <h4 style="font-size:1.2rem; color:var(--primary); margin:6px 0 10px;" data-i18n="alb4_title">Education, Skills & Youth Mentorship</h4>
-              <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;" data-i18n="alb4_desc">
+</div>
+</div>
+<div class="album-card-footer">
+<a data-i18n="link_view_prog_burundi" href="programs.html#burundi-initiative" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark); display:inline-flex; align-items:center; gap:4px;">View Vocational Program Details →</a>
+</div>
+</div>
+<!-- ALBUM 4: CANADIAN YOUTH MENTORSHIP COHORTS (CANADA) -->
+<div class="album-card" data-category="canada-cohort" onclick="openAlbumLightbox('canada-cohort')">
+<div>
+<div style="position:relative;">
+<img alt="Canadian Career Mentorship Session" src="images/albums/canada-cohort/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" style="width:100%; height:220px; object-fit:cover;"/>
+<span data-i18n="alb4_loc" style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;">Ottawa-Gatineau &amp; Online</span>
+<span data-i18n="alb4_badge_time" style="position:absolute; bottom:12px; right:12px; background:rgba(16,185,129,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;">12-Week Cohorts</span>
+</div>
+<div style="padding:22px 20px;">
+<span data-i18n="alb4_tag" style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--secondary-dark); letter-spacing:0.05em;">Workforce Readiness</span>
+<h4 data-i18n="alb4_title" style="font-size:1.2rem; color:var(--primary); margin:6px 0 10px;">Education, Skills &amp; Youth Mentorship</h4>
+<p data-i18n="alb4_desc" style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;">
                 Documenting our 12-week youth cohorts in Canada: pairing newcomer and African diaspora youth 1-on-1 with public sector and corporate leaders for resume mapping, workplace culture, and modern AI automation skills.
               </p>
-            </div>
-          </div>
-          <div class="album-card-footer">
-            <a onclick="event.stopPropagation()" href="programs.html#mentorship" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark); display:inline-flex; align-items:center; gap:4px;" data-i18n="link_view_prog_mentorship">View Mentorship Curriculum →</a>
-          </div>
-        </div>
-
-        <!-- ALBUM 5: ANNUAL SOLIDARITY GALA (CANADA) -->
-        <div class="album-card" data-category="gala" data-album-key="gala" onclick="openAlbumLightbox('gala')">
-          <div>
-            <div style="position:relative;">
-              <img src="images/albums/solidarity-gala/cover.jpg" onerror="this.onerror=null; this.src='images/gala.jpg'; this.onerror=function(){this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=700&q=80';};" alt="YBSP Annual Solidarity Gala (Concept in Development) Gathering" style="border-radius:var(--radius-md); box-shadow:var(--shadow-lg); width:100%; height:320px; object-fit:cover;">
-              <span style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;" data-i18n="alb5_loc">National Capital Region</span>
-              <span style="position:absolute; bottom:12px; right:12px; background:rgba(245,158,11,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;" data-i18n="alb_tag_dec">Annual December</span>
-            </div>
-            <div style="padding:22px 20px;">
-              <span style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--accent-hover); letter-spacing:0.05em;" data-i18n="alb5_tag">Community Recognition</span>
-              <h4 style="font-size:1.2rem; color:var(--primary); margin:6px 0 10px;" data-i18n="alb5_title">Annual Solidarity Gala (Concept in Development) Archives</h4>
-              <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;" data-i18n="alb5_desc">
+</div>
+</div>
+<div class="album-card-footer">
+<a data-i18n="link_view_prog_mentorship" href="programs.html#mentorship" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark); display:inline-flex; align-items:center; gap:4px;">View Mentorship Curriculum →</a>
+</div>
+</div>
+<!-- ALBUM 5: ANNUAL SOLIDARITY GALA (CANADA) -->
+<div class="album-card" data-category="gala" onclick="openAlbumLightbox('gala')">
+<div>
+<div style="position:relative;">
+<img alt="YBSP Annual Solidarity Gala (Concept in Development) Gathering" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" src="images/gala.jpg" style="border-radius:var(--radius-md); box-shadow:var(--shadow-lg); width:100%; height:320px; object-fit:cover;"/>
+<span data-i18n="alb5_loc" style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;">National Capital Region</span>
+<span data-i18n="alb_tag_dec" style="position:absolute; bottom:12px; right:12px; background:rgba(245,158,11,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;">Annual December</span>
+</div>
+<div style="padding:22px 20px;">
+<span data-i18n="alb5_tag" style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--accent-hover); letter-spacing:0.05em;">Community Recognition</span>
+<h4 data-i18n="alb5_title" style="font-size:1.2rem; color:var(--primary); margin:6px 0 10px;">Annual Solidarity Gala (Concept in Development) Archives</h4>
+<p data-i18n="alb5_desc" style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;">
                 Moments from our annual community gathering: celebrating cohort participants, sharing program updates and annual results, and uniting community supporters.
               </p>
-            </div>
-          </div>
-          <div class="album-card-footer">
-            <a onclick="event.stopPropagation()" href="#gala" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark); display:inline-flex; align-items:center; gap:4px;" data-i18n="link_view_gala_spotlight">Gala Highlights & Sponsorships →</a>
-          </div>
-        </div>
-
-        <!-- ALBUM 6: SOCIAL ENTERPRISE & COMMUNITY ACTION -->
-        <div class="album-card" data-category="canada-cohort" data-album-key="community-labs" onclick="openAlbumLightbox('community-labs')">
-          <div>
-            <div style="position:relative;">
-              <img src="images/albums/community-labs/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=80';" alt="Youth Community Action and Enterprise" style="width:100%; height:220px; object-fit:cover;">
-              <span style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;" data-i18n="alb6_loc">Bilingual Cohorts</span>
-              <span style="position:absolute; bottom:12px; right:12px; background:rgba(16,185,129,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;" data-i18n="alb_tag_labs">Youth Labs</span>
-            </div>
-            <div style="padding:22px 20px;">
-              <span style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--secondary-dark); letter-spacing:0.05em;" data-i18n="alb6_tag">Social Enterprise</span>
-              <h4 style="font-size:1.2rem; color:var(--primary); margin:6px 0 10px;" data-i18n="alb6_title">Community Labs & Peer Synergy</h4>
-              <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;" data-i18n="alb6_desc">
+</div>
+</div>
+<div class="album-card-footer">
+<a data-i18n="link_view_gala_spotlight" href="#gala" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark); display:inline-flex; align-items:center; gap:4px;">Gala Highlights &amp; Sponsorships →</a>
+</div>
+</div>
+<!-- ALBUM 6: SOCIAL ENTERPRISE & COMMUNITY ACTION -->
+<div class="album-card" data-category="canada-cohort" onclick="openAlbumLightbox('canada-cohort')">
+<div>
+<div style="position:relative;">
+<img alt="Youth Community Action and Enterprise" src="images/albums/community-action/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" style="width:100%; height:220px; object-fit:cover;"/>
+<span data-i18n="alb6_loc" style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;">Bilingual Cohorts</span>
+<span data-i18n="alb_tag_labs" style="position:absolute; bottom:12px; right:12px; background:rgba(16,185,129,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;">Youth Labs</span>
+</div>
+<div style="padding:22px 20px;">
+<span data-i18n="alb6_tag" style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--secondary-dark); letter-spacing:0.05em;">Social Enterprise</span>
+<h4 data-i18n="alb6_title" style="font-size:1.2rem; color:var(--primary); margin:6px 0 10px;">Community Labs &amp; Peer Synergy</h4>
+<p data-i18n="alb6_desc" style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;">
                 Interactive youth problem-solving labs: testing lean business models, financial literacy, and community initiatives designed to foster financial autonomy and collaborative synergy.
               </p>
-            </div>
-          </div>
-          <div class="album-card-footer">
-            <a onclick="event.stopPropagation()" href="programs.html#entrepreneurship" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark); display:inline-flex; align-items:center; gap:4px;" data-i18n="link_view_prog_ent">View Entrepreneurship Lab →</a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ONGOING COMMUNITY MEDIA BANNER -->
-      <div style="margin-top:40px; background:var(--bg-slate); border-radius:var(--radius-md); padding:26px 30px; border-left:5px solid var(--secondary); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
-        <div style="max-width:700px;">
-          <h4 style="font-size:1.15rem; color:var(--primary); margin-bottom:6px;" data-i18n="banner_social_title">Live Photo & Video Dispatches Every Sunday</h4>
-          <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin:0;" data-i18n="banner_social_desc">
+</div>
+</div>
+<div class="album-card-footer">
+<a data-i18n="link_view_prog_ent" href="programs.html#entrepreneurship" style="font-size:0.85rem; font-weight:700; color:var(--secondary-dark); display:inline-flex; align-items:center; gap:4px;">View Entrepreneurship Lab →</a>
+</div>
+</div>
+</div>
+<!-- ONGOING COMMUNITY MEDIA BANNER -->
+<div style="margin-top:40px; background:var(--bg-slate); border-radius:var(--radius-md); padding:26px 30px; border-left:5px solid var(--secondary); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+<div style="max-width:700px;">
+<h4 data-i18n="banner_social_title" style="font-size:1.15rem; color:var(--primary); margin-bottom:6px;">Live Photo &amp; Video Dispatches Every Sunday</h4>
+<p data-i18n="banner_social_desc" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin:0;">
             Our teams document field activities in real time. Follow our weekly Sunday Meal distributions in Burundi and youth training cohorts in Canada directly on our social media pages.
           </p>
+</div>
+<div style="display:flex; gap:10px;">
+<a class="btn-primary" href="https://www.facebook.com/ybspcanada" rel="noopener noreferrer" style="font-size:0.85rem; padding:9px 18px;" target="_blank">Follow on Facebook ↗</a>
+<a class="btn-secondary" href="https://www.instagram.com/ybspcanada/" rel="noopener noreferrer" style="font-size:0.85rem; padding:9px 18px;" target="_blank">Follow on Instagram ↗</a>
+</div>
+</div>
+</div>
+</section>
+<!-- UNIVERSAL FOOTER (WFP STYLE WITH SOCIALS & DONATE) -->
+<!-- UNIVERSAL FOOTER -->
+<!-- UNIVERSAL LIVE FOOTER (EXACT LIVE SITE LAYOUT & LABELS) -->
+<footer class="main-footer" style="background:#061124; color:#ffffff; padding:65px 0 30px; border-top:3px solid var(--secondary);">
+<div class="container">
+<!-- 3 COLUMNS: QUICK LINKS, GET INVOLVED, CONTACT & SECRETARIAT -->
+<div class="footer-grid" style="margin-bottom:50px;">
+<!-- COL 1: QUICK LINKS -->
+<div class="footer-col">
+<h4 data-i18n="footer_quick_links" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Quick Links</h4>
+<ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
+<li><a data-i18n="nav_home" href="index.html" style="color:#cbd5e1; text-decoration:none;">Home</a></li>
+<li><a data-i18n="nav_about" href="about.html" style="color:#cbd5e1; text-decoration:none;">About Us &amp; Governance</a></li>
+<li><a data-i18n="nav_programs" href="programs.html" style="color:#cbd5e1; text-decoration:none;">Programs &amp; AI Skills</a></li>
+<li><a data-i18n="nav_events" href="events.html" style="color:#cbd5e1; text-decoration:none;">Events &amp; Community</a></li>
+<li><a data-i18n="nav_news" href="news.html" style="color:#cbd5e1; text-decoration:none;">News &amp; Media Library</a></li>
+<li><a data-i18n="nav_careers" href="careers.html" style="color:#cbd5e1; text-decoration:none;">Careers &amp; Opportunities</a></li>
+<li><a data-i18n="nav_donate" href="donate.html" style="color:#cbd5e1; text-decoration:none;">Donate</a></li>
+</ul>
+</div>
+<!-- COL 2: GET INVOLVED -->
+<div class="footer-col">
+<h4 data-i18n="footer_involved" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Get Involved</h4>
+<ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
+<li><a data-i18n="nav_volunteer" href="get-involved.html#volunteer" style="color:#cbd5e1; text-decoration:none;">Volunteer Application</a></li>
+<li><a data-i18n="nav_membership" href="get-involved.html#membership" style="color:#cbd5e1; text-decoration:none;">Become a Member</a></li>
+<li><a data-i18n="nav_working_groups" href="get-involved.html#working-groups" style="color:#cbd5e1; text-decoration:none;">Member Working Groups</a></li>
+<li><a data-i18n="nav_partnerships" href="get-involved.html#partnerships" style="color:#cbd5e1; text-decoration:none;">Institutional Partners</a></li>
+<li><a data-i18n="footer_burundi_site" href="https://ybspburundi.org/" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none;" target="_blank">YBSP Burundi Website ↗</a></li>
+</ul>
+</div>
+<!-- COL 3: CONTACT & SECRETARIAT -->
+<div class="footer-col">
+<h4 data-i18n="footer_contact" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Contact &amp; Secretariat</h4>
+<div style="font-size:0.9rem; color:#cbd5e1; line-height:1.8;">
+<p style="margin-bottom:12px;">📍 <strong data-i18n="footer_addr">Based in the Ottawa - Gatineau Region<br/>(Developing Partnerships Across Canada)</strong></p>
+<p style="margin-bottom:12px;">✉️ <a href="mailto:info@ybspcanada.org" style="color:#60a5fa; text-decoration:none;">info@ybspcanada.org</a></p>
+<p style="margin:0;">🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
+</div>
+</div>
+</div>
+<!-- BOTTOM SECTION: COPYRIGHT (LEFT) & FOLLOW US (RIGHT) -->
+<div class="footer-bottom-bar" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
+<!-- BOTTOM LEFT: COPYRIGHT -->
+<div class="footer-copyright" style="font-size:0.86rem; color:#94a3b8; text-align:left;">
+          © 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
         </div>
-        <div style="display:flex; gap:10px;">
-          <a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:0.85rem; padding:9px 18px;">Follow on Facebook ↗</a>
-          <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="font-size:0.85rem; padding:9px 18px;">Follow on Instagram ↗</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-    <!-- UNIVERSAL FOOTER (WFP STYLE WITH SOCIALS & DONATE) -->
-      <!-- UNIVERSAL FOOTER -->
-    <!-- UNIVERSAL LIVE FOOTER (EXACT LIVE SITE LAYOUT & LABELS) -->
-  <footer class="main-footer" style="background:#061124; color:#ffffff; padding:65px 0 30px; border-top:3px solid var(--secondary);">
-    <div class="container">
-      
-      <!-- 3 COLUMNS: QUICK LINKS, GET INVOLVED, CONTACT & SECRETARIAT -->
-      <div class="footer-grid" style="margin-bottom:50px;">
-        
-        <!-- COL 1: QUICK LINKS -->
-        <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_quick_links">Quick Links</h4>
-          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
-            <li><a href="index.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_home">Home</a></li>
-            <li><a href="about.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_about">About Us & Governance</a></li>
-            <li><a href="programs.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_programs">Programs & AI Skills</a></li>
-            <li><a href="events.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_events">Events & Community</a></li>
-            <li><a href="news.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_news">News & Media Library</a></li>
-            <li><a href="careers.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_careers">Careers & Opportunities</a></li>
-            <li><a href="donate.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_donate">Donate</a></li>
-          </ul>
-        </div>
-
-        <!-- COL 2: GET INVOLVED -->
-        <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_involved">Get Involved</h4>
-          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
-            <li><a href="get-involved.html#volunteer" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_volunteer">Volunteer Application</a></li>
-            <li><a href="get-involved.html#membership" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_membership">Become a Member</a></li>
-            <li><a href="get-involved.html#working-groups" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_working_groups">Member Working Groups</a></li>
-            <li><a href="get-involved.html#partnerships" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_partnerships">Institutional Partners</a></li>
-            <li><a href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none;" data-i18n="footer_burundi_site">YBSP Burundi Website ↗</a></li>
-          </ul>
-        </div>
-
-        <!-- COL 3: CONTACT & SECRETARIAT -->
-        <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_contact">Contact & Secretariat</h4>
-          <div style="font-size:0.9rem; color:#cbd5e1; line-height:1.8;">
-            <p style="margin-bottom:12px;">📍 <strong data-i18n="footer_addr">Based in the Ottawa - Gatineau Region<br>(Developing Partnerships Across Canada)</strong></p>
-            <p style="margin-bottom:12px;">✉️ <a href="mailto:info@ybspcanada.org" style="color:#60a5fa; text-decoration:none;">info@ybspcanada.org</a></p>
-            <p style="margin:0;">🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- BOTTOM SECTION: COPYRIGHT (LEFT) & FOLLOW US (RIGHT) -->
-      <div class="footer-bottom-bar" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
-        
-        <!-- BOTTOM LEFT: COPYRIGHT -->
-        <div class="footer-copyright" style="font-size:0.86rem; color:#94a3b8; text-align:left;">
-          &copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
-        </div>
-
-        <!-- BOTTOM RIGHT: FOLLOW US -->
-        <div class="footer-social-wrap" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
-          <span style="font-size:0.85rem; font-weight:800; color:#ffffff; text-transform:uppercase; letter-spacing:0.08em;" data-i18n="lbl_follow_us">Follow us</span>
-          <div style="display:flex; align-items:center; gap:10px;">
-            <a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on X (Twitter)">𝕏</a>
-            <a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on Facebook">FB</a>
-            <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on Instagram">IG</a>
-            <a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on TikTok">TT</a>
-            <a href="https://www.snapchat.com/add/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Add YBSP Canada on Snapchat">SC</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- UNIVERSAL BILINGUAL SCRIPT -->
-  <script>
+<!-- BOTTOM RIGHT: FOLLOW US -->
+<div class="footer-social-wrap" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+<span data-i18n="lbl_follow_us" style="font-size:0.85rem; font-weight:800; color:#ffffff; text-transform:uppercase; letter-spacing:0.08em;">Follow us</span>
+<div style="display:flex; align-items:center; gap:10px;">
+<a href="https://x.com/ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on X (Twitter)">𝕏</a>
+<a href="https://www.facebook.com/ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on Facebook">FB</a>
+<a href="https://www.instagram.com/ybspcanada/" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on Instagram">IG</a>
+<a href="https://www.tiktok.com/@ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on TikTok">TT</a>
+<a href="https://www.snapchat.com/add/ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Add YBSP Canada on Snapchat">SC</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- UNIVERSAL BILINGUAL SCRIPT -->
+<script>
       // Universal Mobile Navigation Handler
   (function() {
     function initMobileNav() {
@@ -1918,7 +1871,7 @@
         nav_host: "Host or Propose an Event",
         nav_gala: "Annual Solidarity Gala (Concept in Development)",
         nav_gallery: "Authentic Photo Gallery",
-        tagline: "Uniting youth. Building synergy. Ending poverty.",
+        tagline: "Building practical opportunity where barriers are highest.",
         nav_home: "Home",
         nav_about: "About",
         nav_story: "Our Story",
@@ -1960,7 +1913,7 @@
         foot_privacy: "Privacy Policy",
         foot_contact: "Contact Secretariat",
 
-      "tagline": "Uniting youth. Building synergy. Ending poverty.",
+      "tagline": "Building practical opportunity where barriers are highest.",
       "nav_home": "Home",
       "nav_about": "About Us &amp; Governance",
       "nav_mission": "Mission &amp; Mandate",
@@ -2400,211 +2353,9 @@
     // ==========================================
     // ALBUMS FILTER SYSTEM (image_e42e35.jpg fix)
     // ==========================================
-        // ==========================================
-    // PHOTO ALBUMS & LIGHTBOX SYSTEM (VERSION 31)
-    // ==========================================
-    let currentAlbumKey = 'sunday-meal';
-    let currentPhotoIndex = 0;
-
-    const albumData = {
-      'sunday-meal': {
-        tagEn: "Feed A Child Initiative",
-        tagFr: "Initiative Feed A Child",
-        titleEn: "Sunday Meal Program in Bujumbura",
-        titleFr: "Programme de repas du dimanche à Bujumbura",
-        photos: [
-          {
-            src: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/sunday-meal/photo1.jpg",
-            capEn: "Weekly warm community meals served to vulnerable children in Bujumbura.",
-            capFr: "Distribution hebdomadaire de repas chauds aux enfants vulnérables à Bujumbura."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/sunday-meal/photo2.jpg",
-            capEn: "Youth volunteers coordinating meal preparation and psychosocial listening circles.",
-            capFr: "Jeunes bénévoles préparant les repas et animant les cercles d'écoute psychosociale."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/sunday-meal/photo3.jpg",
-            capEn: "Community mutual aid and nutritional solidarity with vulnerable families.",
-            capFr: "Entraide communautaire et solidarité nutritionnelle auprès des familles précaires."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1524069290683-0457abfe42c3?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/sunday-meal/photo4.jpg",
-            capEn: "Peer mentorship and safe spaces created for children off the street.",
-            capFr: "Mentorat entre pairs et espaces sécurisants offerts aux enfants en situation de rue."
-          }
-        ]
-      },
-      'sorora': {
-        tagEn: "Education Access",
-        tagFr: "Accès à l'éducation",
-        titleEn: "#SororaIkaye Back-to-School Campaign",
-        titleFr: "Campagne scolaire #SororaIkaye",
-        photos: [
-          {
-            src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/sorora-ikaye/photo1.jpg",
-            capEn: "Back-to-school kits containing notebooks, textbooks, and uniforms distributed to students.",
-            capFr: "Trousses scolaires avec cahiers, manuels et uniformes remises aux écoliers."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/sorora-ikaye/photo2.jpg",
-            capEn: "Children in rural primary classrooms equipped with essential learning materials.",
-            capFr: "Enfants d'écoles primaires rurales munis de leurs fournitures d'apprentissage."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/sorora-ikaye/photo3.jpg",
-            capEn: "Classroom activities supported through community solidarity and citizen sponsorships.",
-            capFr: "Activités scolaires appuyées par la solidarité citoyenne et les parrainages."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/sorora-ikaye/photo4.jpg",
-            capEn: "Teachers and local coordinators verifying verified book distribution registers.",
-            capFr: "Enseignants et coordonnateurs locaux vérifiant les registres de distribution de livres."
-          }
-        ]
-      },
-      'murabire': {
-        tagEn: "Livelihoods & Trades",
-        tagFr: "Métiers & Moyens de subsistance",
-        titleEn: "#MurabireKazoza Artisan Starter Toolkits",
-        titleFr: "Trousses d'artisanat #MurabireKazoza",
-        photos: [
-          {
-            src: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/murabire-kazoza/photo1.jpg",
-            capEn: "Manual woodwork and carpentry equipment provided to vocational graduates.",
-            capFr: "Outils de menuiserie et d'ébénisterie fournis aux jeunes diplômés d'apprentissage."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/murabire-kazoza/photo2.jpg",
-            capEn: "Tailoring machines enabling youth to start independent community micro-enterprises.",
-            capFr: "Machines à coudre permettant aux jeunes de lancer des micro-ateliers indépendants."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/murabire-kazoza/photo3.jpg",
-            capEn: "Vocational apprenticeship training in metalwork and fabrication.",
-            capFr: "Formation pratique aux métiers du métal et de la fabrication artisanale."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/murabire-kazoza/photo4.jpg",
-            capEn: "Graduation ceremony certifying young artisans for self-sufficient employment.",
-            capFr: "Remise des attestations et équipements pour une autonomie économique durable."
-          }
-        ]
-      },
-      'canada-cohort': {
-        tagEn: "Workforce Readiness",
-        tagFr: "Préparation professionnelle",
-        titleEn: "Canadian Youth Mentorship Cohorts (Ottawa-Gatineau)",
-        titleFr: "Cohortes de mentorat jeunesse au Canada (Ottawa-Gatineau)",
-        photos: [
-          {
-            src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/canadian-mentorship/photo1.jpg",
-            capEn: "1-on-1 career mapping session with a public sector executive mentor.",
-            capFr: "Séance de mentorat individuel avec un cadre professionnel de la région."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/canadian-mentorship/photo2.jpg",
-            capEn: "Applied AI tools, ERP systems, and modern digital workplace training cohort.",
-            capFr: "Atelier pratique sur les outils d'IA appliquée, systèmes ERP et compétences numériques."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/canadian-mentorship/photo3.jpg",
-            capEn: "Guest speaker roundtable on career advancement pathways in Canada.",
-            capFr: "Table ronde avec des conférenciers invités sur l'avancement professionnel au Canada."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/canadian-mentorship/photo4.jpg",
-            capEn: "Mentorship cohort participants celebrating graduation and peer networking.",
-            capFr: "Célébration de fin de cohorte et maillage professionnel entre pairs."
-          }
-        ]
-      },
-      'community-labs': {
-        tagEn: "Social Enterprise & Youth Labs",
-        tagFr: "Entreprise sociale et laboratoires jeunesse",
-        titleEn: "Community Labs & Peer Synergy",
-        titleFr: "Laboratoires communautaires et synergie par les pairs",
-        photos: [
-          {
-            src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/community-labs/photo1.jpg",
-            capEn: "Youth brainstorming innovative social enterprise projects and lean community solutions.",
-            capFr: "Jeunes concevant des projets innovants d'entreprise sociale et des solutions communautaires agiles."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/community-labs/photo2.jpg",
-            capEn: "Peer mentorship and collaborative problem-solving labs in Gatineau and Ottawa.",
-            capFr: "Mentorat par les pairs et laboratoires collaboratifs de résolution de problèmes à Gatineau et Ottawa."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/community-labs/photo3.jpg",
-            capEn: "Hands-on tech readiness and digital skill-building sessions for diaspora youth.",
-            capFr: "Séances pratiques de préparation technologique et d'acquisition de compétences numériques pour les jeunes de la diaspora."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/community-labs/photo4.jpg",
-            capEn: "Community synergy, celebration of milestones, and graduation from youth workshops.",
-            capFr: "Synergie communautaire, célébration des étapes franchies et remise d'attestations des ateliers jeunesse."
-          }
-        ]
-      },
-      'gala': {
-        tagEn: "Community Recognition",
-        tagFr: "Reconnaissance communautaire",
-        titleEn: "Annual Solidarity Gala (Concept in Development) Archives",
-        titleFr: "Archives du Gala annuel de solidarité (concept en développement)",
-        photos: [
-          {
-            src: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/solidarity-gala/photo1.jpg",
-            capEn: "Community gathering bringing together youth fellows, mentors, and civic leaders.",
-            capFr: "Rassemblement communautaire réunissant jeunes, mentors et partenaires civiques."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/solidarity-gala/photo2.jpg",
-            capEn: "Keynote presentation detailing annual accountability and program outcomes.",
-            capFr: "Allocution officielle présentant le bilan d'activité et la reddition de comptes."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/solidarity-gala/photo3.jpg",
-            capEn: "Awards recognizing community volunteer mentors and youth achievements.",
-            capFr: "Distinctions récompensant les mentors bénévoles et les jeunes méritants."
-          },
-          {
-            src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1000&q=80",
-            localSrc: "images/albums/solidarity-gala/photo4.jpg",
-            capEn: "Solidarity dinner raising matching community support for upcoming cohorts.",
-            capFr: "Dîner solidaire mobilisant des appuis pour les prochaines cohortes jeunesse."
-          }
-        ]
-      }
-    };
-
     function filterAlbums(category, btn) {
       // 1. Update filter buttons UI
-      const buttons = document.querySelectorAll('.filter-btn');
-      buttons.forEach(function(b) {
+      document.querySelectorAll('.filter-btn').forEach(b => {
         b.classList.remove('active');
         b.style.background = '#ffffff';
         b.style.color = 'var(--text-main)';
@@ -2617,22 +2368,223 @@
         btn.style.fontWeight = '700';
       }
 
-      // 2. Filter album cards via class is-hidden and display property
-      const cards = document.querySelectorAll('.album-card');
-      cards.forEach(function(card) {
+      // 2. Filter album cards
+      const cards = document.querySelectorAll('.albums-container .album-card');
+      cards.forEach(card => {
         const cardCategory = card.getAttribute('data-category');
         if (category === 'all' || cardCategory === category) {
-          card.classList.remove('is-hidden');
-          card.style.setProperty('display', 'flex', 'important');
+          card.style.display = 'flex';
+          card.style.flexDirection = 'column';
         } else {
-          card.classList.add('is-hidden');
-          card.style.setProperty('display', 'none', 'important');
+          card.style.display = 'none';
         }
       });
     }
 
+    // ==========================================
+    // AUTHENTIC ALBUM LIGHTBOX (image_e42e53.jpg fix)
+    // ==========================================
+                const albumData = {
+      'sunday-meal': {
+        tagEn: "Feed A Child Initiative",
+        tagFr: "Initiative Feed A Child",
+        titleEn: "Sunday Meal Program in Bujumbura",
+        titleFr: "Programme de repas du dimanche à Bujumbura",
+        photos: [
+          {
+            src: "images/albums/sunday-meal/photo1.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Weekly warm community meals served to vulnerable children in Bujumbura.",
+            capFr: "Distribution hebdomadaire de repas chauds aux enfants vulnérables à Bujumbura."
+          },
+          {
+            src: "images/albums/sunday-meal/photo2.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Youth volunteers coordinating meal preparation and psychosocial listening circles.",
+            capFr: "Jeunes bénévoles préparant les repas et animant les cercles d'écoute psychosociale."
+          },
+          {
+            src: "images/albums/sunday-meal/photo3.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Community mutual aid and nutritional solidarity with vulnerable families.",
+            capFr: "Entraide communautaire et solidarité nutritionnelle auprès des familles précaires."
+          },
+          {
+            src: "images/albums/sunday-meal/photo4.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1524069290683-0457abfe42c3?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Peer mentorship and safe spaces created for children off the street.",
+            capFr: "Mentorat entre pairs et espaces sécurisants offerts aux enfants en situation de rue."
+          }
+        ]
+      },
+      'sorora': {
+        tagEn: "Education Access",
+        tagFr: "Accès à l'éducation",
+        titleEn: "#SororaIkaye Back-to-School Campaign",
+        titleFr: "Campagne scolaire #SororaIkaye",
+        photos: [
+          {
+            src: "images/albums/sorora/photo1.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Back-to-school kits containing notebooks, textbooks, and uniforms distributed to students.",
+            capFr: "Trousses scolaires avec cahiers, manuels et uniformes remises aux écoliers."
+          },
+          {
+            src: "images/albums/sorora/photo2.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Children in rural primary classrooms equipped with essential learning materials.",
+            capFr: "Enfants d'écoles primaires rurales munis de leurs fournitures d'apprentissage."
+          },
+          {
+            src: "images/albums/sorora/photo3.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Classroom activities supported through community solidarity and citizen sponsorships.",
+            capFr: "Activités scolaires appuyées par la solidarité citoyenne et les parrainages."
+          },
+          {
+            src: "images/albums/sorora/photo4.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Teachers and local coordinators verifying verified book distribution registers.",
+            capFr: "Enseignants et coordonnateurs locaux vérifiant les registres de distribution de livres."
+          }
+        ]
+      },
+      'murabire': {
+        tagEn: "Livelihoods & Trades",
+        tagFr: "Métiers & Moyens de subsistance",
+        titleEn: "#MurabireKazoza Artisan Starter Toolkits",
+        titleFr: "Trousses d'artisanat #MurabireKazoza",
+        photos: [
+          {
+            src: "images/albums/murabire/photo1.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Manual woodwork and carpentry equipment provided to vocational graduates.",
+            capFr: "Outils de menuiserie et d'ébénisterie fournis aux jeunes diplômés d'apprentissage."
+          },
+          {
+            src: "images/albums/murabire/photo2.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Tailoring machines enabling youth to start independent community micro-enterprises.",
+            capFr: "Machines à coudre permettant aux jeunes de lancer des micro-ateliers indépendants."
+          },
+          {
+            src: "images/albums/murabire/photo3.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Vocational apprenticeship training in metalwork and fabrication.",
+            capFr: "Formation pratique aux métiers du métal et de la fabrication artisanale."
+          },
+          {
+            src: "images/albums/murabire/photo4.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Graduation ceremony certifying young artisans for self-sufficient employment.",
+            capFr: "Remise des attestations et équipements pour une autonomie économique durable."
+          }
+        ]
+      },
+      'canada-cohort': {
+        tagEn: "Workforce Readiness",
+        tagFr: "Préparation professionnelle",
+        titleEn: "Canadian Youth Mentorship Cohorts (Ottawa-Gatineau)",
+        titleFr: "Cohortes de mentorat jeunesse au Canada (Ottawa-Gatineau)",
+        photos: [
+          {
+            src: "images/albums/canada-cohort/photo1.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80",
+            capEn: "1-on-1 career mapping session with a public sector mentor.",
+            capFr: "Séance de mentorat individuel avec un cadre professionnel de la région."
+          },
+          {
+            src: "images/albums/canada-cohort/photo2.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Applied AI tools, ERP systems, and modern digital workplace training cohort.",
+            capFr: "Atelier pratique sur les outils d'IA appliquée, systèmes ERP et compétences numériques."
+          },
+          {
+            src: "images/albums/canada-cohort/photo3.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Guest speaker roundtable on career advancement pathways in Canada.",
+            capFr: "Table ronde avec des conférenciers invités sur l'avancement professionnel au Canada."
+          },
+          {
+            src: "images/albums/canada-cohort/photo4.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Mentorship cohort participants celebrating graduation and peer networking.",
+            capFr: "Célébration de fin de cohorte et maillage professionnel entre pairs."
+          }
+        ]
+      },
+      'gala': {
+        tagEn: "Community Recognition",
+        tagFr: "Reconnaissance communautaire",
+        titleEn: "Annual Solidarity Gathering (Concept in Development)",
+        titleFr: "Rassemblement de solidarité annuel (Concept en développement)",
+        photos: [
+          {
+            src: "images/albums/gala/photo1.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Community members, volunteers, and supporters gathering to celebrate youth achievement.",
+            capFr: "Membres de la communauté, bénévoles et partenaires réunis pour célébrer la jeunesse."
+          },
+          {
+            src: "images/albums/gala/photo2.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Keynote presentation on bilingual opportunities and poverty reduction pathways.",
+            capFr: "Discours principal sur les opportunités bilingues et la réduction de la pauvreté."
+          },
+          {
+            src: "images/albums/gala/photo3.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Volunteer excellence awards recognizing dedicated grassroots contributors.",
+            capFr: "Prix d'excellence bénévole récompensant les contributeurs dévoués sur le terrain."
+          },
+          {
+            src: "images/albums/gala/photo4.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Cultural celebration showcasing Burundian and Canadian heritage and music.",
+            capFr: "Célébration culturelle mettant en valeur les patrimoines canadien et burundais."
+          }
+        ]
+      },
+      'community-action': {
+        tagEn: "Solidarity & Action",
+        tagFr: "Solidarité & Action",
+        titleEn: "Community Action & Solidarity",
+        titleFr: "Action communautaire et solidarité",
+        photos: [
+          {
+            src: "images/albums/community-action/photo1.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Youth volunteers assembling community essentials and relief hampers.",
+            capFr: "Jeunes bénévoles préparant les paniers de secours et biens essentiels."
+          },
+          {
+            src: "images/albums/community-action/photo2.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Community collaborative workshops on sustainable entrepreneurship.",
+            capFr: "Ateliers collaboratifs sur l'entrepreneuriat communautaire durable."
+          },
+          {
+            src: "images/albums/community-action/photo3.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Youth leadership circle on community resilience and civic engagement.",
+            capFr: "Cercle de leadership jeunesse sur la résilience et l'engagement citoyen."
+          },
+          {
+            src: "images/albums/community-action/photo4.jpg",
+            fallbackSrc: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80",
+            capEn: "Solidarity action group planning upcoming regional community drives.",
+            capFr: "Groupe d'action solidaire planifiant les prochaines initiatives régionales."
+          }
+        ]
+      }
+    };
+
+    let currentAlbumKey = 'sunday-meal';
+    let currentPhotoIndex = 0;
+
     function openAlbumLightbox(albumKey) {
       if (!albumData[albumKey]) {
+        // Fallback to sunday-meal if key doesn't match
         albumKey = 'sunday-meal';
       }
       currentAlbumKey = albumKey;
@@ -2641,7 +2593,7 @@
 
       const modal = document.getElementById('albumLightboxModal');
       if (modal) {
-        modal.style.setProperty('display', 'flex', 'important');
+        modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
       }
     }
@@ -2649,7 +2601,7 @@
     function closeAlbumLightbox() {
       const modal = document.getElementById('albumLightboxModal');
       if (modal) {
-        modal.style.setProperty('display', 'none', 'important');
+        modal.style.display = 'none';
         document.body.style.overflow = '';
       }
     }
@@ -2658,7 +2610,6 @@
       const album = albumData[currentAlbumKey];
       if (!album) return;
       const photo = album.photos[currentPhotoIndex];
-      if (!photo) return;
       const isFr = (document.documentElement.lang === 'fr');
 
       const tagEl = document.getElementById('lightboxAlbumTag');
@@ -2669,36 +2620,24 @@
 
       if (tagEl) tagEl.textContent = isFr ? album.tagFr : album.tagEn;
       if (titleEl) titleEl.textContent = isFr ? album.titleFr : album.titleEn;
+                  if (imgEl) {
+        imgEl.style.opacity = '0';
+        setTimeout(() => {
+          imgEl.onerror = function() {
+            if (photo.fallbackSrc && imgEl.src !== photo.fallbackSrc) {
+              imgEl.src = photo.fallbackSrc;
+            }
+          };
+          imgEl.src = photo.src;
+          imgEl.alt = isFr ? album.titleFr : album.titleEn;
+          imgEl.style.opacity = '1';
+        }, 150);
+      }
       if (capEl) capEl.textContent = isFr ? photo.capFr : photo.capEn;
       if (counterEl) {
         counterEl.textContent = isFr ? 
-          ('Photo ' + (currentPhotoIndex + 1) + ' sur ' + album.photos.length) : 
-          ('Photo ' + (currentPhotoIndex + 1) + ' of ' + album.photos.length);
-      }
-
-      if (imgEl) {
-        imgEl.style.opacity = '0';
-        const targetLocal = photo.localSrc;
-        const targetOnline = photo.src;
-
-        if (targetLocal) {
-          const testImg = new Image();
-          testImg.onload = function() {
-            imgEl.src = targetLocal;
-            imgEl.alt = isFr ? album.titleFr : album.titleEn;
-            imgEl.style.opacity = '1';
-          };
-          testImg.onerror = function() {
-            imgEl.src = targetOnline;
-            imgEl.alt = isFr ? album.titleFr : album.titleEn;
-            imgEl.style.opacity = '1';
-          };
-          testImg.src = targetLocal;
-        } else {
-          imgEl.src = targetOnline;
-          imgEl.alt = isFr ? album.titleFr : album.titleEn;
-          imgEl.style.opacity = '1';
-        }
+          `Photo ${currentPhotoIndex + 1} sur ${album.photos.length}` : 
+          `Photo ${currentPhotoIndex + 1} of ${album.photos.length}`;
       }
     }
 
@@ -2733,100 +2672,59 @@
       }
     });
 
-    // Attach to global window
-    window.filterAlbums = filterAlbums;
-    window.openAlbumLightbox = openAlbumLightbox;
-    window.closeAlbumLightbox = closeAlbumLightbox;
-    window.nextLightboxPhoto = nextLightboxPhoto;
-    window.prevLightboxPhoto = prevLightboxPhoto;
-
-    // Attach direct click listeners to all cards and buttons to guarantee responsiveness
-    function initAlbumListeners() {
-      const cards = document.querySelectorAll('.album-card');
-      cards.forEach(function(card) {
-        card.addEventListener('click', function(e) {
-          if (e.target.closest('a')) return;
-          const key = card.getAttribute('data-album-key') || card.getAttribute('data-category');
-          openAlbumLightbox(key);
-        });
-      });
-
-      const buttons = document.querySelectorAll('.filter-btn');
-      buttons.forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-          const cat = btn.getAttribute('data-category');
-          if (cat) filterAlbums(cat, btn);
-        });
-      });
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initAlbumListeners);
-    } else {
-      initAlbumListeners();
-    }
   </script>
-
-
-  <!-- EVENT REGISTRATION MODAL -->
-  <div id="registerModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(6,17,36,0.75); z-index:999999; justify-content:center; align-items:center; padding:20px; box-sizing:border-box;">
-    <div style="background:#ffffff; border-radius:12px; max-width:520px; width:100%; padding:32px 28px; box-shadow:0 25px 50px -12px rgba(0,0,0,0.25); position:relative; max-height:90vh; overflow-y:auto;">
-      <button onclick="closeEventRegister()" style="position:absolute; top:16px; right:18px; background:none; border:none; font-size:1.6rem; color:#64748b; cursor:pointer; line-height:1;" aria-label="Close modal">&times;</button>
-      <div style="display:inline-block; font-size:0.8rem; font-weight:700; color:var(--secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">RSVP & Registration</div>
-      <h3 id="modalEventTitle" style="font-size:1.35rem; color:var(--primary); margin:0 0 12px; font-weight:800; line-height:1.3;">Event Registration</h3>
-      <p data-i18n="modal_reg_desc" style="font-size:0.92rem; color:var(--text-muted); margin-bottom:20px; line-height:1.5;">Join us for this community event. Participation is free and open to youth, mentors, and community partners.</p>
-      <form id="modalRegisterForm" onsubmit="submitEventRegister(event)">
-        <input type="hidden" id="modalEventNameInput" name="event_name" value="">
-        <div style="margin-bottom:14px;">
-          <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--text-main); margin-bottom:6px;">Full Name *</label>
-          <input type="text" id="reg-name" required placeholder="Your full name" style="width:100%; padding:10px 12px; border:1px solid var(--border-color); border-radius:6px; font-size:0.95rem; box-sizing:border-box;">
-        </div>
-        <div style="margin-bottom:14px;">
-          <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--text-main); margin-bottom:6px;">Email Address *</label>
-          <input type="email" id="reg-email" required placeholder="you@example.com" style="width:100%; padding:10px 12px; border:1px solid var(--border-color); border-radius:6px; font-size:0.95rem; box-sizing:border-box;">
-        </div>
-        <div style="margin-bottom:20px;">
-          <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--text-main); margin-bottom:6px;">Attendance Mode</label>
-          <select id="reg-mode" style="width:100%; padding:10px 12px; border:1px solid var(--border-color); border-radius:6px; font-size:0.95rem; box-sizing:border-box; background:#ffffff;">
-            <option value="in-person">In-Person (Ottawa - Gatineau)</option>
-            <option value="virtual">Virtual / Online (Zoom)</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-primary" style="width:100%; padding:12px; font-size:1rem; font-weight:700; border-radius:6px; border:none; cursor:pointer;">Confirm Registration</button>
-      </form>
-      <div id="modalSuccessMsg" style="display:none; text-align:center; padding:20px 10px;">
-        <div style="font-size:2.5rem; margin-bottom:10px;">✅</div>
-        <h4 style="font-size:1.2rem; color:var(--primary); margin-bottom:8px;">Registration Confirmed!</h4>
-        <p style="font-size:0.9rem; color:var(--text-muted);">Thank you for registering. Event access details will be sent to your email.</p>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- AUTHENTIC ALBUM LIGHTBOX MODAL (image_e42e53.jpg FIX) -->
-  <div id="albumLightboxModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(6,17,36,0.92); z-index:99999999; justify-content:center; align-items:center; padding:16px; box-sizing:border-box; backdrop-filter:blur(6px);">
-    <div style="background:#ffffff; border-radius:14px; max-width:760px; width:100%; padding:24px 20px; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5); position:relative; max-height:94vh; display:flex; flex-direction:column; box-sizing:border-box;" onclick="event.stopPropagation()">
-      <button onclick="closeAlbumLightbox()" style="position:absolute; top:12px; right:14px; background:#f1f5f9; border:none; width:36px; height:36px; border-radius:50%; font-size:1.4rem; color:#475569; cursor:pointer; display:flex; align-items:center; justify-content:center; line-height:1; z-index:10;" aria-label="Close">&times;</button>
-      
-      <div style="margin-bottom:12px; padding-right:45px;">
-        <span id="lightboxAlbumTag" style="font-size:0.75rem; font-weight:800; text-transform:uppercase; color:var(--secondary-dark); letter-spacing:0.06em;">ARCHIVES</span>
-        <h4 id="lightboxAlbumTitle" style="font-size:1.2rem; color:var(--primary); margin:4px 0 0; line-height:1.3;">Album Title</h4>
-      </div>
-
-      <div style="position:relative; width:100%; height:380px; background:#0b1c3d; border-radius:8px; overflow:hidden; display:flex; align-items:center; justify-content:center;">
-        <img id="lightboxImg" src="" alt="Album photo" style="width:100%; height:100%; object-fit:cover; transition:opacity 0.25s ease;">
-        
-        <!-- Navigation Arrows -->
-        <button onclick="prevLightboxPhoto(event)" style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.9); border:none; width:44px; height:44px; border-radius:50%; font-size:1.4rem; color:var(--primary); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.25); z-index:5;" aria-label="Previous Photo">&#10094;</button>
-        <button onclick="nextLightboxPhoto(event)" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.9); border:none; width:44px; height:44px; border-radius:50%; font-size:1.4rem; color:var(--primary); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.25); z-index:5;" aria-label="Next Photo">&#10095;</button>
-      </div>
-
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; gap:12px; flex-wrap:wrap;">
-        <p id="lightboxCaption" style="font-size:0.88rem; color:var(--text-muted); margin:0; line-height:1.5; flex:1; min-width:200px;"></p>
-        <span id="lightboxCounter" style="font-size:0.8rem; font-weight:700; color:var(--primary); background:#e2e8f0; padding:4px 12px; border-radius:50px; white-space:nowrap;">Photo 1 of 4</span>
-      </div>
-    </div>
-  </div>
-
+<!-- EVENT REGISTRATION MODAL -->
+<div id="registerModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(6,17,36,0.75); z-index:999999; justify-content:center; align-items:center; padding:20px; box-sizing:border-box;">
+<div style="background:#ffffff; border-radius:12px; max-width:520px; width:100%; padding:32px 28px; box-shadow:0 25px 50px -12px rgba(0,0,0,0.25); position:relative; max-height:90vh; overflow-y:auto;">
+<button aria-label="Close modal" onclick="closeEventRegister()" style="position:absolute; top:16px; right:18px; background:none; border:none; font-size:1.6rem; color:#64748b; cursor:pointer; line-height:1;">×</button>
+<div style="display:inline-block; font-size:0.8rem; font-weight:700; color:var(--secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">RSVP &amp; Registration</div>
+<h3 id="modalEventTitle" style="font-size:1.35rem; color:var(--primary); margin:0 0 12px; font-weight:800; line-height:1.3;">Event Registration</h3>
+<p data-i18n="modal_reg_desc" style="font-size:0.92rem; color:var(--text-muted); margin-bottom:20px; line-height:1.5;">Join us for this community event. Participation is free and open to youth, mentors, and community partners.</p>
+<form id="modalRegisterForm" onsubmit="submitEventRegister(event)">
+<input id="modalEventNameInput" name="event_name" type="hidden" value=""/>
+<div style="margin-bottom:14px;">
+<label style="display:block; font-size:0.85rem; font-weight:700; color:var(--text-main); margin-bottom:6px;">Full Name *</label>
+<input id="reg-name" placeholder="Your full name" required="" style="width:100%; padding:10px 12px; border:1px solid var(--border-color); border-radius:6px; font-size:0.95rem; box-sizing:border-box;" type="text"/>
+</div>
+<div style="margin-bottom:14px;">
+<label style="display:block; font-size:0.85rem; font-weight:700; color:var(--text-main); margin-bottom:6px;">Email Address *</label>
+<input id="reg-email" placeholder="you@example.com" required="" style="width:100%; padding:10px 12px; border:1px solid var(--border-color); border-radius:6px; font-size:0.95rem; box-sizing:border-box;" type="email"/>
+</div>
+<div style="margin-bottom:20px;">
+<label style="display:block; font-size:0.85rem; font-weight:700; color:var(--text-main); margin-bottom:6px;">Attendance Mode</label>
+<select id="reg-mode" style="width:100%; padding:10px 12px; border:1px solid var(--border-color); border-radius:6px; font-size:0.95rem; box-sizing:border-box; background:#ffffff;">
+<option value="in-person">In-Person (Ottawa - Gatineau)</option>
+<option value="virtual">Virtual / Online (Zoom)</option>
+</select>
+</div>
+<button class="btn-primary" style="width:100%; padding:12px; font-size:1rem; font-weight:700; border-radius:6px; border:none; cursor:pointer;" type="submit">Confirm Registration</button>
+</form>
+<div id="modalSuccessMsg" style="display:none; text-align:center; padding:20px 10px;">
+<div style="font-size:2.5rem; margin-bottom:10px;">✅</div>
+<h4 style="font-size:1.2rem; color:var(--primary); margin-bottom:8px;">Registration Confirmed!</h4>
+<p style="font-size:0.9rem; color:var(--text-muted);">Thank you for registering. Event access details will be sent to your email.</p>
+</div>
+</div>
+</div>
+<!-- AUTHENTIC ALBUM LIGHTBOX MODAL (image_e42e53.jpg FIX) -->
+<div id="albumLightboxModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(6,17,36,0.92); z-index:99999999; justify-content:center; align-items:center; padding:16px; box-sizing:border-box; backdrop-filter:blur(6px);">
+<div onclick="event.stopPropagation()" style="background:#ffffff; border-radius:14px; max-width:760px; width:100%; padding:24px 20px; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5); position:relative; max-height:94vh; display:flex; flex-direction:column; box-sizing:border-box;">
+<button aria-label="Close" onclick="closeAlbumLightbox()" style="position:absolute; top:12px; right:14px; background:#f1f5f9; border:none; width:36px; height:36px; border-radius:50%; font-size:1.4rem; color:#475569; cursor:pointer; display:flex; align-items:center; justify-content:center; line-height:1; z-index:10;">×</button>
+<div style="margin-bottom:12px; padding-right:45px;">
+<span id="lightboxAlbumTag" style="font-size:0.75rem; font-weight:800; text-transform:uppercase; color:var(--secondary-dark); letter-spacing:0.06em;">ARCHIVES</span>
+<h4 id="lightboxAlbumTitle" style="font-size:1.2rem; color:var(--primary); margin:4px 0 0; line-height:1.3;">Album Title</h4>
+</div>
+<div style="position:relative; width:100%; height:380px; background:#0b1c3d; border-radius:8px; overflow:hidden; display:flex; align-items:center; justify-content:center;">
+<img alt="Album photo" id="lightboxImg" src="" style="width:100%; height:100%; object-fit:cover; transition:opacity 0.25s ease;"/>
+<!-- Navigation Arrows -->
+<button aria-label="Previous Photo" onclick="prevLightboxPhoto(event)" style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.9); border:none; width:44px; height:44px; border-radius:50%; font-size:1.4rem; color:var(--primary); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.25); z-index:5;">❮</button>
+<button aria-label="Next Photo" onclick="nextLightboxPhoto(event)" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.9); border:none; width:44px; height:44px; border-radius:50%; font-size:1.4rem; color:var(--primary); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.25); z-index:5;">❯</button>
+</div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; gap:12px; flex-wrap:wrap;">
+<p id="lightboxCaption" style="font-size:0.88rem; color:var(--text-muted); margin:0; line-height:1.5; flex:1; min-width:200px;"></p>
+<span id="lightboxCounter" style="font-size:0.8rem; font-weight:700; color:var(--primary); background:#e2e8f0; padding:4px 12px; border-radius:50px; white-space:nowrap;">Photo 1 of 4</span>
+</div>
+</div>
+</div>
 </body>
 </html>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">About Us & Governance | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
-  <meta name="description" content="Learn about YBSP Canada's mission, executive leadership, board governance, corporate filings, and international sisterhood with YBSP Burundi.">
-  <link rel="icon" type="image/png" href="images/ybsp_canada_emblem.png">
-  
-  <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title id="page-title">About Us &amp; Governance | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
+<meta content="Learn about YBSP Canada's mission, executive leadership, board governance, corporate filings, and international sisterhood with YBSP Burundi." name="description"/>
+<link href="images/ybsp_canada_emblem.png" rel="icon" type="image/png"/>
+<script>
     if (window.location.protocol !== 'file:' && window.location.pathname.endsWith('/') && window.location.pathname.length > 1) {
       document.write('<base href="' + window.location.origin + '/">');
     }
@@ -21,8 +21,7 @@
     } catch (e) {}
 
   </script>
-
-  <style>
+<style>
 
 
     :root {
@@ -204,7 +203,9 @@
       position: absolute;
       top: 100%;
       left: 0;
-      width: 240px;
+      min-width: 320px;
+      width: max-content;
+      max-width: 390px;
       background: #ffffff;
       box-shadow: var(--shadow-lg);
       border-radius: var(--radius-md);
@@ -217,7 +218,7 @@
       z-index: 100;
     }
     .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-    .dropdown-link { display: block; padding: 8px 16px; font-size: 0.88rem; color: var(--text-main); font-weight: 500; }
+    .dropdown-link { display: block; padding: 8px 16px; font-size: 0.88rem; color: var(--text-main); font-weight: 500;  white-space: normal; line-height: 1.35; }
     .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 20px; }
 
     .btn-donate-nav { white-space: nowrap !important; min-width: max-content !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; background: var(--accent) !important; color: #ffffff !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 50px !important; margin-left: 8px !important; text-decoration: none !important; }
@@ -633,7 +634,8 @@
     .corp-table-wrapper {
       background: #ffffff;
       border-radius: var(--radius-md);
-      overflow: hidden;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--border-color);
       margin-top: 24px;
@@ -1205,68 +1207,65 @@
   </style>
 </head>
 <body>
+<!-- TOP UTILITY BAR -->
+<!-- MAIN NAVIGATION -->
+<!-- TOP RIGHT UTILITY BAR: LANGUAGE SWITCHER AT THE VERY TOP RIGHT, DIRECTLY ABOVE DONATE -->
+<div class="top-utility-bar" style="background:#0b1c3d; border-bottom:1px solid rgba(255,255,255,0.08); padding:5px 0;">
+<div class="container" style="display:flex; justify-content:flex-end; align-items:center;">
+<div class="lang-switcher" style="display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.12); padding:2px 6px; border-radius:4px;">
+<button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" style="border:none; background:var(--secondary); color:#ffffff; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="English">EN</button>
+<span style="color:#94a3b8; font-size:0.75rem; margin:0 2px;">|</span>
+<button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')" style="border:none; background:transparent; color:#cbd5e1; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="Français">FR</button>
+</div>
+</div>
+</div>
+<header class="main-header">
+<div class="container nav-inner">
+<a aria-label="YBSP Canada Home" class="brand-logo" href="index.html">
+<svg class="brand-logo-svg" height="44" viewbox="0 0 120 120" width="44" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="50%" cy="50%" id="logoBurst" r="50%">
+<stop offset="0%" stop-color="#ffffff"></stop>
+<stop offset="25%" stop-color="#60a5fa" stop-opacity="0.85"></stop>
+<stop offset="60%" stop-color="#818cf8" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#0b1c3d" stop-opacity="0"></stop>
+</radialgradient>
+<lineargradient id="leafGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ef4444"></stop>
+<stop offset="100%" stop-color="#b91c1c"></stop>
+</lineargradient>
+</defs>
+<rect fill="#0b1c3d" height="120" rx="26" width="120"></rect>
+<circle cx="60" cy="60" fill="url(#logoBurst)" r="42"></circle>
+<line opacity="0.8" stroke="#93c5fd" stroke-width="2" x1="20" x2="100" y1="60" y2="60"></line>
+<line opacity="0.8" stroke="#93c5fd" stroke-width="2" x1="60" x2="60" y1="20" y2="100"></line>
+<line opacity="0.6" stroke="#c084fc" stroke-width="1.5" x1="32" x2="88" y1="32" y2="88"></line>
+<line opacity="0.6" stroke="#c084fc" stroke-width="1.5" x1="32" x2="88" y1="88" y2="32"></line>
+<g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8.5">
+<path d="M 28 26 L 46 50 L 46 68"></path>
+<path d="M 54 38 L 46 50"></path>
+<path d="M 62 28 L 62 66"></path>
+<path d="M 62 30 C 82 28 85 45 66 47 C 86 49 84 66 62 65"></path>
+<path d="M 58 64 C 40 63 35 76 44 83 C 53 91 60 92 58 98 C 56 103 47 104 36 100"></path>
+<path d="M 72 65 L 72 100"></path>
+<path d="M 72 67 C 91 66 93 83 72 84"></path>
+</g>
+<g transform="translate(56, 25) scale(0.38)">
+<path d="M 0,-34 C 1.5,-30 3.5,-22 5,-20 C 8,-23 12,-26 16,-27 C 15,-24 14,-19 13,-15 C 18,-15 23,-14 28,-13 C 26,-10 22,-7 18,-4 C 21,-2 27,0 31,3 C 27,6 20,7 15,7 C 17,10 20,15 22,20 C 17,17 12,13 7,9 C 7,14 6,20 5,27 L 2,27 L 2,39 L -2,39 L -2,27 L -5,27 C -6,20 -7,14 -7,9 C -12,13 -17,17 -22,20 C -20,15 -17,10 -15,7 C -20,7 -27,6 -31,3 C -27,0 -21,-2 -18,-4 C -22,-7 -26,-10 -28,-13 C -23,-14 -18,-15 -13,-15 C -14,-19 -15,-24 -16,-27 C -12,-26 -8,-23 -5,-20 C -3.5,-22 -1.5,-30 0,-34 Z" fill="url(#leafGrad)"></path>
+</g>
+<circle cx="60" cy="60" fill="#ffffff" r="3.5"></circle>
+</svg>
+<div class="logo-text">
+<h1>YBSP CANADA</h1>
 
-    <!-- TOP UTILITY BAR -->
-  <!-- MAIN NAVIGATION -->
-    <!-- TOP RIGHT UTILITY BAR: LANGUAGE SWITCHER AT THE VERY TOP RIGHT, DIRECTLY ABOVE DONATE -->
-  <div class="top-utility-bar" style="background:#0b1c3d; border-bottom:1px solid rgba(255,255,255,0.08); padding:5px 0;">
-    <div class="container" style="display:flex; justify-content:flex-end; align-items:center;">
-      <div class="lang-switcher" style="display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.12); padding:2px 6px; border-radius:4px;">
-        <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" style="border:none; background:var(--secondary); color:#ffffff; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="English">EN</button>
-        <span style="color:#94a3b8; font-size:0.75rem; margin:0 2px;">|</span>
-        <button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')" style="border:none; background:transparent; color:#cbd5e1; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="Français">FR</button>
-      </div>
-    </div>
-  </div>
-  <header class="main-header">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="YBSP Canada Home">
-        <svg class="brand-logo-svg" width="44" height="44" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="logoBurst" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#ffffff"/>
-              <stop offset="25%" stop-color="#60a5fa" stop-opacity="0.85"/>
-              <stop offset="60%" stop-color="#818cf8" stop-opacity="0.4"/>
-              <stop offset="100%" stop-color="#0b1c3d" stop-opacity="0"/>
-            </radialGradient>
-            <linearGradient id="leafGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#ef4444"/>
-              <stop offset="100%" stop-color="#b91c1c"/>
-            </linearGradient>
-          </defs>
-          <rect width="120" height="120" rx="26" fill="#0b1c3d"/>
-          <circle cx="60" cy="60" r="42" fill="url(#logoBurst)"/>
-          <line x1="20" y1="60" x2="100" y2="60" stroke="#93c5fd" stroke-width="2" opacity="0.8"/>
-          <line x1="60" y1="20" x2="60" y2="100" stroke="#93c5fd" stroke-width="2" opacity="0.8"/>
-          <line x1="32" y1="32" x2="88" y2="88" stroke="#c084fc" stroke-width="1.5" opacity="0.6"/>
-          <line x1="32" y1="88" x2="88" y2="32" stroke="#c084fc" stroke-width="1.5" opacity="0.6"/>
-          <g fill="none" stroke="#ffffff" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M 28 26 L 46 50 L 46 68"/>
-            <path d="M 54 38 L 46 50"/>
-            <path d="M 62 28 L 62 66"/>
-            <path d="M 62 30 C 82 28 85 45 66 47 C 86 49 84 66 62 65"/>
-            <path d="M 58 64 C 40 63 35 76 44 83 C 53 91 60 92 58 98 C 56 103 47 104 36 100"/>
-            <path d="M 72 65 L 72 100"/>
-            <path d="M 72 67 C 91 66 93 83 72 84"/>
-          </g>
-          <g transform="translate(56, 25) scale(0.38)">
-            <path d="M 0,-34 C 1.5,-30 3.5,-22 5,-20 C 8,-23 12,-26 16,-27 C 15,-24 14,-19 13,-15 C 18,-15 23,-14 28,-13 C 26,-10 22,-7 18,-4 C 21,-2 27,0 31,3 C 27,6 20,7 15,7 C 17,10 20,15 22,20 C 17,17 12,13 7,9 C 7,14 6,20 5,27 L 2,27 L 2,39 L -2,39 L -2,27 L -5,27 C -6,20 -7,14 -7,9 C -12,13 -17,17 -22,20 C -20,15 -17,10 -15,7 C -20,7 -27,6 -31,3 C -27,0 -21,-2 -18,-4 C -22,-7 -26,-10 -28,-13 C -23,-14 -18,-15 -13,-15 C -14,-19 -15,-24 -16,-27 C -12,-26 -8,-23 -5,-20 C -3.5,-22 -1.5,-30 0,-34 Z" fill="url(#leafGrad)"/>
-          </g>
-          <circle cx="60" cy="60" r="3.5" fill="#ffffff"/>
-        </svg>
-        <div class="logo-text">
-          <h1>YBSP CANADA</h1>
-          <span data-i18n="tagline">Uniting youth. Building synergy. Ending poverty.</span>
-        </div>
-      </a>
-
-                        <nav aria-label="Primary Navigation" class="nav-menu" id="main-nav-menu">
+</div>
+</a>
+<nav aria-label="Primary Navigation" class="nav-menu" id="main-nav-menu">
 <div class="nav-item"><a class="nav-link" data-i18n="nav_home" href="index.html">Home</a></div>
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link active" href="about.html">
 <span data-i18n="nav_about">About Us</span>
-
-</a><button aria-expanded="false" aria-label="Toggle About Us submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle About Us submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_mission" href="about.html#mission">Mission &amp; Mandate</a>
 <a class="dropdown-link" data-i18n="nav_team" href="about.html#team">Executive Leadership</a>
@@ -1278,8 +1277,7 @@
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="programs.html">
 <span data-i18n="nav_programs">Programs</span>
-
-</a><button aria-expanded="false" aria-label="Toggle Programs submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle Programs submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_community_support" href="programs.html#community-support">Community Support &amp; Poverty Relief</a>
 <a class="dropdown-link" data-i18n="nav_education_skills" href="programs.html#education-skills">Education, Skills &amp; Youth Opportunity</a>
@@ -1291,8 +1289,7 @@
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="get-involved.html">
 <span data-i18n="nav_involved">Get Involved</span>
-
-</a><button aria-expanded="false" aria-label="Toggle Get Involved submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle Get Involved submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_volunteer" href="get-involved.html#volunteer">Volunteer Application</a>
 <a class="dropdown-link" data-i18n="nav_membership" href="get-involved.html#membership">Become a Member</a>
@@ -1303,8 +1300,7 @@
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="events.html">
 <span data-i18n="nav_events">Events</span>
-
-</a><button aria-expanded="false" aria-label="Toggle Events submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle Events submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_calendar" href="events.html#calendar">Events Calendar</a>
 <a class="dropdown-link" data-i18n="nav_host" href="events.html#host">Host or Propose an Event</a>
@@ -1318,467 +1314,430 @@
 <!-- ONE-LINE DONATE BUTTON -->
 <a class="btn-donate-nav" data-i18n="nav_donate" href="donate.html" style="white-space:nowrap !important; display:inline-flex !important; align-items:center !important; justify-content:center !important;">Donate</a>
 </nav>
-
-                  <button class="nav-toggle-btn" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav(event)">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header><!-- SUBNAV BAR -->
-  <div class="page-subnav">
-    <div class="container">
-      <ul class="subnav-list">
-        <li class="subnav-item"><a href="about.html#story" data-i18n="subnav_story">Our Story</a></li>
-        <li class="subnav-item"><a href="about.html#mission" data-i18n="subnav_mission">Mission & Mandate</a></li>
-        <li class="subnav-item"><a href="about.html#team" data-i18n="subnav_team">Leadership</a></li>
-        <li class="subnav-item"><a href="about.html#governance" data-i18n="subnav_gov">Board & Governance</a></li>
-        <li class="subnav-item"><a href="about.html#corporate" data-i18n="subnav_corp">Corporate Information</a></li>
-        <li class="subnav-item"><a href="about.html#burundi" data-i18n="subnav_burundi">Canada & Burundi</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- HERO BANNER -->
-  <section class="page-hero">
-    <div class="container">
-      <div class="breadcrumbs"><a href="index.html" data-i18n="nav_home">Home</a> / <span data-i18n="nav_about">About Us</span></div>
-      <h1 class="page-title single-line" data-i18n="about_hero_title">About YBSP Canada</h1>
-      <p data-i18n="about_hero_sub">
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="nav-toggle-btn" id="mobileNavToggle" onclick="toggleMobileNav(event)">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</header><!-- SUBNAV BAR -->
+<div class="page-subnav">
+<div class="container">
+<ul class="subnav-list">
+<li class="subnav-item"><a data-i18n="subnav_story" href="about.html#story">Our Story</a></li>
+<li class="subnav-item"><a data-i18n="subnav_mission" href="about.html#mission">Mission &amp; Mandate</a></li>
+<li class="subnav-item"><a data-i18n="subnav_team" href="about.html#team">Leadership</a></li>
+<li class="subnav-item"><a data-i18n="subnav_gov" href="about.html#governance">Board &amp; Governance</a></li>
+<li class="subnav-item"><a data-i18n="subnav_corp" href="about.html#corporate">Corporate Information</a></li>
+<li class="subnav-item"><a data-i18n="subnav_burundi" href="about.html#burundi">Canada &amp; Burundi</a></li>
+</ul>
+</div>
+</div>
+<!-- HERO BANNER -->
+<section class="page-hero">
+<div class="container">
+<div class="breadcrumbs"><a data-i18n="nav_home" href="index.html">Home</a> / <span data-i18n="nav_about">About Us</span></div>
+<h1 class="page-title single-line" data-i18n="about_hero_title">About YBSP Canada</h1>
+<p data-i18n="about_hero_sub">
         An independent Canadian poverty-relief and opportunity organization committed to reducing barriers through education, skills development, mentorship and community support.
       </p>
-    </div>
-  </section>
-
-  <!-- 1. OUR STORY -->
-  <section class="content-section" id="story" style="background:#ffffff; padding:75px 0;">
-    <div class="container">
-      <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_story">Organizational History</span>
-        <h3 class="section-title" data-i18n="head_story">Our Story & Bilateral Roots</h3>
-        <p data-i18n="sub_story">
+</div>
+</section>
+<!-- 1. OUR STORY -->
+<section class="content-section" id="story" style="background:#ffffff; padding:75px 0;">
+<div class="container">
+<div class="section-header-center">
+<span class="section-tag" data-i18n="tag_story">Organizational History</span>
+<h3 class="section-title" data-i18n="head_story">Our Story &amp; Bilateral Roots</h3>
+<p data-i18n="sub_story">
           From grassroots community action in East Africa to federal incorporation in Canada, YBSP's purpose has remained constant: reducing disadvantage and expanding human potential.
         </p>
-      </div>
-
-      <div style="max-width:900px; margin:0 auto; font-size:1.02rem; color:var(--text-main); line-height:1.8;">
-        <p style="margin-bottom:18px;" data-i18n="story_p1">
+</div>
+<div style="max-width:900px; margin:0 auto; font-size:1.02rem; color:var(--text-main); line-height:1.8;">
+<p data-i18n="story_p1" style="margin-bottom:18px;">
           Founded in Burundi in 2011, Youth Building in Synergy to end Poverty (YBSP) began as a voluntary humanitarian initiative led by passionate young people. Confronted with widespread poverty, street homelessness among youth, and severe barriers to education, the founding team mobilized community donations to support orphanages, provide Sunday meals, supply school kits (#SororaIkaye), and provide starter toolkits for young artisans (#MurabireKazoza).
         </p>
-        <p style="margin-bottom:18px;" data-i18n="story_p2">
+<p data-i18n="story_p2" style="margin-bottom:18px;">
           Recognizing that economic vulnerability and systemic barriers to opportunity also deeply impact individuals, youth, and families in Canadian communities, YBSP Canada was federally incorporated under the <em>Canada Not-for-profit Corporations Act</em> in 2019 (Corporation # 1154010-6).
         </p>
-        <p style="margin:0;" data-i18n="story_p3">
+<p data-i18n="story_p3" style="margin:0;">
           Today, YBSP Canada operates as an autonomous, volunteer-led Canadian non-profit organization building its first program pilots, community partnerships, and governance foundation in preparation for future charitable registration. Our Canadian work is growing progressively from a community-based foundation in the Ottawa - Gatineau region rather than an established full-time operating structure, while maintaining a meaningful connection to our founding history.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. MISSION & MANDATE -->
-  <section class="content-section" id="mission" style="background:var(--bg-slate); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); padding:75px 0;">
-    <div class="container">
-      <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_mission_mandate">Core Purpose</span>
-        <h3 class="section-title" data-i18n="head_mission_mandate">Mission & Mandate</h3>
-      </div>
-
-      <div class="container-narrow" style="margin-bottom:40px;">
-        <div style="background:#ffffff; border-radius:var(--radius-lg); padding:36px 32px; box-shadow:var(--shadow-sm); border:1px solid var(--border-color); border-left:6px solid var(--secondary);">
-          <blockquote style="font-size:1.22rem; font-weight:700; color:var(--primary); line-height:1.6; margin-bottom:18px;" data-i18n="body_mission">
+</div>
+</div>
+</section>
+<!-- 2. MISSION & MANDATE -->
+<section class="content-section" id="mission" style="background:var(--bg-slate); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); padding:75px 0;">
+<div class="container">
+<div class="section-header-center">
+<span class="section-tag" data-i18n="tag_mission_mandate">Core Purpose</span>
+<h3 class="section-title" data-i18n="head_mission_mandate">Mission &amp; Mandate</h3>
+</div>
+<div class="container-narrow" style="margin-bottom:40px;">
+<div style="background:#ffffff; border-radius:var(--radius-lg); padding:36px 32px; box-shadow:var(--shadow-sm); border:1px solid var(--border-color); border-left:6px solid var(--secondary);">
+<blockquote data-i18n="body_mission" style="font-size:1.22rem; font-weight:700; color:var(--primary); line-height:1.6; margin-bottom:18px;">
             "YBSP Canada works to relieve poverty and reduce barriers to opportunity by providing education, community support, mentorship, skills development and pathways toward employment, entrepreneurship and greater self-sufficiency."
           </blockquote>
-          <p style="font-size:1rem; color:var(--text-muted); line-height:1.7; margin:0;" data-i18n="sub_mission">
+<p data-i18n="sub_mission" style="font-size:1rem; color:var(--text-muted); line-height:1.7; margin:0;">
             We focus particularly on youth and individuals facing social and economic disadvantage, while working with community partners to create practical opportunities for people to learn, participate, contribute and build more secure futures.
           </p>
-        </div>
-      </div>
-
-      <div class="responsive-grid-4">
-        <div style="background:#ffffff; border-radius:var(--radius-md); padding:24px 20px; border:1px solid var(--border-color); text-align:center;">
-          <div style="font-size:2rem; margin-bottom:10px;">🛡️</div>
-          <h4 style="font-size:1.05rem; color:var(--primary); margin-bottom:8px;" data-i18n="man_1_t">Poverty Relief</h4>
-          <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;" data-i18n="man_1_d">
+</div>
+</div>
+<div class="responsive-grid-4">
+<div style="background:#ffffff; border-radius:var(--radius-md); padding:24px 20px; border:1px solid var(--border-color); text-align:center;">
+<div style="font-size:2rem; margin-bottom:10px;">🛡️</div>
+<h4 data-i18n="man_1_t" style="font-size:1.05rem; color:var(--primary); margin-bottom:8px;">Poverty Relief</h4>
+<p data-i18n="man_1_d" style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;">
             Addressing immediate community needs, food insecurity, and practical barriers to dignified community participation.
           </p>
-        </div>
-
-        <div style="background:#ffffff; border-radius:var(--radius-md); padding:24px 20px; border:1px solid var(--border-color); text-align:center;">
-          <div style="font-size:2rem; margin-bottom:10px;">📚</div>
-          <h4 style="font-size:1.05rem; color:var(--primary); margin-bottom:8px;" data-i18n="man_2_t">Education & Skills</h4>
-          <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;" data-i18n="man_2_d">
+</div>
+<div style="background:#ffffff; border-radius:var(--radius-md); padding:24px 20px; border:1px solid var(--border-color); text-align:center;">
+<div style="font-size:2rem; margin-bottom:10px;">📚</div>
+<h4 data-i18n="man_2_t" style="font-size:1.05rem; color:var(--primary); margin-bottom:8px;">Education &amp; Skills</h4>
+<p data-i18n="man_2_d" style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;">
             Equipping youth and disadvantaged individuals with essential career, digital, financial, and workplace literacy.
           </p>
-        </div>
-
-        <div style="background:#ffffff; border-radius:var(--radius-md); padding:24px 20px; border:1px solid var(--border-color); text-align:center;">
-          <div style="font-size:2rem; margin-bottom:10px;">🌱</div>
-          <h4 style="font-size:1.05rem; color:var(--primary); margin-bottom:8px;" data-i18n="man_3_t">Self-Sufficiency</h4>
-          <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;" data-i18n="man_3_d">
+</div>
+<div style="background:#ffffff; border-radius:var(--radius-md); padding:24px 20px; border:1px solid var(--border-color); text-align:center;">
+<div style="font-size:2rem; margin-bottom:10px;">🌱</div>
+<h4 data-i18n="man_3_t" style="font-size:1.05rem; color:var(--primary); margin-bottom:8px;">Self-Sufficiency</h4>
+<p data-i18n="man_3_d" style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;">
             Building viable employment preparation and entrepreneurship pathways toward long-term economic independence.
           </p>
-        </div>
-
-        <div style="background:#ffffff; border-radius:var(--radius-md); padding:24px 20px; border:1px solid var(--border-color); text-align:center;">
-          <div style="font-size:2rem; margin-bottom:10px;">🤝</div>
-          <h4 style="font-size:1.05rem; color:var(--primary); margin-bottom:8px;" data-i18n="man_4_t">Community Synergy</h4>
-          <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;" data-i18n="man_4_d">
+</div>
+<div style="background:#ffffff; border-radius:var(--radius-md); padding:24px 20px; border:1px solid var(--border-color); text-align:center;">
+<div style="font-size:2rem; margin-bottom:10px;">🤝</div>
+<h4 data-i18n="man_4_t" style="font-size:1.05rem; color:var(--primary); margin-bottom:8px;">Community Synergy</h4>
+<p data-i18n="man_4_d" style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;">
             Fostering civic collaboration across Canada while maintaining authentic bilateral solidarity with YBSP Burundi.
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. LEADERSHIP -->
-  <section class="content-section" id="team" style="background:#ffffff; padding:75px 0;">
-    <div class="container">
-      <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_leadership">Operations & Delivery</span>
-        <h3 class="section-title" data-i18n="head_leadership">Executive Leadership Team</h3>
-        <p data-i18n="sub_leadership">
+</div>
+</div>
+</div>
+</section>
+<!-- 3. LEADERSHIP -->
+<section class="content-section" id="team" style="background:#ffffff; padding:75px 0;">
+<div class="container">
+<div class="section-header-center">
+<span class="section-tag" data-i18n="tag_leadership">Operations &amp; Delivery</span>
+<h3 class="section-title" data-i18n="head_leadership">Executive Leadership Team</h3>
+<p data-i18n="sub_leadership">
           Responsible for day-to-day program delivery, operations, partnerships, and community engagement across Canada.
         </p>
-      </div>
-
-              <div class="team-grid">
-          <!-- 1. LEIS BRUEL HARAGIRIMANA -->
-          <div class="team-member-card" style="border-top:4px solid var(--secondary);">
-            <div style="text-align:center;">
-              <img src="images/leis-bruel-haragirimana.jpg" alt="Leis Bruel Haragirimana" class="team-avatar-photo" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin:0 auto 16px; border:3px solid #ffffff; outline:2px solid var(--secondary); box-shadow:var(--shadow-sm); display:block;" onerror="if(!this.dataset.tried1){this.dataset.tried1='1';this.src='images/leis-haragirimana.jpg';}else if(!this.dataset.tried2){this.dataset.tried2='1';this.src='images/leis-bruel-haragirimana.png';}else if(!this.dataset.tried3){this.dataset.tried3='1';this.src='images/leis.jpg';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}">
-              <div class="team-avatar-placeholder" style="display:none; width:120px; height:120px; margin:0 auto 16px; background:linear-gradient(135deg, #1e3a8a, #0284c7); color:#ffffff; border-radius:50%; border:3px solid #ffffff; outline:2px solid var(--secondary); align-items:center; justify-content:center; font-size:2rem; font-weight:800; box-shadow:var(--shadow-sm);">LH</div>
-              <span class="team-badge badge-exec" data-i18n="badge_exec">Executive Leadership</span>
-              <h4 class="team-name">Leis Bruel Haragirimana</h4>
-              <div class="team-role" data-i18n="role_leis">Founder & Executive Director (Volunteer Role)</div>
-              <p class="team-bio" data-i18n="bio_leis">
+</div>
+<div class="team-grid">
+<!-- 1. LEIS BRUEL HARAGIRIMANA -->
+<div class="team-member-card" style="border-top:4px solid var(--secondary);">
+<div style="text-align:center;">
+<img alt="Leis Bruel Haragirimana" class="team-avatar-photo" onerror="if(!this.dataset.tried1){this.dataset.tried1='1';this.src='images/leis-haragirimana.jpg';}else if(!this.dataset.tried2){this.dataset.tried2='1';this.src='images/leis-bruel-haragirimana.png';}else if(!this.dataset.tried3){this.dataset.tried3='1';this.src='images/leis.jpg';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="images/leis-bruel-haragirimana.jpg" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin:0 auto 16px; border:3px solid #ffffff; outline:2px solid var(--secondary); box-shadow:var(--shadow-sm); display:block;"/>
+<div class="team-avatar-placeholder" style="display:none; width:120px; height:120px; margin:0 auto 16px; background:linear-gradient(135deg, #1e3a8a, #0284c7); color:#ffffff; border-radius:50%; border:3px solid #ffffff; outline:2px solid var(--secondary); align-items:center; justify-content:center; font-size:2rem; font-weight:800; box-shadow:var(--shadow-sm);">LH</div>
+<span class="team-badge badge-exec" data-i18n="badge_exec">Executive Leadership</span>
+<h4 class="team-name">Leis Bruel Haragirimana</h4>
+<div class="team-role" data-i18n="role_leis">Founder &amp; Executive Director (Volunteer Role)</div>
+<p class="team-bio" data-i18n="bio_leis">
                 Leads overarching operational strategy, youth career mentorship cohorts, and bilateral cooperation with YBSP Burundi. Brings extensive professional experience in public sector enterprise resource management systems, business analysis, and non-profit administration.
               </p>
+</div>
+<div data-i18n="area_leis" style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);">
+<strong>Responsibility:</strong> Strategy, Operational Management &amp; Bilateral Synergy
             </div>
-            <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);" data-i18n="area_leis">
-              <strong>Responsibility:</strong> Strategy, Operational Management & Bilateral Synergy
-            </div>
-          </div>
-
-          <!-- 2. RECRUITMENT IN PROGRESS: CFO -->
-          <div class="team-member-card" style="border-top:4px solid var(--accent-hover);">
-            <div style="text-align:center;">
-              <div class="team-avatar-placeholder" style="background:#fef3c7; color:#92400e;">💼</div>
-              <span class="team-badge" style="background:#fef3c7; color:#92400e; border:1px solid #fde68a;" data-i18n="badge_recruiting">Recruitment in Progress</span>
-              <h4 class="team-name" style="color:#1e293b; font-size:1.15rem;" data-i18n="role_cfo_title">Director of Finance & Administration</h4>
-              <div class="team-role" style="color:var(--accent-hover);" data-i18n="role_cfo">Chief Financial Officer (CFO)</div>
-              <p class="team-bio" data-i18n="bio_cfo">
+</div>
+<!-- 2. RECRUITMENT IN PROGRESS: CFO -->
+<div class="team-member-card" style="border-top:4px solid var(--accent-hover);">
+<div style="text-align:center;">
+<div class="team-avatar-placeholder" style="background:#fef3c7; color:#92400e;">💼</div>
+<span class="team-badge" data-i18n="badge_recruiting" style="background:#fef3c7; color:#92400e; border:1px solid #fde68a;">Recruitment in Progress</span>
+<h4 class="team-name" data-i18n="role_cfo_title" style="color:#1e293b; font-size:1.15rem;">Director of Finance &amp; Administration</h4>
+<div class="team-role" data-i18n="role_cfo" style="color:var(--accent-hover);">Chief Financial Officer (CFO)</div>
+<p class="team-bio" data-i18n="bio_cfo">
                 Responsible for financial controllership, budgeting, statutory accounting standards under the Canada NFP Act, annual filing preparation, and grant expenditure tracking.
               </p>
+</div>
+<div data-i18n="area_cfo" style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);">
+<strong>Responsibility:</strong> Financial Compliance, Accounting &amp; Internal Controls
             </div>
-            <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);" data-i18n="area_cfo">
-              <strong>Responsibility:</strong> Financial Compliance, Accounting & Internal Controls
-            </div>
-          </div>
-
-          <!-- 3. BENIT CAROLIS NIKUZA -->
-          <div class="team-member-card">
-            <div style="text-align:center;">
-              <div class="team-avatar-placeholder">BN</div>
-              <span class="team-badge badge-exec" data-i18n="badge_exec">Executive Leadership</span>
-              <h4 class="team-name">Benit Carolis Nikuza</h4>
-              <div class="team-role" data-i18n="role_benit">Director of Programs & Youth Mentorship (Volunteer Role)</div>
-              <p class="team-bio" data-i18n="bio_benit">
+</div>
+<!-- 3. BENIT CAROLIS NIKUZA -->
+<div class="team-member-card">
+<div style="text-align:center;">
+<div class="team-avatar-placeholder">BN</div>
+<span class="team-badge badge-exec" data-i18n="badge_exec">Executive Leadership</span>
+<h4 class="team-name">Benit Carolis Nikuza</h4>
+<div class="team-role" data-i18n="role_benit">Director of Programs &amp; Youth Mentorship (Volunteer Role)</div>
+<p class="team-bio" data-i18n="bio_benit">
                 Directs YBSP Canada's youth career mentorship cohorts, applied AI curriculum development, and participant outcome tracking across Canada. Brings strategic expertise in community development, educational program delivery, and youth empowerment frameworks.
               </p>
+</div>
+<div data-i18n="area_benit" style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);">
+<strong>Responsibility:</strong> Cohort Delivery, Curriculum &amp; Youth Mentorship
             </div>
-            <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);" data-i18n="area_benit">
-              <strong>Responsibility:</strong> Cohort Delivery, Curriculum & Youth Mentorship
-            </div>
-          </div>
-
-          <!-- 4. FAUSTIN NIMBONA -->
-          <div class="team-member-card" style="border-top:4px solid var(--secondary);">
-            <div style="text-align:center;">
-              <img src="images/faustin-nimbona.jpg" alt="Faustin Nimbona" class="team-avatar-photo" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin:0 auto 16px; border:3px solid #ffffff; outline:2px solid var(--secondary); box-shadow:var(--shadow-sm); display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="team-avatar-placeholder" style="display:none; width:120px; height:120px; margin:0 auto 16px; background:linear-gradient(135deg, #1e3a8a, #0284c7); color:#ffffff; border-radius:50%; border:3px solid #ffffff; outline:2px solid var(--secondary); align-items:center; justify-content:center; font-size:2rem; font-weight:800; box-shadow:var(--shadow-sm);">FN</div>
-              <span class="team-badge badge-exec" data-i18n="badge_exec">Executive Leadership</span>
-              <h4 class="team-name">Faustin Nimbona</h4>
-              <div class="team-role" data-i18n="role_faustin">Director of Partnerships & Development (Volunteer Role)</div>
-              <p class="team-bio" data-i18n="bio_faustin">
+</div>
+<!-- 4. FAUSTIN NIMBONA -->
+<div class="team-member-card" style="border-top:4px solid var(--secondary);">
+<div style="text-align:center;">
+<img alt="Faustin Nimbona" class="team-avatar-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="images/faustin-nimbona.jpg" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin:0 auto 16px; border:3px solid #ffffff; outline:2px solid var(--secondary); box-shadow:var(--shadow-sm); display:block;"/>
+<div class="team-avatar-placeholder" style="display:none; width:120px; height:120px; margin:0 auto 16px; background:linear-gradient(135deg, #1e3a8a, #0284c7); color:#ffffff; border-radius:50%; border:3px solid #ffffff; outline:2px solid var(--secondary); align-items:center; justify-content:center; font-size:2rem; font-weight:800; box-shadow:var(--shadow-sm);">FN</div>
+<span class="team-badge badge-exec" data-i18n="badge_exec">Executive Leadership</span>
+<h4 class="team-name">Faustin Nimbona</h4>
+<div class="team-role" data-i18n="role_faustin">Director of Partnerships &amp; Development (Volunteer Role)</div>
+<p class="team-bio" data-i18n="bio_faustin">
                 Directs institutional partnerships, corporate sponsorships, and philanthropic development across Canada. Brings strategic expertise in stakeholder engagement, community resource mobilization, and donor relations.
               </p>
+</div>
+<div data-i18n="area_faustin" style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);">
+<strong>Responsibility:</strong> Corporate Partnerships, Major Giving &amp; Philanthropy
             </div>
-            <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);" data-i18n="area_faustin">
-              <strong>Responsibility:</strong> Corporate Partnerships, Major Giving & Philanthropy
-            </div>
-          </div>
-
-          <!-- 5. RECRUITMENT IN PROGRESS: COMMUNICATIONS -->
-          <div class="team-member-card" style="border-top:4px solid var(--secondary);">
-            <div style="text-align:center;">
-              <div class="team-avatar-placeholder" style="background:#e0f2fe; color:#0369a1;">📱</div>
-              <span class="team-badge" style="background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd;" data-i18n="badge_recruiting">Recruitment in Progress</span>
-              <h4 class="team-name" style="color:#1e293b; font-size:1.15rem;" data-i18n="role_comm_title">Communications & Digital Media Lead</h4>
-              <div class="team-role" style="color:var(--secondary);" data-i18n="role_comm">Public Relations & Media</div>
-              <p class="team-bio" data-i18n="bio_comm">
+</div>
+<!-- 5. RECRUITMENT IN PROGRESS: COMMUNICATIONS -->
+<div class="team-member-card" style="border-top:4px solid var(--secondary);">
+<div style="text-align:center;">
+<div class="team-avatar-placeholder" style="background:#e0f2fe; color:#0369a1;">📱</div>
+<span class="team-badge" data-i18n="badge_recruiting" style="background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd;">Recruitment in Progress</span>
+<h4 class="team-name" data-i18n="role_comm_title" style="color:#1e293b; font-size:1.15rem;">Communications &amp; Digital Media Lead</h4>
+<div class="team-role" data-i18n="role_comm" style="color:var(--secondary);">Public Relations &amp; Media</div>
+<p class="team-bio" data-i18n="bio_comm">
                 Coordinates official bilingual storytelling, digital content, social media channels (Facebook, Instagram, X, TikTok, Snapchat), press releases, and quarterly community dispatches.
               </p>
+</div>
+<div data-i18n="area_comm" style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);">
+<strong>Responsibility:</strong> Bilingual Communications &amp; Media Engagement
             </div>
-            <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);" data-i18n="area_comm">
-              <strong>Responsibility:</strong> Bilingual Communications & Media Engagement
-            </div>
-          </div>
-
-          <!-- 6. RECRUITMENT IN PROGRESS: BILATERAL COORDINATOR -->
-          <div class="team-member-card" style="border-top:4px solid #10b981;">
-            <div style="text-align:center;">
-              <div class="team-avatar-placeholder" style="background:#d1fae5; color:#065f46;">🌐</div>
-              <span class="team-badge" style="background:#d1fae5; color:#065f46; border:1px solid #a7f3d0;" data-i18n="badge_recruiting">Recruitment in Progress</span>
-              <h4 class="team-name" style="color:#1e293b; font-size:1.15rem;" data-i18n="role_bilat_title">Bilateral Projects Coordinator</h4>
-              <div class="team-role" style="color:#059669;" data-i18n="role_bilat">Burundi Synergy Liaison</div>
-              <p class="team-bio" data-i18n="bio_bilat">
+</div>
+<!-- 6. RECRUITMENT IN PROGRESS: BILATERAL COORDINATOR -->
+<div class="team-member-card" style="border-top:4px solid #10b981;">
+<div style="text-align:center;">
+<div class="team-avatar-placeholder" style="background:#d1fae5; color:#065f46;">🌐</div>
+<span class="team-badge" data-i18n="badge_recruiting" style="background:#d1fae5; color:#065f46; border:1px solid #a7f3d0;">Recruitment in Progress</span>
+<h4 class="team-name" data-i18n="role_bilat_title" style="color:#1e293b; font-size:1.15rem;">Bilateral Projects Coordinator</h4>
+<div class="team-role" data-i18n="role_bilat" style="color:#059669;">Burundi Synergy Liaison</div>
+<p class="team-bio" data-i18n="bio_bilat">
                 Manages operational communication with YBSP Burundi project leaders, monitoring delivery logs for vocational toolkits, school sponsorships, and women's cooperatives.
               </p>
+</div>
+<div data-i18n="area_bilat" style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);">
+<strong>Responsibility:</strong> International Liaison &amp; Project Documentation
             </div>
-            <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);" data-i18n="area_bilat">
-              <strong>Responsibility:</strong> International Liaison & Project Documentation
-            </div>
-          </div>
-        </div>
-    </div>
-  </section>
-
-  <!-- 4. BOARD & GOVERNANCE -->
-  <section class="content-section" id="governance" style="background:var(--bg-slate); border-top:1px solid var(--border-color); padding:75px 0;">
-    <div class="container">
-      <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_board">Fiduciary Oversight</span>
-        <h3 class="section-title" data-i18n="head_board">Board of Directors</h3>
-        <p data-i18n="sub_board">
+</div>
+</div>
+</div>
+</section>
+<!-- 4. BOARD & GOVERNANCE -->
+<section class="content-section" id="governance" style="background:var(--bg-slate); border-top:1px solid var(--border-color); padding:75px 0;">
+<div class="container">
+<div class="section-header-center">
+<span class="section-tag" data-i18n="tag_board">Fiduciary Oversight</span>
+<h3 class="section-title" data-i18n="head_board">Board of Directors</h3>
+<p data-i18n="sub_board">
           Pursuant to Section 8 of our Articles of Incorporation, our Board of Directors serves on a voluntary, non-remunerated basis, providing independent fiduciary oversight and approving organizational budgets under the Canada Not-for-profit Corporations Act.
         </p>
-      </div>
-
-              <div class="team-grid responsive-grid-3">
-          <!-- 1. YVES DUSHIMIMANA -->
-          <div class="team-member-card" style="border-top:4px solid var(--primary);">
-            <div style="text-align:center;">
-              <div class="team-avatar-placeholder">YD</div>
-              <span class="team-badge badge-board" data-i18n="badge_board_dir">Board Director</span>
-              <h4 class="team-name">Yves Dushimimana</h4>
-              <div class="team-role" data-i18n="role_yves">Director & Community Liaison</div>
-              <p class="team-bio" data-i18n="bio_yves">
+</div>
+<div class="team-grid responsive-grid-3">
+<!-- 1. YVES DUSHIMIMANA -->
+<div class="team-member-card" style="border-top:4px solid var(--primary);">
+<div style="text-align:center;">
+<div class="team-avatar-placeholder">YD</div>
+<span class="team-badge badge-board" data-i18n="badge_board_dir">Board Director</span>
+<h4 class="team-name">Yves Dushimimana</h4>
+<div class="team-role" data-i18n="role_yves">Director &amp; Community Liaison</div>
+<p class="team-bio" data-i18n="bio_yves">
                 Dedicated community organizer focused on grassroots civic mobilization, stakeholder partnerships, and youth engagement strategies across Canadian communities. Provides strategic oversight on community representation.
               </p>
+</div>
+<div data-i18n="area_yves" style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);">
+<strong>Governance Role:</strong> Community Engagement &amp; Stakeholder Oversight
             </div>
-            <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);" data-i18n="area_yves">
-              <strong>Governance Role:</strong> Community Engagement & Stakeholder Oversight
-            </div>
-          </div>
-
-          <!-- 2. NADER DIAB -->
-          <div class="team-member-card" style="border-top:4px solid var(--secondary);">
-            <div style="text-align:center;">
-              <div class="team-avatar-placeholder">ND</div>
-              <span class="team-badge badge-board" data-i18n="badge_board_dir">Board Director</span>
-              <h4 class="team-name">Nader Diab</h4>
-              <div class="team-role" data-i18n="role_nader">Director & Strategic Partnerships</div>
-              <p class="team-bio" data-i18n="bio_nader">
+</div>
+<!-- 2. NADER DIAB -->
+<div class="team-member-card" style="border-top:4px solid var(--secondary);">
+<div style="text-align:center;">
+<div class="team-avatar-placeholder">ND</div>
+<span class="team-badge badge-board" data-i18n="badge_board_dir">Board Director</span>
+<h4 class="team-name">Nader Diab</h4>
+<div class="team-role" data-i18n="role_nader">Director &amp; Strategic Partnerships</div>
+<p class="team-bio" data-i18n="bio_nader">
                 Brings valuable strategic experience in community program development, civic stakeholder collaboration, and non-profit administration. Participates in board oversight of programmatic integrity, volunteer initiatives, and statutory compliance under federal law.
               </p>
+</div>
+<div data-i18n="area_nader" style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);">
+<strong>Governance Role:</strong> Strategic Partnerships &amp; Operational Oversight
             </div>
-            <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);" data-i18n="area_nader">
-              <strong>Governance Role:</strong> Strategic Partnerships & Operational Oversight
-            </div>
-          </div>
-
-          <!-- 3. LEIS BRUEL HARAGIRIMANA -->
-          <div class="team-member-card" style="border-top:4px solid var(--accent);">
-            <div style="text-align:center;">
-              <img src="images/leis-bruel-haragirimana.jpg" alt="Leis Bruel Haragirimana" class="team-avatar-photo" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin:0 auto 16px; border:3px solid #ffffff; outline:2px solid var(--accent); box-shadow:var(--shadow-sm); display:block;" onerror="if(!this.dataset.tried1){this.dataset.tried1='1';this.src='images/leis-haragirimana.jpg';}else if(!this.dataset.tried2){this.dataset.tried2='1';this.src='images/leis-bruel-haragirimana.png';}else if(!this.dataset.tried3){this.dataset.tried3='1';this.src='images/leis.jpg';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}">
-              <div class="team-avatar-placeholder" style="display:none; width:120px; height:120px; margin:0 auto 16px; background:linear-gradient(135deg, #1e3a8a, #0284c7); color:#ffffff; border-radius:50%; border:3px solid #ffffff; outline:2px solid var(--accent); align-items:center; justify-content:center; font-size:2rem; font-weight:800; box-shadow:var(--shadow-sm);">LH</div>
-              <span class="team-badge badge-founder" data-i18n="badge_board_founder">Founder & Board Director</span>
-              <h4 class="team-name">Leis Bruel Haragirimana</h4>
-              <div class="team-role" data-i18n="role_leis_board">Founder & Board Member</div>
-              <p class="team-bio" data-i18n="bio_leis_board">
+</div>
+<!-- 3. LEIS BRUEL HARAGIRIMANA -->
+<div class="team-member-card" style="border-top:4px solid var(--accent);">
+<div style="text-align:center;">
+<img alt="Leis Bruel Haragirimana" class="team-avatar-photo" onerror="if(!this.dataset.tried1){this.dataset.tried1='1';this.src='images/leis-haragirimana.jpg';}else if(!this.dataset.tried2){this.dataset.tried2='1';this.src='images/leis-bruel-haragirimana.png';}else if(!this.dataset.tried3){this.dataset.tried3='1';this.src='images/leis.jpg';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" src="images/leis-bruel-haragirimana.jpg" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin:0 auto 16px; border:3px solid #ffffff; outline:2px solid var(--accent); box-shadow:var(--shadow-sm); display:block;"/>
+<div class="team-avatar-placeholder" style="display:none; width:120px; height:120px; margin:0 auto 16px; background:linear-gradient(135deg, #1e3a8a, #0284c7); color:#ffffff; border-radius:50%; border:3px solid #ffffff; outline:2px solid var(--accent); align-items:center; justify-content:center; font-size:2rem; font-weight:800; box-shadow:var(--shadow-sm);">LH</div>
+<span class="team-badge badge-founder" data-i18n="badge_board_founder">Founder &amp; Board Director</span>
+<h4 class="team-name">Leis Bruel Haragirimana</h4>
+<div class="team-role" data-i18n="role_leis_board">Founder &amp; Board Member</div>
+<p class="team-bio" data-i18n="bio_leis_board">
                 Founder of YBSP in 2011 and established YBSP Canada in 2019. Serves on the Board of Directors providing overarching institutional continuity, strategic vision, and fiduciary leadership under the Canada Not-for-profit Corporations Act.
               </p>
+</div>
+<div data-i18n="area_leis_board" style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);">
+<strong>Governance Role:</strong> Institutional Continuity &amp; Strategic Leadership
             </div>
-            <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);" data-i18n="area_leis_board">
-              <strong>Governance Role:</strong> Institutional Continuity & Strategic Leadership
-            </div>
-          </div>
-        </div>
-    </div>
-  </section>
-
-  <!-- 5. CORPORATE INFORMATION & FILINGS -->
-  <section class="content-section" id="corporate" style="background:#ffffff; padding:75px 0;">
-    <div class="container">
-      <div class="section-header-center">
-        <span class="section-tag" data-i18n="tag_transparency">Statutory Records</span>
-        <h3 class="section-title" data-i18n="head_corporate">Corporate Information & Transparency</h3>
-        <p data-i18n="sub_corporate">
+</div>
+</div>
+</div>
+</section>
+<!-- 5. CORPORATE INFORMATION & FILINGS -->
+<section class="content-section" id="corporate" style="background:#ffffff; padding:75px 0;">
+<div class="container">
+<div class="section-header-center">
+<span class="section-tag" data-i18n="tag_transparency">Statutory Records</span>
+<h3 class="section-title" data-i18n="head_corporate">Corporate Information &amp; Transparency</h3>
+<p data-i18n="sub_corporate">
           YBSP Canada adheres to the statutory disclosure standards set forth under the Canada Not-for-profit Corporations Act. Below is our verified federal corporate registry record.
         </p>
-      </div>
-
-      <div class="container-narrow">
-        <div class="corp-table-wrapper">
-          <table class="corp-table">
-            <tbody>
-              <tr>
-                <th data-i18n="th_corp_legal_name">Legal Corporate Name</th>
-                <td><strong>Youth Building in Synergy to end Poverty (YBSP Canada)</strong></td>
-              </tr>
-              <tr>
-                <th data-i18n="th_corp_statute">Governing Statute</th>
-                <td data-i18n="td_corp_statute">Canada Not-for-profit Corporations Act (NFP Act)</td>
-              </tr>
-              <tr>
-                <th data-i18n="th_corp_id">Corporation Number</th>
-                <td data-i18n="td_corp_id"><code>1154010-6</code> (Corporations Canada)</td>
-              </tr>
-              <tr>
-                <th data-i18n="th_corp_bn">Business Number (BN)</th>
-                <td data-i18n="td_corp_bn"><code>779321272RC0001</code> (Canada Revenue Agency)</td>
-              </tr>
-              <tr>
-                <th data-i18n="th_corp_type">Corporation Type</th>
-                <td data-i18n="td_corp_type">Federal Not-for-Profit Corporation (Non-soliciting)</td>
-              </tr>
-              <tr>
-                <th data-i18n="th_corp_remuneration">Board Remuneration</th>
-                <td data-i18n="td_corp_remuneration">$0.00 (Directors serve strictly on a voluntary, non-remunerated basis)</td>
-              </tr>
-              <tr>
-                <th data-i18n="th_corp_legal_status">Legal Status</th>
-                <td data-i18n="td_corp_legal_status">Federally Incorporated Non-Profit Corporation (Not a registered charity under the Income Tax Act; official regulatory disclosure and filings available for public review)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div style="margin-top:24px; text-align:center;">
-          <a href="docs/YBSP_Canada_Financial_Transparency_Statement.pdf" data-i18n-href="pdf_transparency" data-i18n-download="pdf_transparency_fn" data-i18n="btn_download_disclosure" target="_blank" class="btn-outline" style="font-size:0.88rem;">
+</div>
+<div class="container-narrow">
+<div class="corp-table-wrapper">
+<table class="corp-table">
+<tbody>
+<tr>
+<th data-i18n="th_corp_legal_name">Legal Corporate Name</th>
+<td><strong>Youth Building in Synergy to end Poverty (YBSP Canada)</strong></td>
+</tr>
+<tr>
+<th data-i18n="th_corp_statute">Governing Statute</th>
+<td data-i18n="td_corp_statute">Canada Not-for-profit Corporations Act (NFP Act)</td>
+</tr>
+<tr>
+<th data-i18n="th_corp_id">Corporation Number</th>
+<td data-i18n="td_corp_id"><code>1154010-6</code> (Corporations Canada)</td>
+</tr>
+<tr>
+<th data-i18n="th_corp_bn">Business Number (BN)</th>
+<td data-i18n="td_corp_bn"><code>779321272RC0001</code> (Canada Revenue Agency)</td>
+</tr>
+<tr>
+<th data-i18n="th_corp_type">Corporation Type</th>
+<td data-i18n="td_corp_type">Federal Not-for-Profit Corporation (Non-soliciting)</td>
+</tr>
+<tr>
+<th data-i18n="th_corp_remuneration">Board Remuneration</th>
+<td data-i18n="td_corp_remuneration">$0.00 (Directors serve strictly on a voluntary, non-remunerated basis)</td>
+</tr>
+<tr>
+<th data-i18n="th_corp_legal_status">Legal Status</th>
+<td data-i18n="td_corp_legal_status">Federally Incorporated Non-Profit Corporation (Not a registered charity under the Income Tax Act; official regulatory disclosure and filings available for public review)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin-top:24px; text-align:center;">
+<a class="btn-outline" data-i18n="btn_download_disclosure" data-i18n-download="pdf_transparency_fn" data-i18n-href="pdf_transparency" href="docs/YBSP_Canada_Financial_Transparency_Statement.pdf" style="font-size:0.88rem;" target="_blank">
             📄 Download Annual Regulatory Disclosure Statement (PDF)
           </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. CANADA & BURUNDI -->
-  <section class="content-section" id="synergy" style="background:var(--primary-dark); color:#ffffff; padding:80px 0;">
-    <span id="burundi" style="position:relative; top:-90px; display:block; visibility:hidden;"></span>
-    <div class="container">
-      <div class="section-header-center">
-        <span class="section-tag" style="color:var(--accent);" data-i18n="tag_bilateral">Two Independent Organizations</span>
-        <h3 class="section-title" style="color:#ffffff;" data-i18n="head_bilateral">Two Organizations. One Shared History. Complementary Work.</h3>
-        <p style="color:#cbd5e1; font-size:1.05rem; line-height:1.7;" data-i18n="sub_bilateral">
+</div>
+</div>
+</div>
+</section>
+<!-- 6. CANADA & BURUNDI -->
+<section class="content-section" id="synergy" style="background:var(--primary-dark); color:#ffffff; padding:80px 0;">
+<span id="burundi" style="position:relative; top:-90px; display:block; visibility:hidden;"></span>
+<div class="container">
+<div class="section-header-center">
+<span class="section-tag" data-i18n="tag_bilateral" style="color:var(--accent);">Two Independent Organizations</span>
+<h3 class="section-title" data-i18n="head_bilateral" style="color:#ffffff;">Two Organizations. One Shared History. Complementary Work.</h3>
+<p data-i18n="sub_bilateral" style="color:#cbd5e1; font-size:1.05rem; line-height:1.7;">
           YBSP Canada and YBSP Burundi share a common history and commitment to reducing poverty and expanding opportunity. Each organization operates according to its own legal, governance and operational responsibilities.
         </p>
-      </div>
-
-      <div class="responsive-grid-2" style="margin-top:40px;">
-        <div style="background:rgba(255,255,255,0.06); border-radius:var(--radius-lg); padding:36px 32px; border:1px solid rgba(255,255,255,0.12); border-top:5px solid var(--secondary);">
-          <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-            <span style="font-size:2rem;">🇨🇦</span>
-            <div>
-              <h4 style="font-size:1.35rem; color:#ffffff; margin:0;">YBSP Canada</h4>
-              <span data-i18n="canada_card_badge" style="font-size:0.8rem; font-weight:700; color:var(--secondary); text-transform:uppercase;">Independent Canadian Entity</span>
-            </div>
-          </div>
-          <p style="font-size:0.95rem; color:#cbd5e1; line-height:1.7; margin-bottom:16px;" data-i18n="canada_card_desc">
+</div>
+<div class="responsive-grid-2" style="margin-top:40px;">
+<div style="background:rgba(255,255,255,0.06); border-radius:var(--radius-lg); padding:36px 32px; border:1px solid rgba(255,255,255,0.12); border-top:5px solid var(--secondary);">
+<div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+<span style="font-size:2rem;">🇨🇦</span>
+<div>
+<h4 style="font-size:1.35rem; color:#ffffff; margin:0;">YBSP Canada</h4>
+<span data-i18n="canada_card_badge" style="font-size:0.8rem; font-weight:700; color:var(--secondary); text-transform:uppercase;">Independent Canadian Entity</span>
+</div>
+</div>
+<p data-i18n="canada_card_desc" style="font-size:0.95rem; color:#cbd5e1; line-height:1.7; margin-bottom:16px;">
             YBSP Canada is an independent Canadian nonprofit organization focused on reducing poverty, expanding opportunity and strengthening communities in Canada, while supporting appropriate international initiatives.
           </p>
-          <p data-i18n="canada_card_sub" style="font-size:0.88rem; color:#94a3b8; line-height:1.6; margin:0;">Incorporated federally under the Canada Not-for-profit Corporations Act to deliver practical community support, skills development, and self-sufficiency programs across Canadian communities.</p>
-        </div>
-
-        <div style="background:rgba(255,255,255,0.06); border-radius:var(--radius-lg); padding:36px 32px; border:1px solid rgba(255,255,255,0.12); border-top:5px solid var(--accent);">
-          <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-            <span style="font-size:2rem;">🇧🇮</span>
-            <div>
-              <h4 style="font-size:1.35rem; color:#ffffff; margin:0;">YBSP Burundi</h4>
-              <span data-i18n="burundi_card_sub" style="font-size:0.8rem; font-weight:700; color:var(--accent); text-transform:uppercase;">Founded in 2011</span>
-            </div>
-          </div>
-          <p style="font-size:0.95rem; color:#cbd5e1; line-height:1.7; margin-bottom:16px;" data-i18n="burundi_card_desc">
+<p data-i18n="canada_card_sub" style="font-size:0.88rem; color:#94a3b8; line-height:1.6; margin:0;">Incorporated federally under the Canada Not-for-profit Corporations Act to deliver practical community support, skills development, and self-sufficiency programs across Canadian communities.</p>
+</div>
+<div style="background:rgba(255,255,255,0.06); border-radius:var(--radius-lg); padding:36px 32px; border:1px solid rgba(255,255,255,0.12); border-top:5px solid var(--accent);">
+<div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+<span style="font-size:2rem;">🇧🇮</span>
+<div>
+<h4 style="font-size:1.35rem; color:#ffffff; margin:0;">YBSP Burundi</h4>
+<span data-i18n="burundi_card_sub" style="font-size:0.8rem; font-weight:700; color:var(--accent); text-transform:uppercase;">Founded in 2011</span>
+</div>
+</div>
+<p data-i18n="burundi_card_desc" style="font-size:0.95rem; color:#cbd5e1; line-height:1.7; margin-bottom:16px;">
             YBSP Burundi is the organization founded in Burundi in 2011, continuing locally rooted work supporting vulnerable children, families, youth and communities.
           </p>
-          <div style="margin-top:20px;">
-            <a href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" data-i18n="burundi_card_link" style="font-size:0.92rem; font-weight:700; color:var(--accent); display:inline-flex; align-items:center; gap:6px;">Visit Official YBSP Burundi Website (ybspburundi.org) ↗</a>
-          </div>
+<div style="margin-top:20px;">
+<a data-i18n="burundi_card_link" href="https://ybspburundi.org/" rel="noopener noreferrer" style="font-size:0.92rem; font-weight:700; color:var(--accent); display:inline-flex; align-items:center; gap:6px;" target="_blank">Visit Official YBSP Burundi Website (ybspburundi.org) ↗</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- UNIVERSAL FOOTER -->
+<!-- UNIVERSAL LIVE FOOTER (EXACT LIVE SITE LAYOUT & LABELS) -->
+<footer class="main-footer" style="background:#061124; color:#ffffff; padding:65px 0 30px; border-top:3px solid var(--secondary);">
+<div class="container">
+<!-- 3 COLUMNS: QUICK LINKS, GET INVOLVED, CONTACT & SECRETARIAT -->
+<div class="footer-grid" style="margin-bottom:50px;">
+<!-- COL 1: QUICK LINKS -->
+<div class="footer-col">
+<h4 data-i18n="footer_quick_links" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Quick Links</h4>
+<ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
+<li><a data-i18n="nav_home" href="index.html" style="color:#cbd5e1; text-decoration:none;">Home</a></li>
+<li><a data-i18n="nav_about" href="about.html" style="color:#cbd5e1; text-decoration:none;">About Us &amp; Governance</a></li>
+<li><a data-i18n="nav_programs" href="programs.html" style="color:#cbd5e1; text-decoration:none;">Programs &amp; AI Skills</a></li>
+<li><a data-i18n="nav_events" href="events.html" style="color:#cbd5e1; text-decoration:none;">Events &amp; Community</a></li>
+<li><a data-i18n="nav_news" href="news.html" style="color:#cbd5e1; text-decoration:none;">News &amp; Media Library</a></li>
+<li><a data-i18n="nav_careers" href="careers.html" style="color:#cbd5e1; text-decoration:none;">Careers &amp; Opportunities</a></li>
+<li><a data-i18n="nav_donate" href="donate.html" style="color:#cbd5e1; text-decoration:none;">Donate</a></li>
+</ul>
+</div>
+<!-- COL 2: GET INVOLVED -->
+<div class="footer-col">
+<h4 data-i18n="footer_involved" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Get Involved</h4>
+<ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
+<li><a data-i18n="nav_volunteer" href="get-involved.html#volunteer" style="color:#cbd5e1; text-decoration:none;">Volunteer Application</a></li>
+<li><a data-i18n="nav_membership" href="get-involved.html#membership" style="color:#cbd5e1; text-decoration:none;">Become a Member</a></li>
+<li><a data-i18n="nav_working_groups" href="get-involved.html#working-groups" style="color:#cbd5e1; text-decoration:none;">Member Working Groups</a></li>
+<li><a data-i18n="nav_partnerships" href="get-involved.html#partnerships" style="color:#cbd5e1; text-decoration:none;">Institutional Partners</a></li>
+<li><a data-i18n="footer_burundi_site" href="https://ybspburundi.org/" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none;" target="_blank">YBSP Burundi Website ↗</a></li>
+</ul>
+</div>
+<!-- COL 3: CONTACT & SECRETARIAT -->
+<div class="footer-col">
+<h4 data-i18n="footer_contact" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Contact &amp; Secretariat</h4>
+<div style="font-size:0.9rem; color:#cbd5e1; line-height:1.8;">
+<p style="margin-bottom:12px;">📍 <strong data-i18n="footer_addr">Based in the Ottawa - Gatineau Region<br/>(Developing Partnerships Across Canada)</strong></p>
+<p style="margin-bottom:12px;">✉️ <a href="mailto:info@ybspcanada.org" style="color:#60a5fa; text-decoration:none;">info@ybspcanada.org</a></p>
+<p style="margin:0;">🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
+</div>
+</div>
+</div>
+<!-- BOTTOM SECTION: COPYRIGHT (LEFT) & FOLLOW US (RIGHT) -->
+<div class="footer-bottom-bar" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
+<!-- BOTTOM LEFT: COPYRIGHT -->
+<div class="footer-copyright" style="font-size:0.86rem; color:#94a3b8; text-align:left;">
+          © 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
         </div>
-      </div>
-    </div>
-  </section>
-    <!-- UNIVERSAL FOOTER -->
-    <!-- UNIVERSAL LIVE FOOTER (EXACT LIVE SITE LAYOUT & LABELS) -->
-  <footer class="main-footer" style="background:#061124; color:#ffffff; padding:65px 0 30px; border-top:3px solid var(--secondary);">
-    <div class="container">
-      
-      <!-- 3 COLUMNS: QUICK LINKS, GET INVOLVED, CONTACT & SECRETARIAT -->
-      <div class="footer-grid" style="margin-bottom:50px;">
-        
-        <!-- COL 1: QUICK LINKS -->
-        <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_quick_links">Quick Links</h4>
-          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
-            <li><a href="index.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_home">Home</a></li>
-            <li><a href="about.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_about">About Us & Governance</a></li>
-            <li><a href="programs.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_programs">Programs & AI Skills</a></li>
-            <li><a href="events.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_events">Events & Community</a></li>
-            <li><a href="news.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_news">News & Media Library</a></li>
-            <li><a href="careers.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_careers">Careers & Opportunities</a></li>
-            <li><a href="donate.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_donate">Donate</a></li>
-          </ul>
-        </div>
-
-        <!-- COL 2: GET INVOLVED -->
-        <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_involved">Get Involved</h4>
-          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
-            <li><a href="get-involved.html#volunteer" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_volunteer">Volunteer Application</a></li>
-            <li><a href="get-involved.html#membership" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_membership">Become a Member</a></li>
-            <li><a href="get-involved.html#working-groups" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_working_groups">Member Working Groups</a></li>
-            <li><a href="get-involved.html#partnerships" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_partnerships">Institutional Partners</a></li>
-            <li><a href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none;" data-i18n="footer_burundi_site">YBSP Burundi Website ↗</a></li>
-          </ul>
-        </div>
-
-        <!-- COL 3: CONTACT & SECRETARIAT -->
-        <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_contact">Contact & Secretariat</h4>
-          <div style="font-size:0.9rem; color:#cbd5e1; line-height:1.8;">
-            <p style="margin-bottom:12px;">📍 <strong data-i18n="footer_addr">Based in the Ottawa - Gatineau Region<br>(Developing Partnerships Across Canada)</strong></p>
-            <p style="margin-bottom:12px;">✉️ <a href="mailto:info@ybspcanada.org" style="color:#60a5fa; text-decoration:none;">info@ybspcanada.org</a></p>
-            <p style="margin:0;">🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- BOTTOM SECTION: COPYRIGHT (LEFT) & FOLLOW US (RIGHT) -->
-      <div class="footer-bottom-bar" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
-        
-        <!-- BOTTOM LEFT: COPYRIGHT -->
-        <div class="footer-copyright" style="font-size:0.86rem; color:#94a3b8; text-align:left;">
-          &copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
-        </div>
-
-        <!-- BOTTOM RIGHT: FOLLOW US -->
-        <div class="footer-social-wrap" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
-          <span style="font-size:0.85rem; font-weight:800; color:#ffffff; text-transform:uppercase; letter-spacing:0.08em;" data-i18n="lbl_follow_us">Follow us</span>
-          <div style="display:flex; align-items:center; gap:10px;">
-            <a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on X (Twitter)">𝕏</a>
-            <a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on Facebook">FB</a>
-            <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on Instagram">IG</a>
-            <a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on TikTok">TT</a>
-            <a href="https://www.snapchat.com/add/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Add YBSP Canada on Snapchat">SC</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </footer>
-
-  <script>
+<!-- BOTTOM RIGHT: FOLLOW US -->
+<div class="footer-social-wrap" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+<span data-i18n="lbl_follow_us" style="font-size:0.85rem; font-weight:800; color:#ffffff; text-transform:uppercase; letter-spacing:0.08em;">Follow us</span>
+<div style="display:flex; align-items:center; gap:10px;">
+<a href="https://x.com/ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on X (Twitter)">𝕏</a>
+<a href="https://www.facebook.com/ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on Facebook">FB</a>
+<a href="https://www.instagram.com/ybspcanada/" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on Instagram">IG</a>
+<a href="https://www.tiktok.com/@ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on TikTok">TT</a>
+<a href="https://www.snapchat.com/add/ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Add YBSP Canada on Snapchat">SC</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
     
 
       // Universal Mobile Navigation Handler
@@ -1971,7 +1930,7 @@
         nav_host: "Host or Propose an Event",
         nav_gala: "Annual Solidarity Gala",
         nav_gallery: "Authentic Photo Gallery",
-        tagline: "Uniting youth. Building synergy. Ending poverty.",
+        tagline: "Building practical opportunity where barriers are highest.",
         nav_home: "Home",
         nav_about: "About",
         nav_story: "Our Story",

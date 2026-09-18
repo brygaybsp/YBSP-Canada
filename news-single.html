@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Article | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
-  <meta name="description" content="Read full news articles and impact dispatches from YBSP Canada.">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title id="page-title">Article | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
+<meta content="Read full news articles and impact dispatches from YBSP Canada." name="description"/>
+<style>
     :root {
       --primary: #0d2b45;
       --primary-dark: #071927;
@@ -408,7 +409,7 @@
 
       /* Specificity-proof dropdown visibility */
       #main-nav-menu .nav-item.has-dropdown.is-expanded > .dropdown-menu,
-      .nav-menu .nav-item.has-dropdown.is-expanded > .dropdown-menu {
+      .nav-menu .nav-item.has-dropdown.is-expanded > .dropdown-menu { min-width: 320px; width: max-content; max-width: 390px; 
         display: block !important;
         opacity: 1 !important;
         visibility: visible !important;
@@ -499,7 +500,7 @@
         color: var(--secondary) !important;
       }
             .nav-menu .dropdown-menu,
-      #main-nav-menu .dropdown-menu {
+      #main-nav-menu .dropdown-menu { min-width: 320px; width: max-content; max-width: 390px; 
         position: static !important;
         box-shadow: none !important;
         border: none !important;
@@ -516,7 +517,7 @@
         box-sizing: border-box !important;
         transition: all 0.25s ease-in-out !important;
       }
-      .nav-item.has-dropdown.is-expanded > .dropdown-menu {
+      .nav-item.has-dropdown.is-expanded > .dropdown-menu { min-width: 320px; width: max-content; max-width: 390px; 
         display: block !important;
         opacity: 1 !important;
         visibility: visible !important;
@@ -809,36 +810,33 @@
   </style>
 </head>
 <body>
+<!-- TOP UTILITY BAR -->
+<!-- MAIN NAVIGATION -->
+<!-- TOP RIGHT UTILITY BAR: LANGUAGE SWITCHER AT THE VERY TOP RIGHT, DIRECTLY ABOVE DONATE -->
+<div class="top-utility-bar" style="background:#0b1c3d; border-bottom:1px solid rgba(255,255,255,0.08); padding:5px 0;">
+<div class="container" style="display:flex; justify-content:flex-end; align-items:center;">
+<div class="lang-switcher" style="display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.12); padding:2px 6px; border-radius:4px;">
+<button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" style="border:none; background:var(--secondary); color:#ffffff; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="English">EN</button>
+<span style="color:#94a3b8; font-size:0.75rem; margin:0 2px;">|</span>
+<button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')" style="border:none; background:transparent; color:#cbd5e1; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="Français">FR</button>
+</div>
+</div>
+</div>
+<header class="main-header">
+<div class="nav-container nav-inner">
+<a class="brand-logo" href="index.html">
+<div class="logo-symbol">Y</div>
+<div class="logo-text">
+<h1>YBSP CANADA</h1>
 
-    <!-- TOP UTILITY BAR -->
-  <!-- MAIN NAVIGATION -->
-    <!-- TOP RIGHT UTILITY BAR: LANGUAGE SWITCHER AT THE VERY TOP RIGHT, DIRECTLY ABOVE DONATE -->
-  <div class="top-utility-bar" style="background:#0b1c3d; border-bottom:1px solid rgba(255,255,255,0.08); padding:5px 0;">
-    <div class="container" style="display:flex; justify-content:flex-end; align-items:center;">
-      <div class="lang-switcher" style="display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.12); padding:2px 6px; border-radius:4px;">
-        <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" style="border:none; background:var(--secondary); color:#ffffff; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="English">EN</button>
-        <span style="color:#94a3b8; font-size:0.75rem; margin:0 2px;">|</span>
-        <button class="lang-btn" id="btn-lang-fr" onclick="setLanguage('fr')" style="border:none; background:transparent; color:#cbd5e1; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="Français">FR</button>
-      </div>
-    </div>
-  </div>
-  <header class="main-header">
-    <div class="nav-container nav-inner">
-      <a href="index.html" class="brand-logo">
-        <div class="logo-symbol">Y</div>
-        <div class="logo-text">
-          <h1>YBSP CANADA</h1>
-          <span data-i18n="tagline">Youth Building in Synergy to end Poverty</span>
-        </div>
-      </a>
-
-                        <nav aria-label="Primary Navigation" class="nav-menu" id="main-nav-menu">
+</div>
+</a>
+<nav aria-label="Primary Navigation" class="nav-menu" id="main-nav-menu">
 <div class="nav-item"><a class="nav-link" data-i18n="nav_home" href="index.html">Home</a></div>
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="about.html">
 <span data-i18n="nav_about">About Us</span>
-
-</a><button aria-expanded="false" aria-label="Toggle About Us submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle About Us submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_mission" href="about.html#mission">Mission &amp; Mandate</a>
 <a class="dropdown-link" data-i18n="nav_team" href="about.html#team">Executive Leadership</a>
@@ -850,8 +848,7 @@
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="programs.html">
 <span data-i18n="nav_programs">Programs</span>
-
-</a><button aria-expanded="false" aria-label="Toggle Programs submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle Programs submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_community_support" href="programs.html#community-support">Community Support &amp; Poverty Relief</a>
 <a class="dropdown-link" data-i18n="nav_education_skills" href="programs.html#education-skills">Education, Skills &amp; Youth Opportunity</a>
@@ -863,8 +860,7 @@
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="get-involved.html">
 <span data-i18n="nav_involved">Get Involved</span>
-
-</a><button aria-expanded="false" aria-label="Toggle Get Involved submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle Get Involved submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_volunteer" href="get-involved.html#volunteer">Volunteer Application</a>
 <a class="dropdown-link" data-i18n="nav_membership" href="get-involved.html#membership">Become a Member</a>
@@ -875,8 +871,7 @@
 <div class="nav-item has-dropdown">
 <div class="nav-item-header"><a class="nav-link" href="events.html">
 <span data-i18n="nav_events">Events</span>
-
-</a><button aria-expanded="false" aria-label="Toggle Events submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewBox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
+</a><button aria-expanded="false" aria-label="Toggle Events submenu" class="dropdown-toggle-btn" type="button"><svg aria-hidden="true" class="nav-arrow" height="12" viewbox="0 0 12 12" width="12"><path d="M4 2.5 L8.5 6 L4 9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button></div>
 <div class="dropdown-menu">
 <a class="dropdown-link" data-i18n="nav_calendar" href="events.html#calendar">Events Calendar</a>
 <a class="dropdown-link" data-i18n="nav_host" href="events.html#host">Host or Propose an Event</a>
@@ -890,127 +885,110 @@
 <!-- ONE-LINE DONATE BUTTON -->
 <a class="btn-donate-nav" data-i18n="nav_donate" href="donate.html" style="white-space:nowrap !important; display:inline-flex !important; align-items:center !important; justify-content:center !important;">Donate</a>
 </nav>
-                  <button class="nav-toggle-btn" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav(event)">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- MAIN ARTICLE CONTAINER -->
-  <main class="container">
-    <article class="article-header">
-      <div class="breadcrumbs">
-        <a href="index.html" data-i18n="crumb_home">Home</a> &nbsp;/&nbsp; 
-        <a href="news.html" data-i18n="crumb_news">News & Impact</a> &nbsp;/&nbsp; 
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="nav-toggle-btn" id="mobileNavToggle" onclick="toggleMobileNav(event)">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</header>
+<!-- MAIN ARTICLE CONTAINER -->
+<main class="container">
+<article class="article-header">
+<div class="breadcrumbs">
+<a data-i18n="crumb_home" href="index.html">Home</a>  /  
+        <a data-i18n="crumb_news" href="news.html">News &amp; Impact</a>  /  
         <span id="breadcrumb-title">Article</span>
-      </div>
-      <span class="article-tag" id="article-tag">Category</span>
-      <h2 class="article-main-title" id="article-title">Loading Article...</h2>
-      <div class="article-meta-bar">
-        <span>📅 <span id="article-date">Date</span></span>
-        <span>⏱️ <span id="article-read-time">5 min read</span></span>
-        <span>✍️ <span id="article-author">YBSP Canada Secretariat</span></span>
-      </div>
-    </article>
-
-    <div class="article-body">
-      <img id="article-img" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Article Cover" class="article-hero-img">
-
-      <div class="article-lead" id="article-lead">
+</div>
+<span class="article-tag" id="article-tag">Category</span>
+<h2 class="article-main-title" id="article-title">Loading Article...</h2>
+<div class="article-meta-bar">
+<span>📅 <span id="article-date">Date</span></span>
+<span>⏱️ <span id="article-read-time">5 min read</span></span>
+<span>✍️ <span id="article-author">YBSP Canada Secretariat</span></span>
+</div>
+</article>
+<div class="article-body">
+<img alt="Article Cover" class="article-hero-img" id="article-img" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"/>
+<div class="article-lead" id="article-lead">
         Loading excerpt...
       </div>
-
-      <div id="article-content">
-        <!-- Injected dynamic content paragraphs -->
-      </div>
-
-      <div class="article-cta" id="article-cta-box">
-        <h4 id="cta-heading">Support This Work</h4>
-        <p id="cta-text">Join our Canadian youth cohorts or contribute to direct community initiatives in Burundi.</p>
-        <a href="get-involved.html" class="btn-cta" id="cta-btn">Get Involved →</a>
-      </div>
-
-      <div class="back-btn-wrap">
-        <a href="news.html" class="btn-back">← <span data-i18n="btn_back_all">Back to All Articles</span></a>
-        <a href="donate.html" style="font-weight:700; color:var(--accent-hover);" data-i18n="link_support_story">Support This Initiative →</a>
-      </div>
-    </div>
-  </main>
-
-    <!-- UNIVERSAL FOOTER -->
-    <!-- UNIVERSAL LIVE FOOTER (EXACT LIVE SITE LAYOUT & LABELS) -->
-  <footer class="main-footer" style="background:#061124; color:#ffffff; padding:65px 0 30px; border-top:3px solid var(--secondary);">
-    <div class="container">
-      
-      <!-- 3 COLUMNS: QUICK LINKS, GET INVOLVED, CONTACT & SECRETARIAT -->
-      <div class="footer-grid" style="margin-bottom:50px;">
-        
-        <!-- COL 1: QUICK LINKS -->
-        <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_quick_links">Quick Links</h4>
-          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
-            <li><a href="index.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_home">Home</a></li>
-            <li><a href="about.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_about">About Us & Governance</a></li>
-            <li><a href="programs.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_programs">Programs & AI Skills</a></li>
-            <li><a href="events.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_events">Events & Community</a></li>
-            <li><a href="news.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_news">News & Media Library</a></li>
-            <li><a href="careers.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_careers">Careers & Opportunities</a></li>
-            <li><a href="donate.html" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_donate">Donate</a></li>
-          </ul>
+<div id="article-content">
+<!-- Injected dynamic content paragraphs -->
+</div>
+<div class="article-cta" id="article-cta-box">
+<h4 id="cta-heading">Support This Work</h4>
+<p id="cta-text">Join our Canadian youth cohorts or contribute to direct community initiatives in Burundi.</p>
+<a class="btn-cta" href="get-involved.html" id="cta-btn">Get Involved →</a>
+</div>
+<div class="back-btn-wrap">
+<a class="btn-back" href="news.html">← <span data-i18n="btn_back_all">Back to All Articles</span></a>
+<a data-i18n="link_support_story" href="donate.html" style="font-weight:700; color:var(--accent-hover);">Support This Initiative →</a>
+</div>
+</div>
+</main>
+<!-- UNIVERSAL FOOTER -->
+<!-- UNIVERSAL LIVE FOOTER (EXACT LIVE SITE LAYOUT & LABELS) -->
+<footer class="main-footer" style="background:#061124; color:#ffffff; padding:65px 0 30px; border-top:3px solid var(--secondary);">
+<div class="container">
+<!-- 3 COLUMNS: QUICK LINKS, GET INVOLVED, CONTACT & SECRETARIAT -->
+<div class="footer-grid" style="margin-bottom:50px;">
+<!-- COL 1: QUICK LINKS -->
+<div class="footer-col">
+<h4 data-i18n="footer_quick_links" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Quick Links</h4>
+<ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
+<li><a data-i18n="nav_home" href="index.html" style="color:#cbd5e1; text-decoration:none;">Home</a></li>
+<li><a data-i18n="nav_about" href="about.html" style="color:#cbd5e1; text-decoration:none;">About Us &amp; Governance</a></li>
+<li><a data-i18n="nav_programs" href="programs.html" style="color:#cbd5e1; text-decoration:none;">Programs &amp; AI Skills</a></li>
+<li><a data-i18n="nav_events" href="events.html" style="color:#cbd5e1; text-decoration:none;">Events &amp; Community</a></li>
+<li><a data-i18n="nav_news" href="news.html" style="color:#cbd5e1; text-decoration:none;">News &amp; Media Library</a></li>
+<li><a data-i18n="nav_careers" href="careers.html" style="color:#cbd5e1; text-decoration:none;">Careers &amp; Opportunities</a></li>
+<li><a data-i18n="nav_donate" href="donate.html" style="color:#cbd5e1; text-decoration:none;">Donate</a></li>
+</ul>
+</div>
+<!-- COL 2: GET INVOLVED -->
+<div class="footer-col">
+<h4 data-i18n="footer_involved" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Get Involved</h4>
+<ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
+<li><a data-i18n="nav_volunteer" href="get-involved.html#volunteer" style="color:#cbd5e1; text-decoration:none;">Volunteer Application</a></li>
+<li><a data-i18n="nav_membership" href="get-involved.html#membership" style="color:#cbd5e1; text-decoration:none;">Become a Member</a></li>
+<li><a data-i18n="nav_working_groups" href="get-involved.html#working-groups" style="color:#cbd5e1; text-decoration:none;">Member Working Groups</a></li>
+<li><a data-i18n="nav_partnerships" href="get-involved.html#partnerships" style="color:#cbd5e1; text-decoration:none;">Institutional Partners</a></li>
+<li><a data-i18n="footer_burundi_site" href="https://ybspburundi.org/" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none;" target="_blank">YBSP Burundi Website ↗</a></li>
+</ul>
+</div>
+<!-- COL 3: CONTACT & SECRETARIAT -->
+<div class="footer-col">
+<h4 data-i18n="footer_contact" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Contact &amp; Secretariat</h4>
+<div style="font-size:0.9rem; color:#cbd5e1; line-height:1.8;">
+<p style="margin-bottom:12px;">📍 <strong data-i18n="footer_addr">Based in the Ottawa - Gatineau Region<br/>(Developing Partnerships Across Canada)</strong></p>
+<p style="margin-bottom:12px;">✉️ <a href="mailto:info@ybspcanada.org" style="color:#60a5fa; text-decoration:none;">info@ybspcanada.org</a></p>
+<p style="margin:0;">🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
+</div>
+</div>
+</div>
+<!-- BOTTOM SECTION: COPYRIGHT (LEFT) & FOLLOW US (RIGHT) -->
+<div class="footer-bottom-bar" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
+<!-- BOTTOM LEFT: COPYRIGHT -->
+<div class="footer-copyright" style="font-size:0.86rem; color:#94a3b8; text-align:left;">
+          © 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
         </div>
-
-        <!-- COL 2: GET INVOLVED -->
-        <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_involved">Get Involved</h4>
-          <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
-            <li><a href="get-involved.html#volunteer" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_volunteer">Volunteer Application</a></li>
-            <li><a href="get-involved.html#membership" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_membership">Become a Member</a></li>
-            <li><a href="get-involved.html#working-groups" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_working_groups">Member Working Groups</a></li>
-            <li><a href="get-involved.html#partnerships" style="color:#cbd5e1; text-decoration:none;" data-i18n="nav_partnerships">Institutional Partners</a></li>
-            <li><a href="https://ybspburundi.org/" target="_blank" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none;" data-i18n="footer_burundi_site">YBSP Burundi Website ↗</a></li>
-          </ul>
-        </div>
-
-        <!-- COL 3: CONTACT & SECRETARIAT -->
-        <div class="footer-col">
-          <h4 style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;" data-i18n="footer_contact">Contact & Secretariat</h4>
-          <div style="font-size:0.9rem; color:#cbd5e1; line-height:1.8;">
-            <p style="margin-bottom:12px;">📍 <strong data-i18n="footer_addr">Based in the Ottawa - Gatineau Region<br>(Developing Partnerships Across Canada)</strong></p>
-            <p style="margin-bottom:12px;">✉️ <a href="mailto:info@ybspcanada.org" style="color:#60a5fa; text-decoration:none;">info@ybspcanada.org</a></p>
-            <p style="margin:0;">🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- BOTTOM SECTION: COPYRIGHT (LEFT) & FOLLOW US (RIGHT) -->
-      <div class="footer-bottom-bar" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
-        
-        <!-- BOTTOM LEFT: COPYRIGHT -->
-        <div class="footer-copyright" style="font-size:0.86rem; color:#94a3b8; text-align:left;">
-          &copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
-        </div>
-
-        <!-- BOTTOM RIGHT: FOLLOW US -->
-        <div class="footer-social-wrap" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
-          <span style="font-size:0.85rem; font-weight:800; color:#ffffff; text-transform:uppercase; letter-spacing:0.08em;" data-i18n="lbl_follow_us">Follow us</span>
-          <div style="display:flex; align-items:center; gap:10px;">
-            <a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on X (Twitter)">𝕏</a>
-            <a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on Facebook">FB</a>
-            <a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on Instagram">IG</a>
-            <a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Follow YBSP Canada on TikTok">TT</a>
-            <a href="https://www.snapchat.com/add/ybspcanada" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" title="Add YBSP Canada on Snapchat">SC</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </footer>
-
-  <!-- ARTICLE DATA & BILINGUAL SCRIPT -->
-  <script>
+<!-- BOTTOM RIGHT: FOLLOW US -->
+<div class="footer-social-wrap" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+<span data-i18n="lbl_follow_us" style="font-size:0.85rem; font-weight:800; color:#ffffff; text-transform:uppercase; letter-spacing:0.08em;">Follow us</span>
+<div style="display:flex; align-items:center; gap:10px;">
+<a href="https://x.com/ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on X (Twitter)">𝕏</a>
+<a href="https://www.facebook.com/ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on Facebook">FB</a>
+<a href="https://www.instagram.com/ybspcanada/" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on Instagram">IG</a>
+<a href="https://www.tiktok.com/@ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Follow YBSP Canada on TikTok">TT</a>
+<a href="https://www.snapchat.com/add/ybspcanada" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); color:#ffffff; text-decoration:none; font-weight:800; font-size:0.9rem; transition:background 0.2s;" target="_blank" title="Add YBSP Canada on Snapchat">SC</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- ARTICLE DATA & BILINGUAL SCRIPT -->
+<script>
     const articlesData = {
       1: {
         en: {
@@ -1033,10 +1011,28 @@
         nav_gala: "Annual Solidarity Gala",
         nav_gallery: "Authentic Photo Gallery",
         crumb_home: "Home",
+        nav_community_support: "Community Support & Poverty Relief",
+        nav_education_skills: "Education, Skills & Youth Opportunity",
+        nav_self_sufficiency: "Pathways to Self-Sufficiency",
+        footer_quick_links: "Quick Links",
+        footer_involved: "Get Involved",
+        footer_addr: "Based in the Ottawa - Gatineau Region<br>(Developing Partnerships Across Canada)",
+        footer_burundi_site: "YBSP Burundi Website ↗",
+        footer_scope: "Serving Youth Communities in Both Official Languages",
+        lbl_follow_us: "Follow us",
         crumb_news: "News",
         btn_back_all: "← Back to all news",
         link_support_story: "Support community opportunity →",
-        tagline: "Uniting youth. Building synergy. Ending poverty.",
+        tagline: "Building practical opportunity where barriers are highest.",
+                nav_community_support: "Community Support & Poverty Relief",
+        nav_education_skills: "Education, Skills & Youth Opportunity",
+        nav_self_sufficiency: "Pathways to Self-Sufficiency",
+        footer_quick_links: "Quick Links",
+        footer_involved: "Get Involved",
+        footer_addr: "Based in the Ottawa - Gatineau Region<br>(Developing Partnerships Across Canada)",
+        footer_burundi_site: "YBSP Burundi Website ↗",
+        footer_scope: "Serving Youth Communities in Both Official Languages",
+        lbl_follow_us: "Follow us",
         nav_home: "Home",
         nav_about: "About",
         nav_story: "Our Story",
@@ -1101,6 +1097,26 @@
           ctaBtn: "Apply for Mentorship →"
         },
         fr: {
+        nav_community_support: "Soutien communautaire & Secours alimentaire",
+        nav_education_skills: "Éducation, compétences & Possibilités jeunesse",
+        nav_self_sufficiency: "Chemins vers l'autonomie",
+        footer_quick_links: "Liens rapides",
+        footer_involved: "S'impliquer",
+        footer_addr: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
+        footer_burundi_site: "Site web YBSP Burundi ↗",
+        footer_scope: "Au service des communautés jeunesse dans les deux langues officielles",
+        lbl_follow_us: "Suivez-nous",
+
+      nav_community_support: "Soutien communautaire & Secours alimentaire",
+      nav_education_skills: "Éducation, compétences & Possibilités jeunesse",
+      nav_self_sufficiency: "Chemins vers l'autonomie",
+      footer_quick_links: "Liens rapides",
+      footer_involved: "S'impliquer",
+      footer_addr: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
+      footer_burundi_site: "Site web YBSP Burundi ↗",
+      footer_scope: "Au service des communautés jeunesse dans les deux langues officielles",
+      lbl_follow_us: "Suivez-nous",
+
         nav_programs: "Programmes",
         nav_burundi_prog: "International / Burundi",
         nav_sdgs: "Référence ODD de l'ONU",
@@ -1121,10 +1137,28 @@
         lbl_follow_us: "Suivez-nous",
         footer_transparency: "Transparence corporative",
         crumb_home: "Accueil",
+        nav_community_support: "Soutien communautaire & Secours alimentaire",
+        nav_education_skills: "Éducation, compétences & Possibilités jeunesse",
+        nav_self_sufficiency: "Chemins vers l'autonomie",
+        footer_quick_links: "Liens rapides",
+        footer_involved: "S'impliquer",
+        footer_addr: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
+        footer_burundi_site: "Site web YBSP Burundi ↗",
+        footer_scope: "Au service des communautés jeunesse dans les deux langues officielles",
+        lbl_follow_us: "Suivez-nous",
         crumb_news: "Nouvelles",
         btn_back_all: "← Retour aux actualités",
         link_support_story: "Soutenir nos initiatives →",
         tagline: "Unir la jeunesse. Bâtir la synergie. Vaincre la précarité.",
+                nav_community_support: "Soutien communautaire & Secours alimentaire",
+        nav_education_skills: "Éducation, compétences & Possibilités jeunesse",
+        nav_self_sufficiency: "Chemins vers l'autonomie",
+        footer_quick_links: "Liens rapides",
+        footer_involved: "S'impliquer",
+        footer_addr: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
+        footer_burundi_site: "Site web YBSP Burundi ↗",
+        footer_scope: "Au service des communautés jeunesse dans les deux langues officielles",
+        lbl_follow_us: "Suivez-nous",
         nav_home: "Accueil",
         nav_about: "À propos",
         nav_story: "Notre histoire",
@@ -1216,6 +1250,16 @@
           ctaBtn: "Donate to Burundi Projects →"
         },
         fr: {
+        nav_community_support: "Soutien communautaire & Secours alimentaire",
+        nav_education_skills: "Éducation, compétences & Possibilités jeunesse",
+        nav_self_sufficiency: "Chemins vers l'autonomie",
+        footer_quick_links: "Liens rapides",
+        footer_involved: "S'impliquer",
+        footer_addr: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
+        footer_burundi_site: "Site web YBSP Burundi ↗",
+        footer_scope: "Au service des communautés jeunesse dans les deux langues officielles",
+        lbl_follow_us: "Suivez-nous",
+
         crumb_home: "Accueil",
         crumb_news: "Nouvelles",
         btn_back_all: "← Retour aux actualités",
@@ -1266,6 +1310,16 @@
           ctaBtn: "View About & Governance →"
         },
         fr: {
+        nav_community_support: "Soutien communautaire & Secours alimentaire",
+        nav_education_skills: "Éducation, compétences & Possibilités jeunesse",
+        nav_self_sufficiency: "Chemins vers l'autonomie",
+        footer_quick_links: "Liens rapides",
+        footer_involved: "S'impliquer",
+        footer_addr: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
+        footer_burundi_site: "Site web YBSP Burundi ↗",
+        footer_scope: "Au service des communautés jeunesse dans les deux langues officielles",
+        lbl_follow_us: "Suivez-nous",
+
         crumb_home: "Accueil",
         crumb_news: "Nouvelles",
         btn_back_all: "← Retour aux actualités",
@@ -1299,7 +1353,7 @@
           img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
           lead: "Over 80 young volunteers gathered along the Ottawa River watershed to remove 450 kg of waste, combining practical ecological action with peer conversations on youth wellness.",
           content: `
-            <p>Carrying out the environmental sustainability mandate outlined in our federal Letters Patent, YBSP Canada organized a cross-river shoreline stewardship day uniting youth from Ottawa and Gatineau.</p>
+            <p>Carrying out the environmental sustainability mandate outlined in our federal Letters Patent, YBSP Canada organized a cross-river shoreline stewardship day bringing together youth from Ottawa and Gatineau.</p>
             <p>Equipped with gloves and eco-sorting bags, volunteer teams tackled high-debris sections along the Ottawa River, restoring vulnerable riparian habitats and demonstrating youth leadership in urban climate resilience.</p>
           `,
           ctaTitle: "Participate in Next Action",
@@ -1307,6 +1361,16 @@
           ctaBtn: "Sign Up as Volunteer →"
         },
         fr: {
+        nav_community_support: "Soutien communautaire & Secours alimentaire",
+        nav_education_skills: "Éducation, compétences & Possibilités jeunesse",
+        nav_self_sufficiency: "Chemins vers l'autonomie",
+        footer_quick_links: "Liens rapides",
+        footer_involved: "S'impliquer",
+        footer_addr: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
+        footer_burundi_site: "Site web YBSP Burundi ↗",
+        footer_scope: "Au service des communautés jeunesse dans les deux langues officielles",
+        lbl_follow_us: "Suivez-nous",
+
         crumb_home: "Accueil",
         crumb_news: "Nouvelles",
         btn_back_all: "← Retour aux actualités",
@@ -1346,6 +1410,16 @@
           ctaBtn: "Support Our Mission →"
         },
         fr: {
+        nav_community_support: "Soutien communautaire & Secours alimentaire",
+        nav_education_skills: "Éducation, compétences & Possibilités jeunesse",
+        nav_self_sufficiency: "Chemins vers l'autonomie",
+        footer_quick_links: "Liens rapides",
+        footer_involved: "S'impliquer",
+        footer_addr: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
+        footer_burundi_site: "Site web YBSP Burundi ↗",
+        footer_scope: "Au service des communautés jeunesse dans les deux langues officielles",
+        lbl_follow_us: "Suivez-nous",
+
         crumb_home: "Accueil",
         crumb_news: "Nouvelles",
         btn_back_all: "← Retour aux actualités",
@@ -1385,6 +1459,16 @@
           ctaBtn: "View Events Calendar →"
         },
         fr: {
+        nav_community_support: "Soutien communautaire & Secours alimentaire",
+        nav_education_skills: "Éducation, compétences & Possibilités jeunesse",
+        nav_self_sufficiency: "Chemins vers l'autonomie",
+        footer_quick_links: "Liens rapides",
+        footer_involved: "S'impliquer",
+        footer_addr: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
+        footer_burundi_site: "Site web YBSP Burundi ↗",
+        footer_scope: "Au service des communautés jeunesse dans les deux langues officielles",
+        lbl_follow_us: "Suivez-nous",
+
         crumb_home: "Accueil",
         crumb_news: "Nouvelles",
         btn_back_all: "← Retour aux actualités",
@@ -1555,11 +1639,21 @@
 
     const translations = {
       en: {
+        nav_community_support: "Community Support & Poverty Relief",
+        nav_education_skills: "Education, Skills & Youth Opportunity",
+        nav_self_sufficiency: "Pathways to Self-Sufficiency",
+        footer_quick_links: "Quick Links",
+        footer_involved: "Get Involved",
+        footer_addr: "Based in the Ottawa - Gatineau Region<br>(Developing Partnerships Across Canada)",
+        footer_burundi_site: "YBSP Burundi Website ↗",
+        footer_scope: "Serving Youth Communities in Both Official Languages",
+        lbl_follow_us: "Follow us",
+
         crumb_home: "Home",
         crumb_news: "News",
         btn_back_all: "← Back to all news",
         link_support_story: "Support community opportunity →",
-        tagline: "Uniting youth. Building synergy. Ending poverty.",
+        tagline: "Building practical opportunity where barriers are highest.",
         nav_home: "Home",
         nav_about: "About Us",
         nav_mission: "Mission & Mandate",
@@ -1599,6 +1693,16 @@
         footer_transparency: "Corporate Transparency"
       },
       fr: {
+        nav_community_support: "Soutien communautaire & Secours alimentaire",
+        nav_education_skills: "Éducation, compétences & Possibilités jeunesse",
+        nav_self_sufficiency: "Chemins vers l'autonomie",
+        footer_quick_links: "Liens rapides",
+        footer_involved: "S'impliquer",
+        footer_addr: "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
+        footer_burundi_site: "Site web YBSP Burundi ↗",
+        footer_scope: "Au service des communautés jeunesse dans les deux langues officielles",
+        lbl_follow_us: "Suivez-nous",
+
         crumb_home: "Accueil",
         crumb_news: "Nouvelles",
         btn_back_all: "← Retour aux actualités",
@@ -1711,6 +1815,5 @@
 
     
   </script>
-
 </body>
 </html>
