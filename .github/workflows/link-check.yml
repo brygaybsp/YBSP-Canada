@@ -1,6 +1,8 @@
 name: Link check
 
 on:
+  pull_request:
+    branches: [main]
   schedule:
     # Every Monday at 09:00 UTC (05:00 EDT / 04:00 EST)
     - cron: "0 9 * * 1"
