@@ -98,6 +98,7 @@ jobs:
           TOPIC: ${{ inputs.topic }}
         run: |
           gh issue create \
+                      --repo ${{ github.repository }} \
             --title "Content draft: $TOPIC" \
             --body-file draft.md \
             --label "content-draft"
