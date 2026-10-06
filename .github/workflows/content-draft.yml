@@ -18,7 +18,7 @@ on:
         type: string
 
 env:
-  GEMINI_MODEL: gemini-2.5-flash
+  GEMINI_MODEL: gemini-3.5-flash
 
 jobs:
   draft:
@@ -37,7 +37,7 @@ jobs:
           import json, os, urllib.request
 
           api_key = os.environ["GEMINI_API_KEY"]
-          model = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+          model = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
           topic = os.environ["TOPIC"]
           campaign = os.environ.get("CAMPAIGN") or "N/A"
           cta = os.environ.get("CTA") or "N/A"
