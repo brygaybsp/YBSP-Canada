@@ -1,4 +1,3 @@
----
 name: Content drafter
 
 on:
@@ -18,7 +17,7 @@ on:
         type: string
 
 env:
-  GEMINI_MODEL: gemini-3.5-flash
+  GROQ_MODEL: llama-3.3-70b-versatile
 
 jobs:
   draft:
@@ -26,18 +25,18 @@ jobs:
     permissions:
       issues: write
     steps:
-      - name: Generate drafts with Gemini (free tier)
+      - name: Generate drafts with Groq (free tier)
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           TOPIC: ${{ inputs.topic }}
           CAMPAIGN: ${{ inputs.campaign }}
           CTA: ${{ inputs.call_to_action }}
         run: |
           python3 - <<'PYEOF'
-          import json, os, urllib.request
+          import json, os, urllib.request, urllib.error
 
-          api_key = os.environ["GEMINI_API_KEY"]
-          model = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
+          api_key = os.environ["GROQ_API_KEY"].strip()
+          model = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
           topic = os.environ["TOPIC"]
           campaign = os.environ.get("CAMPAIGN") or "N/A"
           cta = os.environ.get("CTA") or "N/A"
@@ -57,13 +56,25 @@ jobs:
           )
 
           req = urllib.request.Request(
-              f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key=" + api_key,
-              data=json.dumps({"contents": [{"parts": [{"text": prompt}]}]}).encode(),
-              headers={"Content-Type": "application/json"},
+              "https://api.groq.com/openai/v1/chat/completions",
+              data=json.dumps({
+                  "model": model,
+                  "messages": [{"role": "user", "content": prompt}],
+                  "temperature": 0.7,
+              }).encode(),
+              headers={
+                  "Content-Type": "application/json",
+                  "Authorization": "Bearer " + api_key,
+              },
           )
-          with urllib.request.urlopen(req, timeout=120) as r:
-              data = json.load(r)
-          text = data["candidates"][0]["content"]["parts"][0]["text"]
+          try:
+              with urllib.request.urlopen(req, timeout=120) as r:
+                  data = json.load(r)
+          except urllib.error.HTTPError as e:
+              err_body = e.read().decode("utf-8", "replace")
+              print("Groq API error:", e.code, err_body[:2000])
+              raise SystemExit(1)
+          text = data["choices"][0]["message"]["content"]
           with open("draft.md", "w") as f:
               f.write(text)
           print("Draft generated, length:", len(text))
@@ -78,4 +89,3 @@ jobs:
             --title "Content draft: $TOPIC" \
             --body-file draft.md \
             --label "content-draft"
----
