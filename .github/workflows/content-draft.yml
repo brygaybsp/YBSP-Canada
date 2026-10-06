@@ -17,7 +17,7 @@ on:
         type: string
 
 env:
-  GROQ_MODEL: llama-3.3-70b-versatile
+  GROQ_MODELS: openai/gpt-oss-120b,openai/gpt-oss-20b
 
 jobs:
   draft:
@@ -36,7 +36,8 @@ jobs:
           import json, os, urllib.request, urllib.error
 
           api_key = os.environ["GROQ_API_KEY"].strip()
-          model = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
+          models = [m.strip() for m in os.environ.get(
+              "GROQ_MODELS", "openai/gpt-oss-120b,openai/gpt-oss-20b").split(",") if m.strip()]
           topic = os.environ["TOPIC"]
           campaign = os.environ.get("CAMPAIGN") or "N/A"
           cta = os.environ.get("CTA") or "N/A"
@@ -55,32 +56,40 @@ jobs:
             "## Notes\n<one line: suggested image/graphic idea>"
           )
 
-          req = urllib.request.Request(
-              "https://api.groq.com/openai/v1/chat/completions",
-              data=json.dumps({
-                  "model": model,
-                  "messages": [{"role": "user", "content": prompt}],
-                  "temperature": 0.7,
-              }).encode(),
-              headers={
-                  "Content-Type": "application/json",
-                  "Authorization": "Bearer " + api_key,
-                  # Groq sits behind Cloudflare, which blocks Python-urllib's
-                  # default User-Agent (error 1010). Send a browser UA instead.
-                  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
-              },
-          )
-          try:
-              with urllib.request.urlopen(req, timeout=120) as r:
-                  data = json.load(r)
-          except urllib.error.HTTPError as e:
-              err_body = e.read().decode("utf-8", "replace")
-              print("Groq API error:", e.code, err_body[:2000])
+          text = None
+          for model in models:
+              req = urllib.request.Request(
+                  "https://api.groq.com/openai/v1/chat/completions",
+                  data=json.dumps({
+                      "model": model,
+                      "messages": [{"role": "user", "content": prompt}],
+                      "temperature": 0.7,
+                  }).encode(),
+                  headers={
+                      "Content-Type": "application/json",
+                      "Authorization": "Bearer " + api_key,
+                      # Groq sits behind Cloudflare, which blocks Python-urllib's
+                      # default User-Agent (error 1010). Send a browser UA instead.
+                      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+                  },
+              )
+              try:
+                  with urllib.request.urlopen(req, timeout=120) as r:
+                      data = json.load(r)
+              except urllib.error.HTTPError as e:
+                  err_body = e.read().decode("utf-8", "replace")
+                  print(f"Groq API error with {model}:", e.code, err_body[:500])
+                  if e.code == 404 and "model_not_found" in err_body:
+                      continue  # model retired; try the next one
+                  raise SystemExit(1)
+              text = data["choices"][0]["message"]["content"]
+              print(f"Draft generated with {model}, length:", len(text))
+              break
+          if text is None:
+              print("All Groq models failed (retired or no access).")
               raise SystemExit(1)
-          text = data["choices"][0]["message"]["content"]
           with open("draft.md", "w") as f:
               f.write(text)
-          print("Draft generated, length:", len(text))
           PYEOF
 
       - name: Open draft issue for review
