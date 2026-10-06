@@ -17,7 +17,9 @@ jobs:
       - name: Check links with lychee
         uses: lycheeverse/lychee-action@v2
         with:
-          # Scan every HTML file, including #anchor fragment links
-          args: "--verbose --no-progress --include-fragments './**/*.html'"
+          # Scan every HTML file, including #anchor fragment links.
+          # x.com is excluded: X returns 403 to all automated scanners
+          # (anti-bot), so it can only be verified manually.
+          args: "--verbose --no-progress --include-fragments --exclude 'x.com' './**/*.html'"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
