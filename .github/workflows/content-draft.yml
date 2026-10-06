@@ -1,0 +1,81 @@
+---
+name: Content drafter
+
+on:
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: "Topic or brief (what is this post about?)"
+        required: true
+        type: string
+      campaign:
+        description: "Campaign or event name (optional)"
+        required: false
+        type: string
+      call_to_action:
+        description: "Call to action, e.g. Register at ybspcanada.org/events (optional)"
+        required: false
+        type: string
+
+env:
+  GEMINI_MODEL: gemini-2.5-flash
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Generate drafts with Gemini (free tier)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TOPIC: ${{ inputs.topic }}
+          CAMPAIGN: ${{ inputs.campaign }}
+          CTA: ${{ inputs.call_to_action }}
+        run: |
+          python3 - <<'PYEOF'
+          import json, os, urllib.request
+
+          api_key = os.environ["GEMINI_API_KEY"]
+          model = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+          topic = os.environ["TOPIC"]
+          campaign = os.environ.get("CAMPAIGN") or "N/A"
+          cta = os.environ.get("CTA") or "N/A"
+
+          prompt = (
+            "You are the bilingual content strategist for YBSP Canada (Youth Building in Synergy to end Poverty), "
+            "a federally incorporated Canadian nonprofit empowering youth in Gatineau/Ottawa through education, "
+            "mentorship, and community programs. Website: ybspcanada.org. Tone: warm, professional, hopeful, "
+            "community-driven. Never use em dashes. Write everything in English AND Canadian French.\n\n"
+            f"TOPIC: {topic}\nCAMPAIGN: {campaign}\nCALL TO ACTION: {cta}\n\n"
+            "Return ONLY the drafts using exactly this markdown structure:\n\n"
+            "## EN - Facebook/LinkedIn\n<130 words, 2-3 hashtags>\n\n"
+            "## EN - Instagram\n<shorter, punchier, 5-8 hashtags, emoji ok but tasteful>\n\n"
+            "## FR - Facebook/LinkedIn\n<130 words, 2-3 hashtags>\n\n"
+            "## FR - Instagram\n<shorter, punchier, 5-8 hashtags>\n\n"
+            "## Notes\n<one line: suggested image/graphic idea>"
+          )
+
+          req = urllib.request.Request(
+              f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key=" + api_key,
+              data=json.dumps({"contents": [{"parts": [{"text": prompt}]}]}).encode(),
+              headers={"Content-Type": "application/json"},
+          )
+          with urllib.request.urlopen(req, timeout=120) as r:
+              data = json.load(r)
+          text = data["candidates"][0]["content"]["parts"][0]["text"]
+          with open("draft.md", "w") as f:
+              f.write(text)
+          print("Draft generated, length:", len(text))
+          PYEOF
+
+      - name: Open draft issue for review
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOPIC: ${{ inputs.topic }}
+        run: |
+          gh issue create \
+            --title "Content draft: $TOPIC" \
+            --body-file draft.md \
+            --label "content-draft"
+---
