@@ -24,7 +24,8 @@ jobs:
           # (anti-bot), so it can only be verified manually.
           # instagram.com is excluded: Instagram rate-limits automated scanners
           # (429 + login redirect loop), same false-positive class as x.com.
-      # ybspburundi.org responds slowly (~18s), so raise the timeout from the 20s default.
-          args: "--verbose --no-progress --include-fragments --timeout 60 --exclude 'x.com' --exclude 'instagram.com' './**/*.html'"
+      # ybspburundi.org is excluded: the site is intermittently unresponsive
+      # and times out the checker (same false-positive class as x.com and instagram.com).
+          args: "--verbose --no-progress --include-fragments --timeout 60 --exclude 'x.com' --exclude 'instagram.com' --exclude 'ybspburundi.org' './**/*.html'"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
