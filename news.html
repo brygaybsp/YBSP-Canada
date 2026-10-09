@@ -1602,9 +1602,9 @@
 <div class="container">
 <h2 data-i18n="cta_title">Never Miss a Milestone</h2>
 <p data-i18n="cta_desc">Subscribe to our quarterly community bulletin for verified impact reports, upcoming youth cohorts, and bilateral project stories.</p>
-<form class="cta-form" data-netlify="true" method="POST" name="newsletter-subscribe" onsubmit="event.preventDefault(); alert('Thank you for subscribing to YBSP Canada updates!');">
-<input aria-label="Email address" class="cta-input" data-i18n-placeholder="ph_newsletter" placeholder="Enter your email address" required="" type="email"/>
-<button class="btn-subscribe" data-i18n="cta_btn" type="submit">Subscribe to News</button>
+<form class="cta-form" data-netlify="true" method="POST" name="newsletter-subscribe" onsubmit="submitNetlifyForm(event, 'newsletterFeedback')"> <input type="hidden" name="form-name" value="newsletter-subscribe"/>
+<input aria-label="Email address" class="cta-input" data-i18n-placeholder="ph_newsletter" name="email" placeholder="Enter your email address" required="" type="email"/>
+<button class="btn-subscribe" data-i18n="cta_btn" type="submit">Subscribe to News</button><p class="form-feedback" id="newsletterFeedback" style="display:none; margin-top:10px;">Thank you for subscribing to YBSP Canada updates!</p>
 </form>
 </div>
 </section>
@@ -2218,5 +2218,5 @@
 
     
   </script>
-</body>
+<script>function submitNetlifyForm(e, feedbackId) { e.preventDefault(); var form = e.target; fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(form)).toString() }).then(function() { var el = document.getElementById(feedbackId); if (el) el.style.display = "block"; form.reset(); }).catch(function() { form.submit(); }); }</script></body>
 </html>
