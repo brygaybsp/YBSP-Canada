@@ -1251,7 +1251,7 @@
 </div>
 <!-- FORM CARD -->
 <div class="form-card" style="margin:0; max-width:none;">
-<form data-netlify="true" id="generalContactForm" method="POST" name="contact-general" onsubmit="handleContactSubmit(event)">
+<form data-netlify="true" id="generalContactForm" method="POST" name="contact-general" onsubmit="submitNetlifyForm(event, 'contactFeedback')">
 <input name="form-name" type="hidden" value="contact-general"/>
 <div class="form-grid-2">
 <div class="form-group">
@@ -1782,5 +1782,20 @@
 
     
   </script>
+<script>
+function submitNetlifyForm(e, feedbackId) {
+  e.preventDefault();
+  var form = e.target;
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(new FormData(form)).toString()
+  }).then(function() {
+    var el = document.getElementById(feedbackId);
+    if (el) el.style.display = "block";
+    form.reset();
+  }).catch(function() { form.submit(); });
+}
+</script>
 </body>
 </html>
