@@ -1346,7 +1346,7 @@
           </p>
 </div>
 <div class="form-card">
-<form data-netlify="true" id="talentPoolForm" method="POST" name="talent-pool-inquiry" onsubmit="handleTalentSubmit(event)">
+<form data-netlify="true" id="talentPoolForm" method="POST" name="talent-pool-inquiry" onsubmit="submitNetlifyForm(event, 'talentFeedback')">
 <input name="form-name" type="hidden" value="talent-pool-inquiry"/>
 <div class="form-grid-2">
 <div class="form-group">
@@ -1901,5 +1901,20 @@
 
     
   </script>
+<script>
+function submitNetlifyForm(e, feedbackId) {
+  e.preventDefault();
+  var form = e.target;
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(new FormData(form)).toString()
+  }).then(function() {
+    var el = document.getElementById(feedbackId);
+    if (el) el.style.display = "block";
+    form.reset();
+  }).catch(function() { form.submit(); });
+}
+</script>
 </body>
 </html>

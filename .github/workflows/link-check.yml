@@ -26,6 +26,8 @@ jobs:
           # (429 + login redirect loop), same false-positive class as x.com.
       # ybspburundi.org is excluded: the site is intermittently unresponsive
       # and times out the checker (same false-positive class as x.com and instagram.com).
-          args: "--verbose --no-progress --include-fragments --timeout 60 --exclude 'x.com' --exclude 'instagram.com' --exclude 'ybspburundi.org' './**/*.html'"
+          # zeffy.com is excluded: Zeffy returns 403 to automated scanners
+          # (bot protection), same false-positive class as x.com.
+          args: "--verbose --no-progress --include-fragments --timeout 60 --exclude 'x.com' --exclude 'instagram.com' --exclude 'ybspburundi.org' --exclude 'zeffy.com' './**/*.html'"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
