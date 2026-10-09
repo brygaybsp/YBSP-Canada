@@ -1315,25 +1315,26 @@
 <p data-i18n="vol_form_sub" style="font-size:0.9rem; color:var(--text-muted); text-align:center; margin-bottom:24px;">
           Please fill out the form below and our team will connect with you regarding current volunteer placements.
         </p>
-<form id="volunteer-form" onsubmit="event.preventDefault(); document.getElementById('vol-success').style.display='block';">
+    
+<form data-netlify="true" id="volunteer-form" method="POST" name="volunteer-application" onsubmit="submitNetlifyForm(event, 'vol-success')"> <input type="hidden" name="form-name" value="volunteer-application"/>
 <div class="form-grid-2">
 <div class="form-group">
 <label class="form-label" data-i18n="f_label_name" for="v-name">Full Name *</label>
-<input class="form-input" data-i18n-placeholder="ph_v_name" id="v-name" placeholder="e.g. Marie Tremblay" required="" type="text"/>
+<input class="form-input" data-i18n-placeholder="ph_v_name" id="v-name" name="full_name" placeholder="e.g. Marie Tremblay" required="" type="text"/>
 </div>
 <div class="form-group">
 <label class="form-label" data-i18n="f_label_email" for="v-email">Email Address *</label>
-<input class="form-input" data-i18n-placeholder="ph_v_email" id="v-email" placeholder="e.g. marie@example.ca" required="" type="email"/>
+<input class="form-input" data-i18n-placeholder="ph_v_email" id="v-email" name="email" placeholder="e.g. marie@example.ca" required="" type="email"/>
 </div>
 </div>
 <div class="form-grid-2">
 <div class="form-group">
 <label class="form-label" data-i18n="f_label_city" for="v-city">City &amp; Province *</label>
-<input class="form-input" data-i18n-placeholder="ph_v_city" id="v-city" placeholder="e.g. Gatineau, QC / Ottawa, ON" required="" type="text"/>
+<input class="form-input" data-i18n-placeholder="ph_v_city" id="v-city" name="city" placeholder="e.g. Gatineau, QC / Ottawa, ON" required="" type="text"/>
 </div>
 <div class="form-group">
 <label class="form-label" data-i18n="f_label_role" for="v-role">Primary Area of Interest *</label>
-<select class="form-select" id="v-role" required="">
+<select class="form-select" id="v-role" name="area_of_interest" required="">
 <option data-i18n="opt_inv_1" value="">Select an area...</option>
 <option data-i18n="opt_inv_2" value="mentorship">Youth Career Mentorship</option>
 <option data-i18n="opt_inv_3" value="community-support">Community Support &amp; Food Relief</option>
@@ -1344,7 +1345,7 @@
 </div>
 <div class="form-group">
 <label class="form-label" data-i18n="f_label_exp" for="v-msg">Brief Background &amp; Availability</label>
-<textarea class="form-textarea" data-i18n-placeholder="ph_inv_msg" id="v-msg" placeholder="Tell us about your background, professional experience, or why you want to support YBSP Canada..." rows="4"></textarea>
+<textarea class="form-textarea" data-i18n-placeholder="ph_inv_msg" id="v-msg" name="message" placeholder="Tell us about your background, professional experience, or why you want to support YBSP Canada..." rows="4"></textarea>
 </div>
 <button class="btn-primary" data-i18n="btn_submit_app" style="width:100%; justify-content:center; padding:12px;" type="submit">Submit Volunteer Application</button>
 <div class="form-feedback success" id="vol-success" style="display:none; margin-top:18px;">
@@ -1414,25 +1415,25 @@
 <p data-i18n="part_form_sub" style="font-size:0.9rem; color:var(--text-muted); text-align:center; margin-bottom:24px;">
           Explore co-designing community support programs, employee mentorship engagement, or grant initiatives with YBSP Canada.
         </p>
-<form id="partner-inquiry-form" onsubmit="event.preventDefault(); document.getElementById('part-success').style.display='block';">
+<form data-netlify="true" id="partner-inquiry-form" method="POST" name="institutional-partnership" onsubmit="submitNetlifyForm(event, 'part-success')"> <input type="hidden" name="form-name" value="institutional-partnership"/>
 <div class="form-grid-2">
 <div class="form-group">
 <label class="form-label" data-i18n="f_label_org" for="p-org">Organization / Institution Name *</label>
-<input class="form-input" id="p-org" placeholder="e.g. Canadian Community Foundation / University Association" required="" type="text"/>
+<input class="form-input" id="p-org" name="organization" placeholder="e.g. Canadian Community Foundation / University Association" required="" type="text"/>
 </div>
 <div class="form-group">
 <label class="form-label" data-i18n="f_label_contact" for="p-contact">Contact Person &amp; Title *</label>
-<input class="form-input" id="p-contact" placeholder="e.g. David Wilson, Director of Partnerships" required="" type="text"/>
+<input class="form-input" id="p-contact" name="contact_person" placeholder="e.g. David Wilson, Director of Partnerships" required="" type="text"/>
 </div>
 </div>
 <div class="form-grid-2">
 <div class="form-group">
 <label class="form-label" data-i18n="f_label_email" for="p-email">Official Email *</label>
-<input class="form-input" data-i18n-placeholder="ph_part_email" id="p-email" placeholder="e.g. partnerships@organization.ca" required="" type="email"/>
+<input class="form-input" data-i18n-placeholder="ph_part_email" id="p-email" name="email" placeholder="e.g. partnerships@organization.ca" required="" type="email"/>
 </div>
 <div class="form-group">
 <label class="form-label" data-i18n="f_label_part_type" for="p-type">Partnership Track *</label>
-<select class="form-select" id="p-type" required="">
+<select class="form-select" id="p-type" name="partnership_track" required="">
 <option data-i18n="opt_part_0" value="">Select track...</option>
 <option data-i18n="opt_part_1" value="meals">Community Support &amp; Food Security Collaboration</option>
 <option data-i18n="opt_part_2" value="mentorship">Youth Career Mentorship &amp; Workplace Readiness</option>
@@ -1443,7 +1444,7 @@
 </div>
 <div class="form-group">
 <label class="form-label" data-i18n="f_label_prop" for="p-msg">Proposed Areas of Collaboration</label>
-<textarea class="form-textarea" data-i18n-placeholder="ph_part_msg" id="p-msg" placeholder="Briefly describe your proposed partnership idea or how our organizations can collaborate..." rows="4"></textarea>
+<textarea class="form-textarea" data-i18n-placeholder="ph_part_msg" id="p-msg" name="message" placeholder="Briefly describe your proposed partnership idea or how our organizations can collaborate..." rows="4"></textarea>
 </div>
 <button class="btn-primary" data-i18n="btn_submit_part" style="width:100%; justify-content:center; padding:12px;" type="submit">Submit Partnership Inquiry</button>
 <div class="form-feedback success" id="part-success" style="display:none; margin-top:18px;">
@@ -1988,5 +1989,5 @@
       setLanguage(currentLang);
     });
   </script>
-</body>
+<script>function submitNetlifyForm(e, feedbackId) { e.preventDefault(); var form = e.target; fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(form)).toString() }).then(function() { var el = document.getElementById(feedbackId); if (el) el.style.display = "block"; form.reset(); }).catch(function() { form.submit(); }); }</script></body>
 </html>
