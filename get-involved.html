@@ -81,6 +81,12 @@
     }
 
     /* TOP UTILITY BAR */
+    
+    /* TOP UTILITY BAR SOCIAL ICONS */
+    .top-social { display:inline-flex; align-items:center; gap:6px; margin-right:12px; }
+    .top-social a { display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.12); color:#ffffff; font-size:0.62rem; font-weight:800; text-decoration:none; transition:background 0.2s ease; }
+    .top-social a:hover { background:var(--secondary); }
+
     .top-bar {
       background-color: var(--primary-dark);
       color: #cbd5e1;
@@ -196,12 +202,6 @@
 
     .btn-donate-nav { white-space: nowrap !important; min-width: max-content !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; background: var(--accent) !important; color: #ffffff !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 50px !important; margin-left: 8px !important; text-decoration: none !important; }
     .btn-donate-nav:hover { background: var(--accent-hover) !important; transform: translateY(-1px); }
-
-    /* HEADER SOCIAL ICONS */
-    .header-social { display:inline-flex; align-items:center; gap:6px; margin-left:10px; }
-    .header-social a { display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; background:#eef2f7; color:var(--primary); font-size:0.68rem; font-weight:800; text-decoration:none; transition:background 0.2s ease, color 0.2s ease; }
-    .header-social a:hover { background:var(--primary); color:#ffffff; }
-    @media (max-width: 1100px) { .header-social { display:none; } }
 
     /* MOBILE NAV TOGGLE */
     .mobile-toggle {
@@ -1147,6 +1147,12 @@
 <!-- TOP RIGHT UTILITY BAR: LANGUAGE SWITCHER AT THE VERY TOP RIGHT, DIRECTLY ABOVE DONATE -->
 <div class="top-utility-bar" style="background:#0b1c3d; border-bottom:1px solid rgba(255,255,255,0.08); padding:5px 0;">
 <div class="container" style="display:flex; justify-content:flex-end; align-items:center;">
+<div class="top-social">
+<a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" title="YBSP Canada on Facebook" aria-label="YBSP Canada on Facebook">FB</a>
+<a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" title="YBSP Canada on Instagram" aria-label="YBSP Canada on Instagram">IG</a>
+<a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" title="YBSP Canada on X" aria-label="YBSP Canada on X">X</a>
+<a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" title="YBSP Canada on TikTok" aria-label="YBSP Canada on TikTok">TT</a>
+</div>
 <div class="lang-switcher" style="display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.12); padding:2px 6px; border-radius:4px;">
 <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" style="border:none; background:var(--secondary); color:#ffffff; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="English">EN</button>
 <span style="color:#94a3b8; font-size:0.75rem; margin:0 2px;">|</span>
@@ -1248,12 +1254,7 @@
 <div class="nav-item"><a class="nav-link" data-i18n="nav_contact" href="contact.html">Contact</a></div>
 <!-- ONE-LINE DONATE BUTTON -->
 <a class="btn-donate-nav" data-i18n="nav_donate" href="donate.html" style="white-space:nowrap !important; display:inline-flex !important; align-items:center !important; justify-content:center !important;">Donate</a>
-<div class="header-social">
-<a href="https://www.facebook.com/ybspcanada" target="_blank" rel="noopener noreferrer" title="YBSP Canada on Facebook" aria-label="YBSP Canada on Facebook">FB</a>
-<a href="https://www.instagram.com/ybspcanada/" target="_blank" rel="noopener noreferrer" title="YBSP Canada on Instagram" aria-label="YBSP Canada on Instagram">IG</a>
-<a href="https://x.com/ybspcanada" target="_blank" rel="noopener noreferrer" title="YBSP Canada on X" aria-label="YBSP Canada on X">X</a>
-<a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" title="YBSP Canada on TikTok" aria-label="YBSP Canada on TikTok">TT</a>
-</div>
+
 </nav>
 <button aria-expanded="false" aria-label="Toggle navigation menu" class="nav-toggle-btn" id="mobileNavToggle" onclick="toggleMobileNav(event)">
 <span></span>
@@ -1542,7 +1543,7 @@
           © 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
         </div>
 <div class="footer-legal" style="font-size:0.86rem; text-align:left;">
-<a data-i18n="foot_privacy" href="privacy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
+<a data-i18n="foot_privacy" data-i18n-href="pdf_privacy" href="docs/YBSP_Canada_Privacy_Policy.pdf" target="_blank" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
 </div>
 <!-- BOTTOM RIGHT: FOLLOW US -->
 <div class="footer-social-wrap" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
@@ -1824,8 +1825,8 @@
         sup_tag: "Our Supporters",
         sup_era_name: "Electronic Recycling Association (ERA)",
         sup_era_cat: "Technology & In-Kind Partner",
-        sup_era_desc: "Donated refurbished laptops and monitors powering our free youth programs in Ottawa-Gatineau."
-      },
+        sup_era_desc: "Donated refurbished laptops and monitors powering our free youth programs in Ottawa-Gatineau.",
+        pdf_privacy: "docs/YBSP_Canada_Privacy_Policy.pdf"},
       fr: {
         ph_v_name: "ex. Marie Tremblay",
         ph_v_email: "ex. marie@example.ca",
@@ -1969,8 +1970,8 @@
         sup_tag: "Nos sympathisants",
         sup_era_name: "Electronic Recycling Association (ERA)",
         sup_era_cat: "Partenaire technologique et en nature",
-        sup_era_desc: "A fait don de portables et de moniteurs remis \u00e0 neuf qui alimentent nos programmes jeunesse gratuits \u00e0 Ottawa-Gatineau."
-      }
+        sup_era_desc: "A fait don de portables et de moniteurs remis \u00e0 neuf qui alimentent nos programmes jeunesse gratuits \u00e0 Ottawa-Gatineau.",
+        pdf_privacy: "docs/YBSP_Canada_Privacy_Policy_FR.pdf"}
     };
 
     function setLanguage(lang) {
