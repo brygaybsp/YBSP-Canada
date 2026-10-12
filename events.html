@@ -17,7 +17,7 @@
       --primary-dark: #061124;
       --primary-light: #163660;
       --secondary: #10b981;
-      --secondary-dark: #059669;
+      --secondary-dark: #047857;
       --accent: #f59e0b;
       --accent-hover: #d97706;
       --text-main: #1f2937;
@@ -199,6 +199,7 @@
       z-index: 100;
     }
     .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-item.has-dropdown:focus-within > .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
     .dropdown-link { display: block; padding: 9px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500;  white-space: normal; line-height: 1.35; }
     .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 22px; }
 
@@ -1181,6 +1182,8 @@
     scroll-behavior: auto !important;
   }
 }
+
+.lang-btn { min-width: 28px; min-height: 28px; display: inline-flex; align-items: center; justify-content: center; }
 </style>
 </head>
 <body>
@@ -1343,7 +1346,7 @@
 <div class="events-grid">
 <!-- EVENT 1 -->
 <div class="event-item-card">
-<img alt="Youth Skills &amp; Entrepreneurship Workshop" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src=\'images/albums/canada-cohort/cover.jpg\';" src="images/events/event-entrepreneurship-lab.jpg"/>
+<img data-i18n-alt="alt_ev_entrepreneurship" alt="Community members seated in a classroom listening to YBSP presenters at a training workshop" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src=\'images/albums/canada-cohort/cover.jpg\';" src="images/events/event-entrepreneurship-lab.jpg"/>
 <div class="event-card-body">
 <div>
 <div class="event-date-tag">📅 <span data-i18n="ev1_date">OCT 18, 2026</span> • <span data-i18n="ev1_badge">WORKSHOP LAB</span></div>
@@ -1360,7 +1363,7 @@
 </div>
 <!-- EVENT 2 -->
 <div class="event-item-card">
-<img alt="Canada-Burundi Synergy Dialogue" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=700&amp;q=80\';" src="images/events/event-burundi-roundtable.jpg"/>
+<img data-i18n-alt="alt_ev_roundtable" alt="Women sitting in a circle on mats outdoors sharing a meal and discussion" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=700&amp;q=80\';" src="images/events/event-burundi-roundtable.jpg"/>
 <div class="event-card-body">
 <div>
 <div class="event-date-tag">📅 <span data-i18n="ev2_date">NOV 05, 2026</span> • <span data-i18n="ev2_badge">GLOBAL DIALOGUE</span></div>
@@ -1377,7 +1380,7 @@
 </div>
 <!-- EVENT 3 -->
 <div class="event-item-card">
-<img alt="Youth Mental Health Forum" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&amp;fit=crop&amp;w=700&amp;q=80\';" src="images/events/event-mental-health.jpg"/>
+<img data-i18n-alt="alt_ev_mentalhealth" alt="Members of a women's empowerment group chatting and laughing together outdoors" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&amp;fit=crop&amp;w=700&amp;q=80\';" src="images/events/event-mental-health.jpg"/>
 <div class="event-card-body">
 <div>
 <div class="event-date-tag">📅 <span data-i18n="ev3_date">NOV 21, 2026</span> • <span data-i18n="tag_comm_health">COMMUNITY HEALTH</span></div>
@@ -1394,7 +1397,7 @@
 </div>
 <!-- EVENT 4 -->
 <div class="event-item-card">
-<img alt="YBSP Annual Solidarity Gala (Concept in Development)" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/events/event-gala-card.jpg" style="width:100%; height:220px; object-fit:cover;"/>
+<img data-i18n-alt="alt_ev_gala" alt="A DJ with headphones preparing music on a laptop in a decorated banquet hall" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/events/event-gala-card.jpg" style="width:100%; height:220px; object-fit:cover;"/>
 <div class="event-card-body">
 <div>
 <div class="event-date-tag">📅 <span data-i18n="ev4_date">DEC 12, 2026</span> • <span data-i18n="ev4_badge">SIGNATURE GALA</span></div>
@@ -1492,7 +1495,7 @@
 <a class="btn-primary" data-i18n="btn_sponsor_gala" href="#host" style="background:var(--accent);">Inquire About Gala Sponsorship →</a>
 </div>
 <div>
-<img alt="YBSP Annual Solidarity Gala (Concept in Development) Feature" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/events/gala-feature.jpg" style="border-radius:var(--radius-md); box-shadow:var(--shadow-lg); width:100%; height:320px; object-fit:cover;"/>
+<img data-i18n-alt="alt_ev_galafeature" alt="Large group photo of YBSP volunteers and youth gathered outdoors in Gitega, Burundi" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/events/gala-feature.jpg" style="border-radius:var(--radius-md); box-shadow:var(--shadow-lg); width:100%; height:320px; object-fit:cover;"/>
 <p data-i18n="caption_gala" style="font-size:0.8rem; color:#cbd5e1; text-align:center; margin-top:10px;">
             Celebrating youth leadership and community solidarity across Canada.
           </p>
@@ -1526,7 +1529,7 @@
 <div>
 <div style="position:relative;">
 <div onmouseout="this.style.opacity=0" onmouseover="this.style.opacity=1" style="position:absolute; inset:0; background:rgba(11,28,61,0.25); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.2s;"><span style="background:rgba(255,255,255,0.95); color:var(--primary); font-weight:800; font-size:0.85rem; padding:8px 16px; border-radius:50px; box-shadow:0 4px 10px rgba(0,0,0,0.15);"><span data-i18n="alb_click_open">📷 Click to Open Album (4 Photos)</span></span></div>
-<img alt="Sunday Meal Program in Bujumbura" src="images/albums/sunday-meal/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" style="width:100%; height:220px; object-fit:cover;"/>
+<img data-i18n-alt="alt_album_sunday" alt="Children eating rice and vegetables from colorful bowls at a YBSP Sunday Meal" src="images/albums/sunday-meal/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" style="width:100%; height:220px; object-fit:cover;"/>
 <span data-i18n="alb1_loc" style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;">Bujumbura, Burundi</span>
 <span data-i18n="alb1_badge_time" style="position:absolute; bottom:12px; right:12px; background:rgba(16,185,129,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;">Weekly Sundays</span>
 </div>
@@ -1546,7 +1549,7 @@
 <div class="album-card" data-category="sorora" onclick="openAlbumLightbox('sorora')">
 <div>
 <div style="position:relative;">
-<img alt="Sorora Ikaye School Supply Drive" src="images/albums/sorora/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" style="width:100%; height:220px; object-fit:cover;"/>
+<img data-i18n-alt="alt_album_sorora" alt="Burundian schoolchildren proudly holding up new backpacks at a YBSP school supply drive" src="images/albums/sorora/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" style="width:100%; height:220px; object-fit:cover;"/>
 <span data-i18n="alb2_loc" style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;">Bujumbura Rural &amp; Kabezi</span>
 <span data-i18n="alb_tag_campaign" style="position:absolute; bottom:12px; right:12px; background:rgba(245,158,11,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;">Annual Campaign</span>
 </div>
@@ -1566,7 +1569,7 @@
 <div class="album-card" data-category="murabire" onclick="openAlbumLightbox('murabire')">
 <div>
 <div style="position:relative;">
-<img alt="Vocational Training and Starter Kits" src="images/albums/murabire/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" style="width:100%; height:220px; object-fit:cover;"/>
+<img data-i18n-alt="alt_album_murabire" alt="Community members in matching yellow shirts standing in a circle at an outdoor gathering" src="images/albums/murabire/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" style="width:100%; height:220px; object-fit:cover;"/>
 <span data-i18n="alb3_loc" style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;">Gitega &amp; Provinces</span>
 <span data-i18n="alb3_badge_time" style="position:absolute; bottom:12px; right:12px; background:rgba(99,102,241,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;">Artisan Kits</span>
 </div>
@@ -1586,7 +1589,7 @@
 <div class="album-card" data-category="canada-cohort" onclick="openAlbumLightbox('canada-cohort')">
 <div>
 <div style="position:relative;">
-<img alt="Canadian Career Mentorship Session" src="images/albums/canada-cohort/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" style="width:100%; height:220px; object-fit:cover;"/>
+<img data-i18n-alt="alt_album_canada" alt="Young Burundian professionals posing together indoors at a YBSP mentorship cohort session" src="images/albums/canada-cohort/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" style="width:100%; height:220px; object-fit:cover;"/>
 <span data-i18n="alb4_loc" style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;">Ottawa-Gatineau &amp; Online</span>
 <span data-i18n="alb4_badge_time" style="position:absolute; bottom:12px; right:12px; background:rgba(16,185,129,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;">12-Week Cohorts</span>
 </div>
@@ -1606,7 +1609,7 @@
 <div class="album-card" data-category="gala" onclick="openAlbumLightbox('gala')">
 <div>
 <div style="position:relative;">
-<img alt="YBSP Annual Solidarity Gala (Concept in Development) Feature" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/albums/gala/cover.jpg" style="width:100%; height:220px; object-fit:cover;"/>
+<img data-i18n-alt="alt_album_gala" alt="Gala guests dancing together in a banquet hall during a YBSP celebration" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/albums/gala/cover.jpg" style="width:100%; height:220px; object-fit:cover;"/>
 <span data-i18n="alb5_loc" style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;">National Capital Region</span>
 <span data-i18n="alb_tag_dec" style="position:absolute; bottom:12px; right:12px; background:rgba(245,158,11,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;">Annual December</span>
 </div>
@@ -1626,7 +1629,7 @@
 <div class="album-card" data-category="canada-cohort" onclick="openAlbumLightbox('canada-cohort')">
 <div>
 <div style="position:relative;">
-<img alt="Youth Community Action and Enterprise" src="images/albums/community-action/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" style="width:100%; height:220px; object-fit:cover;"/>
+<img data-i18n-alt="alt_album_community" alt="Young Burundian dancers in traditional straw costumes performing for an audience" src="images/albums/community-action/cover.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=700&amp;q=80'" style="width:100%; height:220px; object-fit:cover;"/>
 <span data-i18n="alb6_loc" style="position:absolute; top:12px; left:12px; background:rgba(11,28,61,0.85); color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:50px;">Bilingual Cohorts</span>
 <span data-i18n="alb_tag_labs" style="position:absolute; bottom:12px; right:12px; background:rgba(16,185,129,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;">Youth Labs</span>
 </div>
@@ -1779,7 +1782,6 @@
       // Accordion dropdown toggle on mobile (independent submenus)
       navMenu.querySelectorAll('.nav-item.has-dropdown .dropdown-toggle-btn').forEach(function(arrowBtn) {
         function toggleSubmenu(e) {
-          if (window.innerWidth <= 991) {
             if (e) {
               if (e.preventDefault) e.preventDefault();
               if (e.stopPropagation) e.stopPropagation();
@@ -1802,7 +1804,6 @@
                 dropMenu.style.removeProperty('visibility');
               }
             }
-          }
         }
 
         arrowBtn.addEventListener('click', toggleSubmenu);
@@ -1850,6 +1851,18 @@
       en: {
         meta_title: "Community & Events | Youth Building in Synergy to end Poverty (YBSP Canada)",
         skip_link: "Skip to main content",
+        alt_ev_entrepreneurship: "Community members seated in a classroom listening to YBSP presenters at a training workshop",
+        alt_ev_roundtable: "Women sitting in a circle on mats outdoors sharing a meal and discussion",
+        alt_ev_mentalhealth: "Members of a women's empowerment group chatting and laughing together outdoors",
+        alt_ev_gala: "A DJ with headphones preparing music on a laptop in a decorated banquet hall",
+        alt_ev_galafeature: "Large group photo of YBSP volunteers and youth gathered outdoors in Gitega, Burundi",
+        alt_album_sunday: "Children eating rice and vegetables from colorful bowls at a YBSP Sunday Meal",
+        alt_album_sorora: "Burundian schoolchildren proudly holding up new backpacks at a YBSP school supply drive",
+        alt_album_murabire: "Community members in matching yellow shirts standing in a circle at an outdoor gathering",
+        alt_album_canada: "Young Burundian professionals posing together indoors at a YBSP mentorship cohort session",
+        alt_album_gala: "Gala guests dancing together in a banquet hall during a YBSP celebration",
+        alt_album_community: "Young Burundian dancers in traditional straw costumes performing for an audience",
+        alt_lightbox: "Enlarged album photo",
         alb_click_open: "📷 Click to Open Album (4 Photos)",
         alb1_loc: "Bujumbura, Burundi",
         alb1_badge_time: "Weekly Sundays",
@@ -2086,6 +2099,18 @@
       fr: {
         meta_title: "Communauté et événements | Youth Building in Synergy to end Poverty (YBSP Canada)",
         skip_link: "Aller au contenu principal",
+        alt_ev_entrepreneurship: "Membres de la communauté assis dans une salle de classe écoutant les présentateurs YBSP lors d'un atelier de formation",
+        alt_ev_roundtable: "Femmes assises en cercle sur des nattes à l'extérieur partageant un repas et une discussion",
+        alt_ev_mentalhealth: "Membres d'un groupe d'autonomisation des femmes discutant et riant ensemble à l'extérieur",
+        alt_ev_gala: "Un DJ avec un casque préparant la musique sur un ordinateur portable dans une salle de réception décorée",
+        alt_ev_galafeature: "Photo de groupe des bénévoles YBSP et des jeunes rassemblés à l'extérieur à Gitega, au Burundi",
+        alt_album_sunday: "Enfants mangeant du riz et des légumes dans des bols colorés lors d'un Sunday Meal de YBSP",
+        alt_album_sorora: "Écoliers burundais tenant fièrement de nouveaux sacs à dos lors d'une distribution de fournitures scolaires de YBSP",
+        alt_album_murabire: "Membres de la communauté en chandails jaunes assortis debout en cercle lors d'un rassemblement extérieur",
+        alt_album_canada: "Jeunes professionnels burundais posant ensemble à l'intérieur lors d'une séance de cohorte de mentorat YBSP",
+        alt_album_gala: "Invités du gala dansant ensemble dans une salle de réception lors d'une célébration YBSP",
+        alt_album_community: "Jeunes danseurs burundais en costumes traditionnels de paille se produisant devant un public",
+        alt_lightbox: "Photo d'album agrandie",
         alb_click_open: "📷 Cliquer pour ouvrir l'album (4 photos)",
         alb1_loc: "Bujumbura, Burundi",
         alb1_badge_time: "Chaque dimanche",
@@ -2322,6 +2347,12 @@
           el.innerHTML = translations[lang][key];
         }
       });
+      document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+        const ak = el.getAttribute('data-i18n-alt');
+        if (translations[lang] && translations[lang][ak]) {
+          el.setAttribute('alt', translations[lang][ak]);
+        }
+      });
       // Update the browser tab title for the active language
       if (translations[lang] && translations[lang]['meta_title']) {
         document.title = translations[lang]['meta_title'];
@@ -2384,6 +2415,7 @@
     
   
   // Event Registration Modal Controls
+  var modalTriggerBtn = null;
   function openEventRegister(eventKey) {
     const modal = document.getElementById('registerModal');
     const titleEl = document.getElementById('modalEventTitle');
@@ -2403,6 +2435,9 @@
       if (successMsg) successMsg.style.display = 'none';
       modal.style.display = 'flex';
       document.body.style.overflow = 'hidden';
+      modalTriggerBtn = document.activeElement;
+      var firstField = document.getElementById('reg-name');
+      if (firstField) firstField.focus();
     }
   }
 
@@ -2412,7 +2447,23 @@
       modal.style.display = 'none';
       document.body.style.overflow = '';
     }
+    if (modalTriggerBtn) { try { modalTriggerBtn.focus(); } catch(e) {} modalTriggerBtn = null; }
   }
+  (function() {
+    var modal = document.getElementById('registerModal');
+    if (!modal) return;
+    modal.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { closeEventRegister(); return; }
+      if (e.key !== 'Tab') return;
+      var els = modal.querySelectorAll('button, input, select, textarea, a[href]');
+      var vis = [];
+      for (var i = 0; i < els.length; i++) { if (els[i].offsetParent !== null) vis.push(els[i]); }
+      if (!vis.length) return;
+      var first = vis[0], last = vis[vis.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  })();
 
   function submitEventRegister(e) {
     if (e && e.preventDefault) e.preventDefault();
@@ -2773,10 +2824,10 @@
 
   </script>
 <!-- EVENT REGISTRATION MODAL -->
-<div id="registerModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(6,17,36,0.75); z-index:999999; justify-content:center; align-items:center; padding:20px; box-sizing:border-box;">
+<div id="registerModal" role="dialog" aria-modal="true" aria-labelledby="modalEventTitle" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(6,17,36,0.75); z-index:999999; justify-content:center; align-items:center; padding:20px; box-sizing:border-box;">
 <div style="background:#ffffff; border-radius:12px; max-width:520px; width:100%; padding:32px 28px; box-shadow:0 25px 50px -12px rgba(0,0,0,0.25); position:relative; max-height:90vh; overflow-y:auto;">
 <button aria-label="Close modal" onclick="closeEventRegister()" style="position:absolute; top:16px; right:18px; background:none; border:none; font-size:1.6rem; color:#64748b; cursor:pointer; line-height:1;">×</button>
-<div data-i18n="modal_reg_kicker" style="display:inline-block; font-size:0.8rem; font-weight:700; color:var(--secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">RSVP &amp; Registration</div>
+<div data-i18n="modal_reg_kicker" style="display:inline-block; font-size:0.8rem; font-weight:700; color:#065f46; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">RSVP &amp; Registration</div>
 <h3 data-i18n="modal_reg_title" id="modalEventTitle" style="font-size:1.35rem; color:var(--primary); margin:0 0 12px; font-weight:800; line-height:1.3;">Event Registration</h3>
 <p data-i18n="modal_reg_desc" style="font-size:0.92rem; color:var(--text-muted); margin-bottom:20px; line-height:1.5;">Join us for this community event. Participation is free and open to youth, mentors, and community partners.</p>
 <form data-netlify="true" id="modalRegisterForm" method="POST" name="event-registration" onsubmit="submitEventRegister(event)">
@@ -2799,7 +2850,7 @@
 </div>
 <button class="btn-primary" style="width:100%; padding:12px; font-size:1rem; font-weight:700; border-radius:6px; border:none; cursor:pointer;" data-i18n="modal_reg_submit" type="submit">Confirm Registration</button>
 </form>
-<div id="modalSuccessMsg" style="display:none; text-align:center; padding:20px 10px;">
+<div id="modalSuccessMsg" style="display:none; text-align:center; padding:20px 10px;" role="status" aria-live="polite">
 <div style="font-size:2.5rem; margin-bottom:10px;">✅</div>
 <h3 data-i18n="modal_reg_success" style="font-size:1.2rem; color:var(--primary); margin-bottom:8px;">Registration Confirmed!</h3>
 <p data-i18n="modal_reg_success_msg" style="font-size:0.9rem; color:var(--text-muted);">Thank you for registering. Event access details will be sent to your email.</p>
@@ -2815,7 +2866,7 @@
 <h3 id="lightboxAlbumTitle" style="font-size:1.2rem; color:var(--primary); margin:4px 0 0; line-height:1.3;">Album Title</h3>
 </div>
 <div style="position:relative; width:100%; height:380px; background:#0b1c3d; border-radius:8px; overflow:hidden; display:flex; align-items:center; justify-content:center;">
-<img alt="Album photo" id="lightboxImg" src="" style="width:100%; height:100%; object-fit:cover; transition:opacity 0.25s ease;"/>
+<img data-i18n-alt="alt_lightbox" alt="Enlarged album photo" id="lightboxImg" src="" style="width:100%; height:100%; object-fit:cover; transition:opacity 0.25s ease;"/>
 <!-- Navigation Arrows -->
 <button aria-label="Previous Photo" onclick="prevLightboxPhoto(event)" style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.9); border:none; width:44px; height:44px; border-radius:50%; font-size:1.4rem; color:var(--primary); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.25); z-index:5;">❮</button>
 <button aria-label="Next Photo" onclick="nextLightboxPhoto(event)" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.9); border:none; width:44px; height:44px; border-radius:50%; font-size:1.4rem; color:var(--primary); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.25); z-index:5;">❯</button>

@@ -41,7 +41,7 @@
       --primary-dark: #061124;
       --primary-light: #163660;
       --secondary: #10b981;
-      --secondary-dark: #059669;
+      --secondary-dark: #047857;
       --accent: #f59e0b;
       --accent-hover: #d97706;
       --text-main: #1f2937;
@@ -223,6 +223,7 @@
       z-index: 100;
     }
     .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-item.has-dropdown:focus-within > .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
     .dropdown-link { display: block; padding: 9px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500;  white-space: normal; line-height: 1.35; }
     .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 22px; }
 
@@ -1238,7 +1239,7 @@
       --v34-navy: #0b1c3d;
       --v34-navy-dark: #061124;
       --v34-blue: #0ea5e9;
-      --v34-blue-hover: #0284c7;
+      --v34-blue-hover: #0369a1;
       --v34-amber: #f59e0b;
       --v34-amber-dark: #d97706;
       --v34-slate: #f8fafc;
@@ -1801,6 +1802,8 @@
     scroll-behavior: auto !important;
   }
 }
+
+.lang-btn { min-width: 28px; min-height: 28px; display: inline-flex; align-items: center; justify-content: center; }
 </style>
 </head>
 <body>
@@ -1953,7 +1956,7 @@
 <!-- Right: Human Visual Anchor -->
 <div class="v34-hero-col-image v34-reveal">
 <div class="v34-hero-media-wrapper">
-<img alt="Young people engaged in collaborative learning and community skills workshop" class="v34-hero-img" fetchpriority="high" loading="eager" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80';" src="images/hero/hero-community.jpg"/>
+<img data-i18n-alt="alt_hero" alt="Young people engaged in collaborative learning and community skills workshop" class="v34-hero-img" fetchpriority="high" loading="eager" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80';" src="images/hero/hero-community.jpg"/>
 <div class="v34-floating-badge v34-badge-top">
 <strong data-i18n="badge_15_yrs" style="display:block; font-size:1.1rem; color:#38bdf8;">15 Years of Action</strong>
 <span data-i18n="badge_est_2011" style="font-size:0.78rem; color:#cbd5e1;">Grassroots roots since 2011</span>
@@ -1982,7 +1985,7 @@
 <div class="v34-bridge-grid">
 <!-- Canada Card -->
 <div class="v34-bridge-card v34-reveal">
-<img alt="Canadian community youth collaborating in a skills workshop" class="v34-bridge-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/bridge/bridge-canada.jpg"/>
+<img data-i18n-alt="alt_bridge_canada" alt="Canadian community youth collaborating in a skills workshop" class="v34-bridge-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/bridge/bridge-canada.jpg"/>
 <div class="v34-bridge-card-body">
 <div>
 <span data-i18n="card_can_badge" style="font-size:0.78rem; font-weight:800; color:var(--v34-blue-hover); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px;">Canada • Ottawa-Gatineau</span>
@@ -1998,7 +2001,7 @@
 </div>
 <!-- Burundi Card -->
 <div class="v34-bridge-card v34-reveal">
-<img alt="Grassroots youth and community support in East Africa" class="v34-bridge-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/bridge/bridge-burundi.jpg"/>
+<img data-i18n-alt="alt_bridge_burundi" alt="Grassroots youth and community support in East Africa" class="v34-bridge-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/bridge/bridge-burundi.jpg"/>
 <div class="v34-bridge-card-body">
 <div>
 <span data-i18n="card_bdi_badge" style="font-size:0.78rem; font-weight:800; color:var(--v34-amber-dark); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px;">Burundi • Bujumbura</span>
@@ -2102,7 +2105,7 @@
 <div class="v34-pathway-card v34-reveal">
 <div class="v34-pathway-img-wrap">
 <span class="v34-pathway-num">01</span>
-<img alt="Community food preparation and direct relief" class="v34-pathway-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-relief.jpg"/>
+<img data-i18n-alt="alt_pathway_relief" alt="Community food preparation and direct relief" class="v34-pathway-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-relief.jpg"/>
 </div>
 <div class="v34-pathway-body">
 <div>
@@ -2121,7 +2124,7 @@
 <div class="v34-pathway-card v34-reveal">
 <div class="v34-pathway-img-wrap">
 <span class="v34-pathway-num">02</span>
-<img alt="Youth learning practical digital and workplace skills" class="v34-pathway-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-education.jpg"/>
+<img data-i18n-alt="alt_pathway_education" alt="Youth learning practical digital and workplace skills" class="v34-pathway-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-education.jpg"/>
 </div>
 <div class="v34-pathway-body">
 <div>
@@ -2140,7 +2143,7 @@
 <div class="v34-pathway-card v34-reveal">
 <div class="v34-pathway-img-wrap">
 <span class="v34-pathway-num">03</span>
-<img alt="Cultivating sustainable economic self-sufficiency" class="v34-pathway-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-self-sufficiency.jpg"/>
+<img data-i18n-alt="alt_pathway_selfsufficiency" alt="Cultivating sustainable economic self-sufficiency" class="v34-pathway-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-self-sufficiency.jpg"/>
 </div>
 <div class="v34-pathway-body">
 <div>
@@ -2172,7 +2175,7 @@
 <!-- Support / Donation Split -->
 <div class="v34-support-split v34-reveal">
 <div class="v34-support-col-img">
-<img alt="Community members united in solidarity and collaboration" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/support/support-community.jpg" style="width:100%; height:340px; object-fit:cover; display:block;"/>
+<img data-i18n-alt="alt_support_community" alt="Community members united in solidarity and collaboration" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/support/support-community.jpg" style="width:100%; height:340px; object-fit:cover; display:block;"/>
 </div>
 <div class="v34-support-col-text">
 <span class="v34-eyebrow" data-i18n="sup_tag" style="background:rgba(255,255,255,0.12); color:#ffffff; border-color:rgba(255,255,255,0.3);">Community Solidarity</span>
@@ -2327,7 +2330,6 @@
       // Accordion dropdown toggle on mobile (independent submenus)
       navMenu.querySelectorAll('.nav-item.has-dropdown .dropdown-toggle-btn').forEach(function(arrowBtn) {
         function toggleSubmenu(e) {
-          if (window.innerWidth <= 991) {
             if (e) {
               if (e.preventDefault) e.preventDefault();
               if (e.stopPropagation) e.stopPropagation();
@@ -2350,7 +2352,6 @@
                 dropMenu.style.removeProperty('visibility');
               }
             }
-          }
         }
 
         arrowBtn.addEventListener('click', toggleSubmenu);
@@ -2458,6 +2459,13 @@ const translations = {
     "time_today": "Today",
     "meta_title": "YBSP Canada | Youth Building in Synergy to end Poverty",
     "skip_link": "Skip to main content",
+    "alt_hero": "Young people engaged in collaborative learning and community skills workshop",
+    "alt_bridge_canada": "Canadian community youth collaborating in a skills workshop",
+    "alt_bridge_burundi": "Grassroots youth and community support in East Africa",
+    "alt_pathway_relief": "Community food preparation and direct relief",
+    "alt_pathway_education": "Youth learning practical digital and workplace skills",
+    "alt_pathway_selfsufficiency": "Cultivating sustainable economic self-sufficiency",
+    "alt_support_community": "Community members united in solidarity and collaboration",
     "stage_title": "Organizational Stage & Transparency:",
     "stage_desc": "YBSP Canada is an autonomous, volunteer-led federal non-profit organization building its first Canadian program pilots, community partnerships, and foundation for future charitable registration. Some initiatives described are active pilots, while others are in planning or dependent on future community funding.",
     "footer_addr": "Based in the Ottawa - Gatineau Region<br>(Developing Partnerships Across Canada)",
@@ -2675,6 +2683,13 @@ const translations = {
     "time_today": "Aujourd'hui",
     "meta_title": "YBSP Canada | Youth Building in Synergy to end Poverty",
     "skip_link": "Aller au contenu principal",
+    "alt_hero": "Jeunes engagés dans un atelier collaboratif d'apprentissage et de compétences communautaires",
+    "alt_bridge_canada": "Jeunes de la communauté canadienne collaborant lors d'un atelier de compétences",
+    "alt_bridge_burundi": "Jeunes de base et soutien communautaire en Afrique de l'Est",
+    "alt_pathway_relief": "Préparation alimentaire communautaire et aide directe",
+    "alt_pathway_education": "Jeunes apprenant des compétences numériques et professionnelles pratiques",
+    "alt_pathway_selfsufficiency": "Cultiver une autosuffisance économique durable",
+    "alt_support_community": "Membres de la communauté unis dans la solidarité et la collaboration",
     "stage_title": "Stade de l'Organisation et Transparence :",
     "stage_desc": "YBSP Canada est un organisme sans but lucratif autonome et bénévole qui développe ses premiers projets pilotes canadiens, ses partenariats et sa fondation caritative. Certaines initiatives décrites sont des projets pilotes actifs, tandis que d'autres sont en cours de planification.",
     "footer_addr": "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
@@ -2901,6 +2916,12 @@ function setLanguage(lang) {
       el.innerHTML = translations[lang][key];
     }
   });
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+    const ak = el.getAttribute('data-i18n-alt');
+    if (translations[lang] && translations[lang][ak]) {
+      el.setAttribute('alt', translations[lang][ak]);
+    }
+  });
   // Update the browser tab title for the active language
   if (translations[lang] && translations[lang]["meta_title"]) {
     document.title = translations[lang]["meta_title"];
@@ -2936,6 +2957,8 @@ function setLanguage(lang) {
       btnFr.classList.add('active');
       btnFr.style.background = 'var(--secondary)';
       btnFr.style.color = '#0b1c3d';
+      btnFr.setAttribute('aria-pressed', 'true');
+      btnEn.setAttribute('aria-pressed', 'false');
       btnEn.classList.remove('active');
       btnEn.style.background = 'transparent';
       btnEn.style.color = '#cbd5e1';
@@ -2943,6 +2966,8 @@ function setLanguage(lang) {
       btnEn.classList.add('active');
       btnEn.style.background = 'var(--secondary)';
       btnEn.style.color = '#0b1c3d';
+      btnEn.setAttribute('aria-pressed', 'true');
+      btnFr.setAttribute('aria-pressed', 'false');
       btnFr.classList.remove('active');
       btnFr.style.background = 'transparent';
       btnFr.style.color = '#cbd5e1';

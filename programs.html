@@ -17,7 +17,7 @@
       --primary-dark: #061124;
       --primary-light: #163660;
       --secondary: #10b981;
-      --secondary-dark: #059669;
+      --secondary-dark: #047857;
       --accent: #f59e0b;
       --accent-hover: #d97706;
       --text-main: #1f2937;
@@ -199,6 +199,7 @@
       z-index: 100;
     }
     .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-item.has-dropdown:focus-within > .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
     .dropdown-link { display: block; padding: 9px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500;  white-space: normal; line-height: 1.35; }
     .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 22px; }
 
@@ -1127,6 +1128,8 @@
     scroll-behavior: auto !important;
   }
 }
+
+.lang-btn { min-width: 28px; min-height: 28px; display: inline-flex; align-items: center; justify-content: center; }
 </style>
 </head>
 <body>
@@ -1301,7 +1304,7 @@
           </div>
 </div>
 <div>
-<img alt="Community Support & Poverty Relief" class="program-banner-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&amp;fit=crop&amp;w=700&amp;q=80\';" src="images/programs/community-support.jpg" style="border-radius:var(--radius-lg); box-shadow:var(--shadow-md); width:100%; height:380px; object-fit:cover;"/>
+<img data-i18n-alt="alt_prog_support" alt="A YBSP volunteer distributing bottled drinks to seated children during a community outreach" class="program-banner-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&amp;fit=crop&amp;w=700&amp;q=80\';" src="images/programs/community-support.jpg" style="border-radius:var(--radius-lg); box-shadow:var(--shadow-md); width:100%; height:380px; object-fit:cover;"/>
 </div>
 </div>
 </div>
@@ -1311,7 +1314,7 @@
 <div class="container">
 <div class="responsive-grid-split-rev">
 <div>
-<img alt="Education, Skills & Youth Opportunity" class="program-banner-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=700&amp;q=80\';" src="images/programs/education-skills.jpg" style="border-radius:var(--radius-lg); box-shadow:var(--shadow-md); width:100%; height:380px; object-fit:cover;"/>
+<img data-i18n-alt="alt_prog_education" alt="A YBSP volunteer posing with a youth basketball team outdoors" class="program-banner-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=700&amp;q=80\';" src="images/programs/education-skills.jpg" style="border-radius:var(--radius-lg); box-shadow:var(--shadow-md); width:100%; height:380px; object-fit:cover;"/>
 </div>
 <div>
 <span class="section-tag" data-i18n="p2_tag">Pillar 2: Learning &amp; Mentorship</span>
@@ -1367,7 +1370,7 @@
           </div>
 </div>
 <div>
-<img alt="Pathways to Self-Sufficiency" class="program-banner-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&amp;fit=crop&amp;w=700&amp;q=80\';" src="images/programs/self-sufficiency.jpg" style="border-radius:var(--radius-lg); box-shadow:var(--shadow-md); width:100%; height:380px; object-fit:cover;"/>
+<img data-i18n-alt="alt_prog_selfsufficiency" alt="Three women in Women Empowerment shirts holding chickens from a YBSP poultry livelihood project" class="program-banner-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&amp;fit=crop&amp;w=700&amp;q=80\';" src="images/programs/self-sufficiency.jpg" style="border-radius:var(--radius-lg); box-shadow:var(--shadow-md); width:100%; height:380px; object-fit:cover;"/>
 </div>
 </div>
 </div>
@@ -1570,7 +1573,6 @@
       // Accordion dropdown toggle on mobile (independent submenus)
       navMenu.querySelectorAll('.nav-item.has-dropdown .dropdown-toggle-btn').forEach(function(arrowBtn) {
         function toggleSubmenu(e) {
-          if (window.innerWidth <= 991) {
             if (e) {
               if (e.preventDefault) e.preventDefault();
               if (e.stopPropagation) e.stopPropagation();
@@ -1593,7 +1595,6 @@
                 dropMenu.style.removeProperty('visibility');
               }
             }
-          }
         }
 
         arrowBtn.addEventListener('click', toggleSubmenu);
@@ -1641,6 +1642,9 @@
       en: {
         meta_title: "Programs & Impact | Youth Building in Synergy to end Poverty (YBSP Canada)",
         skip_link: "Skip to main content",
+        alt_prog_support: "A YBSP volunteer distributing bottled drinks to seated children during a community outreach",
+        alt_prog_education: "A YBSP volunteer posing with a youth basketball team outdoors",
+        alt_prog_selfsufficiency: "Three women in Women Empowerment shirts holding chickens from a YBSP poultry livelihood project",
         sdg_1_label: "SDG 1",
         sdg_4_label: "SDG 4",
         sdg_8_label: "SDG 8",
@@ -1789,6 +1793,9 @@
       fr: {
         meta_title: "Programmes et impact | Youth Building in Synergy to end Poverty (YBSP Canada)",
         skip_link: "Aller au contenu principal",
+        alt_prog_support: "Un bénévole YBSP distribuant des boissons en bouteille à des enfants assis lors d'une activité communautaire",
+        alt_prog_education: "Un bénévole YBSP posant avec une équipe de basketball de jeunes à l'extérieur",
+        alt_prog_selfsufficiency: "Trois femmes en chandails Autonomisation des femmes tenant des poules d'un projet avicole de subsistance de YBSP",
         sdg_1_label: "ODD 1",
         sdg_4_label: "ODD 4",
         sdg_8_label: "ODD 8",
@@ -1945,6 +1952,12 @@
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
           el.innerHTML = translations[lang][key];
+        }
+      });
+      document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+        const ak = el.getAttribute('data-i18n-alt');
+        if (translations[lang] && translations[lang][ak]) {
+          el.setAttribute('alt', translations[lang][ak]);
         }
       });
       // Update the browser tab title for the active language

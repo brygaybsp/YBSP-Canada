@@ -16,7 +16,7 @@
       --primary-dark: #071927;
       --primary-light: #1d4b75;
       --secondary: #10b981;
-      --secondary-dark: #059669;
+      --secondary-dark: #047857;
       --accent: #f59e0b;
       --accent-hover: #d97706;
       --text-main: #1f2937;
@@ -180,6 +180,7 @@
       visibility: visible;
       transform: translateY(0);
     }
+.nav-item.has-dropdown:focus-within > .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
     .dropdown-link {
       display: block;
       padding: 9px 18px;
@@ -1315,6 +1316,8 @@
     scroll-behavior: auto !important;
   }
 }
+
+.lang-btn { min-width: 28px; min-height: 28px; display: inline-flex; align-items: center; justify-content: center; }
 </style>
 </head>
 <body>
@@ -1467,7 +1470,7 @@
 <a class="btn-read-featured" data-i18n="btn_read_story" href="news-single.html?id=1">Read Full Feature →</a>
 </div>
 <div class="featured-img-wrap">
-<a href="news-single.html?id=1"><img alt="Mentorship Launch" class="featured-img" loading="eager" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1000&amp;q=80\';" src="images/news/news-spotlight.jpg"/></a>
+<a href="news-single.html?id=1"><img data-i18n-alt="alt_news_spotlight" alt="YBSP volunteers in branded shirts at an outdoor children's Christmas celebration in Burundi" class="featured-img" loading="eager" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1000&amp;q=80\';" src="images/news/news-spotlight.jpg"/></a>
 </div>
 </div>
 </div>
@@ -1482,7 +1485,7 @@
 <div class="news-grid">
 <!-- ARTICLE 1 -->
 <article class="article-card" id="article-1">
-<a href="news-single.html?id=1"><img alt="Youth Cohort" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-1.jpg"/></a>
+<a href="news-single.html?id=1"><img data-i18n-alt="alt_news_1" alt="YBSP team members dancing and playing with Burundian children during an indoor community activity" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-1.jpg"/></a>
 <div class="article-body">
 <div class="article-meta">
 <span class="article-tag" data-i18n="art1_tag">Program Expansion</span>
@@ -1498,7 +1501,7 @@
 </article>
 <!-- ARTICLE 2 -->
 <article class="article-card" id="article-2">
-<a href="news-single.html?id=2"><img alt="Burundi Synergy" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-2.jpg"/></a>
+<a href="news-single.html?id=2"><img data-i18n-alt="alt_news_2" alt="Volunteers serving plates of food to children at a YBSP Sunday Meal distribution" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-2.jpg"/></a>
 <div class="article-body">
 <div class="article-meta">
 <span class="article-tag" data-i18n="art2_tag">International Synergy</span>
@@ -1514,7 +1517,7 @@
 </article>
 <!-- ARTICLE 3 -->
 <article class="article-card" id="article-3">
-<a href="news-single.html?id=3"><img alt="Corporate Compliance" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-3.jpg"/></a>
+<a href="news-single.html?id=3"><img data-i18n-alt="alt_news_3" alt="Volunteers and Burundian children laughing together during a joyful indoor group activity" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-3.jpg"/></a>
 <div class="article-body">
 <div class="article-meta">
 <span class="article-tag" data-i18n="art3_tag">Governance</span>
@@ -1530,7 +1533,7 @@
 </article>
 <!-- ARTICLE 4 -->
 <article class="article-card" id="article-4">
-<a href="news-single.html?id=4"><img alt="Environmental Cleanup" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-4.jpg"/></a>
+<a href="news-single.html?id=4"><img data-i18n-alt="alt_news_4" alt="Volunteers helping Burundian children wash their hands with water from a bucket" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-4.jpg"/></a>
 <div class="article-body">
 <div class="article-meta">
 <span class="article-tag" data-i18n="art4_tag">Community Ecology</span>
@@ -1546,7 +1549,7 @@
 </article>
 <!-- ARTICLE 5 -->
 <article class="article-card" id="article-5">
-<a href="news-single.html?id=5"><img alt="Financial Transparency" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-5.jpg"/></a>
+<a href="news-single.html?id=5"><img data-i18n-alt="alt_news_5" alt="Burundian children sharing a large communal platter of rice and beans" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-5.jpg"/></a>
 <div class="article-body">
 <div class="article-meta">
 <span class="article-tag" data-i18n="art5_tag">Donor Transparency</span>
@@ -1562,7 +1565,7 @@
 </article>
 <!-- ARTICLE 6 (BONUS DISPATCH) -->
 <article class="article-card" id="article-6">
-<a href="news-single.html?id=6"><img alt="Mental Health Workshop" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-6.jpg"/></a>
+<a href="news-single.html?id=6"><img data-i18n-alt="alt_news_6" alt="Group photo of the YBSP team with community women outdoors in Burundi" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-6.jpg"/></a>
 <div class="article-body">
 <div class="article-meta">
 <span class="article-tag" data-i18n="art6_tag">Mental Health</span>
@@ -1723,7 +1726,7 @@
 <span>•</span>
 <span>✍️ YBSP Canada Secretariat</span>
 </div>
-<img alt="Article cover" class="modal-article-img" id="m-img" src=""/>
+<img data-i18n-alt="alt_news_modal" alt="Article cover image" class="modal-article-img" id="m-img" src=""/>
 <div class="modal-article-lead" id="m-lead">Article lead paragraph</div>
 <div class="modal-article-body" id="m-body">
 <!-- Full story content -->
@@ -1788,7 +1791,6 @@
       // Accordion dropdown toggle on mobile (independent submenus)
       navMenu.querySelectorAll('.nav-item.has-dropdown .dropdown-toggle-btn').forEach(function(arrowBtn) {
         function toggleSubmenu(e) {
-          if (window.innerWidth <= 991) {
             if (e) {
               if (e.preventDefault) e.preventDefault();
               if (e.stopPropagation) e.stopPropagation();
@@ -1811,7 +1813,6 @@
                 dropMenu.style.removeProperty('visibility');
               }
             }
-          }
         }
 
         arrowBtn.addEventListener('click', toggleSubmenu);
@@ -1859,6 +1860,14 @@
       en: {
         meta_title: "News & Stories of Change | Youth Building in Synergy to end Poverty (YBSP Canada)",
         skip_link: "Skip to main content",
+        alt_news_spotlight: "YBSP volunteers in branded shirts at an outdoor children's Christmas celebration in Burundi",
+        alt_news_1: "YBSP team members dancing and playing with Burundian children during an indoor community activity",
+        alt_news_2: "Volunteers serving plates of food to children at a YBSP Sunday Meal distribution",
+        alt_news_3: "Volunteers and Burundian children laughing together during a joyful indoor group activity",
+        alt_news_4: "Volunteers helping Burundian children wash their hands with water from a bucket",
+        alt_news_5: "Burundian children sharing a large communal platter of rice and beans",
+        alt_news_6: "Group photo of the YBSP team with community women outdoors in Burundi",
+        alt_news_modal: "Article cover image",
         art_close: "← Close Story",
         art_support: "Support Our Work →",
         badge_pdf: "PDF",
@@ -2030,6 +2039,14 @@
       fr: {
         meta_title: "Nouvelles & Récits de transformation | Youth Building in Synergy to end Poverty (YBSP Canada)",
         skip_link: "Aller au contenu principal",
+        alt_news_spotlight: "Bénévoles de YBSP en chandails à l'effigie de l'organisme lors d'une fête de Noël extérieure pour enfants au Burundi",
+        alt_news_1: "Membres de l'équipe YBSP dansant et jouant avec des enfants burundais lors d'une activité communautaire intérieure",
+        alt_news_2: "Bénévoles servant des assiettes de nourriture à des enfants lors d'une distribution du programme Sunday Meal de YBSP",
+        alt_news_3: "Bénévoles et enfants burundais riant ensemble lors d'une activité de groupe joyeuse à l'intérieur",
+        alt_news_4: "Bénévoles aidant des enfants burundais à se laver les mains avec de l'eau d'un seau",
+        alt_news_5: "Enfants burundais partageant un grand plat communautaire de riz et de haricots",
+        alt_news_6: "Photo de groupe de l'équipe YBSP avec des femmes de la communauté à l'extérieur au Burundi",
+        alt_news_modal: "Image de couverture de l'article",
         art_close: "← Fermer l'article",
         art_support: "Soutenir notre action →",
         badge_pdf: "PDF",
@@ -2212,6 +2229,12 @@
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
           el.innerHTML = translations[lang][key];
+        }
+      });
+      document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+        const ak = el.getAttribute('data-i18n-alt');
+        if (translations[lang] && translations[lang][ak]) {
+          el.setAttribute('alt', translations[lang][ak]);
         }
       });
       // Update the browser tab title for the active language

@@ -21,7 +21,7 @@
       --primary-dark: #061124;
       --primary-light: #163660;
       --secondary: #10b981;
-      --secondary-dark: #059669;
+      --secondary-dark: #047857;
       --accent: #f59e0b;
       --accent-hover: #d97706;
       --text-main: #1f2937;
@@ -163,6 +163,7 @@
       z-index: 100;
     }
     .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-item.has-dropdown:focus-within > .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
     .dropdown-link { display: block; padding: 10px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500; white-space: normal; line-height: 1.35; }
     .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 22px; }
     .btn-nav-donate { background: #0284c7; color: #ffffff !important; font-size: 0.88rem; font-weight: 700; padding: 8px 18px; border-radius: 9999px; margin-left: 8px; border: none; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(2,132,199,0.25); }
@@ -765,6 +766,8 @@
     scroll-behavior: auto !important;
   }
 }
+
+.lang-btn { min-width: 28px; min-height: 28px; display: inline-flex; align-items: center; justify-content: center; }
 </style>
 </head>
 <body>
@@ -988,7 +991,7 @@
 <!-- Card 1: Mentorship & Skills -->
 <div class="impact-card">
 <div class="impact-card-img-wrap">
-<img alt="Youth receiving practical digital skills and workplace mentoring" class="impact-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-education.jpg"/>
+<img data-i18n-alt="alt_donate_education" alt="Youth receiving practical digital skills and workplace mentoring" class="impact-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-education.jpg"/>
 <span class="impact-card-tag" data-i18n="card1_tag">Youth Opportunity</span>
 </div>
 <div class="impact-card-body">
@@ -1002,7 +1005,7 @@
 <!-- Card 2: Immediate Relief & Essentials -->
 <div class="impact-card">
 <div class="impact-card-img-wrap">
-<img alt="Community grocery support and direct essentials preparation" class="impact-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-relief.jpg"/>
+<img data-i18n-alt="alt_donate_relief" alt="Community grocery support and direct essentials preparation" class="impact-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-relief.jpg"/>
 <span class="impact-card-tag" data-i18n="card2_tag">Immediate Relief</span>
 </div>
 <div class="impact-card-body">
@@ -1016,7 +1019,7 @@
 <!-- Card 3: International Solidarity -->
 <div class="impact-card">
 <div class="impact-card-img-wrap">
-<img alt="Vocational training tools and sustainable livelihood empowerment in Burundi" class="impact-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-self-sufficiency.jpg"/>
+<img data-i18n-alt="alt_donate_selfsufficiency" alt="Vocational training tools and sustainable livelihood empowerment in Burundi" class="impact-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-self-sufficiency.jpg"/>
 <span class="impact-card-tag" data-i18n="card3_tag">International Solidarity</span>
 </div>
 <div class="impact-card-body">
@@ -1208,6 +1211,9 @@
       en: {
         meta_title: "Donate & Support Our Mission | Youth Building in Synergy to end Poverty (YBSP Canada)",
         skip_link: "Skip to main content",
+        alt_donate_education: "Youth receiving practical digital skills and workplace mentoring",
+        alt_donate_relief: "Community grocery support and direct essentials preparation",
+        alt_donate_selfsufficiency: "Vocational training tools and sustainable livelihood empowerment in Burundi",
         nav_home: "Home",
         nav_about: "About Us",
         nav_mission: "Mission & Mandate",
@@ -1331,6 +1337,9 @@
       fr: {
         meta_title: "Faire un don et soutenir notre mission | Youth Building in Synergy to end Poverty (YBSP Canada)",
         skip_link: "Aller au contenu principal",
+        alt_donate_education: "Jeunes recevant des compétences numériques pratiques et du mentorat professionnel",
+        alt_donate_relief: "Soutien alimentaire communautaire et préparation d'essentiels directs",
+        alt_donate_selfsufficiency: "Outils de formation professionnelle et autonomisation des moyens de subsistance durables au Burundi",
         nav_home: "Accueil",
         nav_about: "À propos",
         nav_mission: "Mission & Mandat",
@@ -1463,6 +1472,12 @@
           el.innerHTML = t[key];
         }
       });
+      document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+        const ak = el.getAttribute('data-i18n-alt');
+        if (t && t[ak]) {
+          el.setAttribute('alt', t[ak]);
+        }
+      });
       // Update the browser tab title for the active language
       if (t['meta_title']) {
         document.title = t['meta_title'];
@@ -1511,7 +1526,6 @@
 
         navMenu.querySelectorAll('.nav-item.has-dropdown .dropdown-toggle-btn').forEach(function(arrowBtn) {
           function toggleSubmenu(e) {
-            if (window.innerWidth <= 991) {
               if (e) {
                 if (e.preventDefault) e.preventDefault();
                 if (e.stopPropagation) e.stopPropagation();
@@ -1532,7 +1546,6 @@
                   dropMenu.style.removeProperty('visibility');
                 }
               }
-            }
           }
 
           arrowBtn.addEventListener('click', toggleSubmenu);
