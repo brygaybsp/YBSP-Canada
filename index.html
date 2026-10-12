@@ -2233,7 +2233,7 @@
 <div class="footer-bottom-bar" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
 <!-- BOTTOM LEFT: COPYRIGHT -->
 <div class="footer-copyright" style="font-size:0.86rem; color:#94a3b8; text-align:left;">
-          © 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
+          © <span data-year>2026</span> Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
         </div>
 <div class="footer-legal" style="font-size:0.86rem; text-align:left;">
 <a data-i18n="foot_privacy" data-i18n-href="pdf_privacy" href="docs/YBSP_Canada_Privacy_Policy.pdf" target="_blank" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
@@ -2553,7 +2553,7 @@ const translations = {
     "foot_work_title": "Our Work",
     "foot_contact_title": "Contact & Secretariat",
     "foot_loc": "Based in the Ottawa - Gatineau Region (Developing Partnerships Across Canada)",
-    "foot_copy": "&copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All rights reserved.",
+    "foot_copy": "&copy; <span data-year>2026</span> Youth Building in Synergy to end Poverty (YBSP Canada). All rights reserved.",
     "foot_corp_info": "Corporate Filings",
     "foot_privacy": "Privacy Policy",
     "foot_contact": "Contact Secretariat",
@@ -2768,7 +2768,7 @@ const translations = {
     "foot_work_title": "Nos actions",
     "foot_contact_title": "Contact & Secrétariat",
     "foot_loc": "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)",
-    "foot_copy": "&copy; 2026 Youth Building in Synergy to end Poverty (YBSP Canada). Tous droits réservés.",
+    "foot_copy": "&copy; <span data-year>2026</span> Youth Building in Synergy to end Poverty (YBSP Canada). Tous droits réservés.",
     "foot_corp_info": "Renseignements corporatifs",
     "foot_privacy": "Politique de confidentialité",
     "foot_contact": "Contacter le secrétariat",
@@ -2866,6 +2866,8 @@ const translations = {
 function setLanguage(lang) {
   try { localStorage.setItem('ybsp_lang', lang); } catch(e) {}
   document.documentElement.lang = lang;
+      // Keep the footer copyright year current
+      document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent = new Date().getFullYear(); });
 
   const elements = document.querySelectorAll('[data-i18n]');
   elements.forEach(el => {
@@ -2929,6 +2931,11 @@ function setLanguage(lang) {
   } catch(e) {}
   setLanguage(savedLang);
 })();
+</script>
+
+<script>
+// Keep the footer copyright year current
+document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent = new Date().getFullYear(); });
 </script>
 </body>
 </html>
