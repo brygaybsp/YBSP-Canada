@@ -16,7 +16,7 @@
       --primary-dark: #071927;
       --primary-light: #1d4b75;
       --secondary: #10b981;
-      --secondary-dark: #059669;
+      --secondary-dark: #047857;
       --accent: #f59e0b;
       --accent-hover: #d97706;
       --text-main: #1f2937;
@@ -180,6 +180,7 @@
       visibility: visible;
       transform: translateY(0);
     }
+.nav-item.has-dropdown:focus-within > .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
     .dropdown-link {
       display: block;
       padding: 9px 18px;
@@ -1315,6 +1316,8 @@
     scroll-behavior: auto !important;
   }
 }
+
+.lang-btn { min-width: 28px; min-height: 28px; display: inline-flex; align-items: center; justify-content: center; }
 </style>
 </head>
 <body>
@@ -1788,7 +1791,6 @@
       // Accordion dropdown toggle on mobile (independent submenus)
       navMenu.querySelectorAll('.nav-item.has-dropdown .dropdown-toggle-btn').forEach(function(arrowBtn) {
         function toggleSubmenu(e) {
-          if (window.innerWidth <= 991) {
             if (e) {
               if (e.preventDefault) e.preventDefault();
               if (e.stopPropagation) e.stopPropagation();
@@ -1811,7 +1813,6 @@
                 dropMenu.style.removeProperty('visibility');
               }
             }
-          }
         }
 
         arrowBtn.addEventListener('click', toggleSubmenu);

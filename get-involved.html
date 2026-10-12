@@ -17,7 +17,7 @@
       --primary-dark: #061124;
       --primary-light: #163660;
       --secondary: #10b981;
-      --secondary-dark: #059669;
+      --secondary-dark: #047857;
       --accent: #f59e0b;
       --accent-hover: #d97706;
       --text-main: #1f2937;
@@ -199,6 +199,7 @@
       z-index: 100;
     }
     .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-item.has-dropdown:focus-within > .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
     .dropdown-link { display: block; padding: 9px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500;  white-space: normal; line-height: 1.35; }
     .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 22px; }
 
@@ -1163,6 +1164,8 @@
     scroll-behavior: auto !important;
   }
 }
+
+.lang-btn { min-width: 28px; min-height: 28px; display: inline-flex; align-items: center; justify-content: center; }
 </style>
 </head>
 <body>
@@ -1387,7 +1390,7 @@
 <textarea class="form-textarea" data-i18n-placeholder="ph_inv_msg" id="v-msg" name="message" placeholder="Tell us about your background, professional experience, or why you want to support YBSP Canada..." rows="4"></textarea>
 </div>
 <button class="btn-primary" data-i18n="btn_submit_app" style="width:100%; justify-content:center; padding:12px;" type="submit">Submit Volunteer Application</button>
-<div class="form-feedback success" id="vol-success" style="display:none; margin-top:18px;">
+<div class="form-feedback success" id="vol-success" style="display:none; margin-top:18px;" role="status" aria-live="polite">
             Thank you for your application. Our secretariat team will review your submission and contact you within 2 to 3 business days.
           </div>
 </form>
@@ -1502,7 +1505,7 @@
 <textarea class="form-textarea" data-i18n-placeholder="ph_part_msg" id="p-msg" name="message" placeholder="Briefly describe your proposed partnership idea or how our organizations can collaborate..." rows="4"></textarea>
 </div>
 <button class="btn-primary" data-i18n="btn_submit_part" style="width:100%; justify-content:center; padding:12px;" type="submit">Submit Partnership Inquiry</button>
-<div class="form-feedback success" id="part-success" style="display:none; margin-top:18px;">
+<div class="form-feedback success" id="part-success" style="display:none; margin-top:18px;" role="status" aria-live="polite">
             Thank you for reaching out. Our partnerships leadership team will review your inquiry and follow up within 2 business days.
           </div>
 </form>
@@ -1643,7 +1646,6 @@
       // Accordion dropdown toggle on mobile (independent submenus)
       navMenu.querySelectorAll('.nav-item.has-dropdown .dropdown-toggle-btn').forEach(function(arrowBtn) {
         function toggleSubmenu(e) {
-          if (window.innerWidth <= 991) {
             if (e) {
               if (e.preventDefault) e.preventDefault();
               if (e.stopPropagation) e.stopPropagation();
@@ -1666,7 +1668,6 @@
                 dropMenu.style.removeProperty('visibility');
               }
             }
-          }
         }
 
         arrowBtn.addEventListener('click', toggleSubmenu);

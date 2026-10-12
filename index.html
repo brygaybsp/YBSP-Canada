@@ -41,7 +41,7 @@
       --primary-dark: #061124;
       --primary-light: #163660;
       --secondary: #10b981;
-      --secondary-dark: #059669;
+      --secondary-dark: #047857;
       --accent: #f59e0b;
       --accent-hover: #d97706;
       --text-main: #1f2937;
@@ -223,6 +223,7 @@
       z-index: 100;
     }
     .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-item.has-dropdown:focus-within > .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
     .dropdown-link { display: block; padding: 9px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500;  white-space: normal; line-height: 1.35; }
     .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 22px; }
 
@@ -1238,7 +1239,7 @@
       --v34-navy: #0b1c3d;
       --v34-navy-dark: #061124;
       --v34-blue: #0ea5e9;
-      --v34-blue-hover: #0284c7;
+      --v34-blue-hover: #0369a1;
       --v34-amber: #f59e0b;
       --v34-amber-dark: #d97706;
       --v34-slate: #f8fafc;
@@ -1801,6 +1802,8 @@
     scroll-behavior: auto !important;
   }
 }
+
+.lang-btn { min-width: 28px; min-height: 28px; display: inline-flex; align-items: center; justify-content: center; }
 </style>
 </head>
 <body>
@@ -2327,7 +2330,6 @@
       // Accordion dropdown toggle on mobile (independent submenus)
       navMenu.querySelectorAll('.nav-item.has-dropdown .dropdown-toggle-btn').forEach(function(arrowBtn) {
         function toggleSubmenu(e) {
-          if (window.innerWidth <= 991) {
             if (e) {
               if (e.preventDefault) e.preventDefault();
               if (e.stopPropagation) e.stopPropagation();
@@ -2350,7 +2352,6 @@
                 dropMenu.style.removeProperty('visibility');
               }
             }
-          }
         }
 
         arrowBtn.addEventListener('click', toggleSubmenu);
@@ -2936,6 +2937,8 @@ function setLanguage(lang) {
       btnFr.classList.add('active');
       btnFr.style.background = 'var(--secondary)';
       btnFr.style.color = '#0b1c3d';
+      btnFr.setAttribute('aria-pressed', 'true');
+      btnEn.setAttribute('aria-pressed', 'false');
       btnEn.classList.remove('active');
       btnEn.style.background = 'transparent';
       btnEn.style.color = '#cbd5e1';
@@ -2943,6 +2946,8 @@ function setLanguage(lang) {
       btnEn.classList.add('active');
       btnEn.style.background = 'var(--secondary)';
       btnEn.style.color = '#0b1c3d';
+      btnEn.setAttribute('aria-pressed', 'true');
+      btnFr.setAttribute('aria-pressed', 'false');
       btnFr.classList.remove('active');
       btnFr.style.background = 'transparent';
       btnFr.style.color = '#cbd5e1';

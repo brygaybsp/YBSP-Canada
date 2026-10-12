@@ -17,7 +17,7 @@
       --primary-dark: #061124;
       --primary-light: #163660;
       --secondary: #10b981;
-      --secondary-dark: #059669;
+      --secondary-dark: #047857;
       --accent: #f59e0b;
       --accent-hover: #d97706;
       --text-main: #1f2937;
@@ -199,6 +199,7 @@
       z-index: 100;
     }
     .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-item.has-dropdown:focus-within > .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
     .dropdown-link { display: block; padding: 9px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500;  white-space: normal; line-height: 1.35; }
     .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 22px; }
 
@@ -1181,6 +1182,8 @@
     scroll-behavior: auto !important;
   }
 }
+
+.lang-btn { min-width: 28px; min-height: 28px; display: inline-flex; align-items: center; justify-content: center; }
 </style>
 </head>
 <body>
@@ -1779,7 +1782,6 @@
       // Accordion dropdown toggle on mobile (independent submenus)
       navMenu.querySelectorAll('.nav-item.has-dropdown .dropdown-toggle-btn').forEach(function(arrowBtn) {
         function toggleSubmenu(e) {
-          if (window.innerWidth <= 991) {
             if (e) {
               if (e.preventDefault) e.preventDefault();
               if (e.stopPropagation) e.stopPropagation();
@@ -1802,7 +1804,6 @@
                 dropMenu.style.removeProperty('visibility');
               }
             }
-          }
         }
 
         arrowBtn.addEventListener('click', toggleSubmenu);
@@ -2384,6 +2385,7 @@
     
   
   // Event Registration Modal Controls
+  var modalTriggerBtn = null;
   function openEventRegister(eventKey) {
     const modal = document.getElementById('registerModal');
     const titleEl = document.getElementById('modalEventTitle');
@@ -2403,6 +2405,9 @@
       if (successMsg) successMsg.style.display = 'none';
       modal.style.display = 'flex';
       document.body.style.overflow = 'hidden';
+      modalTriggerBtn = document.activeElement;
+      var firstField = document.getElementById('reg-name');
+      if (firstField) firstField.focus();
     }
   }
 
@@ -2412,7 +2417,23 @@
       modal.style.display = 'none';
       document.body.style.overflow = '';
     }
+    if (modalTriggerBtn) { try { modalTriggerBtn.focus(); } catch(e) {} modalTriggerBtn = null; }
   }
+  (function() {
+    var modal = document.getElementById('registerModal');
+    if (!modal) return;
+    modal.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { closeEventRegister(); return; }
+      if (e.key !== 'Tab') return;
+      var els = modal.querySelectorAll('button, input, select, textarea, a[href]');
+      var vis = [];
+      for (var i = 0; i < els.length; i++) { if (els[i].offsetParent !== null) vis.push(els[i]); }
+      if (!vis.length) return;
+      var first = vis[0], last = vis[vis.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  })();
 
   function submitEventRegister(e) {
     if (e && e.preventDefault) e.preventDefault();
@@ -2773,10 +2794,10 @@
 
   </script>
 <!-- EVENT REGISTRATION MODAL -->
-<div id="registerModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(6,17,36,0.75); z-index:999999; justify-content:center; align-items:center; padding:20px; box-sizing:border-box;">
+<div id="registerModal" role="dialog" aria-modal="true" aria-labelledby="modalEventTitle" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(6,17,36,0.75); z-index:999999; justify-content:center; align-items:center; padding:20px; box-sizing:border-box;">
 <div style="background:#ffffff; border-radius:12px; max-width:520px; width:100%; padding:32px 28px; box-shadow:0 25px 50px -12px rgba(0,0,0,0.25); position:relative; max-height:90vh; overflow-y:auto;">
 <button aria-label="Close modal" onclick="closeEventRegister()" style="position:absolute; top:16px; right:18px; background:none; border:none; font-size:1.6rem; color:#64748b; cursor:pointer; line-height:1;">×</button>
-<div data-i18n="modal_reg_kicker" style="display:inline-block; font-size:0.8rem; font-weight:700; color:var(--secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">RSVP &amp; Registration</div>
+<div data-i18n="modal_reg_kicker" style="display:inline-block; font-size:0.8rem; font-weight:700; color:#065f46; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">RSVP &amp; Registration</div>
 <h3 data-i18n="modal_reg_title" id="modalEventTitle" style="font-size:1.35rem; color:var(--primary); margin:0 0 12px; font-weight:800; line-height:1.3;">Event Registration</h3>
 <p data-i18n="modal_reg_desc" style="font-size:0.92rem; color:var(--text-muted); margin-bottom:20px; line-height:1.5;">Join us for this community event. Participation is free and open to youth, mentors, and community partners.</p>
 <form data-netlify="true" id="modalRegisterForm" method="POST" name="event-registration" onsubmit="submitEventRegister(event)">
@@ -2799,7 +2820,7 @@
 </div>
 <button class="btn-primary" style="width:100%; padding:12px; font-size:1rem; font-weight:700; border-radius:6px; border:none; cursor:pointer;" data-i18n="modal_reg_submit" type="submit">Confirm Registration</button>
 </form>
-<div id="modalSuccessMsg" style="display:none; text-align:center; padding:20px 10px;">
+<div id="modalSuccessMsg" style="display:none; text-align:center; padding:20px 10px;" role="status" aria-live="polite">
 <div style="font-size:2.5rem; margin-bottom:10px;">✅</div>
 <h3 data-i18n="modal_reg_success" style="font-size:1.2rem; color:var(--primary); margin-bottom:8px;">Registration Confirmed!</h3>
 <p data-i18n="modal_reg_success_msg" style="font-size:0.9rem; color:var(--text-muted);">Thank you for registering. Event access details will be sent to your email.</p>

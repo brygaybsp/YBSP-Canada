@@ -17,7 +17,7 @@
       --primary-dark: #061124;
       --primary-light: #163660;
       --secondary: #10b981;
-      --secondary-dark: #059669;
+      --secondary-dark: #047857;
       --accent: #f59e0b;
       --accent-hover: #d97706;
       --text-main: #1f2937;
@@ -199,6 +199,7 @@
       z-index: 100;
     }
     .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-item.has-dropdown:focus-within > .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
     .dropdown-link { display: block; padding: 9px 18px; font-size: 0.88rem; color: var(--text-main); font-weight: 500;  white-space: normal; line-height: 1.35; }
     .dropdown-link:hover { background-color: var(--bg-slate); color: var(--secondary-dark); padding-left: 22px; }
 
@@ -1110,6 +1111,8 @@
     scroll-behavior: auto !important;
   }
 }
+
+.lang-btn { min-width: 28px; min-height: 28px; display: inline-flex; align-items: center; justify-content: center; }
 </style>
 </head>
 <body>
@@ -1320,7 +1323,7 @@
 <textarea class="form-textarea" data-i18n-placeholder="ph_contact_msg" id="c-message" name="message" placeholder="How can we help you or collaborate with your organization?" required="" rows="5"></textarea>
 </div>
 <button class="btn-primary" data-i18n="btn_send_msg" style="width:100%; justify-content:center;" type="submit">Send Message to Secretariat</button>
-<div class="form-feedback" data-i18n="contact_feedback" id="contactFeedback">
+<div class="form-feedback" data-i18n="contact_feedback" id="contactFeedback" role="status" aria-live="polite">
               ✓ Message Sent! Thank you for reaching out to YBSP Canada. Our team will review your message and respond within 2 to 3 business days.
             </div>
 </form>
@@ -1449,7 +1452,6 @@
       // Accordion dropdown toggle on mobile (independent submenus)
       navMenu.querySelectorAll('.nav-item.has-dropdown .dropdown-toggle-btn').forEach(function(arrowBtn) {
         function toggleSubmenu(e) {
-          if (window.innerWidth <= 991) {
             if (e) {
               if (e.preventDefault) e.preventDefault();
               if (e.stopPropagation) e.stopPropagation();
@@ -1472,7 +1474,6 @@
                 dropMenu.style.removeProperty('visibility');
               }
             }
-          }
         }
 
         arrowBtn.addEventListener('click', toggleSubmenu);
