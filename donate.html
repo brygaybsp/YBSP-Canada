@@ -991,7 +991,7 @@
 <!-- Card 1: Mentorship & Skills -->
 <div class="impact-card">
 <div class="impact-card-img-wrap">
-<img alt="Youth receiving practical digital skills and workplace mentoring" class="impact-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-education.jpg"/>
+<img data-i18n-alt="alt_donate_education" alt="Youth receiving practical digital skills and workplace mentoring" class="impact-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-education.jpg"/>
 <span class="impact-card-tag" data-i18n="card1_tag">Youth Opportunity</span>
 </div>
 <div class="impact-card-body">
@@ -1005,7 +1005,7 @@
 <!-- Card 2: Immediate Relief & Essentials -->
 <div class="impact-card">
 <div class="impact-card-img-wrap">
-<img alt="Community grocery support and direct essentials preparation" class="impact-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-relief.jpg"/>
+<img data-i18n-alt="alt_donate_relief" alt="Community grocery support and direct essentials preparation" class="impact-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-relief.jpg"/>
 <span class="impact-card-tag" data-i18n="card2_tag">Immediate Relief</span>
 </div>
 <div class="impact-card-body">
@@ -1019,7 +1019,7 @@
 <!-- Card 3: International Solidarity -->
 <div class="impact-card">
 <div class="impact-card-img-wrap">
-<img alt="Vocational training tools and sustainable livelihood empowerment in Burundi" class="impact-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-self-sufficiency.jpg"/>
+<img data-i18n-alt="alt_donate_selfsufficiency" alt="Vocational training tools and sustainable livelihood empowerment in Burundi" class="impact-card-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/pathways/pathway-self-sufficiency.jpg"/>
 <span class="impact-card-tag" data-i18n="card3_tag">International Solidarity</span>
 </div>
 <div class="impact-card-body">
@@ -1211,6 +1211,9 @@
       en: {
         meta_title: "Donate & Support Our Mission | Youth Building in Synergy to end Poverty (YBSP Canada)",
         skip_link: "Skip to main content",
+        alt_donate_education: "Youth receiving practical digital skills and workplace mentoring",
+        alt_donate_relief: "Community grocery support and direct essentials preparation",
+        alt_donate_selfsufficiency: "Vocational training tools and sustainable livelihood empowerment in Burundi",
         nav_home: "Home",
         nav_about: "About Us",
         nav_mission: "Mission & Mandate",
@@ -1334,6 +1337,9 @@
       fr: {
         meta_title: "Faire un don et soutenir notre mission | Youth Building in Synergy to end Poverty (YBSP Canada)",
         skip_link: "Aller au contenu principal",
+        alt_donate_education: "Jeunes recevant des compétences numériques pratiques et du mentorat professionnel",
+        alt_donate_relief: "Soutien alimentaire communautaire et préparation d'essentiels directs",
+        alt_donate_selfsufficiency: "Outils de formation professionnelle et autonomisation des moyens de subsistance durables au Burundi",
         nav_home: "Accueil",
         nav_about: "À propos",
         nav_mission: "Mission & Mandat",
@@ -1464,6 +1470,12 @@
         const key = el.getAttribute('data-i18n');
         if (t[key]) {
           el.innerHTML = t[key];
+        }
+      });
+      document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+        const ak = el.getAttribute('data-i18n-alt');
+        if (t && t[ak]) {
+          el.setAttribute('alt', t[ak]);
         }
       });
       // Update the browser tab title for the active language

@@ -1132,7 +1132,7 @@
 </div>
 </article>
 <div class="article-body">
-<img alt="Article Cover" class="article-hero-img" id="article-img" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"/>
+<img data-i18n-alt="alt_article_cover" alt="Three young people laughing together around a table with laptops" class="article-hero-img" id="article-img" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"/>
 <div class="article-lead" id="article-lead">
         Loading excerpt...
       </div>
@@ -1623,6 +1623,7 @@
       en: {
         meta_title: "Article | Youth Building in Synergy to end Poverty (YBSP Canada)",
         skip_link: "Aller au contenu principal",
+        alt_article_cover: "Trois jeunes riant ensemble autour d'une table avec des ordinateurs portables",
         nav_community_support: "Community Support & Poverty Relief",
         nav_education_skills: "Education, Skills & Youth Opportunity",
         nav_self_sufficiency: "Pathways to Self-Sufficiency",
@@ -1681,6 +1682,7 @@
       fr: {
         meta_title: "Article | Youth Building in Synergy to end Poverty (YBSP Canada)",
         skip_link: "Aller au contenu principal",
+        alt_article_cover: "Trois jeunes riant ensemble autour d'une table avec des ordinateurs portables",
         nav_community_support: "Soutien communautaire & Secours alimentaire",
         nav_education_skills: "Éducation, compétences & Possibilités jeunesse",
         nav_self_sufficiency: "Chemins vers l'autonomie",
@@ -1750,6 +1752,12 @@
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
           el.innerHTML = translations[lang][key];
+        }
+      });
+      document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+        const ak = el.getAttribute('data-i18n-alt');
+        if (translations[lang] && translations[lang][ak]) {
+          el.setAttribute('alt', translations[lang][ak]);
         }
       });
       // Update the browser tab title for the active language
