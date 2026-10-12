@@ -116,7 +116,7 @@
       justify-content: center !important;
       flex-shrink: 0 !important;
       background: var(--accent) !important;
-      color: #ffffff !important;
+      color: #0b1c3d !important;
       font-weight: 700 !important;
       padding: 8px 18px !important;
       border-radius: 50px !important;
@@ -135,7 +135,8 @@
     .brand-logo { display: flex; align-items: center; gap: 11px; }
     .brand-logo-svg { width: 44px !important; height: 44px !important; max-width: 44px !important; max-height: 44px !important; min-width: 44px !important; min-height: 44px !important; flex-shrink: 0 !important; }
     .logo-text { flex-shrink: 0 !important; white-space: nowrap !important; }
-    .logo-text h1 { font-size: 1.25rem; font-weight: 800; color: var(--primary); line-height: 1.1; letter-spacing: -0.01em; }
+    .logo-text .logo-title { font-size: 1.25rem; font-weight: 800; color: var(--primary); line-height: 1.1; letter-spacing: -0.01em; 
+      margin: 0;}
     .nav-menu { display: flex; align-items: center; gap: 4px; flex-wrap: nowrap; }
     .nav-item { position: relative; white-space: nowrap; }
     .nav-link { display: inline-flex; align-items: center; gap: 4px; padding: 7px 11px; font-size: 0.88rem; font-weight: 600; color: var(--primary); border-radius: var(--radius-sm); white-space: nowrap; }
@@ -747,9 +748,27 @@
       .trust-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
     }
-  </style>
+  
+/* Accessibility: skip link, visible focus, reduced motion */
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 999999;
+  background: #0b1c3d; color: #ffffff; padding: 10px 18px;
+  font-weight: 700; text-decoration: none; border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
+:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
 </head>
 <body>
+<a class="skip-link" data-i18n="skip_link" href="#main-content">Skip to main content</a>
 <!-- TOP RIGHT UTILITY BAR: LANGUAGE SWITCHER AT THE VERY TOP RIGHT, DIRECTLY ABOVE DONATE -->
 <div class="top-utility-bar" style="background:#0b1c3d; border-bottom:1px solid rgba(255,255,255,0.08); padding:5px 0;">
 <div class="container" style="display:flex; justify-content:flex-end; align-items:center;">
@@ -760,7 +779,7 @@
 <a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" title="YBSP Canada on TikTok" aria-label="YBSP Canada on TikTok"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://www.snapchat.com/add/ybspcanada" target="_blank" rel="noopener noreferrer" title="YBSP Canada on Snapchat" aria-label="YBSP Canada on Snapchat"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12 1.033-.301.165-.088.344-.104.464-.104.182 0 .359.029.509.09.45.149.734.479.734.838.015.449-.39.839-1.213 1.168-.089.029-.209.075-.344.119-.45.135-1.139.36-1.333.81-.09.224-.061.524.12.868l.015.015c.06.136 1.526 3.475 4.791 4.014.255.044.435.27.42.509 0 .075-.015.149-.045.225-.24.569-1.273.988-3.146 1.271-.059.091-.12.375-.164.57-.029.179-.074.36-.134.553-.076.271-.27.405-.555.405h-.03c-.135 0-.313-.031-.538-.074-.36-.075-.765-.135-1.273-.135-.3 0-.599.015-.913.074-.6.104-1.123.464-1.723.884-.853.599-1.826 1.288-3.294 1.288-.06 0-.119-.015-.18-.015h-.149c-1.468 0-2.427-.675-3.279-1.288-.599-.42-1.107-.779-1.707-.884-.314-.045-.629-.074-.928-.074-.54 0-.958.089-1.272.149-.211.043-.391.074-.54.074-.374 0-.523-.224-.583-.42-.061-.192-.09-.389-.135-.567-.046-.181-.105-.494-.166-.57-1.918-.222-2.95-.642-3.189-1.226-.031-.063-.052-.15-.055-.225-.015-.243.165-.465.42-.509 3.264-.54 4.73-3.879 4.791-4.02l.016-.029c.18-.345.224-.645.119-.869-.195-.434-.884-.658-1.332-.809-.121-.029-.24-.074-.346-.119-1.107-.435-1.257-.93-1.197-1.273.09-.479.674-.793 1.168-.793.146 0 .27.029.383.074.42.194.789.3 1.104.3.234 0 .384-.06.465-.105l-.046-.569c-.098-1.626-.225-3.651.307-4.837C7.392 1.077 10.739.807 11.727.807l.419-.015h.06z"/></svg></a>
 </div>
 <div class="lang-switcher" style="display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.12); padding:2px 6px; border-radius:4px;">
-<button aria-pressed="true" class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" style="border:none; background:var(--secondary); color:#ffffff; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="English">EN</button>
+<button aria-pressed="true" class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" style="border:none; background:var(--secondary); color:#0b1c3d; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="English">EN</button>
 <span style="color:#94a3b8; font-size:0.75rem; margin:0 2px;">|</span>
 <button class="lang-btn" aria-pressed="false" id="btn-lang-fr" onclick="setLanguage('fr')" style="border:none; background:transparent; color:#cbd5e1; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="Français">FR</button>
 </div>
@@ -803,7 +822,7 @@
 <circle cx="60" cy="60" fill="#ffffff" r="3.5"></circle>
 </svg>
 <div class="logo-text">
-<h1>YBSP CANADA</h1>
+<p class="logo-title">YBSP CANADA</p>
 </div>
 </a>
 <nav aria-label="Primary Navigation" class="nav-menu" id="main-nav-menu">
@@ -1127,7 +1146,7 @@
 <div class="footer-grid" style="margin-bottom:50px;">
 <!-- COL 1: QUICK LINKS -->
 <div class="footer-col">
-<h4 data-i18n="footer_quick_links" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Quick Links</h4>
+<h3 data-i18n="footer_quick_links" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Quick Links</h3>
 <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
 <li><a data-i18n="nav_home" href="index.html" style="color:#cbd5e1; text-decoration:none;">Home</a></li>
 <li><a data-i18n="nav_about" href="about.html" style="color:#cbd5e1; text-decoration:none;">About Us &amp; Governance</a></li>
@@ -1139,7 +1158,7 @@
 </div>
 <!-- COL 2: GET INVOLVED -->
 <div class="footer-col">
-<h4 data-i18n="footer_involved" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Get Involved</h4>
+<h3 data-i18n="footer_involved" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Get Involved</h3>
 <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
 <li><a data-i18n="nav_volunteer" href="get-involved.html#volunteer" style="color:#cbd5e1; text-decoration:none;">Volunteer Application</a></li>
 <li><a data-i18n="nav_membership" href="get-involved.html#membership" style="color:#cbd5e1; text-decoration:none;">Become a Member</a></li>
@@ -1150,7 +1169,7 @@
 </div>
 <!-- COL 3: CONTACT & SECRETARIAT -->
 <div class="footer-col">
-<h4 data-i18n="footer_contact" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Contact &amp; Secretariat</h4>
+<h3 data-i18n="footer_contact" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Contact &amp; Secretariat</h3>
 <div style="font-size:0.9rem; color:#cbd5e1; line-height:1.8;">
 <p style="margin-bottom:12px;">📍 <strong data-i18n="footer_addr">Based in the Ottawa - Gatineau Region<br/>(Developing Partnerships Across Canada)</strong></p>
 <p style="margin-bottom:12px;">✉️ <a href="mailto:info@ybspcanada.org" style="color:#60a5fa; text-decoration:none;">info@ybspcanada.org</a></p>
@@ -1188,6 +1207,7 @@
     const translations = {
       en: {
         meta_title: "Donate & Support Our Mission | Youth Building in Synergy to end Poverty (YBSP Canada)",
+        skip_link: "Skip to main content",
         nav_home: "Home",
         nav_about: "About Us",
         nav_mission: "Mission & Mandate",
@@ -1310,6 +1330,7 @@
         pdf_privacy: "docs/YBSP_Canada_Privacy_Policy.pdf"},
       fr: {
         meta_title: "Faire un don et soutenir notre mission | Youth Building in Synergy to end Poverty (YBSP Canada)",
+        skip_link: "Aller au contenu principal",
         nav_home: "Accueil",
         nav_about: "À propos",
         nav_mission: "Mission & Mandat",

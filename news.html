@@ -108,7 +108,7 @@
       border-radius: 3px;
       transition: var(--transition);
     }
-    .lang-btn.active, .lang-btn:hover { background: var(--secondary); color: #ffffff; }
+    .lang-btn.active, .lang-btn:hover { background: var(--secondary); color: #0b1c3d; }
 
     /* MAIN NAVIGATION */
     .main-header {
@@ -133,19 +133,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      color: #0b1c3d;
       font-weight: 800;
       font-size: 1.3rem;
       box-shadow: var(--shadow-md);
     }
     .logo-text { flex-shrink: 0 !important; white-space: nowrap !important; }
-    .logo-text h1 {
+    .logo-text .logo-title {
       font-size: 1.35rem;
       font-weight: 800;
       color: var(--primary);
       line-height: 1.1;
       letter-spacing: -0.02em;
-    }
+    
+      margin: 0;}
     .logo-text span { font-size: 0.70rem; font-weight: 600; color: var(--secondary-dark); text-transform: uppercase; letter-spacing: 0.04em; display: block; white-space: nowrap !important; }
     .nav-menu { display: flex; align-items: center; gap: 2px; flex-wrap: nowrap; }
     .nav-item { position: relative; white-space: nowrap; }
@@ -191,7 +192,7 @@
       color: var(--secondary-dark);
       padding-left: 22px;
     }
-    .btn-donate-nav { white-space: nowrap !important; min-width: max-content !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; background: var(--accent) !important; color: #ffffff !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 50px !important; margin-left: 8px !important; text-decoration: none !important; }
+    .btn-donate-nav { white-space: nowrap !important; min-width: max-content !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; background: var(--accent) !important; color: #0b1c3d !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 50px !important; margin-left: 8px !important; text-decoration: none !important; }
 
     /* PAGE HERO */
     .page-hero {
@@ -543,7 +544,7 @@
     .cta-banner p { font-size: 1.1rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 30px; }
     .cta-form { display: flex; justify-content: center; gap: 12px; max-width: 520px; margin: 0 auto; flex-wrap: wrap; }
     .cta-input { flex: 1; min-width: 280px; padding: 14px 20px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #ffffff; }
-    .btn-subscribe { background: var(--secondary); color: #ffffff; border: none; padding: 14px 28px; font-weight: 700; border-radius: 50px; cursor: pointer; transition: var(--transition); }
+    .btn-subscribe { background: var(--secondary); color: #0b1c3d; border: none; padding: 14px 28px; font-weight: 700; border-radius: 50px; cursor: pointer; transition: var(--transition); }
     .btn-subscribe:hover { background: var(--secondary-dark); }
 
     /* FOOTER */
@@ -665,7 +666,7 @@
     }
     .modal-close-btn:hover {
       background: var(--accent);
-      color: #ffffff;
+      color: #0b1c3d;
       transform: scale(1.05);
     }
     .modal-article-tag {
@@ -798,7 +799,7 @@
       justify-content: center !important;
       flex-shrink: 0 !important;
       background: var(--accent) !important;
-      color: #ffffff !important;
+      color: #0b1c3d !important;
       font-weight: 700 !important;
       padding: 8px 18px !important;
       border-radius: 50px !important;
@@ -1050,7 +1051,7 @@
         text-align: center !important;
         border-radius: 50px !important;
         background: var(--accent) !important;
-        color: #ffffff !important;
+        color: #0b1c3d !important;
         box-sizing: border-box !important;
         text-decoration: none !important;
         box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3) !important;
@@ -1068,7 +1069,7 @@
       .logo-text span {
         display: none !important;
       }
-      .logo-text h1 {
+      .logo-text .logo-title {
         font-size: 1.15rem !important;
       }
     }
@@ -1077,7 +1078,7 @@
         width: 38px !important;
         height: 38px !important;
       }
-      .logo-text h1 {
+      .logo-text .logo-title {
         font-size: 1.05rem !important;
       }
     }
@@ -1297,9 +1298,27 @@
       }
     }
 
-  </style>
+  
+/* Accessibility: skip link, visible focus, reduced motion */
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 999999;
+  background: #0b1c3d; color: #ffffff; padding: 10px 18px;
+  font-weight: 700; text-decoration: none; border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
+:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
 </head>
 <body>
+<a class="skip-link" data-i18n="skip_link" href="#main-content">Skip to main content</a>
 <!-- TOP UTILITY BAR -->
 <!-- MAIN NAVIGATION -->
 <!-- TOP RIGHT UTILITY BAR: LANGUAGE SWITCHER AT THE VERY TOP RIGHT, DIRECTLY ABOVE DONATE -->
@@ -1312,7 +1331,7 @@
 <a href="https://www.tiktok.com/@ybspcanada" target="_blank" rel="noopener noreferrer" title="YBSP Canada on TikTok" aria-label="YBSP Canada on TikTok"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://www.snapchat.com/add/ybspcanada" target="_blank" rel="noopener noreferrer" title="YBSP Canada on Snapchat" aria-label="YBSP Canada on Snapchat"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12 1.033-.301.165-.088.344-.104.464-.104.182 0 .359.029.509.09.45.149.734.479.734.838.015.449-.39.839-1.213 1.168-.089.029-.209.075-.344.119-.45.135-1.139.36-1.333.81-.09.224-.061.524.12.868l.015.015c.06.136 1.526 3.475 4.791 4.014.255.044.435.27.42.509 0 .075-.015.149-.045.225-.24.569-1.273.988-3.146 1.271-.059.091-.12.375-.164.57-.029.179-.074.36-.134.553-.076.271-.27.405-.555.405h-.03c-.135 0-.313-.031-.538-.074-.36-.075-.765-.135-1.273-.135-.3 0-.599.015-.913.074-.6.104-1.123.464-1.723.884-.853.599-1.826 1.288-3.294 1.288-.06 0-.119-.015-.18-.015h-.149c-1.468 0-2.427-.675-3.279-1.288-.599-.42-1.107-.779-1.707-.884-.314-.045-.629-.074-.928-.074-.54 0-.958.089-1.272.149-.211.043-.391.074-.54.074-.374 0-.523-.224-.583-.42-.061-.192-.09-.389-.135-.567-.046-.181-.105-.494-.166-.57-1.918-.222-2.95-.642-3.189-1.226-.031-.063-.052-.15-.055-.225-.015-.243.165-.465.42-.509 3.264-.54 4.73-3.879 4.791-4.02l.016-.029c.18-.345.224-.645.119-.869-.195-.434-.884-.658-1.332-.809-.121-.029-.24-.074-.346-.119-1.107-.435-1.257-.93-1.197-1.273.09-.479.674-.793 1.168-.793.146 0 .27.029.383.074.42.194.789.3 1.104.3.234 0 .384-.06.465-.105l-.046-.569c-.098-1.626-.225-3.651.307-4.837C7.392 1.077 10.739.807 11.727.807l.419-.015h.06z"/></svg></a>
 </div>
 <div class="lang-switcher" style="display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.12); padding:2px 6px; border-radius:4px;">
-<button aria-pressed="true" class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" style="border:none; background:var(--secondary); color:#ffffff; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="English">EN</button>
+<button aria-pressed="true" class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')" style="border:none; background:var(--secondary); color:#0b1c3d; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="English">EN</button>
 <span style="color:#94a3b8; font-size:0.75rem; margin:0 2px;">|</span>
 <button class="lang-btn" aria-pressed="false" id="btn-lang-fr" onclick="setLanguage('fr')" style="border:none; background:transparent; color:#cbd5e1; font-weight:700; font-size:0.75rem; padding:3px 7px; border-radius:3px; cursor:pointer;" title="Français">FR</button>
 </div>
@@ -1355,7 +1374,7 @@
 <circle cx="60" cy="60" fill="#ffffff" r="3.5"></circle>
 </svg>
 <div class="logo-text">
-<h1>YBSP CANADA</h1>
+<p class="logo-title">YBSP CANADA</p>
 
 </div>
 </a>
@@ -1421,13 +1440,14 @@
 </button>
 </div>
 </header>
+<main id="main-content">
 <!-- PAGE HERO -->
 <section class="page-hero">
 <div class="container">
 <div class="breadcrumbs">
 <a data-i18n="nav_home" href="index.html">Home</a>  /  <span data-i18n="crumb_news">News &amp; Impact Stories</span>
 </div>
-<h2 data-i18n="hero_title">News &amp; Stories of Change</h2>
+<h1 data-i18n="hero_title">News &amp; Stories of Change</h1>
 <p data-i18n="hero_desc">
         Explore recent milestones, program dispatches, community achievements, and stories of youth leadership from Canada to Burundi.
       </p>
@@ -1440,7 +1460,7 @@
 <div class="featured-content">
 <span class="badge-spotlight" data-i18n="feat_badge">Spotlight Story</span>
 <div class="featured-date" data-i18n="feat_meta">SEPTEMBER 2026 • 5 MIN READ</div>
-<h3 class="featured-title"><a data-i18n="feat_title" href="news-single.html?id=1" style="color:inherit; text-decoration:none;">Launching the 2026 Youth Mentorship &amp; Career Readiness Cohort</a></h3>
+<h2 class="featured-title"><a data-i18n="feat_title" href="news-single.html?id=1" style="color:inherit; text-decoration:none;">Launching the 2026 Youth Mentorship &amp; Career Readiness Cohort</a></h2>
 <p class="featured-lead" data-i18n="feat_desc">
             Empowering 150 newcomer, diaspora, and equity-deserving youth across Canada with 1-on-1 career mentorship, digital business competencies, and career placement pathways.
           </p>
@@ -1457,7 +1477,7 @@
 <div class="container">
 <div class="section-title-wrap">
 <span class="section-tag" data-i18n="tag_articles">Recent Publications</span>
-<h3 class="section-heading" data-i18n="heading_articles">Latest Articles &amp; Impact Reports</h3>
+<h2 class="section-heading" data-i18n="heading_articles">Latest Articles &amp; Impact Reports</h2>
 </div>
 <div class="news-grid">
 <!-- ARTICLE 1 -->
@@ -1469,7 +1489,7 @@
 <span>•</span>
 <span data-i18n="art1_date">AUG 28, 2026</span>
 </div>
-<h4 class="article-title"><a data-i18n="art1_title" href="news-single.html?id=1" style="color:inherit; text-decoration:none;">Expanding the 2026 Youth Mentorship &amp; Employment Cohort</a></h4>
+<h3 class="article-title"><a data-i18n="art1_title" href="news-single.html?id=1" style="color:inherit; text-decoration:none;">Expanding the 2026 Youth Mentorship &amp; Employment Cohort</a></h3>
 <p class="article-excerpt" data-i18n="art1_desc">
               How our structured mentorship pilot model connects youth with public administration and technology professionals to explore career readiness in Ottawa and Gatineau.
             </p>
@@ -1485,7 +1505,7 @@
 <span>•</span>
 <span data-i18n="art2_date">JUL 14, 2026</span>
 </div>
-<h4 class="article-title"><a data-i18n="art2_title" href="news-single.html?id=2" style="color:inherit; text-decoration:none;">Spotlight on YBSP Burundi: Rural Youth Entrepreneurship Hub</a></h4>
+<h3 class="article-title"><a data-i18n="art2_title" href="news-single.html?id=2" style="color:inherit; text-decoration:none;">Spotlight on YBSP Burundi: Rural Youth Entrepreneurship Hub</a></h3>
 <p class="article-excerpt" data-i18n="art2_desc">
               A comprehensive dispatch examining how funds raised in Canada directly equipped rural Burundian youth with carpentry, tailoring, and agricultural toolkits to launch local micro-enterprises.
             </p>
@@ -1501,7 +1521,7 @@
 <span>•</span>
 <span data-i18n="art3_date">JUN 19, 2026</span>
 </div>
-<h4 class="article-title"><a data-i18n="art3_title" href="news-single.html?id=3" style="color:inherit; text-decoration:none;">YBSP Canada Files Annual Corporate Return with Corporations Canada</a></h4>
+<h3 class="article-title"><a data-i18n="art3_title" href="news-single.html?id=3" style="color:inherit; text-decoration:none;">YBSP Canada Files Annual Corporate Return with Corporations Canada</a></h3>
 <p class="article-excerpt" data-i18n="art3_desc">
               Affirming our unwavering dedication to federal statutory compliance, public disclosure, and fiduciary transparency under the Canada Not-for-profit Corporations Act (Corp # 1154010-6).
             </p>
@@ -1517,7 +1537,7 @@
 <span>•</span>
 <span data-i18n="art4_date">MAY 22, 2026</span>
 </div>
-<h4 class="article-title"><a data-i18n="art4_title" href="news-single.html?id=4" style="color:inherit; text-decoration:none;">Youth Climate &amp; Shoreline Clean-Up Mobilization in Ottawa-Gatineau</a></h4>
+<h3 class="article-title"><a data-i18n="art4_title" href="news-single.html?id=4" style="color:inherit; text-decoration:none;">Youth Climate &amp; Shoreline Clean-Up Mobilization in Ottawa-Gatineau</a></h3>
 <p class="article-excerpt" data-i18n="art4_desc">
               Over 80 young volunteers gathered along the Ottawa River watershed to remove 450 kg of waste, combining practical ecological stewardship with peer conversations on youth wellness.
             </p>
@@ -1533,7 +1553,7 @@
 <span>•</span>
 <span data-i18n="art5_date">APR 10, 2026</span>
 </div>
-<h4 class="article-title"><a data-i18n="art5_title" href="news-single.html?id=5" style="color:inherit; text-decoration:none;">Financial Transparency &amp; Donor Impact: Funding Tangible Outcomes</a></h4>
+<h3 class="article-title"><a data-i18n="art5_title" href="news-single.html?id=5" style="color:inherit; text-decoration:none;">Financial Transparency &amp; Donor Impact: Funding Tangible Outcomes</a></h3>
 <p class="article-excerpt" data-i18n="art5_desc">
               A transparent breakdown demonstrating how modest community gifts directly translate into school tuition for children, workshop venues, and startup seed grants for youth ventures.
             </p>
@@ -1549,7 +1569,7 @@
 <span>•</span>
 <span data-i18n="art6_date">MAR 15, 2026</span>
 </div>
-<h4 class="article-title"><a data-i18n="art6_title" href="news-single.html?id=6" style="color:inherit; text-decoration:none;">Breaking Cultural Stigmas Around Youth Mental Health in the Diaspora</a></h4>
+<h3 class="article-title"><a data-i18n="art6_title" href="news-single.html?id=6" style="color:inherit; text-decoration:none;">Breaking Cultural Stigmas Around Youth Mental Health in the Diaspora</a></h3>
 <p class="article-excerpt" data-i18n="art6_desc">
               Highlights from our bilingual community roundtable exploring emotional resilience, intergenerational dialogue, and culturally safe wellness resources for immigrant families.
             </p>
@@ -1565,7 +1585,7 @@
 <div class="press-grid">
 <div>
 <span class="section-tag" data-i18n="tag_media">Official Statements</span>
-<h3 class="section-heading" data-i18n="heading_press">Press Releases &amp; Notices</h3>
+<h2 class="section-heading" data-i18n="heading_press">Press Releases &amp; Notices</h2>
 <p data-i18n="desc_press" style="color:var(--text-muted); margin-top:8px;">
             Official communiqués and organizational updates issued by the Board of Directors of YBSP Canada.
           </p>
@@ -1589,7 +1609,7 @@
 </div>
 <div>
 <div class="media-kit-box">
-<h4 data-i18n="media_title">Media Kit &amp; Brand Assets</h4>
+<h3 data-i18n="media_title">Media Kit &amp; Brand Assets</h3>
 <p data-i18n="media_desc">
               Download official brand assets, executive bios, high-resolution logos, and our institutional fact sheet for press coverage and community partnerships.
             </p>
@@ -1625,13 +1645,14 @@
 </section>
 <!-- UNIVERSAL FOOTER -->
 <!-- UNIVERSAL LIVE FOOTER (EXACT LIVE SITE LAYOUT & LABELS) -->
+</main>
 <footer class="main-footer" style="background:#061124; color:#ffffff; padding:65px 0 30px; border-top:3px solid var(--secondary);">
 <div class="container">
 <!-- 3 COLUMNS: QUICK LINKS, GET INVOLVED, CONTACT & SECRETARIAT -->
 <div class="footer-grid" style="margin-bottom:50px;">
 <!-- COL 1: QUICK LINKS -->
 <div class="footer-col">
-<h4 data-i18n="footer_quick_links" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Quick Links</h4>
+<h3 data-i18n="footer_quick_links" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Quick Links</h3>
 <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
 <li><a data-i18n="nav_home" href="index.html" style="color:#cbd5e1; text-decoration:none;">Home</a></li>
 <li><a data-i18n="nav_about" href="about.html" style="color:#cbd5e1; text-decoration:none;">About Us &amp; Governance</a></li>
@@ -1643,7 +1664,7 @@
 </div>
 <!-- COL 2: GET INVOLVED -->
 <div class="footer-col">
-<h4 data-i18n="footer_involved" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Get Involved</h4>
+<h3 data-i18n="footer_involved" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Get Involved</h3>
 <ul class="footer-links" style="list-style:none; padding:0; margin:0; font-size:0.9rem; line-height:2.2;">
 <li><a data-i18n="nav_volunteer" href="get-involved.html#volunteer" style="color:#cbd5e1; text-decoration:none;">Volunteer Application</a></li>
 <li><a data-i18n="nav_membership" href="get-involved.html#membership" style="color:#cbd5e1; text-decoration:none;">Become a Member</a></li>
@@ -1654,7 +1675,7 @@
 </div>
 <!-- COL 3: CONTACT & SECRETARIAT -->
 <div class="footer-col">
-<h4 data-i18n="footer_contact" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Contact &amp; Secretariat</h4>
+<h3 data-i18n="footer_contact" style="font-size:1.1rem; color:#ffffff; margin-bottom:16px; font-weight:800;">Contact &amp; Secretariat</h3>
 <div style="font-size:0.9rem; color:#cbd5e1; line-height:1.8;">
 <p style="margin-bottom:12px;">📍 <strong data-i18n="footer_addr">Based in the Ottawa - Gatineau Region<br/>(Developing Partnerships Across Canada)</strong></p>
 <p style="margin-bottom:12px;">✉️ <a href="mailto:info@ybspcanada.org" style="color:#60a5fa; text-decoration:none;">info@ybspcanada.org</a></p>
@@ -1837,6 +1858,7 @@
     const translations = {
       en: {
         meta_title: "News & Stories of Change | Youth Building in Synergy to end Poverty (YBSP Canada)",
+        skip_link: "Skip to main content",
         art_close: "← Close Story",
         art_support: "Support Our Work →",
         badge_pdf: "PDF",
@@ -2007,6 +2029,7 @@
         pdf_privacy: "docs/YBSP_Canada_Privacy_Policy.pdf"},
       fr: {
         meta_title: "Nouvelles & Récits de transformation | Youth Building in Synergy to end Poverty (YBSP Canada)",
+        skip_link: "Aller au contenu principal",
         art_close: "← Fermer l'article",
         art_support: "Soutenir notre action →",
         badge_pdf: "PDF",
