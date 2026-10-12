@@ -1594,6 +1594,7 @@
 
     const translations = {
       en: {
+        meta_title: "Careers & Opportunities | Youth Building in Synergy to end Poverty (YBSP Canada)",
         ph_tp_notes: "Tell us about your background, relevant qualifications, and what type of role interests you...",
 
         opt_tp_1: "Youth Mentorship & Program Coordination",
@@ -1729,6 +1730,7 @@
       "footer_transparency": "Corporate Transparency",
         pdf_privacy: "docs/YBSP_Canada_Privacy_Policy.pdf"},
       fr: {
+        meta_title: "Carrières et opportunités | Youth Building in Synergy to end Poverty (YBSP Canada)",
         ph_tp_notes: "Parlez-nous de votre parcours, de vos compétences et du type de mandat qui vous intéresse...",
 
         opt_tp_1: "Mentorat jeunesse & Coordination de programmes",
@@ -1866,6 +1868,10 @@
           el.innerHTML = translations[lang][key];
         }
       });
+      // Update the browser tab title for the active language
+      if (translations[lang] && translations[lang]['meta_title']) {
+        document.title = translations[lang]['meta_title'];
+      }
 
       // Update bilingual document links and downloads
       document.querySelectorAll('[data-i18n-href]').forEach(el => {

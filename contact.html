@@ -1495,6 +1495,7 @@
 
     const translations = {
       en: {
+        meta_title: "Contact Us | Youth Building in Synergy to end Poverty (YBSP Canada)",
         ph_contact_msg: "How can we help you or collaborate with your organization?",
 
         opt_con_1: "General Inquiry",
@@ -1620,6 +1621,7 @@
       "footer_transparency": "Corporate Transparency",
         pdf_privacy: "docs/YBSP_Canada_Privacy_Policy.pdf"},
       fr: {
+        meta_title: "Nous joindre | Youth Building in Synergy to end Poverty (YBSP Canada)",
         ph_contact_msg: "Comment pouvons-nous vous aider ou collaborer avec votre organisation ?",
 
         opt_con_1: "Demande d'information générale",
@@ -1747,6 +1749,10 @@
           el.innerHTML = translations[lang][key];
         }
       });
+      // Update the browser tab title for the active language
+      if (translations[lang] && translations[lang]['meta_title']) {
+        document.title = translations[lang]['meta_title'];
+      }
 
       // Update bilingual document links and downloads
       document.querySelectorAll('[data-i18n-href]').forEach(el => {

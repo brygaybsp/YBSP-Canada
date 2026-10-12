@@ -1600,6 +1600,7 @@
 
     const translations = {
       en: {
+        meta_title: "Article | Youth Building in Synergy to end Poverty (YBSP Canada)",
         nav_community_support: "Community Support & Poverty Relief",
         nav_education_skills: "Education, Skills & Youth Opportunity",
         nav_self_sufficiency: "Pathways to Self-Sufficiency",
@@ -1655,6 +1656,7 @@
         foot_privacy: "Privacy Policy",
         pdf_privacy: "docs/YBSP_Canada_Privacy_Policy.pdf"},
       fr: {
+        meta_title: "Article | Youth Building in Synergy to end Poverty (YBSP Canada)",
         nav_community_support: "Soutien communautaire & Secours alimentaire",
         nav_education_skills: "Éducation, compétences & Possibilités jeunesse",
         nav_self_sufficiency: "Chemins vers l'autonomie",
@@ -1725,6 +1727,10 @@
           el.innerHTML = translations[lang][key];
         }
       });
+      // Update the browser tab title for the active language
+      if (translations[lang] && translations[lang]['meta_title']) {
+        document.title = translations[lang]['meta_title'];
+      }
 
       // Update bilingual document links and downloads
       document.querySelectorAll('[data-i18n-href]').forEach(el => {

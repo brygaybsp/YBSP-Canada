@@ -1423,7 +1423,7 @@
 <section class="page-hero">
 <div class="container">
 <div class="breadcrumbs">
-<a href="index.html">Home</a>  /  <span data-i18n="crumb_news">News &amp; Impact Stories</span>
+<a data-i18n="nav_home" href="index.html">Home</a>  /  <span data-i18n="crumb_news">News &amp; Impact Stories</span>
 </div>
 <h2 data-i18n="hero_title">News &amp; Stories of Change</h2>
 <p data-i18n="hero_desc">
@@ -1834,6 +1834,7 @@
 
     const translations = {
       en: {
+        meta_title: "News & Stories of Change | Youth Building in Synergy to end Poverty (YBSP Canada)",
         badge_pdf: "PDF",
         media_file1: "YBSP Canada Fact Sheet & Overview (PDF)",
         media_file2: "Official Brand Guidelines & Logo Pack (.ZIP)",
@@ -2001,6 +2002,7 @@
       "footer_transparency": "Governance &amp; Filings",
         pdf_privacy: "docs/YBSP_Canada_Privacy_Policy.pdf"},
       fr: {
+        meta_title: "Nouvelles & Récits de transformation | Youth Building in Synergy to end Poverty (YBSP Canada)",
         badge_pdf: "PDF",
         media_file1: "Fiche d'information institutionnelle et vue d'ensemble (PDF)",
         media_file2: "Guide officiel des normes graphiques & Pack logos (.ZIP)",
@@ -2183,6 +2185,10 @@
           el.innerHTML = translations[lang][key];
         }
       });
+      // Update the browser tab title for the active language
+      if (translations[lang] && translations[lang]['meta_title']) {
+        document.title = translations[lang]['meta_title'];
+      }
 
       // Update bilingual document links and downloads
       document.querySelectorAll('[data-i18n-href]').forEach(el => {

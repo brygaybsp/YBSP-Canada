@@ -1825,6 +1825,7 @@
 
     const translations = {
       en: {
+        meta_title: "Community & Events | Youth Building in Synergy to end Poverty (YBSP Canada)",
         alb_click_open: "📷 Click to Open Album (4 Photos)",
         alb1_loc: "Bujumbura, Burundi",
         alb1_badge_time: "Weekly Sundays",
@@ -2044,6 +2045,7 @@
       "footer_transparency": "Corporate Transparency",
         pdf_privacy: "docs/YBSP_Canada_Privacy_Policy.pdf"},
       fr: {
+        meta_title: "Communauté et événements | Youth Building in Synergy to end Poverty (YBSP Canada)",
         alb_click_open: "📷 Cliquer pour ouvrir l'album (4 photos)",
         alb1_loc: "Bujumbura, Burundi",
         alb1_badge_time: "Chaque dimanche",
@@ -2265,6 +2267,10 @@
           el.innerHTML = translations[lang][key];
         }
       });
+      // Update the browser tab title for the active language
+      if (translations[lang] && translations[lang]['meta_title']) {
+        document.title = translations[lang]['meta_title'];
+      }
 
       // Update bilingual document links and downloads
       document.querySelectorAll('[data-i18n-href]').forEach(el => {

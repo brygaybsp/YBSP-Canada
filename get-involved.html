@@ -1685,6 +1685,7 @@
 
     const translations = {
       en: {
+        meta_title: "Get Involved | Youth Building in Synergy to end Poverty (YBSP Canada)",
         ph_v_name: "e.g. Marie Tremblay",
         ph_v_email: "e.g. marie@example.ca",
         ph_v_city: "e.g. Gatineau, QC / Ottawa, ON",
@@ -1830,6 +1831,7 @@
         sup_era_desc: "Donated refurbished laptops and monitors powering our free youth programs in Ottawa-Gatineau.",
         pdf_privacy: "docs/YBSP_Canada_Privacy_Policy.pdf"},
       fr: {
+        meta_title: "S'impliquer | Youth Building in Synergy to end Poverty (YBSP Canada)",
         ph_v_name: "ex. Marie Tremblay",
         ph_v_email: "ex. marie@example.ca",
         ph_v_city: "ex. Gatineau (QC) / Ottawa (ON)",
@@ -1987,6 +1989,10 @@
           el.innerHTML = translations[lang][key];
         }
       });
+      // Update the browser tab title for the active language
+      if (translations[lang] && translations[lang]['meta_title']) {
+        document.title = translations[lang]['meta_title'];
+      }
 
       // Update bilingual document links and downloads
       document.querySelectorAll('[data-i18n-href]').forEach(el => {
