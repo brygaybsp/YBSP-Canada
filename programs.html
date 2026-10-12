@@ -1612,6 +1612,7 @@
 
     const translations = {
       en: {
+        meta_title: "Programs & Impact | Youth Building in Synergy to end Poverty (YBSP Canada)",
         sdg_1_label: "SDG 1",
         sdg_4_label: "SDG 4",
         sdg_8_label: "SDG 8",
@@ -1758,6 +1759,7 @@
         foot_contact: "Contact Secretariat",
         pdf_privacy: "docs/YBSP_Canada_Privacy_Policy.pdf"},
       fr: {
+        meta_title: "Programmes et impact | Youth Building in Synergy to end Poverty (YBSP Canada)",
         sdg_1_label: "ODD 1",
         sdg_4_label: "ODD 4",
         sdg_8_label: "ODD 8",
@@ -1916,6 +1918,10 @@
           el.innerHTML = translations[lang][key];
         }
       });
+      // Update the browser tab title for the active language
+      if (translations[lang] && translations[lang]['meta_title']) {
+        document.title = translations[lang]['meta_title'];
+      }
 
       // Update bilingual document links and downloads
       document.querySelectorAll('[data-i18n-href]').forEach(el => {

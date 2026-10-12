@@ -1186,6 +1186,7 @@
 <script>
     const translations = {
       en: {
+        meta_title: "Donate & Support Our Mission | Youth Building in Synergy to end Poverty (YBSP Canada)",
         nav_home: "Home",
         nav_about: "About Us",
         nav_mission: "Mission & Mandate",
@@ -1306,6 +1307,7 @@
         foot_privacy: "Privacy Policy",
         pdf_privacy: "docs/YBSP_Canada_Privacy_Policy.pdf"},
       fr: {
+        meta_title: "Faire un don et soutenir notre mission | Youth Building in Synergy to end Poverty (YBSP Canada)",
         nav_home: "Accueil",
         nav_about: "À propos",
         nav_mission: "Mission & Mandat",
@@ -1437,6 +1439,10 @@
           el.innerHTML = t[key];
         }
       });
+      // Update the browser tab title for the active language
+      if (t['meta_title']) {
+        document.title = t['meta_title'];
+      }
 
       document.querySelectorAll('.lang-btn').forEach(btn => {
         if (btn.getAttribute('data-lang') === lang) {

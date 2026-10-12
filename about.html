@@ -1915,6 +1915,7 @@
 
     const translations = {
       en: {
+        meta_title: "About Us & Governance | Youth Building in Synergy to end Poverty (YBSP Canada)",
         subnav_synergy: "Canada & Burundi",
         canada_card_badge: "Independent Canadian Entity",
         burundi_card_link: "Visit Official YBSP Burundi Website (ybspburundi.org) ↗",
@@ -2107,6 +2108,7 @@
         foot_contact: "Contact Secretariat",
         pdf_privacy: "docs/YBSP_Canada_Privacy_Policy.pdf"},
       fr: {
+        meta_title: "À propos et gouvernance | Youth Building in Synergy to end Poverty (YBSP Canada)",
         subnav_synergy: "Canada & Burundi",
         canada_card_badge: "Entité canadienne autonome",
         burundi_card_link: "Visiter le site officiel de YBSP Burundi (ybspburundi.org) ↗",
@@ -2311,6 +2313,10 @@
           el.innerHTML = translations[lang][key];
         }
       });
+      // Update the browser tab title for the active language
+      if (translations[lang] && translations[lang]['meta_title']) {
+        document.title = translations[lang]['meta_title'];
+      }
 
       // Update bilingual document links and downloads
       document.querySelectorAll('[data-i18n-href]').forEach(el => {

@@ -2432,6 +2432,7 @@
 
 const translations = {
   "en": {
+    "meta_title": "YBSP Canada | Youth Building in Synergy to end Poverty",
     "stage_title": "Organizational Stage & Transparency:",
     "stage_desc": "YBSP Canada is an autonomous, volunteer-led federal non-profit organization building its first Canadian program pilots, community partnerships, and foundation for future charitable registration. Some initiatives described are active pilots, while others are in planning or dependent on future community funding.",
     "footer_addr": "Based in the Ottawa - Gatineau Region<br>(Developing Partnerships Across Canada)",
@@ -2646,6 +2647,7 @@ const translations = {
     "sup_strip_label": "Supported by",
   "pdf_privacy": "docs/YBSP_Canada_Privacy_Policy.pdf"},
   "fr": {
+    "meta_title": "YBSP Canada | Youth Building in Synergy to end Poverty",
     "stage_title": "Stade de l'Organisation et Transparence :",
     "stage_desc": "YBSP Canada est un organisme sans but lucratif autonome et bénévole qui développe ses premiers projets pilotes canadiens, ses partenariats et sa fondation caritative. Certaines initiatives décrites sont des projets pilotes actifs, tandis que d'autres sont en cours de planification.",
     "footer_addr": "Basé dans la région d'Ottawa-Gatineau (Partenariats en développement au Canada)<br>Siège social au Canada",
@@ -2872,6 +2874,10 @@ function setLanguage(lang) {
       el.innerHTML = translations[lang][key];
     }
   });
+  // Update the browser tab title for the active language
+  if (translations[lang] && translations[lang]["meta_title"]) {
+    document.title = translations[lang]["meta_title"];
+  }
 
   // Update bilingual document links and downloads
   document.querySelectorAll('[data-i18n-href]').forEach(el => {
