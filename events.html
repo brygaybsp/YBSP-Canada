@@ -1333,7 +1333,7 @@
 </div>
 <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:14px;">
 <span data-i18n="ev1_loc" style="font-size:0.85rem; color:var(--text-muted);">📍 Ottawa, ON &amp; Virtual</span>
-<a class="btn-primary" data-i18n="btn_rsvp" href="#registerModal" onclick="openEventRegister('Youth Skills &amp; Entrepreneurship Workshop')" style="font-size:0.86rem; padding:8px 18px;">Register Free →</a>
+<a class="btn-primary" data-i18n="btn_rsvp" href="#registerModal" onclick="openEventRegister('evt_t1')" style="font-size:0.86rem; padding:8px 18px;">Register Free →</a>
 </div>
 </div>
 </div>
@@ -1350,7 +1350,7 @@
 </div>
 <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:14px;">
 <span data-i18n="ev2_loc" style="font-size:0.85rem; color:var(--text-muted);">📍 Zoom Webinar</span>
-<a class="btn-primary" data-i18n="btn_rsvp" href="#registerModal" onclick="openEventRegister('Canada-Burundi Synergy Dialogue')" style="font-size:0.86rem; padding:8px 18px;">Register Free →</a>
+<a class="btn-primary" data-i18n="btn_rsvp" href="#registerModal" onclick="openEventRegister('evt_t2')" style="font-size:0.86rem; padding:8px 18px;">Register Free →</a>
 </div>
 </div>
 </div>
@@ -1367,7 +1367,7 @@
 </div>
 <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:14px;">
 <span data-i18n="ev3_loc" style="font-size:0.85rem; color:var(--text-muted);">📍 Gatineau, QC &amp; Online</span>
-<a class="btn-primary" data-i18n="btn_rsvp" href="#registerModal" onclick="openEventRegister('Youth Mental Health Forum')" style="font-size:0.86rem; padding:8px 18px;">Register Free →</a>
+<a class="btn-primary" data-i18n="btn_rsvp" href="#registerModal" onclick="openEventRegister('evt_t3')" style="font-size:0.86rem; padding:8px 18px;">Register Free →</a>
 </div>
 </div>
 </div>
@@ -1384,7 +1384,7 @@
 </div>
 <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:14px;">
 <span data-i18n="ev4_loc" style="font-size:0.85rem; color:var(--text-muted);">📍 National Capital Region</span>
-<a class="btn-primary" data-i18n="btn_rsvp_gala" href="#registerModal" onclick="openEventRegister('Annual Solidarity Gala (Concept in Development)')" style="font-size:0.86rem; padding:8px 18px;">Reserve Seat →</a>
+<a class="btn-primary" data-i18n="btn_rsvp_gala" href="#registerModal" onclick="openEventRegister('evt_t4')" style="font-size:0.86rem; padding:8px 18px;">Reserve Seat →</a>
 </div>
 </div>
 </div>
@@ -1872,6 +1872,10 @@
         modal_reg_desc: "Join us for this community event. Participation is free and open to youth, mentors, and community partners.",
         modal_reg_kicker: "RSVP & Registration",
         modal_reg_title: "Event Registration",
+        evt_t1: "Youth Skills & Entrepreneurship Workshop",
+        evt_t2: "Canada-Burundi Synergy Dialogue",
+        evt_t3: "Youth Mental Health Forum",
+        evt_t4: "Annual Solidarity Gala (Concept in Development)",
         modal_reg_name: "Full Name *",
         modal_reg_name_ph: "Your full name",
         modal_reg_email: "Email Address *",
@@ -2103,6 +2107,10 @@
         modal_reg_desc: "Rejoignez-nous pour cet événement communautaire. La participation est gratuite et ouverte aux jeunes, aux mentors et aux partenaires.",
         modal_reg_kicker: "RSVP et inscription",
         modal_reg_title: "Inscription à l'événement",
+        evt_t1: "Atelier de compétences et d'entrepreneuriat jeunesse",
+        evt_t2: "Dialogue de synergie Canada-Burundi",
+        evt_t3: "Forum sur la santé mentale des jeunes",
+        evt_t4: "Gala annuel de solidarité (concept en élaboration)",
         modal_reg_name: "Nom complet *",
         modal_reg_name_ph: "Votre nom complet",
         modal_reg_email: "Adresse courriel *",
@@ -2352,10 +2360,16 @@
     
   
   // Event Registration Modal Controls
-  function openEventRegister(eventName) {
+  function openEventRegister(eventKey) {
     const modal = document.getElementById('registerModal');
     const titleEl = document.getElementById('modalEventTitle');
     const inputEl = document.getElementById('modalEventNameInput');
+    let eventName = eventKey;
+    try {
+      const lang = localStorage.getItem('ybsp_lang') || document.documentElement.lang || 'en';
+      const t = translations[lang] || translations.en;
+      eventName = t[eventKey] || translations.en[eventKey] || eventKey;
+    } catch(e) {}
     const form = document.getElementById('modalRegisterForm');
     const successMsg = document.getElementById('modalSuccessMsg');
     if (modal) {
