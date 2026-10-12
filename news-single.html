@@ -1173,7 +1173,7 @@
 <div class="footer-bottom-bar" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
 <!-- BOTTOM LEFT: COPYRIGHT -->
 <div class="footer-copyright" style="font-size:0.86rem; color:#94a3b8; text-align:left;">
-          © 2026 Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
+          © <span data-year>2026</span> Youth Building in Synergy to end Poverty (YBSP Canada). All Rights Reserved.
         </div>
 <div class="footer-legal" style="font-size:0.86rem; text-align:left;">
 <a data-i18n="foot_privacy" data-i18n-href="pdf_privacy" href="docs/YBSP_Canada_Privacy_Policy.pdf" target="_blank" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
@@ -1719,6 +1719,8 @@
 
       try { localStorage.setItem('ybsp_lang', lang); } catch(e) {}
       document.documentElement.lang = lang;
+      // Keep the footer copyright year current
+      document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent = new Date().getFullYear(); });
 
       const elements = document.querySelectorAll('[data-i18n]');
       elements.forEach(el => {
@@ -1782,5 +1784,10 @@
 
     
   </script>
+
+<script>
+// Keep the footer copyright year current
+document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent = new Date().getFullYear(); });
+</script>
 </body>
 </html>
