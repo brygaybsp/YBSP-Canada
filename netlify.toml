@@ -1,42 +1,50 @@
-[build]
-  publish = "."
-
+# French URL rewrites: serve the English file under the clean French path (URL stays).
 [[redirects]]
-  from = "/about"
-  to = "/about.html"
+  from = "/fr"
+  to = "/"
   status = 200
 
 [[redirects]]
-  from = "/programs"
-  to = "/programs.html"
+  from = "/fr/a-propos"
+  to = "/about"
   status = 200
 
 [[redirects]]
-  from = "/get-involved"
-  to = "/get-involved.html"
+  from = "/fr/programmes"
+  to = "/programs"
   status = 200
 
 [[redirects]]
-  from = "/events"
-  to = "/events.html"
+  from = "/fr/impliquez-vous"
+  to = "/get-involved"
   status = 200
 
 [[redirects]]
-  from = "/news"
-  to = "/news.html"
+  from = "/fr/evenements"
+  to = "/events"
   status = 200
 
 [[redirects]]
-  from = "/contact"
-  to = "/contact.html"
+  from = "/fr/nouvelles"
+  to = "/news"
   status = 200
 
 [[redirects]]
-  from = "/donate"
-  to = "/donate.html"
+  from = "/fr/nouvelle"
+  to = "/news-single"
   status = 200
 
 [[redirects]]
-  from = "/careers"
-  to = "/careers.html"
+  from = "/fr/carrieres"
+  to = "/careers"
+  status = 200
+
+[[redirects]]
+  from = "/fr/contact"
+  to = "/contact"
+  status = 200
+
+[[redirects]]
+  from = "/fr/faire-un-don"
+  to = "/donate"
   status = 200

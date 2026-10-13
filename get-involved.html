@@ -5,32 +5,55 @@
 <meta charset="utf-8"/>
 <script>
 /* YBSP language resolution (runs before first paint):
-   explicit ?lang=fr|en in the URL wins, then the saved preference,
-   then the visitor's browser language, then English.
-   Sets <html lang> early so assistive technology announces the right language. */
+   a /fr/... path wins, then an explicit ?lang=fr|en (legacy: rewritten to the
+   clean path without reloading), then the saved preference, then the visitor's
+   browser language, then English. Sets <html lang> early for assistive tech. */
+window.YBSP_EN_FR = {'':'','about':'a-propos','programs':'programmes','get-involved':'impliquez-vous','events':'evenements','news':'nouvelles','news-single':'nouvelle','careers':'carrieres','contact':'contact','donate':'faire-un-don'};
+window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez-vous':'get-involved','evenements':'events','nouvelles':'news','nouvelle':'news-single','carrieres':'careers','contact':'contact','faire-un-don':'donate'};
 (function () {
   function clean(v) {
     v = String(v == null ? '' : v).toLowerCase();
     return (v === 'en' || v === 'fr') ? v : null;
   }
+  function pathSlug() {
+    var p = window.location.pathname.replace(/\/$/, '');
+    var isFr = (p === '/fr' || p.indexOf('/fr/') === 0);
+    var slug = (isFr ? p.replace(/^\/fr\/?/, '') : p.replace(/^\//, '')).replace(/\.html$/, '');
+    return { isFr: isFr, slug: slug };
+  }
+  var info = pathSlug();
   var lang = null;
   try {
-    var q = null;
-    try {
-      var sp = new URLSearchParams(window.location.search);
-      sp.forEach(function (v, k) {
-        if (q === null && String(k).toLowerCase() === 'lang') { q = v; }
-      });
-    } catch (e) { q = null; }
-    lang = clean(q);
-    if (lang) {
-      try { localStorage.setItem('ybsp_lang', lang); } catch (e) {}
+    if (info.isFr) {
+      lang = 'fr';
+      try { localStorage.setItem('ybsp_lang', 'fr'); } catch (e) {}
     } else {
-      try { lang = clean(localStorage.getItem('ybsp_lang')); } catch (e) { lang = null; }
-      if (!lang) {
+      var q = null;
+      try {
+        var sp = new URLSearchParams(window.location.search);
+        sp.forEach(function (v, k) { if (q === null && String(k).toLowerCase() === 'lang') { q = v; } });
+      } catch (e) { q = null; }
+      q = clean(q);
+      if (q) { try { localStorage.setItem('ybsp_lang', q); } catch (e) {} }
+      else { try { q = clean(localStorage.getItem('ybsp_lang')); } catch (e) { q = null; } }
+      if (!q) {
         try {
           var nav = String(navigator.language || ((navigator.languages && navigator.languages[0]) || '')).toLowerCase();
-          if (nav.indexOf('fr') === 0) { lang = 'fr'; }
+          if (nav.indexOf('fr') === 0) { q = 'fr'; }
+        } catch (e) {}
+      }
+      lang = q || 'en';
+      if (lang === 'fr') {
+        var frSlug = ((window.YBSP_EN_FR || {})[info.slug] !== undefined)
+          ? window.YBSP_EN_FR[info.slug] : info.slug;
+        try {
+          var sp2 = new URLSearchParams(window.location.search);
+          var delKeys = [];
+          sp2.forEach(function (v, k) { if (String(k).toLowerCase() === 'lang') { delKeys.push(k); } });
+          for (var di = 0; di < delKeys.length; di++) { sp2.delete(delKeys[di]); }
+          var qs = sp2.toString();
+          window.history.replaceState(null, '',
+            '/fr' + (frSlug ? '/' + frSlug : '') + (qs ? '?' + qs : '') + window.location.hash);
         } catch (e) {}
       }
     }
@@ -42,7 +65,7 @@
 </script>
 <link rel="canonical" href="https://ybspcanada.org/get-involved"/>
 <link rel="alternate" hreflang="en" href="https://ybspcanada.org/get-involved"/>
-<link rel="alternate" hreflang="fr" href="https://ybspcanada.org/get-involved?lang=fr"/>
+<link rel="alternate" hreflang="fr" href="https://ybspcanada.org/fr/impliquez-vous"/>
 <link rel="alternate" hreflang="x-default" href="https://ybspcanada.org/get-involved"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title id="page-title">Get Involved | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
@@ -2112,19 +2135,34 @@
 document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent = new Date().getFullYear(); });
 </script>
 <script>
-/* YBSP: keep the shareable ?lang=fr URL and the canonical URL in sync with the
+/* YBSP: keep the clean /fr/... URL and the canonical URL in sync with the
    active language. Wraps setLanguage; toggle buttons and init call it as before. */
 (function () {
   var orig = window.setLanguage;
   if (typeof orig !== 'function' || orig.__ybspWrapped) { return; }
+  function langPath(lang) {
+    var E2F = window.YBSP_EN_FR || {}, F2E = window.YBSP_FR_EN || {};
+    var p = window.location.pathname.replace(/\/$/, '');
+    var isFr = (p === '/fr' || p.indexOf('/fr/') === 0);
+    var slug = (isFr ? p.replace(/^\/fr\/?/, '') : p.replace(/^\//, '')).replace(/\.html$/, '');
+    var enSlug = isFr ? ((F2E[slug] !== undefined) ? F2E[slug] : slug) : slug;
+    if (lang === 'fr') {
+      var frSlug = (E2F[enSlug] !== undefined) ? E2F[enSlug] : enSlug;
+      return '/fr' + (frSlug ? '/' + frSlug : '');
+    }
+    return '/' + enSlug;
+  }
   function syncUrl(lang) {
     try {
-      var url = new URL(window.location.href);
-      if (lang === 'fr') { url.searchParams.set('lang', 'fr'); }
-      else { url.searchParams.delete('lang'); }
-      window.history.replaceState(null, '', url.toString());
+      var sp = new URLSearchParams(window.location.search);
+      var delKeys = [];
+      sp.forEach(function (v, k) { if (String(k).toLowerCase() === 'lang') { delKeys.push(k); } });
+      for (var di = 0; di < delKeys.length; di++) { sp.delete(delKeys[di]); }
+      var qs = sp.toString(); /* legacy lang param no longer used */
+      var url = langPath(lang) + (qs ? '?' + qs : '') + window.location.hash;
+      window.history.replaceState(null, '', url);
       var canon = document.querySelector('link[rel="canonical"]');
-      if (canon) { canon.setAttribute('href', url.toString().split('#')[0]); }
+      if (canon) { canon.setAttribute('href', window.location.origin + url.split('#')[0]); }
     } catch (e) {}
   }
   function wrapped(lang) {
