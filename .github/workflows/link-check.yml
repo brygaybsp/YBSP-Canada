@@ -28,6 +28,8 @@ jobs:
       # and times out the checker (same false-positive class as x.com and instagram.com).
           # zeffy.com is excluded: Zeffy returns 403 to automated scanners
           # (bot protection), same false-positive class as x.com.
-          args: "--verbose --no-progress --include-fragments --timeout 60 --exclude 'x.com' --exclude 'instagram.com' --exclude 'ybspburundi.org' --exclude 'zeffy.com' './**/*.html'"
+          # ybspcanada.org/fr/* is excluded: French URLs 404 pre-merge;
+          # they resolve only after deploy via Netlify rewrites (not broken links).
+          args: "--verbose --no-progress --include-fragments --timeout 60 --exclude 'x.com' --exclude 'instagram.com' --exclude 'ybspburundi.org' --exclude 'zeffy.com' --exclude 'https?://ybspcanada\\.org/fr(/.*)?' './**/*.html'"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

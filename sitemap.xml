@@ -51,52 +51,52 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ybspcanada.org/?lang=fr</loc>
+    <loc>https://ybspcanada.org/fr</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ybspcanada.org/about?lang=fr</loc>
+    <loc>https://ybspcanada.org/fr/a-propos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ybspcanada.org/programs?lang=fr</loc>
+    <loc>https://ybspcanada.org/fr/programmes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ybspcanada.org/get-involved?lang=fr</loc>
+    <loc>https://ybspcanada.org/fr/impliquez-vous</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ybspcanada.org/events?lang=fr</loc>
+    <loc>https://ybspcanada.org/fr/evenements</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ybspcanada.org/news?lang=fr</loc>
+    <loc>https://ybspcanada.org/fr/nouvelles</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ybspcanada.org/news-single?lang=fr</loc>
+    <loc>https://ybspcanada.org/fr/nouvelle</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ybspcanada.org/careers?lang=fr</loc>
+    <loc>https://ybspcanada.org/fr/carrieres</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ybspcanada.org/contact?lang=fr</loc>
+    <loc>https://ybspcanada.org/fr/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ybspcanada.org/donate?lang=fr</loc>
+    <loc>https://ybspcanada.org/fr/faire-un-don</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
