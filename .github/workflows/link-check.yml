@@ -19,7 +19,7 @@ jobs:
       - name: Check links with lychee
         uses: lycheeverse/lychee-action@v2
         with:
-          # Scan every HTML file, including #anchor fragment links.
+          # fragment checking is disabled: lychee resolves #fragments against the base url and reports false positives. anchors are same-page and verified separately.
           # x.com is excluded: X returns 403 to all automated scanners
           # (anti-bot), so it can only be verified manually.
           # instagram.com is excluded: Instagram rate-limits automated scanners
@@ -30,6 +30,7 @@ jobs:
           # (bot protection), same false-positive class as x.com.
           # ybspcanada.org/fr/* is excluded: French URLs 404 pre-merge;
           # they resolve only after deploy via Netlify rewrites (not broken links).
-          args: "--verbose --no-progress --include-fragments --timeout 60 --exclude 'x.com' --exclude 'instagram.com' --exclude 'ybspburundi.org' --exclude 'zeffy.com' --exclude 'https?://ybspcanada\\.org/fr(/.*)?' './**/*.html'"
+          # base url lets root-relative links resolve
+          args: "--verbose --no-progress --timeout 60 --base https://ybspcanada.org --exclude 'x.com' --exclude 'instagram.com' --exclude 'ybspburundi.org' --exclude 'zeffy.com' --exclude 'https?://ybspcanada\\.org/fr(/.*)?' './**/*.html'"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
