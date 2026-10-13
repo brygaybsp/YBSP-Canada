@@ -1548,15 +1548,29 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 
       // Keep the footer copyright year current (after translations re-render the footer)
       document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent = new Date().getFullYear(); });
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        const isActive = btn.getAttribute('data-lang') === lang;
-        if (isActive) {
-          btn.classList.add('active');
+      const btnEn = document.getElementById('btn-lang-en');
+      const btnFr = document.getElementById('btn-lang-fr');
+      if (btnEn && btnFr) {
+        if (lang === 'fr') {
+          btnFr.classList.add('active');
+          btnFr.style.background = 'var(--secondary)';
+          btnFr.style.color = '#0b1c3d';
+          btnFr.setAttribute('aria-pressed', 'true');
+          btnEn.setAttribute('aria-pressed', 'false');
+          btnEn.classList.remove('active');
+          btnEn.style.background = 'transparent';
+          btnEn.style.color = '#cbd5e1';
         } else {
-          btn.classList.remove('active');
+          btnEn.classList.add('active');
+          btnEn.style.background = 'var(--secondary)';
+          btnEn.style.color = '#0b1c3d';
+          btnEn.setAttribute('aria-pressed', 'true');
+          btnFr.setAttribute('aria-pressed', 'false');
+          btnFr.classList.remove('active');
+          btnFr.style.background = 'transparent';
+          btnFr.style.color = '#cbd5e1';
         }
-        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-      });
+      }
       
       localStorage.setItem('ybsp_lang', lang);
     }
