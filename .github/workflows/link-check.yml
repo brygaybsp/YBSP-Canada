@@ -32,7 +32,9 @@ jobs:
           # they resolve only after deploy via Netlify rewrites (not broken links).
           # ybspcanada.org/team/* is excluded: team profile URLs 404 pre-merge;
           # they resolve only after deploy via Netlify rewrites (not broken links).
+          # the new dossy-roxana-igiraneza.jpg is excluded: the image file is added
+          # by the PR itself, so it 404s on production until merge + deploy.
           # base url lets root-relative links resolve
-          args: "--verbose --no-progress --timeout 60 --base https://ybspcanada.org --exclude 'x.com' --exclude 'instagram.com' --exclude 'ybspburundi.org' --exclude 'zeffy.com' --exclude 'https?://ybspcanada\\.org/fr(/.*)?' --exclude 'https?://ybspcanada\\.org/team(/.*)?' './**/*.html'"
+          args: "--verbose --no-progress --timeout 60 --base https://ybspcanada.org --exclude 'x.com' --exclude 'instagram.com' --exclude 'ybspburundi.org' --exclude 'zeffy.com' --exclude 'https?://ybspcanada\\.org/fr(/.*)?' --exclude 'https?://ybspcanada\\.org/team(/.*)?' --exclude 'https?://ybspcanada\\.org/images/team/dossy-roxana-igiraneza\\.jpg' './**/*.html'"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
