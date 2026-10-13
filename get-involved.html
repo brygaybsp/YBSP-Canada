@@ -3,7 +3,47 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
+<script>
+/* YBSP language resolution (runs before first paint):
+   explicit ?lang=fr|en in the URL wins, then the saved preference,
+   then the visitor's browser language, then English.
+   Sets <html lang> early so assistive technology announces the right language. */
+(function () {
+  function clean(v) {
+    v = String(v == null ? '' : v).toLowerCase();
+    return (v === 'en' || v === 'fr') ? v : null;
+  }
+  var lang = null;
+  try {
+    var q = null;
+    try {
+      var sp = new URLSearchParams(window.location.search);
+      sp.forEach(function (v, k) {
+        if (q === null && String(k).toLowerCase() === 'lang') { q = v; }
+      });
+    } catch (e) { q = null; }
+    lang = clean(q);
+    if (lang) {
+      try { localStorage.setItem('ybsp_lang', lang); } catch (e) {}
+    } else {
+      try { lang = clean(localStorage.getItem('ybsp_lang')); } catch (e) { lang = null; }
+      if (!lang) {
+        try {
+          var nav = String(navigator.language || ((navigator.languages && navigator.languages[0]) || '')).toLowerCase();
+          if (nav.indexOf('fr') === 0) { lang = 'fr'; }
+        } catch (e) {}
+      }
+    }
+  } catch (e) { lang = null; }
+  lang = lang || 'en';
+  try { document.documentElement.lang = lang; } catch (e) {}
+  window.ybspLang = lang;
+})();
+</script>
 <link rel="canonical" href="https://ybspcanada.org/get-involved"/>
+<link rel="alternate" hreflang="en" href="https://ybspcanada.org/get-involved"/>
+<link rel="alternate" hreflang="fr" href="https://ybspcanada.org/get-involved?lang=fr"/>
+<link rel="alternate" hreflang="x-default" href="https://ybspcanada.org/get-involved"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title id="page-title">Get Involved | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
 <meta content="Join YBSP Canada through distinct pathways: Volunteer, Become an active voting Member under the Canada NFP Act, join a Working Group, or establish an Institutional Partnership." name="description"/>
@@ -1416,7 +1456,7 @@
 <span style="font-weight:900; font-size:1.15rem; color:var(--primary);">YBSP Burundi 🇧🇮</span>
 </div>
 <h3 style="font-size:1.1rem; color:var(--primary); margin-bottom:6px;">YBSP Burundi</h3>
-<span data-i18n="part_sister_tag" style="display:inline-block; font-size:0.75rem; font-weight:700; color:#059669; background:#dcfce7; padding:3px 10px; border-radius:50px; margin-bottom:12px;">Founding Sister Organization</span>
+<span data-i18n="part_sister_tag" style="display:inline-block; font-size:0.75rem; font-weight:700; color:#047857; background:#dcfce7; padding:3px 10px; border-radius:50px; margin-bottom:12px;">Founding Sister Organization</span>
 <p data-i18n="part_burundi_desc" style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;">Grassroots field execution in Burundi: #SororaIkaye education support, artisan toolkits, and vulnerable youth feeding.</p>
 </div>
 <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color);">
@@ -1433,7 +1473,7 @@
 <span data-i18n="part_acad_tag" style="display:inline-block; font-size:0.75rem; font-weight:700; color:#4338ca; background:#e0e7ff; padding:3px 10px; border-radius:50px; margin-bottom:12px;">Academic Network</span>
 <p data-i18n="part_acad_desc" style="font-size:0.86rem; color:var(--text-muted); line-height:1.55;">Connecting with Canadian post-secondary institutions and student associations for practicum or volunteer experience, subject to institutional approval.</p>
 </div>
-<div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.8rem; font-weight:700; color:var(--text-light); text-transform:uppercase;">
+<div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.8rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">
 <span data-i18n="part_acad_sub">Student Practicums</span></div>
 </div>
 <!-- CARD 3: FUTURE PARTNERS CALLOUT -->
@@ -1462,7 +1502,7 @@
 </a>
 <div style="text-align:left; max-width:520px;">
 <div style="font-weight:800; font-size:1.05rem; color:var(--primary); margin-bottom:6px;" data-i18n="sup_era_name">Electronic Recycling Association (ERA)</div>
-<span data-i18n="sup_era_cat" style="display:inline-block; font-size:0.75rem; font-weight:700; color:#059669; background:#dcfce7; padding:3px 10px; border-radius:50px; margin-bottom:10px;">Technology &amp; In-Kind Partner</span>
+<span data-i18n="sup_era_cat" style="display:inline-block; font-size:0.75rem; font-weight:700; color:#047857; background:#dcfce7; padding:3px 10px; border-radius:50px; margin-bottom:10px;">Technology &amp; In-Kind Partner</span>
 <p data-i18n="sup_era_desc" style="margin:0; font-size:0.9rem; color:var(--text-muted); line-height:1.6;">Donated refurbished laptops and monitors powering our free youth programs in Ottawa-Gatineau.</p>
 </div>
 </div>
@@ -1564,7 +1604,7 @@
 <p style="margin:0;">🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
 </div>
 <div style="margin-top:22px;">
-<a data-i18n="nav_donate" href="donate.html" style="display:inline-block; background:var(--accent); color:#ffffff; font-weight:700; font-size:0.9rem; padding:11px 34px; border-radius:50px; text-decoration:none;">Donate</a>
+<a data-i18n="nav_donate" href="donate.html" style="display:inline-block; background:var(--accent); color:#0b1c3d; font-weight:700; font-size:0.9rem; padding:11px 34px; border-radius:50px; text-decoration:none;">Donate</a>
 </div>
 </div>
 </div>
@@ -2051,30 +2091,50 @@
       if (btnEn) {
         btnEn.classList.toggle('active', lang === 'en');
         btnEn.style.background = (lang === 'en') ? 'var(--secondary)' : 'transparent';
-        btnEn.style.color = (lang === 'en') ? '#ffffff' : '#cbd5e1';
+        btnEn.style.color = (lang === 'en') ? '#0b1c3d' : '#cbd5e1';
       }
       if (btnFr) {
         btnFr.classList.toggle('active', lang === 'fr');
         btnFr.style.background = (lang === 'fr') ? 'var(--secondary)' : 'transparent';
-        btnFr.style.color = (lang === 'fr') ? '#ffffff' : '#cbd5e1';
+        btnFr.style.color = (lang === 'fr') ? '#0b1c3d' : '#cbd5e1';
       }
       if (btnEn) btnEn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
       if (btnFr) btnFr.setAttribute('aria-pressed', lang === 'fr' ? 'true' : 'false');
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-      let currentLang = 'en';
-      try {
-        const saved = localStorage.getItem('ybsp_lang');
-        if (saved === 'fr' || saved === 'en') currentLang = saved;
-      } catch(e) {}
-      setLanguage(currentLang);
+      setLanguage(window.ybspLang || 'en');
     });
   </script>
 <script>function submitNetlifyForm(e, feedbackId) { e.preventDefault(); var form = e.target; fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(form)).toString() }).then(function() { var el = document.getElementById(feedbackId); if (el) el.style.display = "block"; form.reset(); }).catch(function() { form.submit(); }); }</script>
 <script>
 // Keep the footer copyright year current
 document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent = new Date().getFullYear(); });
+</script>
+<script>
+/* YBSP: keep the shareable ?lang=fr URL and the canonical URL in sync with the
+   active language. Wraps setLanguage; toggle buttons and init call it as before. */
+(function () {
+  var orig = window.setLanguage;
+  if (typeof orig !== 'function' || orig.__ybspWrapped) { return; }
+  function syncUrl(lang) {
+    try {
+      var url = new URL(window.location.href);
+      if (lang === 'fr') { url.searchParams.set('lang', 'fr'); }
+      else { url.searchParams.delete('lang'); }
+      window.history.replaceState(null, '', url.toString());
+      var canon = document.querySelector('link[rel="canonical"]');
+      if (canon) { canon.setAttribute('href', url.toString().split('#')[0]); }
+    } catch (e) {}
+  }
+  function wrapped(lang) {
+    lang = (lang === 'fr') ? 'fr' : 'en';
+    orig(lang);
+    syncUrl(lang);
+  }
+  wrapped.__ybspWrapped = true;
+  window.setLanguage = wrapped;
+})();
 </script>
 </body>
 </html>
