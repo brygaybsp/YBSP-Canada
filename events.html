@@ -3,7 +3,47 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
+<script>
+/* YBSP language resolution (runs before first paint):
+   explicit ?lang=fr|en in the URL wins, then the saved preference,
+   then the visitor's browser language, then English.
+   Sets <html lang> early so assistive technology announces the right language. */
+(function () {
+  function clean(v) {
+    v = String(v == null ? '' : v).toLowerCase();
+    return (v === 'en' || v === 'fr') ? v : null;
+  }
+  var lang = null;
+  try {
+    var q = null;
+    try {
+      var sp = new URLSearchParams(window.location.search);
+      sp.forEach(function (v, k) {
+        if (q === null && String(k).toLowerCase() === 'lang') { q = v; }
+      });
+    } catch (e) { q = null; }
+    lang = clean(q);
+    if (lang) {
+      try { localStorage.setItem('ybsp_lang', lang); } catch (e) {}
+    } else {
+      try { lang = clean(localStorage.getItem('ybsp_lang')); } catch (e) { lang = null; }
+      if (!lang) {
+        try {
+          var nav = String(navigator.language || ((navigator.languages && navigator.languages[0]) || '')).toLowerCase();
+          if (nav.indexOf('fr') === 0) { lang = 'fr'; }
+        } catch (e) {}
+      }
+    }
+  } catch (e) { lang = null; }
+  lang = lang || 'en';
+  try { document.documentElement.lang = lang; } catch (e) {}
+  window.ybspLang = lang;
+})();
+</script>
 <link rel="canonical" href="https://ybspcanada.org/events"/>
+<link rel="alternate" hreflang="en" href="https://ybspcanada.org/events"/>
+<link rel="alternate" hreflang="fr" href="https://ybspcanada.org/events?lang=fr"/>
+<link rel="alternate" hreflang="x-default" href="https://ybspcanada.org/events"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title id="page-title">Community &amp; Events | Youth Building in Synergy to end Poverty (YBSP Canada)</title>
 <meta content="Attend upcoming YBSP Canada events, host or partner on a community workshop, explore our Annual Solidarity Gala (Concept in Development), and view authentic community photos from Canada and Burundi." name="description"/>
@@ -1346,7 +1386,7 @@
 <div class="events-grid">
 <!-- EVENT 1 -->
 <div class="event-item-card">
-<img data-i18n-alt="alt_ev_entrepreneurship" alt="Community members seated in a classroom listening to YBSP presenters at a training workshop" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src=\'images/albums/canada-cohort/cover.jpg\';" src="images/events/event-entrepreneurship-lab.jpg"/>
+<img data-i18n-alt="alt_ev_entrepreneurship" alt="Community members seated in a classroom listening to YBSP presenters at a training workshop" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src='images/albums/canada-cohort/cover.jpg';" src="images/events/event-entrepreneurship-lab.jpg"/>
 <div class="event-card-body">
 <div>
 <div class="event-date-tag">📅 <span data-i18n="ev1_date">OCT 18, 2026</span> • <span data-i18n="ev1_badge">WORKSHOP LAB</span></div>
@@ -1363,7 +1403,7 @@
 </div>
 <!-- EVENT 2 -->
 <div class="event-item-card">
-<img data-i18n-alt="alt_ev_roundtable" alt="Women sitting in a circle on mats outdoors sharing a meal and discussion" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=700&amp;q=80\';" src="images/events/event-burundi-roundtable.jpg"/>
+<img data-i18n-alt="alt_ev_roundtable" alt="Women sitting in a circle on mats outdoors sharing a meal and discussion" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/events/event-burundi-roundtable.jpg"/>
 <div class="event-card-body">
 <div>
 <div class="event-date-tag">📅 <span data-i18n="ev2_date">NOV 05, 2026</span> • <span data-i18n="ev2_badge">GLOBAL DIALOGUE</span></div>
@@ -1380,7 +1420,7 @@
 </div>
 <!-- EVENT 3 -->
 <div class="event-item-card">
-<img data-i18n-alt="alt_ev_mentalhealth" alt="Members of a women's empowerment group chatting and laughing together outdoors" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&amp;fit=crop&amp;w=700&amp;q=80\';" src="images/events/event-mental-health.jpg"/>
+<img data-i18n-alt="alt_ev_mentalhealth" alt="Members of a women's empowerment group chatting and laughing together outdoors" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="images/events/event-mental-health.jpg"/>
 <div class="event-card-body">
 <div>
 <div class="event-date-tag">📅 <span data-i18n="ev3_date">NOV 21, 2026</span> • <span data-i18n="tag_comm_health">COMMUNITY HEALTH</span></div>
@@ -1554,7 +1594,7 @@
 <span data-i18n="alb_tag_campaign" style="position:absolute; bottom:12px; right:12px; background:rgba(245,158,11,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;">Annual Campaign</span>
 </div>
 <div style="padding:22px 20px;">
-<span data-i18n="alb2_tag" style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--accent-hover); letter-spacing:0.05em;">Education Access</span>
+<span data-i18n="alb2_tag" style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:#92400e; letter-spacing:0.05em;">Education Access</span>
 <h3 data-i18n="alb2_title" style="font-size:1.2rem; color:var(--primary); margin:6px 0 10px;">#SororaIkaye Back-to-School Drive</h3>
 <p data-i18n="alb2_desc" style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;">
                 From the Kirundi phrase "Gusorora ikaye" (sharing a notebook instead of a drink): mobilizing citizen solidarity to equip vulnerable children with notebooks, uniforms, school bags, and minerval tuition assistance to return to school.
@@ -1574,7 +1614,7 @@
 <span data-i18n="alb3_badge_time" style="position:absolute; bottom:12px; right:12px; background:rgba(99,102,241,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;">Artisan Kits</span>
 </div>
 <div style="padding:22px 20px;">
-<span data-i18n="alb3_tag" style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:#6366f1; letter-spacing:0.05em;">Livelihoods &amp; Trades</span>
+<span data-i18n="alb3_tag" style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:#4f46e5; letter-spacing:0.05em;">Livelihoods &amp; Trades</span>
 <h3 data-i18n="alb3_title" style="font-size:1.2rem; color:var(--primary); margin:6px 0 10px;">#MurabireKazoza Artisan Toolkits</h3>
 <p data-i18n="alb3_desc" style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;">
                 Providing youth who graduate from vocational apprenticeships with starter equipment: professional sewing machines, carpentry kits, and agricultural implements to establish independent community enterprises.
@@ -1614,7 +1654,7 @@
 <span data-i18n="alb_tag_dec" style="position:absolute; bottom:12px; right:12px; background:rgba(245,158,11,0.9); color:#ffffff; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:4px;">Annual December</span>
 </div>
 <div style="padding:22px 20px;">
-<span data-i18n="alb5_tag" style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--accent-hover); letter-spacing:0.05em;">Community Recognition</span>
+<span data-i18n="alb5_tag" style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:#92400e; letter-spacing:0.05em;">Community Recognition</span>
 <h3 data-i18n="alb5_title" style="font-size:1.2rem; color:var(--primary); margin:6px 0 10px;">Annual Solidarity Gala (Concept in Development) Archives</h3>
 <p data-i18n="alb5_desc" style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;">
                 Moments from our annual community gathering: celebrating cohort participants, sharing program updates and annual results, and uniting community supporters.
@@ -1701,7 +1741,7 @@
 <p style="margin:0;">🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
 </div>
 <div style="margin-top:22px;">
-<a data-i18n="nav_donate" href="donate.html" style="display:inline-block; background:var(--accent); color:#ffffff; font-weight:700; font-size:0.9rem; padding:11px 34px; border-radius:50px; text-decoration:none;">Donate</a>
+<a data-i18n="nav_donate" href="donate.html" style="display:inline-block; background:var(--accent); color:#0b1c3d; font-weight:700; font-size:0.9rem; padding:11px 34px; border-radius:50px; text-decoration:none;">Donate</a>
 </div>
 </div>
 </div>
@@ -2385,12 +2425,12 @@
       if (btnEn) {
         btnEn.classList.toggle('active', lang === 'en');
         btnEn.style.background = (lang === 'en') ? 'var(--secondary)' : 'transparent';
-        btnEn.style.color = (lang === 'en') ? '#ffffff' : '#cbd5e1';
+        btnEn.style.color = (lang === 'en') ? '#0b1c3d' : '#cbd5e1';
       }
       if (btnFr) {
         btnFr.classList.toggle('active', lang === 'fr');
         btnFr.style.background = (lang === 'fr') ? 'var(--secondary)' : 'transparent';
-        btnFr.style.color = (lang === 'fr') ? '#ffffff' : '#cbd5e1';
+        btnFr.style.color = (lang === 'fr') ? '#0b1c3d' : '#cbd5e1';
       }
       if (btnEn) btnEn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
       if (btnFr) btnFr.setAttribute('aria-pressed', lang === 'fr' ? 'true' : 'false');
@@ -2405,11 +2445,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      let savedLang = 'en';
-      try { savedLang = localStorage.getItem('ybsp_lang') || 'en'; } catch(e) {}
-      if (savedLang === 'fr') {
-        setLanguage('fr');
-      }
+      setLanguage(window.ybspLang || 'en');
     });
 
     
@@ -2896,6 +2932,31 @@ function submitNetlifyForm(e, feedbackId) {
 <script>
 // Keep the footer copyright year current
 document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent = new Date().getFullYear(); });
+</script>
+<script>
+/* YBSP: keep the shareable ?lang=fr URL and the canonical URL in sync with the
+   active language. Wraps setLanguage; toggle buttons and init call it as before. */
+(function () {
+  var orig = window.setLanguage;
+  if (typeof orig !== 'function' || orig.__ybspWrapped) { return; }
+  function syncUrl(lang) {
+    try {
+      var url = new URL(window.location.href);
+      if (lang === 'fr') { url.searchParams.set('lang', 'fr'); }
+      else { url.searchParams.delete('lang'); }
+      window.history.replaceState(null, '', url.toString());
+      var canon = document.querySelector('link[rel="canonical"]');
+      if (canon) { canon.setAttribute('href', url.toString().split('#')[0]); }
+    } catch (e) {}
+  }
+  function wrapped(lang) {
+    lang = (lang === 'fr') ? 'fr' : 'en';
+    orig(lang);
+    syncUrl(lang);
+  }
+  wrapped.__ybspWrapped = true;
+  window.setLanguage = wrapped;
+})();
 </script>
 </body>
 </html>

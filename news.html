@@ -3,7 +3,47 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
+<script>
+/* YBSP language resolution (runs before first paint):
+   explicit ?lang=fr|en in the URL wins, then the saved preference,
+   then the visitor's browser language, then English.
+   Sets <html lang> early so assistive technology announces the right language. */
+(function () {
+  function clean(v) {
+    v = String(v == null ? '' : v).toLowerCase();
+    return (v === 'en' || v === 'fr') ? v : null;
+  }
+  var lang = null;
+  try {
+    var q = null;
+    try {
+      var sp = new URLSearchParams(window.location.search);
+      sp.forEach(function (v, k) {
+        if (q === null && String(k).toLowerCase() === 'lang') { q = v; }
+      });
+    } catch (e) { q = null; }
+    lang = clean(q);
+    if (lang) {
+      try { localStorage.setItem('ybsp_lang', lang); } catch (e) {}
+    } else {
+      try { lang = clean(localStorage.getItem('ybsp_lang')); } catch (e) { lang = null; }
+      if (!lang) {
+        try {
+          var nav = String(navigator.language || ((navigator.languages && navigator.languages[0]) || '')).toLowerCase();
+          if (nav.indexOf('fr') === 0) { lang = 'fr'; }
+        } catch (e) {}
+      }
+    }
+  } catch (e) { lang = null; }
+  lang = lang || 'en';
+  try { document.documentElement.lang = lang; } catch (e) {}
+  window.ybspLang = lang;
+})();
+</script>
 <link rel="canonical" href="https://ybspcanada.org/news"/>
+<link rel="alternate" hreflang="en" href="https://ybspcanada.org/news"/>
+<link rel="alternate" hreflang="fr" href="https://ybspcanada.org/news?lang=fr"/>
+<link rel="alternate" hreflang="x-default" href="https://ybspcanada.org/news"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48"/>
 <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png"/>
@@ -294,7 +334,7 @@
     }
     .featured-date {
       font-size: 0.85rem;
-      color: var(--text-light);
+      color: var(--text-muted);
       margin-bottom: 10px;
       font-weight: 600;
     }
@@ -400,7 +440,7 @@
       align-items: center;
       gap: 12px;
       font-size: 0.78rem;
-      color: var(--text-light);
+      color: var(--text-muted);
       margin-bottom: 10px;
       font-weight: 600;
     }
@@ -465,7 +505,7 @@
     }
     .press-date {
       font-size: 0.82rem;
-      color: var(--text-light);
+      color: var(--text-muted);
       font-weight: 600;
       min-width: 90px;
     }
@@ -1470,7 +1510,7 @@
 <a class="btn-read-featured" data-i18n="btn_read_story" href="news-single.html?id=1">Read Full Feature →</a>
 </div>
 <div class="featured-img-wrap">
-<a href="news-single.html?id=1"><img data-i18n-alt="alt_news_spotlight" alt="YBSP volunteers in branded shirts at an outdoor children's Christmas celebration in Burundi" class="featured-img" loading="eager" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1000&amp;q=80\';" src="images/news/news-spotlight.jpg"/></a>
+<a href="news-single.html?id=1"><img data-i18n-alt="alt_news_spotlight" alt="YBSP volunteers in branded shirts at an outdoor children's Christmas celebration in Burundi" class="featured-img" loading="eager" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1000&amp;q=80';" src="images/news/news-spotlight.jpg"/></a>
 </div>
 </div>
 </div>
@@ -1485,7 +1525,7 @@
 <div class="news-grid">
 <!-- ARTICLE 1 -->
 <article class="article-card" id="article-1">
-<a href="news-single.html?id=1"><img data-i18n-alt="alt_news_1" alt="YBSP team members dancing and playing with Burundian children during an indoor community activity" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-1.jpg"/></a>
+<a href="news-single.html?id=1"><img data-i18n-alt="alt_news_1" alt="YBSP team members dancing and playing with Burundian children during an indoor community activity" class="article-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&amp;fit=crop&amp;w=600&amp;q=80';" src="images/news/article-1.jpg"/></a>
 <div class="article-body">
 <div class="article-meta">
 <span class="article-tag" data-i18n="art1_tag">Program Expansion</span>
@@ -1501,7 +1541,7 @@
 </article>
 <!-- ARTICLE 2 -->
 <article class="article-card" id="article-2">
-<a href="news-single.html?id=2"><img data-i18n-alt="alt_news_2" alt="Volunteers serving plates of food to children at a YBSP Sunday Meal distribution" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-2.jpg"/></a>
+<a href="news-single.html?id=2"><img data-i18n-alt="alt_news_2" alt="Volunteers serving plates of food to children at a YBSP Sunday Meal distribution" class="article-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&amp;fit=crop&amp;w=600&amp;q=80';" src="images/news/article-2.jpg"/></a>
 <div class="article-body">
 <div class="article-meta">
 <span class="article-tag" data-i18n="art2_tag">International Synergy</span>
@@ -1517,7 +1557,7 @@
 </article>
 <!-- ARTICLE 3 -->
 <article class="article-card" id="article-3">
-<a href="news-single.html?id=3"><img data-i18n-alt="alt_news_3" alt="Volunteers and Burundian children laughing together during a joyful indoor group activity" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-3.jpg"/></a>
+<a href="news-single.html?id=3"><img data-i18n-alt="alt_news_3" alt="Volunteers and Burundian children laughing together during a joyful indoor group activity" class="article-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&amp;fit=crop&amp;w=600&amp;q=80';" src="images/news/article-3.jpg"/></a>
 <div class="article-body">
 <div class="article-meta">
 <span class="article-tag" data-i18n="art3_tag">Governance</span>
@@ -1533,7 +1573,7 @@
 </article>
 <!-- ARTICLE 4 -->
 <article class="article-card" id="article-4">
-<a href="news-single.html?id=4"><img data-i18n-alt="alt_news_4" alt="Volunteers helping Burundian children wash their hands with water from a bucket" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-4.jpg"/></a>
+<a href="news-single.html?id=4"><img data-i18n-alt="alt_news_4" alt="Volunteers helping Burundian children wash their hands with water from a bucket" class="article-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&amp;fit=crop&amp;w=600&amp;q=80';" src="images/news/article-4.jpg"/></a>
 <div class="article-body">
 <div class="article-meta">
 <span class="article-tag" data-i18n="art4_tag">Community Ecology</span>
@@ -1549,7 +1589,7 @@
 </article>
 <!-- ARTICLE 5 -->
 <article class="article-card" id="article-5">
-<a href="news-single.html?id=5"><img data-i18n-alt="alt_news_5" alt="Burundian children sharing a large communal platter of rice and beans" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-5.jpg"/></a>
+<a href="news-single.html?id=5"><img data-i18n-alt="alt_news_5" alt="Burundian children sharing a large communal platter of rice and beans" class="article-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&amp;fit=crop&amp;w=600&amp;q=80';" src="images/news/article-5.jpg"/></a>
 <div class="article-body">
 <div class="article-meta">
 <span class="article-tag" data-i18n="art5_tag">Donor Transparency</span>
@@ -1565,7 +1605,7 @@
 </article>
 <!-- ARTICLE 6 (BONUS DISPATCH) -->
 <article class="article-card" id="article-6">
-<a href="news-single.html?id=6"><img data-i18n-alt="alt_news_6" alt="Group photo of the YBSP team with community women outdoors in Burundi" class="article-img" loading="lazy" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&amp;fit=crop&amp;w=600&amp;q=80\';" src="images/news/article-6.jpg"/></a>
+<a href="news-single.html?id=6"><img data-i18n-alt="alt_news_6" alt="Group photo of the YBSP team with community women outdoors in Burundi" class="article-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&amp;fit=crop&amp;w=600&amp;q=80';" src="images/news/article-6.jpg"/></a>
 <div class="article-body">
 <div class="article-meta">
 <span class="article-tag" data-i18n="art6_tag">Mental Health</span>
@@ -1685,7 +1725,7 @@
 <p style="margin:0;">🌐 <span data-i18n="footer_scope">Serving Youth Communities in Both Official Languages</span></p>
 </div>
 <div style="margin-top:22px;">
-<a data-i18n="nav_donate" href="donate.html" style="display:inline-block; background:var(--accent); color:#ffffff; font-weight:700; font-size:0.9rem; padding:11px 34px; border-radius:50px; text-decoration:none;">Donate</a>
+<a data-i18n="nav_donate" href="donate.html" style="display:inline-block; background:var(--accent); color:#0b1c3d; font-weight:700; font-size:0.9rem; padding:11px 34px; border-radius:50px; text-decoration:none;">Donate</a>
 </div>
 </div>
 </div>
@@ -2269,12 +2309,12 @@
       if (btnEn) {
         btnEn.classList.toggle('active', lang === 'en');
         btnEn.style.background = (lang === 'en') ? 'var(--secondary)' : 'transparent';
-        btnEn.style.color = (lang === 'en') ? '#ffffff' : '#cbd5e1';
+        btnEn.style.color = (lang === 'en') ? '#0b1c3d' : '#cbd5e1';
       }
       if (btnFr) {
         btnFr.classList.toggle('active', lang === 'fr');
         btnFr.style.background = (lang === 'fr') ? 'var(--secondary)' : 'transparent';
-        btnFr.style.color = (lang === 'fr') ? '#ffffff' : '#cbd5e1';
+        btnFr.style.color = (lang === 'fr') ? '#0b1c3d' : '#cbd5e1';
       }
       if (btnEn) btnEn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
       if (btnFr) btnFr.setAttribute('aria-pressed', lang === 'fr' ? 'true' : 'false');
@@ -2289,11 +2329,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      let savedLang = 'en';
-      try { savedLang = localStorage.getItem('ybsp_lang') || 'en'; } catch(e) {}
-      if (savedLang === 'fr') {
-        setLanguage('fr');
-      }
+      setLanguage(window.ybspLang || 'en');
     });
 
     
@@ -2302,6 +2338,31 @@
 <script>
 // Keep the footer copyright year current
 document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent = new Date().getFullYear(); });
+</script>
+<script>
+/* YBSP: keep the shareable ?lang=fr URL and the canonical URL in sync with the
+   active language. Wraps setLanguage; toggle buttons and init call it as before. */
+(function () {
+  var orig = window.setLanguage;
+  if (typeof orig !== 'function' || orig.__ybspWrapped) { return; }
+  function syncUrl(lang) {
+    try {
+      var url = new URL(window.location.href);
+      if (lang === 'fr') { url.searchParams.set('lang', 'fr'); }
+      else { url.searchParams.delete('lang'); }
+      window.history.replaceState(null, '', url.toString());
+      var canon = document.querySelector('link[rel="canonical"]');
+      if (canon) { canon.setAttribute('href', url.toString().split('#')[0]); }
+    } catch (e) {}
+  }
+  function wrapped(lang) {
+    lang = (lang === 'fr') ? 'fr' : 'en';
+    orig(lang);
+    syncUrl(lang);
+  }
+  wrapped.__ybspWrapped = true;
+  window.setLanguage = wrapped;
+})();
 </script>
 </body>
 </html>
