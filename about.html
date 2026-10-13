@@ -46,8 +46,8 @@
    a /fr/... path wins, then an explicit ?lang=fr|en (legacy: rewritten to the
    clean path without reloading), then the saved preference, then the visitor's
    browser language, then English. Sets <html lang> early for assistive tech. */
-window.YBSP_EN_FR = {'':'','about':'a-propos','programs':'programmes','get-involved':'impliquez-vous','events':'evenements','news':'nouvelles','news-single':'nouvelle','careers':'carrieres','contact':'contact','donate':'faire-un-don','team/leis-haragirimana':'equipe/leis-haragirimana','team/samuel-awoute':'equipe/samuel-awoute','team/stephie-keza':'equipe/stephie-keza','team/faustin-nimbona':'equipe/faustin-nimbona','team/khely-iradukunda':'equipe/khely-iradukunda','team/yves-dushime':'equipe/yves-dushime','team/nader-diab':'equipe/nader-diab','team/bilateral-coordinator':'equipe/bilateral-coordinator','team/dossy-roxana-igiraneza':'equipe/dossy-roxana-igiraneza'};
-window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez-vous':'get-involved','evenements':'events','nouvelles':'news','nouvelle':'news-single','carrieres':'careers','contact':'contact','faire-un-don':'donate','equipe/leis-haragirimana':'team/leis-haragirimana','equipe/samuel-awoute':'team/samuel-awoute','equipe/stephie-keza':'team/stephie-keza','equipe/faustin-nimbona':'team/faustin-nimbona','equipe/khely-iradukunda':'team/khely-iradukunda','equipe/yves-dushime':'team/yves-dushime','equipe/nader-diab':'team/nader-diab','equipe/bilateral-coordinator':'team/bilateral-coordinator','equipe/dossy-roxana-igiraneza':'team/dossy-roxana-igiraneza'};
+window.YBSP_EN_FR = {'':'','about':'a-propos','programs':'programmes','get-involved':'impliquez-vous','events':'evenements','news':'nouvelles','news-single':'nouvelle','careers':'carrieres','contact':'contact','donate':'faire-un-don','team/leis-haragirimana':'equipe/leis-haragirimana','team/samuel-awoute':'equipe/samuel-awoute','team/faustin-nimbona':'equipe/faustin-nimbona','team/khely-iradukunda':'equipe/khely-iradukunda','team/yves-dushime':'equipe/yves-dushime','team/nader-diab':'equipe/nader-diab','team/bilateral-coordinator':'equipe/bilateral-coordinator','team/dossy-roxana-igiraneza':'equipe/dossy-roxana-igiraneza'};
+window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez-vous':'get-involved','evenements':'events','nouvelles':'news','nouvelle':'news-single','carrieres':'careers','contact':'contact','faire-un-don':'donate','equipe/leis-haragirimana':'team/leis-haragirimana','equipe/samuel-awoute':'team/samuel-awoute','equipe/faustin-nimbona':'team/faustin-nimbona','equipe/khely-iradukunda':'team/khely-iradukunda','equipe/yves-dushime':'team/yves-dushime','equipe/nader-diab':'team/nader-diab','equipe/bilateral-coordinator':'team/bilateral-coordinator','equipe/dossy-roxana-igiraneza':'team/dossy-roxana-igiraneza'};
 (function () {
   function clean(v) {
     v = String(v == null ? '' : v).toLowerCase();
@@ -1583,23 +1583,23 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         </div><div style="margin-top:12px;"><a class="team-profile-link" data-i18n="team_view_profile" href="/team/samuel-awoute" style="font-weight:700; color:var(--primary);">View full profile &rarr;</a></div>
       </div>
 
-      <!-- 3. STEPHIE KEZA -->
-      <div class="team-member-card">
+      <!-- 3. DOSSY ROXANA IGIRANEZA -->
+      <div class="team-member-card" style="border-top:4px solid var(--secondary);">
         <div style="text-align:center;">
-          <div class="team-avatar-placeholder">SK</div>
+          <img src="/images/team/dossy-roxana-igiraneza.jpg" alt="Dossy Roxana Igiraneza" class="team-avatar-photo" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin:0 auto 16px; border:3px solid #ffffff; outline:2px solid var(--secondary); box-shadow:var(--shadow-sm); display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"/>
+          <div class="team-avatar-placeholder" style="display:none; width:120px; height:120px; margin:0 auto 16px; background:linear-gradient(135deg, #1e3a8a, #0284c7); color:#ffffff; border-radius:50%; border:3px solid #ffffff; outline:2px solid var(--secondary); align-items:center; justify-content:center; font-size:2rem; font-weight:800; box-shadow:var(--shadow-sm);">DR</div>
           <span class="team-badge badge-exec" data-i18n="badge_exec">Executive Leadership</span>
-          <h3 class="team-name">Stephie Keza</h3>
-          <div class="team-role" data-i18n="role_benit">Director of Programs &amp; Youth Mentorship</div>
-          <p class="team-bio" data-i18n="bio_benit">
-            Directs YBSP Canada's youth career mentorship cohorts, applied AI curriculum development, and participant outcome tracking across Canada. Brings strategic expertise in community development, educational program delivery, and youth empowerment frameworks.
+          <h3 class="team-name">Dossy Roxana Igiraneza</h3>
+          <div class="team-role" data-i18n="role_dossy">Director of Youth Outreach</div>
+          <p class="team-bio" data-i18n="bio_dossy">
+            Leads youth outreach across Ottawa-Gatineau, building school and community partnerships that connect young people and families to YBSP Canada's mentorship cohorts and skills programs. Brings experience in grassroots community engagement and youth relationship-building.
           </p>
         </div>
-        <div data-i18n="area_benit" style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);">
-          <strong>Responsibility:</strong> Cohort Delivery, Curriculum &amp; Youth Mentorship
-        </div><div style="margin-top:12px;"><a class="team-profile-link" data-i18n="team_view_profile" href="/team/stephie-keza" style="font-weight:700; color:var(--primary);">View full profile &rarr;</a></div>
+        <div data-i18n="area_dossy" style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);">
+          <strong>Responsibility:</strong> Youth Outreach &amp; Community Enrollment
+        </div><div style="margin-top:12px;"><a class="team-profile-link" data-i18n="team_view_profile" href="/team/dossy-roxana-igiraneza" style="font-weight:700; color:var(--primary);">View full profile &rarr;</a></div>
       </div>
-
-      <!-- 4. FAUSTIN NIMBONA -->
+<!-- 4. FAUSTIN NIMBONA -->
       <div class="team-member-card" style="border-top:4px solid var(--secondary);">
         <div style="text-align:center;">
           <img src="/images/faustin-nimbona-2026.jpg" alt="Faustin Nimbona" class="team-avatar-photo" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin:0 auto 16px; border:3px solid #ffffff; outline:2px solid var(--secondary); box-shadow:var(--shadow-sm); display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
@@ -1633,23 +1633,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         </div><div style="margin-top:12px;"><a class="team-profile-link" data-i18n="team_view_profile" href="/team/khely-iradukunda" style="font-weight:700; color:var(--primary);">View full profile &rarr;</a></div>
       </div>
 
-      <!-- 6. DOSSY ROXANA IGIRANEZA -->
-      <div class="team-member-card" style="border-top:4px solid var(--secondary);">
-        <div style="text-align:center;">
-          <img src="/images/team/dossy-roxana-igiraneza.jpg" alt="Dossy Roxana Igiraneza" class="team-avatar-photo" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin:0 auto 16px; border:3px solid #ffffff; outline:2px solid var(--secondary); box-shadow:var(--shadow-sm); display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"/>
-          <div class="team-avatar-placeholder" style="display:none; width:120px; height:120px; margin:0 auto 16px; background:linear-gradient(135deg, #1e3a8a, #0284c7); color:#ffffff; border-radius:50%; border:3px solid #ffffff; outline:2px solid var(--secondary); align-items:center; justify-content:center; font-size:2rem; font-weight:800; box-shadow:var(--shadow-sm);">DR</div>
-          <span class="team-badge badge-exec" data-i18n="badge_exec">Executive Leadership</span>
-          <h3 class="team-name">Dossy Roxana Igiraneza</h3>
-          <div class="team-role" data-i18n="role_dossy">Director of Youth Outreach</div>
-          <p class="team-bio" data-i18n="bio_dossy">
-            Leads youth outreach across Ottawa-Gatineau, building school and community partnerships that connect young people and families to YBSP Canada's mentorship cohorts and skills programs. Brings experience in grassroots community engagement and youth relationship-building.
-          </p>
-        </div>
-        <div data-i18n="area_dossy" style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border-color); font-size:0.82rem; color:var(--text-muted);">
-          <strong>Responsibility:</strong> Youth Outreach &amp; Community Enrollment
-        </div><div style="margin-top:12px;"><a class="team-profile-link" data-i18n="team_view_profile" href="/team/dossy-roxana-igiraneza" style="font-weight:700; color:var(--primary);">View full profile &rarr;</a></div>
-      </div>
-<!-- 7. RECRUITMENT IN PROGRESS: BILATERAL COORDINATOR -->
+      <!-- 6. RECRUITMENT IN PROGRESS: BILATERAL COORDINATOR -->
       <div class="team-member-card" style="border-top:4px solid #10b981;">
         <div style="text-align:center;">
           <div class="team-avatar-placeholder" style="background:#d1fae5; color:#065f46;">🌐</div>
@@ -2064,7 +2048,6 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         role_cfo: "Director of Finance & Administration (CFO)",
         bio_cfo: "Responsible for financial controllership, budgeting, statutory accounting standards under the Canada NFP Act, annual filing preparation, and grant expenditure tracking.",
         area_cfo: "<strong>Responsibility:</strong> Financial Compliance, Accounting & Internal Controls",
-        role_benit: "Director of Programs & Youth Mentorship",
         role_faustin: "Director of Partnerships & Development",
         role_comm_title: "Communications & Digital Media Lead",
         role_comm: "Communications & Digital Media Lead",
@@ -2156,10 +2139,6 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         role_founder_title: "Founder & Executive Director",
         bio_founder: "Leads overarching operational strategy, community support programs, youth opportunity pathways, and bilateral cooperation with YBSP Burundi. Brings extensive professional experience in public sector enterprise resource management systems, business analysis, and non-profit administration.",
         area_founder: "<strong>Responsibility:</strong> Strategy, Operational Management & Bilateral Synergy",
-
-        role_benit_title: "Director of Programs & Youth Opportunity",
-        bio_benit: "Directs YBSP Canada's youth mentorship cohorts, practical skills curriculum development, and participant outcome tracking across Canada. Brings strategic expertise in community development, educational program delivery, and youth empowerment frameworks.",
-        area_benit: "<strong>Responsibility:</strong> Cohort Delivery, Curriculum & Youth Mentorship",
 
         role_faustin_title: "Director of Partnerships & Development",
         bio_faustin: "Directs institutional partnerships, corporate sponsorships, and philanthropic development across Canada. Brings strategic expertise in stakeholder engagement, community resource mobilization, and donor relations.",
@@ -2262,7 +2241,6 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         role_cfo: "Directeur des finances et de l'administration (CFO)",
         bio_cfo: "Responsable de la conformité financière, de la budgétisation, des normes comptables sous la LNOBL, de la préparation des dépôts annuels et du suivi des subventions.",
         area_cfo: "<strong>Responsabilité :</strong> Conformité financière, comptabilité et contrôles internes",
-        role_benit: "Directrice des programmes et du mentorat jeunesse",
         role_faustin: "Directeur des partenariats et du développement",
         role_comm_title: "Responsable des communications et médias numériques",
         role_comm: "Responsable des communications et médias numériques",
@@ -2354,10 +2332,6 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         role_founder_title: "Fondateur & Directeur général",
         bio_founder: "Supervise la stratégie générale, les initiatives de soutien communautaire, les parcours d'insertion des jeunes et la coopération bilatérale avec YBSP Burundi. Apporte une solide expertise en systèmes intégrés de gestion, analyse d'affaires et gouvernance d'OSBL.",
         area_founder: "<strong>Responsabilité :</strong> Stratégie, gestion opérationnelle & synergie bilatérale",
-
-        role_benit_title: "Directeur des programmes & Opportunités jeunesse",
-        bio_benit: "Dirige les cohortes de mentorat pour les jeunes, le développement des modules de compétences pratiques et le suivi des acquis au Canada. Apporte une expérience précieuse en animation communautaire et développement jeunesse.",
-        area_benit: "<strong>Responsabilité :</strong> Déploiement des programmes, formation & mentorat",
 
         role_faustin_title: "Directeur des partenariats & du développement",
         bio_faustin: "Dirige les partenariats institutionnels, les commandites d'entreprise et le développement philanthropique à travers le Canada. Apporte une expertise stratégique en mobilisation des parties prenantes, développement des ressources communautaires et relations avec les donateurs.",
