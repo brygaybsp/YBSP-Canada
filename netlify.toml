@@ -48,3 +48,14 @@
   from = "/fr/faire-un-don"
   to = "/donate"
   status = 200
+
+# Team profile pages: clean URLs serve the team HTML files (URL stays).
+[[redirects]]
+  from = "/team/*"
+  to = "/team/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/fr/equipe/*"
+  to = "/team/:splat"
+  status = 200
