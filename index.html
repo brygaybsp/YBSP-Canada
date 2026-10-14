@@ -3039,9 +3039,9 @@ function setLanguage(lang) {
 }
 
 // Initialize language on load (resolved early in <head>: ?lang= > saved > browser > en)
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
   setLanguage(window.ybspLang || 'en');
-})();
+});
 </script>
 
 <script>
