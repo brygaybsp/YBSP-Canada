@@ -2,15 +2,7 @@
 %‚„œ”
 1 0 obj
 <<
-/Producer (ReportLab PDF Library \055 www\056reportlab\056com)
-/Author (YBSP Canada)
-/CreationDate (D\07220261008211957\05300\04700\047)
-/Creator (\050unspecified\051)
-/Keywords ()
-/ModDate (D\07220261008211957\05300\04700\047)
-/Subject (\050unspecified\051)
-/Title (YBSP Canada\072 Institutional Fact Sheet)
-/Trapped (\057False)
+/Producer (pypdf)
 >>
 endobj
 2 0 obj
@@ -46,11 +38,288 @@ endobj
 endobj
 5 0 obj
 <<
-/Filter [ /ASCII85Decode /FlateDecode ]
-/Length 2749
+/Length 6940
 >>
 stream
-Gau0EgN)%.&q0LUFOeUHS10<R<>>D=^*_,b[UX#`GH19:OcYNh+ufR:NDfZDgC9;YD-cL-P]F`B+JR8Me#*^j#Aj<XbjTc\E&r[HQOYu-$n(!.Q4LlK\/6:bIGiV!H9DNS+)f.VgT7C=6*nfogYB22Q$HX(IIk"`i6qKqWFl0q@k7*F`+-4pL?#Q+"?dO>?9#3B3:'AVJ9c)d&&-uJb%Q=?+tF'ObEhOBNYd</fMUQ"_/d61FaCH>.n;]=cHo^\U'lpl+^M;1kc`IO*Lr\US=H4e0jNNCL0)8WL0(iC-eE<_E]/Tea,>l73uEF#iGTFf\iX?fcAV@%bKHIrq>j]l)u("IJK=C[m[B=l\Q$,mYJ#$-+(\S;^hG7G6tB4-)%78u=47<e&pT_XSUBFs=MT8C*I5A'#_gHpbtWdW/kZ@(?5/:7"F&lh2P^b%<^%s=N4cr/$h2>t5^aF\@)!,6<c(I*M:99OF8YIT[YXB:*+W[E$j*o!f+\GTkOeUJAT,88Na%d.EYMM6g("-CE\'26.[Q#-*3KpG'`t^`#hOIHnE>H=V;>BZ`-fn=S(Og@%L!BZ"6eH_]mtu2+n^-m?rFU]V'Q*7p+?YjUZHnGSD=AsTk/O.ZAdV79:g*VOYoE4RDCPs>9e5P]7%3LKKYq;n(D.,*0.aXgCAF6*pu"T!QXX%[[uZ:q[E0#JNfi`0SM(Qp-=%QT7NT=N$SmMAC6r=e]jALLn^G]%4?/#SMJP4bLoZ$:.m/oXu5"!ZS>N83]aql^"Zi_f',DdLbOcMf5X1Prlhh<FUi-;I=EtYAT8+7kNoUnmk<NnA\%k#l@<Y3d>n(7JJIQ"eeNO3A@9%TX`JtG;T,b`i]'`:1ADu'6H<_Npl$,S)84d-mlfeUAQk"KLeY^0f6Voa\<0p<+B&l1K#6B[XLeI?IA]9^(Ag7e$=.Vi'DTXOnor1irpM]]/5Q;^*8D;5Rks9F#7NTPX9A)!Rr3>tXE<CDfkX.2=#+Z7?=f^?G:`>eqL3_X1ZOL*)>ghh<n,m1KkNHXLHCX@6DJk:_]kbZdLRNLVH6YK7799X2YcqOs*[&7qY_Js`/<go6p@/6_T6Dg>"["tR(s6.O-Y[F[qit4XL)lE^0KD/3**e#2'8<10=70Hbf=>OohbQflfM]bm^Rg&:=l=^2locMlZ1C2W]THK05_>a4X[Jb'JllsdCt:+CVaX//0`A,j=XogWJKN9`9u0'4)E9!hY0s)\*BTW;0d>EfJa34;>hJDcnftQ63GD]Q%dHC9U<6l:GON.JofI:OUTHn!cOLV]TbPq,OGf*n:\:bGN#6*`RuL4Z35!VLf:HB:@K^KpsO_M,g%9c(WLqgbN57p)9V+P\s8p#O\G$:WBt?#P1h+GZWW]Y]OnE/FtR_aAj4[(;n*R;8#oeA^`'a@@1"qqD/)Ek`KFBY/5u*oO#t]\'*ac^OAZup)5G0@q@e&t@5F?Y)WhPSj`oMn:M!<#`\L9AfH^[!>Mef.b-AKJ\@!7sFp3qnlTRHimg$LsH"u:`+t6T'N8[N'bk6qIk8=XCCq:S1Y%+U.<1c;<):.Xa$2Uifi5c3l0W.q3Cc7qSBaR'QEs,c7$sCLE*\5/VLi1,$Q+N#<D&mpjnND`).T'[cZ%l_H+$+oRQQFs:i#&/@Fc.?hOKQC?B@p$CM\11^'/]!=QkRo?aqTb,fiu=mJhq8dp`'f2_)u-^JNdi6c/O;lqT)TIjR!)(+%8CUb83`Ql(8Fo*^uM1&h8(82+auL2EL[Z6U$%l$M)]O)q05LC'e1E1+l164M"geG,T_DRQAW:C]r*?A!B0Q*_lQ1'*P`>1<II"=Ki.*[7RH!.^Q+omXe[U5u>HG@O__tV?.^/;$#):>cPh,AQV;NISr>ad$fEF\_^VG0`9U(\7<LqS1QSVCV\CjG>M%2QjNp[7!Zp/?O=m;F.OVi'C-eT?C$g_]GLgcYojk_jJau#4-:i6XZCk3eOB3=m>um5M2[;Tm_H>+VVIC^'bfHS"qaisBGk<T/?=>+(!i"lH!+-j-BjSu+!]-T^J71OAuWI#`MB_Pl'U;K%YC=Dlr0%P_@3oiE`Q.<`=.=H;Gfb>,dZX,(B]OR*J=V=EC;"$1G*D9+!(;8O9uSJouIn>;'qQ(Ek-b_PXC*Ua+c=$$54gd['PpEB]F/jKHh32SUH^ZE/o-MC0jd\-H:sV_f1X`'Kj9NOC,91J5$dAe1J6m)X$QWE;GYB;IM5s>i`jS%H-t>c6hFipGSLg$``qRL1UZ"Gp"&s8u<6L&a,O3R(=?Fg:SoG]VB2Lj$A7O[,8ltmTUfVnIL[R1Zbg&7]IWH!@l]$AZe$#Y#A?k'L":kVF$+WH;5!_e;dYu6WdK-!pm^pN@9F+R<#<Oh,BTl6,E-t_;TV;NGLKL-qUIj^;Nf9kF\(d]PcRkj-#ZGYmiX$2O<$bh6s1@C_),?F$%5!p#!cdDlUf<2E'(E09U/7-+Z;#oHMKF=iPUj/"pr7R*[U`I,?V6mfXSJg<rmuXh<"Eb2ekg[i0QmrTC%4GP!G[989QbAjN8=q\19sL_HSV7TVg$?U^/4D7,2^$5%tr).qCt="X$365cB:%(R3B-G;p"@OQ.Kb$T!brER*<^G+A4#%#r#aC+\LIf!(.)d_-C4b*:G6pqV0#5l8tC_s1g&('D2^N<lZX!di1O"n+URM+ZP=E.":.f!S=AeY"/`E;<.@1u9XV#CW!iT"Em.#M7O^OP/;2WFrN`J'#1NH]5dL!bI2:[2ogIn'Pn^]~>
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 36 714 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 0 0 cm
+q
+44 0 0 44 0 0 cm
+/FormXob.d4ef3a0277bb0156a9c37f05c76f75a3 Do
+Q
+Q
+q
+1 0 0 1 50 19.75 cm
+q
+.043137 .109804 .239216 rg
+BT 1 0 0 1 0 3 Tm /F2 14.5 Tf 17.5 TL (YBSP CANADA : INSTITUTIONAL FACT SHEET) Tj T* ET
+Q
+Q
+q
+1 0 0 1 50 17.75 cm
+Q
+q
+1 0 0 1 50 6.75 cm
+q
+.062745 .72549 .505882 rg
+BT 1 0 0 1 0 2.5 Tm /F2 8.5 Tf 11 TL (Youth Building in Synergy to end Poverty / B\342tir en synergie pour mettre fin \340 la pauvret\351) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 42 710 cm
+Q
+q
+1 0 0 1 42 707.5 cm
+q
+1.5 w
+1 J
+.062745 .72549 .505882 RG
+n 0 0 m 528 0 l S
+Q
+Q
+q
+1 0 0 1 42 689 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F2 9.5 Tf .043137 .109804 .239216 rg (1. Corporate Identity & Legal Status) Tj T* ET
+Q
+Q
+q
+1 0 0 1 36 620.5 cm
+q
+.972549 .980392 .988235 rg
+n 0 66 540 -66 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 5 54.3 cm
+q
+.043137 .109804 .239216 rg
+BT 1 0 0 1 0 2 Tm /F2 7.2 Tf 9.2 TL (Federal Corporation #:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130 54.3 cm
+q
+.117647 .160784 .231373 rg
+BT 1 0 0 1 0 2 Tm /F1 7.2 Tf 9.2 TL (1154010-6) Tj T* ET
+Q
+Q
+q
+1 0 0 1 275 54.3 cm
+q
+.043137 .109804 .239216 rg
+BT 1 0 0 1 0 2 Tm /F2 7.2 Tf 9.2 TL (Governing Statute:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 400 54.3 cm
+q
+.117647 .160784 .231373 rg
+BT 1 0 0 1 0 2 Tm /F1 7.2 Tf 9.2 TL (Canada Not-for-profit Corporations Act) Tj T* ET
+Q
+Q
+q
+1 0 0 1 5 40.1 cm
+q
+.043137 .109804 .239216 rg
+BT 1 0 0 1 0 2 Tm /F2 7.2 Tf 9.2 TL (Business Number \(BN\):) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130 40.1 cm
+q
+.117647 .160784 .231373 rg
+BT 1 0 0 1 0 2 Tm /F1 7.2 Tf 9.2 TL (779321272RC0001) Tj T* ET
+Q
+Q
+q
+1 0 0 1 275 40.1 cm
+q
+.043137 .109804 .239216 rg
+BT 1 0 0 1 0 2 Tm /F2 7.2 Tf 9.2 TL (Incorporation Date:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 400 40.1 cm
+q
+.117647 .160784 .231373 rg
+BT 1 0 0 1 0 2 Tm /F1 7.2 Tf 9.2 TL (July 29, 2019) Tj T* ET
+Q
+Q
+q
+1 0 0 1 5 25.9 cm
+q
+.043137 .109804 .239216 rg
+BT 1 0 0 1 0 2 Tm /F2 7.2 Tf 9.2 TL (Corporate Status:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130 25.9 cm
+q
+.117647 .160784 .231373 rg
+BT 1 0 0 1 0 2 Tm /F1 7.2 Tf 9.2 TL (Active / In Good Standing \(Federal\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 275 25.9 cm
+q
+.043137 .109804 .239216 rg
+BT 1 0 0 1 0 2 Tm /F2 7.2 Tf 9.2 TL (Classification:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 400 25.9 cm
+q
+.117647 .160784 .231373 rg
+BT 1 0 0 1 0 2 Tm /F1 7.2 Tf 9.2 TL (Non-Soliciting Federal Corporation) Tj T* ET
+Q
+Q
+q
+1 0 0 1 5 2.5 cm
+q
+.043137 .109804 .239216 rg
+BT 1 0 0 1 0 2 Tm /F2 7.2 Tf 9.2 TL (Registered Headquarters:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130 2.5 cm
+q
+.117647 .160784 .231373 rg
+BT 1 0 0 1 0 2 Tm /F1 7.2 Tf 9.2 TL (Ottawa - Gatineau Region \(Gatineau, QC\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 275 2.5 cm
+q
+.043137 .109804 .239216 rg
+BT 1 0 0 1 0 2 Tm /F2 7.2 Tf 9.2 TL (Operational Scope:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 400 2.5 cm
+q
+BT 1 0 0 1 0 11.2 Tm 9.2 TL /F1 7.2 Tf .117647 .160784 .231373 rg (NCR Pilots & Partnerships Across) Tj T* (Canada) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.886275 .909804 .941176 RG
+.5 w
+n 0 66 m 540 66 l S
+n 0 0 m 540 0 l S
+n 0 0 m 0 66 l S
+n 540 0 m 540 66 l S
+n 0 51.8 m 540 51.8 l S
+n 0 37.6 m 540 37.6 l S
+n 0 23.4 m 540 23.4 l S
+n 125 0 m 125 66 l S
+n 270 0 m 270 66 l S
+n 395 0 m 395 66 l S
+Q
+Q
+Q
+q
+1 0 0 1 42 615.5 cm
+Q
+q
+1 0 0 1 42 599 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F2 9.5 Tf .043137 .109804 .239216 rg (2. Mandate & Strategic Purpose) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 565.9 cm
+q
+.117647 .160784 .231373 rg
+BT 1 0 0 1 0 23 Tm /F1 7.6 Tf 10.2 TL (Youth Building in Synergy to end Poverty \(YBSP Canada\) is an autonomous, volunteer-led Canadian federal not-for-profit corporation dedicated to breaking) Tj T* (cycles of poverty, fostering youth empowerment, and bridging grassroots community action with transparent international solidarity. Headquartered in) Tj T* (Gatineau, Quebec, YBSP Canada delivers local pilot initiatives while developing collaborative partnerships nationwide.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 560.9 cm
+Q
+q
+1 0 0 1 42 544.4 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F2 9.5 Tf .043137 .109804 .239216 rg (3. Core Actionable Programs & Operational Stage) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 521.9 cm
+q
+BT 1 0 0 1 8 12.6 Tm 10 TL /F1 7.4 Tf .117647 .160784 .231373 rg (\177 ) Tj /F2 7.4 Tf (Community Support & Poverty Relief \(Pilot Stage\):) Tj /F1 7.4 Tf ( Providing community outreach, essential care packages, and emergency assistance to vulnerable) Tj T* (youth and newcomer families in the Ottawa - Gatineau region.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 499.9 cm
+q
+BT 1 0 0 1 8 12.6 Tm 10 TL /F1 7.4 Tf .117647 .160784 .231373 rg (\177 ) Tj /F2 7.4 Tf (Education, Skills & Youth Opportunity \(Under Development\):) Tj /F1 7.4 Tf ( Developing structured mentorship pilots connecting newcomer and diaspora youth with) Tj T* (professional mentors, alongside practical digital literacy and workplace readiness workshops.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 477.9 cm
+q
+BT 1 0 0 1 8 12.6 Tm 10 TL /F1 7.4 Tf .117647 .160784 .231373 rg (\177 ) Tj /F2 7.4 Tf (Pathways to Self-Sufficiency \(Planned / Dependent on Future Funding\):) Tj /F1 7.4 Tf ( Exploring foundational micro-venture guidance, budgeting life-skills, and social) Tj T* (entrepreneurship modules to support financial self-reliance.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 455.9 cm
+q
+BT 1 0 0 1 8 12.6 Tm 10 TL /F1 7.4 Tf .117647 .160784 .231373 rg (\177 ) Tj /F2 7.4 Tf (Bilateral Solidarity with YBSP Burundi:) Tj /F1 7.4 Tf ( Supporting grassroots educational kit sponsorships \(#SororaIkaye\) and vocational apprentice starter toolkits) Tj T* (\(#MurabireKazoza\), governed by transparent written project agreements and verified vendor receipts.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 448.9 cm
+Q
+q
+1 0 0 1 42 432.4 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F2 9.5 Tf .043137 .109804 .239216 rg (4. Governance Structure & Board of Directors \(Canada NFP Act\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 409.9 cm
+q
+BT 1 0 0 1 8 12.6 Tm 10 TL /F2 7.4 Tf .117647 .160784 .231373 rg (Executive Leadership:) Tj /F1 7.4 Tf ( Led by Leis Bruel Haragirimana \(Founder & Executive Director, Volunteer Role\), supported by Stephie Keza \(Director of Programs &) Tj T* (Youth Mentorship, Volunteer Role\) and Faustin Nimbona \(Director of Partnerships & Development, Volunteer Role\).) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 387.9 cm
+q
+BT 1 0 0 1 8 12.6 Tm 10 TL /F2 7.4 Tf .117647 .160784 .231373 rg (Board of Directors:) Tj /F1 7.4 Tf ( Yves Dushime \(Board Director & Community Liaison\), Nader Diab \(Board Director & Strategic Partnerships\), and Leis Bruel Haragirimana) Tj T* (\(Founder & Board Director\). Pursuant to Section 8 of the Articles of Incorporation, all Directors serve on a 100% voluntary, non-remunerated basis \($0 fees\).) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 379.9 cm
+Q
+q
+1 0 0 1 42 378.4 cm
+q
+.5 w
+1 J
+.886275 .909804 .941176 RG
+n 0 0 m 528 0 l S
+Q
+Q
+q
+1 0 0 1 42 364.9 cm
+q
+.392157 .454902 .545098 rg
+BT 1 0 0 1 0 2.5 Tm /F1 7 Tf 9.5 TL (Official Secretariat: info@ybspcanada.org | Web: https://ybspcanada.org         | Ottawa - Gatineau Region, Canada) Tj T* ET
+Q
+Q
+ 
+
 endstream
 endobj
 6 0 obj
@@ -113,15 +382,15 @@ xref
 0 11
 0000000000 65535 f 
 0000000015 00000 n 
-0000000366 00000 n 
-0000000425 00000 n 
-0000000474 00000 n 
-0000000726 00000 n 
-0000003567 00000 n 
-0000003608 00000 n 
-0000003715 00000 n 
-0000003827 00000 n 
-0000186774 00000 n 
+0000000054 00000 n 
+0000000113 00000 n 
+0000000162 00000 n 
+0000000414 00000 n 
+0000007406 00000 n 
+0000007447 00000 n 
+0000007554 00000 n 
+0000007666 00000 n 
+0000190613 00000 n 
 trailer
 <<
 /Size 11
@@ -129,5 +398,5 @@ trailer
 /Info 1 0 R
 >>
 startxref
-187968
+191807
 %%EOF

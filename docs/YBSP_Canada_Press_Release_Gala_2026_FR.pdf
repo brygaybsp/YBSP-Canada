@@ -2,15 +2,7 @@
 %‚„œ”
 1 0 obj
 <<
-/Producer (ReportLab PDF Library \055 www\056reportlab\056com)
-/Author (YBSP Canada)
-/CreationDate (D\07220261008155229\05300\04700\047)
-/Creator (\050unspecified\051)
-/Keywords ()
-/ModDate (D\07220261008155229\05300\04700\047)
-/Subject (\050unspecified\051)
-/Title (YBSP Canada \072 Communiqu\351 de presse\054 Gala 2026)
-/Trapped (\057False)
+/Producer (pypdf)
 >>
 endobj
 2 0 obj
@@ -46,11 +38,150 @@ endobj
 endobj
 5 0 obj
 <<
-/Filter [ /ASCII85Decode /FlateDecode ]
-/Length 1941
+/Length 4134
 >>
 stream
-Gau0CgJ6d"&:N^llA`$j(uLnR["6"DX5P,,]2DrrFsf+][ls,%Aru`H\#S0h!CCrd@Y@;3G$e"83d&RT^rO4*Ic_rlnH9?J!XM,[bTVeU(a`VJFL(X`0Bd";.:b`'PB"gU@sYDh>3=RNiL<8RHQ7iOqn)aBTu43/Q[`'mYDE!:@Xa\UZ^Dm\.3%DH2YWCt9BTHp+rFC.2u*-[Bn@Eo02(*GSf^HgP^sYG_grn^(Il:r83:q>5U)S[#WALB&dpXnmk<$L\[o;\^HB9AT12*HmV6i.)4fZV_@c]eI!6#IUW_&0F9%LpR/BDs^."9/LgH(=)aMk+M\GTc0StSC-%7TdKPtgaKZYGYF?fp5ZVjLJ%5S'85[Cc9,_oQ)O5*":6*mHIj\56..g&JEQ:i-7.Ob_%KpbD%!)qT!kHt>nTV.u)QW7>G<RZRZ+l9j=2%Cf$LT^ffUT)j6)W6ZpGjiuQ@_VfRVsMP=P&Ps/'(4VJP7H$59_#>30'k?@I<C#Ij7BU`qn)I#9/s\rTN$uu8!DDGF%QG\a9ru@(['_j"$.q$4Y(e=1@nC)dL1XXN<s@bB*/MVO[fZlHCm]ko?5V14m'OomJ-=LA"8FTgS%-+X'5)pa/tGW:^[gAm[b-EM^L1nk,j1"C<<l/_O[2ZR:6>h*qZ/S$`6=%707O&YKa=a.$\K\q_2dp.(gq^>iVo2T9M["!7j?.VMb>-<e/u/=urA-HppjBV3J`V?s]+0X&s/)d(CMb/R&^&>0`J"d&9*]$K\,Bq?Q[r0\fedcuc[g-u]N"kH#GRU/:Q*r8m<>>r$AuHT`E^/![i@W`KAWa_IB?<SDe0M\Y8`L#t"P[l*h&-&Tl0Co!#g=pbZLq0V2)_QTDB,B?X;AX^?H+ZV'_D?0L5E^<:_DJ3?\RMn;CVBZ6A(TaSd,^Z(AZj3$o?n0sOarmlOj`W4&VH%"Ydt_t2f==53@Gbp2)Y0AGb]]h_Ei$!LNOqtFo<5907!FFY;:AF\;%BN8KX">)P3I[nrTU,P$^iN0!&Ms"[g6FBar'i3_'f#:a",Hhh&6QImu8XB\0$3^YDg1/H7^UGY:G3"X;c;f$Xkdr<bgDLE'OZ(c=!0UOS%Q4Z^5BfA^ItZ\6@7kjTn=1jI9#/GBE"Ml)W#c*0)pNa=W$!d68?RMjW)>Z!1^]@*'YuMgIHY\VtIJ!*s!K(06Z*.FTicV'#rn6<;+2jOD6ZaT=V\c%P0/!M1%!g<t;6ptG:NB;Ul7\<Y*qUN%QU?n3+)n\"AE/bG1=)`Em#I<d+bRo-iL3Ghd[8e;eTa`COU!_I.A6\CT)Qs>d:>j'PXXI<Y)S;Faj_U/i`a^<fmDSD;#(\;c#,[4FG97n&'E4n1"D;8D]S!p2*BG;):('g@[265-`aR?4&(fk].,AW.5.VI>bS1IORL-0PA*3d%b8[gm2h!.oT@Q.S4nr)b$X@(3K-k"dYPqC[+%&%+8"d78"=]**,Oi_()'d\Uh(ah,D1t[VNQ!?+Uqbr=en3@fe>\UpF29q5'aqM0"HlTB8`HRo^5Is#2bu'^C2;9DK5KIZ=Omc3`e<P`pd7&9<M?g+>r2>@bft"#o(ET6H@>`6\,k_??;`[&AhAC(2e-:'O<BeihCB_`khYo@oZ;V#Z;`=m7Wg&a(`N!?E:"?=NC1iq4DBA+;qIO$jHjX!#gJs=VN)hEK+Ae?qKKq,K$i*t*p]*pO2/\lg;=ZnUd\@/."e52D$cgh;XQ_J.&#S#HBMi7:oU(N^Q^d&1_^MC,&9gkI7'9JBqt]q-B*3),Mb9L:*B?Qihbs^]HnrY7P[Prb@8(/+_&&@Rh\0$/,>fheYo)ABr".b1iWQ`<s"+aM7M6Y`,/<6FlOfsl!p_mBkNt0;8!pW.p&!4>WNDh\LMXiBE/+l+ro,`(n6erG*$$)<bYd.d0n8c@4E9eH_EQbFoXEEam/71bCNj%~>
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 36 714 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 0 0 cm
+q
+44 0 0 44 0 0 cm
+/FormXob.d4ef3a0277bb0156a9c37f05c76f75a3 Do
+Q
+Q
+q
+1 0 0 1 50 19.75 cm
+q
+.043137 .109804 .239216 rg
+BT 1 0 0 1 0 3 Tm /F2 14.5 Tf 17.5 TL (COMMUNIQU\311 COMMUNAUTAIRE : YBSP CANADA) Tj T* ET
+Q
+Q
+q
+1 0 0 1 50 17.75 cm
+Q
+q
+1 0 0 1 50 6.75 cm
+q
+.062745 .72549 .505882 rg
+BT 1 0 0 1 0 2.5 Tm /F2 8.5 Tf 11 TL (Consultations pour le projet de rassemblement annuel de solidarit\351 \(Concept en d\351veloppement\)) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 42 709 cm
+Q
+q
+1 0 0 1 42 706.5 cm
+q
+1.5 w
+1 J
+.062745 .72549 .505882 RG
+n 0 0 m 528 0 l S
+Q
+Q
+q
+1 0 0 1 42 686 cm
+q
+.043137 .109804 .239216 rg
+BT 1 0 0 1 0 3 Tm /F2 9.5 Tf 12.5 TL (POUR DIFFUSION IMM\311DIATE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 663.1 cm
+q
+BT 1 0 0 1 0 12.8 Tm 10.2 TL /F2 7.6 Tf .117647 .160784 .231373 rg (GATINEAU \(QU\311BEC\)) Tj /F1 7.6 Tf ( : Youth Building in Synergy to end Poverty \(YBSP Canada\), organisation f\351d\351rale \340 but non lucratif, annonce aujourd'hui l'ouverture) Tj T* (de consultations communautaires en vue de concevoir son premier rassemblement annuel de solidarit\351 dans la r\351gion de la capitale nationale.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 658.1 cm
+Q
+q
+1 0 0 1 42 627.5 cm
+q
+.117647 .160784 .231373 rg
+BT 1 0 0 1 0 23 Tm /F1 7.6 Tf 10.2 TL (Dans le cadre de son d\351veloppement organisationnel, YBSP Canada convie les jeunes participants, les leaders associatifs, les repr\351sentants des diasporas) Tj T* (et les mentors \340 co-cr\351er un \351v\351nement rassembleur ax\351 sur l'autonomisation des jeunes, l'acquisition de comp\351tences et l'\351largissement des partenariats) Tj T* (dans la r\351gion d'Ottawa - Gatineau.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 620.5 cm
+Q
+q
+1 0 0 1 42 604 cm
+q
+.043137 .109804 .239216 rg
+BT 1 0 0 1 0 3 Tm /F2 9.5 Tf 12.5 TL (Axes prioritaires de la consultation) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 581.5 cm
+q
+BT 1 0 0 1 8 12.6 Tm 10 TL /F1 7.4 Tf .117647 .160784 .231373 rg (\177 ) Tj /F2 7.4 Tf (Reconnaissance des parcours jeunesse :) Tj /F1 7.4 Tf ( D\351finir des formats valorisant les acquis des jeunes engag\351s dans les ateliers pilotes de mentorat et d'habilet\351s) Tj T* (num\351riques.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 569.5 cm
+q
+BT 1 0 0 1 8 2.6 Tm 10 TL /F1 7.4 Tf .117647 .160784 .231373 rg (\177 ) Tj /F2 7.4 Tf (Alliances et co-organisation :) Tj /F1 7.4 Tf ( \311tablir des collaborations \351troites avec les milieux scolaires, les cercles professionnels et les organismes communautaires.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 557.5 cm
+q
+BT 1 0 0 1 8 2.6 Tm 10 TL /F1 7.4 Tf .117647 .160784 .231373 rg (\177 ) Tj /F2 7.4 Tf (Bilan de la solidarit\351 internationale :) Tj /F1 7.4 Tf ( Pr\351sentation transparente des rapports d'\351tape et des retomb\351es des initiatives men\351es avec YBSP Burundi.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 545.5 cm
+q
+BT 1 0 0 1 8 2.6 Tm 10 TL /F1 7.4 Tf .117647 .160784 .231373 rg (\177 ) Tj /F2 7.4 Tf (Transparence et gouvernance :) Tj /F1 7.4 Tf ( Partage du mod\350le d'administration b\351n\351vole et des d\351marches d'enregistrement caritatif aupr\350s de l'ARC.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 536.5 cm
+Q
+q
+1 0 0 1 42 520 cm
+q
+.043137 .109804 .239216 rg
+BT 1 0 0 1 0 3 Tm /F2 9.5 Tf 12.5 TL (\300 propos de YBSP Canada) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 486.9 cm
+q
+.117647 .160784 .231373 rg
+BT 1 0 0 1 0 23 Tm /F1 7.6 Tf 10.2 TL (YBSP Canada \(organisation n\260 1154010-6\) est une corporation canadienne \340 but non lucratif d\351di\351e \340 l'all\350gement de la pauvret\351, \340 la formation des jeunes) Tj T* (et \340 la solidarit\351 internationale. Administr\351e par un conseil b\351n\351vole \(Yves Dushime, Nader Diab, Leis Bruel Haragirimana\), l'organisation \234uvre depuis la) Tj T* (r\351gion d'Ottawa - Gatineau.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 42 478.9 cm
+Q
+q
+1 0 0 1 42 477.4 cm
+q
+.5 w
+1 J
+.886275 .909804 .941176 RG
+n 0 0 m 528 0 l S
+Q
+Q
+q
+1 0 0 1 42 463.9 cm
+q
+.392157 .454902 .545098 rg
+BT 1 0 0 1 0 2.5 Tm /F1 7 Tf 9.5 TL (Relations m\351dias et communaut\351 : info@ybspcanada.org | Site Web : https://ybspcanada.org         | Gatineau, QC, Canada) Tj T* ET
+Q
+Q
+ 
+
 endstream
 endobj
 6 0 obj
@@ -113,15 +244,15 @@ xref
 0 11
 0000000000 65535 f 
 0000000015 00000 n 
-0000000380 00000 n 
-0000000439 00000 n 
-0000000488 00000 n 
-0000000740 00000 n 
-0000002773 00000 n 
-0000002814 00000 n 
-0000002921 00000 n 
-0000003033 00000 n 
-0000185980 00000 n 
+0000000054 00000 n 
+0000000113 00000 n 
+0000000162 00000 n 
+0000000414 00000 n 
+0000004600 00000 n 
+0000004641 00000 n 
+0000004748 00000 n 
+0000004860 00000 n 
+0000187807 00000 n 
 trailer
 <<
 /Size 11
@@ -129,5 +260,5 @@ trailer
 /Info 1 0 R
 >>
 startxref
-187174
+189001
 %%EOF
