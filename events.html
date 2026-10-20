@@ -620,6 +620,8 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
     }
     .event-title { font-size: 1.3rem; font-weight: 800; color: var(--primary); margin-bottom: 10px; line-height: 1.35; }
     .event-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 18px; }
+    .event-item-card.past-event .event-banner-img { filter: grayscale(65%); }
+    .event-completed-badge { font-size: 0.86rem; padding: 8px 18px; border-radius: 999px; background: #e5e7eb; color: #4b5563; font-weight: 700; white-space: nowrap; }
 
     /* GALA BANNER */
     .gala-feature-banner {
@@ -1408,7 +1410,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 </div>
 <div class="events-grid">
 <!-- EVENT 1 -->
-<div class="event-item-card">
+<div class="event-item-card" data-event-date="2026-10-18">
 <img data-i18n-alt="alt_ev_entrepreneurship" alt="Community members seated in a classroom listening to YBSP presenters at a training workshop" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src='/images/albums/canada-cohort/cover.jpg';" src="/images/events/event-entrepreneurship-lab.jpg"/>
 <div class="event-card-body">
 <div>
@@ -1425,7 +1427,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 </div>
 </div>
 <!-- EVENT 2 -->
-<div class="event-item-card">
+<div class="event-item-card" data-event-date="2026-11-05">
 <img data-i18n-alt="alt_ev_roundtable" alt="Women sitting in a circle on mats outdoors sharing a meal and discussion" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="/images/events/event-burundi-roundtable.jpg"/>
 <div class="event-card-body">
 <div>
@@ -1442,7 +1444,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 </div>
 </div>
 <!-- EVENT 3 -->
-<div class="event-item-card">
+<div class="event-item-card" data-event-date="2026-11-21">
 <img data-i18n-alt="alt_ev_mentalhealth" alt="Members of a women's empowerment group chatting and laughing together outdoors" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="/images/events/event-mental-health.jpg"/>
 <div class="event-card-body">
 <div>
@@ -1459,7 +1461,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 </div>
 </div>
 <!-- EVENT 4 -->
-<div class="event-item-card">
+<div class="event-item-card" data-event-date="2026-12-12">
 <img data-i18n-alt="alt_ev_gala" alt="A DJ with headphones preparing music on a laptop in a decorated banquet hall" class="event-banner-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&amp;fit=crop&amp;w=700&amp;q=80';" src="/images/events/event-gala-card.jpg" style="width:100%; height:220px; object-fit:cover;"/>
 <div class="event-card-body">
 <div>
@@ -1475,7 +1477,19 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 </div>
 </div>
 </div>
+<p data-i18n="no_upcoming" id="no-upcoming-msg" style="display:none; text-align:center; color:var(--text-muted); margin-top:6px;">No events are scheduled right now. Check back soon, or propose one below.</p>
 </div>
+</div>
+</section>
+<!-- SECTION 1B: PAST EVENTS (filled automatically by the archive script at the end of this file) -->
+<section class="content-section" id="past-events" style="display:none; background:#f8fafc; border-top:1px solid var(--border-color);">
+<div class="container">
+<div class="section-header-center">
+<span class="section-tag" data-i18n="tag_past">Event Archive</span>
+<h2 class="section-title" data-i18n="heading_past">Past Events</h2>
+<p data-i18n="desc_past">Gatherings we have already hosted. Thank you to everyone who joined us.</p>
+</div>
+<div class="events-grid" id="past-events-grid"></div>
 </div>
 </section>
 <!-- SECTION 2: HOST OR PARTNER ON AN EVENT (DEDICATED PATHWAY) -->
@@ -2088,6 +2102,11 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
       "tag_calendar": "Calendar of Activities",
       "heading_calendar": "Upcoming Gatherings &amp; Workshops",
       "desc_calendar": "Participate in interactive youth sessions held in person and online across Canada.",
+      "tag_past": "Event Archive",
+      "heading_past": "Past Events",
+      "desc_past": "Gatherings we have already hosted. Thank you to everyone who joined us.",
+      "ev_completed": "Completed",
+      "no_upcoming": "No events are scheduled right now. Check back soon, or propose one below.",
       "ev1_title": "Youth Social Entrepreneurship &amp; Micro-Venture Lab",
       "ev1_desc": "An intensive hands-on lab exploring community commerce, lean startup AI tools for market testing, financial budgeting, and micro-grant validation for emerging young innovators.",
       "btn_rsvp": "Register Free →",
@@ -2326,6 +2345,11 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
       "tag_calendar": "Calendrier des activités",
       "heading_calendar": "Ateliers et rencontres à venir",
       "desc_calendar": "Participez à nos sessions interactives en présentiel et en ligne partout au Canada.",
+      "tag_past": "Archives des événements",
+      "heading_past": "Événements passés",
+      "desc_past": "Des rencontres déjà tenues. Merci à toutes les personnes qui y ont participé.",
+      "ev_completed": "Terminé",
+      "no_upcoming": "Aucun événement n'est prévu pour le moment. Revenez bientôt, ou proposez-en un ci-dessous.",
       "ev1_title": "Atelier de compétences & entrepreneuriat & Micro-entreprises",
       "ev1_desc": "Atelier pratique intensif explorant le commerce communautaire, les outils d'IA pour tester un projet, la gestion budgétaire et la recherche de micro-subventions.",
       "btn_rsvp": "Inscription gratuite →",
@@ -3058,6 +3082,53 @@ document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent = 
       rewritePageLinks(initLang);
     }
   } catch (e) {}
+})();
+</script>
+<script>
+/* YBSP events auto-archive: on every page load, any event card whose
+   data-event-date is before today moves into the Past Events section,
+   loses its registration button, and is marked Completed. The page
+   maintains itself as dates pass; no manual edits needed. */
+(function () {
+  function archivePastEvents() {
+    var pastSection = document.getElementById('past-events');
+    var pastGrid = document.getElementById('past-events-grid');
+    if (!pastSection || !pastGrid) return;
+    var now = new Date();
+    var startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var cards = document.querySelectorAll('.event-item-card[data-event-date]');
+    var past = [];
+    cards.forEach(function (card) {
+      var d = new Date(card.getAttribute('data-event-date') + 'T00:00:00');
+      if (!isNaN(d.getTime()) && d < startOfToday) past.push(card);
+    });
+    past.sort(function (a, b) {
+      return new Date(b.getAttribute('data-event-date') + 'T00:00:00') - new Date(a.getAttribute('data-event-date') + 'T00:00:00');
+    });
+    past.forEach(function (card) {
+      card.classList.add('past-event');
+      var btn = card.querySelector('a.btn-primary');
+      if (btn) {
+        var done = document.createElement('span');
+        done.className = 'event-completed-badge';
+        done.setAttribute('data-i18n', 'ev_completed');
+        done.textContent = (window.ybspLang === 'fr') ? 'Terminé' : 'Completed';
+        btn.parentNode.replaceChild(done, btn);
+      }
+      pastGrid.appendChild(card);
+    });
+    if (past.length > 0) pastSection.style.display = '';
+    var upcomingGrid = document.querySelector('#calendar .events-grid');
+    var noMsg = document.getElementById('no-upcoming-msg');
+    if (upcomingGrid && noMsg && upcomingGrid.querySelectorAll('.event-item-card').length === 0) {
+      noMsg.style.display = '';
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', archivePastEvents);
+  } else {
+    archivePastEvents();
+  }
 })();
 </script>
 </body>
