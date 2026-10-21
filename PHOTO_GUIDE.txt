@@ -134,7 +134,7 @@ Format: Square portraits (600x600 px or 800x800 px), JPG.
 • images/faustin-nimbona.jpg         -> Programs Director & Co-Founder
 • stephie-keza.jpg (photo pending)            -> Treasurer & Operations Director
 • images/team/yves-dushime.jpg        -> Board Director (Corporate Governance)
-• images/nader-diab.jpg              -> Board Director (Strategy & Partnerships)
+• images/tresor-nishimwe.jpg              -> Board Director (Strategy & Partnerships)
 
 ================================================================================
 SUMMARY OF QUICK REPLACEMENTS:
