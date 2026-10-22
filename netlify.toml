@@ -59,3 +59,10 @@
   from = "/fr/equipe/*"
   to = "/team/:splat"
   status = 200
+
+# Homepage duplicate: the file URL permanently redirects to the canonical root.
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
