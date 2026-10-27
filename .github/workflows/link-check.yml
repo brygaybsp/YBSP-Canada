@@ -32,10 +32,13 @@ jobs:
           # they resolve only after deploy via Netlify rewrites (not broken links).
           # ybspcanada.org/team/* is excluded: team profile URLs 404 pre-merge;
           # they resolve only after deploy via Netlify rewrites (not broken links).
-          # the new dossy-roxana-igiraneza.jpg is excluded: the image file is added
-          # by the PR itself, so it 404s on production until merge + deploy.
-          # same for tresor-nishimwe.jpg (new headshot added by a later PR).
+          # same-site /images/* URLs are remapped to the checkout, so an image
+          # added by the PR itself resolves pre-merge instead of 404ing on
+          # production until merge + deploy. A genuinely missing image still
+          # fails, because the local file will not exist either. This replaces
+          # the old per-file exclusions (dossy, tresor headshots): no new
+          # exclusion is needed when a future PR adds an image.
           # base url lets root-relative links resolve
-          args: "--verbose --no-progress --timeout 60 --base https://ybspcanada.org --exclude 'x.com' --exclude 'instagram.com' --exclude 'ybspburundi.org' --exclude 'zeffy.com' --exclude 'https?://ybspcanada\\.org/fr(/.*)?' --exclude 'https?://ybspcanada\\.org/team(/.*)?' --exclude 'https?://ybspcanada\\.org/images/team/dossy-roxana-igiraneza\\.jpg' --exclude 'https?://ybspcanada\\.org/images/team/tresor-nishimwe\\.jpg' './**/*.html'"
+          args: "--verbose --no-progress --timeout 60 --base https://ybspcanada.org --remap 'https://ybspcanada\\.org/images file://${{ github.workspace }}/images' --exclude 'x.com' --exclude 'instagram.com' --exclude 'ybspburundi.org' --exclude 'zeffy.com' --exclude 'https?://ybspcanada\\.org/fr(/.*)?' --exclude 'https?://ybspcanada\\.org/team(/.*)?' './**/*.html'"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
