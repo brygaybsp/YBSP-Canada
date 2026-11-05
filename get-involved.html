@@ -1230,6 +1230,14 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 
 .lang-btn { min-width: 28px; min-height: 28px; display: inline-flex; align-items: center; justify-content: center; }
 </style>
+<!-- Google tag (gtag.js) for Ad Grants conversion tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18508701653"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18508701653');
+</script>
 </head>
 <body>
 <a class="skip-link" data-i18n="skip_link" href="#main-content">Skip to main content</a>
@@ -1455,6 +1463,29 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 <button class="btn-primary" data-i18n="btn_submit_app" style="width:100%; justify-content:center; padding:12px;" type="submit">Submit Volunteer Application</button>
 <div class="form-feedback success" id="vol-success" style="display:none; margin-top:18px;" role="status" aria-live="polite">
             Thank you for your application. Our secretariat team will review your submission and contact you within 2 to 3 business days.
+          </div>
+</form>
+</div>
+<!-- VOLUNTEER ALERT LIST (low-friction signup, Ad Grants secondary conversion) -->
+<div class="form-card" id="alert-card" style="margin-top:24px;">
+<h3 data-i18n="alert_title" style="font-size:1.25rem; color:var(--primary); margin-bottom:8px; text-align:center;">Short on time?</h3>
+<p data-i18n="alert_sub" style="font-size:0.9rem; color:var(--text-muted); text-align:center; margin-bottom:24px;">
+          Leave your name and email and we will send you volunteer openings as they come up. No spam, one email a month at most.
+        </p>
+<form data-netlify="true" id="alert-form" method="POST" name="volunteer-alert-list" onsubmit="submitNetlifyForm(event, 'alert-success')"> <input type="hidden" name="form-name" value="volunteer-alert-list"/>
+<div class="form-grid-2">
+<div class="form-group">
+<label class="form-label" data-i18n="alert_name_label" for="a-name">First name *</label>
+<input class="form-input" data-i18n-placeholder="alert_ph_name" id="a-name" name="first_name" placeholder="e.g. Marie" required="" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label" data-i18n="alert_email_label" for="a-email">Email address *</label>
+<input class="form-input" data-i18n-placeholder="alert_ph_email" id="a-email" name="email" placeholder="e.g. marie@example.ca" required="" type="email"/>
+</div>
+</div>
+<button class="btn-primary" data-i18n="alert_btn" style="width:100%; justify-content:center; padding:12px;" type="submit">Join the alert list</button>
+<div class="form-feedback success" id="alert-success" style="display:none; margin-top:18px;" role="status" aria-live="polite">
+            You are on the list. We will email you when a volunteer opening matches.
           </div>
 </form>
 </div>
@@ -1890,6 +1921,15 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         f_label_exp: "Brief Background & Availability",
         btn_submit_app: "Submit Volunteer Application",
 
+        alert_title: "Short on time?",
+        alert_sub: "Leave your name and email and we will send you volunteer openings as they come up. No spam, one email a month at most.",
+        alert_name_label: "First name *",
+        alert_email_label: "Email address *",
+        alert_ph_name: "e.g. Marie",
+        alert_ph_email: "e.g. marie@example.ca",
+        alert_btn: "Join the alert list",
+        alert_success: "You are on the list. We will email you when a volunteer opening matches.",
+
         tag_partnerships: "Collaborative Alliances",
         head_partnerships: "Partner With Us",
         sub_partnerships: "We welcome collaboration with community organizations, academic departments, foundations, and employers who share our dedication to poverty relief and expanding human potential.",
@@ -2037,6 +2077,15 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         f_label_exp: "Expérience & Disponibilités",
         btn_submit_app: "Envoyer ma candidature bénévole",
 
+        alert_title: "Manquez de temps ?",
+        alert_sub: "Laissez votre nom et votre courriel pour devenir bénévole : nous vous enverrons nos offres de bénévolat à Gatineau dès qu'elles s'ouvrent. Aucun pourriel, un courriel par mois tout au plus.",
+        alert_name_label: "Prénom *",
+        alert_email_label: "Adresse courriel *",
+        alert_ph_name: "p. ex. Marie",
+        alert_ph_email: "p. ex. marie@example.ca",
+        alert_btn: "Recevoir les alertes",
+        alert_success: "Vous êtes sur la liste. Nous vous écrirons dès qu'une offre de bénévolat correspond.",
+
         tag_partnerships: "Alliances stratégiques",
         head_partnerships: "Devenir partenaire",
         sub_partnerships: "Nous collaborons avec des organismes communautaires, des institutions d'enseignement, des fondations et des employeurs engagés dans la réduction des inégalités.",
@@ -2129,7 +2178,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
       setLanguage(window.ybspLang || 'en');
     });
   </script>
-<script>function submitNetlifyForm(e, feedbackId) { e.preventDefault(); var form = e.target; fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(form)).toString() }).then(function() { var el = document.getElementById(feedbackId); if (el) el.style.display = "block"; form.reset(); }).catch(function() { form.submit(); }); }</script>
+<script>function submitNetlifyForm(e, feedbackId) { e.preventDefault(); var form = e.target; fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(form)).toString() }).then(function() { var el = document.getElementById(feedbackId); if (el) el.style.display = "block"; form.reset(); if (typeof gtag === 'function') { if (feedbackId === 'vol-success') { gtag('event', 'conversion', {'send_to': 'AW-18508701653/kFp6CNeC1bIdENW_0flE'}); window.__ybspConverted = true; var alertCard = document.getElementById('alert-card'); if (alertCard) alertCard.style.display = 'none'; } else if (feedbackId === 'alert-success' && !window.__ybspConverted) { gtag('event', 'conversion', {'send_to': 'AW-18508701653/9u8mCNqC1bIdENW_0flE'}); window.__ybspConverted = true; } } }).catch(function() { form.submit(); }); }</script>
 <script>
 // Keep the footer copyright year current
 document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent = new Date().getFullYear(); });
