@@ -1429,7 +1429,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
           Please fill out the form below and our team will connect with you regarding current volunteer placements.
         </p>
     
-<form data-netlify="true" id="volunteer-form" method="POST" name="volunteer-application" onsubmit="submitNetlifyForm(event, 'vol-success')"> <input type="hidden" name="form-name" value="volunteer-application"/>
+<form data-netlify="true" id="volunteer-form" method="POST" name="volunteer-application"> <input type="hidden" name="form-name" value="volunteer-application"/>
 <div class="form-grid-2">
 <div class="form-group">
 <label class="form-label" data-i18n="f_label_name" for="v-name">Full Name *</label>
@@ -1472,7 +1472,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 <p data-i18n="alert_sub" style="font-size:0.9rem; color:var(--text-muted); text-align:center; margin-bottom:24px;">
           Leave your name and email and we will send you volunteer openings as they come up. No spam, one email a month at most.
         </p>
-<form data-netlify="true" id="alert-form" method="POST" name="volunteer-alert-list" onsubmit="submitNetlifyForm(event, 'alert-success')"> <input type="hidden" name="form-name" value="volunteer-alert-list"/>
+<form data-netlify="true" id="alert-form" method="POST" name="volunteer-alert-list"> <input type="hidden" name="form-name" value="volunteer-alert-list"/>
 <div class="form-grid-2">
 <div class="form-group">
 <label class="form-label" data-i18n="alert_name_label" for="a-name">First name *</label>
@@ -1567,7 +1567,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 <p data-i18n="part_form_sub" style="font-size:0.9rem; color:var(--text-muted); text-align:center; margin-bottom:24px;">
           Explore co-designing community support programs, employee mentorship engagement, or grant initiatives with YBSP Canada.
         </p>
-<form data-netlify="true" id="partner-inquiry-form" method="POST" name="institutional-partnership" onsubmit="submitNetlifyForm(event, 'part-success')"> <input type="hidden" name="form-name" value="institutional-partnership"/>
+<form data-netlify="true" id="partner-inquiry-form" method="POST" name="institutional-partnership"> <input type="hidden" name="form-name" value="institutional-partnership"/>
 <div class="form-grid-2">
 <div class="form-group">
 <label class="form-label" data-i18n="f_label_org" for="p-org">Organization / Institution Name *</label>
@@ -2178,7 +2178,11 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
       setLanguage(window.ybspLang || 'en');
     });
   </script>
-<script>function submitNetlifyForm(e, feedbackId) { e.preventDefault(); var form = e.target; fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(form)).toString() }).then(function() { var el = document.getElementById(feedbackId); if (el) el.style.display = "block"; form.reset(); if (typeof gtag === 'function') { if (feedbackId === 'vol-success') { gtag('event', 'conversion', {'send_to': 'AW-18508701653/kFp6CNeC1bIdENW_0flE'}); window.__ybspConverted = true; var alertCard = document.getElementById('alert-card'); if (alertCard) alertCard.style.display = 'none'; } else if (feedbackId === 'alert-success' && !window.__ybspConverted) { gtag('event', 'conversion', {'send_to': 'AW-18508701653/9u8mCNqC1bIdENW_0flE'}); window.__ybspConverted = true; } } }).catch(function() { form.submit(); }); }</script>
+<script>function submitNetlifyForm(e, feedbackId) { e.preventDefault(); var form = e.target; fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(form)).toString() }).then(function() { var el = document.getElementById(feedbackId); if (el) el.style.display = "block"; form.reset(); if (typeof gtag === 'function') { if (feedbackId === 'vol-success') { gtag('event', 'conversion', {'send_to': 'AW-18508701653/kFp6CNeC1bIdENW_0flE'}); window.__ybspConverted = true; var alertCard = document.getElementById('alert-card'); if (alertCard) alertCard.style.display = 'none'; } else if (feedbackId === 'alert-success' && !window.__ybspConverted) { gtag('event', 'conversion', {'send_to': 'AW-18508701653/9u8mCNqC1bIdENW_0flE'}); window.__ybspConverted = true; } } }).catch(function() { form.submit(); }); }
+var vf = document.getElementById('volunteer-form'); if (vf) vf.addEventListener('submit', function (e) { submitNetlifyForm(e, 'vol-success'); });
+var af = document.getElementById('alert-form'); if (af) af.addEventListener('submit', function (e) { submitNetlifyForm(e, 'alert-success'); });
+var pf = document.getElementById('partner-inquiry-form'); if (pf) pf.addEventListener('submit', function (e) { submitNetlifyForm(e, 'part-success'); });
+</script>
 <script>
 // Keep the footer copyright year current
 document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent = new Date().getFullYear(); });
