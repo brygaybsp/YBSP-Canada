@@ -2521,6 +2521,7 @@ const translations = {
   "en": {
     "time_today": "Today",
     "meta_title": "YBSP Canada | Youth Building in Synergy to end Poverty",
+    "meta_description": "Youth Building in Synergy to end Poverty (YBSP Canada) empowers youth through skills, mentorship, and social entrepreneurship while cultivating authentic international solidarity with Burundi.",
     "skip_link": "Skip to main content",
     "alt_hero": "Young people engaged in collaborative learning and community skills workshop",
     "alt_bridge_canada": "Canadian community youth collaborating in a skills workshop",
@@ -2622,7 +2623,7 @@ const translations = {
     "head_bilateral": "Two Organizations. One Shared History. Complementary Work.",
     "sub_bilateral": "YBSP Canada and YBSP Burundi share a common history and commitment to reducing poverty and expanding opportunity. Each organization operates according to its own legal, governance and operational responsibilities.",
     "canada_card_desc": "YBSP Canada is an independent Canadian nonprofit organization focused on reducing poverty, expanding opportunity and strengthening communities in Canada, while supporting appropriate international initiatives.",
-    "burundi_card_desc": "YBSP Burundi is the organization founded in Burundi in 2011, continuing locally rooted work supporting vulnerable children, families, youth and communities.",
+    "burundi_card_desc": "YBSP Burundi began as a grassroots youth movement in Burundi in 2011 and was formally chartered as a Burundian non-profit association in 2013, continuing locally rooted work supporting vulnerable children, families, youth and communities.",
     "tag_involved": "Get Involved",
     "head_involved": "How You Can Support Opportunity",
     "sub_involved": "Whether you want to share your professional experience, partner on community initiatives, or join our community network, there is a place for you.",
@@ -2744,7 +2745,8 @@ const translations = {
   "pdf_privacy": "/docs/YBSP_Canada_Privacy_Policy.pdf"},
   "fr": {
     "time_today": "Aujourd'hui",
-    "meta_title": "YBSP Canada | Youth Building in Synergy to end Poverty",
+    "meta_title": "YBSP Canada | Bâtir en synergie pour mettre fin à la pauvreté",
+    "meta_description": "YBSP Canada (Bâtir en synergie pour mettre fin à la pauvreté) autonomise les jeunes par les compétences, le mentorat et l'entrepreneuriat social, tout en cultivant une solidarité internationale authentique avec le Burundi.",
     "skip_link": "Aller au contenu principal",
     "alt_hero": "Jeunes engagés dans un atelier collaboratif d'apprentissage et de compétences communautaires",
     "alt_bridge_canada": "Jeunes de la communauté canadienne collaborant lors d'un atelier de compétences",
@@ -2846,7 +2848,7 @@ const translations = {
     "head_bilateral": "Deux organisations. Une histoire commune. Un objectif partagé.",
     "sub_bilateral": "YBSP Canada et YBSP Burundi partagent une histoire commune et un engagement partagé pour réduire la pauvreté et élargir les opportunités. Chaque organisation agit selon ses propres responsabilités légales, de gouvernance et d'opérations.",
     "canada_card_desc": "YBSP Canada est une organisation à but non lucratif canadienne autonome axée sur le soulagement de la pauvreté, l'élargissement des opportunités et le renforcement des communautés au Canada, tout en appuyant des initiatives internationales adaptées.",
-    "burundi_card_desc": "YBSP Burundi est l'organisation fondée au Burundi en 2011, poursuivant un travail enraciné localement auprès des enfants vulnérables, des familles et des communautés.",
+    "burundi_card_desc": "YBSP Burundi a commencé comme mouvement jeunesse communautaire au Burundi en 2011 et a été constitué officiellement en association sans but lucratif burundaise en 2013, poursuivant un travail enraciné localement auprès des enfants vulnérables, des familles et des communautés.",
     "tag_involved": "S'impliquer",
     "head_involved": "Comment nous soutenir",
     "sub_involved": "Que vous souhaitiez partager votre expérience, collaborer sur des initiatives de terrain ou rejoindre notre réseau, votre apport est précieux.",
@@ -2988,6 +2990,11 @@ function setLanguage(lang) {
   // Update the browser tab title for the active language
   if (translations[lang] && translations[lang]["meta_title"]) {
     document.title = translations[lang]["meta_title"];
+  }
+  // Update the meta description for the active language
+  if (translations[lang] && translations[lang]["meta_description"]) {
+    var md = document.querySelector('meta[name="description"]');
+    if (md) { md.setAttribute('content', translations[lang]["meta_description"]); }
   }
 
   // Update bilingual document links and downloads
