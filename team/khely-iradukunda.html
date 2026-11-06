@@ -1539,7 +1539,7 @@ window.YBSP_FR_EN = {"": "", "a-propos": "about", "programmes": "programs", "imp
 <div style="margin-top:22px;">
 <a data-i18n="nav_donate" href="/donate" style="display:inline-block; background:var(--accent); color:#0b1c3d; font-weight:700; font-size:0.9rem; padding:11px 34px; border-radius:50px; text-decoration:none;">Donate</a>
 </div>
-</div><div style="margin-top:12px;"><a class="team-profile-link" data-i18n="team_view_profile" href="/team/leis-haragirimana" style="font-weight:700; color:var(--primary);">View full profile &rarr;</a></div>
+</div>
 </div>
 <!-- BOTTOM SECTION: COPYRIGHT (LEFT) & FOLLOW US (RIGHT) -->
 <div class="footer-bottom-bar" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;">
@@ -1581,6 +1581,11 @@ var translations = {"en": {"nav_membership": "Become a Member", "nav_about": "Ab
       });
       if (translations[lang] && translations[lang]['meta_title']) {
         document.title = translations[lang]['meta_title'];
+      }
+      // Update the meta description for the active language
+      if (translations[lang] && translations[lang]['meta_description']) {
+        var md = document.querySelector('meta[name=\"description\"]');
+        if (md) { md.setAttribute('content', translations[lang]['meta_description']); }
       }
       document.querySelectorAll('[data-i18n-href]').forEach(el => {
         const key = el.getAttribute('data-i18n-href');
