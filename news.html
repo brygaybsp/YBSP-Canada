@@ -1703,9 +1703,11 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 <div class="container">
 <h2 data-i18n="cta_title">Never Miss a Milestone</h2>
 <p data-i18n="cta_desc">Subscribe to our quarterly community bulletin for verified impact reports, upcoming youth cohorts, and bilateral project stories.</p>
-<form class="cta-form" data-netlify="true" method="POST" name="newsletter-subscribe" onsubmit="submitNetlifyForm(event, 'newsletterFeedback')"> <input type="hidden" name="form-name" value="newsletter-subscribe"/>
-<input aria-label="Email address" class="cta-input" data-i18n-placeholder="ph_newsletter" name="email" placeholder="Enter your email address" required="" type="email"/>
-<button class="btn-subscribe" data-i18n="cta_btn" type="submit">Subscribe to News</button><p class="form-feedback" id="newsletterFeedback" style="display:none; margin-top:10px;">Thank you for subscribing to YBSP Canada updates!</p>
+<form class="cta-form" data-netlify="true" method="POST" name="newsletter-subscribe"> <input type="hidden" name="form-name" value="newsletter-subscribe"/>
+<label for="newsletter-email" data-i18n="lbl_newsletter_email" style="display:block; text-align:left; font-size:0.9rem; font-weight:700; color:#ffffff; margin-bottom:6px;">Email Address *</label>
+<input aria-label="Email address" class="cta-input" data-i18n-placeholder="ph_newsletter" id="newsletter-email" name="email" placeholder="Enter your email address" required="" type="email"/>
+<label style="display:flex; align-items:flex-start; gap:8px; text-align:left; font-size:0.82rem; color:#cbd5e1; margin:10px 0 0;"><input type="checkbox" required="" style="margin-top:3px;"/><span data-i18n="consent_newsletter">I agree to receive YBSP Canada's quarterly bulletin and understand I can unsubscribe at any time.</span></label>
+<button class="btn-subscribe" data-i18n="cta_btn" type="submit">Subscribe to News</button><p class="form-feedback" data-i18n="newsletter_feedback" id="newsletterFeedback" style="display:none; margin-top:10px;">Thank you for subscribing to YBSP Canada updates!</p>
 </form>
 </div>
 </section>
@@ -1922,6 +1924,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
     const translations = {
       en: {
         meta_title: "News & Stories of Change | Youth Building in Synergy to end Poverty (YBSP Canada)",
+        meta_description: "Stay updated with the latest news, impact stories, community initiatives, and press releases from Youth Building in Synergy to end Poverty (YBSP Canada).",
         skip_link: "Skip to main content",
         alt_news_spotlight: "YBSP volunteers in branded shirts at an outdoor children's Christmas celebration in Burundi",
         alt_news_1: "YBSP team members dancing and playing with Burundian children during an indoor community activity",
@@ -1950,6 +1953,9 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         art6_date: "MAR 15, 2026",
 
         ph_newsletter: "Enter your email address",
+        lbl_newsletter_email: "Email Address *",
+        consent_newsletter: "I agree to receive YBSP Canada's quarterly bulletin and understand I can unsubscribe at any time.",
+        newsletter_feedback: "Thank you for subscribing to YBSP Canada updates!",
 
         pdf_pr_gala: "docs/YBSP_Canada_Press_Release_Gala_2026.pdf",
         pdf_pr_gala_fn: "YBSP_Canada_Press_Release_Gala_2026.pdf",
@@ -2022,20 +2028,20 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 
       "tagline": "Youth Building in Synergy to end Poverty",
       "nav_home": "Home",
-      "nav_about": "About Us",
-      "nav_mission": "Mission &amp; Mandate",
-      "nav_team": "Executive Leadership",
-      "nav_governance": "Board &amp; Governance",
-      "nav_corporate": "Corporate Filings",
-      "nav_burundi": "Burundi Project Synergy",
-      "nav_programs": "Our Programs",
+      "nav_about": "About",
+      "nav_mission": "Mission & Mandate",
+      "nav_team": "Leadership",
+      "nav_governance": "Board & Governance",
+      "nav_corporate": "Corporate Information",
+      "nav_burundi": "Canada & Burundi",
+      "nav_programs": "Programs",
       "nav_mentorship": "Career Mentorship &amp; AI",
       "nav_entrepreneurship": "Social Entrepreneurship",
       "nav_awareness": "Health &amp; Urban Ecology",
       "nav_burundi_prog": "Burundi Projects",
-      "nav_sdgs": "UN SDGs Alignment",
+      "nav_sdgs": "UN SDGs Reference",
       "nav_involved": "Get Involved",
-      "nav_volunteer": "Volunteer Opportunities",
+      "nav_volunteer": "Volunteer",
       "nav_membership": "Become a Member",
       "nav_working_groups": "Member Working Groups",
       "nav_partnerships": "Institutional Partners",
@@ -2044,7 +2050,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
       "nav_host": "Host or Propose an Event",
       "nav_gala": "Annual Solidarity Gala",
       "nav_gallery": "Authentic Photo Gallery",
-      "nav_news": "News &amp; Articles",
+      "nav_news": "News",
       "nav_careers": "Careers",
       "nav_contact": "Contact",
       "nav_donate": "Donate",
@@ -2101,6 +2107,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         pdf_privacy: "docs/YBSP_Canada_Privacy_Policy.pdf"},
       fr: {
         meta_title: "Nouvelles & Récits de transformation | Youth Building in Synergy to end Poverty (YBSP Canada)",
+        meta_description: "Restez informé des dernières nouvelles, des histoires d'impact, des initiatives communautaires et des communiqués de presse de YBSP Canada (Bâtir en synergie pour mettre fin à la pauvreté).",
         skip_link: "Aller au contenu principal",
         alt_news_spotlight: "Bénévoles de YBSP en chandails à l'effigie de l'organisme lors d'une fête de Noël extérieure pour enfants au Burundi",
         alt_news_1: "Membres de l'équipe YBSP dansant et jouant avec des enfants burundais lors d'une activité communautaire intérieure",
@@ -2129,6 +2136,9 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         art6_date: "15 MARS 2026",
 
         ph_newsletter: "Entrez votre adresse courriel",
+        lbl_newsletter_email: "Adresse courriel *",
+        consent_newsletter: "J'accepte de recevoir le bulletin trimestriel de YBSP Canada et je comprends que je peux me désabonner en tout temps.",
+        newsletter_feedback: "Merci de vous être abonné aux nouvelles de YBSP Canada !",
 
         pdf_pr_gala: "docs/YBSP_Canada_Press_Release_Gala_2026_FR.pdf",
         pdf_pr_gala_fn: "YBSP_Canada_Communique_Presse_Gala_2026.pdf",
@@ -2193,18 +2203,18 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
       "nav_home": "Accueil",
       "nav_about": "À propos",
       "nav_mission": "Mission & Mandat",
-      "nav_team": "Direction exécutive",
-      "nav_governance": "Conseil d'administration",
-      "nav_corporate": "Dépôts corporatifs",
-      "nav_burundi": "Alliance avec le Burundi",
+      "nav_team": "Direction",
+      "nav_governance": "Conseil & Gouvernance",
+      "nav_corporate": "Renseignements corporatifs",
+      "nav_burundi": "Canada & Burundi",
       "nav_programs": "Programmes",
       "nav_mentorship": "Mentorat de carrière & IA",
       "nav_entrepreneurship": "Entrepreneuriat social",
       "nav_awareness": "Santé & Écologie urbaine",
       "nav_burundi_prog": "Projets Burundi",
-      "nav_sdgs": "Alignement ODD de l'ONU",
+      "nav_sdgs": "Référence ODD de l'ONU",
       "nav_involved": "S'impliquer",
-      "nav_volunteer": "Formulaire de bénévolat",
+      "nav_volunteer": "Bénévolat",
       "nav_membership": "Devenir membre",
       "nav_working_groups": "Comités de travail",
       "nav_partnerships": "Partenariats institutionnels",
@@ -2303,6 +2313,11 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
       // Update the browser tab title for the active language
       if (translations[lang] && translations[lang]['meta_title']) {
         document.title = translations[lang]['meta_title'];
+      }
+      // Update the meta description for the active language
+      if (translations[lang] && translations[lang]['meta_description']) {
+        var md = document.querySelector('meta[name=\"description\"]');
+        if (md) { md.setAttribute('content', translations[lang]['meta_description']); }
       }
 
       // Update bilingual document links and downloads
@@ -2465,6 +2480,15 @@ document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent = 
     }
   } catch (e) {}
 })();
+</script>
+<script>
+  // Bind the newsletter form without an inline onsubmit handler (inline handlers are mangled on the live site)
+  (function () {
+    var f = document.querySelector('form[name="newsletter-subscribe"]');
+    if (f && typeof submitNetlifyForm === 'function') {
+      f.addEventListener('submit', function (e) { submitNetlifyForm(e, 'newsletterFeedback'); });
+    }
+  })();
 </script>
 </body>
 </html>

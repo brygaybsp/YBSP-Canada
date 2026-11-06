@@ -138,7 +138,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
       margin-bottom: 12px;
       letter-spacing: -0.02em;
     }
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       .page-title.single-line {
         white-space: nowrap;
       }
@@ -149,7 +149,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
       letter-spacing: -0.02em;
       line-height: 1.25;
     }
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       .section-title.single-line {
         white-space: nowrap;
       }
@@ -1438,7 +1438,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
           </p>
 </div>
 <div class="form-card">
-<form data-netlify="true" id="talentPoolForm" method="POST" name="talent-pool-inquiry" onsubmit="submitNetlifyForm(event, 'talentFeedback')">
+<form data-netlify="true" id="talentPoolForm" method="POST" name="talent-pool-inquiry">
 <input name="form-name" type="hidden" value="talent-pool-inquiry"/>
 <div class="form-grid-2">
 <div class="form-group">
@@ -1673,6 +1673,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
     const translations = {
       en: {
         meta_title: "Careers & Opportunities | Youth Building in Synergy to end Poverty (YBSP Canada)",
+        meta_description: "Explore career, internship, and volunteer leadership opportunities with YBSP Canada as our national youth organization expands.",
         skip_link: "Skip to main content",
         ph_tp_notes: "Tell us about your background, relevant qualifications, and what type of role interests you...",
 
@@ -1745,31 +1746,31 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 
       "tagline": "Building practical opportunity where barriers are highest.",
       "nav_home": "Home",
-      "nav_about": "About Us &amp; Governance",
-      "nav_mission": "Mission &amp; Mandate",
-      "nav_team": "Executive Leadership",
-      "nav_governance": "Board &amp; Governance",
-      "nav_corporate": "Corporate Filings",
-      "nav_burundi": "Burundi Sisterhood",
-      "nav_programs": "Programs &amp; AI Skills",
+      "nav_about": "About",
+      "nav_mission": "Mission & Mandate",
+      "nav_team": "Leadership",
+      "nav_governance": "Board & Governance",
+      "nav_corporate": "Corporate Information",
+      "nav_burundi": "Canada & Burundi",
+      "nav_programs": "Programs",
       "nav_mentorship": "Career Mentorship &amp; AI",
       "nav_entrepreneurship": "Social Entrepreneurship",
       "nav_awareness": "Health &amp; Urban Ecology",
       "nav_burundi_prog": "Burundi Projects",
-      "nav_sdgs": "UN SDGs Alignment",
+      "nav_sdgs": "UN SDGs Reference",
       "nav_involved": "Get Involved",
-      "nav_volunteer": "Volunteer Application",
+      "nav_volunteer": "Volunteer",
       "nav_membership": "Become a Member",
       "nav_working_groups": "Member Working Groups",
       "nav_partnerships": "Institutional Partners",
-      "nav_events": "Events &amp; Community",
+      "nav_events": "Events",
       "nav_calendar": "Events Calendar",
       "nav_host": "Host or Propose an Event",
       "nav_gala": "Annual Solidarity Gala",
       "nav_gallery": "Authentic Photo Gallery",
-      "nav_news": "News &amp; Media Library",
-      "nav_careers": "Careers &amp; Opportunities",
-      "nav_contact": "Contact Us",
+      "nav_news": "News",
+      "nav_careers": "Careers",
+      "nav_contact": "Contact",
       "nav_donate": "Donate",
       "crumb_home": "Home",
       "crumb_careers": "Careers &amp; Opportunities",
@@ -1810,6 +1811,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         pdf_privacy: "docs/YBSP_Canada_Privacy_Policy.pdf"},
       fr: {
         meta_title: "Carrières et opportunités | Youth Building in Synergy to end Poverty (YBSP Canada)",
+        meta_description: "Explorez les possibilités de carrière, de stage et de leadership bénévole chez YBSP Canada, alors que notre organisation jeunesse nationale prend de l'expansion.",
         skip_link: "Aller au contenu principal",
         ph_tp_notes: "Parlez-nous de votre parcours, de vos compétences et du type de mandat qui vous intéresse...",
 
@@ -1874,18 +1876,18 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
       "nav_home": "Accueil",
       "nav_about": "À propos",
       "nav_mission": "Mission & Mandat",
-      "nav_team": "Direction exécutive",
-      "nav_governance": "Conseil d'administration",
-      "nav_corporate": "Dépôts corporatifs",
-      "nav_burundi": "Alliance avec le Burundi",
+      "nav_team": "Direction",
+      "nav_governance": "Conseil & Gouvernance",
+      "nav_corporate": "Renseignements corporatifs",
+      "nav_burundi": "Canada & Burundi",
       "nav_programs": "Programmes",
       "nav_mentorship": "Mentorat de carrière & IA",
       "nav_entrepreneurship": "Entrepreneuriat social",
       "nav_awareness": "Santé & Écologie urbaine",
       "nav_burundi_prog": "Projets Burundi",
-      "nav_sdgs": "Alignement ODD de l'ONU",
+      "nav_sdgs": "Référence ODD de l'ONU",
       "nav_involved": "S'impliquer",
-      "nav_volunteer": "Formulaire de bénévolat",
+      "nav_volunteer": "Bénévolat",
       "nav_membership": "Devenir membre",
       "nav_working_groups": "Comités de travail",
       "nav_partnerships": "Partenariats institutionnels",
@@ -1951,6 +1953,11 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
       // Update the browser tab title for the active language
       if (translations[lang] && translations[lang]['meta_title']) {
         document.title = translations[lang]['meta_title'];
+      }
+      // Update the meta description for the active language
+      if (translations[lang] && translations[lang]['meta_description']) {
+        var md = document.querySelector('meta[name=\"description\"]');
+        if (md) { md.setAttribute('content', translations[lang]['meta_description']); }
       }
 
       // Update bilingual document links and downloads
@@ -2128,6 +2135,15 @@ document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent = 
     }
   } catch (e) {}
 })();
+</script>
+<script>
+  // Bind the talent pool form without an inline onsubmit handler (inline handlers are mangled on the live site)
+  (function () {
+    var f = document.getElementById('talentPoolForm');
+    if (f && typeof submitNetlifyForm === 'function') {
+      f.addEventListener('submit', function (e) { submitNetlifyForm(e, 'talentFeedback'); });
+    }
+  })();
 </script>
 </body>
 </html>

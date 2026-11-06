@@ -1669,8 +1669,9 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
     const translations = {
       en: {
         meta_title: "Article | Youth Building in Synergy to end Poverty (YBSP Canada)",
-        skip_link: "Aller au contenu principal",
-        alt_article_cover: "Trois jeunes riant ensemble autour d'une table avec des ordinateurs portables",
+        meta_description: "Read full news articles and impact dispatches from YBSP Canada.",
+        skip_link: "Skip to main content",
+        alt_article_cover: "Three young people laughing together around a table with laptops",
         nav_community_support: "Community Support & Poverty Relief",
         nav_education_skills: "Education, Skills & Youth Opportunity",
         nav_self_sufficiency: "Pathways to Self-Sufficiency",
@@ -1683,24 +1684,23 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 
         crumb_home: "Home",
         crumb_news: "News",
-        btn_back_all: "← Back to all news",
         link_support_story: "Support community opportunity →",
         tagline: "Building practical opportunity where barriers are highest.",
         nav_home: "Home",
-        nav_about: "About Us",
+        nav_about: "About",
         nav_mission: "Mission & Mandate",
-        nav_team: "Executive Leadership",
+        nav_team: "Leadership",
         nav_governance: "Board & Governance",
-        nav_corporate: "Corporate Filings",
-        nav_burundi: "Burundi Sisterhood",
+        nav_corporate: "Corporate Information",
+        nav_burundi: "Canada & Burundi",
         nav_programs: "Programs",
         nav_mentorship: "Career Mentorship & AI",
         nav_entrepreneurship: "Social Entrepreneurship",
         nav_awareness: "Health & Urban Ecology",
         nav_burundi_prog: "Burundi Projects",
-        nav_sdgs: "UN SDGs Alignment",
+        nav_sdgs: "UN SDGs Reference",
         nav_involved: "Get Involved",
-        nav_volunteer: "Volunteer Application",
+        nav_volunteer: "Volunteer",
         nav_membership: "Become a Member",
         nav_working_groups: "Member Working Groups",
         nav_partnerships: "Institutional Partners",
@@ -1716,7 +1716,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         nav_donate: "Donate",
         crumb_home: "Home",
         crumb_news: "News & Impact Stories",
-        btn_back_all: "← Back to All News & Stories",
+        btn_back_all: "Back to All News & Stories",
         link_support_story: "Support Our Community Programs →",
         footer_desc: "Youth Building in Synergy to end Poverty is a federally incorporated Canadian not-for-profit corporation (Canada Not-for-profit Corporations Act) dedicated to fostering youth leadership, community synergy, and international solidarity.",
         footer_links_title: "Quick Links",
@@ -1727,7 +1727,8 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         foot_copy: "&copy; <span data-year>2026</span> Youth Building in Synergy to end Poverty (YBSP Canada). All rights reserved.",
         pdf_privacy: "docs/YBSP_Canada_Privacy_Policy.pdf"},
       fr: {
-        meta_title: "Article | Youth Building in Synergy to end Poverty (YBSP Canada)",
+        meta_title: "Article | Bâtir en synergie pour mettre fin à la pauvreté (YBSP Canada)",
+        meta_description: "Lisez les articles complets et les dépêches d'impact de YBSP Canada.",
         skip_link: "Aller au contenu principal",
         alt_article_cover: "Trois jeunes riant ensemble autour d'une table avec des ordinateurs portables",
         nav_community_support: "Soutien communautaire & Secours alimentaire",
@@ -1742,24 +1743,23 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 
         crumb_home: "Accueil",
         crumb_news: "Nouvelles",
-        btn_back_all: "← Retour aux actualités",
         link_support_story: "Soutenir nos initiatives →",
         tagline: "Unir la jeunesse. Bâtir la synergie. Vaincre la précarité.",
         nav_home: "Accueil",
         nav_about: "À propos",
         nav_mission: "Mission & Mandat",
-        nav_team: "Direction exécutive",
-        nav_governance: "Conseil d'administration",
-        nav_corporate: "Dépôts corporatifs",
-        nav_burundi: "Alliance avec le Burundi",
+        nav_team: "Direction",
+        nav_governance: "Conseil & Gouvernance",
+        nav_corporate: "Renseignements corporatifs",
+        nav_burundi: "Canada & Burundi",
         nav_programs: "Programmes",
         nav_mentorship: "Mentorat de carrière & IA",
         nav_entrepreneurship: "Entrepreneuriat social",
         nav_awareness: "Santé & Écologie urbaine",
         nav_burundi_prog: "Projets Burundi",
-        nav_sdgs: "Alignement ODD de l'ONU",
+        nav_sdgs: "Référence ODD de l'ONU",
         nav_involved: "S'impliquer",
-        nav_volunteer: "Formulaire de bénévolat",
+        nav_volunteer: "Bénévolat",
         nav_membership: "Devenir membre",
         nav_working_groups: "Comités de travail",
         nav_partnerships: "Partenariats institutionnels",
@@ -1771,11 +1771,11 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         nav_gallery: "Galerie photos authentiques",
         nav_news: "Nouvelles",
         nav_careers: "Carrières",
-        nav_contact: "Contact",
+        nav_contact: "Nous joindre",
         nav_donate: "Faire un don",
         crumb_home: "Accueil",
         crumb_news: "Nouvelles & Récits",
-        btn_back_all: "← Retour à toutes les nouvelles",
+        btn_back_all: "Retour à toutes les nouvelles",
         link_support_story: "Soutenir nos programmes communautaires →",
         footer_desc: "Youth Building in Synergy to end Poverty est une organisation à but non lucratif constituée au fédéral (Loi BNL), dédiée au leadership des jeunes et à la solidarité internationale.",
         footer_links_title: "Liens rapides",
@@ -1807,9 +1807,17 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
           el.setAttribute('alt', translations[lang][ak]);
         }
       });
-      // Update the browser tab title for the active language
-      if (translations[lang] && translations[lang]['meta_title']) {
+      // Update the browser tab title: the loaded article title when one is shown, else the page title
+      if (typeof currentId !== 'undefined' && typeof articlesData !== 'undefined' && articlesData[currentId]) {
+        var ad = articlesData[currentId][lang] || articlesData[currentId]['en'];
+        if (ad && ad.title) { document.title = ad.title + ' | YBSP Canada'; }
+      } else if (translations[lang] && translations[lang]['meta_title']) {
         document.title = translations[lang]['meta_title'];
+      }
+      // Update the meta description for the active language
+      if (translations[lang] && translations[lang]['meta_description']) {
+        var md = document.querySelector('meta[name=\"description\"]');
+        if (md) { md.setAttribute('content', translations[lang]['meta_description']); }
       }
 
       // Update bilingual document links and downloads

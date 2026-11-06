@@ -1465,7 +1465,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 <h3 data-i18n="intl_burundi_title" style="font-size:1.25rem; color:var(--primary); margin:0;">YBSP Burundi Field Programs</h3>
 </div>
 <p data-i18n="intl_burundi_p" style="font-size:0.92rem; color:var(--text-muted); line-height:1.65; margin-bottom:14px;">
-            YBSP Burundi is the organization founded in Burundi in 2011, continuing locally rooted work supporting vulnerable children, families, youth and communities.
+            YBSP Burundi began as a grassroots youth movement in Burundi in 2011 and was formally chartered as a Burundian non-profit association in 2013, continuing locally rooted work supporting vulnerable children, families, youth and communities.
           </p>
 <div style="margin-top:16px;">
 <a data-i18n="intl_burundi_link" href="https://ybspburundi.org/" rel="noopener noreferrer" style="font-size:0.88rem; font-weight:700; color:var(--secondary-dark);" target="_blank">
@@ -1704,6 +1704,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
     const translations = {
       en: {
         meta_title: "Programs & Impact | Youth Building in Synergy to end Poverty (YBSP Canada)",
+        meta_description: "Explore YBSP Canada's core pillars: Community Support & Poverty Relief, Education, Skills & Youth Opportunity, Pathways to Self-Sufficiency, and Bilateral Solidarity with YBSP Burundi.",
         skip_link: "Skip to main content",
         alt_prog_support: "A YBSP volunteer distributing bottled drinks to seated children during a community outreach",
         alt_prog_education: "A YBSP volunteer posing with a youth basketball team outdoors",
@@ -1825,7 +1826,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         head_intl: "Two Organizations. One Shared History. Complementary Work.",
         sub_intl: "YBSP Canada and YBSP Burundi share a common history and commitment to reducing poverty and expanding opportunity. Each organization operates according to its own legal, governance and operational responsibilities.",
         intl_canada_p: "YBSP Canada is an independent Canadian nonprofit organization focused on reducing poverty, expanding opportunity and strengthening communities in Canada, while supporting appropriate international initiatives.",
-        intl_burundi_p: "YBSP Burundi is the organization founded in Burundi in 2011, continuing locally rooted work supporting vulnerable children, families, youth and communities.",
+        intl_burundi_p: "YBSP Burundi began as a grassroots youth movement in Burundi in 2011 and was formally chartered as a Burundian non-profit association in 2013, continuing locally rooted work supporting vulnerable children, families, youth and communities.",
 
         tag_sdgs: "Global Framework Reference",
         head_sdgs: "UN Sustainable Development Goals Alignment",
@@ -1855,6 +1856,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         pdf_privacy: "docs/YBSP_Canada_Privacy_Policy.pdf"},
       fr: {
         meta_title: "Programmes et impact | Youth Building in Synergy to end Poverty (YBSP Canada)",
+        meta_description: "Explorez les piliers de YBSP Canada : Soutien communautaire et lutte contre la pauvreté, Éducation, compétences et opportunités jeunesse, Cheminements vers l'autonomie et Solidarité bilatérale avec YBSP Burundi.",
         skip_link: "Aller au contenu principal",
         alt_prog_support: "Un bénévole YBSP distribuant des boissons en bouteille à des enfants assis lors d'une activité communautaire",
         alt_prog_education: "Un bénévole YBSP posant avec une équipe de basketball de jeunes à l'extérieur",
@@ -1976,7 +1978,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
         head_intl: "Deux organisations. Une histoire commune. Un objectif partagé.",
         sub_intl: "YBSP Canada et YBSP Burundi partagent une histoire commune et un engagement partagé pour réduire la pauvreté et élargir les opportunités. Chaque organisation agit selon ses propres responsabilités légales, de gouvernance et d'opérations.",
         intl_canada_p: "YBSP Canada est une organisation à but non lucratif canadienne autonome axée sur le soulagement de la pauvreté, l'élargissement des opportunités et le renforcement des communautés au Canada, tout en appuyant des initiatives internationales adaptées.",
-        intl_burundi_p: "YBSP Burundi est l'organisation fondée au Burundi en 2011, poursuivant un travail enraciné localement auprès des enfants vulnérables, des familles et des communautés.",
+        intl_burundi_p: "YBSP Burundi a commencé comme mouvement jeunesse communautaire au Burundi en 2011 et a été constitué officiellement en association sans but lucratif burundaise en 2013, poursuivant un travail enraciné localement auprès des enfants vulnérables, des familles et des communautés.",
 
         tag_sdgs: "Référence mondiale",
         head_sdgs: "Alignement sur les Objectifs de développement durable de l'ONU",
@@ -2026,6 +2028,11 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
       // Update the browser tab title for the active language
       if (translations[lang] && translations[lang]['meta_title']) {
         document.title = translations[lang]['meta_title'];
+      }
+      // Update the meta description for the active language
+      if (translations[lang] && translations[lang]['meta_description']) {
+        var md = document.querySelector('meta[name=\"description\"]');
+        if (md) { md.setAttribute('content', translations[lang]['meta_description']); }
       }
 
       // Update bilingual document links and downloads
