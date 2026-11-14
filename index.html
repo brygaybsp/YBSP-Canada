@@ -2268,7 +2268,7 @@ window.YBSP_FR_EN = {'':'','a-propos':'about','programmes':'programs','impliquez
 <section style="background:#ffffff; padding:34px 0; border-top:1px solid var(--border-color);">
 <div class="container" style="display:flex; justify-content:center; align-items:center; gap:18px; flex-wrap:wrap;">
 <span data-i18n="sup_strip_label" style="font-size:0.85rem; color:var(--text-muted);">Supported by</span>
-<a href="/get-involved#partnerships" aria-label="Our supporters">
+<a href="/get-involved#partnerships" aria-label="Our supporters" data-i18n-aria-label="sup_strip_aria">
 <img src="/images/era-logo.png" alt="Electronic Recycling Association logo" style="width:110px; height:auto; display:block;"/>
 </a>
 </div>
@@ -2742,6 +2742,7 @@ const translations = {
     "btn_cat_join": "Get Involved",
     "btn_cat_support": "Support YBSP →",
     "sup_strip_label": "Supported by",
+    "sup_strip_aria": "Our supporters",
   "pdf_privacy": "/docs/YBSP_Canada_Privacy_Policy.pdf"},
   "fr": {
     "time_today": "Aujourd'hui",
@@ -2967,6 +2968,7 @@ const translations = {
     "btn_cat_join": "S'impliquer",
     "btn_cat_support": "Soutenir YBSP →",
     "sup_strip_label": "Avec le soutien de",
+    "sup_strip_aria": "Nos partenaires",
   "pdf_privacy": "/docs/YBSP_Canada_Privacy_Policy_FR.pdf"}
 };
 
@@ -3014,6 +3016,12 @@ function setLanguage(lang) {
     const key = el.getAttribute('data-i18n-placeholder');
     if (translations[lang] && translations[lang][key]) {
       el.setAttribute('placeholder', translations[lang][key]);
+    }
+  });
+  document.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria-label');
+    if (translations[lang] && translations[lang][key]) {
+      el.setAttribute('aria-label', translations[lang][key]);
     }
   });
 
